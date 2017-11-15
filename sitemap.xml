@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/post/business-improve/</loc>
+    <lastmod>2017-11-14T10:41:06+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/post/</loc>
+    <lastmod>2017-11-14T10:41:06+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/topics/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/</loc>
+    <lastmod>2017-11-14T10:41:06+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>
