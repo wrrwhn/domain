@@ -45,15 +45,15 @@
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关">HTTP.协议相关</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.firewalld/" title="Linux.Firewalld">Linux.Firewalld</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/http">http</a>
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
         
     
 
@@ -61,20 +61,24 @@
 </footer>
 
     <p>[TOC]
-参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST <a href="http://dev-p.yunkai.com/api/resource/upload">http://dev-p.yunkai.com/api/resource/upload</a> HTTP/1.1  Header 头文件  Accept: application/json, text/plain, <em>/</em> Content-Type: multipart/form-data; boundary=&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;7e016f3be0a4a Referer: <a href="http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas">http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas</a> Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7e016f3be0a4a Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;B2283659A4B9302BE09FE2EC97690382.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关"> &raquo;</a>
+firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置  指令 常见  添加端口  firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp  重启  firewall-cmd &ndash;reload  添加服务  firewall-cmd &ndash;permanent &ndash;add-service=mysql   所有  通用
+ firewall-cmd [&ndash;zone=&lt;zone&gt;] &ndash;add-port=&lt;port&gt;[-&lt;port&gt;]/&lt;protocol&gt; [&ndash;timeout=&lt;seconds&gt;]  运行
+ 查看运行状态  systemctl status firewalld.service  开关  systemctl [stop|start] firewalld firewall-cmd &ndash;reload  服务相关  firewall-cmd &ndash;list-services firewall-cmd &ndash;[add|remove]-service=mysql firewall-cmd &ndash;permanent &ndash;[add|remove]-service=mysql  端口相关  firewall-cmd &ndash;zone=public &ndash;add-port=3306/tcp &ndash;permanent firewall-cmd &ndash;zone=public &ndash;list-ports firewall-cmd &ndash;zone=public &ndash;query-port=3306/tcp   开机启动&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.firewalld/" title="Linux.Firewalld"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范">MYSQL.开发规范</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
         
         <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
         
@@ -84,59 +88,44 @@
 </footer>
 
     <p>[TOC]
-[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
-例 CREATE DATABASE test CHARACTER SET &lsquo;utf8&rsquo; COLLATE &lsquo;utf8_general_ci&rsquo;;
-  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
-列 列名称命名采用英文单词或缩写，关联具体业务
- 尽量不允许为 Null，用默认值代替
-例 FetionUser.FU<em>TableName.ColName
-  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]</em>[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &gt; 9520 ORDER BY id ASC LIMIT 20;  !&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范"> &raquo;</a>
+参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a> rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &lsquo;root&rsquo;@&lsquo;localhost&rsquo; =password(&lsquo;root.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.mysql/" title="Linux.Mysql"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/markdown/" title="Markdown">Markdown</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/dump.analyze/" title="Dump.Analyze">Dump.Analyze</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/markdown">markdown</a>
+        <a href="https://wrrwhn.github.io/domain/tags/dump">dump</a>
         
     
 
 </span>
 </footer>
 
-    <p>目录 [TOC]
-标题 二级标题 ####### 最大支持六级标题
-注：序号和*号，与内容之间均需要一个空格
- 列表1 列表2 列表3   无序列表 无序列表  无序列表缩进  无序列表  字体支持很多样式，比如加粗、*斜体*、删除线等特别样式
-当然也可以引用名人名言 &gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦
-百度
-代码格式表示
- for(var i= 0; i&lt; count; i++)  表格 |为知| md| |-|-| |WizNote|Markdown|
-公式啊！！！ $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
-st=&gt;start: Start:&gt;<a href="http://www.google.com[blank">http://www.google.com[blank</a>] e=&gt;end:&gt;<a href="http://www.google.com">http://www.google.com</a> op1=&gt;operation: My Operation sub1=&gt;subroutine: My Subroutine cond=&gt;condition: Yes or No?:&gt;<a href="http://www.google.com">http://www.google.com</a> io=&gt;inputoutput: catch something&hellip; st-&gt;op1-&gt;cond cond(yes)-&gt;io-&gt;e cond(no)-&gt;sub1(right)-&gt;op1  Title: <a href="http://bramp.github.io/js-sequence-diagrams/">教程可以看</a> A-&gt;B: 【备注演示】 Note left of A: 此轮回应前\nA 左侧备注 Note over A: 此轮 A 线上的备注 Note right of A: 此轮回应前A 右侧备注 Note over A,B:此轮回应前横跨 AB 两线的备注 A-&gt;B: 【线型演示】 A-&gt;B: 实线三角标 B&ndash;&gt;A: 虚线三角标 A-&gt;&gt;B: 实线角标 B&ndash;&gt;&gt;A: 虚线角标&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/markdown/" title="Markdown"> &raquo;</a>
+    <p>使用  安装 Dump 包分析软件 安装完成后进行初始化设置  设置【File/ Symbol file path】的属性值为【D:\MyCodesSymbols;SRV*c:\symbols*<a href="http://symbols.mozilla.org/firefox">http://symbols.mozilla.org/firefox</a>; SRV*D:\MyLocalSymbols<em><a href="http://msdl.microsoft.com/download/symbols;C:Windowssymbols】">http://msdl.microsoft.com/download/symbols;C:Windowssymbols】</a>  编辑 vbs 文件，调整 windbg 执行目录 双击执行，并输入任务管理器中的指定监控软件的 PID 值 操作软件，并至崩溃状态（崩溃后会自动启动 windbg 进行 Dump 包存储） 开启 windbg x86 程序，并打开该 Dump 包（File/ Open Crash Dump） 待加载完成后输入【~</em> kp】显示异常堆栈 输入【!analyze -v -f】分析具体异常  资源  X86 Debuggers And Tools-x86_en-us.msi crashdump.vbs 命令集合.xlsx&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/dump.analyze/" title="Dump.Analyze"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/spring.basic/" title="Spring.Basic">Spring.Basic</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/git.install/" title="Git.Install">Git.Install</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/spring">spring</a>
+        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
         
     
 
@@ -144,98 +133,22 @@ st=&gt;start: Start:&gt;<a href="http://www.google.com[blank">http://www.google.
 </footer>
 
     <p>[TOC]
-AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
-public interface Greeting { void sayHello(String name); }  implement
-public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&quot;Hello! &quot; + name); after(); } private void before() { System.out.println(&quot;Before&quot;); } private void after() { System.out.println(&quot;After&quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/spring.basic/" title="Spring.Basic"> &raquo;</a>
+Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config &ndash;global user.name wrrwhn git config &ndash;global user.email yqjdcyy@gmail.com git config &ndash;global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &quot;yqjdcyy@gmail.com&quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git &ndash;version git config &ndash;global user.name &quot;wrrwhn&quot; git config &ndash;global user.email yaoqingju@gmail.com cat ~/.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/git.install/" title="Git.Install"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/java.basic/" title="Java.Basic">Java.Basic</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC] 文章来源 Spring Data JPA - Reference Documentation
-学习整理 Basic Example Entity @Entity @Table(name = &quot;user&quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &quot;user_name&quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&lt;User, Long&gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&lt;User&gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &quot;com.yunkai&quot;) @EntityScan(basePackages = &quot;com.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a> xsi:schemaLocation=&quot;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</a> &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.midgetontoes&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;properties&gt; &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;executions&gt; &lt;execution&gt; &lt;goals&gt; &lt;goal&gt;repackage&lt;/goal&gt; &lt;/goals&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&quot;/&quot;) String home() { return &quot;Hello World!&quot;; } public static void main(String[] args) throws Exception { SpringApplication.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm">Storm</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/storm">storm</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
-进程间通信协议 Connection
- recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
- bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
- 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
- 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/sublime">sublime</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
         
     
 
@@ -243,57 +156,123 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
 </footer>
 
     <p>[TOC]
-参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+参考  使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁  功能 获取路径 分类  绝对路径  主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 例  C:xyz est.txt  代表了test.txt文件的绝对路径    相对路径  相对与某个基准目录（一般对照WEB）的路径。 示例  &quot;/&quot;代表Web应用的跟目录 &quot;./&quot; 代表当前目录 &quot;../&quot;代表上级目录   注  JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的   获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&quot;？&quot;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&quot;&amp;quot;) //站点绝对路径 application.getRealPath(&quot;&quot;) //JSP界面使用 ServletContext().getRealPath(&quot;&quot;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ .&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.basic/" title="Java.Basic"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/java.command/" title="Java.Command">Java.Command</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
         
     
 
 </span>
 </footer>
 
-    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
+    <p>[TOC]
+Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.command/" title="Java.Command"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/java.detail/" title="Java.Detail">Java.Detail</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
         
     
 
 </span>
 </footer>
 
-    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
-The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
-Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
-  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
- 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
-Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
+    <p>[TOC]
+finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.detail/" title="Java.Detail"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.vim/" title="Linux.Vim">Linux.Vim</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.08">2017.08.08</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+简明 VIM 练级攻略 阶段  存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力  存活  i  Insert 模式  ESC  返回 Normal 模式  x  删除当前光标所有的一个字符  dd  剪切当前行  p  粘贴  hjkl  对应左下右上  :q&lt;enter&gt;  不保存退出   感觉良好 插入  i  在光标前插入  a  在光标后插入  O  在当前行前插入新行  o  在当前行后插入新行  cw  替换从光标所在位置后到一个单词结尾的字符   移动  0  行头  $  行尾  ^  到本行第一个 非blank 字符位置 blank= 空格| tab| 换行| 回车  g_  到本行最后一个非blank字符位置  /pattern  搜索 pattern 字符串   拷贝/ 粘贴  p  粘贴  yy  复制   Undo/ Redo  u  撤消   文件操作  :e  打开文件  :w  保存  ：saveas &lt;path&gt;  将文件另存至   :q!&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.vim/" title="Linux.Vim"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.vscode/" title="Go.VSCode">Go.VSCode</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.31">2017.07.31</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows  安装  安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukehoban - Go」 版本  调试  切换到「调试」界面，并点击「打开 launch.json」打开配置 调整指定配置项  &lt;!&ndash; 当前项目于 GOPATH 中的路径 &ndash;&gt; &quot;program&quot;: &quot;${workspaceRoot}\Utils_Go\src\md5&quot;, &lt;!&ndash;设置当前环境变量 &ndash;&gt; &quot;env&quot;: { &quot;GOPATH&quot;: &quot;D:\server\go\lib;D:\work\git\yao\go\Hello_Go;D:\work\git\yk\go\pptconverter-gateway\code;${workspaceRoot}\Utils_Go&quot; }, &lt;!&ndash;设置启动参数 &ndash;&gt; &quot;args&quot;: [ &quot;-c=1&quot;, &quot;-p=D:\work\git\yao\go\Utils_Go\template\dest.mp4&quot; ],  设置断点、进行调试  注  安装「lukehoban - Go」时，部分「go get」部分来源需要翻墙 调试相关快捷键同 visual stuio&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.vscode/" title="Go.VSCode"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq">Go.Nsq</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+[NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 &ndash;mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq"> &raquo;</a>
 </article>
 
         
@@ -304,7 +283,7 @@ Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文�
 	<a class="btn newer" href="/domain/page/7/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 8  9</p>
+	<p class="counter"> 8  12</p>
 
 
 	

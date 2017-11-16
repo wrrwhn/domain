@@ -7,10 +7,337 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="https://wrrwhn.github.io/domain/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>20岁的你</title>
+      <link>https://wrrwhn.github.io/domain/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</guid>
+      <description> [TOC]
+20岁时做什么到40岁时才不会后悔？ 要点  知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础 试错和重启 谨慎选择与谁一起共度 谨防短期情绪波动 一定要把收入的一部分用于储蓄 投资 写作将点燃你的头脑 要建立良好的个人品牌 设计你的生活永远不会太迟 没有人把一切都想通了  忧虑就是你在偿还你并未欠的债 - 马克吐温  了解，沟通是一切 提问 如果你发现自己不知道或不确定，就主动发问吧 做饭 冥想让头脑深度休息 更新你的心灵的操作系统  关键字  健康、控制情绪 尝试  投资理财 做饭  提问、思考、设计人生  </description>
+    </item>
+    
+    <item>
+      <title>Apache.Beam的前世今生</title>
+      <link>https://wrrwhn.github.io/domain/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
+      <description> {TOC}
+Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 足够多模型才能促使项目成功  简介  基础  Cloud Dataflow  介绍  构建、管理和优化复杂数据流水线的方法 用于构建移动应用、调试、追踪和监控产品级云应用  技术  Flume：数据高效并行处理 MilWhell：互联网级别流处理，优秀的容错机制     介绍  统一编程框架，提供开源、统一的编程模型  特点  统一：对于批处理和流式处理，使用单一的编程模型 可移植：可以支持多种执行环境，包括Apache Apex、Apache Flink、Apache Spark和谷歌Cloud Dataflow等 可扩展：可以实现和分享更多的新SDK、IO连接器、转换操作库等  适用场景  并发数据处理任务  将要处理的数据集分解成许多相互独立而又可以并行处理的小集合  ETL任务 数据整合  组成  Beam SDK  针对各数据来源、形式，采用相同的数据模型处理、封装  Beam Pipeline Runner  将 Beam 模型定义开发的处理流程，翻译成底层分布式数据处理平台支持的运行时环境 需要指明底层的 Runner  目前支持 Flink/ Spark/ Apex/ Cloud Dataflow     设计  问题  数据  已持久化的有限数据集，如 HDFS文件，HBase 表 实时数据流，如 Kafka中的系统日志流，Twitter 流 注：有限数据集可看为实时数据流的一个子集  时间  process time：数据进入分布式处理框架时间 event time：数据产生时间  乱序  数据到达时间与 event-time 无法完全符合   解决方法(WWWH)  [W]hat are you computing  Element-Wise 元素级 Aggregating 聚合 Composite 复合  [W]here in event time    [W]hen in processing time  使用 Trigger 机制，配合 SDK 中的水位线和触发器进行时机指定  [H]ow do refinements relate  指定如何处理迟到数据，增量或合并输出 由 SDK 中的 Accumulation 指定    </description>
+    </item>
+    
+    <item>
+      <title>ImageMagick</title>
+      <link>https://wrrwhn.github.io/domain/post/imagemagick.basic/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/imagemagick.basic/</guid>
+      <description>[TOC]
+ImageMagick Reference  官网  Anatomy  convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]  Input FileNames FileName Globbing  Analysis  pattern match about */?  Example
+ convert *.jpg images.gif
+Explicit Image Format  Analysis
+ specified a explicit image format is better than in the case of the image donot contain a signature of identify format  Example
+ convert -size 640x480 -depth 8 rgb:image image.</description>
+    </item>
+    
+    <item>
+      <title>Java.9.Feature</title>
+      <link>https://wrrwhn.github.io/domain/post/java.9.feature/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.9.feature/</guid>
+      <description>深入解读 Java 9 新特性 参考  深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力  Jigsaw  核心 -实现 Java 平台模块化系统 - JPMS (Java Platform Module System)
+ 针对问题
+ 易错的 classpath  应用不同部分依赖同一类库的不同版本 ClassLoading 复杂而不明确，导致 ClassNotFoundException、 NoClassDefFoundError 等异常  JDK 过于臃肿，无法按不同需求进行定制或优化  目标
+ 可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
+ JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图</description>
+    </item>
+    
+    <item>
+      <title>Linux 单TCP连接占用最少内存</title>
+      <link>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
+      <description>[TOC]
+Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &amp;gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | &amp;mdash;- | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; | | file | 256 | &amp;ldquo;filp&amp;rdquo; | | dentry | 192 | &amp;ldquo;dentry&amp;rdquo; | | socket_alloc | 640 | &amp;ldquo;sock_inode_cache&amp;rdquo; | | tcp_sock | 1792 | &amp;ldquo;TCP&amp;rdquo; | | socket_wq | 64 | &amp;ldquo;kmalloc-64&amp;rdquo; | | inet_bind_bucket | 64 | &amp;ldquo;tcp_bind_bucket&amp;rdquo; | | epitem | 128 | &amp;ldquo;eventpoll_epi&amp;rdquo; | | tcp_request_sock | 256 | &amp;ldquo;request_sock_TCP&amp;rdquo; |</description>
+    </item>
+    
+    <item>
+      <title>Linux.Vimium</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.vimium/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.vimium/</guid>
+      <description>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
+ r 刷新界面
+ yy 复制当前界面 URL
+ p 在当前标签页打开剪贴板中的 URL
+ gu 跳转至当前 URL 的上一层
+ http://www.phperz.com/article/15/1231/179223.html http://www.phperz.com/article/15/1231/  gU 跳转至当前 URL 的最高层
+ http://www.phperz.com/article/15/1231/179223.html http://www.phperz.com/  f 在当前标签页打开此标签页中的一个链接
+  使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?</description>
+    </item>
+    
+    <item>
+      <title>不可描述</title>
+      <link>https://wrrwhn.github.io/domain/post/%E4%B8%8D%E5%8F%AF%E6%8F%8F%E8%BF%B0/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E4%B8%8D%E5%8F%AF%E6%8F%8F%E8%BF%B0/</guid>
+      <description>[TOC]
+参考  香辣家常菜 0/6   料理 黄油炒蛋 [2&amp;frasl;5] 材料  鸡蛋* 3 全脂牛奶 玉米粉/ 土豆粉 黄油 盐、胡椒  步骤  鸡蛋撑匀 全脂牛奶溶玉米粉，搅拌均匀后与鸡蛋混合 黄油于不粘中融化，煮开后加入鸡蛋，并关火搅动  麻辣烫 材料  汤底  干辣椒 豆瓣酱 浓汤宝  鲜鸡汁 猪骨汤|清水  葱、姜、蒜、八角、花椒  煮料  鱼丸、蟹肉棒、肥牛 豆泡、冻豆腐、玉米、香菇、土豆、青菜   流程  材料洗净、切段、片、末 热锅热油，加葱、姜、蒜和花椒爆香，后加入干辣椒和八角翻炒2分钟 加入4勺豆瓣酱炒香后，加入浓汤宝，煮开后转小火煮15分钟 完成后捞出配料，并加入食材即可 调味可补蒜末、醋、芝麻酱和菊花等  蒸水蛋  材料  鸡蛋* 2 温水 盐、酱油、油  流程  鸡蛋打散，加入1/2茶匙盐、些许酱油、3滴油后打发 一边加入3倍温水，一边顺时针拌匀，并用勺子舀走泡泡 蒸锅放入热水，大火蒸10分钟 取出后于表面淋少许酱油  青椒肉丝 材料  大青椒 猪里脊肉 姜、蒜 料酒、老抽、生抽、清水、麻油 盐、糖 干淀粉、水淀粉  流程  青椒横剖去芯后，顺纹理切丝 肉丝加老抽、生抽、糖、料酒抓匀后腌15分钟 肉里加一汤匙清水、麻油后，抓肉至水被吸收，再加干淀粉抓匀 热锅少油，煸青椒丝至微软 热锅热油后，萋蒜片爆香，大火炒散肉丝至八成熟，加青椒炒匀 加入盐、糖、水淀粉勾芡炒匀  茭白毛豆鸡丁 材料  茭白* 2 毛豆 鸡脯肉* 2 红尖椒 盐 生抽 水淀粉  流程  各材料切丁，鸡肉用盐、生抽和水淀粉抓匀 毛豆焯水，热锅凉油滑肉变色后盛出 茭白翻炒后，加毛豆、水许水、盐烹炒入味 加鸡丁、红椒和一勺蚝油，翻炒出锅  干煸四季豆 材料  四季豆 猪肉末 蒜、姜、干辣椒 生粉 花生油、生抽、鸡精、盐、料酒  流程  四季豆去筋折段后洗净沥干，姜蒜切片、干辣椒切段 猪肉末放入油、生粉和料酒后抓匀 热锅热油炸四季豆至表皮微黄后捞出 留微油爆香肉末后盛出 热锅微油煸炒干辣椒、姜、蒜后，倒入四季豆和肉末，并放入生抽、盐、鸡精翻炒均匀即可  木须肉 材料  鸡蛋 *2 瘦肉 黄瓜、胡萝卜、黑木耳 盐、生粉、白糖、生抽、淀粉</description>
+    </item>
+    
+    <item>
+      <title>代码整洁之道.程序员的职业素养</title>
+      <link>https://wrrwhn.github.io/domain/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</guid>
+      <description>[TOC]
+代码整洁之道 - 程序员的职业素养 专业主义 为自身错误埋单 注重自测  要求自测基本完整覆盖
+建议要求 设计模式
+ GOF* 24 POSA 中多数模式的实战  设计原则
+ 了解 SOLID 原则 深刻理解组件设计原则  方法
+ XP Scrum 精益 看板 瀑布 结构化分析 结构化设计  实践
+ 测试驱动开发 面向对象设计 结构化编程 持续集成 结对编程  工作
+ UML 图 DFD 图 结构图 Petri 网络图 状态迁移图 流程图 决策图
+站在 雇主/客户/产品 的角度   说“不” 拒绝说“试一试”  在上级眼里意味着你可以 另一方面，如果能完成，意味着之前有所保留，并未全然尽力
+描述清楚实现的难度 认真理解说“是”的成本  说“是” 承诺用语  为自己的承诺负责 理解对方言语承诺的成分 坚守原则，避免放松代码追求  承诺无效 关键词  需要|应当  我们要把这个活干完 有人应当负责去推动这件事  希望|但愿  希望明天我能完成这件事 但愿我有时间做这件事  让我们</description>
+    </item>
+    
+    <item>
+      <title>妙梅家招牌</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%A6%99%E6%A2%85%E5%AE%B6%E6%8B%9B%E7%89%8C/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%A6%99%E6%A2%85%E5%AE%B6%E6%8B%9B%E7%89%8C/</guid>
+      <description> [TOC]
+蒸鸡 [2.5&amp;frasl;5] 材料  八角 桂皮 香菇 香葱头 当归 料酒 生姜 鸡  工具  电饭锅 蒸架  流程  鸡洗净过水，各材料切好洗净 盐，料酒里外抹一下 各材料塞里面，隔水蒸一小时  </description>
+    </item>
+    
+    <item>
+      <title>宝珀-Blancpain</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%AE%9D%E7%8F%80-blancpain/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%AE%9D%E7%8F%80-blancpain/</guid>
+      <description>[TOC]
+品牌 简介  1735年，Jehan-Jacques Blancpain创立宝珀品牌 1926年，宝珀制表厂与制表师John Harwood合作，推出首款自动上链腕表。 1953年推出的五十噚腕表，成为潜水腕表的标杆之作。 制表厂加入瑞士钟表工业股份有限公司（Société suisse pour l’industrie horlogère，SSIH），与欧米茄、天梭、Lemania等品牌并驾齐驱。 1735腕表，汇集五大复杂功能：三问报时、陀飞轮、万年历、月相与追针计时码表。     参考  blancpain 品牌历史 腕表之家-宝珀  明细 五十噚 5000-0130-B52 A 基本信息  自动机械 男士
+价格 ¥ 98000
+机芯 机芯型号： 1315
+ 机芯直径： 30.60毫米
+ 机芯厚度： 5.65毫米
+ 宝石数： 35
+ 零件数： 227
+ 动力储备： 120小时
+外观 表径： 43.60毫米
+ 表壳厚度： 13.40毫米
+ 表壳材质： 缎面磨砂黑色陶瓷
+ 表盘颜色： 黑色
+ 表盘形状： 圆形</description>
+    </item>
+    
+    <item>
+      <title>技术人员的发展之路</title>
+      <link>https://wrrwhn.github.io/domain/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
+      <description> [TOC]
+技术人员的发展之路 阶段和标志 20-30岁  提升学习和解决难题的能力 提升领导力  高效学习能力  基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独立思考  解决问题能力  见过许多场景 犯过、处理过很多错误 防火   帮人解决问题 被人所信赖  发展方向 职场打拼  去顶尖公司 去真正的创业公司  小心了解创始人和业务情况、想法、理念 排除创业时的.侥幸和驱利心理  职业生涯发展  关心并处理复杂人事关系 学会使用政治手段  在下属和领导，员工和公司之间周旋 审时站队，迎合、妥协和交换 厚黑与真诚    经历有意义、价值的事  到技术创新的发源地去经历创新 去经历下一个热点技术的发展  追求一种自由的生活  工作自由  能力出众，不愁找不到工作  技能自由  自由职业者  自动化 App 上做软件个体户 开源软件，社区捐款   物质自由  投资&amp;amp; 风险 关注未来和长远的成长   </description>
+    </item>
+    
+    <item>
+      <title>歌川广重</title>
+      <link>https://wrrwhn.github.io/domain/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/</guid>
+      <description> [TOC]
+歌川广重 简介  1811年他在江户成为浮世绘大师歌川丰广的学生 于1833～1834年间的55幅风景画系列《东海道五十三次》确立了他作为有史以来最受欢迎的浮世绘画家之一的地位 风格较为亲民、清丽，而有小品风范  风格  寓人手法  绘图主题是风景，但他会在画面上加入小人物的日常生活描绘，增添画面的生动感  四季情景的描绘  利用明暗、阴暗等技巧的呈现，可以在他的作品中感受到季节转换的感觉   作品  东海道五十三次 六十余州名所図会 江戸名所百景  赏析 </description>
+    </item>
+    
+    <item>
+      <title>水</title>
+      <link>https://wrrwhn.github.io/domain/post/%E6%B0%B4/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E6%B0%B4/</guid>
+      <description> [TOC]
+蒸 蒸馒头  10:00  蒸肉包  &amp;gt;= 12:00  蒸地瓜、玉米  &amp;gt;= 15:00 大块地瓜需要切段  煮 水煮蛋  水烧开后煮 7:30  速冻肉粽  水烧开后煮 15:00  速冻辣肠  水烧开后煮 15:00  </description>
+    </item>
+    
+    <item>
+      <title>汤</title>
+      <link>https://wrrwhn.github.io/domain/post/%E6%B1%A4/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E6%B1%A4/</guid>
+      <description> [TOC]
+冬瓜排骨汤 材料  排骨 冬瓜 葱、姜 盐
+流程 葱挽结，姜、冬瓜切片
+ 排骨洗净，过开水焯后，冲净撇去血末
+ 冷水烧开后转小火煲一小时，后加冬瓜煲制十五分钟
+ 加盐、撇葱花后出锅
+  土豆番茄牛腩汤 材料  牛腩 土豆、番茄、胡萝卜 姜、葱 盐、生抽、料酒
+流程 牛肉泡水后洗净切块，焯水捞出
+ 姜切片，葱切段，番茄划线后过水去皮
+ 姜片、葱段、一半番茄、料酒、生抽与适量牛肉，大火煮开后炖2小时
+ 胡萝卜、土豆去皮切块，待番茄煮烂后与另一半番茄一同加入炖煮1小时
+ 加少许盐调味出锅
+  黄豆花生猪脚 材料  猪脚 黄豆、花生 葱、姜 料酒、盐
+流程 花生、黄豆提前泡8小时，猪脚拨毛、洗净、斩块、焯水后再洗净
+ 料酒、花生、黄豆、姜、葱炖煮2小时
+ 出锅前用盐调味
+  奶白鲫鱼汤 材料  鲫鱼 葱、蒜、大白菜 白胡椒粉、盐 开水  流程  葱、大白菜洗净，蒜剥瓣 鲫鱼杀好，去鳞、鱼肚内黑膜后，洗净控干 热锅凉油，姜片爆香后放入鲫鱼，煎至两面金黄 煎好后加入葱段、蒜瓣，倒入开水后大火熬煮十五分钟 打去浮沫后，加入豆腐、大白菜转中火煮十分钟 出锅前五分钟加入盐、白胡椒粉即可  注意  煎鱼是为了去腥和定形 小火清汤，大火白汤 盐于最后放，避免破坏食材营养、口感  </description>
+    </item>
+    
+    <item>
+      <title>浏览器缓存知识小结及应用</title>
+      <link>https://wrrwhn.github.io/domain/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <description> 浏览器缓存知识小结及应用 分类  强缓存  判断命中，则直接从浏览器缓存中读取资源，不发请求至服务器（200）  协商缓存  发请求至服务器，协商缓存命中，则返回请求（304），告知浏览器从缓存中加载   实现  强缓存  请求资源时，资源及其 response header 一并被缓存 再次请求时，优先比对该资源 header 中的  Expries（失效时间） 或 Cache-Control：max-age=315360000 &amp;amp; Date: Mon, 11 Jan 2016 06:41:22 GMT  对比判断是否命中 注：Cache-Control 为相对时间，都使用客户端时间进行判断，相比 Expries 的服务器时间对比更安全。  协商缓存  请求资源时，资源及其 response header 一并被缓存 再次和服务器请求该请求时，一并传上  header.Last-Modified: Tue 12 Jan 2016 03:08:53 GMT - 服务器上该资源的最后修改时间 header.If-Modified-Since: Tue 12 Jan 2016 03:08:53 GMT - 上一次浏览器请求时返回的 Last-Modified 值 或 ETag: &amp;ldquo;17fd8-5291a5f96fd20&amp;rdquo; - 请求资源的唯一标识 If-None-Match: &amp;ldquo;17fd8-5291a5f96fd20&amp;rdquo; - 上一次请求时的 ETag 值    </description>
+    </item>
+    
+    <item>
+      <title>甜</title>
+      <link>https://wrrwhn.github.io/domain/post/%E7%94%9C/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E7%94%9C/</guid>
+      <description> [TOC]
+芒果西米露 [4&amp;frasl;5] 材料  西米 小芒果 牛奶 蜂蜜  流程  芒果剖开刮下果肉 大量水煮西米，15分钟至剩下白芯后关火加盖焖熟 完全透明后捞起过冰水 起碗加入西米、牛奶、芒果和蜂蜜即可  南瓜饼 材料  南瓜 糯米粉 白糖  流程  南瓜去皮、去籽、切块后，倒入碗中，覆以保鲜膜后蒸10分钟蒸熟 加入白糖搅拌 冷却后，少量多次地加入糯米粉，和到不粘手 搓小圆后拍扁，后小火煎熟  </description>
+    </item>
+    
+    <item>
+      <title>精酿啤酒.入门</title>
+      <link>https://wrrwhn.github.io/domain/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</guid>
+      <description>[TOC]
+酒-精酿啤酒 参考  夏日炎炎，来瓶啤酒 - 一次关于精酿啤酒的安利 推荐7款精酿的啤酒，也许能让你爱不释手 角鲨头 Dogfish Head——一个神奇的啤酒厂 BrewDog 啤酒狗顛覆你對啤酒的想像!  分类 拉格 Lager  工业啤酒，保证生产规模 下层发酵，酵母在底部发酵，温度在 10℃ 以下，发酵时间长 口味清淡，味道单一  艾尔 Ale  上层发酵，酵母在麦汁顶部，温度于 10℃-20℃，发酵时间短  推荐 Blue Moon - Belgian White  比利时白色小麦啤酒 特点  淡麦芽香和少量橙香 入口柔和清甜，水果风味突出 模仿福佳白  欣赏    推荐  口粮酒   Hoegaarden Belgian Witbier  福佳白 比利时白色小麦啤酒 特点  口感清淡，酒体轻盈 小麦和蔬菜清香，微微酸甜 类似口感如 1664 白啤  欣赏    推荐  入门级   燕京原浆白啤  特点  酒体琥珀，泡沫稀少，口感轻盈 丁香、香蕉和面包香气  欣赏    推荐  性价比   Tripel Karmeliet  比利时三料啤酒 特点  小麦、燕麦和大麦混合酿造 酒体金黄，泡沫深厚持久 味道偏浓 前调  麦香+酵母+复合果味 麦香、胡妥、花香  中调  橙子、香蕉、蜂蜜  后调  回甘   欣赏    推荐 -  Orval Belgian Pale Ale  比利时淡色艾尔 特点  酒体粽红，泡沫极为丰富细腻 浓烈的酒花香，橙香，浓郁的花香和药香 浓郁的酒花香气，玫瑰花瓣的香气以及酵母带来的独特微酸口感  欣赏     推荐 -  Westvleteren 12 (XII)  比利时四料啤酒 特点  棕褐色酒体，泡沫轻盈一指高 复杂的水果香气，熟苹果、梨、糖浆、麦子、坚果和草药香，复合的香料味道以及浓郁的酵母气息 甜蜜轻柔，回味悠长  欣赏    推荐  号称世界第一   Jacob Leinenkugel Grapefruit Shandy  特点  西柚香，汽水口感，偏甜  欣赏    推荐  牛饮   Stone Coffee Milk Stout  增料世涛 特点  口感醇厚，酒体咖啡色，泡沫稀少 浓郁咖啡豆、巧克力、糖浆和烧烤麦芽香 入口厚重，丝滑奶油感  欣赏     推荐 -  Lefthand Milk Stout Nitro  氮气牛奶世涛 特点  氮气封装，开瓶后泡沫更柔和细腻 酒体浑浊黑亮，泡沫稀少但细腻 入口顺滑，苦味下降，回味清淡 奶味、巧克力、烧烤麦芽香  欣赏    推荐 -  Stone go to IPA  Session IPA 特点  清淡型，充满水果香，口感爽脆 建议即时享用  欣赏    推荐  牛饮   Stone Imperial Russian Stout 2016  帝国世涛 特点  每年放出，实力产品 黑色酒体，几乎无泡沫， 焦糖、烘烤、酱油、咖啡以及酒精味 酒体非常厚重，深色水果的甘甜，糖浆味，太妃糖，烘烤麦芽散发出的厚重苦味 酒精感强，回味较长，酱味、酒精味  欣赏     推荐  Top 50   Stone ARROGANT BASTARD ALE  美式烈性艾尔 特点</description>
+    </item>
+    
+    <item>
+      <title>肉</title>
+      <link>https://wrrwhn.github.io/domain/post/%E8%82%89/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E8%82%89/</guid>
+      <description>[TOC]
+参考  高分肉菜 - 0/7  料理 啤酒鸭 [4&amp;frasl;5] 材料  鸭 啤酒 姜、蒜 干辣椒、八角 盐、糖、食用油、老抽、生抽  工具 流程  鸭肉洗净切小块，淋水备用 炒锅加热，倒油后加入姜片、葱段、蒜瓣、八角和干辣椒炒香 加入鸭块大火翻炒到鸭皮收缩、颜色发白，后调至小火煸炒出鸭油 倒入少许老抽上色、适量生抽提味，少许糖、盐并翻炒均匀 倒入啤酒没过鸭肉一厘米，并中小火焖30分钟 鸭肉熟软后，大火收汁  豆腐烧肥牛 [4.3&amp;frasl;5] 材料  肥牛片 嫩豆腐 大葱* 0.5d、葱花、蒜末* 2 酱油* 2 料酒* 1 水* 3 糖* 1  流程  肥牛切片，豆腐切块，大葱切段，调味料搅拌均匀 分次放入调味料、豆腐、肥牛和大葱 加盖煮开，转小火闷8分钟  可乐鸡翅 [4&amp;frasl;5] 材料  翅中 可乐 盐、料酒、老抽、生抽 生姜片* 5 桂皮* 0.5  流程  鸡翅划刀，放入葱姜片和水煮开，后捞出沥干 小火微油，将鸡翅煎至金黄 放入可乐、一大勺料酒，一勺老抽，两勺生抽，桂皮和盐 烧开后转小火炖煮至收汁适宜  红烧肉 [4.</description>
+    </item>
+    
+    <item>
+      <title>股权&amp;期权</title>
+      <link>https://wrrwhn.github.io/domain/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</guid>
+      <description>[TOC]
+股权、期权有哪些坑？从技术创业的角度说开去 比例 依赖独特技术  技术* 50% 业务* 40% 管理* 10%  依赖业务领先  技术* 40% 业务* 50% 管理* 10%  注意  一开始就要定位准确！  股权 经营  退出机制  建议股份强制回收 提前写好退出机制和退出价格 退出价格为下列最高值  上一轮融资估值* 50% 上一年财务合同额 公司总资产 真实投资资金年利息* 115%  退出股权优先卖给现有参与经营的股东   注意  股权比例，即合伙人配比  期权 使用  第一期建议 10%  吸引人才，后根据每年需求发放 CEO 出方案定值，后股东投票  一次性强留足 30%  发完回收才会发现这个问题   规则  时间  分3年给，每年落实 1&amp;frasl;3  行权  可象征性出点 在期权池公司落实工商登记股分  价格  同股权一样商量  权益  仅分红，无投票  落实  设置持股公司  期权池公司拷贝母公司 10% 股分 初始期权池公司 CEO 100%的持有 签订员工期权协议，分3年在期权池公司落实工商登记股份 每年变更一次期权池公司名录和股分比例，落实员工利益    注意  作用  对股权结构不合理信息的弥补 对核心员工的奖励  来源  全体股东一起稀释  按比例，不要按数量 后面增发期权，则再创建一持股子公司即可  投资 是否要  要！  需要外部投资人作为第三方的视角审查   时机  产品出来 有真实用户和运营数据 估值清晰 数据客观  创业落脚点 明确越高越难  不违法 不违反道德 创新技术 创新业务 改变人类生活  类型 战略  你的战略是投资人的子战略  天花板就在那 在乎的是投资人自己的梦想，不在乎你的梦想  战略完全一致的是竞争对手 战略投资协议需补签  财务  投资人在乎赚钱、回报 给压力实现盈利、实现价值用户数量 尽量不要签对赌协议  众筹  对象  外面的朋友 顾问   初创  自行掏钱，会更谨慎 找天使投资人，看个人魅力  本质 商业= 生意+ 梦想  思考点  细分行业 细分客群 细分产品 细分用户 创造新概念 开拓新产品  图例</description>
+    </item>
+    
+    <item>
+      <title>菜</title>
+      <link>https://wrrwhn.github.io/domain/post/%E8%8F%9C/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E8%8F%9C/</guid>
+      <description> [TOC]
+烫生菜 [3&amp;frasl;5] 材料  生菜 蒜 生抽
+工具 流程 生菜洗净焯熟
+ 蒜末炒香，关火后加生抽搅匀后淋在生菜上
+  酸辣土豆丝 [3&amp;frasl;5] 材料  土豆 青辣椒 干红辣椒、大蒜、葱、姜、花椒 醋、盐  流程  土豆切丝，辣椒切段 花椒炸香后捞出，放入葱姜辣椒爆香 倒入土豆丝和醋翻炒一分钟 加入青辣椒、盐、蒜翻炒均匀  西红柿炒鸡蛋 材料  西红柿* 2 鸡蛋* 2
+流程 西红柿对划后于开水中煮后去皮、对切去芯、切小块后加少许糖腌制出汁
+ 鸡蛋打散后，加等比30%凉开水搅拌至起泡
+ 热锅5汤匙凉油，油微起烟时转小火并倒入蛋液，并用筷子顺时针不停搅拌，在蛋液快凝固时盛出
+ 放油后加入西红柿、少许水和盐，压碎翻炒，待汤汁足够时倒入炒蛋翻炒收汁即可
+注意事项 挑西红柿时挑扁圆、深红，轻按略软者
+ 顺西红柿底部凹槽切下，避免流汁，切好后去蒂
+  青椒茄丝 材料  茄子 青椒 蒜  流程  青椒切丝，蒜切末，茄子切细条（越细越好） 热锅起油，蒜末煸出香气后，放入青椒大火快炒 倒入茄条、生抽翻炒后，扣盖焖两分钟 加入盐、鸡精翻炒 起锅前倒入醋  秋葵 材料  秋葵 葱、小米椒 生抽、油、盐  流程  盐水浸泡5分钟，后反复冲洗，去柄 水滴油、加盐煮开后，煮开后加入秋葵煮3分钟至断生 捞出后放入清水中放凉，后竖切摆上小米椒、葱末、少量生抽 起锅热油后泼到秋葵上即可  红烧茄子 材料  茄子 蒜 老抽、白糖、水  流程  茄子滚刀后，放入盆中加盐（3勺），静置10分钟后1攥出水 蒜切丁，加入老抽、糖、水后待用 热锅热油，倒入茄子炒至金黄 将配料倒入炖煮10分钟  </description>
+    </item>
+    
+    <item>
+      <title>葛饰北斋</title>
+      <link>https://wrrwhn.github.io/domain/post/%E8%91%9B%E9%A5%B0%E5%8C%97%E6%96%8B/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E8%91%9B%E9%A5%B0%E5%8C%97%E6%96%8B/</guid>
+      <description> [TOC]
+葛饰北斋 简介  葛飾 北斎／かつしか ほくさい Katsushika Hokusai （1760年10月31日－1849年5月10日） 日本江户时代后期的浮世绘师 14岁学雕版印刷，18岁便和另一位浮世绘师胜川春章学画  评价  鲁迅  关于日本的浮世绘师，我年轻时喜欢的是北斋，现在则喜欢广重，其次则为歌麿的人物。”接着他又说，“不过依我看，适合中国人一般眼光的，恐怕还是北斋。   作品  富岳三十六景  表富士（初版） 里富士（追加）   赏析 </description>
+    </item>
+    
+    <item>
+      <title>语言类型</title>
+      <link>https://wrrwhn.github.io/domain/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</guid>
+      <description> [TOC]
+语言类型 参考  编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别 弱类型、强类型、动态类型、静态类型语言的区别是什么？  类型 编译型语言  描述  通过编译器将源代码编译成机器码 通过链接将各模块机器码和依赖库串连运行  优点  预编译时对代码进行优化 执行效率高，可脱离语言环境独立运行  缺点  编译后修改需整个模块重新编译 需根据运行环境编译  代表  C/ C++/ swift   解释型语言  描述  运行程序时逐行翻译  优点  优秀的平台兼容性（安装解释器|虚拟机）  缺点  每次运行都要解释，效率较低  代表  JavaScript/ Python   混合类型语言  描述  取编译和解释型优点而成 编译成中间码，后通过中间语言运行库运行  如 C# 中会编译成 IL代码，后保存在dll中；首次运行时由 JIT 在编译成机器码缓存在内存中，下次直接执行   代表  C#   动态语言  描述  运行时可改变代码结构  新函数、新对象、引入代码   代表  C#/ JavaScript/ Python   静态语言  描述  运行时结构不可变  代码  Java/ C/ C++   静态类型语言  描述  编写代码时，需明确变量的数量类型  代表  C/ C++/ C#/ Java   动态类型语言  描述  运行期间才进行数据类型检查  代表  JavaScript/ Python   强类型语言  描述  变量确定类型后将不可改变  代表  Java/ C#/ Python   弱类型语言  描述  变量可被赋予不同类型值  代表  JavaScript/ C   </description>
+    </item>
+    
+    <item>
+      <title>酒.调酒</title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%85%92.%E8%B0%83%E9%85%92/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%85%92.%E8%B0%83%E9%85%92/</guid>
+      <description> [TOC]
+Mojito 莫吉托 材料  白郎姆酒 40ml 青柠檬汁 30ml  可用屈臣氏青柠汁替换  薄荷叶 6片 白糖 2茶匙 苏打水  可用屈臣氏苏打水替换  冰块  杯子  海波杯  做法  薄荷叶+ 白糖+ 青柠（檬）汁混合捣碎 加苏打水后，加冰块填满本子 加入郎姆酒后添苏打水至满杯 以薄荷叶或柠檬片装饰  </description>
+    </item>
+    
+    <item>
+      <title>销售就是要搞定人 </title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</guid>
+      <description>[TOC]
+销售就是要搞定人 对自己  提升能力  解决问题  全局前提：了解局部、推荐人、相关影响人、决策人和拍板人 局部前提：搞定局部相关人员 搞定关键人前提：善于答定人&amp;amp; 敏感&amp;amp; 拉近和客户的距离  提高  魄力  胡雪岩穷得叮当响时，居然敢赞助同样落魄的王有龄。后王发迹了，也才有了胡的红顶商人神话  心态 守原则，会变通！ 多看新闻联播和地方新闻，即是方向，也是谈话资本   注意形象  用最少的时间、金钱和精力，树立起一个最为大家所尊重的悦纳的个人形象 身上一定要有抢眼的地方，比如戴表 自信！ 注意事项  绝不可弯腰驼背 绝不可让大公文包遮在身体前面   忌讳交浅言深！  话要说给懂的人听，给需要的人听 时机！  时机未到提前说，叫轻浮 应该说却不说，叫误事  地点  办公室永远要说光明正大的事 私人场所，便不必再说办公室内的套话   明哲保身的前提是了解各种情况，顺势而为，谋定后动 在任何时候都要冷静，不让表面现象牵着鼻子走，一定要看清本质才动手 人与人之间的差距在于理想。 不谋万世者，不足谋一时；不谋全局者，不足谋一域 制定目标，明确实现步骤，完善细节。而若随遇而安，运气等不确定因素来决定你命运的感觉，你愿意？  对下属  团队带领，忠心比能力重要  对同行  敌人也可以是朋友  对目标客户  先做朋友，再做生意 对手拿失败案子说事时也是销售机会，可以偿试简单介绍确有此事，然后重要介绍自己也是受害者 打开客户最有效、省钱的办法就是适宜的赞美  方法论  节奏  三个月订货为例  第一个月两个星期去一次，金钱投入一般即可 第二个月一星期去一次，适当请吃 第三个月需要天天出现   手段  初级  简单局面复杂化 落后时浑水摸鱼，乱中取胜  高级  复杂局面简单化 设置障碍，扼杀竞争对手；关键时机做表现最好的事  例  唐大诗人陈子昂学业有成后前往长安，但得不到名家的赏识。一日遇到一个卖胡琴者，有胡琴索价百万，陈子昂买了这把胡琴，邀众人至家中赏玩，竟当众摔琴。陈对大家说他只是一介书生，不懂琴艺，但会写文章，请大家欣赏他的文章。于是名动京师。   五步推销法  搜寻你的客户  了解哪些人有需求，不在无需求的人身上花费精力  接近你的客户  注意第一印象，使用幽默方式  引起客户的注意 激起客户的欲望 满足和客户的欲望  钩  客户类型  活泼型  喜欢讲 追求瞩目与喝彩，担心失去关注，反感受约束 让其多说，注意聆听，明确支持，多戴高帽  懦弱型  喜欢听 追求平稳和普遍接受，担心突然变化 不急，定目标鼓动，迫使其决定，以谈感情为主  利益型  冷静分析 追求认真准确，做事一丝不苟，担心被批评，反感盲目从事 提供严密技术方案，遵守承诺； 以干练形象示人，遵守规则  权力型  不耐烦听而打断你 追求支配地位和效率，担心被强迫、命令，反感优柔寡断 开门见山，尊重其地位，坚持多沟通多汇报    奇正相和  提炼自己的差异化，阒然于众 例  蔡泽，战国时期燕国人，博学善辩，为纵横家代表人物之一。先前游学过很多大小诸侯国，但未被人发现其才学，所以一直怀才不遇。但后来听说范雎以前推荐的郑安平和王稽都背叛了秦国，郑安平降赵，王稽与魏国私通。蔡泽曾对范雎说：“君子以义死难，视- 死如归；生而辱不如死而荣。士固有杀身以成名，虽义之所在，虽死无所恨。何为不可哉？”所以前往秦国游说范雎让贤于他，因为秦国有一条法律：“凡荐人不效者，与所荐之人同罪。”虽然秦昭王不加怪罪，但范雎心中已有畏惧。从而使蔡泽说服范雎成功而成为丞相。   解决问题首先是战略上的，是对规律的掌握，然后才是技巧上的，最后才是心态、细节上的 试错，总结原因  故事  资本论  如果有百分之二十的利润，资本就会蠢蠢欲动； 如果有百分之五十的利润，资本就会冒险； 如果有百分之一百的利润，资本就敢于冒绞首的危险； 如果有百分之三百的利润，资本就敢于践踏人间一切法律。  同样销售阀门，有的一年销售额达到300万就沾沾自喜，但我知道2007年有个销售高手一个订单是2.</description>
+    </item>
+    
+    <item>
+      <title>面</title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%9D%A2/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%9D%A2/</guid>
+      <description>[TOC]
+面食 西红柿鸡蛋面 [3&amp;frasl;5] 材料  鸡蛋 西红柿 小葱  流程  鸡蛋炒开 西红柿去皮压碎后与鸡蛋拌炒 4&amp;frasl;5 碗水，大拇指至食指末节数量挂面 焖煮9分钟，加盐、香油等出锅  阳春面 拌面 炒米粉 [3&amp;frasl;5] 材料  米粉 豆芽、青菜丝 肉丝、淀粉 鸡蛋 葱、姜、蒜 盐、生抽、老抽、料酒、香醋、胡椒粉  流程  豆芽去根，青菜切丝，葱切段， 蒜剁碎 米粉过水，待米粉可挑散后 冲凉水两遍，后沥干 瘦肉切丝，加生姜、生抽、老抽、料酒、香醋和淀粉腌制 10分钟 鸡蛋加料酒和盐打散，爆香蒜碎后炒散鸡蛋 后加入肉丝，翻炒至变色后加入米粉 翻炒时加入适量生抽上色 上色均匀后加入豆芽和葱段，并于完成时加入胡椒粉  番茄火腿芝士意面 材料  意面 小番茄* 20 火腿片 洋葱/ 2 橄榄油、盐、糖、芝士、番茄酱* 3勺  流程  小番茄对切，火腿、芝士切块，洋葱切丝 挑锅倒足水，开火煮沸倒入2ML盐后下意面，后转中火保持水沸腾即可，待达到包装建议时间后捞出拌以适量橄榄油 热锅热油，加洋葱丝爆香后加入火腿片、小番茄以中火翻炒至断生 加番茄酱、适量水和意面翻炒 放入芝士片、盐、糖调味后拌匀收汁即可  注意事项  锅与面匹配，尽量让面可上下扑腾 面入水后静待其软化而自动滑入锅中，勿蛮压、搅 严格按照包装袋建议时间，吃软多焖2分钟，若还需于配料中加热，建议提前2分钟  油泼面 材料  面条 辣椒面 蒜、姜、葱 青菜、豆芽 盐、酱油、油、香醋</description>
+    </item>
+    
+    <item>
+      <title>饭</title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%A5%AD/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%A5%AD/</guid>
+      <description> [TOC]
+煮干饭 材料  米饭  两人三小碗左右   流程  淘米后加同杯量的水  什蔬咖喱炒饭 材料  米饭 西兰花、胡萝卜、玉米、青豆 圣女果 咖喱块、盐  流程  西兰花切块，胡萝卜切丁，青豆和玉米剥粒，圣女果对切 蔬菜焯水选用 咖喱加油小火炒香后，加入米饭炒匀 加入所有材料炒匀，加盐调味  排骨焖饭 [4.5&amp;frasl;5] 材料  米 肋排 香菇 胡萝卜 葱、姜、蒜 熏制、老抽、耗油、冰糖  过程  排骨切块，香菇、胡萝卜切丁，姜切丝蒜拍扁，葱切段，米洗净 排骨过开水去除血水，捞出后加入料酒、生抽、姜丝腌20分钟 热锅少油煎排骨至两面金黄0 加入姜丝、葱段、蒜、冰糖、生抽，并辅以老抽上色 加入香菇、胡萝卜、耗油和盐（量较炒菜多）翻炒 米加入等量水，加入材料拌匀后开始煮  腊肠菜饭 材料  米 腊肠 胡萝卜、青豆、水发香菇 麻油、盐、鸡精  流程  香菇洗净泡温水半小时，青豆洗净，胡萝卜、腊肠切丁，米饭洗净 热锅麻油，香菇与腊肠干煎2分钟 放入青豆、胡萝卜、盐、鸡精翻炒均匀后，拌入等量的水和米 煮饭完成后，拌匀后再焖5分钟  </description>
+    </item>
+    
+    <item>
+      <title>香水.推荐</title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%A6%99%E6%B0%B4.%E6%8E%A8%E8%8D%90/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%A6%99%E6%B0%B4.%E6%8E%A8%E8%8D%90/</guid>
+      <description> [TOC]
+男香分享 推荐 Dolce &amp;amp; Gabbana the one 浓香版   [香调]东方辛香调 [前调]罗勒 葡萄柚 胡荽 [中调]小豆蔻 姜 橙花 [后调]烟草调 雪松木 龙涎香 时效性:一整天 推荐季节:秋/冬 推荐场合:商务 非常适合商务人士或成熟男性 ★★★★☆ | ★★★★★  ACQUA DI PARMA Colonia   [香调]柑橘香调 [前调]柠檬 甜橙 佛手柑 [中调]薰衣草 玫瑰 伊兰 [后调]广藿香 香根草 雪松 檀木 时效性:半天 推荐季节:春/夏 推荐场合:休闲 主打年轻与活力 ★★★★☆ | ★★★★☆  Juicy Couture Dirty English   [香调]性感木质调 [前调]胡椒 蓝色丝柏 卡拉布里亚佛手柑 小茴香 小豆蔻 [中调]马郁兰 皮革味 白檀 北非雪松 香根草 [后调]沉香木 黑檀木 黑色苔藓 琥珀 麝香 时效性:一天 推荐季节:春/夏/秋/冬 推荐场合:商务/休闲 香味易接受，季节、场合百搭 ★★★★☆ | ★★★★☆  Tom Ford Tobacco Vanille   [香调]辛辣东方调 [前调]烟草 辛香料 [中调]顿加豆 烟草花 香草 可可果 [后调]干果 木质香 时效性:一天 推荐季节:春/秋/冬 推荐场合:商务/休闲 评价满分 ★★★★★ | ★★★★★  Dsquared2 D2 He Wood   [香调]清新木质琥珀调 [前调]柑橘 佛手柑 [中调]海洋调 香菜 皮革 [后调]桃木 檀香 阿根廷草本植物 琥珀 时效性:半天 推荐季节:春/夏/秋/冬 推荐场合:商务/休闲 ★★★★☆ | ★★★★☆  Acqua di Parma Colonia Oud   [香调]木质调 [前调]柑橘 [中调]沉香 芜荽 海地乌木 [后调]皮革 麝香 时效性:一天 推荐季节:春/秋/冬 推荐场合:商务/休闲 夏天不推荐，年轻人不推荐 ★★★★☆ | ★★★★☆  Hermes Terre d&amp;rsquo;Hermes Eau Tres Fraiche   [香调]清新木质调 [前调]柑橘 橙子 水因子 [中调]老鹤草 [后调]木质元素 广蒮香 雪松 时效性:一天 推荐季节:春/夏/秋 推荐场合:商务/休闲 类比大地，更推荐 ★★★★★ | ★★★★☆  Bvlgari Man in Black   [香调]木质香调 [前调]朗姆酒 [中调]晚香玉 鸢尾纯香 皮革 [后调]安息香 零陵香豆 愈创木 时效性:半天 推荐季节:秋/冬 推荐场合:商务 成熟男人 ★★★★☆ | ★★★★☆  </description>
+    </item>
     
     <item>
       <title>ActiveMq</title>
@@ -240,6 +567,16 @@ The Path Coordinate System (0,0) in the upper left of the shape</description>
       <guid>https://wrrwhn.github.io/domain/post/%E7%BE%8E%E5%BC%8F%E8%B6%B3%E7%90%83/</guid>
       <description> [TOC]
 美式足球 参考  美式足球 美式橄榄球基本规则 国家橄榄球联盟 NFL 有哪些现役球星值得关注？  规则 场地  100码* 53码  时间  4节* 15分 12分中场休息 每档组织进攻时间 40秒 暂停  传球失败 持球出界 裁判判罚   规则  开球  防守方于本方30码处开球  进攻方回攻手持球尽量向前推进，后续于被阻截处开始进攻 回攻手膝盖触地，表示贪玩，于进攻方20码处开始进攻   进攻  四档进攻，累计进攻10码 弃踢  回攻  争取更多码数开始进攻，甚至于达阵  放弃  单脚着地后，从本方20码开始    发球  由中锋将球传给四分卫  进攻  跑球  [四分卫|跑卫]接球后，摆脱防守后向前突破  传球  由[四分卫|任意发球线后人员]传出，由[外接手|近端锋]接住即可   失败  擒抱 拦截  防守人员将持球人员摔倒在地 进攻球员[单|双]膝触地  出界  丧失球权  丢球 抄截   分数  达阵 - 6分  附加分  射门 - 1分 2码再次冲阵 - 2分   点球 - 3分  未能达阵，第四档尝试  安防 - 2分  进攻队员被防守队员拦截于进攻方端区内   位置  进攻组  时机  已方获得球权  组成  四分卫 跑卫 中锋+ 护锋+ 截锋+ 近端锋 外接手   防守组  时机  对方获得进攻权  组成  线卫 防守前锋+ 端锋+ 截锋 角卫+ 中卫   特勤组  时机  弃踢、点球、开球  组成  弃踢员+ 踢球员+ 长开球手 扶球员 回攻手 阻跑员    战术  假跑真传 假传真跑的延迟交递 佯传实跑 防护短传 四分卫短传跑锋  联赛  国家美式足球联盟 - NFL 超级碗  国家美式足球联盟年度冠军赛  欧洲美式足球联盟 - NFL Europa  明星  Thomas Edward Brady  汤姆-布雷迪 新英格兰爱国者 四分卫 4次赢得超级碗 &amp;amp; 老婆为巴西超模吉赛尔-邦辰  Rob Gronkowski  罗布·格隆科夫斯基 新英格兰爱国者 近端锋 联盟最强近端锋   Cam Newton  坎姆-牛顿 卡罗来纳黑豹队 四分卫 上赛季的常规赛MVP，绰号“超人”  Justin James Watt  贾斯汀·詹姆斯·瓦特 休斯顿德州人队 防守端锋 三届NFL最佳防守球员 &amp;amp; NFL历史上首位生涯有两个赛季擒杀数超过20次的球员  Aaron Rodgers  阿隆·罗杰斯 绿湾包装工队 四分卫 第四十五届超级杯冠军 &amp;amp; 第四十五届超级碗最有价值球员 &amp;amp; 2011年美联社年度最佳男运动员  Odell Beckham Jr  奥戴尔-贝克汉姆 纽约巨人队 外接手 对阵达拉斯牛仔的单手接球   </description>
+    </item>
+    
+    <item>
+      <title>中国-厦门.美食</title>
+      <link>https://wrrwhn.github.io/domain/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</link>
+      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</guid>
+      <description> [TOC]
+美食 - 厦门 参考  吃遍了厦门正港美食，本地人有张清单想告诉你~  沙茶面  菜品 炸豆腐 猪肝沿 瘦肉 剔骨肉 鸭胗 推荐店铺 沙糖 月华 思明区镇邦路78号，民立小学对面 开禾 思明区厦禾路126号  龟苓膏  菜品 苦茶 西米露 西多士 推荐店铺 陈佳甜品 思明区镇邦路65号  大排档  菜品 醋肉 腰花 花菜大肠煲 豆干炒肉 炒泡面 炒法海瓜子 推荐店铺 良山大排档 海鲜一般，尽量错开就餐时间 思明区开元路250号（第八菜市场内） 202海鲜大排档 思明区斗西路108号 夏商海鲜批发市场 夏商中埔食材批发商城 兴旺海鲜城 湖里区港中路1453号A138-143  卤味  菜品 鸡翅 鸡爪 推荐店铺 真真卤味 思明区蜂巢山路20-104号  鸭肉粥  菜品 鸭肉粥 推荐店铺 浮屿大同鸭肉粥 思明区厦禾路174号 厦港大同鸭肉粥 思明区思明南路378号  花生汤  菜品 花生汤 酥脆韭菜盒 糯米炸 推荐店铺 思北花生汤店 思明区思明北路64号  潮福城  菜品 虾饺皇 推荐店铺 轮渡店 思明区鹭江道33号3楼 滨北店 思明区湖滨北路28号建业大厦裙边  客家菜  菜品 酒香河田鸡 黄骨鱼焖豆腐 推荐店铺 鑫客家客家菜 湖里区仙岳路601号  盐鸭  菜品 盐鸭 推荐店铺 阿呆盐鸭 到下午一点前 同安区东山路55号  封肉  菜品 封肉 推荐店铺 同安区祥福市场阿呆盐鸭角落  马蹄酥  菜品 素净马蹄酥 喜饼 推荐店铺 双鹿老铺 同安区南门路46号1楼  海蛎炸  菜品 海蛎炸 推荐店铺 林添发匙仔炸 集美区灌口小叮当幼儿园附近 坤赐小吃 同安区东山路47号（在阿呆旁边哦）  </description>
     </item>
     
     <item>
