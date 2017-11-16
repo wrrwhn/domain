@@ -1,0 +1,530 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.user/" title="Linux.User">Linux.User</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux </a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://blog.csdn.net/beitiandijun/article/details/41678251">创建、删除用户</a></li>
+<li><a href="http://zebralinux.blog.51cto.com/8627088/1369301">Linux系统中切换用户身份su与sudo的用法与实例</a></li>
+<li><a href="http://man.linuxde.net/useradd">useradd命令</a></li>
+<li><a href="http://www.runoob.com/linux/linux-user-manage.html">Linux 用户和用户组管理</a></li>
+</ul>
+
+<h2 id="指令">指令</h2>
+
+<h3 id="adduser">adduser</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>为创建的用户指定主目录、系统 shell 版本，并要求输入密码
+
+<ul>
+<li>主动调用 <code>/etc/adduser.conf</code></li>
+<li>默认创建 <code>/home/user.name</code>目录</li>
+</ul></li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li><code>adduser &lt;user.name&gt;</code></li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>--home</code>
+
+<ul>
+<li>指定创建主目录的路径，默认是在 <code>/home</code> 目录下创建用户名同名的目录，这里可以指定；</li>
+<li>如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。</li>
+</ul></li>
+<li><code>--quiet</code>
+
+<ul>
+<li>即只打印警告和错误信息，忽略其他信息。</li>
+</ul></li>
+<li><code>--debug</code>
+
+<ul>
+<li>定位错误信息。</li>
+</ul></li>
+<li><code>--conf</code>
+
+<ul>
+<li>在创建用户时使用指定的 configuration 文件。</li>
+</ul></li>
+<li><code>--force-badname</code>
+
+<ul>
+<li>默认在创建用户时会进行 <code>/etc/adduser.conf</code> 中的正则表达式检查用户名是否合法
+
+<ul>
+<li>如果想使用弱检查，则使用这个选项</li>
+<li>如果不想检查，可以将 <code>/etc/adduser.conf</code> 中相关选项屏蔽</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li>``</li>
+</ul></li>
+</ul>
+
+<h3 id="useradd">useradd</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>默认无密码、目录和指定 shell 版本</li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li>useradd [option] <args></li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>c &lt;备注&gt;</code>
+
+<ul>
+<li>加上备注文字。备注文字会保存在 <code>passwd</code> 的<code>备注栏</code>位中；</li>
+</ul></li>
+<li><code>d &lt;登入目录&gt;</code>
+
+<ul>
+<li>指定用户登入时的启始目录；</li>
+</ul></li>
+<li><code>D</code>
+
+<ul>
+<li>变更预设值；</li>
+</ul></li>
+<li><code>e &lt;有效期限&gt;</code>
+
+<ul>
+<li>指定帐号的有效期限；</li>
+</ul></li>
+<li><code>f &lt;缓冲天数&gt;</code>
+
+<ul>
+<li>指定在密码过期后多少天即关闭该帐号；</li>
+</ul></li>
+<li><code>g &lt;群组&gt;</code>
+
+<ul>
+<li>指定用户所属的群组；</li>
+</ul></li>
+<li><code>G &lt;群组&gt;</code>
+
+<ul>
+<li>指定用户所属的附加群组；</li>
+</ul></li>
+<li><code>m</code>
+
+<ul>
+<li>自动建立用户的登入目录；</li>
+</ul></li>
+<li><code>M</code>
+
+<ul>
+<li>不要自动建立用户的登入目录；</li>
+</ul></li>
+<li><code>n</code>
+
+<ul>
+<li>取消建立以用户名称为名的群组；</li>
+</ul></li>
+<li><code>r</code>
+
+<ul>
+<li>建立系统帐号；</li>
+</ul></li>
+<li><code>s&lt;shell&gt;</code>
+
+<ul>
+<li>指定用户登入后所使用的shell；</li>
+</ul></li>
+<li><code>u&lt;uid&gt;</code>
+
+<ul>
+<li>指定用户id。</li>
+<li>ID 值尽量 <code>&gt; 500</code>，以避免冲突</li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li><code>useradd tmpuser -c 'useradd.c for passwd' -u 8888 -M -e 1</code></li>
+<li><code>passwd tmpuser</code></li>
+</ul></li>
+</ul>
+
+<h3 id="usermod">usermod</h3>
+
+<ul>
+<li>参数同 <code>useradd</code></li>
+</ul>
+
+<h3 id="userdel">userdel</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>删除用户</li>
+<li>将用户账号从 <code>/etc/passwd</code> 等系统文件中的删除</li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li>userdel [option] <user.name></li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>-r</code>
+
+<ul>
+<li>连同用户的主目录一并删除</li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li><code>userdel tmpuser</code></li>
+</ul></li>
+</ul>
+
+<h3 id="passwd">passwd</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>口令管理</li>
+<li>密码保存在 <code>/etc/passwd</code>
+
+<ul>
+<li><code>用户名:口令:用户标识号:组标识号:注释性描述:主目录:登录Shell</code></li>
+</ul></li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li>passwd [option] <user.name></li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>-l</code>
+
+<ul>
+<li>锁定口令，即禁用账号</li>
+</ul></li>
+<li><code>-u</code>
+
+<ul>
+<li>口令解锁</li>
+</ul></li>
+<li><code>-d</code>
+
+<ul>
+<li>使账号无口令</li>
+</ul></li>
+<li><code>-f</code>
+
+<ul>
+<li>强迫用户下次登录时修改口令</li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li><code>passwd -l tmpuser</code></li>
+</ul></li>
+</ul>
+
+<h3 id="su">su</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>切换用户 switch user</li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li>su [-] <user.name></li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>-</code>
+
+<ul>
+<li>是否切换至新用户工作环境</li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li><code>su - appuser</code>
+
+<ul>
+<li>切换用户后，同时切换到新用户的工作环境</li>
+</ul></li>
+<li><code>su appuser</code>
+
+<ul>
+<li>切换用户后，不改变原用户工作目录、环境变量目录
+
+<ul>
+<li>拥有原用户权限</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="sudo">sudo</h3>
+
+<ul>
+<li>DESCRIBE
+
+<ul>
+<li>允许其它用户以管理员权限执行指令</li>
+<li>需要 Root 使用 <code>visudo</code> 编辑 <code>/etc/sudoers</code> 才可以授权其它用户</li>
+</ul></li>
+<li>FORMAT
+
+<ul>
+<li>sudo [-bhHpV] [-s] [-u <user>] [command]</li>
+</ul></li>
+<li>OPTIONS
+
+<ul>
+<li><code>-b</code>
+
+<ul>
+<li>在后台执行指令。</li>
+</ul></li>
+<li><code>-h</code>
+
+<ul>
+<li>显示帮助。</li>
+</ul></li>
+<li><code>-H</code>
+
+<ul>
+<li>将HOME环境变量设为新身份的HOME环境变量。</li>
+</ul></li>
+<li><code>-k</code>
+
+<ul>
+<li>结束密码的有效期限，也就是下次再执行sudo时便需要输入密码。</li>
+</ul></li>
+<li><code>-l</code>
+
+<ul>
+<li>列出目前用户可执行与无法执行的指令。</li>
+</ul></li>
+<li><code>-p</code>
+
+<ul>
+<li>改变询问密码的提示符号。</li>
+</ul></li>
+<li><code>-s</code>
+
+<ul>
+<li>执行指定的shell。</li>
+</ul></li>
+<li><code>-u</code>
+
+<ul>
+<li>&lt;用户&gt; 以指定的用户作为新的身份。若不加上此参数，则预设以root作为新的身份。</li>
+</ul></li>
+<li><code>-v</code>
+
+<ul>
+<li>延长密码有效期限5分钟。</li>
+</ul></li>
+<li><code>-V</code>
+
+<ul>
+<li>显示版本信息。</li>
+</ul></li>
+<li><code>-S</code>
+
+<ul>
+<li>从标准输入流替代终端来获取密码</li>
+</ul></li>
+</ul></li>
+<li>EXAMPLE
+
+<ul>
+<li>``</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.user%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Linux.User&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.user%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.user%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.user%2f&title=Linux.User" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,439 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema">MYSQL.Information_schema</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.26">2017.02.26</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="mysql-information-schema">MYSQL.INFORMATION_SCHEMA</h1>
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>MySQL自带的，它提供了访问数据库元数据的方式。</li>
+<li>元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。</li>
+<li>保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。</li>
+</ul>
+
+<h2 id="库表">库表</h2>
+
+<ul>
+<li>SCHEMATA
+
+<ul>
+<li>提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。</li>
+</ul></li>
+<li>TABLES
+
+<ul>
+<li>提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。</li>
+</ul></li>
+<li>COLUMNS
+
+<ul>
+<li>提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。</li>
+</ul></li>
+<li>STATISTICS
+
+<ul>
+<li>提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。</li>
+</ul></li>
+<li>USER_PRIVILEGES（用户权限）
+
+<ul>
+<li>给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。</li>
+</ul></li>
+<li>SCHEMA_PRIVILEGES（方案权限）
+
+<ul>
+<li>给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。</li>
+</ul></li>
+<li>TABLE_PRIVILEGES（表权限）
+
+<ul>
+<li>给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。</li>
+</ul></li>
+<li>COLUMN_PRIVILEGES（列权限）
+
+<ul>
+<li>给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。</li>
+</ul></li>
+<li>CHARACTER_SETS（字符集）
+
+<ul>
+<li>提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。</li>
+</ul></li>
+<li>COLLATIONS
+
+<ul>
+<li>提供了关于各字符集的对照信息。</li>
+</ul></li>
+<li>COLLATION_CHARACTER_SET_APPLICABILITY
+
+<ul>
+<li>指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。</li>
+</ul></li>
+<li>TABLE_CONSTRAINTS
+
+<ul>
+<li>描述了存在约束的表。以及表的约束类型。</li>
+</ul></li>
+<li>KEY_COLUMN_USAGE
+
+<ul>
+<li>描述了具有约束的键列。</li>
+</ul></li>
+<li>ROUTINES
+
+<ul>
+<li>提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.proc name”的列指明了对应于INFORMATION_SCHEMA.ROUTINES表的mysql.proc表列。</li>
+</ul></li>
+<li>VIEWS
+
+<ul>
+<li>给出了关于数据库中的视图的信息。需要有show views权限，否则无法查看视图信息。</li>
+</ul></li>
+
+<li><p>TRIGGERS</p>
+
+<ul>
+<li>提供了关于触发程序的信息。必须有super权限才能查看该表</li>
+</ul></li>
+
+<li><p>INNODB_BUFFER_PAGE</p>
+
+<ul>
+<li>提供了缓冲区中每页相关的元数据信息，包括更新缓冲索引页和更新缓冲位图页</li>
+</ul></li>
+
+<li><p>INNODB_BUFFER_PAGE_LRU</p>
+
+<ul>
+<li>提供缓冲池中各页的消息，特别用于当缓冲池满时通过 LRU（近期最少使用算法）裁定移除哪些界面</li>
+</ul></li>
+
+<li><p>INNODB_BUFFER_POOL_STATS</p>
+
+<ul>
+<li>提供缓冲池各页状态信息，通过标识 young 和 not young 状态来判定该各页的回收时机</li>
+</ul></li>
+
+<li><p>INNODB_CMP</p>
+
+<ul>
+<li>提供压缩 InnoDB 表的操作状态信息</li>
+</ul></li>
+
+<li><p>INNODB_CMPMEM</p>
+
+<ul>
+<li>提供压缩缓冲池中页面的操作状态信息</li>
+</ul></li>
+
+<li><p>INNODB_CMP_PER_INDEX</p>
+
+<ul>
+<li>提供压缩表和索引的操作状态信息，并进行单独统计各种库、表、索引的组织，帮助评估特定表压缩的效果和作用</li>
+</ul></li>
+
+<li><p>INNODB_FT_BEING_DELETED</p>
+
+<ul>
+<li>为 INNODB_FT_DELETED 的快照，仅用于执行 OPTIMIZE TABLE 时使用。当 OPTIMIZE TABLE 运行时时， INNODB_FT_BEING_DELETED 会被清空，并从 INNODB_FT_DELETED 中将 DOC_IDs 移除出来</li>
+<li>DOC_ID
+
+<ul>
+<li>执行删除操作时，该行的文档 ID</li>
+<li>该值指向基本表定义时的 ID 列</li>
+</ul></li>
+</ul></li>
+
+<li><p>INNODB_FT_CONFIG</p>
+
+<ul>
+<li>展示全文索引和表关联执行的元数据</li>
+<li>查询前，为包含有全文索引的表设置  innodb_ft_aux_table 配置属性</li>
+</ul></li>
+
+<li><p>INNODB_FT_DEFAULT_STOPWORD</p>
+
+<ul>
+<li>创建全文索引时默认配置的停用词列表</li>
+</ul></li>
+
+<li><p>INNODB_FT_DELETED</p>
+
+<ul>
+<li>记录由全文索引中被删除的记录行</li>
+</ul></li>
+
+<li><p>INNODB_FT_INDEX_CACHE</p>
+
+<ul>
+<li>包含在全文索引中新插入行的 token 信息</li>
+</ul></li>
+
+<li><p>INNODB_FT_INDEX_TABLE</p>
+
+<ul>
+<li>展示执行文本搜索时的倒序实现的相关信息</li>
+</ul></li>
+
+<li><p>INNODB_LOCKS</p>
+
+<ul>
+<li>包含各已被请求但未被提交的事务锁，或被其它事务所阻塞的当前事务锁的信息</li>
+</ul></li>
+
+<li><p>INNODB_LOCK_WAITS</p>
+
+<ul>
+<li>包含各阻塞事务的一至多行记录信息，用于描述锁如何被请求但又被其它锁所阻塞</li>
+</ul></li>
+
+<li><p>INNODB_METRICS</p>
+
+<ul>
+<li>获取计数器的相关启动、停止和重启的相关信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_COLUMNS</p>
+
+<ul>
+<li>提供表栏目的元数据信息，等价于 SYS_COLUMNS 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_DATAFILES</p>
+
+<ul>
+<li>提供表空间的数据文件的路径信息，等价于 SYS_DATAFILES 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_FIELDS</p>
+
+<ul>
+<li>提供索引关联字段的元数据，等价于 SYS_FIELDS 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_FOREIGN</p>
+
+<ul>
+<li>提供外键的元数据，等价于 SYS_FOREIGN 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_FOREIGN_COLS</p>
+
+<ul>
+<li>提供外键相关字段名的状态信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_INDEXES</p>
+
+<ul>
+<li>提供索引的元数据，等价于 SYS_INDEXES 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_TABLES</p>
+
+<ul>
+<li>提供库表的元数据，等价于 SYS_TABLES 中的信息</li>
+</ul></li>
+
+<li><p>INNODB_SYS_TABLESPACES</p>
+
+<ul>
+<li>提供 File-Per-Table 和一般表空间的元数据，等价于 SYS_TABLESPACES 中的信息</li>
+<li>File-Per-Table 主要用于提升成功恢复的机会和节省时间，进行表复制、备份时的状态报告</li>
+</ul></li>
+
+<li><p>INNODB_SYS_TABLESTATS</p>
+
+<ul>
+<li>提供库表的低等级状态信息，该数据用于在表查询时优化计算以判定使用哪个索引</li>
+</ul></li>
+
+<li><p>INNODB_SYS_VIRTUAL</p>
+
+<ul>
+<li>提供虚拟生成字段或其所信赖的栏目信息的元数据，等价于 SYS_VIRTUAL 中的信息</li>
+<li><a href="https://dev.mysql.com/doc/refman/5.7/en/glossary.html#glos_generated_virtual_column">generated virtual columns</a>
+
+<ul>
+<li>栏目值通过栏目定义的表达式计算而来</li>
+</ul></li>
+</ul></li>
+
+<li><p>INNODB_TEMP_TABLE_INFO</p>
+
+<ul>
+<li>提供当前状态的临时表的元数据，除了内部优化的临时表</li>
+<li>记录所有用户和系统创建，激活状态，在指定实例中的临时表。</li>
+<li>临时表仅保存于内存中，并不保存到硬盘</li>
+</ul></li>
+
+<li><p>INNODB_TRX</p>
+
+<ul>
+<li>包含每个当前正在执行事务的信息，包括当事务开始时、执行 sql 时的事务是否正在等待锁</li>
+</ul></li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<p><a href="https://dev.mysql.com/doc/refman/5.7/en/information-schema.html">INFORMATION_SCHEMA Tables</a>
+<a href="https://dev.mysql.com/doc/refman/5.7/en/innodb-i_s-tables.html">InnoDB INFORMATION_SCHEMA Tables</a></p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fmysql.information_schema%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=MYSQL.Information_schema&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fmysql.information_schema%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fmysql.information_schema%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fmysql.information_schema%2f&title=MYSQL.Information_schema" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

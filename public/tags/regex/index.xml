@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Regex on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/regex/</link>
+    <description>Recent content in Regex on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Thu, 08 Dec 2016 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/regex/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Regex</title>
+      <link>https://wrrwhn.github.io/domain/post/regex/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/regex/</guid>
+      <description>元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 + 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?</description>
+    </item>
+    
+  </channel>
+</rss>

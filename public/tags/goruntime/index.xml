@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Goruntime on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/goruntime/</link>
+    <description>Recent content in Goruntime on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Wed, 13 Sep 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/goruntime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Go.并行&amp;并发 </title>
+      <link>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
+      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+    </item>
+    
+  </channel>
+</rss>

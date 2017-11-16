@@ -1,0 +1,343 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://www.cnblogs.com/starof/p/4680083.html">centos7 mysql数据库安装和配置</a></li>
+<li><a href="https://yq.aliyun.com/articles/47237">CentOS 7 安装 MySQL</a></li>
+<li><a href="http://www.jianshu.com/p/f4a98a905011">Linux下安装MySQL</a></li>
+<li><a href="http://www.voidcn.com/article/p-aqkchgpx-xv.html">centos7 mysql数据库安装和配置</a></li>
+</ul>
+
+<h2 id="环境">环境</h2>
+
+<ul>
+<li>Linux
+<code>
+LSB Version:    :core-4.1-amd64:core-4.1-noarch
+Distributor ID: CentOS
+Description:    CentOS Linux release 7.3.1611 (Core)
+Release:        7.3.1611
+Codename:       Core
+</code></li>
+</ul>
+
+<h2 id="安装">安装</h2>
+
+<h3 id="默认">默认</h3>
+
+<ul>
+<li><code>yum install mysql</code></li>
+<li><code>yum install mysql-server</code></li>
+<li><code>yum install mysql-devel</code>
+###</li>
+<li><code>wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</code></li>
+<li><code>rpm -ivh mysql-community-release-el7-5.noarch.rpm</code></li>
+<li><code>yum install mysql-community-server</code></li>
+<li><code>mysql_upgrade</code></li>
+</ul>
+
+<h2 id="初始化">初始化</h2>
+
+<h3 id="mysql-初始化">Mysql 初始化</h3>
+
+<ul>
+<li><code>mysql_secure_installation</code></li>
+</ul>
+
+<h3 id="直接设置密码">直接设置密码</h3>
+
+<ul>
+<li><code>set password for 'root'@'localhost' =password('root.password');</code></li>
+</ul>
+
+<h2 id="启动">启动</h2>
+
+<h3 id="服务启动">服务启动</h3>
+
+<ul>
+<li>systemctl
+
+<ul>
+<li><code>systemctl start mysqld</code></li>
+<li><code>systemctl status mysqld</code></li>
+<li><code>systemctl stop mysqld</code></li>
+</ul></li>
+<li>service
+
+<ul>
+<li><code>service mysqld start</code></li>
+<li><code>service mysqld stop</code></li>
+<li><code>service mysqld status</code></li>
+<li><code>service mysqld restart</code></li>
+</ul></li>
+</ul>
+
+<h3 id="开机启动">开机启动</h3>
+
+<ul>
+<li><code>systemctl enabled mysql</code></li>
+<li><code>systemctl is-enabled mysql</code></li>
+</ul>
+
+<h3 id="防火墙">防火墙</h3>
+
+<ul>
+<li>firewalld
+
+<ul>
+<li><code>firewall-cmd --permanent --zone=public --add-port=3306/tcp</code></li>
+<li><code>firewall-cmd --permanent --zone=public --add-port=3306/udp</code></li>
+<li><code>firewall-cmd --reload</code></li>
+</ul></li>
+</ul>
+
+<h2 id="环境准备">环境准备</h2>
+
+<h3 id="创建数据库">创建数据库</h3>
+
+<ul>
+<li><code>mysql -uroot -p</code>
+
+<ul>
+<li><code>root.password</code></li>
+</ul></li>
+<li><code>create database wechat_forum;</code></li>
+<li><code>create database wechat_forum_dev;</code></li>
+</ul>
+
+<h3 id="创建账号-分配权限">创建账号&amp; 分配权限</h3>
+
+<ul>
+<li><p><code>grant all privileges on *.* to root@'%'identified by 'root.password';</code></p></li>
+
+<li><p><code>CREATE USER 'appuser'@'%' IDENTIFIED BY 'appuser.password';</code></p></li>
+
+<li><p><code>GRANT ALL ON wechat_forum_dev.* TO 'appuser'@'%';</code></p></li>
+
+<li><p><code>GRANT ALL ON wechat_forum.* TO 'appuser'@'%';</code></p></li>
+
+<li><p><code>flush privileges;</code></p></li>
+
+<li><p><code>mysql -uappuser -p</code></p>
+
+<ul>
+<li><code>appuser.password</code></li>
+</ul></li>
+</ul>
+
+<h2 id="异常排查">异常排查</h2>
+
+<h3 id="set-password-失败">set password 失败</h3>
+
+<ul>
+<li>提示
+
+<ul>
+<li><code>ERROR 1558 (HY000): Column count of mysql.user is wrong. Expected 43, found 42. Created with MySQL 50552, now running 50637. Please use mysql_upgrade to fix this error.</code></li>
+</ul></li>
+<li>解决
+
+<ul>
+<li><code>mysql_upgrade</code></li>
+</ul></li>
+</ul>
+
+<h3 id="3306-无法对外开放">3306 无法对外开放</h3>
+
+<ul>
+<li><code>which mysqld</code>
+
+<ul>
+<li><code>/usr/sbin/mysqld</code></li>
+</ul></li>
+<li><code>/usr/sbin/mysqld --verbose --help | grep -A 1 'Default options'</code>
+<code>
+Default options are read from the following files in the given order:
+/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
+</code></li>
+<li><code>netstat -ntlp</code>
+<code>
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name   
+tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      2129/sshd           
+tcp6       0      0 :::3306                 :::*                    LISTEN      9414/mysqld   
+</code></li>
+<li><em>阿里云 ECS 需要对外开放端口！</em></li>
+</ul>
+
+<h2 id="备注">备注</h2>
+
+<h3 id="查看-linux-版本">查看 Linux 版本</h3>
+
+<ul>
+<li><code>lsb_release -a</code></li>
+</ul>
+
+<h3 id="查看-mysql-版本">查看 Mysql 版本</h3>
+
+<ul>
+<li><code>mysql -V</code></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.mysql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Linux.Mysql&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.mysql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.mysql%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.mysql%2f&title=Linux.Mysql" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

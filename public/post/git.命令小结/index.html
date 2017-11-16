@@ -1,0 +1,511 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" title="Git.命令小结">Git.命令小结</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="查看">查看</h2>
+
+<h3 id="分支状态">分支状态</h3>
+
+<ul>
+<li>git status</li>
+
+<li><p>git branch</p>
+
+<ul>
+<li>分支列表</li>
+<li>&ndash;merged：查看哪些分支被合并到当前分支</li>
+
+<li><p>&ndash;no-merged：查看哪些分支未并合并到当前分支</p>
+
+<h3 id="日志">日志</h3></li>
+</ul></li>
+
+<li><p>git log</p>
+
+<ul>
+<li>&ndash;pretty=oneline：单行显示</li>
+
+<li><p>&ndash;graph：图形分支</p>
+
+<h3 id="标签">标签</h3></li>
+</ul></li>
+
+<li><p>git tag</p>
+
+<ul>
+<li><code>&lt;&gt;</code>：查看当前分支标签</li>
+
+<li><p>-l &lsquo;v1.4*&lsquo;：查看所有匹配该正则的标签信息</p>
+
+<h3 id="文件提交明细">文件提交明细</h3></li>
+</ul></li>
+
+<li><p>git blame <code>&lt;fileName&gt;</code>：查看文件每行的提交 hash / author/ time</p></li>
+</ul>
+
+<h2 id="提交">提交</h2>
+
+<h3 id="首次提交">首次提交</h3>
+
+<ul>
+<li>git init： 将当前目录转换为 Git 仓库</li>
+<li>git push -u origin <code>&lt;branch&gt;</code>
+###新增提交</li>
+<li>git add -A</li>
+<li>git commit -m &ldquo;commit content&rdquo;</li>
+
+<li><p>git push origin <code>&lt;branch&gt;</code></p>
+
+<h3 id="修改提交">修改提交</h3></li>
+
+<li><p>git commit -a -m &ldquo;commit content&rdquo;</p></li>
+
+<li><p>git push origin <code>&lt;branch&gt;</code></p>
+
+<h3 id="强制提交">强制提交</h3></li>
+
+<li><p>git push -f origin <code>&lt;branch&gt;</code></p>
+
+<h3 id="标签-1">标签</h3></li>
+
+<li><p>单个</p>
+
+<ul>
+<li>git push origin <code>&lt;tagname&gt;</code></li>
+</ul></li>
+
+<li><p>所有</p>
+
+<ul>
+<li>git push &ndash;tags</li>
+</ul></li>
+</ul>
+
+<h2 id="创建">创建</h2>
+
+<h3 id="分支">分支</h3>
+
+<ul>
+<li>checkout
+
+<ul>
+<li>git checkout -b <code>&lt;branch&gt;</code> <code>&lt;origin/ dev&gt;</code>： 创建分支 [关联远程分支 dev ]</li>
+</ul></li>
+
+<li><p>branch</p>
+
+<ul>
+<li>git branch <code>&lt;branch&gt;</code>：创建分支</li>
+
+<li><p>git checkout <code>&lt;branch&gt;</code>： 切换分支</p>
+
+<h3 id="标签-2">标签</h3></li>
+</ul></li>
+
+<li><p>git tag</p>
+
+<ul>
+<li><code>&lt;tagname&gt;</code>：当前版本上创建标签（轻量标签）</li>
+<li><code>&lt;tagname&gt;</code> <code>&lt;commit id&gt;</code>：针对 <code>&lt;commit id&gt;</code> 历史提交打上标签</li>
+<li>-a <code>&lt;tagname&gt;</code> -m &ldquo;<code>&lt;more info&gt;</code>&ldquo;：创建附注标签</li>
+</ul></li>
+</ul>
+
+<h2 id="切换">切换</h2>
+
+<h3 id="分支-1">分支</h3>
+
+<ul>
+<li><p>git checkout <code>&lt;branch&gt;</code></p>
+
+<h3 id="标签-3">标签</h3></li>
+
+<li><p>git checkout <code>&lt;tagname&gt;</code></p></li>
+</ul>
+
+<h2 id="关联">关联</h2>
+
+<h3 id="关联远程分支">关联远程分支</h3>
+
+<ul>
+<li>set
+
+<ul>
+<li>git branch &ndash;set-upstream-to=origin/dev</li>
+<li>git branch -u origin/dev
+
+<ul>
+<li>将当前分支的 upstream 更新为 origin/dev 分支</li>
+</ul></li>
+</ul></li>
+<li>push &amp; set
+
+<ul>
+<li>git push -u origin master
+
+<ul>
+<li>将 master 分支推送至 origin/master 分支</li>
+<li>更新本地 master 分支的 upstream 为 origin/master</li>
+</ul></li>
+</ul></li>
+
+<li><p>set other</p>
+
+<ul>
+<li><p>git push -u origin/dev dev</p>
+
+<ul>
+<li><p>将本地 dev 分钟的 upstream 更新为 origin/dev</p>
+
+<h3 id="取消关联">取消关联</h3></li>
+</ul></li>
+</ul></li>
+
+<li><p>unset</p>
+
+<ul>
+<li>git branch &ndash;unset-upstream</li>
+</ul></li>
+
+<li><p>unset other</p>
+
+<ul>
+<li>git branch &ndash;unset-upstream dev</li>
+</ul></li>
+</ul>
+
+<h2 id="更新">更新</h2>
+
+<h3 id="仓库">仓库</h3>
+
+<ul>
+<li><p>git clone ssh-url</p>
+
+<h3 id="所有">所有</h3></li>
+
+<li><p>git pull</p>
+
+<h3 id="指定分支">指定分支</h3></li>
+
+<li><p>git pull origin branch</p></li>
+</ul>
+
+<h2 id="合并">合并</h2>
+
+<h3 id="分支-2">分支</h3>
+
+<ul>
+<li>git merge
+
+<ul>
+<li>git merge <code>&lt;dev&gt;</code>： 将 dev 分支快速合并到当前分支</li>
+<li>git merge [ ff | no-ff ] dev：默认使用 ff ，即 fast-forward ， 当删除分支 dev 后，则无法再次查看 dev 分支的日志等</li>
+</ul></li>
+<li><a href="file:///D:/Program%20Files/Git/mingw64/share/doc/git-doc/git-rebase.html">git rebase</a>
+
+<ul>
+<li>当前分支 dev ： 将 dev 分支历次提交转成补丁，并以 master 分支最后一个提交为出发点逐个应用补丁。即使 dev 提交历史成为 master 分支的直接下流。</li>
+<li>flow
+
+<ul>
+<li>git rebase master client
+
+<ul>
+<li>将 client 补丁至 master</li>
+<li>git checkout master</li>
+<li>git merge client</li>
+</ul></li>
+</ul></li>
+<li>args
+
+<ul>
+<li>git rebase &ndash;onto master server client
+
+<ul>
+<li>master-&gt;<code>server-&gt;</code> client</li>
+<li>跳过 server 直接将 client 补丁至 master</li>
+</ul></li>
+<li>git rebase &ndash;continue：冲突处理后调用，继续完成</li>
+<li>git rebase &ndash;abort：放弃</li>
+<li>git rebase -i HEAD~2：合并最后两次提交</li>
+<li>git rebase &ndash;skip：直接使用分支取代当前分支</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="提交-1">提交</h3>
+
+<ul>
+<li>git cherry-pick
+
+<ul>
+<li><code>&lt;commit id&gt;</code>：将其它分支指定提交合并至当前分支，适用于通用分支 bug 的修复</li>
+<li>注：会引起冲突！</li>
+</ul></li>
+<li>git merge <code>&lt;commit id&gt;</code></li>
+</ul>
+
+<h2 id="回滚">回滚</h2>
+
+<h3 id="按版本">按版本</h3>
+
+<ul>
+<li><p>git reset &ndash;hard</p>
+
+<ul>
+<li>commitId</li>
+<li>HEAD：当前分支最新版本</li>
+<li>HEAD^：上一版本</li>
+<li>HEAD^^：上上版本</li>
+
+<li><p>HEAD~10：上第十个版本</p>
+
+<h3 id="按文件">按文件</h3></li>
+</ul></li>
+
+<li><p>git checkout</p>
+
+<ul>
+<li><p>&ndash; files： 如 git checkout &ndash; /src/*</p>
+
+<h3 id="按提交">按提交</h3></li>
+</ul></li>
+
+<li><p>git revert <code>&lt;commit id&gt;</code>：撤消指定提交</p>
+
+<ul>
+<li>-m parent-number: 指定回滚时的指定主分支
+
+<ul>
+<li>-m 1：默认当前分支</li>
+<li>-m 2: 清除但保留主分支内容</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="删除">删除</h2>
+
+<h3 id="文件">文件</h3>
+
+<ul>
+<li>git rm files</li>
+
+<li><p>git commit -m &ldquo;commit content&rdquo;</p>
+
+<h3 id="分支-3">分支</h3></li>
+
+<li><p>git branch</p>
+
+<ul>
+<li>-d branch： 删除分支</li>
+<li>-D branch：强制删除分支，放弃修改</li>
+</ul></li>
+</ul>
+
+<h2 id="暂存">暂存</h2>
+
+<ul>
+<li>git stash
+
+<ul>
+<li>将当前代码暂存起来，便于切换到其它分支</li>
+<li>list：显示当前分支下所有列表</li>
+<li>drop：删除暂存内容</li>
+<li>pop：恢复，并删除暂存内容</li>
+</ul></li>
+</ul>
+
+<h2 id="维护">维护</h2>
+
+<h3 id="性能">性能</h3>
+
+<ul>
+<li><p>git gc： 压缩历史命令</p>
+
+<h3 id="可靠性">可靠性</h3></li>
+
+<li><p>git fsck：系统文件检查</p>
+
+<ul>
+<li>&ndash;lost-found：显示丢弃提交</li>
+</ul></li>
+
+<li><p>git show <code>&lt;commit id&gt;</code>：显示该提交的改变内容</p></li>
+
+<li><p>git merge<code>&lt;commit id&gt;</code>：恢复到之前提交</p>
+
+<ul>
+<li>注：有可能会有冲突</li>
+</ul></li>
+</ul>
+
+<h2 id="报错">报错</h2>
+
+<h3 id="push时遇到unpack-failed-error-missing-tree错误">push时遇到unpack failed: error Missing tree错误</h3>
+
+<ul>
+<li>本地索引损坏，需重新构建
+
+<ul>
+<li>git gc</li>
+<li>git pull &ndash;rebase</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgit.%25E5%2591%25BD%25E4%25BB%25A4%25E5%25B0%258F%25E7%25BB%2593%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Git.%e5%91%bd%e4%bb%a4%e5%b0%8f%e7%bb%93&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgit.%25E5%2591%25BD%25E4%25BB%25A4%25E5%25B0%258F%25E7%25BB%2593%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgit.%25E5%2591%25BD%25E4%25BB%25A4%25E5%25B0%258F%25E7%25BB%2593%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgit.%25E5%2591%25BD%25E4%25BB%25A4%25E5%25B0%258F%25E7%25BB%2593%2f&title=Git.%e5%91%bd%e4%bb%a4%e5%b0%8f%e7%bb%93" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

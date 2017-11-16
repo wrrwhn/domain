@@ -1,0 +1,419 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka">Kafka</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/kafka">kafka</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="kafka">Kafka</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://www.infoq.com/cn/articles/kafka-analysis-part-1">Kafka剖析（一）：Kafka背景及架构介绍</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html">Apache kafka 工作原理介绍</a></li>
+<li><a href="https://kafka.apache.org/quickstart">Quickstart</a></li>
+</ul>
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>Linkedin 开发，Scala编写</li>
+<li>特点
+
+<ul>
+<li>解耦</li>
+<li>水平扩展</li>
+<li>高吞吐率
+
+<ul>
+<li>缓冲</li>
+<li>异步通信</li>
+</ul></li>
+<li>可恢复性
+
+<ul>
+<li>冗余，确保安全保存至使用完毕后</li>
+<li>处理消息进程宕机，仍可于启动后重新接收处理</li>
+</ul></li>
+<li>顺序保证</li>
+</ul></li>
+</ul>
+
+<h2 id="架构">架构</h2>
+
+<h3 id="名词解析">名词解析</h3>
+
+<ul>
+<li>Broker
+
+<ul>
+<li>集群中的服务器名称</li>
+<li>支持水平扩展的节点</li>
+</ul></li>
+<li>Topic
+
+<ul>
+<li>集群消息中类别</li>
+</ul></li>
+<li>Partition
+
+<ul>
+<li>Topic 下包含一至多个 Partition</li>
+</ul></li>
+<li>Producer
+
+<ul>
+<li>生产者</li>
+<li>将消息发布至 Kafka broker</li>
+</ul></li>
+<li>Consumer
+
+<ul>
+<li>消费者</li>
+<li>向 Kafka broker 读消息的客户端</li>
+</ul></li>
+<li>Consumer Group
+
+<ul>
+<li>各 Consumer 属于特定 Group</li>
+<li>不指定时，则属于默认 Group</li>
+</ul></li>
+</ul>
+
+<h3 id="结构拓扑">结构拓扑</h3>
+
+<ul>
+<li>整体拓扑
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/8cae96c5-0537-43ec-a7f3-ce16df61e6b8.png" alt="0310020.png" /></li>
+</ul></li>
+<li>分析
+
+<ul>
+<li>kafka 通过 Zoopkeeper 管理集群配置
+
+<ul>
+<li>选举 Leader</li>
+<li>Consumer Group 变更时的 ReBalance</li>
+</ul></li>
+<li>物理上 Topic 对应一至多个 Partition
+
+<ul>
+<li>每个 Partition 在物理上对应一个文件夹
+
+<ul>
+<li>消息</li>
+<li>索引</li>
+</ul></li>
+<li>结构
+<code>
+root    4k    topic1-1    - 日志文件
+root    4k    topic1-2
+...
+root    4k    topic1-n
+</code>
+
+<ul>
+<li>log entrie
+
+<ul>
+<li>每个日志文件都是一个 log entrie 序列
+<code>
+log entrie 内容
+message length：    4 bytes (value: 1+4+n)
+&quot;magic&quot; value：        1 byte
+crc ：                 4 bytes
+payload ：             n bytes
+</code>
+
+<ul>
+<li>segment
+
+<ul>
+<li>log entries 由多个 segment 组成</li>
+<li>以第一条消息的偏移量命名</li>
+<li>以 <code>.kafka</code> 作为后缀
+
+<ul>
+<li><code>34477849968.kafka</code>
+
+<ul>
+<li>message-34477849968</li>
+<li>message-34477850175</li>
+<li>&hellip;</li>
+<li>message-35513434344</li>
+</ul></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/6080ca25-8e46-47e2-9970-f4099f6202a5.png" alt="0310022.png" /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>冗余
+
+<ul>
+<li>保留所有消息，<strong>无论其被消费与否</strong></li>
+<li>删除策略
+
+<ul>
+<li>基于时间</li>
+<li>基于 Partition 文件大小</li>
+</ul></li>
+
+<li><p>配置</p>
+
+<ul>
+<li><p>$KAFKA_HOME/config/server.properties</p>
+
+<pre><code># The minimum age of a log file to be eligible for deletion
+log.retention.hours=168
+# The maximum size of a log segment file. When this size is reached a new log segment will be created.
+log.segment.bytes=1073741824
+# The interval at which log segments are checked to see if they can be deleted according to the retention policies
+log.retention.check.interval.ms=300000
+# If log.cleaner.enable=true is set the cleaner will be enabled and individual logs can then be marked for log compaction.
+log.cleaner.enable=false
+</code></pre></li>
+</ul></li>
+
+<li><p>注意</p>
+
+<ul>
+<li>为每个 Consumer Group <strong>保留部分 metadata 信息</strong>
+
+<ul>
+<li>metadata= 当前消费者的消息<strong>偏移值</strong></li>
+<li>broker <strong>无状态</strong>
+
+<ul>
+<li><code>不需要保证消息已经消费</code></li>
+<li><code>不需要保证各 Consumer Group 只有一个 Consumer 消费某一记录</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="扩展">扩展</h2>
+
+<h3 id="push-pull">Push &amp; Pull</h3>
+
+<ul>
+<li>Pulll
+
+<ul>
+<li>由 Producer 向 broker push 消息，并由 Consumer 从 broker pull 消息</li>
+<li>根据 Consumer 的消费能力以<code>适当速率</code>消费消息</li>
+</ul></li>
+<li>Push
+
+<ul>
+<li>目标是尽可能以最快速度传递消息
+
+<ul>
+<li>容易造成拒绝服务及网络拥塞</li>
+</ul></li>
+<li>Facebook.Scribe 和 Cloudera.Flume</li>
+</ul></li>
+</ul>
+
+<h3 id="消息策略">消息策略</h3>
+
+<ul>
+<li><code>At most once</code>
+
+<ul>
+<li>消息<code>可能丢</code>，但绝<code>不会重复</code>传输
+
+<ul>
+<li>读完消息后，先 commit，再处理消息</li>
+</ul></li>
+</ul></li>
+<li><code>At least one</code>
+
+<ul>
+<li>默认项</li>
+<li>消息<code>绝不会丢</code>，但<code>可能会重复</code>传输
+
+<ul>
+<li>读完消息后，先处理，完成后再 commit</li>
+</ul></li>
+</ul></li>
+<li><code>Exactly once</code>
+
+<ul>
+<li>每条消息肯定<code>会且仅传输一次</code>
+
+<ul>
+<li>协调 offset 和实际男人出
+
+<ul>
+<li>两阶段提交</li>
+<li>将 offset 与 操作输入 存放在同一地方</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="使用">使用</h2>
+
+<ul>
+<li>暂略</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fkafka%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Kafka&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fkafka%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fkafka%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fkafka%2f&title=Kafka" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

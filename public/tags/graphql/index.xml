@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphql on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/graphql/</link>
+    <description>Recent content in Graphql on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Wed, 13 Sep 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://wrrwhn.github.io/domain/post/graphql/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/graphql/</guid>
+      <description>[TOC]
+GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
+query { hero { name } droid(id: &amp;quot;2000&amp;quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
+  { &amp;ldquo;ep&amp;rdquo;: &amp;ldquo;JEDI&amp;rdquo;, &amp;ldquo;review&amp;rdquo;: { &amp;ldquo;stars&amp;rdquo;: 5, &amp;ldquo;commentary&amp;rdquo;: &amp;ldquo;This is a great movie!</description>
+    </item>
+    
+  </channel>
+</rss>

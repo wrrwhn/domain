@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Spring on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/spring/</link>
+    <description>Recent content in Spring on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/spring/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Spring.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/spring.basic/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spring.basic/</guid>
+      <description>[TOC]
+AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
+public interface Greeting { void sayHello(String name); }  implement
+public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&amp;quot;Hello! &amp;quot; + name); after(); } private void before() { System.out.println(&amp;quot;Before&amp;quot;); } private void after() { System.out.println(&amp;quot;After&amp;quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy</description>
+    </item>
+    
+    <item>
+      <title>Spring.Cache</title>
+      <link>https://wrrwhn.github.io/domain/post/spring.cache/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spring.cache/</guid>
+      <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
+    </item>
+    
+  </channel>
+</rss>

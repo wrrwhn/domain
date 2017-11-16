@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Redis on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/redis/</link>
+    <description>Recent content in Redis on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Redis.使用</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</guid>
+      <description>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
+参考 官网
+ 文档
+ 命令
+ Linux下安装
+ Jedis使用示例
+  安装-WINDOWS  下载 http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;amp;s=a2b84b5fc8f9fa297831deba85c07317 解压至 D:\redis-2.0.2，并更新替换redis.conf cmd执行 D:\redis-2.0.2&amp;gt;redis-server.exe redis.conf 运行服务器 cmd执行 D:\redis-2.0.2&amp;gt;redis-cli.exe -h 192.168.10.59 -p 6379 运行客户端 客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值  安装-LINUX VI环境下输入  下载程序  wget http://download.redis.io/releases/redis-2.8.3.tar.gz  解压  tar xzf redis-2.8.3.tar.gz  跳转至解压目录  cd redis-2.8.3  安装Redis  make  若提示make指定未安装，执行yum -y install gcc automake autoconf libtool make 进行安装   拷贝执行相关  src路径下的redis-server、redis-benchmark、redis-cli，redis-2.</description>
+    </item>
+    
+    <item>
+      <title>Redis.Keys-Del</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.keys-del/</link>
+      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.keys-del/</guid>
+      <description>参考  Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key  明细  Login  /opt/redis/redis-cli -p &amp;lt;port&amp;gt; -a &amp;lt;password&amp;gt;  Search-Delete  /opt/redis/redis-cli keys &amp;quot;*&amp;quot; | xargs /opt/redis/redis-cli del   示例 删除指定练习相关缓存  导出以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; &amp;gt; /data/op-script/redis/exercises:10203  列举所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot;  删除所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; | xargs /usr/local/bin/redis-cli -p 37652 -a 5c\!</description>
+    </item>
+    
+    <item>
+      <title>Redis.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.basic/</link>
+      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.basic/</guid>
+      <description>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&amp;hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节</description>
+    </item>
+    
+  </channel>
+</rss>

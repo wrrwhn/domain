@@ -1,0 +1,250 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="defer-panic-recover">Defer, Panic, Recover</h2>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="https://blog.golang.org/defer-panic-and-recover">Defer, Panic, and Recover</a></li>
+<li><a href="http://www.cnblogs.com/ghj1976/archive/2013/02/11/2910114.html">Go的异常处理 defer, panic, recover</a></li>
+</ul>
+
+<h3 id="使用">使用</h3>
+
+<h4 id="defer"><code>defer</code></h4>
+
+<ul>
+<li>作用
+
+<ul>
+<li>用于在当前方法结束时，执行相关方法</li>
+</ul></li>
+
+<li><p>特点</p>
+
+<ul>
+<li>声明 <code>defer</code> 时值即为方法中参数被赋的值</li>
+<li>声明多个时，即以<code>后进先出</code>的顺序执行</li>
+
+<li><p>可读取、操作命名的方法返回参数对象</p>
+
+<ul>
+<li><p>操作返回值</p>
+
+<pre><code>// return 2
+func c() (i int) {
+defer func() { i++ }()
+return 1
+}
+</code></pre>
+
+<h4 id="panic"><code>panic</code></h4></li>
+</ul></li>
+</ul></li>
+
+<li><p>特点</p>
+
+<ul>
+<li>内置方法</li>
+<li>立即中断当前程序</li>
+<li>方法内原<code>defer</code>定义方法仍可正常进行</li>
+<li>向上抛出该程序崩溃处指针</li>
+</ul></li>
+</ul>
+
+<h4 id="recover"><code>recover</code></h4>
+
+<ul>
+<li>特点
+
+<ul>
+<li>内置方法</li>
+<li>仅可用于<code>defer</code>方法中</li>
+<li>用于捕获<code>panic</code>抛出的异常信息</li>
+</ul></li>
+</ul>
+
+<h3 id="实例">实例</h3>
+
+<pre><code>func main(){
+    // 必须要先声明defer，否则不能捕获到panic异常
+    defer func(){
+        fmt.Println(&quot;c&quot;)
+        if err:=recover();err!=nil{
+            // 这里的err其实就是panic传入的内容，55
+            fmt.Println(err)
+        }
+        fmt.Println(&quot;d&quot;)
+    }()
+    f()
+}
+
+func f(){
+    fmt.Println(&quot;a&quot;)
+    panic(55)
+    fmt.Println(&quot;b&quot;)
+    fmt.Println(&quot;f&quot;)
+}
+
+// 输出信息为：a/ c/ 55/ d
+</code></pre>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25BC%2582%25E5%25B8%25B8%25E5%25A4%2584%25E7%2590%2586%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Go.%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25BC%2582%25E5%25B8%25B8%25E5%25A4%2584%25E7%2590%2586%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25BC%2582%25E5%25B8%25B8%25E5%25A4%2584%25E7%2590%2586%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25BC%2582%25E5%25B8%25B8%25E5%25A4%2584%25E7%2590%2586%2f&title=Go.%e5%bc%82%e5%b8%b8%e5%a4%84%e7%90%86" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

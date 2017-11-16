@@ -1,0 +1,326 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/regex/" title="Regex">Regex</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/regex">regex</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="元字符">元字符</h2>
+
+<ul>
+<li><code>.</code>    匹配除换行符以外的任意字符</li>
+<li><code>\w</code>    匹配字母或数字或下划线或汉字</li>
+<li><code>\s</code>    匹配任意的空白符</li>
+<li><code>\d</code>    匹配数字</li>
+<li><code>\b</code>    匹配单词的开始或结束</li>
+<li><code>^</code>    匹配字符串的开始</li>
+<li><code>$</code>    匹配字符串的结束</li>
+</ul>
+
+<h2 id="字符转义">字符转义</h2>
+
+<ul>
+<li>想查找元字符本身的话，使用\来取消这些字符的特殊意义</li>
+</ul>
+
+<h2 id="重复">重复</h2>
+
+<ul>
+<li><code>*</code>        重复零次或更多次</li>
+<li><code>+</code>        重复一次或更多次</li>
+<li><code>?</code>        重复零次或一次</li>
+<li><code>{n}</code>        重复n次</li>
+<li><code>{n,}</code>    重复n次或更多次</li>
+<li><code>{n,m}</code>    重复n到m次</li>
+</ul>
+
+<h2 id="字符类">字符类</h2>
+
+<ul>
+<li><code>[aeiou]</code>    就匹配任何一个英文元音字母</li>
+<li><code>[.?!]</code>        匹配标点符号(.或?或!)</li>
+<li><code>[a-z0-9A-Z_]</code></li>
+</ul>
+
+<h2 id="分枝条件">分枝条件</h2>
+
+<ul>
+<li><code>\d{5}-\d{4}|\d{5}</code>    5-4或5位数值</li>
+</ul>
+
+<h2 id="分组">分组</h2>
+
+<ul>
+<li>以小括号指定的即为分组
+<code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code></li>
+</ul>
+
+<h2 id="反义">反义</h2>
+
+<ul>
+<li><code>\W</code>            匹配任意不是字母，数字，下划线，汉字的字符</li>
+<li><code>\S</code>            匹配任意不是空白符的字符</li>
+<li><code>\D</code>            匹配任意非数字的字符</li>
+<li><code>\B</code>            匹配不是单词开头或结束的位置</li>
+<li><code>[^x]</code>        匹配除了x以外的任意字符</li>
+<li><code>[^aeiou]</code>    匹配除了aeiou这几个字母以外的任意字符</li>
+</ul>
+
+<h2 id="零宽断言">零宽断言</h2>
+
+<ul>
+<li>查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言
+
+<ul>
+<li><code>(?=exp)</code>也叫零宽度正预测先行断言，它断言自身出现的位置的后面能匹配表达式exp。比如<code>\b\w+(?=ing\b)</code>，匹配以ing结尾的单词的前面部分(除了ing以外的部分)，如查找I&rsquo;m singing while you&rsquo;re dancing.时，它会匹配sing和danc。</li>
+<li><code>(?&lt;=exp)</code>也叫零宽度正回顾后发断言，它断言自身出现的位置的前面能匹配表达式exp。比如<code>(?&lt;=\bre)\w+\b</code>会匹配以re开头的单词的后半部分(除了re以外的部分)，例如在查找reading a book时，它匹配ading。</li>
+</ul></li>
+</ul>
+
+<h2 id="负向零宽断言">负向零宽断言</h2>
+
+<ul>
+<li>零宽度负预测先行断言(?!exp)，断言此位置的后面不能匹配表达式exp。例如：<code>\d{3}(?!\d)</code>匹配三位数字，而且这三位数字的后面不能是数字；<code>\b((?!abc)\w)+\b</code>匹配不包含连续字符串abc的单词。
++<code>(?&lt;=&lt;(\w+)&gt;).*(?=&lt;\/\1&gt;)</code>匹配不包含属性的简单HTML标签内里的内容。<code>(?&lt;=&lt;(\w+)&gt;)</code>指定了这样的前缀：被尖括号括起来的单词(比如可能是<b>)，然后是<code>.*</code>(任意的字符串),最后是一个后缀<code>(?=&lt;\/\1&gt;)</code>。
+    * 注意后缀里的<code>\/</code>，它用到了前面提过的字符转义；<code>\1</code>则是一个反向引用，引用的正是捕获的第一组，前面的<code>(\w+)</code>匹配的内容，这样如果前缀实际上是<code>&lt;b&gt;</code>的话，后缀就是<code>&lt;/b&gt;</code>了。整个表达式匹配的是<code>&lt;b&gt;</code>和<code>&lt;/b&gt;</code>之间的内容(再次提醒，不包括前缀和后缀本身)。</li>
+</ul>
+
+<h2 id="注释">注释</h2>
+
+<ul>
+<li>通过语法(?#comment)来包含注释
+<code>2[0-4]\d(?#200-249)|25[0-5](?#250-255)|[01]?\d\d?(?#0-199)</code></li>
+</ul>
+
+<h2 id="贪婪与懒惰">贪婪与懒惰</h2>
+
+<ul>
+<li>贪婪：匹配尽可能多的字符，如a.*b，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。</li>
+<li>懒惰：匹配尽可能少的字符，a.*?b匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。
+
+<ul>
+<li>其中懒惰例子中第一个不是ab是由于最先开始匹配的拥有最高的优先权</li>
+</ul></li>
+</ul>
+
+<h2 id="处理选项">处理选项</h2>
+
+<ul>
+<li>IgnoreCase(忽略大小写)                匹配时不区分大小写。</li>
+<li>Multiline(多行模式)                    更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.)</li>
+<li>Singleline(单行模式)                更改.的含义，使它与每一个字符匹配（包括换行符\n）。</li>
+<li>IgnorePatternWhitespace(忽略空白)    忽略表达式中的非转义空白并启用由#标记的注释。</li>
+<li>ExplicitCapture(显式捕获)            仅捕获已被显式命名的组。</li>
+</ul>
+
+<h2 id="平衡组-递归匹配">平衡组/递归匹配</h2>
+
+<h3 id="概念">概念：</h3>
+
+<ul>
+<li><code>(?'group')</code> 把捕获的内容命名为group,并压入堆栈(Stack)</li>
+<li><code>(?'-group')</code> 从堆栈上弹出最后压入堆栈的名为group的捕获内容，如果堆栈本来为空，则本分组的匹配失败</li>
+<li><code>(?(group)yes|no)</code> 如果堆栈上存在以名为group的捕获内容的话，继续匹配yes部分的表达式，否则继续匹配no部分</li>
+<li><code>(?!)</code> 零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败</li>
+</ul>
+
+<h3 id="事例">事例：</h3>
+
+<pre><code>    &lt;                         #最外层的左括号
+        [^&lt;&gt;]*                #最外层的左括号后面的不是括号的内容
+        (
+            (
+                (?'Open'&lt;)    #碰到了左括号，在黑板上写一个&quot;Open&quot;
+                [^&lt;&gt;]*       #匹配左括号后面的不是括号的内容
+            )+
+            (
+                (?'-Open'&gt;)   #碰到了右括号，擦掉一个&quot;Open&quot;
+                [^&lt;&gt;]*        #匹配右括号后面不是括号的内容
+            )+
+        )*
+        (?(Open)(?!))         #在遇到最外层的右括号前面，判断黑板上还有没有没擦掉的&quot;Open&quot;；如果还有，则匹配失败
+    &gt;                         #最外层的右括号
+</code></pre>
+
+<h2 id="补充语法">补充语法</h2>
+
+<ul>
+<li><code>\a</code>                报警字符(打印它的效果是电脑嘀一声)</li>
+<li><code>\b</code>                通常是单词分界位置，但如果在字符类里使用代表退格</li>
+<li><code>\t</code>                制表符，Tab</li>
+<li><code>\r</code>                回车</li>
+<li><code>\v</code>                竖向制表符</li>
+<li><code>\f</code>                换页符</li>
+<li><code>\n</code>                换行符</li>
+<li><code>\e</code>                Escape</li>
+<li><code>\0nn</code>                ASCII代码中八进制代码为nn的字符</li>
+<li><code>\xnn</code>                ASCII代码中十六进制代码为nn的字符</li>
+<li><code>\unnnn</code>                Unicode代码中十六进制代码为nnnn的字符</li>
+<li><code>\cN</code>                    ASCII控制字符。比如\cC代表Ctrl+C</li>
+<li><code>\A</code>                字符串开头(类似^，但不受处理多行选项的影响)</li>
+<li><code>\Z</code>                字符串结尾或行尾(不受处理多行选项的影响)</li>
+<li><code>\z</code>                字符串结尾(类似$，但不受处理多行选项的影响)</li>
+<li><code>\G</code>                当前搜索的开头</li>
+<li><code>\p{name}</code>            Unicode中命名为name的字符类，例如\p{IsGreek}</li>
+<li><code>(?&gt;exp)</code>                贪婪子表达式</li>
+<li><code>(?&lt;x&gt;-&lt;y&gt;exp)</code>        平衡组</li>
+<li><code>(?im-nsx:exp)</code>        在子表达式exp中改变处理选项</li>
+<li><code>(?im-nsx)</code>            为表达式后面的部分改变处理选项</li>
+<li><code>(?(exp)yes|no)</code>        把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否`则使用no</li>
+<li><code>(?(exp)yes)</code>            同上，只是使用空表达式作为no</li>
+<li><code>(?(name)yes|no)</code>        如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no</li>
+<li><code>(?(name)yes)</code>        同上，只是使用空表达式作为no</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fregex%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Regex&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fregex%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fregex%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fregex%2f&title=Regex" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,433 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="系统构造">系统构造</h2>
+
+<h3 id="the-system-global-area-sga">The System Global Area (SGA)</h3>
+
+<ul>
+<li>组成                  描述</li>
+<li>Buffer Cache          作为查询修改前的优先查看区</li>
+<li>Shared Pool           SQL重用、储存程序、数据字典信息如用户账号信息及表索引</li>
+<li>Redo Log Buffer       多次缓存重做信息一次写入</li>
+<li>Large Pool            服务进程的大数据量I/O请求之用</li>
+<li>Java Pool             用于Java虚拟机的特定会话的代码和数据</li>
+
+<li><p>Streams Pool          Oracle流产品专用</p>
+
+<h3 id="the-program-global-area-pga">The Program Global Area (PGA)</h3></li>
+
+<li><p>系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息</p>
+
+<h3 id="oracle-background-processes">Oracle Background Processes</h3></li>
+
+<li><p>初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性</p></li>
+</ul>
+
+<h2 id="数据库管理">数据库管理</h2>
+
+<h3 id="control-files">Control Files</h3>
+
+<pre><code>物理组成元件，可复制即实现复用
+</code></pre>
+
+<h3 id="tablespaces">Tablespaces</h3>
+
+<ul>
+<li>逻辑结构
+
+<ul>
+<li>包含一个或多个Datafiles或Tempfiles.</li>
+</ul></li>
+<li>默认表空间
+
+<ul>
+<li>EXAMPLE：Oracle测试、示例空间</li>
+<li>SYSAUX：SYSTEM辅助空间</li>
+<li>SYSTEM：含数据字典等控制数据库信息的表和索引</li>
+<li>TEMP：执行SQL用作系统的临时操作空间</li>
+<li>UNDOTBS1：专用存储撤消操作信息</li>
+<li>USERS：存储永久用户对象和数据</li>
+</ul></li>
+
+<li><p>表空间类型</p>
+
+<ul>
+<li>永久：用于存储用户或程序数据</li>
+<li>撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用</li>
+
+<li><p>临时：用于执行SQL排序等操作时的辅助库</p>
+
+<h3 id="temporary-tablespace-groups">Temporary Tablespace Groups</h3>
+
+<h3 id="datafiles">Datafiles</h3></li>
+</ul></li>
+
+<li><p>保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。</p></li>
+
+<li><p>可分化组件：段和区（多块邻近数据块组成）、数据块（最小IO元件，建库后不可变更）</p>
+
+<h3 id="rollback-segments">Rollback Segments</h3>
+
+<h3 id="redo-log-groups">Redo Log Groups</h3></li>
+
+<li><p>多份重做日志，避免由于错误操作导致变更数据永久写入数据文件而无法恢复。</p></li>
+
+<li><p>多重做日志组（通常有三组），通过内存缓冲区写入数据直到组信息满或请求切换，并循环切换。</p>
+
+<h3 id="archive-logs">Archive Logs</h3></li>
+
+<li><p>重做日志的异地存储复本，可用于数据恢复。</p></li>
+</ul>
+
+<h2 id="数据库空间回收">数据库空间回收</h2>
+
+<ul>
+<li>收缩操作
+
+<ul>
+<li>对表进行操作，不影响表的DML操作</li>
+</ul></li>
+<li>重组操作
+
+<ul>
+<li>重组表空间中的不同部分，但必须事先拥有与对象大小相等的自由空间才能成功</li>
+</ul></li>
+<li>人工清表</li>
+</ul>
+
+<h2 id="还原数据">还原数据</h2>
+
+<ul>
+<li>概念
+
+<ul>
+<li>事务操作前事先保存下来的数据</li>
+</ul></li>
+<li>特点
+
+<ul>
+<li>便于事务的快速回滚&amp; 保持读一致性&amp; 使用闪回表保存</li>
+</ul></li>
+</ul>
+
+<h2 id="oracle报告顺序">ORACLE报告顺序</h2>
+
+<ul>
+<li><1>根据WHERE子句选择行</li>
+<li><2>根据GROUP BY子句将这些行分组</li>
+<li><3>为第一组计算分组函数的结果</li>
+<li><4>根据HAVING子句选择和排除组</li>
+<li><5>根据ORDER BY子句中分组函数的结果对组进行排序
+
+<ul>
+<li>ORDER BY子句必须使用分组函数（COUNT(*)）</li>
+<li>或者使用在GROUP BY子句中指定的列</li>
+</ul></li>
+</ul>
+
+<h2 id="oracle常用函数">ORACLE常用函数</h2>
+
+<h3 id="char">CHAR</h3>
+
+<ul>
+<li>TO_CHAR
+
+<ul>
+<li>TO_CHAR(SYSDATE, &lsquo;DDD&rsquo;)</li>
+<li>TO_CHAR(TO_DATE(&lsquo;2002-08-26&rsquo;, &lsquo;YYYY-MM-DD&rsquo;),&lsquo;DAY&rsquo;,&lsquo;NLS_DATE_LANGUAGE = FRENCH&rsquo;)</li>
+<li>TO_CHAR(&lsquo;11111111.&rsquo;, &lsquo;$99999,999.99&rsquo;)
+
+<ul>
+<li>$11111,111.00</li>
+</ul></li>
+<li>TO_CHAR(TO_DATE(222, &lsquo;J&rsquo;), &lsquo;Jsp&rsquo;)
+
+<ul>
+<li>Two Hundred Twenty-Two</li>
+</ul></li>
+<li>TO_CHAR(TO_DATE(222, &lsquo;J&rsquo;), &lsquo;JSP&rsquo;)
+
+<ul>
+<li>TWO HUNDRED TWENTY-TWO</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="time">TIME</h3>
+
+<ul>
+<li>TO_DATE
+
+<ul>
+<li>TO_DATE(&lsquo;2013-02-18 22:20:15&rsquo;, &lsquo;YYYY-MM-DD HH24:MI:SS&rsquo;)</li>
+<li>TO_DATE(&lsquo;2013&rsquo;, &lsquo;YYYY&rsquo;)</li>
+</ul></li>
+<li>BETWEEN
+
+<ul>
+<li>FLOOR(SYSDATE - TO_DATE(&lsquo;20130101&rsquo;, &lsquo;YYYYMMDD&rsquo;))</li>
+<li>FLOOR(MONTHS_BETWEEN(TO_DATE(&lsquo;20131231&rsquo;, &lsquo;YYYYMMDD&rsquo;), TO_DATE(&lsquo;20010201&rsquo;, &lsquo;YYYYMMDD&rsquo;)))</li>
+</ul></li>
+<li>NEXT_DAY
+
+<ul>
+<li>NEXT_DAY(SYSDATE, 1)</li>
+<li>ADD_MONTHS(SYSDATE, 2)</li>
+</ul></li>
+<li>NEW_TIME
+
+<ul>
+<li>NEW_TIME(SYSDATE, &lsquo;GMT&rsquo;, &lsquo;EST&rsquo;)
+
+<ul>
+<li>大西洋标准时间：AST或ADT</li>
+<li>阿拉斯加_夏威夷时间：HST或HDT</li>
+<li>英国夏令时：BST或BDT</li>
+<li>美国山区时间：MST或MDT</li>
+<li>美国中央时区：CST或CDT</li>
+<li>新大陆标准时间：NST</li>
+<li>美国东部时间：EST或EDT</li>
+<li>太平洋标准时间：PST或PDT</li>
+<li>格林威治标准时间：GMT</li>
+<li>Yukou标准时间：YST或YDT</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="function">FUNCTION</h3>
+
+<ul>
+<li>ROUND
+
+<ul>
+<li>ROUND(SYSDATE [,&rsquo;[DD|year|mouth|day]&ldquo;)
+
+<ul>
+<li>获取最近的 [日期|年|月|周日] 日期</li>
+</ul></li>
+<li>TRUNC(SYSDATE [,&rsquo;[DD|year|mouth|day]&ldquo;)
+
+<ul>
+<li>截取 [当天|当年首日|当月首日|周日] 的时间，且无时分秒</li>
+</ul></li>
+</ul></li>
+<li>BYTE
+
+<ul>
+<li>TO_MULTI_BYTE(&lsquo;高A&rsquo;)
+
+<ul>
+<li>将字串的半角转换为全角</li>
+</ul></li>
+<li>TO_SINGLE_BYTE(&lsquo;高Ａ&rsquo;)
+
+<ul>
+<li>全角转半角</li>
+</ul></li>
+</ul></li>
+<li>NULL
+
+<ul>
+<li>NVL(EXP1, EXP2)
+
+<ul>
+<li>NULl == EXP1? EXP2: EXP1</li>
+<li>两者类型要求一致</li>
+</ul></li>
+<li>NVL2(EXP1, EXP2, EXP3)
+
+<ul>
+<li>NULL== EXP1? EXP3: EXP2</li>
+<li>EXP2与EXP3类型不同，则EXP3自动转换为EXP2的类型</li>
+</ul></li>
+<li>NULLIF(EXP1, EXP2)
+
+<ul>
+<li>EXP1== EXP2? NULL: EXP1</li>
+</ul></li>
+<li>COALESCE(EXP1, EXP2,&hellip;EXPN)
+
+<ul>
+<li>返回列表中第一个非空表达式，若均空则返回空值</li>
+</ul></li>
+</ul></li>
+<li>TYPE
+
+<ul>
+<li>DUMP(INPUT[,TYPE [,Y [,Z]]]
+
+<ul>
+<li>返回INPUT的数据类型，字节长度及内部存储位置</li>
+</ul></li>
+<li>GREATEST(EXP1, EXP2,&hellip;, EXPN)</li>
+<li>LEAST(EXP1, EXP2,&hellip;, EXPN)</li>
+<li>LENGTH/LENGTHC(INPUT)
+
+<ul>
+<li>一个汉字算一个字符</li>
+</ul></li>
+<li>VSIZE/LENGTHB(INPUT)
+
+<ul>
+<li>一个汉字算两个字节</li>
+</ul></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2foracle.%25E5%259F%25BA%25E7%25A1%2580%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Oracle%20-%20%e5%9f%ba%e7%a1%80&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2foracle.%25E5%259F%25BA%25E7%25A1%2580%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2foracle.%25E5%259F%25BA%25E7%25A1%2580%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2foracle.%25E5%259F%25BA%25E7%25A1%2580%2f&title=Oracle%20-%20%e5%9f%ba%e7%a1%80" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

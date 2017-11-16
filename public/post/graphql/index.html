@@ -1,0 +1,281 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/graphql/" title="GraphQL">GraphQL</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/graphql">graphql</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="graphql">GraphQL</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://graphql.org/">GraphQL</a></li>
+<li><a href="http://www.jianshu.com/p/2ec22fc1219c">Graphql入门</a></li>
+<li><a href="http://facebook.github.io/graphql/">GraphQL</a></li>
+<li><a href="https://code.facebook.com/posts/1691455094417024/graphql-a-data-query-language/">GraphQL: A data query language</a></li>
+<li><a href="https://github.com/graphql-go/graphql">graphql-go/graphql</a></li>
+<li><a href="https://github.com/facebook/graphql">facebook/graphql</a></li>
+</ul>
+
+<h2 id="介绍">介绍</h2>
+
+<h3 id="因果">因果</h3>
+
+<ul>
+<li>大量并发请求和数据更新的二次请求，造成响应和维护的难度提升</li>
+<li>不同 app 对相同资源的不同使用方法导致 API 爆炸性增长</li>
+<li>大而全的通用性接口又不利于移动端使用</li>
+</ul>
+
+<h3 id="优点">优点</h3>
+
+<ul>
+<li>足够描述性的数据抓取通用性 API</li>
+<li>服务端解释后返回以特定形式</li>
+</ul>
+
+<h2 id="机制">机制</h2>
+
+<h3 id="类型">类型</h3>
+
+<ul>
+<li><p>Query</p>
+
+<pre><code>query {
+  hero {
+    name
+  }
+  droid(id: &quot;2000&quot;) {
+    name
+  }
+}
+</code></pre></li>
+
+<li><p>Mutation
+```
+mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
+createReview(episode: $ep, review: $review) {
+stars
+commentary
+}
+}</p></li>
+</ul>
+
+<p>{
+  &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;,
+  &ldquo;review&rdquo;: {
+    &ldquo;stars&rdquo;: 5,
+    &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&rdquo;
+  }
+}
+```</p>
+
+<h3 id="请求即输出">请求即输出</h3>
+
+<ul>
+<li>请求格式与返回格式近似</li>
+<li>任性地满足产品和开发的数据驱动要求</li>
+</ul>
+
+<h2 id="等级分层">等级分层</h2>
+
+<ul>
+<li>遵循对象层级、关系
+
+<ul>
+<li>服务端需多次网络请求或复杂 SQL 查询</li>
+</ul></li>
+<li>促进服务端以层次、图形化结构存储</li>
+</ul>
+
+<h2 id="强类型">强类型</h2>
+
+<ul>
+<li>每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段</li>
+<li>允许 GraphQL 于执行查询前抛出描述性异常信息</li>
+</ul>
+
+<h2 id="协议而非存储">协议而非存储</h2>
+
+<ul>
+<li>每个 Graphql 字段均有任意方法支持</li>
+<li>复杂的排序、存储模型</li>
+<li>依赖现有的实现，而不指定或提供任何备份存储</li>
+</ul>
+
+<h2 id="内省">内省</h2>
+
+<ul>
+<li>提供强大的平台</li>
+<li>帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具</li>
+</ul>
+
+<h2 id="版本无关"><strong>版本无关</strong></h2>
+
+<ul>
+<li>字段弃用等并不影响数据输出</li>
+<li>渐进的向后兼容过程消除了版本号的需要</li>
+</ul>
+
+<h2 id="实践">实践</h2>
+
+<ul>
+<li><a href="https://github.com/graphql-go/graphql">graphql-go/graphql</a></li>
+<li><a href="http://graphql.org/learn">Introduction to GraphQL</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgraphql%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=GraphQL&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgraphql%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgraphql%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgraphql%2f&title=GraphQL" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,612 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关">HTTP.协议相关</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/http">http</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://kb.cnblogs.com/page/130970/">Http 协议详解</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers">HTTP headers</a></li>
+<li><a href="https://www.w3.org/Protocols/rfc2616/rfc2616.html">Hypertext Transfer Protocol &ndash; HTTP/1.1</a></li>
+<li><a href="https://imququ.com/post/four-ways-to-post-data-in-http.html">四种常见的 POST 提交数据方式</a></li>
+<li><a href="https://imququ.com/post/vary-header-in-http.html">Http.vary</a></li>
+</ul>
+
+<h2 id="http-detail">Http.detail</h2>
+
+<ul>
+<li>Message Body 消息体</li>
+<li>Request  请求头</li>
+<li><code>
+POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1
+</code></li>
+<li>Header  头文件</li>
+<li><code>
+Accept: application/json, text/plain, */*
+Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a
+Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas
+Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko
+Content-Length: 4708261
+Host: dev-p.yunkai.com
+Connection: Keep-Alive
+Pragma: no-cache
+Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017
+</code></li>
+<li>Empty line</li>
+<li>Body  消息体</li>
+<li><code>
+-----------------------------7e016f3be0a4a
+Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;B2283659A4B9302BE09FE2EC97690382.pptx&quot;
+Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation
+</code></li>
+<li>Method</li>
+<li>GET</li>
+<li>Data.length.limit</li>
+<li>Browser</li>
+<li>IE:  2083B= 2KB+ 35B<br /></li>
+<li>Firefox:  65,536 Char -&gt; 1 Char= 2B</li>
+<li>Safari:  80,000 Char</li>
+<li>Opera:  190,000 Char</li>
+<li>Chrome:  8,182 Char</li>
+<li>Server</li>
+<li>Apache:  8,192 Char</li>
+<li>IIS:  16,384 Char</li>
+<li>POST</li>
+<li>Data.length.limit</li>
+<li>Http not set the limit</li>
+<li>Apache.Tomcat.default.maxPostSize= 2M</li>
+<li>HEAD</li>
+<li>TRACE</li>
+<li>PUT</li>
+<li>DELETE</li>
+<li>OPTION</li>
+<li>CONNECT</li>
+</ul>
+
+<h2 id="status-code">Status Code</h2>
+
+<h3 id="http-status-code-https-www-w3-org-protocols-rfc2616-rfc2616-sec10-html"><a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html">Http Status code</a></h3>
+
+<ul>
+<li>参考</li>
+<li><a href="http://www.cnblogs.com/DeasonGuan/articles/Hanami.html">http://www.cnblogs.com/DeasonGuan/articles/Hanami.html</a></li>
+
+<li><p><a href="http://www.cnblogs.com/shanyou/archive/2012/05/06/2486134.html">http://www.cnblogs.com/shanyou/archive/2012/05/06/2486134.html</a></p></li>
+
+<li><p>1XX - Informational</p></li>
+
+<li><p>define: provisional response, consisting only of the status-line and optional headers, and is terminated by an empty line. expect for proxy</p></li>
+
+<li><p>list</p></li>
+
+<li><p>100 - Continue: <strong>continue</strong> the request</p></li>
+
+<li><p>101 - Switching Protocols: terminate the 101 response after the empty line then <strong>change the application protocol</strong></p></li>
+
+<li><p>2XX - Successful</p></li>
+
+<li><p>define: client&rsquo;s request was successfully received, understood and accepted</p></li>
+
+<li><p>list</p></li>
+
+<li><p>200 - OK: the request has <strong>succeeded</strong></p></li>
+
+<li><p>201 - Created: new resource <strong>created immediately</strong></p></li>
+
+<li><p>202 - Accepted: has been <strong>accepted</strong> but <strong>not completed</strong></p></li>
+
+<li><p>203 - Non-Authoritative Information: may fathered from a local or a <strong>third-party copy</strong></p></li>
+
+<li><p>204 - No Content: not need to return an entity-body, just like update method, and <strong>MUST NOT include an entity</strong></p></li>
+
+<li><p>205 - Reset Content: reset the form and <strong>MUST NOT include an entity</strong></p></li>
+
+<li><p>206 - Partial content:for download big data and <strong>MUST have a range header</strong>, and <strong>MUST NOT include other entity</strong></p></li>
+
+<li><p>3XX - Redirection</p></li>
+
+<li><p>define: further action needs to be taken by the user agent, detect infinite redirection loops</p></li>
+
+<li><p>list</p></li>
+
+<li><p>300 - Multiple Choices: select a preferred representation from a set of them</p></li>
+
+<li><p>301 - Moved Permanently: <strong>other than GET/ HEAD</strong>, NUST NOT automatically <strong>redirect</strong> to an new permanent URI</p></li>
+
+<li><p>302 - Found: redirect to a different URI on occasion, and only cacheable by Cache-control or Expires header</p></li>
+
+<li><p>303 - See Other: SHOULD <strong>retrieved different URI using a GET method</strong>,  user HEAD to get the new URI from the short hypertext note with a hyperlink</p></li>
+
+<li><p>304 - Not Modified: the document has not been modified, the server <strong>MUST NOT contain a message-body</strong>, thus always terminated by the first empty line after the header fields</p></li>
+
+<li><p>305 - Use Proxy: generated by origin servers, and <strong>MUST accessed through the proxy</strong>, or notice the client to repeat request via the proxy</p></li>
+
+<li><p>306 : Unused</p></li>
+
+<li><p>307 - Temporary Redirect: resource <strong>resieds temporarily on occasion</strong>, and the client <strong>SHOULD continue use the Request-URI</strong> for future requests</p></li>
+
+<li><p>4XX - Client Error</p></li>
+
+<li><p>define: for cases in which the client seems to have erroed</p></li>
+
+<li><p>list</p></li>
+
+<li><p>400 - Bad Request: the request could not be understood</p></li>
+
+<li><p>401 - Unauthorized: the request requires user authentication, <strong>MUST inclued a WWW-Authenticate header field</strong></p></li>
+
+<li><p>402 - Payment Required: reserved for future use</p></li>
+
+<li><p>403 - Forbidden: the server understood the request, but is <strong>refusing</strong> to fulfill it</p></li>
+
+<li><p>404 - Not Found: the server has not found anything matching the Request-URI</p></li>
+
+<li><p>405 - Method Not Allowed: specified in the request-line is not allowed</p></li>
+
+<li><p>406 - Not Acceptable: the <strong>content characteristics of the request is not acceptable</strong>.  while HEAD request, the response SHOULD include an entity containing a list of available entity characteristics and location</p></li>
+
+<li><p>407 - Proxy Authentication Required: similar to 401, but indicates that the client <strong>must first authenticate itself with the poxy</strong></p></li>
+
+<li><p>408 - Request Timeout: no produce a request with the time</p></li>
+
+<li><p>409 - Conflict: conflict with the current state of resource. the body include the conflict info and expect the client</p></li>
+
+<li><p>410 - Gone: the requested <strong>resource</strong> is <strong>no longer available</strong></p></li>
+
+<li><p>411 - Length Required: the <strong>Content-length</strong> header of the request is not enought</p></li>
+
+<li><p>412 - Precondition Failed: one or more of the <strong>request-header fields evaluated to false</strong></p></li>
+
+<li><p>413 - Request Entity Too Large: the server resusing to process the request because <strong>the request entity is larger than</strong> the server is <strong>willing or able to process</strong></p></li>
+
+<li><p>414 - Request-URI Too Long</p></li>
+
+<li><p>415 - Unsupported Media Type:</p></li>
+
+<li><p>416 - Requested Range Not Satisfiable: the request included a Range request-header and the byte-ranges is out of array</p></li>
+
+<li><p>417 - Expectation Failed: expect request-header field could not be met</p></li>
+
+<li><p>5XX - Server Error</p></li>
+
+<li><p>list</p></li>
+
+<li><p>500 - Internal Server Error: the server encountered an unexpected condition</p></li>
+
+<li><p>501 - Not Implemented: the server does not support</p></li>
+
+<li><p>502 - Bad Gateway: the server, while acting as a gateway or proxy, received an invalid response from the upstream server</p></li>
+
+<li><p>503 - Service Unavailable: unable to handle the request due to <strong>a temporary overloading or maintenance of the server</strong>, temporary status</p></li>
+
+<li><p>504 - Gateway Timeout: acting as a gateway or proxy, could not receive the timely response from the upstream server</p></li>
+
+<li><p>505 - HTTP Version Not Supported: the HTTP protocol version was used is not supported in the server</p></li>
+</ul>
+
+<h2 id="header-request">Header.request</h2>
+
+<ul>
+<li>Cache</li>
+<li>If-Modified-Since</li>
+<li>与 Last-Modified 配合使用，进行缓存读取或新文件获取</li>
+<li>If-None-Match</li>
+<li>与 ETags 配合使用，进行缓存读取或新文件获取</li>
+<li><a href="http://stackoverflow.com/questions/3492319/private-vs-public-in-cache-control">Cache-Control</a></li>
+<li>Public: cache by client and proxy</li>
+<li>Private: default, only cache by client</li>
+<li>no-cache: no cache</li>
+
+<li><p>Pragma: no-cache，同 Cache-Control: no-cache</p></li>
+
+<li><p>Client</p></li>
+
+<li><p>Accept</p></li>
+
+<li><p>lists the MIME types expected by the user agent</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Accept: audio/*; q=0.2, audio/basic</p></li>
+
+<li><p>I prefer audio/basic, but send me any audio type if it is the best available after an 80% mark-down in quality</p></li>
+
+<li><p>Accept: text/plain; q=0.5, text/html, text/x-dvi; q=0.8, text/x-c</p></li>
+
+<li><p>text/html and text/x-c are the preferred media types, but if they do not exist, then send the text/x-dvi entity, and if that does not exist, send the text/plain entity</p></li>
+
+<li><p>Accept-Encoding</p></li>
+
+<li><p>lists the compression methods supported by the user agent</p></li>
+
+<li><p>example
+    - Accept-Encoding: compress, gzip
+    - Accept-Encoding:
+    - Accept-Encoding: *
+    - Accept-Encoding: compress;q=0.5, gzip;q=1.0
+    - Accept-Encoding: gzip;q=1.0, identity; q=0.5, *;q=0</p></li>
+
+<li><p>Accept-Language</p></li>
+
+<li><p>lists the languages the user agent expect the page in</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Accept-Language: da, en-gb;q=0.8, en;q=0.7</p></li>
+
+<li><p>I prefer Danish, but will accept British English and other types of English</p></li>
+
+<li><p>User-Agent</p></li>
+
+<li><p>list the name and version of client system and browser</p></li>
+
+<li><p>example</p></li>
+
+<li><p>User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 5.1; Trident/4.0; CIBA; .NET CLR 2.0.50727; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET4.0C; InfoPath.2; .NET4.0E)</p></li>
+
+<li><p>Accept-Charset</p></li>
+
+<li><p>lists the character sets supported by the user agent</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Accept-Charset: iso-8859-5, unicode-1-1;q=0.8</p></li>
+
+<li><p>if server cannot response, it will response 406 error</p></li>
+
+<li><p>Cookies/ Login</p></li>
+
+<li><p>Cookie</p></li>
+
+<li><p>Entity</p></li>
+
+<li><p>Content-Length</p></li>
+
+<li><p>Content-Type</p></li>
+
+<li><p>Choice</p></li>
+
+<li><p>application/x-www-form-urlencoded</p></li>
+
+<li><p>默认方式</p></li>
+
+<li><p>提交数据以 key1=val1&amp;key2=val2 形式编码，且 key/ val 均进行了 URL 转码</p></li>
+
+<li><p>multipart/form-data</p></li>
+
+<li><p>主要用于文件上传</p></li>
+
+<li><p>application/json</p></li>
+
+<li><p>指定消息主体为 Json 字符串</p></li>
+
+<li><p>text/xml</p></li>
+
+<li><p>HTTP 作为传输协议， XML 作为编码方式的远程调用规范</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Content-Type: application/x-www-form-urlencoded</p></li>
+
+<li><p>Miscellaneous</p></li>
+
+<li><p>Referer</p></li>
+
+<li><p>special the resource from</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Referer:<a href="http://translate.google.cn/?hl=zh-cn&amp;tab=wT">http://translate.google.cn/?hl=zh-cn&amp;tab=wT</a></p></li>
+
+<li><p>Transport</p></li>
+
+<li><p>Connection</p></li>
+
+<li><p>keep-alive</p></li>
+
+<li><p>http 1.0 默认关闭， http 1.1中默认启用Keep-Alive</p></li>
+
+<li><p>判断消息长度</p></li>
+
+<li><p>Conent-Length</p></li>
+
+<li><p>Transfer-Encoding: chunked</p></li>
+
+<li><p>由 length=0 的 chunk 标示结束</p></li>
+
+<li><p>chunk= header+ content [+ CRLF-回车换行分享]</p></li>
+
+<li><p>header: 0xContent.length [unit]</p></li>
+
+<li><p>content</p></li>
+
+<li><p>close</p></li>
+
+<li><p>Host</p></li>
+
+<li><p>specifies the Internet host and port number of the resource being requested</p></li>
+
+<li><p>example</p></li>
+
+<li><p><a href="http://www.guet.edu.cn/index.html">http://www.guet.edu.cn/index.html</a> -&gt; host= www.guet.edu.cn</p></li>
+
+<li><p><a href="http://192.168.70.198:8080/api/resource/upload">http://192.168.70.198:8080/api/resource/upload</a>  -&gt; host= 192.168.70.198:8080</p></li>
+</ul>
+
+<h2 id="header-response">Header.response</h2>
+
+<ul>
+<li>Cache</li>
+<li>Date</li>
+<li>represents the date and time at which the message was originated</li>
+<li>example</li>
+<li>Date: Tue, 15 Nov 1994 08:12:31 GMT</li>
+<li>Expires</li>
+<li>use cache before expire</li>
+<li>RFC 1123 date format</li>
+<li>example</li>
+<li>Expires: Thu, 01 Dec 1994 16:00:00 GMT</li>
+<li>Vary</li>
+<li>the Vary field value advises the user agent about the criteria that were used to select the representation</li>
+<li>example</li>
+<li>Vary: User-Agent, Cookie</li>
+
+<li><p>Vary 字段用于列出一个响应字段列表，告诉缓存服务器遇到同一个 URL 对应着不同版本文档的情况时，如何缓存和筛选合适的版本。</p></li>
+
+<li><p>Cookie/ Login</p></li>
+
+<li><p>P3P</p></li>
+
+<li><p>用于跨域设置Cookie, 可解决iframe跨域访问cookie的问题</p></li>
+
+<li><p>example</p></li>
+
+<li><p>P3P: CP=CURa ADMa DEVa PSAo PSDo OUR BUS UNI PUR INT DEM STA PRE COM NAV OTC NOI DSP COR</p></li>
+
+<li><p>Set-Cookie</p></li>
+
+<li><p>更新客户端浏览器 Cookie 信息</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Set-Cookie: sc=4c31523a; path=/; domain=.acookie.taobao.com</p></li>
+
+<li><p>Entity</p></li>
+
+<li><p>Etag</p></li>
+
+<li><p>Last-Modified</p></li>
+
+<li><p>参考 If-Modified-Since</p></li>
+
+<li><p>Content-Type</p></li>
+
+<li><p>Content-Length</p></li>
+
+<li><p>Content-Encoding</p></li>
+
+<li><p>Content-Language</p></li>
+
+<li><p>Miscellaneous</p></li>
+
+<li><p>Server</p></li>
+
+<li><p>指明 Http 服务器软件信息</p></li>
+
+<li><p>example</p></li>
+
+<li><p>Server: Microsoft-IIS/7.5</p></li>
+
+<li><p>X-AspNet-Version</p></li>
+
+<li><p>指明 ASP.NET 版本</p></li>
+
+<li><p>example</p></li>
+
+<li><p>X-AspNet-Version: 4.0.30319</p></li>
+
+<li><p>X-Powered-By</p></li>
+
+<li><p>指明开发技术</p></li>
+
+<li><p>example</p></li>
+
+<li><p>X-Powered-By: ASP.NET</p></li>
+
+<li><p>Transport</p></li>
+
+<li><p>Connection</p></li>
+
+<li><p>Location</p></li>
+
+<li><p>Location</p></li>
+
+<li><p>重定向，包含 URL 地址</p></li>
+</ul>
+
+<h2 id="other">Other</h2>
+
+<h3 id="缓存-http-www-cnblogs-com-lyzg-p-5125934-html"><a href="http://www.cnblogs.com/lyzg/p/5125934.html">缓存</a></h3>
+
+<ul>
+<li>分类</li>
+<li>强缓存</li>
+<li>判断命中，则直接从浏览器缓存中读取资源，不发请求至服务器（200）</li>
+<li>协商缓存</li>
+<li>发请求至服务器，协商缓存命中，则返回请求（304），告知浏览器从缓存中加载</li>
+<li>实现</li>
+<li>强缓存</li>
+<li>请求资源时，资源及其 response header 一并被缓存</li>
+<li>再次请求时，优先比对该资源 header 中的</li>
+<li>Expries（失效时间）</li>
+<li>或 Cache-Control：max-age=315360000 &amp; Date: Mon, 11 Jan 2016 06:41:22 GMT</li>
+<li>对比判断是否命中</li>
+<li><strong>注：Cache-Control 为相对时间，都使用客户端时间进行判断，相比 Expries 的服务器时间对比更安全。</strong></li>
+<li>协商缓存</li>
+<li>请求资源时，资源及其 response header 一并被缓存</li>
+<li>再次和服务器请求该请求时，一并传上</li>
+<li>header.Last-Modified: Tue 12 Jan 2016 03:08:53 GMT  - 服务器上该资源的最后修改时间</li>
+<li>header.If-Modified-Since: Tue 12 Jan 2016 03:08:53 GMT  - 上一次浏览器请求时返回的 Last-Modified 值</li>
+<li>或 ETag: &ldquo;17fd8-5291a5f96fd20&rdquo; - 请求资源的唯一标识</li>
+<li>If-None-Match: &ldquo;17fd8-5291a5f96fd20&rdquo; - 上一次请求时的 ETag 值</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fhttp.%25E5%258D%258F%25E8%25AE%25AE%25E7%259B%25B8%25E5%2585%25B3%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=HTTP.%e5%8d%8f%e8%ae%ae%e7%9b%b8%e5%85%b3&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fhttp.%25E5%258D%258F%25E8%25AE%25AE%25E7%259B%25B8%25E5%2585%25B3%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fhttp.%25E5%258D%258F%25E8%25AE%25AE%25E7%259B%25B8%25E5%2585%25B3%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fhttp.%25E5%258D%258F%25E8%25AE%25AE%25E7%259B%25B8%25E5%2585%25B3%2f&title=HTTP.%e5%8d%8f%e8%ae%ae%e7%9b%b8%e5%85%b3" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

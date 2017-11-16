@@ -7,10 +7,184 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 13 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="https://wrrwhn.github.io/domain/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ActiveMq</title>
+      <link>https://wrrwhn.github.io/domain/post/activemq/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/activemq/</guid>
+      <description>地址  入门：http://www.cnblogs.com/xwdreamer/archive/2012/02/21/2360818.html 下载：http://activemq.apache.org/download-archives.html  运行  解压至 D:\server\activemq\apache-activemq-5.9.1  注：D:\Program Files 等路径上存在空格等的不适合当其路径，会影响项目正常启动  点击 /bin/activemq.bat 启动 ActiveMQ 程序 进入 http://localhost:8161/admin/ ，并输入账号/密码 admin/admin 创建一个名为 FirstQueue 的 Queue 运行代码（如下）  代码 依赖 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.activemq&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activemq-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.5.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  模式 - Queue 发送 public class Sender { private static final int SEND_NUMBER = 5; public static void main(String[] args) { ConnectionFactory connectionFactory; Connection connection = null; Session session; Destination destination; MessageProducer producer; connectionFactory = new ActiveMQConnectionFactory( ActiveMQConnection.</description>
+    </item>
+    
+    <item>
+      <title>CSS4.Color</title>
+      <link>https://wrrwhn.github.io/domain/post/css4.color/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/css4.color/</guid>
+      <description>[TOC]
+CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 140 standard color names http://www.w3schools.com/colors/colors_names.asp HWB(0, 0%, 0%) sugguest in css4 hue+ white+ black white+black&amp;lt;= 100 CMYK(0%, 100%, 100%, 0%) cyan/ magenta/ yellow/ black suggest in css4, not supported in html R0, 0%, 0% close to HWB natural color(NCol) from W3Schools [R|G|B|Y|C|M][\d]0, white%, black% white+ black&amp;lt;= 100  Color type  shades of gray r= g= b | #080808 shades of red r=[0-255], g= b= 0 web safe color = 216  CSS3.</description>
+    </item>
+    
+    <item>
+      <title>Go.Wukong</title>
+      <link>https://wrrwhn.github.io/domain/post/go.wukong/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.wukong/</guid>
+      <description>[TOC]
+悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
+searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &amp;quot;./dict/dictionary.txt&amp;quot;, StopTokenFile: &amp;quot;./dict/stop_tokens.txt&amp;quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.</description>
+    </item>
+    
+    <item>
+      <title>Hugo 建站</title>
+      <link>https://wrrwhn.github.io/domain/post/hugo%E5%BB%BA%E7%AB%99/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/hugo%E5%BB%BA%E7%AB%99/</guid>
+      <description>Hugo 建站 参考  使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点 github Pages和Jekyll入门 3.5. 建立主页  安装  下载  gohugoio/hugo  安装  tar xvf hugo_0.15_linux_amd64.tar.gz -C /data/soft/hugo   生成  /data/soft/hugo/hugo new site /data/service/domain  archetypes config.toml  整体配置  content  文章  data layouts static themes  主题    安装主题  仅需将主题下载至 themes 文件下，并更 config.toml 中的 theme 为主题名称  下载  git clone https://github.</description>
+    </item>
+    
+    <item>
+      <title>Java.Log4j</title>
+      <link>https://wrrwhn.github.io/domain/post/java.log4j/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.log4j/</guid>
+      <description>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.</description>
+    </item>
+    
+    <item>
+      <title>Java.注意事项</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&amp;quot;select * from student where stuNo=?&amp;quot;); //!! for(int i=0; i&amp;lt; 1000; i++){ ps.setString(1, &amp;quot;1000&amp;quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况</description>
+    </item>
+    
+    <item>
+      <title>JavaScript.TypeScript</title>
+      <link>https://wrrwhn.github.io/domain/post/javascript.typescript/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/javascript.typescript/</guid>
+      <description>[TOC]
+TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &amp;quot;Hello&amp;quot;+ user; } var user = &amp;quot;yao&amp;quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&amp;lt;String&amp;gt;val).</description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://wrrwhn.github.io/domain/post/kafka/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/kafka/</guid>
+      <description>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</description>
+    </item>
+    
+    <item>
+      <title>Linux.Chown</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.chown/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.chown/</guid>
+      <description> [TOC]
+chown 格式  chown [option]* [user[:[group]*]] [file|group]*
+必要参数 -c
+ 显示更改的部分的信息  -f
+ 忽略错误信息  -h
+ 修复符号链接  -R
+ 处理指定目录以及其子目录下的所有文件  -v
+ 显示详细的处理信息  -deference
+ 作用于符号链接的指向，而不是链接文件本身
+选择参数  --reference=&amp;lt;目录或文件&amp;gt;
+ 把指定的目录/文件作为参考，把操作的文件/目录设置成参考文件/目录相同拥有者和群组  --from=&amp;lt;当前用户：当前群组&amp;gt;
+ 只有当前用户和群组跟指定的用户和群组相同时才进行改变  --help
+ 显示帮助信息  --version
+ 显示版本信息
+实例  chown -R appuser:appuser yao
+ 将 root 权限下文件夹分配给 appuser 用户   </description>
+    </item>
+    
+    <item>
+      <title>Linux.Git</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.git/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.git/</guid>
+      <description> [TOC]
+参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen    </description>
+    </item>
+    
+    <item>
+      <title>Linux.Scp</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.scp/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.scp/</guid>
+      <description>[TOC]
+参考  http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html  特点  scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷  rsync 快一点，但小文件多时会导致硬盘 I/O 非常高   格式  scp [参数] [原路径] [目标路径]  参数  -1  强制scp命令使用协议ssh1  -2  强制scp命令使用协议ssh2  -4  强制scp命令只使用IPv4寻址  -6  强制scp命令只使用IPv6寻址  -B  使用批处理模式（传输过程中不询问传输口令或短语）  -C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  -p  留原文件的修改时间，访问时间和访问权限。  -q  不显示传输进度条。  -r  递归复制整个目录。  -v  详细方式显示输出。 scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。  -c  cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。  -F  ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。  -i  identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。  -l  limit 限定用户所能使用的带宽，以Kbit/s为单位。  -o  ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，  -P  port 注意是大写的P, port是指定数据传输用到的端口号  -S  program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。   事例  scp -r root@10.</description>
+    </item>
+    
+    <item>
+      <title>OpenXml.ShapeDefinition</title>
+      <link>https://wrrwhn.github.io/domain/post/openxml.shapedefinition/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/openxml.shapedefinition/</guid>
+      <description>[TOC]
+Shape Definitions And Attributes The Coordinate Systems The Document Coordinate System  (0,0) in the upper left of the document x++, move right y++, move downwards Unit EMUs 1 pixel= 9525 EMUs 1 cm= 360000 EMUs 1 inch = 914400 EMUs
+The Shape Coordinate System When get the width and height
+ (0,0) in the upper left of the shape
+ Unit: EMUs
+The Path Coordinate System (0,0) in the upper left of the shape</description>
+    </item>
+    
+    <item>
+      <title>Oracle.常见问题</title>
+      <link>https://wrrwhn.github.io/domain/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
+      <description>ORA-12541:TNS:无监听程序  监听失败，自己遇到的情况是主机设置错误 -进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora  (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.101)(PORT = 1521))  更新HOST为本地即 HOST= 127.0.0.1 重启监听服务  ORA-01045 :user system lacks create session privilege; logon denied  由于新建的用户缺少机关的权限信息 用sys登入Oracle DB后,下grant create session to yqj;  ORA-12514问题，即TNS 监听程序不能识别给定的SID  指定的数据库未加入监听 进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora 指定位置添加相关文字  SID_LIST_LISTENER = (SID_LIST = (SID_DESC = (SID_NAME = PLSExtProc) (ORACLE_HOME = C:\oracle\product\10.2.0\db_1) (PROGRAM = extproc) ) /**NEW (SID_DESC = (GLOBAL_DBANAME = testDB) (ORACLE_HOME = C:\oracle\product\10.</description>
+    </item>
+    
+    <item>
+      <title>Redis.使用</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</guid>
+      <description>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
+参考 官网
+ 文档
+ 命令
+ Linux下安装
+ Jedis使用示例
+  安装-WINDOWS  下载 http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;amp;s=a2b84b5fc8f9fa297831deba85c07317 解压至 D:\redis-2.0.2，并更新替换redis.conf cmd执行 D:\redis-2.0.2&amp;gt;redis-server.exe redis.conf 运行服务器 cmd执行 D:\redis-2.0.2&amp;gt;redis-cli.exe -h 192.168.10.59 -p 6379 运行客户端 客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值  安装-LINUX VI环境下输入  下载程序  wget http://download.redis.io/releases/redis-2.8.3.tar.gz  解压  tar xzf redis-2.8.3.tar.gz  跳转至解压目录  cd redis-2.8.3  安装Redis  make  若提示make指定未安装，执行yum -y install gcc automake autoconf libtool make 进行安装   拷贝执行相关  src路径下的redis-server、redis-benchmark、redis-cli，redis-2.</description>
+    </item>
+    
+    <item>
+      <title>项目发布总结</title>
+      <link>https://wrrwhn.github.io/domain/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/</guid>
+      <description> 域名相关 购买：  购买网站  万网 www.net.cn  示例：
+ fzsfxd.com 有限时间三年，金额为149元
+服务器备案  若使用国内服务器，且要使用购买的域名，均需要进行备案，周期大概要半个月（个人，较快）
+ 介绍
+ http://beian.aliyun.com  流程
+ 网站信息、相关企业个人身份证等相关资质填写。 申报人拍照，不允许 PS，其中背景需要为指定幕布（可免费向阿里申请） 网络管理局审批，较慢。   服务器相关 购买  购买网站：阿里云 http://www.aliyun.com/ 配置
+  环境配置  使用镜像市场中 【Java 多版本环境】 -&amp;gt; 有坑！！！ 每种东西都留有坑，自己在使用过程中，除了 java 没动，其它 tomcat / mysql/ nginx 都重新安装配置过，囧。后面看它描述，帮忙发布调优啥的都要收费！！
+  项目发布和域名解析  域名解析：进入域名解析界面，配置服务器 IP 地址，如 115.28.146.6 项目发布：Tomcat环境发布，本次将服务名称调整为 Root，以便输入 IP 端口后直接访问 Nginx：配置域名和指定服务的绑定，配置如下（安装使用 yum 安装）    注  其中 mysql/ tomcat/nginx 使用时都要注意端口是否有开放   项目收费  个人与企业进行交易，对方可能会要求你提供发票，甚至于企业开具的网站开发的增值税（或非增值）发票。  解决方法  找公司代开，如琴峰，但可能遇到情况是像琴峰他们公司，该操作会影响财务税点啥的，是不愿意操作。 找记账公司代开，但税点要求6，且无若金额太小别人是不鸟的。（此次金额5K）  最好的办法  事先讲好，个人性质，将不提供发票来着。    </description>
+    </item>
     
     <item>
       <title>如何炼成商业分析能力</title>
@@ -35,6 +209,17 @@
       <guid>https://wrrwhn.github.io/domain/post/tomcat.service/</guid>
       <description>[TOC]
 参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.</description>
+    </item>
+    
+    <item>
+      <title>如何轻松聊天</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</link>
+      <pubDate>Wed, 08 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</guid>
+      <description>如何轻松聊天 参考  不懂跟异性轻松聊天，你如何get到这个技能  因素 心态  影响
+ 自信心 个人价值  提升
+ 提升个人价值  提高立身处世能力 收拾外表、整洁干净  与价值相当的人交往 丰富阅历   策略  了解对方需求，针对性满足 言语关怀，行动辅助  口才  避免由表面印象决定交流方式  轻率定高，无法不卑不亢聊天 定低则所决定的聊天方式、内容，容易让对方认定自己的低价值形式 采用*态度大方*表达句式  表达大方自然，干净利落 面对拒绝不强求，有意识不卑不亢   有效幽默  针对 聊天冷场 技能  方式  懂得利用话题 懂得如何问答 懂得发表意见  总结  就是利用对方感兴趣的话题作为切入点 然后在和对方问与答的互动之中 发表对事情的看法和见解  注意  注意节奏，交流而非审问   策略  向上归类  话题延伸至总结、深度  向下归类  概率具体伦  横向归类  扩展至同类、相似元素   补充  适当沉默 懂得倾听</description>
     </item>
     
     <item>
@@ -64,6 +249,699 @@
       
       <guid>https://wrrwhn.github.io/domain/post/%E4%B8%AD%E5%9B%BD-%E6%A1%82%E6%9E%97/</guid>
       <description>桂林 参考  桂林攻略 桂林旅游攻略 漓江经典五大玩法全攻略 谢大姐啤酒鱼 椿记烧鹅 崇善米粉(总店) 老油条甲天下桂林米粉 大师傅金奖啤酒鱼  推荐 时间  9-11月 2-4天  桂林市区 泛舟漓江，夜游阳朔 逆漓江至杨堤，后返桂林 龙脊梯田   饮食  桂林米粉  先拌匀干吃，再盛骨头汤饮用  漓江啤酒鱼  江鲤用桂北生茶油烹炸，后以啤酒红焖  马蹄糕  特产  地点  桂林市  微笑堂 人人乐 南城  阳朔西街  商品  阳朔画扇 豆腐乳 三花酒   景点  桂林-象山公园  门票  70  评价  去了后悔一会儿，不去后悔一辈子  景点  象鼻山 水月洞   桂林-两江四湖 桂林-靖江王城</description>
+    </item>
+    
+    <item>
+      <title>Tomcat. AccessLog </title>
+      <link>https://wrrwhn.github.io/domain/post/tomcat.-accesslog/</link>
+      <pubDate>Sat, 21 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/tomcat.-accesslog/</guid>
+      <description>[TOC]
+Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  设置请求日志中的日志输出格式  详解 位置  conf.server.xml  value.className= *.AccessLogValve   参数  className  执行类  org.apache.catalina.valves.AccessLogValve  默认  org.apache.catalina.valves.FastCommonAccessLogValve  仅支持 common 和 combined patterns
+    directory
+ 产生文件所存放目录的[绝对|相对]路径  相对于 $CATALINA_HOME 默认为 logs   pattern
+ %a - 远程IP地址 %A - 本地IP地址 %b - 发送的字节数(Bytes sent), 不包括HTTP headers的字节，如果为0则展示&#39;-&#39; %B - 发送的字节数(Bytes sent), 不包括HTTP headers的字节 %h - 远程主机名称(如果resolveHosts为false则展示IP) %H - 请求协议 %l - 远程用户名，始终为&#39;-&#39;(Remote logical username from identd) %m - 请求的方法(GET, POST等) %p - 接受请求的本地端口 %q - 查询字符串，如果存在，有一个前置的&#39;?</description>
+    </item>
+    
+    <item>
+      <title>Spark </title>
+      <link>https://wrrwhn.github.io/domain/post/spark/</link>
+      <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spark/</guid>
+      <description>[TOC]
+Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.</description>
+    </item>
+    
+    <item>
+      <title>Linux.XArgs</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.xargs/</link>
+      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.xargs/</guid>
+      <description>参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d  指定输入的分隔符 -d\n  ``  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?</description>
+    </item>
+    
+    <item>
+      <title>Redis.Keys-Del</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.keys-del/</link>
+      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.keys-del/</guid>
+      <description>参考  Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key  明细  Login  /opt/redis/redis-cli -p &amp;lt;port&amp;gt; -a &amp;lt;password&amp;gt;  Search-Delete  /opt/redis/redis-cli keys &amp;quot;*&amp;quot; | xargs /opt/redis/redis-cli del   示例 删除指定练习相关缓存  导出以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; &amp;gt; /data/op-script/redis/exercises:10203  列举所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot;  删除所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; | xargs /usr/local/bin/redis-cli -p 37652 -a 5c\!</description>
+    </item>
+    
+    <item>
+      <title>Linux.Nginx </title>
+      <link>https://wrrwhn.github.io/domain/post/linux.nginx/</link>
+      <pubDate>Wed, 04 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.nginx/</guid>
+      <description>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写 []()  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?</description>
+    </item>
+    
+    <item>
+      <title>Linux.Grep</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.grep/</link>
+      <pubDate>Wed, 20 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.grep/</guid>
+      <description>[TOC]
+Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep  格式  grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]  参数 匹配器选择  -E, --extended-regexp  扩展正则表达式 由 POSIX 指定  -F, --fixed-strings, --fixed-regexp  模式解析为固定字符串列表，以换行符分隔，任一匹配 弃用别名  -G, --basic-regexp  解析为基本正则表达式 默认配置  -P, --perl-regexp  模式解析为 Perl 正则表达式 开发阶段，会提示未实现的特性   匹配控制  -e PATTERN, --regexp=PATTERN  文本正则  -f FILE, --file=FILE  正则条件文本文件，以换行符分隔 空文件则匹配不到任何东西  -i, --ignore-case  忽略正则表达式和内容的字符大小写匹配限制  -v, --invert-match  反向匹配 输出正则匹配到的元素之外的信息  -w, --word-regexp  全字匹配  -x, --line-regexp  全行匹配  -y  -i 的弃用同义词   控制输出  -c, --count  输出匹配的各文件中的行数  --color[=WHEN], --colour[=WHEN]  在终端以颜色区分匹配字符串，以转义字符显示包围的相关分隔符等信息 默认根据系统参数 GREP_COLORS 显示，但目前已弃用，优先级降低  -L, --files-without-match  打印出每个输入文件名称 终止于第一条匹配数据  -l, --files-with-matches  同 -L 由 POSIX 指定  -m NUM, --max-count=NUM  最多输出 NUM 个匹配项  -o, --only-matching  仅打印匹配行，以换行符分隔  -q, --quiet, --silent  不打印标准输出 成功时以 0 状态退出，失败时以 非0 值退出  -s, --no-messages  不打印异常消息   输出前缀控制  -b, --byte-offset  每行输出，0字节偏移  -H, --with-filename  打印每个匹配的文件名  -h, --no-filename  输出时忽略文件前缀 默认  --label=LABEL  以实际标准输入作为  文件的输入 gzip -cd foo.</description>
+    </item>
+    
+    <item>
+      <title>Go.并行&amp;并发 </title>
+      <link>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
+      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+    </item>
+    
+    <item>
+      <title>GraphQL</title>
+      <link>https://wrrwhn.github.io/domain/post/graphql/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/graphql/</guid>
+      <description>[TOC]
+GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
+query { hero { name } droid(id: &amp;quot;2000&amp;quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
+  { &amp;ldquo;ep&amp;rdquo;: &amp;ldquo;JEDI&amp;rdquo;, &amp;ldquo;review&amp;rdquo;: { &amp;ldquo;stars&amp;rdquo;: 5, &amp;ldquo;commentary&amp;rdquo;: &amp;ldquo;This is a great movie!</description>
+    </item>
+    
+    <item>
+      <title>Wechat.Export</title>
+      <link>https://wrrwhn.github.io/domain/post/wechat.export/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/wechat.export/</guid>
+      <description> [TOC]
+微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&amp;frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder
+流程  将语音收藏 在手机完整收听 使用目录管理搜索提取  ./sdcard/tecent/MicroMsg/ 搜索 .silk 文件  拷贝至电脑 使用 silk2mp3 工具将音频*转换*为 mp3 格式文件  注意  SILK v3  为 skype 向第三方开发人员或硬件制造商提供的免版税谁的 Silk 宽音频编码器 文件更为精简  xxx.silk 18KB xxx.mp3 189KB    </description>
+    </item>
+    
+    <item>
+      <title>Mysql.Error</title>
+      <link>https://wrrwhn.github.io/domain/post/mysql.error/</link>
+      <pubDate>Tue, 12 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/mysql.error/</guid>
+      <description> 1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;   </description>
+    </item>
+    
+    <item>
+      <title>右键菜单绑定</title>
+      <link>https://wrrwhn.github.io/domain/post/windows.right-click.menu/</link>
+      <pubDate>Fri, 08 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/windows.right-click.menu/</guid>
+      <description> 右键菜单绑定 参考  Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令  右键上传  修改注册表  结构  HKEY_CLASSES_ROOT  *  shell  （╯‵□′）╯︵┴─┴  新增「项」，其中名称为右键菜单要展示的名称 command  新增「项」，对应点击后执行的内容  默认  cmd.exe /k upload.exe -path=%1 &amp;amp;&amp;amp; exit  cmd.exe /k XXXXX  在 cmd 中执行 XXXXX 指令 &amp;amp;&amp;amp; 于前一条指令执行完成后执行           示例       </description>
+    </item>
+    
+    <item>
+      <title>Herman Miller </title>
+      <link>https://wrrwhn.github.io/domain/post/herman-miller/</link>
+      <pubDate>Fri, 01 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/herman-miller/</guid>
+      <description> [TOC]
+Herman Miller 参考  Herman Miller 官网  里程碑  60s  行动式办公室  Action Office Robert Propst 开放式办公屏风系统   1976  Ergon  1984  Equa  1994  Aeron 网椅  近期  Embody   推荐 Aeron  价位  天猫 Herman Miller 新款 Aeron【高端配置】 天猫 Herman Miller Aeron 座椅 标准配置（骶骨承托） 京东 Herman Miller 新款 Aeron【高端配置】-14天内发货 抛光底座/碳灰织物 大号 京东 Herman Miller Aeron 座椅 标准配置（骶骨承托） 碳黑色 中号  参考  Aeron座椅  欣赏        Embody  价位  天猫 Herman Miller Embody 座椅 标准配置【Rhythm织物】 京东 Herman Miller Embody 座椅 【Rhythm织物】 Rhythm织物\纯黑色 钛合金底座/白框  参考  Embody座椅  欣赏        T2  价位  [暂无]()  参考  T2  欣赏        Envelop办公桌  价位  天猫 Herman Miller Envelop 书桌【脚垫\部分现货】  参考  Envelop办公桌  欣赏       产品线 座椅  参考  座椅  系列  工作椅 主管椅 多用途/客椅 堆叠座椅 高脚凳 休闲座椅 公共座椅 长凳 户外座椅   工作空间  参考  工作空间  系列  个人工作站 私人办公室 办公桌 协作式家具 分隔屏风   桌子  参考  桌子  系列  会议桌 高度可调桌子 餐桌 多功能桌 户外桌子   储物  参考  储物  系列  配件  参考  配件  系列  人体工程学配件 照明 办公桌配件 装饰品   经典系列  参考  HermanMiller Collection    </description>
+    </item>
+    
+    <item>
+      <title>Go.交叉编译</title>
+      <link>https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
+      <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
+      <description>[TOC]
+Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译  作用  Go作为编译型语言，在不同平台上需要编译生成不同格式的二进制包  参数  GOOS  程序构建目标环境的操作系统  GOARCH  程序构建目标环境的计算机架构  CGO_ENABLED  当值为 0 时表示设置 CGO 不可用   示例 Linux 64bit  GOOS=linux GOARCH=amd64 go build -o app.linux  -o 用于指定二进制文件名   Linux 32bit  GOOS=linux GOARCH=386 go build  windows 64bit  GOOS=windows GOARCH=amd64 go build  windows 32bit  GOOS=windows GOARCH=386 go build  Mac OS 64bit  GOOS=darwin GOARCH=amd64 go build  备注  CGO  GO 语言自带工具，用于支持调用 C 语言代码的 GO 语言源码文件  1.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Run</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.run/</link>
+      <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.run/</guid>
+      <description>[TOC]
+命令后台运行 参考  Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令  类型  后台运行，终端关闭时停止 后台运行，终端关掉后仍继续运行  方法 前后台切换  流程  执行复杂语句 使用 Ctrl+ Z 挂起复杂程序  [1]+ Stopped /data/service/webapps/engine-dev/main  使用 jobs 查询后台工作情况  [1]+ Stopped /data/service/webapps/engine-dev/main  输入 fg 1 继续执行复杂语句 输入 bg 1 在后台继续执行语句  [1]+ /data/service/webapps/engine-dev/main jobs  [1]+ Running /data/service/webapps/engine-dev/main     后台执行  &amp;amp;  后台运行，终端关闭时停止  当前终端 shell 进程退出，会发送 hangup 信号给所有子进程 子进程收到 hangup 后退出  日志仍会打印到前台 示例  /data/service/webapps/engine-dev/main &amp;amp; /data/service/webapps/engine-dev/main &amp;gt; out.</description>
+    </item>
+    
+    <item>
+      <title>Linux 的目录与权限</title>
+      <link>https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</link>
+      <pubDate>Fri, 25 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</guid>
+      <description>[TOC]
+Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .</description>
+    </item>
+    
+    <item>
+      <title>IDEA.MyBatisCodeHelper</title>
+      <link>https://wrrwhn.github.io/domain/post/idea.mybatiscodehelper/</link>
+      <pubDate>Mon, 21 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/idea.mybatiscodehelper/</guid>
+      <description> [TOC]
+IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，极大提升效率  描述  根据 JavaBean 生成 MyBatis 和 SQL.Create 更新方法名生成表单操作  使用  详见参考二中动态图  </description>
+    </item>
+    
+    <item>
+      <title>Linux.User</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.user/</link>
+      <pubDate>Fri, 18 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.user/</guid>
+      <description>[TOC]
+参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &amp;lt;user.name&amp;gt;  OPTIONS  --home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  --quiet  即只打印警告和错误信息，忽略其他信息。  --debug  定位错误信息。  --conf  在创建用户时使用指定的 configuration 文件。  --force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &amp;lt;备注&amp;gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &amp;lt;登入目录&amp;gt;  指定用户登入时的启始目录；  D  变更预设值；  e &amp;lt;有效期限&amp;gt;  指定帐号的有效期限；  f &amp;lt;缓冲天数&amp;gt;  指定在密码过期后多少天即关闭该帐号；  g &amp;lt;群组&amp;gt;  指定用户所属的群组；  G &amp;lt;群组&amp;gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&amp;lt;shell&amp;gt;  指定用户登入后所使用的shell；  u&amp;lt;uid&amp;gt;  指定用户id。 ID 值尽量 &amp;gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &#39;useradd.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Jenkins</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.jenkins/</link>
+      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.jenkins/</guid>
+      <description>[TOC]
+参考  Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification failed [WARNING] Failed to create parent directories for tracking file  流程 war  DOWNLOAD  wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war  COPY  cp jenkins.war /data/service/webapps/jenkins/webapps/ROOT.war  CONFIG.JENKINS.TOMCAT  CATALINA_OPTS=&amp;quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&amp;quot; export CATALINA_OPTS   yum  YUM.CONFIG  wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key  YUM  yum install jenkins  JENKINS.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Maven</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.maven/</link>
+      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.maven/</guid>
+      <description> [TOC]
+参考  Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz  流程 Java.config  check $JAVA_HOME  Maven.config  UNZIP  /data/soft/apache-maven-3.5.0  EXPORT.ADD  /etc/profile  export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2}   EXPORT.SAVE  source /etc/profile  CHECK  mvn -v  MAVEN.CONFIG  /data/soft/apache-maven-3.5.0/conf/settings.xml  &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt;    常用指令  clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X  显示 Debbug 信息   </description>
+    </item>
+    
+    <item>
+      <title>Linux.Java</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.java/</link>
+      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.java/</guid>
+      <description> [TOC]
+参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script  安装  download  wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm?AuthParam=1502793850_1a99b9b8c46b13fbf1ea41f955c5bd54  install  yum localinstall jdk-8u144-linux-x64.rpm -y  check  java -version find / -name java  /usr/java/jdk1.8.0_144    </description>
+    </item>
+    
+    <item>
+      <title>Linux.Tomcat</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.tomcat/</link>
+      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.tomcat/</guid>
+      <description>[TOC]
+参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Firewalld</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.firewalld/</link>
+      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.firewalld/</guid>
+      <description>[TOC]
+firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置  指令 常见  添加端口  firewall-cmd --permanent --zone=public --add-port=3306/tcp  重启  firewall-cmd --reload  添加服务  firewall-cmd --permanent --add-service=mysql   所有  通用
+ firewall-cmd [--zone=&amp;lt;zone&amp;gt;] --add-port=&amp;lt;port&amp;gt;[-&amp;lt;port&amp;gt;]/&amp;lt;protocol&amp;gt; [--timeout=&amp;lt;seconds&amp;gt;]  运行
+ 查看运行状态  systemctl status firewalld.service  开关  systemctl [stop|start] firewalld firewall-cmd --reload  服务相关  firewall-cmd --list-services firewall-cmd --[add|remove]-service=mysql firewall-cmd --permanent --[add|remove]-service=mysql  端口相关  firewall-cmd --zone=public --add-port=3306/tcp --permanent firewall-cmd --zone=public --list-ports firewall-cmd --zone=public --query-port=3306/tcp   开机启动</description>
+    </item>
+    
+    <item>
+      <title>Linux.Mysql</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.mysql/</link>
+      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.mysql/</guid>
+      <description>[TOC]
+参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &#39;root&#39;@&#39;localhost&#39; =password(&#39;root.</description>
+    </item>
+    
+    <item>
+      <title>Dump.Analyze</title>
+      <link>https://wrrwhn.github.io/domain/post/dump.analyze/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/dump.analyze/</guid>
+      <description> 使用  安装 Dump 包分析软件 安装完成后进行初始化设置  设置【File/ Symbol file path】的属性值为【D:\MyCodesSymbols;SRV*c:\symbols*http://symbols.mozilla.org/firefox; SRV*D:\MyLocalSymbols*http://msdl.microsoft.com/download/symbols;C:Windowssymbols】  编辑 vbs 文件，调整 windbg 执行目录 双击执行，并输入任务管理器中的指定监控软件的 PID 值 操作软件，并至崩溃状态（崩溃后会自动启动 windbg 进行 Dump 包存储） 开启 windbg x86 程序，并打开该 Dump 包（File/ Open Crash Dump） 待加载完成后输入【~* kp】显示异常堆栈 输入【!analyze -v -f】分析具体异常  资源  X86 Debuggers And Tools-x86_en-us.msi crashdump.vbs 命令集合.xlsx  </description>
+    </item>
+    
+    <item>
+      <title>Git.Install</title>
+      <link>https://wrrwhn.github.io/domain/post/git.install/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/git.install/</guid>
+      <description>[TOC]
+Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &amp;quot;yqjdcyy@gmail.com&amp;quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git --version git config --global user.name &amp;quot;wrrwhn&amp;quot; git config --global user.email yaoqingju@gmail.com cat ~/.</description>
+    </item>
+    
+    <item>
+      <title>Java.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/java.basic/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.basic/</guid>
+      <description>[TOC]
+参考  使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁  功能 获取路径 分类  绝对路径  主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 例  C:xyz est.txt  代表了test.txt文件的绝对路径    相对路径  相对与某个基准目录（一般对照WEB）的路径。 示例  &amp;quot;/&amp;quot;代表Web应用的跟目录 &amp;quot;./&amp;quot; 代表当前目录 &amp;quot;../&amp;quot;代表上级目录   注  JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的   获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&amp;quot;？&amp;quot;) --&amp;gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&amp;quot;\&amp;quot;) //站点绝对路径 application.getRealPath(&amp;quot;&amp;quot;) //JSP界面使用 ServletContext().getRealPath(&amp;quot;&amp;quot;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ \.</description>
+    </item>
+    
+    <item>
+      <title>Java.Command</title>
+      <link>https://wrrwhn.github.io/domain/post/java.command/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.command/</guid>
+      <description> [TOC]
+Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&amp;gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&amp;hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&amp;gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy    </description>
+    </item>
+    
+    <item>
+      <title>Java.Detail</title>
+      <link>https://wrrwhn.github.io/domain/post/java.detail/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.detail/</guid>
+      <description>[TOC]
+finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&amp;quot;select * from student where stuNo=?&amp;quot;); //!! for(int i=0; i&amp;lt; 1000; i++){ ps.setString(1, &amp;quot;1000&amp;quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况</description>
+    </item>
+    
+    <item>
+      <title>Linux.Vim</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.vim/</link>
+      <pubDate>Tue, 08 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.vim/</guid>
+      <description>[TOC]
+简明 VIM 练级攻略 阶段  存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力  存活  i  Insert 模式  ESC  返回 Normal 模式  x  删除当前光标所有的一个字符  dd  剪切当前行  p  粘贴  hjkl  对应左下右上  :q&amp;lt;enter&amp;gt;  不保存退出   感觉良好 插入  i  在光标前插入  a  在光标后插入  O  在当前行前插入新行  o  在当前行后插入新行  cw  替换从光标所在位置后到一个单词结尾的字符   移动  0  行头  $  行尾  ^  到本行第一个 非blank 字符位置 blank= 空格| tab| 换行| 回车  g_  到本行最后一个非blank字符位置  /pattern  搜索 pattern 字符串   拷贝/ 粘贴  p  粘贴  yy  复制   Undo/ Redo  u  撤消   文件操作  :e  打开文件  :w  保存  ：saveas &amp;lt;path&amp;gt;  将文件另存至   :q!</description>
+    </item>
+    
+    <item>
+      <title>Go.VSCode</title>
+      <link>https://wrrwhn.github.io/domain/post/go.vscode/</link>
+      <pubDate>Mon, 31 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.vscode/</guid>
+      <description> [TOC]
+VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows  安装  安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukehoban - Go」 版本  调试  切换到「调试」界面，并点击「打开 launch.json」打开配置 调整指定配置项  &amp;lt;!-- 当前项目于 GOPATH 中的路径 --&amp;gt; &amp;quot;program&amp;quot;: &amp;quot;${workspaceRoot}\\Utils_Go\\src\\md5&amp;quot;, &amp;lt;!--设置当前环境变量 --&amp;gt; &amp;quot;env&amp;quot;: { &amp;quot;GOPATH&amp;quot;: &amp;quot;D:\\server\\go\\lib;D:\\work\\git\\yao\\go\\Hello_Go;D:\\work\\git\\yk\\go\\pptconverter-gateway\\code;${workspaceRoot}\\Utils_Go&amp;quot; }, &amp;lt;!--设置启动参数 --&amp;gt; &amp;quot;args&amp;quot;: [ &amp;quot;-c=1&amp;quot;, &amp;quot;-p=D:\\work\\git\\yao\\go\\Utils_Go\\template\\dest.mp4&amp;quot; ],  设置断点、进行调试  注  安装「lukehoban - Go」时，部分「go get」部分来源需要翻墙 调试相关快捷键同 visual stuio  </description>
+    </item>
+    
+    <item>
+      <title>Go.Nsq</title>
+      <link>https://wrrwhn.github.io/domain/post/go.nsq/</link>
+      <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.nsq/</guid>
+      <description>[TOC]
+[NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 --mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Make</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.make/</link>
+      <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.make/</guid>
+      <description>[TOC]
+Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.</description>
+    </item>
+    
+    <item>
+      <title>Go.Reflect</title>
+      <link>https://wrrwhn.github.io/domain/post/go.reflect/</link>
+      <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.reflect/</guid>
+      <description>[TOC]
+Go.Reflect 参考  Package reflect [](http://www.golang.ltd/forum.php?mod=viewthread&amp;amp;tid=6017)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader(r) r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp;amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.</description>
+    </item>
+    
+    <item>
+      <title>Windows.Service</title>
+      <link>https://wrrwhn.github.io/domain/post/windows.service/</link>
+      <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/windows.service/</guid>
+      <description>[TOC]
+Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&amp;lt;ServerName&amp;gt;] control [&amp;lt;ServiceName&amp;gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &amp;lt;UserDefinedControlB&amp;gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .</description>
+    </item>
+    
+    <item>
+      <title>Chrome.Plugin </title>
+      <link>https://wrrwhn.github.io/domain/post/chrome.plugin/</link>
+      <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/chrome.plugin/</guid>
+      <description>[TOC]
+参考  Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions  示例解析  目录结构
+html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，__要求 js 和 html 分开存放__ manifest.json // 插件配置文件  manifest.json
+{ &amp;quot;manifest_version&amp;quot;: 2, // 配置文件版本 &amp;quot;name&amp;quot;: &amp;quot;插件名称&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;插件功能描述&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1&amp;quot;, // 插件当前开发版本 // 通用型 &amp;quot;browser_action&amp;quot;: { // 浏览器级动作 &amp;quot;default_icon&amp;quot;: &amp;quot;/images/icon.</description>
+    </item>
+    
+    <item>
+      <title>Go.安装配置</title>
+      <link>https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
+      <description> [TOC]
+配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go   </description>
+    </item>
+    
+    <item>
+      <title>Go.异常处理</title>
+      <link>https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
+      <pubDate>Tue, 23 May 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
+      <description>[TOC]
+Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
+ 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
+ 操作返回值
+// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
+ 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.</description>
+    </item>
+    
+    <item>
+      <title>Go.GoSublime</title>
+      <link>https://wrrwhn.github.io/domain/post/go.gosublime/</link>
+      <pubDate>Wed, 26 Apr 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.gosublime/</guid>
+      <description>[TOC]
+注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &amp;quot;autocomplete_builtins&amp;quot;: true, &amp;quot;autocomplete_closures&amp;quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.</description>
+    </item>
+    
+    <item>
+      <title>Go.Flag</title>
+      <link>https://wrrwhn.github.io/domain/post/go.flag/</link>
+      <pubDate>Mon, 24 Apr 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.flag/</guid>
+      <description>[TOC]
+Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令行参数的功能接口  常用  flag.Xxx[String| Bool| Int](name string, default-value Xxx, usage-info string)  返回相应指针  flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info)  将 flag 绑定到变量  flag.Var(&amp;amp;custom-type, name, usage-info)  custom-type 需要实现 Value 接口  flag.Parse()  直接使用国指针，绑定参数则为实际值 flag.Args() flag.Arg(i)  flag.PrintDefaults  define  flag.String(&amp;quot;I&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;searchdirectoryfor include files&amp;quot;)  output  -I directory search directory for include files.</description>
+    </item>
+    
+    <item>
+      <title>Linux.Curl</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.curl/</link>
+      <pubDate>Sat, 01 Apr 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.curl/</guid>
+      <description>[TOC]
+参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| ...]  支持其它类型参数  --data &amp;quot;arg=val&amp;quot;  传递参数  --user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &amp;quot;Content-Type:application/json&amp;quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &amp;quot;Content-Type: application/json;charset=UTF-8&amp;quot; -d &#39;{&amp;quot;username&amp;quot;:&amp;quot;15880777595&amp;quot;,&amp;quot;pwd&amp;quot;:&amp;quot;1&amp;quot;}&#39; --cookie-jar /data/cdn/resource/curl-cookie http://live.</description>
+    </item>
+    
+    <item>
+      <title>加藤鹰-秘技传授</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/</link>
+      <pubDate>Mon, 20 Mar 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/</guid>
+      <description> [TOC]
+加藤鹰-秘技传授 接吻  搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧  爱抚 耳朵  待定  舌技  待定  指技  待定  异物插入  待定  插入  待定  </description>
+    </item>
+    
+    <item>
+      <title>MYSQL.Information_schema</title>
+      <link>https://wrrwhn.github.io/domain/post/mysql.information_schema/</link>
+      <pubDate>Sun, 26 Feb 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/mysql.information_schema/</guid>
+      <description>[TOC]
+MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.</description>
+    </item>
+    
+    <item>
+      <title>常用CMD指令</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/</link>
+      <pubDate>Thu, 23 Feb 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/</guid>
+      <description> [TOC]
+强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &amp;ldquo;9050&amp;rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &amp;ldquo;2748&amp;rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a  </description>
+    </item>
+    
+    <item>
+      <title>FFmpeg.阅读笔记</title>
+      <link>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Mon, 20 Feb 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <description>[TOC]
+简介  FFmpeg FFmpeg - wiki FFmpeg - github  实例 裁剪  指令  ffmpeg -i old.mp3 -ss 56.808 -write_xing 0 new.mp3  解析  -i old.mp3 来源 -ss 56.808 起始时间点，单位秒 -t 999 结束时间，单位秒 -write_xing 0 微信-IOS 音频支持   转 MP4  指令  ffmpeg -i old.video -vcodec libx264 -r 24 -s 640x360 -acodec libmp3lame -write_xing 0 -ar 22050 -ab 24k -y new.mp4  解析  -vcodec libx264 设置视频视频编解码器，未设置时则使用与输入文件相同之编解码器 -r 24 每秒帧数 frames per second，默认25 -s 640x360 设置帧尺寸  WXH 与来源一致 640x360 指定尺寸  -acodec libmp3lame 设置音频编解码器 -ar 22050 设置音频采样频率,默认24000 -ab 24k 设置声音比特率，32/ 64/ 96/ 128 -y 覆盖输出文件   ### - 指令 + ffmpeg -i old.</description>
+    </item>
+    
+    <item>
+      <title>XSD</title>
+      <link>https://wrrwhn.github.io/domain/post/xsd/</link>
+      <pubDate>Fri, 16 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/xsd/</guid>
+      <description>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：http://www.w3school.com.cn/schema/ 手册：http://www.w3school.com.cn/schema/schema_elements_ref.asp 验证：http://www.ltg.ed.ac.uk/~ht/xsv-status.html 实例：http://www.w3school.com.cn/schema/schema_example.asp
+使用 XML结构 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;note&amp;gt; &amp;lt;to&amp;gt;George&amp;lt;/to&amp;gt; &amp;lt;from&amp;gt;John&amp;lt;/from&amp;gt; &amp;lt;heading&amp;gt;Reminder&amp;lt;/heading&amp;gt; &amp;lt;body&amp;gt;Don&#39;t forget the meeting!&amp;lt;/body&amp;gt; &amp;lt;/note&amp;gt;   定义 - note.xsd &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;xs:schema xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&amp;quot;http://www.w3school.com.cn&amp;quot; // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&amp;quot;http://www.w3school.com.cn&amp;quot; // 指定默认命名空间 elementFormDefault=&amp;quot;qualified&amp;quot; &amp;gt; &amp;lt;xs:element name=&amp;quot;note&amp;quot;&amp;gt; &amp;lt;xs:complexType&amp;gt; &amp;lt;xs:sequence&amp;gt; &amp;lt;xs:element name=&amp;quot;to&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;from&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;heading&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;body&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;/xs:sequence&amp;gt; &amp;lt;/xs:complexType&amp;gt; &amp;lt;/xs:element&amp;gt; &amp;lt;/xs:schema&amp;gt;  引用 &amp;lt;?</description>
+    </item>
+    
+    <item>
+      <title>Oracle.分析函数</title>
+      <link>https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/</link>
+      <pubDate>Thu, 15 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/</guid>
+      <description>统计方面 合并  Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&amp;hellip;)  按照COLX的降序层次逐层汇总合并  CUBE(COL1, COL2&amp;hellip;)  排序  Rank() Over ([Partition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，但下一记录会空出其中的排名  Dense_rank() Over ([Patition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，之后数据接上一次序继续  Row_number() Over ([Partitionby ] [Order by ] [Nulls First/Last])  碰到相同数据时不做处理依照记录顺序依次递增  Ntile( ) Over ([Partition by ] [Order by ])  最值  [Min|Max]() Keep (Dense_rank First/Last [Partition by ] [Order by ])  MIN 用于确保返回唯一记录 KEEP 用于告知Oracle保留符合KEEP条件的记录 Dense_rank 固定写法，不可更改  Ratio_to_report(value)  Ratio_to_report(value)= value/ sum(value)   首/末记录  [First_value|Last_value|(Sum() Over ([Patition by ] [Order by ] Rows Between Preceding And Following ))  相邻记录比较  LAG(其它行表达式, &amp;lt;偏移行数，缺省为1&amp;gt;, &amp;lt;偏移行数超出分组范围时的返回值&amp;gt;)  LAG(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])  LEAD(其它行表达式, &amp;lt;偏移行数，缺省为1&amp;gt;, &amp;lt;偏移行数超出分组范围时的返回值&amp;gt;)  LEAD(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])   家族树  START WITH COL1= &amp;lsquo;XXX&amp;rsquo; CONNECT BY COL1= PRIOR COL2  语法  1&amp;gt;语句顺序：SELECT&amp;gt; FROM&amp;gt; WHERE&amp;gt; START WITH&amp;gt; CONNECT BY&amp;gt; ORDER BY 2&amp;gt;PRIOR位置：在前（CONNECT BY PRIOR COL1=COL2），强制由根到叶自顶向上，置于后面则相反由叶到根 3&amp;gt;WHERE可以排除树中个体，但无法排除其子孙或祖先 4&amp;gt;CONNECT BY条件则可以排除个体及其后代信息 5&amp;gt;CONNECT BY不以和WHERE子句中表连接使用  例子  SELECT LEVEL, NVL(B.</description>
+    </item>
+    
+    <item>
+      <title>AngularJS.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/angularjs.basic/</link>
+      <pubDate>Wed, 14 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/angularjs.basic/</guid>
+      <description>导言和准备  地址 源码 图解Git  引导程序 参考 - 详细：http://angularjs.cn/A003 - 源码：https://github.com/angular/angular-phonecat - 环境：https://github.com/nodejs/node-gyp - 安装异常：http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm - 安装异常：http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html  启动服务  npm install npm start
+ 需要行先安装 python，仅目前只支持 2.*.，不支持 3..* 并将 git 设置为环境变量，即将 D:\Program Files (x86)\Git\bin\;D:\Program Files (x86)\Git\libexec\git-core; 加入环境变量中
+ 注：有时需要重启才能生效 更多注意事项请看 https://github.com/nodejs/node-gyp
+测试服务   npm test
+切换服务 git checkout -f step-0
+ 其中各阶段主要重点均在 https://github.com/angular/angular-phonecat
+应用界面  http://localhost:8000/app/index.html
+核心代码解析 &amp;lt;!-- np-app 指令，用于标记 AngularJS 脚本的作用域 --&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot; ng-app&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>常用技术</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Wed, 14 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
+      <description>灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&#39;IMG&#39;,&#39;SELECT&#39;,&#39;OBJECT&#39;,&#39;IFRAME&#39;); for(var j=0;j&amp;lt;HideElementTemp.length;j++){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&amp;lt;document.all.tags(strElementTagName).length; i++){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&amp;quot;hidden&amp;quot;; objTemp.disabled=&amp;quot;disabled&amp;quot; } } catch(e){} } } //隐藏特殊控件+ 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&amp;quot;DIV&amp;quot;); //产生一个背景遮罩层 shield.id = &amp;quot;shield&amp;quot;; shield.style.position = &amp;quot;absolute&amp;quot;; shield.style.left = &amp;quot;0px&amp;quot;; shield.style.top = &amp;quot;0px&amp;quot;; shield.style.width = &amp;quot;100%&amp;quot;; shield.style.height = ((document.documentElement.clientHeight&amp;gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&amp;quot;px&amp;quot;; shield.style.background = &amp;quot;#333&amp;quot;; shield.style.textAlign = &amp;quot;center&amp;quot;; shield.</description>
+    </item>
+    
+    <item>
+      <title>Git.命令小结</title>
+      <link>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
+      <description>[TOC]
+查看 分支状态  git status git branch
+ 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到当前分支
+日志  git log
+ &amp;ndash;pretty=oneline：单行显示 &amp;ndash;graph：图形分支
+标签  git tag
+ &amp;lt;&amp;gt;：查看当前分支标签 -l &amp;lsquo;v1.4*&amp;lsquo;：查看所有匹配该正则的标签信息
+文件提交明细  git blame &amp;lt;fileName&amp;gt;：查看文件每行的提交 hash / author/ time
+  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &amp;lt;branch&amp;gt; ###新增提交 git add -A git commit -m &amp;ldquo;commit content&amp;rdquo; git push origin &amp;lt;branch&amp;gt;
+修改提交 git commit -a -m &amp;ldquo;commit content&amp;rdquo;</description>
+    </item>
+    
+    <item>
+      <title>HTTP.协议相关</title>
+      <link>https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/</guid>
+      <description>[TOC]
+参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1  Header 头文件  Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  -----------------------------7e016f3be0a4a Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;B2283659A4B9302BE09FE2EC97690382.</description>
+    </item>
+    
+    <item>
+      <title>MYSQL.开发规范</title>
+      <link>https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
+      <description>[TOC]
+[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
+例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;;
+  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
+列 列名称命名采用英文单词或缩写，关联具体业务
+ 尽量不允许为 Null，用默认值代替
+例 FetionUser.FU_TableName.ColName
+  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]_[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &amp;gt; 9520 ORDER BY id ASC LIMIT 20;  !</description>
+    </item>
+    
+    <item>
+      <title>Markdown</title>
+      <link>https://wrrwhn.github.io/domain/post/markdown/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/markdown/</guid>
+      <description> 目录 [TOC]
+标题 二级标题 ####### 最大支持六级标题
+注：序号和*号，与内容之间均需要一个空格
+ 列表1 列表2 列表3   无序列表 无序列表  无序列表缩进  无序列表  字体支持很多样式，比如加粗、*斜体*、删除线等特别样式
+当然也可以引用名人名言 &amp;gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦
+百度
+代码格式表示
+ for(var i= 0; i&amp;lt; count; i++)  表格 |为知| md| |-|-| |WizNote|Markdown|
+公式啊！！！ $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+st=&amp;gt;start: Start:&amp;gt;http://www.google.com[blank] e=&amp;gt;end:&amp;gt;http://www.google.com op1=&amp;gt;operation: My Operation sub1=&amp;gt;subroutine: My Subroutine cond=&amp;gt;condition: Yes or No?:&amp;gt;http://www.google.com io=&amp;gt;inputoutput: catch something... st-&amp;gt;op1-&amp;gt;cond cond(yes)-&amp;gt;io-&amp;gt;e cond(no)-&amp;gt;sub1(right)-&amp;gt;op1  Title: [教程可以看](http://bramp.github.io/js-sequence-diagrams/) A-&amp;gt;B: 【备注演示】 Note left of A: 此轮回应前\nA 左侧备注 Note over A: 此轮 A 线上的备注 Note right of A: 此轮回应前A 右侧备注 Note over A,B:此轮回应前横跨 AB 两线的备注 A-&amp;gt;B: 【线型演示】 A-&amp;gt;B: 实线三角标 B--&amp;gt;A: 虚线三角标 A-&amp;gt;&amp;gt;B: 实线角标 B--&amp;gt;&amp;gt;A: 虚线角标  </description>
+    </item>
+    
+    <item>
+      <title>Spring.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/spring.basic/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spring.basic/</guid>
+      <description>[TOC]
+AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
+public interface Greeting { void sayHello(String name); }  implement
+public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&amp;quot;Hello! &amp;quot; + name); after(); } private void before() { System.out.println(&amp;quot;Before&amp;quot;); } private void after() { System.out.println(&amp;quot;After&amp;quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot.JPA</title>
+      <link>https://wrrwhn.github.io/domain/post/springboot.jpa/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/springboot.jpa/</guid>
+      <description>[TOC] 文章来源 Spring Data JPA - Reference Documentation
+学习整理 Basic Example Entity @Entity @Table(name = &amp;quot;user&amp;quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &amp;quot;user_name&amp;quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&amp;lt;User, Long&amp;gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&amp;lt;User&amp;gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &amp;quot;com.yunkai&amp;quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &amp;quot;com.yunkai&amp;quot;) @EntityScan(basePackages = &amp;quot;com.</description>
+    </item>
+    
+    <item>
+      <title>SpringBoot.入门</title>
+      <link>https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/</guid>
+      <description>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.midgetontoes&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-simple&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;spring.boot.version&amp;gt;1.1.4.RELEASE&amp;lt;/spring.boot.version&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring.boot.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring.boot.version}&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;repackage&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; &amp;lt;/project&amp;gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&amp;quot;/&amp;quot;) String home() { return &amp;quot;Hello World!&amp;quot;; } public static void main(String[] args) throws Exception { SpringApplication.</description>
+    </item>
+    
+    <item>
+      <title>Storm</title>
+      <link>https://wrrwhn.github.io/domain/post/storm/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/storm/</guid>
+      <description>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
+进程间通信协议 Connection
+ recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
+ bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
+ 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
+ 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送</description>
+    </item>
+    
+    <item>
+      <title>Sublime.Plugin</title>
+      <link>https://wrrwhn.github.io/domain/post/sublime.plugin/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/sublime.plugin/</guid>
+      <description>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&amp;gt; new plugin&amp;hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&amp;lsquo;example&amp;rsquo;) -&amp;gt; 即可看到当前文章头部插入 &amp;lsquo;Hello, World!&amp;rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp;amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.</description>
+    </item>
+    
+    <item>
+      <title>Mysql.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/mysql.basic/</link>
+      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/mysql.basic/</guid>
+      <description>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp;amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &amp;lt;left_table&amp;gt; &amp;lt;join_type&amp;gt; JOIN &amp;lt;right_table&amp;gt; ON &amp;lt;on_predicate&amp;gt; | (1-A) &amp;lt;left_table&amp;gt; &amp;lt;apply_type&amp;gt; APPLY &amp;lt;right_table_expression&amp;gt; AS &amp;lt;alias&amp;gt; | (1-P) &amp;lt;left_table&amp;gt; PIVOT(&amp;lt;pivot_specification&amp;gt;) AS &amp;lt;alias&amp;gt; | (1-U) &amp;lt;left_table&amp;gt; UNPIVOT(&amp;lt;unpivot_specification&amp;gt;) AS &amp;lt;alias&amp;gt; （2）WHERE &amp;lt;where_predicate&amp;gt; （3）GROUP BY &amp;lt;group_by_specification&amp;gt; （4）HAVING &amp;lt;having_predicate&amp;gt; （6）ORDER BY &amp;lt;order_id_list&amp;gt;  操作相关 更改密码 mysql -u root -p &amp;gt; Enter password user mysql; update user set password=passworD(&amp;quot;new pass&amp;quot;) where user=&#39;root&#39;; flush privileges; exit;  允许指定 IP 访问 &amp;gt; mysql -uroot -p; &amp;gt; Yk1qazxsw2 // root &amp;gt; use mysql; &amp;gt; show grants for yunkai_user@110.</description>
+    </item>
+    
+    <item>
+      <title>Oracle - 基础</title>
+      <link>https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/</link>
+      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/</guid>
+      <description>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
+The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
+Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
+  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
+ 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
+Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。</description>
+    </item>
+    
+    <item>
+      <title>Redis.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/redis.basic/</link>
+      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/redis.basic/</guid>
+      <description>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&amp;hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节</description>
+    </item>
+    
+    <item>
+      <title>Java.常用技术</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Fri, 09 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
+      <description>参考  http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/ http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html http://ifeve.com/locks/  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&amp;rdquo;/&amp;ldquo;代表Web应用的跟目录， &amp;ldquo;./&amp;rdquo; 代表当前目录,&amp;ldquo;../&amp;ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
+获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&amp;ldquo;？&amp;rdquo;) &amp;ndash;&amp;gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&amp;rdquo;\&amp;ldquo;) //站点绝对路径 application.getRealPath(&amp;ldquo;&amp;rdquo;) //JSP界面使用 ServletContext().getRealPath(&amp;ldquo;&amp;rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&amp;ldquo;&amp;rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&amp;ldquo;&amp;rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&amp;ldquo;&amp;rdquo;).getPath()  返回字串</description>
+    </item>
+    
+    <item>
+      <title>Maven</title>
+      <link>https://wrrwhn.github.io/domain/post/maven/</link>
+      <pubDate>Fri, 09 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/maven/</guid>
+      <description>[TOC]
+部署安装 下载地址  http://maven.apache.org/download.cgi  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
+各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
+ clean remove all files generated by the previous build
+ post-clean executes processes needed to finalize the project cleaning
+Default Lifecycle validate validate the project is correct and all necessary information is available.</description>
+    </item>
+    
+    <item>
+      <title>DWR</title>
+      <link>https://wrrwhn.github.io/domain/post/dwr/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/dwr/</guid>
+      <description>[TOC]
+参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt;  springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt; &amp;lt;!-- 打开dwr的控制器 --&amp;gt; &amp;lt;dwr:controller id=&amp;quot;dwrController&amp;quot; debug=&amp;quot;true&amp;quot; &amp;gt; &amp;lt;dwr:config-param name=&amp;quot;allowScriptTagRemoting&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;crossDomainSessionSecurity&amp;quot; value=&amp;quot;false&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;activeReverseAjaxEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;/dwr:controller&amp;gt; &amp;lt;dwr:url-mapping/&amp;gt; &amp;lt;bean class=&amp;quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;alwaysUseFullPath&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;property name=&amp;quot;mappings&amp;quot;&amp;gt; &amp;lt;props&amp;gt; &amp;lt;prop key=&amp;quot;/dwr/**/*&amp;quot;&amp;gt;dwrController&amp;lt;/prop&amp;gt; &amp;lt;/props&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;!</description>
+    </item>
+    
+    <item>
+      <title>Regex</title>
+      <link>https://wrrwhn.github.io/domain/post/regex/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/regex/</guid>
+      <description>元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 + 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?</description>
+    </item>
+    
+    <item>
+      <title>Spring.Cache</title>
+      <link>https://wrrwhn.github.io/domain/post/spring.cache/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spring.cache/</guid>
+      <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
     </item>
     
   </channel>

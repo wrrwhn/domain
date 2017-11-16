@@ -1,0 +1,407 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.25">2017.08.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="linux-的目录与权限">Linux 的目录与权限</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://cn.linux.vbird.org/linux_basic/0210filepermission.php">Linux 的文件权限与目录配置</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/12/inode.html">理解inode</a></li>
+<li><a href="http://www.361way.com/rm-file-use-inode/4187.html">Linux下 通过删除inode来删除文件</a></li>
+</ul>
+
+<h2 id="使用者与群组">使用者与群组</h2>
+
+<ul>
+<li>文件拥有者</li>
+<li>群组
+
+<ul>
+<li>当前拥有者所在群组其它成员权限</li>
+</ul></li>
+<li>其它人
+
+<ul>
+<li>非当前拥有者所在群组成员的权限</li>
+</ul></li>
+</ul>
+
+<h2 id="文件权限">文件权限</h2>
+
+<h3 id="文件属性">文件属性</h3>
+
+<ul>
+<li>示例
+
+<ul>
+<li><code>drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev</code></li>
+</ul></li>
+<li>解析
+
+<ul>
+<li><code>(d)(rwx)(r-x)(r-x)</code>
+
+<ul>
+<li>档案类型、权限</li>
+<li>(1)
+
+<ul>
+<li>文件类型
+
+<ul>
+<li><code>d</code>
+
+<ul>
+<li>目录</li>
+</ul></li>
+<li><code>-</code>
+
+<ul>
+<li>文件</li>
+</ul></li>
+<li><code>l</code>
+
+<ul>
+<li>link file</li>
+</ul></li>
+<li><code>b</code>
+
+<ul>
+<li>装置文件中可供存储的接口设备</li>
+</ul></li>
+<li><code>c</code>
+
+<ul>
+<li>装置文件中的串行端口设备，如键盘、鼠标</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>(2)
+
+<ul>
+<li>文件拥有者权限</li>
+<li>三位固定代表是否可以读、写、执行</li>
+<li>其中指定位上若无权限，则以<code>-</code>表示</li>
+</ul></li>
+<li>(3)
+
+<ul>
+<li>同群组用户权限</li>
+</ul></li>
+<li>(4)
+
+<ul>
+<li>非本群组用户权限</li>
+</ul></li>
+</ul></li>
+<li><code>2</code>
+
+<ul>
+<li>连结数</li>
+<li>硬连接到此 inode 文件的数量</li>
+</ul></li>
+<li><code>root</code>
+
+<ul>
+<li>档案拥有者</li>
+</ul></li>
+<li><code>root</code>
+
+<ul>
+<li>档案所属群组</li>
+</ul></li>
+<li><code>4096</code>
+
+<ul>
+<li>档案大小，单位为字节</li>
+</ul></li>
+<li><code>Aug 24 09:17</code>
+
+<ul>
+<li>最后修改时间</li>
+</ul></li>
+<li><code>wechat-forum-dev</code>
+
+<ul>
+<li>档案名称</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="补充">补充</h2>
+
+<h3 id="inode">inode</h3>
+
+<ul>
+<li>概念
+
+<ul>
+<li>inode
+
+<ul>
+<li>存储文件元信息
+
+<ul>
+<li>文件字节数</li>
+<li>拥有者用户 ID</li>
+<li>文件的组 ID</li>
+<li>读、写、执行权限</li>
+<li>时间戳
+
+<ul>
+<li>ctime
+
+<ul>
+<li>inode 上次变动时间</li>
+</ul></li>
+<li>mtime
+
+<ul>
+<li>文件内容上次变动时间</li>
+</ul></li>
+<li>atime
+
+<ul>
+<li>上次打开时间</li>
+</ul></li>
+</ul></li>
+<li>链接数
+
+<ul>
+<li>多少个文件名指向这个 inode</li>
+<li>block 位置</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Block
+
+<ul>
+<li>8* Sector</li>
+</ul></li>
+<li>Sector
+
+<ul>
+<li>扇区</li>
+<li>文件在硬盘中的最小存储单元</li>
+<li>512 B</li>
+</ul></li>
+</ul></li>
+<li>查看
+
+<ul>
+<li><code>stat file</code>
+
+<ul>
+<li>查看文件的 inode 信息</li>
+</ul></li>
+<li><code>ls -il</code>
+
+<ul>
+<li>查看 inode 号码</li>
+</ul></li>
+</ul></li>
+<li>补充
+
+<ul>
+<li>移动、重命名，更新文件名，不影响 inode
+
+<ul>
+<li><code>ls -i</code></li>
+<li><code>find ./ -inum &lt;inode&gt; -exec rm -i {} \;</code></li>
+</ul></li>
+<li>文件名包含特殊字符，无法删除，但删除 inode 节点仍起到删除作用</li>
+</ul></li>
+</ul>
+
+<h3 id="硬链接">硬链接</h3>
+
+<ul>
+<li>概念
+
+<ul>
+<li>多个文件名指向同一 inode</li>
+<li>更新文件的连结数</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>ln 已存在文件 硬链接文件</code></li>
+</ul></li>
+</ul>
+
+<h3 id="软链接">软链接</h3>
+
+<ul>
+<li>概念
+
+<ul>
+<li>A/B 文件的 inode 不一致，但读 A 时自动导向到 B</li>
+<li>删除 B 后，访问 A 时会报错</li>
+<li>不更新链接数</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>ln -s 已存在文件或目录 软链接文件或目录</code></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux%25E7%259A%2584%25E7%259B%25AE%25E5%25BD%2595%25E4%25B8%258E%25E6%259D%2583%25E9%2599%2590%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Linux%20%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%8e%e6%9d%83%e9%99%90&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux%25E7%259A%2584%25E7%259B%25AE%25E5%25BD%2595%25E4%25B8%258E%25E6%259D%2583%25E9%2599%2590%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux%25E7%259A%2584%25E7%259B%25AE%25E5%25BD%2595%25E4%25B8%258E%25E6%259D%2583%25E9%2599%2590%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux%25E7%259A%2584%25E7%259B%25AE%25E5%25BD%2595%25E4%25B8%258E%25E6%259D%2583%25E9%2599%2590%2f&title=Linux%20%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%8e%e6%9d%83%e9%99%90" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+
