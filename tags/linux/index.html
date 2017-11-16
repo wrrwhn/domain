@@ -46,6 +46,60 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/tcp">tcp</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
+ r 刷新界面
+ yy 复制当前界面 URL
+ p 在当前标签页打开剪贴板中的 URL
+ gu 跳转至当前 URL 的上一层
+ <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/article/15/1231/">http://www.phperz.com/article/15/1231/</a>  gU 跳转至当前 URL 的最高层
+ <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
+  使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -239,52 +293,6 @@ Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep
     <p>[TOC]
 Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.user/" title="Linux.User">Linux.User</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.user/" title="Linux.User"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.jenkins/" title="Linux.Jenkins">Linux.Jenkins</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.17">2017.08.17</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification failed [WARNING] Failed to create parent directories for tracking file  流程 war  DOWNLOAD  wget <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  COPY  cp jenkins.war /data/service/webapps/jenkins/webapps/ROOT.war  CONFIG.JENKINS.TOMCAT  CATALINA_OPTS=&quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot; export CATALINA_OPTS   yum  YUM.CONFIG  wget -O /etc/yum.repos.d/jenkins.repo <a href="http://jenkins-ci.org/redhat/jenkins.repo">http://jenkins-ci.org/redhat/jenkins.repo</a> rpm &ndash;import <a href="http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key">http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key</a>  YUM  yum install jenkins  JENKINS.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.jenkins/" title="Linux.Jenkins"> &raquo;</a>
 </article>
 
         

@@ -1,0 +1,1227 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/imagemagick.basic/" title="ImageMagick">ImageMagick</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/imagemagick">imagemagick</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="imagemagick">ImageMagick</h1>
+
+<h2 id="reference">Reference</h2>
+
+<ul>
+<li><a href="http://www.imagemagick.org/script/command-line-processing.php">官网</a></li>
+</ul>
+
+<h2 id="anatomy">Anatomy</h2>
+
+<ul>
+<li>convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]</li>
+</ul>
+
+<h3 id="input-filenames">Input FileNames</h3>
+
+<h4 id="filename-globbing">FileName Globbing</h4>
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>pattern match about */?</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li><p>convert *.jpg images.gif</p>
+
+<h4 id="explicit-image-format">Explicit Image Format</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>specified a explicit image format is better than in the case of the image donot contain a signature of identify format</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li><p>convert -size 640x480 -depth 8 rgb:image image.png</p>
+
+<h4 id="built-in-image-and-pattern">Built-in Image and Pattern</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>you can use a number of built-in image/ <a href="http://www.imagemagick.org/script/formats.php#builtin-patterns">patterns</a> to build image</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li><p>convert -size 640x480 pattern:checkerboard checkerboard.png</p>
+
+<h4 id="stdin-stdout-file-descriptors">STDIN·STDOUT·File Descriptors</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>output could be piped to the input</li>
+<li>fd:[0/1/2]     -&gt; STDIN/ STDOUT/ STDERR</li>
+<li>fd:N(N&gt;2)     -&gt; pseudonym for file</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li><p>convert rose: gif:- | convert - -resize &ldquo;200%&rdquo; bigrose.jpg&rsquo;</p>
+
+<ul>
+<li><p>! no work for me in linux</p>
+
+<h4 id="selecting-frames">Selecting Frames</h4></li>
+</ul></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>deal with the image which has more than one frames</li>
+<li>Unix shells generally interpret brackets so we enclosed the filename in quotes above</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li>convert &lsquo;images.gif[0]&rsquo; image.png</li>
+<li>convert &lsquo;images.gif[-1]&rsquo; image.png
+
+<ul>
+<li>last frame</li>
+</ul></li>
+<li>convert &lsquo;images.gif[0-3]&rsquo; image.png
+
+<ul>
+<li>stash into image-[0-3].png</li>
+</ul></li>
+
+<li><p>convert &lsquo;images.gif[3,2,3]&rsquo; image.mng</p>
+
+<ul>
+<li><p>.mng support for multi frames</p>
+
+<h4 id="selecting-an-image-region">Selecting an Image Region</h4></li>
+</ul></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>select a part region of the origin image as a new one</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li>convert -size 100x100 &lsquo;hexagons.png[50x50+25+25]&rsquo; hexagon-50x50.png</li>
+
+<li><p>convert &lsquo;hexagons.png[30x30+35+35]&rsquo; hexagon-30x30.png</p>
+
+<h4 id="inline-image-resize">Inline Image Resize</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>resize iamge</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li>convert mid-frame-0.png -resize 100x100 mid-frame-0-resize-100x100.png</li>
+
+<li><p>convert &lsquo;mid-frame-0.png[1000x1000]&rsquo; mid-frame-0-resize-1000x1000.png</p>
+
+<h4 id="inline-image-crop">Inline Image Crop</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>crop the region of image</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li><p>convert &lsquo;*.jpg[120x120+10+5]&rsquo; thumbnail%03d.png</p>
+
+<h4 id="filename-references">Filename References</h4></li>
+</ul></li>
+
+<li><p>Analysis</p>
+
+<ul>
+<li>user file or pattern to stash filenames</li>
+</ul></li>
+
+<li><p>Example</p>
+
+<ul>
+<li>convert <code>@mid-frame.txt</code> mid-frame.gif
+
+<ul>
+<li>frame001.jpg</li>
+<li>frame002.jpg</li>
+<li>frame003.jpg</li>
+</ul></li>
+
+<li><p>convert <code>image-%d.jpg[1-5]</code></p>
+
+<ul>
+<li>image-1.jpg</li>
+<li>image-2.jpg</li>
+<li>image-3.jpg</li>
+<li>image-4.jpg</li>
+
+<li><p>image-5.jpg</p>
+
+<h4 id="stream-buffering">Stream Buffering</h4></li>
+</ul></li>
+</ul></li>
+
+<li><h2 id="analysis">Analysis</h2></li>
+
+<li><p>Example</p>
+
+<ul>
+<li>convert logo: gif:- | display -define stream:buffer-size=0 gif:-</li>
+</ul></li>
+</ul>
+
+<h3 id="command-line-options">Command-line Options</h3>
+
+<h4 id="imagesetting">ImageSetting</h4>
+
+<ul>
+<li>adjoin
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>for save a sequence images</li>
+</ul></li>
+<li>Example
+
+<ul>
+<li>convert logo: rose: -morph 15 my<code>%02d</code>morph.jpg
+
+<ul>
+<li>my00morph.jpg</li>
+<li>.</li>
+<li>my16morph.jpg</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>affine
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>仿射</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>alpha
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>α</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>alpha color
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>阿尔法颜色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>antialias
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>反锯齿</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>authenticate
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>认证</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>background
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>背景</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>bias
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>偏压</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>black point compensation
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>黑点补偿</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>blue primary
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>蓝色三原色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>border color
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>边框颜色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>caption
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>标题</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>channel
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>渠道</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>comment
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>评论</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>compress
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>压缩</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>debug
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>调试</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>define
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>确定</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>delay
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>延迟</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>density
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>密度</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>depth
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>深度</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>direction
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>方向</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>display
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>显示</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>dispose
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>部署</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>dither
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>抖动</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>encoding
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>编码</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>endian
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>尾数</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>extract
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>提取</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>family
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>家庭</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>fill
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>填</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>filter
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>过滤</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>font
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>字形</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>format
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>格式</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>fuzz
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>模糊</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>geometry
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>几何</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>gravity
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>重力</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>green primary
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>绿色基色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>interlace
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>交错</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>intent
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>意图</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>interpolate
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>插</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>label
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>标签</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>limit
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>限制</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>linewidth
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>行宽</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>log
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>日志</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>loop
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>循环</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>mask
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>面具</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>matte color
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>亚光色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>monitor
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>监控</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>orient
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>东方</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>page
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>页</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>pointsize
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>的pointsize</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>preview
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>预习</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>quality
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>质量</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>quiet
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>安静</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>red primary
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>红原</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>region
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>地区</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>render
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>给予</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>repage
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>repage</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>sampling factor
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>采样因素</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>scene
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>现场</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>seed
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>种子</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>size
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>尺寸</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>stretch
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>伸展</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>stroke
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>行程</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>stroke width
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>笔划宽度</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>style
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>样式</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>texture
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>质地</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>tile
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>瓦</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>transparent color
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>透明色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>tree depth
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>树的深度</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>type
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>类型</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>undercolor
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>底色</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>units
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>单位</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>verbose
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>详细</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+<li>virtual pixel
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>虚拟像素</li>
+</ul></li>
+<li>Example
+  -</li>
+</ul></li>
+
+<li><p>weight</p>
+
+<ul>
+<li>Analysis
+
+<ul>
+<li>重量</li>
+</ul></li>
+
+<li><p>Example
+  -</p>
+
+<h4 id="image-operator">Image Operator</h4>
+
+<h4 id="image-sequence-operator">Image Sequence Operator</h4>
+
+<h4 id="image-geometry">Image Geometry</h4>
+
+<h4 id="image-stack">Image Stack</h4></li>
+</ul></li>
+</ul>
+
+<p>composite -tile /data/cdn/resource/repeat.png /data/tmp/yao/from/yk-white.jpg jpg:- | convert - &ldquo;/data/cdn/resource/logo.png&rdquo; -gravity northeast -geometry +24+20 -composite jpg:- | convert -quality 75 - /data/tmp/yao/to/preview-yk-white.jpg</p>
+
+<p>convert -size 140x80 xc:none -fill grey -gravity NorthWest -draw &ldquo;text 10,10 &lsquo;live.yunkai.com&rsquo;&rdquo; -gravity SouthEast -draw \&ldquo;text 5,15 &lsquo;live.yunkai.com&rsquo;\&rdquo; miff:- | composite  -tile - resource/part.png to/test-image.png
+composite -tile resource/part.png from/slide2.jpg to/slide2-tile-part.jpg | convert - -gravity southeast -fill white -pointsize 16 -draw &ldquo;text 5,5 &lsquo;<a href="http://live.yunkai.com'&quot;">http://live.yunkai.com'&quot;</a> slide2_word_en.jpg
+convert slide2-tile-part.jpg -gravity southeast -fill white -pointsize 16 -draw &ldquo;text 5,5 &lsquo;<a href="http://live.yunkai.com'&quot;">http://live.yunkai.com'&quot;</a> slide2_word_en.jpg</p>
+
+<p>composite -tile resource/repeat-2.png from/slide2.jpg slide2-tile-repeat.jpg
+convert from/slide2.jpg resource/logo.png -scale 300% -gravity northeast -composite slide2-logo.jpg</p>
+
+<p>/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide2.jpg jpg:- | /usr/local/bin/convert - &ldquo;/data/tmp/yao/resource/logo-2.png[182x27]&rdquo; -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/tile-logo-quality-2.jpg</p>
+
+<p>/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide-rId4.jpg jpg:- | /usr/local/bin/convert - &ldquo;/data/tmp/yao/resource/logo-2.png[182x27]&rdquo; -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/to/slide-rId4.jpg</p>
+
+<p>/usr/local/bin/convert -quality 75 /data/cdn/dev/img/0c678b1d-1a03-40e3-84dd-870d7d557d04.jpg /data/cdn/dev/img/0c678b1d-1a03-40e3-84dd-870d7d557d04.jpg</p>
+
+<p>/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide-rId4.jpg jpg:- | /usr/local/bin/convert - &ldquo;/data/tmp/yao/resource/logo-2.png[182x27]&rdquo; -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/to/slide-rId4.jpg</p>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fimagemagick.basic%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=ImageMagick&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fimagemagick.basic%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fimagemagick.basic%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fimagemagick.basic%2f&title=ImageMagick" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

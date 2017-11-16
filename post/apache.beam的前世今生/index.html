@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" title="Apache.Beam的前世今生">Apache.Beam的前世今生</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/beam">beam</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>{TOC}</p>
+
+<h2 id="apache-beam的前世今生-https-mp-weixin-qq-com-s-biz-mjm5mde0mjc4ma-mid-2650995344-idx-1-sn-a3cfe5a7b300364aa63ade1672d360c2"><a href="https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&amp;mid=2650995344&amp;idx=1&amp;sn=a3cfe5a7b300364aa63ade1672d360c2">Apache Beam的前世今生</a></h2>
+
+<h3 id="开源原因">开源原因</h3>
+
+<ul>
+<li>意识到开源软件的巨大价值</li>
+<li>足够多模型才能促使项目成功</li>
+</ul>
+
+<h3 id="简介">简介</h3>
+
+<ul>
+<li>基础
+
+<ul>
+<li>Cloud Dataflow
+
+<ul>
+<li>介绍
+
+<ul>
+<li>构建、管理和优化复杂数据流水线的方法</li>
+<li>用于构建移动应用、调试、追踪和监控产品级云应用</li>
+</ul></li>
+<li>技术
+
+<ul>
+<li>Flume：数据高效并行处理</li>
+<li>MilWhell：互联网级别流处理，优秀的容错机制</li>
+</ul></li>
+<li><img src="http://7xsy59.com1.z0.glb.clouddn.com/6998b780-e9df-11e6-b96d-0071cc916200.png" alt="6998b780-e9df-11e6-b96d-0071cc916200.png" /></li>
+</ul></li>
+</ul></li>
+<li>介绍
+
+<ul>
+<li>统一编程框架，提供开源、统一的编程模型</li>
+</ul></li>
+<li>特点
+
+<ul>
+<li>统一：对于批处理和流式处理，使用单一的编程模型</li>
+<li>可移植：可以支持多种执行环境，包括Apache Apex、Apache Flink、Apache Spark和谷歌Cloud Dataflow等</li>
+<li>可扩展：可以实现和分享更多的新SDK、IO连接器、转换操作库等</li>
+</ul></li>
+<li>适用场景
+
+<ul>
+<li>并发数据处理任务
+
+<ul>
+<li>将要处理的数据集分解成许多相互独立而又可以并行处理的小集合</li>
+</ul></li>
+<li>ETL任务</li>
+<li>数据整合</li>
+</ul></li>
+<li><strong>组成</strong>
+
+<ul>
+<li>Beam SDK
+
+<ul>
+<li>针对各数据来源、形式，采用相同的数据模型处理、封装</li>
+</ul></li>
+<li>Beam Pipeline Runner
+
+<ul>
+<li>将 Beam 模型定义开发的处理流程，翻译成底层分布式数据处理平台支持的运行时环境</li>
+<li>需要指明底层的 Runner
+
+<ul>
+<li>目前支持 Flink/ Spark/ Apex/ Cloud Dataflow</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="设计">设计</h3>
+
+<ul>
+<li>问题
+
+<ul>
+<li>数据
+
+<ul>
+<li>已持久化的有限数据集，如 HDFS文件，HBase 表</li>
+<li>实时数据流，如 Kafka中的系统日志流，Twitter 流</li>
+<li>注：有限数据集可看为实时数据流的一个子集</li>
+</ul></li>
+<li>时间
+
+<ul>
+<li>process time：数据进入分布式处理框架时间</li>
+<li>event time：数据产生时间</li>
+</ul></li>
+<li>乱序
+
+<ul>
+<li>数据到达时间与 event-time 无法完全符合</li>
+</ul></li>
+</ul></li>
+<li>解决方法(WWWH)
+
+<ul>
+<li>[W]hat are you computing
+
+<ul>
+<li>Element-Wise    元素级</li>
+<li>Aggregating     聚合</li>
+<li>Composite        复合</li>
+</ul></li>
+<li>[W]here in event time
+
+<ul>
+<li><img src="http://7xsy59.com1.z0.glb.clouddn.com/bbd89166-e9ea-11e6-aed9-0071cc916200.png" alt="bbd89166-e9ea-11e6-aed9-0071cc916200.png" /></li>
+</ul></li>
+<li>[W]hen in processing time
+
+<ul>
+<li>使用 Trigger 机制，配合 SDK 中的水位线和触发器进行时机指定</li>
+</ul></li>
+<li>[H]ow do refinements relate
+
+<ul>
+<li>指定如何处理迟到数据，增量或合并输出</li>
+<li>由 SDK 中的 Accumulation 指定</li>
+</ul></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fapache.beam%25E7%259A%2584%25E5%2589%258D%25E4%25B8%2596%25E4%25BB%258A%25E7%2594%259F%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Apache.Beam%e7%9a%84%e5%89%8d%e4%b8%96%e4%bb%8a%e7%94%9f&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fapache.beam%25E7%259A%2584%25E5%2589%258D%25E4%25B8%2596%25E4%25BB%258A%25E7%2594%259F%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fapache.beam%25E7%259A%2584%25E5%2589%258D%25E4%25B8%2596%25E4%25BB%258A%25E7%2594%259F%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fapache.beam%25E7%259A%2584%25E5%2589%258D%25E4%25B8%2596%25E4%25BB%258A%25E7%2594%259F%2f&title=Apache.Beam%e7%9a%84%e5%89%8d%e4%b8%96%e4%bb%8a%e7%94%9f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

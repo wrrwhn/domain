@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.25">2017.08.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/idea.mybatiscodehelper/" title="IDEA.MyBatisCodeHelper">IDEA.MyBatisCodeHelper</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.21">2017.08.21</time>
@@ -260,29 +283,6 @@ firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用F
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/git.install/" title="Git.Install">Git.Install</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config &ndash;global user.name wrrwhn git config &ndash;global user.email yqjdcyy@gmail.com git config &ndash;global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &quot;yqjdcyy@gmail.com&quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git &ndash;version git config &ndash;global user.name &quot;wrrwhn&quot; git config &ndash;global user.email yaoqingju@gmail.com cat ~/.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/git.install/" title="Git.Install"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -290,7 +290,7 @@ Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Wi
 	<a class="btn newer" href="/domain/tags/%E6%95%B4%E7%90%86/page/3/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 4  8</p>
+	<p class="counter"> 4  9</p>
 
 
 	
