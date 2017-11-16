@@ -1,0 +1,1003 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD">XSD</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/xsd">xsd</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>全称为 XML Schema 定义，即 XML Schema Definition (XSD)</li>
+<li>XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。</li>
+<li>支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>教程：<a href="http://www.w3school.com.cn/schema/">http://www.w3school.com.cn/schema/</a></li>
+<li>手册：<a href="http://www.w3school.com.cn/schema/schema_elements_ref.asp">http://www.w3school.com.cn/schema/schema_elements_ref.asp</a></li>
+<li>验证：<a href="http://www.ltg.ed.ac.uk/~ht/xsv-status.html">http://www.ltg.ed.ac.uk/~ht/xsv-status.html</a></li>
+
+<li><p>实例：<a href="http://www.w3school.com.cn/schema/schema_example.asp">http://www.w3school.com.cn/schema/schema_example.asp</a></p>
+
+<h2 id="使用">使用</h2>
+
+<h3 id="xml结构">XML结构</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;note&gt;
+&lt;to&gt;George&lt;/to&gt;
+&lt;from&gt;John&lt;/from&gt;
+&lt;heading&gt;Reminder&lt;/heading&gt;
+&lt;body&gt;Don't forget the meeting!&lt;/body&gt;
+&lt;/note&gt;
+</code></pre></li>
+</ul>
+
+<h3 id="定义-note-xsd">定义 - note.xsd</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;        // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs:
+    targetNamespace=&quot;http://www.w3school.com.cn&quot;            // 显示定义元素(node /to /from /heading /body)的来源命名空间
+    xmlns=&quot;http://www.w3school.com.cn&quot;                        // 指定默认命名空间
+    elementFormDefault=&quot;qualified&quot;
+&gt;
+    &lt;xs:element name=&quot;note&quot;&gt;
+        &lt;xs:complexType&gt;
+          &lt;xs:sequence&gt;
+        &lt;xs:element name=&quot;to&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;xs:element name=&quot;from&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;xs:element name=&quot;body&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;/xs:sequence&gt;
+        &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</code></pre>
+
+<h3 id="引用">引用</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot;?&gt;
+&lt;note
+    xmlns=&quot;http://www.w3school.com.cn&quot;                                // 默认命名空间的声明
+    xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;            // 指定 XML Schema 实例命名空间
+    xsi:schemaLocation=&quot;http://www.w3school.com.cn note.xsd&quot;            // 指定实例命名空间后使用， 用于指定需要使用的命名空间和供命名空间使用的 XML Schema 位置
+&gt;
+    &lt;to&gt;George&lt;/to&gt;
+    &lt;from&gt;John&lt;/from&gt;
+    &lt;heading&gt;Reminder&lt;/heading&gt;
+    &lt;body&gt;Don't forget the meeting!&lt;/body&gt;
+&lt;/note&gt;
+</code></pre>
+
+<h2 id="类型">类型</h2>
+
+<h3 id="简单类型">简单类型</h3>
+
+<h4 id="元素">元素</h4>
+
+<pre><code>&lt;xs:element name=&quot;xxx&quot; type=&quot;yyy&quot;/&gt;
+&lt;xs:element name=&quot;color&quot; type=&quot;xs:string&quot; default=&quot;red&quot;/&gt;        // 默认值
+&lt;xs:element name=&quot;color&quot; type=&quot;xs:string&quot; fixed=&quot;red&quot;/&gt;            // 固定值
+&lt;xs:attribute name=&quot;lang&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;        // 缺省情况下可选
+
+type 可选值
+    xs:string
+    xs:decimal
+    xs:integer
+    xs:boolean
+    xs:date
+    xs:time
+</code></pre>
+
+<h4 id="属性">属性</h4>
+
+<ul>
+<li><code>&lt;lastname lang=&quot;EN&quot;&gt;Smith&lt;/lastname&gt;</code></li>
+</ul>
+
+<h4 id="限定">限定</h4>
+
+<ul>
+<li>值范围
+<code>
+age 限定为 0 到 120 的整数值
+&lt;xs:element name=&quot;age&quot;&gt;
+    &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:integer&quot;&gt;
+        &lt;xs:minInclusive value=&quot;0&quot;/&gt;
+        &lt;xs:maxInclusive value=&quot;120&quot;/&gt;
+      &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
+letter 属性只接受小写字母  a - z 中零个或多个字母
+&lt;xs:element name=&quot;letter&quot;&gt;
+    &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        &lt;xs:pattern value=&quot;([a-z])*&quot;/&gt;        // value 可使用正则相关约定
+      &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
+address 属性中的所有空白字符（换行、回车、空格以及制表符会被替换为空格，开头和结尾的空格会被移除，而多个连续的空格会被缩减为一个单一的空格）将被移除
+&lt;xs:element name=&quot;address&quot;&gt;
+    &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        &lt;xs:whiteSpace value=&quot;collapse&quot;/&gt;   
+            // value== preserve 时将不进行处理
+            // value== replace 时将移除所有空白字符
+      &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
+</code></li>
+
+<li><p>枚举值</p>
+
+<pre><code>限定类型名称只可选 Audi Golf 和 BMW
+写法一：
+    &lt;xs:element name=&quot;car&quot;&gt;
+        &lt;xs:simpleType&gt;
+          &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+            &lt;xs:enumeration value=&quot;Audi&quot;/&gt;
+            &lt;xs:enumeration value=&quot;Golf&quot;/&gt;
+            &lt;xs:enumeration value=&quot;BMW&quot;/&gt;
+          &lt;/xs:restriction&gt;
+        &lt;/xs:simpleType&gt;
+    &lt;/xs:element&gt;
+写法二：
+    &lt;xs:element name=&quot;car&quot; type=&quot;carType&quot;/&gt;
+    &lt;xs:simpleType name=&quot;carType&quot;&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        &lt;xs:enumeration value=&quot;Audi&quot;/&gt;
+        &lt;xs:enumeration value=&quot;Golf&quot;/&gt;
+        &lt;xs:enumeration value=&quot;BMW&quot;/&gt;
+      &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+</code></pre></li>
+
+<li><p>长度限定</p>
+
+<pre><code>password 属性长度必须为 8 位
+&lt;xs:element name=&quot;password&quot;&gt;
+    &lt;xs:simpleType&gt;
+      &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+        &lt;xs:length value=&quot;8&quot;/&gt;
+      &lt;/xs:restriction&gt;
+    &lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
+password 属性长度可为 5 到 8 位
+&lt;xs:element name=&quot;password&quot;&gt;
+&lt;xs:simpleType&gt;
+  &lt;xs:restriction base=&quot;xs:string&quot;&gt;
+    &lt;xs:minLength value=&quot;5&quot;/&gt;
+    &lt;xs:maxLength value=&quot;8&quot;/&gt;
+  &lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+&lt;/xs:element&gt;
+</code></pre></li>
+</ul>
+
+<h4 id="扩展-数据类型限定">扩展(数据类型限定)</h4>
+
+<pre><code>    限定            描述
+    enumeration        定义可接受值的一个列表
+    fractionDigits    定义所允许的最大的小数位数。必须大于等于0。
+    length            定义所允许的字符或者列表项目的精确数目。必须大于或等于0。
+    maxExclusive    定义数值的上限。所允许的值必须小于此值。
+    maxInclusive    定义数值的上限。所允许的值必须小于或等于此值。
+    maxLength        定义所允许的字符或者列表项目的最大数目。必须大于或等于0。
+    minExclusive    定义数值的下限。所允许的值必需大于此值。
+    minInclusive    定义数值的下限。所允许的值必需大于或等于此值。
+    minLength        定义所允许的字符或者列表项目的最小数目。必须大于或等于0。
+    pattern            定义可接受的字符的精确序列。
+    totalDigits        定义所允许的阿拉伯数字的精确位数。必须大于0。
+    whiteSpace        定义空白字符（换行、回车、空格以及制表符）的处理方式。
+</code></pre>
+
+<h3 id="复合类型">复合类型</h3>
+
+<h4 id="空元素">空元素</h4>
+
+<ul>
+<li>XML 样式
+
+<ul>
+<li><code>&lt;product pid=&quot;1345&quot;/&gt;</code></li>
+</ul></li>
+<li>XSD 写法
+<code>
+&lt;xs:complexType name=&quot;prodtype&quot;&gt;
+&lt;xs:attribute name=&quot;pid&quot; type=&quot;xs:positiveInteger&quot;/&gt;
+&lt;/xs:complexType&gt;
+或
+&lt;xs:complexType&gt;
+&lt;xs:complexContent&gt;
+&lt;xs:restriction base=&quot;xs:integer&quot;&gt;
+  &lt;xs:attribute name=&quot;pid&quot; type=&quot;xs:positiveInteger&quot;/&gt;
+&lt;/xs:restriction&gt;
+&lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</code></li>
+</ul>
+
+<h4 id="复合元素">复合元素</h4>
+
+<ul>
+<li>XML 样式
+<code>
+&lt;employee&gt;
+&lt;firstname&gt;John&lt;/firstname&gt;
+&lt;lastname&gt;Smith&lt;/lastname&gt;
+&lt;/employee&gt;
+</code></li>
+<li>XSD 写法
+<code>
+&lt;xs:complexType name=&quot;persontype&quot;&gt;
+&lt;xs:sequence&gt;                                            // 限定元素依序出现
+&lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></li>
+</ul>
+
+<h4 id="仅包含文本的复合元素">仅包含文本的复合元素</h4>
+
+<ul>
+<li>XML 样式
+
+<ul>
+<li><code>&lt;shoesize country=&quot;france&quot;&gt;35&lt;/shoesize&gt;</code></li>
+</ul></li>
+<li>XSD 写法
+<code>
+&lt;xs:element name=&quot;shoesize&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:simpleContent&gt;                                        // 仅包含简单内容（文本和属性），因此应该使用 xs:simpleContent 标签
+  &lt;xs:extension base=&quot;xs:integer&quot;&gt;                            // 填充内容类型
+    &lt;xs:attribute name=&quot;country&quot; type=&quot;xs:string&quot; /&gt;            // 属性名称和其属性
+  &lt;/xs:extension&gt;
+&lt;/xs:simpleContent&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></li>
+</ul>
+
+<h4 id="包含元素和文本的元素">包含元素和文本的元素</h4>
+
+<ul>
+<li>XML 样式
+<code>
+&lt;letter&gt;
+Dear Mr.&lt;name&gt;John Smith&lt;/name&gt;.
+Your order &lt;orderid&gt;1032&lt;/orderid&gt;
+will be shipped on &lt;shipdate&gt;2001-07-13&lt;/shipdate&gt;.
+&lt;/letter&gt;
+</code></li>
+<li>XSD 写法
+<code>
+&lt;xs:element name=&quot;letter&quot;&gt;
+&lt;xs:complexType mixed=&quot;true&quot;&gt;                                    // 标志字符数据可出现在 Letter 的子元素之间
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;orderid&quot; type=&quot;xs:positiveInteger&quot;/&gt;
+  &lt;xs:element name=&quot;shipdate&quot; type=&quot;xs:date&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></li>
+</ul>
+
+<h4 id="写法">写法</h4>
+
+<ul>
+<li><p>纯声明</p>
+
+<pre><code>&lt;xs:element name=&quot;employee&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre></li>
+
+<li><p>重复引用</p>
+
+<pre><code>&lt;xs:element name=&quot;employee&quot; type=&quot;personinfo&quot;/&gt;
+&lt;xs:element name=&quot;student&quot; type=&quot;personinfo&quot;/&gt;
+&lt;xs:element name=&quot;member&quot; type=&quot;personinfo&quot;/&gt;
+&lt;xs:complexType name=&quot;personinfo&quot;&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></pre></li>
+
+<li><p>复合引用</p>
+
+<pre><code>&lt;xs:element name=&quot;employee&quot; type=&quot;fullpersoninfo&quot;/&gt;
+&lt;xs:complexType name=&quot;personinfo&quot;&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+    &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name=&quot;fullpersoninfo&quot;&gt;
+  &lt;xs:complexContent&gt;
+    &lt;xs:extension base=&quot;personinfo&quot;&gt;
+      &lt;xs:sequence&gt;
+        &lt;xs:element name=&quot;address&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;xs:element name=&quot;country&quot; type=&quot;xs:string&quot;/&gt;
+      &lt;/xs:sequence&gt;
+    &lt;/xs:extension&gt;
+  &lt;/xs:complexContent&gt;
+&lt;/xs:complexType&gt;
+</code></pre></li>
+</ul>
+
+<h4 id="指示器">指示器</h4>
+
+<ul>
+<li>概念
+
+<ul>
+<li>用于控制文档中元素使用的方式</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Order 指示器：定义元素顺序
+
+<ul>
+<li>All：规定子元素可按任意顺序出来，且每个子元素必须也只出现一次</li>
+<li>Choice：下属只元素只能出现一个</li>
+<li>Sequence：必须按照特定顺序出现</li>
+</ul></li>
+<li>Occurrence 指示器：定义某元素的出现频率
+
+<ul>
+<li>注：对于所有的 &ldquo;Order&rdquo; 和 &ldquo;Group&rdquo; 指示器，其中的 maxOccurs 以及 minOccurs 的默认值均为 1。</li>
+<li>maxOccurs：规定某个元素可出现的最大次数，其中若值为 unbounded 则不限制次数</li>
+<li>minOccurs：规定某个元素能够出现的最小次数</li>
+</ul></li>
+<li>Group 指示器：
+
+<ul>
+<li>Group name ：元素组，内部必须定义一个 all、choice 或者 sequence 元素</li>
+<li>attributeGroup name ：属性组</li>
+</ul></li>
+</ul></li>
+<li>示例
+<code>
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:all&gt;
+  &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:all&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:choice&gt;
+  &lt;xs:element name=&quot;employee&quot; type=&quot;employee&quot;/&gt;
+  &lt;xs:element name=&quot;member&quot; type=&quot;member&quot;/&gt;
+&lt;/xs:choice&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;full_name&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;child_name&quot; type=&quot;xs:string&quot; maxOccurs=&quot;unbounded&quot;/&gt;            // 不限制出现次数
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;full_name&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;child_name&quot; type=&quot;xs:string&quot; maxOccurs=&quot;10&quot; minOccurs=&quot;0&quot;/&gt;        // child_name最少出现0次，最多出现10次
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;person&quot; type=&quot;personinfo&quot;/&gt;
+&lt;xs:complexType name=&quot;personinfo&quot;&gt;
+&lt;xs:sequence&gt;
+&lt;xs:group ref=&quot;persongroup&quot;/&gt;
+&lt;xs:element name=&quot;country&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:group name=&quot;persongroup&quot;&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;birthday&quot; type=&quot;xs:date&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:group&gt;
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:attributeGroup ref=&quot;personattrgroup&quot;/&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:attributeGroup name=&quot;personattrgroup&quot;&gt;
+&lt;xs:attribute name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:attribute name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:attribute name=&quot;birthday&quot; type=&quot;xs:date&quot;/&gt;
+&lt;/xs:attributeGroup&gt;
+</code></li>
+</ul>
+
+<h4 id="扩展">扩展</h4>
+
+<ul>
+<li>定义
+
+<ul>
+<li>通过未被 Schema 规定的元素来拓展 XML 文本</li>
+</ul></li>
+
+<li><p>Any(任意元素)</p>
+
+<ul>
+<li><p>初始定义</p>
+
+<pre><code>&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:any minOccurs=&quot;0&quot;/&gt;                                // 预留扩展位置
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre></li>
+
+<li><p>拓展元素</p>
+
+<pre><code>&lt;xs:element name=&quot;children&quot;&gt;                                // 拓展属性
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;childname&quot; type=&quot;xs:string&quot;
+  maxOccurs=&quot;unbounded&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></pre></li>
+
+<li><p>XSD 引用</p>
+
+<pre><code>&lt;persons xmlns=&quot;http://www.microsoft.com&quot;
+xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+xsi:SchemaLocation=&quot;http://www.microsoft.com family.xsd
+http://www.w3school.com.cn children.xsd&quot;
+&gt;
+&lt;person&gt;
+&lt;firstname&gt;David&lt;/firstname&gt;
+&lt;lastname&gt;Smith&lt;/lastname&gt;
+&lt;children&gt;
+  &lt;childname&gt;mike&lt;/childname&gt;
+&lt;/children&gt;
+&lt;/person&gt;
+</code></pre></li>
+</ul></li>
+
+<li><p>AnyAttribute(任意属性)</p>
+
+<ul>
+<li>初始定义
+<code>
+&lt;xs:element name=&quot;person&quot;&gt;
+&lt;xs:complexType&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;firstname&quot; type=&quot;xs:string&quot;/&gt;
+  &lt;xs:element name=&quot;lastname&quot; type=&quot;xs:string&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;xs:anyAttribute/&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+</code></li>
+<li>拓展元素
+<code>
+&lt;xs:attribute name=&quot;gender&quot;&gt;
+&lt;xs:simpleType&gt;
+&lt;xs:restriction base=&quot;xs:string&quot;&gt;
+  &lt;xs:pattern value=&quot;male|female&quot;/&gt;
+&lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+&lt;/xs:attribute&gt;
+</code></li>
+<li>XSD 引用
+<code>
+&lt;person gender=&quot;female&quot;&gt;
+&lt;firstname&gt;Jane&lt;/firstname&gt;
+&lt;lastname&gt;Smith&lt;/lastname&gt;
+&lt;/person&gt;
+</code></li>
+</ul></li>
+</ul>
+
+<h4 id="元素替换">元素替换</h4>
+
+<ul>
+<li>定义
+
+<ul>
+<li>进行元素之间的替换，如多语言定义，针对不同国家允许其使用本国语言进行相关的 XML 格式定义</li>
+</ul></li>
+<li>示例
+
+<ul>
+<li>XSD 定义
+<code>
+&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;navn&quot; substitutionGroup=&quot;name&quot;/&gt;
+&lt;xs:element name=&quot;customer&quot; type=&quot;custinfo&quot;/&gt;
+&lt;xs:element name=&quot;kunde&quot; substitutionGroup=&quot;customer&quot;/&gt;
+&lt;xs:complexType name=&quot;custinfo&quot;&gt;
+&lt;xs:sequence&gt;
+&lt;xs:element ref=&quot;name&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+</code></li>
+<li>有效 XML
+<code>
+&lt;customer&gt;
+&lt;name&gt;John Smith&lt;/name&gt;
+&lt;/customer&gt;
+&lt;kunde&gt;
+&lt;navn&gt;John Smith&lt;/navn&gt;
+&lt;/kunde&gt;
+</code></li>
+</ul></li>
+<li>注
+
+<ul>
+<li><xs:element name="name" type="xs:string" block="substitution"/>        // 防止其它元素替换指定元素</li>
+<li>substitutionGroup 作用的元素，都必须声明为全局元素
+
+<ul>
+<li>全局元素： Schema 层级下的直接子元素</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="解析实例">解析实例</h2>
+
+<h3 id="xml-数据">XML 数据</h3>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot;?&gt;
+&lt;shiporder orderid=&quot;889923&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xsi:noNamespaceSchemaLocation=&quot;shiporder.xsd&quot;&gt;
+  &lt;orderperson&gt;George Bush&lt;/orderperson&gt;
+  &lt;shipto&gt;
+    &lt;name&gt;John Adams&lt;/name&gt;
+    &lt;address&gt;Oxford Street&lt;/address&gt;
+    &lt;city&gt;London&lt;/city&gt;
+    &lt;country&gt;UK&lt;/country&gt;
+  &lt;/shipto&gt;
+  &lt;item&gt;
+    &lt;title&gt;Empire Burlesque&lt;/title&gt;
+    &lt;note&gt;Special Edition&lt;/note&gt;
+    &lt;quantity&gt;1&lt;/quantity&gt;
+    &lt;price&gt;10.90&lt;/price&gt;
+  &lt;/item&gt;
+  &lt;item&gt;
+    &lt;title&gt;Hide your heart&lt;/title&gt;
+    &lt;quantity&gt;1&lt;/quantity&gt;
+    &lt;price&gt;9.90&lt;/price&gt;
+  &lt;/item&gt;
+&lt;/shiporder&gt;
+</code></pre>
+
+<h3 id="xsd-格式">XSD 格式</h3>
+
+<ul>
+<li>写法一
+<code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+&lt;xs:element name=&quot;shiporder&quot;&gt;
+&lt;xs:complexType&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element name=&quot;orderperson&quot; type=&quot;xs:string&quot;/&gt;
+    &lt;xs:element name=&quot;shipto&quot;&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;address&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;country&quot; type=&quot;xs:string&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+    &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;item&quot;&gt;
+      &lt;xs:complexType&gt;
+        &lt;xs:sequence&gt;
+          &lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element minOccurs=&quot;0&quot; name=&quot;note&quot; type=&quot;xs:string&quot;/&gt;
+          &lt;xs:element name=&quot;quantity&quot; type=&quot;xs:positiveInteger&quot;/&gt;
+          &lt;xs:element name=&quot;price&quot; type=&quot;xs:decimal&quot;/&gt;
+        &lt;/xs:sequence&gt;
+      &lt;/xs:complexType&gt;
+    &lt;/xs:element&gt;
+  &lt;/xs:sequence&gt;
+  &lt;xs:attribute name=&quot;orderid&quot; type=&quot;xs:string&quot; use=&quot;required&quot;/&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</code></li>
+<li>写法二
+<code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+&lt;!-- 简易元素的定义 --&gt;
+&lt;xs:element name=&quot;orderperson&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;name&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;address&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;city&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;country&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;title&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;note&quot; type=&quot;xs:string&quot;/&gt;
+&lt;xs:element name=&quot;quantity&quot; type=&quot;xs:positiveInteger&quot;/&gt;
+&lt;xs:element name=&quot;price&quot; type=&quot;xs:decimal&quot;/&gt;
+&lt;!-- 属性的定义 --&gt;
+&lt;xs:attribute name=&quot;orderid&quot; type=&quot;xs:string&quot;/&gt;
+&lt;!-- 复合元素的定义--&gt;
+&lt;xs:element name=&quot;shipto&quot;&gt;
+&lt;xs:complexType&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element ref=&quot;name&quot;/&gt;
+    &lt;xs:element ref=&quot;address&quot;/&gt;
+    &lt;xs:element ref=&quot;city&quot;/&gt;
+    &lt;xs:element ref=&quot;country&quot;/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;item&quot;&gt;
+&lt;xs:complexType&gt;n
+  &lt;xs:sequence&gt;
+    &lt;xs:element ref=&quot;title&quot;/&gt;
+    &lt;xs:element minOccurs=&quot;0&quot; ref=&quot;note&quot;/&gt;
+    &lt;xs:element ref=&quot;quantity&quot;/&gt;
+    &lt;xs:element ref=&quot;price&quot;/&gt;
+  &lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;xs:element name=&quot;shiporder&quot;&gt;
+&lt;xs:complexType&gt;
+  &lt;xs:sequence&gt;
+    &lt;xs:element ref=&quot;orderperson&quot;/&gt;
+    &lt;xs:element ref=&quot;shipto&quot;/&gt;
+    &lt;xs:element maxOccurs=&quot;unbounded&quot; ref=&quot;item&quot;/&gt;
+  &lt;/xs:sequence&gt;
+  &lt;xs:attribute ref=&quot;orderid&quot; use=&quot;required&quot;/&gt;
+&lt;/xs:complexType&gt;
+&lt;/xs:element&gt;
+&lt;/xs:schema&gt;
+</code></li>
+<li>写法三
+<code>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;ISO-8859-1&quot; ?&gt;
+&lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+&lt;xs:simpleType name=&quot;stringtype&quot;&gt;
+&lt;xs:restriction base=&quot;xs:string&quot;/&gt;
+&lt;/xs:simpleType&gt;
+&lt;xs:simpleType name=&quot;inttype&quot;&gt;
+&lt;xs:restriction base=&quot;xs:positiveInteger&quot;/&gt;
+&lt;/xs:simpleType&gt;
+&lt;xs:simpleType name=&quot;dectype&quot;&gt;
+&lt;xs:restriction base=&quot;xs:decimal&quot;/&gt;
+&lt;/xs:simpleType&gt;
+&lt;xs:simpleType name=&quot;orderidtype&quot;&gt;
+&lt;xs:restriction base=&quot;xs:string&quot;&gt;
+  &lt;xs:pattern value=&quot;[0-9]{6}&quot;/&gt;
+&lt;/xs:restriction&gt;
+&lt;/xs:simpleType&gt;
+&lt;xs:complexType name=&quot;shiptotype&quot;&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;name&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element name=&quot;address&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element name=&quot;city&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element name=&quot;country&quot; type=&quot;stringtype&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name=&quot;itemtype&quot;&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;title&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element minOccurs=&quot;0&quot; name=&quot;note&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element name=&quot;quantity&quot; type=&quot;inttype&quot;/&gt;
+  &lt;xs:element name=&quot;price&quot; type=&quot;dectype&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:complexType name=&quot;shipordertype&quot;&gt;
+&lt;xs:sequence&gt;
+  &lt;xs:element name=&quot;orderperson&quot; type=&quot;stringtype&quot;/&gt;
+  &lt;xs:element name=&quot;shipto&quot; type=&quot;shiptotype&quot;/&gt;
+  &lt;xs:element maxOccurs=&quot;unbounded&quot; name=&quot;item&quot; type=&quot;itemtype&quot;/&gt;
+&lt;/xs:sequence&gt;
+&lt;xs:attribute name=&quot;orderid&quot; type=&quot;orderidtype&quot; use=&quot;required&quot;/&gt;
+&lt;/xs:complexType&gt;
+&lt;xs:element name=&quot;shiporder&quot; type=&quot;shipordertype&quot;/&gt;
+&lt;/xs:schema&gt;
+</code></li>
+</ul>
+
+<h2 id="数据类型">数据类型</h2>
+
+<h3 id="字符串">字符串</h3>
+
+<ul>
+<li>可选类型
+
+<ul>
+<li>xs:string：可包含字符、换行、回车以及制表符。</li>
+<li>xs:normalizedString：可包含字符，但是 XML 处理器会移除折行，回车以及制表符。</li>
+<li>xs:token：可包含字符，但是 XML 处理器会移除换行符、回车、制表符、开头和结尾的空格以及（连续的）空格。</li>
+</ul></li>
+<li>支持限定
+
+<ul>
+<li>enumeration</li>
+<li>length</li>
+<li>maxLength</li>
+<li>minLength</li>
+<li>pattern (NMTOKENS、IDREFS 以及 ENTITIES 无法使用此约束)</li>
+<li>whiteSpace</li>
+</ul></li>
+</ul>
+
+<h3 id="日期">日期</h3>
+
+<ul>
+<li>可选类型
+
+<ul>
+<li>xs:date：时间格式为 YYYY-MM-DD</li>
+<li>xs:time：时间格式为 hh:mm:ss</li>
+<li>xs:dateTime：时间格式为 YYYY-MM-DDThh:mm:ss，限定输入应为 2002-05-30T09:00:00[.5]</li>
+<li>xs:duration：用于规定时间间隔，时间格式为 PnYnMnDTnHnMnS
+
+<ul>
+<li>P 表示周期(必需)</li>
+<li>nY 表示年数</li>
+<li>nM 表示月数</li>
+<li>nD 表示天数</li>
+<li>T 表示时间部分的起始 （如果您打算规定小时、分钟和秒，则此选项为必需）</li>
+<li>nH 表示小时数</li>
+<li>nM 表示分钟数</li>
+<li>nS 表示秒数</li>
+</ul></li>
+<li>示例：
+
+<ul>
+<li>P5Y2M10DT15H 表示周期为 5年2个月10天及15小时</li>
+</ul></li>
+</ul></li>
+<li>支持限定
+
+<ul>
+<li>enumeration</li>
+<li>maxExclusive</li>
+<li>maxInclusive</li>
+<li>minExclusive</li>
+<li>minInclusive</li>
+<li>pattern</li>
+<li>whiteSpace</li>
+</ul></li>
+</ul>
+
+<p>###数值
+- 可选类型
+    - xs:decimal：十进制数据，最大位数为 18 位
+    - xs:integer：整数
+- 支持限定
+    - enumeration
+    - fractionDigits
+    - maxExclusive
+    - maxInclusive
+    - minExclusive
+    - minInclusive
+    - pattern
+    - totalDigits
+    - whiteSpace</p>
+
+<h3 id="杂项">杂项</h3>
+
+<ul>
+<li>类型
+
+<ul>
+<li>布尔值
+
+<ul>
+<li>xs:boolean：逻辑项，仅可输入 true | false</li>
+</ul></li>
+<li>二进制
+
+<ul>
+<li>xs:hexBinary：十六进制编码的二进制数据</li>
+<li>xs:base64Binary：Base64 编码的二进制数据</li>
+</ul></li>
+<li>URI
+
+<ul>
+<li>xs:anyURI：用于限定输入值仅可为 URL，且若含有空格，需用 %20 替换。</li>
+</ul></li>
+</ul></li>
+<li>支持限定
+
+<ul>
+<li>enumeration (布尔数据类型无法使用此约束*)</li>
+<li>length (布尔数据类型无法使用此约束)</li>
+<li>maxLength (布尔数据类型无法使用此约束)</li>
+<li>minLength (布尔数据类型无法使用此约束)</li>
+<li>pattern</li>
+<li>whiteSpace</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fxsd%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=XSD&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fxsd%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fxsd%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fxsd%2f&title=XSD" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

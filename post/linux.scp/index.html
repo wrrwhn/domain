@@ -1,0 +1,283 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.scp/" title="Linux.Scp">Linux.Scp</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html</a></li>
+</ul>
+
+<h2 id="特点">特点</h2>
+
+<ul>
+<li>scp 为加密传输</li>
+<li>scp 消耗资源少，不会提高多少系统负荷
+
+<ul>
+<li>rsync 快一点，但<code>小</code>文件多时会导致<code>硬盘 I/O 非常高</code></li>
+</ul></li>
+</ul>
+
+<h2 id="格式">格式</h2>
+
+<ul>
+<li><code>scp [参数] [原路径] [目标路径]</code></li>
+</ul>
+
+<h2 id="参数">参数</h2>
+
+<ul>
+<li><code>-1</code>
+
+<ul>
+<li>强制scp命令使用协议ssh1</li>
+</ul></li>
+<li><code>-2</code>
+
+<ul>
+<li>强制scp命令使用协议ssh2</li>
+</ul></li>
+<li><code>-4</code>
+
+<ul>
+<li>强制scp命令只使用IPv4寻址</li>
+</ul></li>
+<li><code>-6</code>
+
+<ul>
+<li>强制scp命令只使用IPv6寻址</li>
+</ul></li>
+<li><code>-B</code>
+
+<ul>
+<li>使用批处理模式（传输过程中不询问传输口令或短语）</li>
+</ul></li>
+<li><code>-C</code>
+
+<ul>
+<li>允许压缩。（将-C标志传递给ssh，从而打开压缩功能）</li>
+</ul></li>
+<li><code>-p</code>
+
+<ul>
+<li>留原文件的修改时间，访问时间和访问权限。</li>
+</ul></li>
+<li><code>-q</code>
+
+<ul>
+<li>不显示传输进度条。</li>
+</ul></li>
+<li><code>-r</code>
+
+<ul>
+<li><strong>递归复制</strong>整个目录。</li>
+</ul></li>
+<li><code>-v</code>
+
+<ul>
+<li>详细方式显示输出。</li>
+<li>scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。</li>
+</ul></li>
+<li><code>-c</code>
+
+<ul>
+<li>cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。</li>
+</ul></li>
+<li><code>-F</code>
+
+<ul>
+<li>ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。</li>
+</ul></li>
+<li><code>-i</code>
+
+<ul>
+<li>identity_file 从指定文件中读取传输时使用的<strong>密钥文件</strong>，此参数直接传递给ssh。</li>
+</ul></li>
+<li><code>-l</code>
+
+<ul>
+<li>limit 限定用户所能使用的<strong>带宽</strong>，以Kbit/s为单位。</li>
+</ul></li>
+<li><code>-o</code>
+
+<ul>
+<li>ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，</li>
+</ul></li>
+<li><code>-P</code>
+
+<ul>
+<li>port 注意是大写的P, port是指定数据传输用到的<strong>端口号</strong></li>
+</ul></li>
+<li><code>-S</code>
+
+<ul>
+<li>program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</li>
+</ul></li>
+</ul>
+
+<h2 id="事例">事例</h2>
+
+<ul>
+<li><code>scp -r root@10.6.159.147:/opt/soft/test /opt/soft/</code></li>
+<li><code>scp /data/jenkins/jobs/basic-portal-jianguo/workspace/code/basic-portal/target/basic-portal.war root@106.14.223.58:/data/service/webapps/</code></li>
+<li><code>scp -rv /data/service/tomcat root@39.108.103.85:/data/service</code></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.scp%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Linux.Scp&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.scp%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.scp%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.scp%2f&title=Linux.Scp" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

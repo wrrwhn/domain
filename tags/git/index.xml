@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Git on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/git/</link>
+    <description>Recent content in Git on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Linux.Git</title>
+      <link>https://wrrwhn.github.io/domain/post/linux.git/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/linux.git/</guid>
+      <description> [TOC]
+参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen    </description>
+    </item>
+    
+    <item>
+      <title>Git.Install</title>
+      <link>https://wrrwhn.github.io/domain/post/git.install/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/git.install/</guid>
+      <description>[TOC]
+Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &amp;quot;yqjdcyy@gmail.com&amp;quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git --version git config --global user.name &amp;quot;wrrwhn&amp;quot; git config --global user.email yaoqingju@gmail.com cat ~/.</description>
+    </item>
+    
+    <item>
+      <title>Git.命令小结</title>
+      <link>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
+      <description>[TOC]
+查看 分支状态  git status git branch
+ 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到当前分支
+日志  git log
+ &amp;ndash;pretty=oneline：单行显示 &amp;ndash;graph：图形分支
+标签  git tag
+ &amp;lt;&amp;gt;：查看当前分支标签 -l &amp;lsquo;v1.4*&amp;lsquo;：查看所有匹配该正则的标签信息
+文件提交明细  git blame &amp;lt;fileName&amp;gt;：查看文件每行的提交 hash / author/ time
+  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &amp;lt;branch&amp;gt; ###新增提交 git add -A git commit -m &amp;ldquo;commit content&amp;rdquo; git push origin &amp;lt;branch&amp;gt;
+修改提交 git commit -a -m &amp;ldquo;commit content&amp;rdquo;</description>
+    </item>
+    
+  </channel>
+</rss>

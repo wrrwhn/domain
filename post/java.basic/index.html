@@ -1,0 +1,1416 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/java.basic/" title="Java.Basic">Java.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/">使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie</a></li>
+<li><a href="http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html">Lock(重入锁，读写锁)及Condition示例</a></li>
+<li><a href="http://ifeve.com/locks/">Java中的锁</a></li>
+</ul>
+
+<h1 id="功能">功能</h1>
+
+<h2 id="获取路径">获取路径</h2>
+
+<h3 id="分类">分类</h3>
+
+<ul>
+<li>绝对路径
+
+<ul>
+<li>主页上的文件或目录在硬盘上真正的路径，如URL和物理路径</li>
+<li>例
+
+<ul>
+<li><code>C:xyz est.txt</code>
+
+<ul>
+<li>代表了test.txt文件的绝对路径</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>相对路径
+
+<ul>
+<li>相对与某个基准目录（一般对照WEB）的路径。</li>
+<li>示例
+
+<ul>
+<li><code>&quot;/&quot;代表Web应用的跟目录</code></li>
+<li><code>&quot;./&quot; 代表当前目录</code></li>
+<li><code>&quot;../&quot;代表上级目录</code></li>
+</ul></li>
+</ul></li>
+<li>注
+
+<ul>
+<li>JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的</li>
+</ul></li>
+</ul>
+
+<h3 id="获取方法">获取方法</h3>
+
+<h4 id="jsp路径-系统全路径">JSP路径/系统全路径</h4>
+
+<ul>
+<li>使用环境
+
+<ul>
+<li>SERVLET/JSP</li>
+</ul></li>
+<li>使用语句
+
+<ul>
+<li><code>request.getRealPath(&quot;？&quot;) --&gt; ？为/  .  空格  web.xml</code></li>
+<li><code>request.getRealPath(request.getRequestURI());</code></li>
+<li><code>getServletContext().getRealPath(&quot;\&quot;)     //站点绝对路径</code></li>
+<li><code>application.getRealPath(&quot;&quot;)    //JSP界面使用</code></li>
+<li><code>ServletContext().getRealPath(&quot;&quot;)</code></li>
+</ul></li>
+<li>返回字串
+
+<ul>
+<li><code>C:\Apache\Tomcat\webapps\local+ （\  \.  空格  \web.xml）</code></li>
+</ul></li>
+</ul>
+
+<h4 id="工程classes下路径-src-class">工程Classes下路径（SRC/CLASS）</h4>
+
+<ul>
+<li>使用环境
+
+<ul>
+<li>SERVLET/JSP/JAVA（即任意CLASS）</li>
+</ul></li>
+<li>使用语句
+
+<ul>
+<li><code>this.getClass()/JdomParse.class .getClassLoader().getResource(&quot;&quot;).getPath();</code><br />
+
+<ul>
+<li>因为三者均为JAVA程序，都为CLASS，故为三者通用方法</li>
+</ul></li>
+<li><code>this.getClass()JdomParse.class .getResource(&quot;&quot;).getPath().toString();</code>
+
+<ul>
+<li>可用于不同WEB环境来确认路径</li>
+</ul></li>
+<li><code>Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath()</code></li>
+</ul></li>
+<li>返回字串
+
+<ul>
+<li><code>/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/</code></li>
+<li><code>/D:/workspace/strutsTest/WebRoot/WEB-INF/classes/bl/</code></li>
+<li><code>/E:/order/002_ext/WebRoot/WEB-INF/classes/</code></li>
+</ul></li>
+</ul>
+
+<h4 id="系统路径">系统路径</h4>
+
+<ul>
+<li>使用环境
+
+<ul>
+<li>APPLICATION/SERVLET/JSP</li>
+</ul></li>
+<li>使用语句
+
+<ul>
+<li><code>System.getProperty(&quot;user.dir&quot;)</code>
+
+<ul>
+<li>相对项目（JAVA为项目，WEB依工具而定）路径</li>
+</ul></li>
+<li><code>ServletContext servletContext = config.getServletContext(); String rootPath = servletContext.getRealPath(&quot;/&quot;);</code></li>
+<li><code>application.getRealPath(&quot;&quot;)</code></li>
+</ul></li>
+<li>返回字串</li>
+</ul>
+
+<h4 id="web根上下文环境-即相对路径">WEB根上下文环境（即相对路径）</h4>
+
+<ul>
+<li>使用环境
+
+<ul>
+<li>于SERVLET的INIT中</li>
+<li>于httpServletRequest中</li>
+</ul></li>
+<li>使用语句
+
+<ul>
+<li><code>request.getContextPath()getRealPath(&quot;/&quot;);</code></li>
+<li><code>request.getSession().getServletContext().getRealPath(&quot;/&quot;);</code></li>
+</ul></li>
+<li>返回字串
+
+<ul>
+<li><code>D:\工具\Tomcat-6.0\webapps\002_ext\ （其中002_ext为项目名称）</code></li>
+<li><code>request.getContextPath() -&gt; web项目名</code></li>
+</ul></li>
+</ul>
+
+<h4 id="站点虚拟路径">站点虚拟路径</h4>
+
+<ul>
+<li>使用环境</li>
+<li>使用语句
+
+<ul>
+<li>getContextPath():</li>
+</ul></li>
+<li>返回字串</li>
+</ul>
+
+<h4 id="类加载器路径">类加载器路径</h4>
+
+<ul>
+<li>使用环境</li>
+<li>使用语句
+
+<ul>
+<li><code>class.getClassLoader.getPath()；</code>
+
+<ul>
+<li><code>InputStream is=TestAction.class.getClassLoader().getResourceAsStream(&quot;test.txt&quot;);</code></li>
+<li><code>InputStream is=Test1.class.getResourceAsStream(&quot;/test.txt&quot;);</code></li>
+</ul></li>
+</ul></li>
+<li>返回字串
+
+<ul>
+<li>均返回指定路径文件（\src\test.txt）的装载项目</li>
+</ul></li>
+<li>注意
+
+<ul>
+<li>不论是一般的java项目还是web项目,先定位到能看到包路径的第一级目录（TestAction在其中）</li>
+</ul></li>
+</ul>
+
+<h2 id="泛型">泛型</h2>
+
+<h3 id="介绍">介绍</h3>
+
+<ul>
+<li><p>重复代码重构，于编译时检测类型安全，保存所有强制类型均为自动或隐式，提高代码重用率</p>
+
+<h3 id="规则">规则</h3></li>
+
+<li><p>明细</p>
+
+<ul>
+<li>泛型参数允许多个，且仅能为类类型，不能为简单类型</li>
+<li>泛型参数支持extends(有办类型)或通配符类型</li>
+<li>支持类型有泛型类、接口和方法</li>
+</ul></li>
+
+<li><p>实例</p>
+
+<ul>
+<li><p>泛型</p>
+
+<pre><code>class Gen&lt;T&gt; {
+  private T ob; //定义泛型成员变量
+  public Gen(T ob) {
+      this.ob = ob;
+  }
+  public T getOb() {
+      return ob;
+  }
+  public void setOb(T ob) {
+      this.ob = ob;
+  }
+  public void showType() {
+      System.out.println(&quot;T的实际类型是: &quot; + ob.getClass().getName());
+  }
+}
+public class GenDemo {
+  public static void main(String[] args){
+      //定义泛型类Gen的一个Integer版本
+      Gen&lt;Integer&gt; intOb=new Gen&lt;Integer&gt;(88);
+      intOb.showType();
+      int i= intOb.getOb();
+      System.out.println(&quot;value= &quot; + i);
+
+      //定义泛型类Gen的一个String版本
+      Gen&lt;String&gt; strOb=new Gen&lt;String&gt;(&quot;Hello Gen!&quot;);
+      strOb.showType();
+      String s=strOb.getOb();
+      System.out.println(&quot;value= &quot; + s);
+  }
+}
+</code></pre></li>
+
+<li><p>泛型方法</p>
+
+<pre><code>public static &lt;T&gt; T display(T t) {
+    return t;
+}
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h2 id="jmx">JMX</h2>
+
+<h3 id="参考-1">参考</h3>
+
+<ul>
+<li><a href="http://www.ibm.com/developerworks/cn/java/j-lo-jse63/">介绍</a></li>
+<li><a href="http://tomcat.apache.org/tomcat-7.0-doc/monitoring.html#Enabling_JMX_Remote">Tomcat配置</a></li>
+<li><a href="http://rabbit9898.iteye.com/blog/1009198">入门示例</a></li>
+<li><a href="http://docs.oracle.com/javase/1.5.0/docs/guide/jmx/examples.html">官方事例</a></li>
+<li><a href="http://docs.oracle.com/javase/tutorial/jmx/index.html">官方教程</a></li>
+<li><a href="http://docs.oracle.com/javase/7/docs/technotes/guides/management/jconsole.html">Using JConsole</a></li>
+</ul>
+
+<h3 id="组成">组成</h3>
+
+<ul>
+<li>Instrumentation
+
+<ul>
+<li>使用MBean在遵循JMX规范中定义的设计模式和接口的基础上，确保提供标准化管理资源的仪表。</li>
+<li>MXBean为在MBean的基础上预定义了一组数据类型。</li>
+</ul></li>
+<li>JMX agent
+
+<ul>
+<li>直接操作资源并使之于远程应用上生效，其核心部件为MBean server。</li>
+</ul></li>
+<li>Remote management
+
+<ul>
+<li>通过协议适配器和连接器支持JVM提供外部JMX agent</li>
+</ul></li>
+</ul>
+
+<h3 id="监控管理">监控管理</h3>
+
+<h4 id="平台mxbeans和平台mbean-server">平台MXBeans和平台MBean Server</h4>
+
+<ul>
+<li>平台MXBeans
+
+<ul>
+<li>用监视和管理JVM及运行时环境的的组件，功能包括类加载系统，即时编译系统和垃圾回收等平台。并保证不同环境下的JVM使用统一规范。</li>
+</ul></li>
+<li>平台MBean Server
+
+<ul>
+<li>用于注册管理平台MXBeans或自行创建的MBeans。</li>
+</ul></li>
+</ul>
+
+<h4 id="jconsole">JConsole</h4>
+
+<ul>
+<li>介绍
+
+<ul>
+<li>java自带(JAVA_HOME/bin/jconsole.exe)可视化监控管理工具，可查看Java平台上运行的程序的性能和资源消耗的信息。</li>
+<li>监控本地和远程JVM、java应用程序的可视化监督工具，使用JMX技术实现。</li>
+</ul></li>
+<li>推荐
+
+<ul>
+<li>使用指导
+
+<ul>
+<li>参见参考中的「Using JConsole」</li>
+</ul></li>
+</ul></li>
+<li>异常
+
+<ul>
+<li>描述
+
+<ul>
+<li>jConsole的MXBean树显示不合理</li>
+</ul></li>
+<li>事例
+<code>
+MXBean列表
+    com.sun.example:type=Triangle,side=isosceles,name=1
+    com.sun.example:type=Triangle,name=2,side=isosceles
+    com.sun.example:type=Triangle,side=isosceles,name=3
+树形结构
+    |-com.sum.example
+        |-Triangle
+            |-isosceles
+                |-1
+                |-3
+            |-2
+                |-isosceles
+</code></li>
+<li>解决
+
+<ul>
+<li>补充-Dcom.sun.tools.jconsole.mbeans.keyPropertyList=type,side,name，指定关键字的顺序</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="mbeans介绍">MBeans介绍</h4>
+
+<ul>
+<li>概念
+
+<ul>
+<li>类似于JavaBean，并可管理所有需要管理的应用、资源和设备。</li>
+</ul></li>
+<li>组成
+
+<ul>
+<li>一系列可读可写属性</li>
+<li>一系列可调用方法</li>
+<li>自行描述</li>
+</ul></li>
+<li>分类
+
+<ul>
+<li>Standard MBeans</li>
+<li>Dynamic MBeans</li>
+<li>Open MBeans</li>
+<li>Model MBeans</li>
+<li>MXBeans</li>
+</ul></li>
+
+<li><p>实例</p>
+
+<ul>
+<li><p>标准MBean= todoMBean接口（定义所有方法属性）+ todo实现</p>
+
+<pre><code>public interface HelloMBean {   
+    // todoMBean接口
+    // 规范要求接口必须以 dosome+ MBean为名称
+    public String getName();        //只读
+    public int getCacheSize();      //可读可写
+    public void setCacheSize(int size);
+}
+public class Hello implements HelloMBean {      //todo实现
+    private final String name = &quot;Reginald&quot;;
+    private int cacheSize = DEFAULT_CACHE_SIZE;
+    private static final int DEFAULT_CACHE_SIZE = 200;
+
+    public String getName() {
+        return this.name;
+    }                   
+    public int getCacheSize() {
+        return this.cacheSize;
+    }
+    public synchronized void setCacheSize(int size) {
+        this.cacheSize = size;
+        System.out.println(&quot;Cache size now &quot; + this.cacheSize);
+    }
+}
+</code></pre></li>
+
+<li><p>MXBean= 可支持任意客户端（包括远程）。</p>
+
+<ul>
+<li><p>命名不一定要为todoMXBean，可使用@MXBean注解</p>
+
+<pre><code>public interface QueueSamplerMXBean {       //MXBean接口
+public QueueSample getQueueSample();
+public void clearQueue();
+}
+public class QueueSampler implements QueueSamplerMXBean {       //定义QueueSamplerMXBean实现
+private Queue&lt;String&gt; queue;
+
+public QueueSampler (Queue&lt;String&gt; queue) {
+    this.queue = queue;
+}
+public QueueSample getQueueSample() {               //自定义返回类型
+    synchronized (queue) {
+        return new QueueSample(new Date(), queue.size(), queue.peek());
+    }
+}                       
+public void clearQueue() {
+    synchronized (queue) {
+        queue.clear();
+    }
+}
+}
+</code></pre></li>
+</ul></li>
+
+<li><p>通知</p>
+
+<ul>
+<li>用于反馈状态改变、事件或问题异常</li>
+<li>必须实现 NotificationEmitter 或继承 NotificationBroadcasterSupport</li>
+
+<li><p>实现 Notification 或子类如 AttributeChangedNotification</p>
+
+<pre><code>public class Hello extends NotificationBroadcasterSupport implements HelloMBean {
+
+    public synchronized void setCacheSize(int size) {
+        Notification n = new AttributeChangeNotification(this, sequenceNumber++, System.currentTimeMillis(), &quot;CacheSize changed&quot;, &quot;CacheSize&quot;, &quot;int&quot;, oldSize, this.cacheSize);
+        sendNotification(n);
+    }
+
+    @Override
+    public MBeanNotificationInfo[] getNotificationInfo() {
+        String[] types = new String[]{
+            AttributeChangeNotification.ATTRIBUTE_CHANGE
+        };
+
+        String name = AttributeChangeNotification.class.getName();
+        String description = &quot;An attribute of this MBean has changed&quot;;
+        MBeanNotificationInfo info =
+                new MBeanNotificationInfo(types, name, description);
+        return new MBeanNotificationInfo[]{info};
+    }
+}
+</code></pre></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="远程管理">远程管理</h4>
+
+<ul>
+<li>概念
+
+<ul>
+<li>JMX API 允许通过JMX连接器（服务端和客户端组成）远程管理个人资源，并定义了远程方法调用（RMI）基础上标准连接协议。</li>
+<li>需要应用配置以正常的参数，具体可参见【Tomcat本地JMX监控】或如下例</li>
+</ul></li>
+<li>指令调用
+
+<ul>
+<li>javac com/example/*.java    //编译java文件</li>
+<li>java -Dcom.sun.management.jmxremote.port = 9999  <br />
+
+<ul>
+<li>-Dcom.sun.management.jmxremote.authenticate = false <br /></li>
+<li>-Dcom.sun.management.jmxremote.ssl = false <br /></li>
+<li>com.example.Main       //启动时配置调用端口等信息<br /></li>
+</ul></li>
+</ul></li>
+<li>启动要求
+
+<ul>
+<li>java1.5
+
+<ul>
+<li>命令行指定JMX才会启动。</li>
+</ul></li>
+<li>java1.6
+
+<ul>
+<li>默认启动JMX。</li>
+</ul></li>
+<li>注
+
+<ul>
+<li>jConsole可通过pid（进程ID）进行JMX管理，其中内部将pid转换为JMX URL。</li>
+</ul></li>
+</ul></li>
+<li>调用
+<code>
+//RMI+ 连接+ MBeanServer获取
+    JMXServiceURL url =new JMXServiceURL(&quot;service:jmx:rmi:///jndi/rmi://:9999/jmxrmi&quot;);
+    JMXConnector jmxc = JMXConnectorFactory.connect(url, null);    
+    MBeanServerConnection mbsc = jmxc;
+//明确的MBean或MXBean - 代理调用
+    ObjectName mbeanName = new ObjectName(&quot;com.example:type=Hello&quot;);
+    HelloMBean mbeanProxy = JMX.newMBeanProxy(mbsc, mbeanName, HelloMBean.class, true);
+        或 OperatingSystemMXBean osBean= ManagementFactory.newPlatformMXBeanProxy(mbsc, ManagementFactory.OPERATING_SYSTEM_MXBEAN_NAME, OperatingSystemMXBean.class);
+    mbeanProxy.getCacheSize();      //调用方法和属性
+//未明确MBean或MXBean情况
+    ObjectName objectName= new ObjectName(appName+ &quot;:name=MuleContext&quot;);        //获取属性
+    String status= mbsc.getAttribute(objectName, &quot;Stopped&quot;).toString();
+    mbsc.invoke(object, action, param, signature);                              //调用方法
+</code></li>
+<li>连接方式整理
+
+<ul>
+<li>MBeanServerFactory.createMBeanServer();
+<code>
+//ManagementFactory.getPlatformMBeanServer()第一次调用时会默认调用上述方法
+ObjectName name = new ObjectName(&quot;book.liuyang:service=Counter&quot;);
+server.registerMBean(new Counter(), name);
+    // 可见Domain为JMImplementation
+</code></li>
+<li>getMBeanServerConnection()
+<code>
+JMXConnectorFactory.connect(
+    new JMXServiceURL(&quot;service:jmx:rmi:///jndi/rmi://:9999/jmxrmi&quot;),
+    null
+).getMBeanServerConnection();
+</code>
+
+<ul>
+<li>可见Domain为 <code>JMImplementation,com.sun.management,Catalina,java.nio,org.apache.commons.pool2,java.lang,java.util.logging</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="jvm运行情况-jmx">JVM运行情况 - JMX</h4>
+
+<ul>
+<li>监控双方于同一JVM
+
+<ul>
+<li><code>MBeanServer server = ManagementFactory.getPlatformMBeanServer();</code></li>
+<li><code>RuntimeMXBean rmxb = ManagementFactory.newPlatformMXBeanProxy(server, &quot;java.lang:type=Runtime&quot;, RuntimeMXBean.class);</code></li>
+</ul></li>
+<li>监控双方位于不同JVM
+
+<ul>
+<li>被监控JVM补充JVM代码启动参数
+
+<ul>
+<li><code>-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=127.0.0.1:8000 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false</code></li>
+</ul></li>
+<li>连接代理
+
+<ul>
+<li><code>JMXServiceURL url = new JMXServiceURL(&quot;service:jmx:rmi:///jndi/rmi://127.0.0.1:8000/jmxrmi&quot;);</code></li>
+<li><code>JMXConnector connector = JMXConnectorFactory.connect(url);</code></li>
+<li><code>RuntimeMXBean rmxb = ManagementFactory.newPlatformMXBeanProxy(connector.getMBeanServerConnection(),&quot;java.lang:type=Runtime&quot;, RuntimeMXBean.class);</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>监控双方位于不同JVM，但处于同一物理主机(Java Instrutment&amp; Attach API)</p>
+
+<ul>
+<li><p>通过Attach到被监控的JVM进程，并在被监控的JVM中启动一个JMX代理，然后使用该代理通过2的方式连接到被监控的JVM的JMX上。</p>
+
+<pre><code>//Attach 到5656的JVM进程上，后续Attach API再讲解 
+VirtualMachine virtualmachine = VirtualMachine.attach(&quot;5656&quot;); 
+
+//让JVM加载jmx Agent，后续讲到Java Instrutment再讲解 
+String javaHome = virtualmachine.getSystemProperties().getProperty(&quot;java.home&quot;); 
+String jmxAgent = javaHome + File.separator + &quot;lib&quot; + File.separator + &quot;management-agent.jar&quot;; 
+virtualmachine.loadAgent(jmxAgent, &quot;com.sun.management.jmxremote&quot;); 
+
+//获得连接地址 
+Properties properties = virtualmachine.getAgentProperties(); 
+String address = (String)properties.get(&quot;com.sun.management.jmxremote.localConnectorAddress&quot;); 
+
+//Detach 
+virtualmachine.detach(); 
+
+JMXServiceURL url = new JMXServiceURL(address); 
+JMXConnector connector = JMXConnectorFactory.connect(url); 
+RuntimeMXBean rmxb = ManagementFactory.newPlatformMXBeanProxy(connector.getMBeanServerConnection(), &quot;java.lang:type=Runtime&quot;,RuntimeMXBean.class); 
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h4 id="tomcat本地jmx监控">TOMCAT本地JMX监控</h4>
+
+<ul>
+<li>参考
+
+<ul>
+<li><a href="http://sharpspeed.iteye.com/blog/2009770">http://sharpspeed.iteye.com/blog/2009770</a></li>
+</ul></li>
+<li>windows
+
+<ul>
+<li>系统配置
+
+<ul>
+<li>windows7 64位</li>
+<li>java 1.7.0_55</li>
+<li>tomcat 7.0.54</li>
+</ul></li>
+<li>配置修改
+
+<ul>
+<li>D:\Program Files\Apache\Tomcat\apache-tomcat-7.0.54\bin\catalina.bat</li>
+<li>于:doRun节点下补充
+
+<ul>
+<li><code>set JMX_REMOTE_CONFIG=-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.local.only=true -Dcom.sun.management.jmxremote.port=9999 - -Dcom.sun.management.jmxremote.ssl=false</code><code>-Dcom.sun.management.jmxremote.authenticate=false</code></li>
+<li><code>set CATALINA_OPTS=%CATALINA_OPTS% %JMX_REMOTE_CONFIG%</code></li>
+</ul></li>
+<li>其中port为代码连接端口，与jConsole中列举的端口不一致</li>
+<li>若需要鉴权，则请将authenticate设置为true，并调整鉴权相同配置，具体可见参考内容</li>
+</ul></li>
+<li>连接测试
+
+<ul>
+<li><code>String rmi= &quot;service:jmx:rmi:///jndi/rmi://localhost:9999/jmxrmi&quot;;</code></li>
+<li><code>JMXServiceURL serviceURL = new JMXServiceURL(rmi);</code></li>
+<li><code>conn = JMXConnectorFactory.connect(serviceURL);</code></li>
+<li><code>conn.getMBeanServerConnection();</code></li>
+</ul></li>
+</ul></li>
+<li>Linux
+
+<ul>
+<li>系统配置
+
+<ul>
+<li>CentOS 6.5</li>
+<li>java 1.6.0_33</li>
+<li>tomcat 7.0.54Z</li>
+</ul></li>
+<li>配置修改（含tomcat安装）
+
+<ul>
+<li><code>cd /data/test/download/targz</code></li>
+<li><code>rz #上传apache-tomcat-7.0.54.tar.gz</code></li>
+<li><code>tar -xzf apache-tomcat-7.0.54.tar.gz</code></li>
+<li><code>cd apache-tomcat-7.0.54/bin</code></li>
+<li><code>vi catalina.sh</code></li>
+<li><code>/Execute The Requested Command</code></li>
+<li>于当行后补充 <code>CATALINA_OPTS=&quot;$CATALINA_OPTS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.ssl=false -Dcom.sun.management.jmxremote.authenticate=false&quot;</code>
+
+<ul>
+<li>且注意上例代码不能折行！！</li>
+</ul></li>
+<li><code>ESC</code></li>
+<li><code>:wq</code></li>
+<li><code>./startup.sh</code></li>
+<li><code>rz #上传测试执行文件jmx.jar</code></li>
+</ul></li>
+<li>连接测试
+
+<ul>
+<li><code>java -jar /data/test/download/targz/apache-tomcat-7.0.54/bin/jmx.jar</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="多线程">多线程</h2>
+
+<h3 id="创建方法">创建方法</h3>
+
+<ul>
+<li>继续Thread
+<code>
+public class ExtendThread extends Thread {
+    public void run(){System.out.println(this.getName());}
+}
+new ExtendThread().start();
+</code></li>
+<li>实现Runnable
+<code>
+public class ImpleRunnable implements Runnable {
+    public void run(){System.out.println(this.getName());}
+}
+new Thread(new ImpleRunnable(),&quot;Thread&quot;).start(); 
+</code></li>
+<li>注意
+
+<ul>
+<li>Runable非常适合多个相同线程来处理同一份资源的情况</li>
+</ul></li>
+</ul>
+
+<h3 id="生命周期">生命周期</h3>
+
+<ul>
+<li>New新建
+
+<ul>
+<li>当线程被创建时，该线程处于新建状态，此时它和其他java对象一样，仅仅由Java虚拟机为其分配了内存，并初始化了其成员变量的值。（此时的线程没有表现出任何表现出任何线程的动态特征，程序也不会执行线程的线程执行体）</li>
+<li>new Thread（）||new Thread（Runnable target，String name）。</li>
+</ul></li>
+<li>Runnable就绪
+
+<ul>
+<li>就绪也就是说启动线程，调用start方法来启动线程，系统会将该run方法当成线程执行体来处理。如果直接调用线程对象的run方法。则run方法会立即执行，且在这个run方法的执行体未执行结束前其他线程无法并发执行（即系统会将run方法当做一个普通对- 象的普通方法，而不是线程执行体对待）
+
+<ul>
+<li>如果有一个主线程，一个子线程。当根据逻辑代码该调用子线程时不一定会立即调用，为了想在子线程start（）后立即调用子线程，可以考虑使用Thread.sleep（1），这样会让当前线程（主线程）睡眠1毫秒，因为cpu在这1毫秒中是不会休息的，- 这样就会去执行一条处于就绪状态的线程。</li>
+<li>不能对已经处于就绪状态的线程，再次使用start（）</li>
+</ul></li>
+</ul></li>
+<li>Running 运行
+
+<ul>
+<li>当处于就绪状态时，该线程获得cpu，执行体开始运行，就处于运行状态了</li>
+</ul></li>
+<li>Blocked 阻塞
+
+<ul>
+<li>线程不可能一直处于运行状态（线程执行体足够短，瞬间就可以完成的线程排除），线程会在运行过程中需要被中断，因为是并发，目的是会让其他线程获得执行的机会，线程的调度细节取决于OS采用的策略。</li>
+<li>（抢占式调度xp win7 linux - unix..）。</li>
+<li>如果是一些特殊的小型设备可能采用协作式调度（只有线程自己调用它的sleep（）或yield（）才会放弃所占用的资源）。</li>
+</ul></li>
+<li>Dead死亡
+
+<ul>
+<li>测试某条线程是否已经死亡，可以调用线程对象的isAlive（）方法，当线程处于就绪，运行，阻塞时，返回true。线程处于新建，死亡时返回false。</li>
+<li>不能对已经死亡的线程调用start（）方法使它重新启动，死亡就是死亡，是不能再次作为线程执行的。</li>
+</ul></li>
+<li>当主线程结束时候，其他线程不受任何影响，并不会随之结束。一旦子线程启动起来后，它就拥有和主线程相同的地位，它不会受到主线程的影响。</li>
+</ul>
+
+<h3 id="线程控制">线程控制</h3>
+
+<h4 id="join">JOIN</h4>
+
+<ul>
+<li>等待该线程结束后再往下执行</li>
+<li>方法
+
+<ul>
+<li>Join（）
+
+<ul>
+<li>等待被join的线程执行完成</li>
+</ul></li>
+<li>Join（long millis）
+
+<ul>
+<li>等待join线程的时间最长为millis毫秒，如果在这个时间内，被join的线程还没有执行结束则不再等待）</li>
+</ul></li>
+<li>Join（long millis，int nanos）
+
+<ul>
+<li>千分之一毫秒（不用）</li>
+</ul></li>
+</ul></li>
+<li>实例
+<code>
+JoinThread joinThread= new JoinThread();
+new Thread(joinThread).start();
+for(int i=0; i&lt; 4; i++) {
+    Thread thread = new Thread(joinThread);
+    thread.start();
+    thread.join();      //若只针对最后一个调用，则最后一个调用完成，可能其它线程还未完成也会继续往下执行而导致数据未完全
+}
+for(int i=0; i&lt; 3; i++){
+    System.out.println(Thread.currentThread().getName() + &quot;\t&quot; + i);
+}
+</code></li>
+<li>返回结果
+<code>
+    Thread-0    0
+    Thread-1    0
+    Thread-0    1
+    Thread-1    1
+    Thread-1    2
+    Thread-0    2
+    Thread-2    0
+    Thread-2    1
+    Thread-2    2
+    Thread-3    0
+    Thread-3    1
+    Thread-3    2
+main    0
+main    1
+main    2
+</code></li>
+</ul>
+
+<h4 id="后台进程">后台进程</h4>
+
+<ul>
+<li><p>示例</p>
+
+<pre><code>JoinThread joinThread= new JoinThread();
+Thread thread= new Thread(joinThread);
+thread.setDaemon(true);     //必须于执行前设置。前台线程结束后，会再执行一段时间后台线程。
+thread.start();
+for(int i=0; i&lt; 10; i++){
+    System.out.println(Thread.currentThread().getName() + &quot;\t&quot; + i);
+}
+</code></pre></li>
+
+<li><p>返回结果</p>
+
+<pre><code>main    0
+main    1
+main    2
+main    3
+    Thread-0    0
+main    4
+    Thread-0    1
+main    5
+    Thread-0    2
+main    6
+    Thread-0    3
+main    7
+    Thread-0    4
+main    8
+    Thread-0    5
+main    9
+    Thread-0    6
+    Thread-0    7
+    Thread-0    8
+    Thread-0    9
+    Thread-0    10
+    Thread-0    11
+    Thread-0    12
+</code></pre></li>
+</ul>
+
+<h4 id="sleep">SLEEP</h4>
+
+<ul>
+<li>休眠，状态转阻塞</li>
+</ul>
+
+<h4 id="yield">YIELD</h4>
+
+<ul>
+<li>线程让步，状态转就绪，让步于优先级相同或更高的线程</li>
+</ul>
+
+<h3 id="多线程同步">多线程同步</h3>
+
+<h4 id="同步代码块">同步代码块</h4>
+
+<pre><code>Synchronized(obj){ 
+    //...同步代码块 
+} 
+</code></pre>
+
+<h4 id="同步方法">同步方法</h4>
+
+<pre><code>public synchronized void draw(){  ...}
+</code></pre>
+
+<h4 id="锁定释放时机">锁定释放时机</h4>
+
+<ul>
+<li>调用执行结束</li>
+<li>break或return</li>
+<li>代码中出现Error或Exception</li>
+<li>代码中执行监视器对象的wait进行当前线程的暂停释放</li>
+</ul>
+
+<h4 id="不释放情况">不释放情况</h4>
+
+<ul>
+<li>调用Thread.sleep/yield</li>
+<li>其它线程调用该线程的suspend将之挂起（不推荐使用）</li>
+</ul>
+
+<h4 id="同步锁lock">同步锁LOCK</h4>
+
+<pre><code>private final ReentrantLock relock=new ReentrantLock();  //声明锁对象
+public void run(){
+    relock.lock();      //加锁 
+    try{   
+        ... //同步执行代码
+    }finally{  //释放锁 
+        relock.unlock(); 
+    }
+}
+</code></pre>
+
+<h4 id="死锁">死锁</h4>
+
+<ul>
+<li>当两个线程相互等待对方释放同步监视器的时候就会发生死锁，一旦出现死锁，整个程序既不会发生任何异常，也不会有任何提示，只是所有线程处于阻塞状态，无法继续。</li>
+</ul>
+
+<h3 id="线程通信">线程通信</h3>
+
+<ul>
+<li>线程协调运行
+
+<ul>
+<li>Object: wait()| notify()|| notifyAll()</li>
+</ul></li>
+<li>使用条件变量来控制协调
+
+<ul>
+<li>Condition
+
+<ul>
+<li><code>await()|| signal()|| signalAll()</code>
+
+<ul>
+<li><code>private final Lock lock=new ReentrantLock();</code></li>
+<li><code>private final Condition cond=lock.newCondition();</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>管道流通信</p>
+
+<ul>
+<li>创建管道输入输出流
+
+<ul>
+<li><code>PipedWriter pw = new PipedWriter();</code></li>
+<li><code>PipedReader pr = new PipedReader();</code></li>
+</ul></li>
+<li>管道连接
+
+<ul>
+<li><code>pr.connect(pw);</code></li>
+</ul></li>
+<li>将管理分别传入处理线程并调用实现
+
+<ul>
+<li><code>new Thread(new ReaderThread(pr),&quot;读取管道线程&quot;).start();</code>
+
+<ul>
+<li><code>pw.write(str)</code></li>
+</ul></li>
+<li><code>new Thread(new WriterThread(pw),&quot;写入管道线程&quot;).start();</code>
+
+<ul>
+<li><code>while ((buffer = br.readLine()) != null)</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>线程组</p>
+
+<ul>
+<li>介绍
+
+<ul>
+<li>对线程组的控制相当于同时控制这批线程。</li>
+<li>用户创建默认属于默认线程组，如子线程和创建它的主线程同处同一线程组。</li>
+<li>一旦加入指定线程组，中途不允许调整。</li>
+<li><code>Thread th=new Thread(new ThreadGroup(&quot;私人&quot;), new GroupThread(), &quot;线程1&quot;);</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="反射">反射</h2>
+
+<ul>
+<li>机制
+
+<ul>
+<li>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制</li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>在运行状态中，对于任意一个类，都能够知道这个类的所有属性和方法；</li>
+<li>对于任意一个对象，都能够调用它的任意一个方法；</li>
+</ul></li>
+<li>实例
+
+<ul>
+<li>主要针对框架开发，如jsp的javabean,spring的自动注入，hibernate及struts</li>
+</ul></li>
+
+<li><p>代码</p>
+
+<pre><code>public class ReflectionTest {
+    //测试变更属性，其中为了直观调用属性属性设置为public类型
+    public double field;
+
+    public static void main(String[] args) {
+        List2Obj();
+    }
+
+    /***
+     * 构造函数（无参-默认&amp; 带参）
+     */
+    public ReflectionTest() {}
+    public ReflectionTest(Double field) {
+        this.field = field;
+    }
+
+    /**
+     *  动态获取数据对象，可将多维数组的部分结构拼成对象来调用
+     */
+    public static void List2Obj(){
+        int dims[] = new int[]{5, 10, 15};
+        Object arr = Array.newInstance(Integer.TYPE, dims);
+        Object arrobj = Array.get(arr, 3);
+        Class cls = arrobj.getClass().getComponentType();
+        System.out.println(cls.getSimpleName());
+        arrobj = Array.get(arrobj, 5);
+        Array.setInt(arrobj, 10, 37);
+        int arrcast[][][] = (int[][][]) arr;
+        System.out.println(arrcast[3][5][10]);
+    }
+
+    /***
+     * 调用参数的方法进行属性更新
+     */
+    public static void callFieldChange(){
+        Class c = null;
+        try {
+            c = Class.forName(&quot;com.yao.controller.reflection.ReflectionTest&quot;);
+            Field field= c.getField(&quot;field&quot;);
+            ReflectionTest reflect= new ReflectionTest(12.34D);
+            System.out.println(reflect.field);
+            field.setDouble(reflect, 43.21);
+            System.out.println(reflect.field);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /***
+     * 专门用于提供反射调用
+     * @param a 加数1
+     * @param b 加数2
+     * @return  a+b的结果
+     */
+    public int add(int a, int b){
+        return a+ b;
+    }
+
+    /***
+     * 调用本方法内的ADD方法
+     *      Constructor方式与之相似
+     */
+    public static void callClassMethod(){
+        Class c = null;
+        try {
+            c = Class.forName(&quot;com.yao.controller.reflection.ReflectionTest&quot;);
+
+            //指定方法和参数类型以获取类中对应的方法
+            Class types[]= new Class[2];
+            types[0]= Integer.TYPE;
+            types[1]= Integer.TYPE;
+            Method method= c.getMethod(&quot;add&quot;, types);
+
+            //针对各参数位填充以实际数值
+            Object args[]= new Object[2];
+            args[0]= new Integer(1);
+            args[1]= new Integer(2);
+            Integer retVal= (Integer)method.invoke(c.newInstance(), args);
+            System.out.print(retVal);
+
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    /***
+     * 输出String类大致文档结构
+     */
+    public static void printClssInfo(){
+        Class c = null;
+        try {
+            c = Class.forName(&quot;java.lang.String&quot;);
+            System.out.println(&quot;package &quot; + c.getPackage().getName() + &quot;;&quot;);
+            System.out.print(Modifier.toString(c.getModifiers()) + &quot; &quot;);
+            System.out.print(&quot;class &quot; + c.getSimpleName() + &quot; &quot;);
+            if (c.getSuperclass() != Object.class) {
+                System.out.print(&quot;extends &quot; + c.getSuperclass().getSimpleName());
+            }
+            Class[] inters = c.getInterfaces();
+            if (inters.length &gt; 0) {
+                System.out.print(&quot;implements &quot;);
+                for (int i = 0; i &lt; inters.length; i++) {
+                    System.out.print(inters[i].getSimpleName());
+                    if (i &lt; inters.length - 1) {
+                        System.out.print(&quot;,&quot;);
+                    }
+                }
+            }
+            System.out.println(&quot;{&quot;);
+            printFields(c);
+            printMethods(c);
+            System.out.println(&quot;}&quot;);
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /***
+     * 打印类的所有参数
+     * @param c
+     */
+    public static void printFields(Class c) {
+        Field[] field = c.getDeclaredFields();
+        if (field.length &gt; 0) {
+            for (int i = 0; i &lt; field.length; i++) {
+                System.out.println(Modifier.toString(field[i].getModifiers()) + &quot; &quot; + field[i].getType().getSimpleName() + &quot; &quot; + field[i].getName() + &quot;;&quot;);
+            }
+        }
+    }
+
+    /***
+     * 打印类的所有方法
+     * @param c
+     */
+    public static void printMethods(Class c) {
+        Method[] method = c.getDeclaredMethods();
+        if (method.length &gt; 0) {
+            for (int i = 0; i &lt; method.length; i++) {
+                Class[] parameter = method[i].getParameterTypes();
+                System.out.print(Modifier.toString(method[i].getModifiers()) + &quot; &quot; + method[i].getReturnType().getSimpleName() + &quot; &quot; + method[i].getName() + &quot;(&quot;);
+                for (int j = 0; j &lt; parameter.length; j++) {
+                    System.out.print(parameter[j].getSimpleName() + &quot; args&quot;);
+                    if (j != parameter.length - 1) {
+                        System.out.print(&quot;,&quot;);
+                    }
+                }
+                System.out.print(&quot;) &quot;);
+                Class exception[] = method[i].getExceptionTypes();
+
+                if (exception.length &gt; 0) {
+                    System.out.print(&quot;throws &quot;);
+                    for (int j = 0; j &lt; exception.length; j++) {
+                        System.out.print(exception[j].getSimpleName());
+                    }
+                }
+                System.out.println(&quot;{&quot;);
+                System.out.println(&quot;\t... ...&quot;);
+                System.out.println(&quot;}&quot;);
+            }
+
+        }
+    }
+}
+</code></pre></li>
+</ul>
+
+<h2 id="注解">注解</h2>
+
+<h3 id="自定义注解">自定义注解</h3>
+
+<ul>
+<li><p>代码格式</p>
+
+<pre><code>@Target({ElementType.METHOD, ElementType.TYPE})
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LoginRequired {
+}
+</code></pre></li>
+
+<li><p>框架详解</p>
+
+<ul>
+<li>Target
+
+<ul>
+<li>指定该注解使用的位置，可选情况如下
+<code>
+public enum ElementType {   
+TYPE,                 // 指定适用点为 class, interface, enum   
+FIELD,                 // 指定适用点为 field   
+METHOD,             // 指定适用点为 method   
+PARAMETER,             // 指定适用点为 method 的 parameter   
+CONSTRUCTOR,         // 指定适用点为 constructor   
+LOCAL_VARIABLE,     // 指定使用点为 局部变量   
+ANNOTATION_TYPE,     //指定适用点为 annotation 类型   
+PACKAGE             // 指定适用点为 package   
+}
+</code></li>
+</ul></li>
+<li>@Retention
+
+<ul>
+<li>指定编译器处理的方式，可选情况如下
+<code>
+public enum RetentionPolicy { 
+    SOURCE,     // 编译器处理完Annotation后不存储在class中，仅存在于源文件中
+    CLASS,         // 编译器把Annotation存储在class中，但不能被VM读取，这是默认值 
+    RUNTIME     // 编译器把Annotation存储在class中，可以由虚拟机读取,反射需要 
+}
+</code></li>
+</ul></li>
+<li>@Documented<br />
+
+<ul>
+<li>指定允许写入javadoc</li>
+</ul></li>
+<li>@Inherited
+
+<ul>
+<li>允许子类继承时同时继承该注解
+<code>
+public @interface LoginRequired {
+    String value() default &quot;login&quot;;   
+}
+</code></li>
+</ul></li>
+<li>@Constraint(指定用哪个类进行相关校验)
+
+<ul>
+<li>@Constraint(validatedBy = {SafeStringValidator.class, SafeStringListValidator.class})    //注解类</li>
+<li>public class SafeStringValidator implements ConstraintValidator<SafeString, String> {    //校验实现类</li>
+</ul></li>
+</ul></li>
+
+<li><p>JAVA内置</p>
+
+<ul>
+<li>Override只用于方法,它指明注释的方法重写父类的方法,如果不是,则编译器报错.</li>
+<li>Deprecated指明该方法不建议使用</li>
+<li>SuppressWarnings告诉编译器:我知道我的代码没问题</li>
+</ul></li>
+</ul>
+
+<h2 id="执行jar包">执行jar包</h2>
+
+<ul>
+<li>需求
+
+<ul>
+<li>提供DES加密包，支持命令行调用输出</li>
+</ul></li>
+<li>解决方式
+
+<ul>
+<li>独立的Maven项目实现，并创建Main方法进行密码和密钥的输入，本地固定值测试OK后调整取args输入</li>
+<li>将该项目install为jar包，并使用WinRAR工具在MANIFEST.MF中添加main方法入口（Main-Class: test.someClassName - 含main方法的类的项目内完整路径及名称）</li>
+<li>控制台输入 java -jar c:/Encrypt.jar &ldquo;password&rdquo; &ldquo;secret key&rdquo;得到相应的加密后结果</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.basic%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Java.Basic&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.basic%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.basic%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.basic%2f&title=Java.Basic" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

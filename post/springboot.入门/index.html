@@ -1,0 +1,367 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="作用">作用</h1>
+
+<pre><code>创建和启动新的 Spring 框架项目
+</code></pre>
+
+<h1 id="特性">特性</h1>
+
+<pre><code>嵌入 Tomcat 或 Jetty
+提供生产环境使用功能，如性能指标、应用信息和应用健康检查
+</code></pre>
+
+<h1 id="pom-配置">POM 配置</h1>
+
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;project xmlns=&quot;http://maven.apache.org/POM/4.0.0&quot;
+ xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;
+ xsi:schemaLocation=&quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;
+&lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+&lt;groupId&gt;com.midgetontoes&lt;/groupId&gt;
+&lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt;
+&lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+&lt;properties&gt;
+ &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt;
+&lt;/properties&gt;
+&lt;dependencies&gt;
+ &lt;dependency&gt;
+ &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+ &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+ &lt;version&gt;${spring.boot.version}&lt;/version&gt;
+ &lt;/dependency&gt;
+&lt;/dependencies&gt;
+&lt;build&gt;
+ &lt;plugins&gt;
+ &lt;plugin&gt;
+ &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+ &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt;
+&lt;version&gt;${spring.boot.version}&lt;/version&gt;
+ &lt;executions&gt;
+ &lt;execution&gt;
+ &lt;goals&gt;
+ &lt;goal&gt;repackage&lt;/goal&gt;
+ &lt;/goals&gt;
+ &lt;/execution&gt;
+ &lt;/executions&gt;
+ &lt;/plugin&gt;
+ &lt;/plugins&gt;
+&lt;/build&gt;
+&lt;/project&gt;
+</code></pre>
+
+<h1 id="启动程序">启动程序</h1>
+
+<pre><code>@RestController
+@EnableAutoConfiguration
+public class Application {
+ @RequestMapping(&quot;/&quot;)
+ String home() {
+ return &quot;Hello World!&quot;;
+ }
+ public static void main(String[] args) throws Exception {
+ SpringApplication.run(Application.class, args);
+ }
+}
+</code></pre>
+
+<h1 id="推荐基础-pom-文件">推荐基础 POM 文件</h1>
+
+<ul>
+<li>spring-boot-starter    核心 POM，包含自动配置支持、日志库和对 YAML 配置文件的支持。</li>
+<li>spring-boot-starter-amqp    通过 spring-rabbit 支持 AMQP。</li>
+<li>spring-boot-starter-aop    包含 spring-aop 和 AspectJ 来支持面向切面编程（AOP）。</li>
+<li>spring-boot-starter-batch    支持 Spring Batch，包含 HSQLDB。</li>
+<li>spring-boot-starter-data-jpa    包含 spring-data-jpa、spring-orm 和 Hibernate 来支持 JPA。</li>
+<li>spring-boot-starter-data-mongodb    包含 spring-data-mongodb 来支持 MongoDB。</li>
+<li>spring-boot-starter-data-rest    通过 spring-data-rest-webmvc 支持以 REST 方式暴露 Spring Data 仓库。</li>
+<li>spring-boot-starter-jdbc    支持使用 JDBC 访问数据库。</li>
+<li>spring-boot-starter-security    包含 spring-security。</li>
+<li>spring-boot-starter-test    包含常用的测试所需的依赖，如 JUnit、Hamcrest、Mockito 和 spring-test 等。</li>
+<li>spring-boot-starter-velocity    支持使用 Velocity 作为模板引擎。</li>
+<li>spring-boot-starter-web    支持 Web 应用开发，包含 Tomcat 和 spring-mvc。</li>
+<li>spring-boot-starter-websocket    支持使用 Tomcat 开发 WebSocket 应用。</li>
+<li>spring-boot-starter-ws    支持 Spring Web Services。</li>
+<li>spring-boot-starter-actuator    添加适用于生产环境的功能，如性能指标和监测等功能。</li>
+<li>spring-boot-starter-remote-shell    添加远程 SSH 支持。</li>
+<li>spring-boot-starter-jetty    使用 Jetty 而不是默认的 Tomcat 作为应用服务器。</li>
+<li>spring-boot-starter-log4j    添加 Log4j 的支持。</li>
+<li>spring-boot-starter-logging    使用 Spring Boot 默认的日志框架 Logback。</li>
+
+<li><p>spring-boot-starter-tomcat    使用 Spring Boot 默认的 Tomcat 作为应用服务器</p>
+
+<h1 id="外部配置-高到低">外部配置（高到低）</h1></li>
+
+<li><p>命令行参数。</p></li>
+
+<li><p>通过 System.getProperties() 获取的 Java 系统参数。</p></li>
+
+<li><p>操作系统环境变量。</p></li>
+
+<li><p>从 java:comp/env 得到的 JNDI 属性。</p></li>
+
+<li><p>通过 RandomValuePropertySource 生成的“random.*”属性</p>
+
+<ul>
+<li>user.count=${random.int}</li>
+<li>user.max=${random.long}
+
+<ul>
+<li>user.number=${random.int(100)}</li>
+</ul></li>
+</ul></li>
+
+<li><p>应用 Jar 文件之外的属性文件。</p></li>
+
+<li><p>应用 Jar 文件内部的属性文件。</p></li>
+
+<li><p>在应用配置 Java 类（包含“@Configuration”注解的 Java 类）中通过“@PropertySource”注解声明的属性文件。</p></li>
+
+<li><p>通过“SpringApplication.setDefaultProperties”声明的默认属性。</p>
+
+<h1 id="属性文件">属性文件</h1>
+
+<h3 id="搜索位置-由高到低">搜索位置， 由高到低</h3></li>
+
+<li><p>当前目录的“/config”子目录。</p></li>
+
+<li><p>当前目录。</p></li>
+
+<li><p>classpath 中的“/config”包。</p></li>
+
+<li><p>classpath</p>
+
+<h3 id="配置属性">配置属性</h3></li>
+
+<li><p>spring.config.name：配置属性指定不同的属性文件名称</p></li>
+
+<li><p>spring.config.location：添加额外属性文件搜索路径</p></li>
+
+<li><p>配置多个 profile ：文件名格式为 application-{profile}</p>
+
+<h1 id="运维支持">运维支持</h1>
+
+<h3 id="条件">条件</h3>
+
+<p>POM 文件中添加 org.springframe.boot:spring-boot-starter-actuator 依赖</p>
+
+<h3 id="http-服务">HTTP 服务：</h3></li>
+
+<li><p>autoconfig    显示 Spring Boot 自动配置的信息。    是</p></li>
+
+<li><p>beans    显示应用中包含的 Spring bean 的信息。    是</p></li>
+
+<li><p>configprops    显示应用中的配置参数的实际值。    是</p></li>
+
+<li><p>dump    生成一个 thread dump。    是</p></li>
+
+<li><p>env    显示从 ConfigurableEnvironment 得到的环境配置信息。    是</p></li>
+
+<li><p>health    显示应用的健康状态信息。    否</p></li>
+
+<li><p>info    显示应用的基本信息。    否</p></li>
+
+<li><p>metrics    显示应用的性能指标。    是</p></li>
+
+<li><p>mappings    显示 Spring MVC 应用中通过“</p></li>
+
+<li><p>@RequestMapping”添加的路径映射。    是</p></li>
+
+<li><p>shutdown    关闭应用。    是</p></li>
+
+<li><p>trace    显示应用相关的跟踪（trace）信息。    是</p>
+
+<h3 id="例子">例子：</h3>
+
+<h4 id="health-服务">Health 服务</h4>
+
+<h5 id="作用-1">作用：</h5>
+
+<p>对应用本身、关系数据库连接、MongoDB、Redis 和 Rabbit MQ 的健康状态的检测</p>
+
+<h5 id="前置条件">前置条件：</h5>
+
+<p>实现 org.springframework.boot.actuate.health.HealthIndicator 接口
+返回一个 org.springframework.boot.actuate.health.Health 对象</p>
+
+<h5 id="实现类">实现类：</h5>
+
+<pre><code>@Component
+public class AppHealthIndicator implements HealthIndicator {
+ @Override
+ public Health health() {
+ return Health.up().build();
+ }
+}
+</code></pre>
+
+<h5 id="返回结果">返回结果：</h5>
+
+<p>{&ldquo;status&rdquo;:&ldquo;UP&rdquo;,&ldquo;app&rdquo;:{&ldquo;status&rdquo;:&ldquo;UP&rdquo;},&ldquo;db&rdquo;:{&ldquo;status&rdquo;:&ldquo;UP&rdquo;,&ldquo;database&rdquo;:&ldquo;HSQL Database Engine&rdquo;,&ldquo;hello&rdquo;:1}}</p>
+
+<h1 id="jmx-管理">JMX 管理</h1>
+
+<ul>
+<li>Spring Boot 默认提供 JMX 管理的支持</li>
+<li>注解支持：@ManagedResource、@ManagedAttribute 和 @ManagedOperation</li>
+<li>MBean 域：org.springframework.boot</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspringboot.%25E5%2585%25A5%25E9%2597%25A8%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=SpringBoot.%e5%85%a5%e9%97%a8&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspringboot.%25E5%2585%25A5%25E9%2597%25A8%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspringboot.%25E5%2585%25A5%25E9%2597%25A8%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspringboot.%25E5%2585%25A5%25E9%2597%25A8%2f&title=SpringBoot.%e5%85%a5%e9%97%a8" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

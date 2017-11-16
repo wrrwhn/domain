@@ -27,5 +27,26 @@
  全网流量  微博和微信公众号 知乎和豆瓣  本地 O2O 流量  大众点评和美团 微博和微信    包装 - Package  基础</description>
     </item>
     
+    <item>
+      <title>如何轻松聊天</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</link>
+      <pubDate>Wed, 08 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</guid>
+      <description>如何轻松聊天 参考  不懂跟异性轻松聊天，你如何get到这个技能  因素 心态  影响
+ 自信心 个人价值  提升
+ 提升个人价值  提高立身处世能力 收拾外表、整洁干净  与价值相当的人交往 丰富阅历   策略  了解对方需求，针对性满足 言语关怀，行动辅助  口才  避免由表面印象决定交流方式  轻率定高，无法不卑不亢聊天 定低则所决定的聊天方式、内容，容易让对方认定自己的低价值形式 采用*态度大方*表达句式  表达大方自然，干净利落 面对拒绝不强求，有意识不卑不亢   有效幽默  针对 聊天冷场 技能  方式  懂得利用话题 懂得如何问答 懂得发表意见  总结  就是利用对方感兴趣的话题作为切入点 然后在和对方问与答的互动之中 发表对事情的看法和见解  注意  注意节奏，交流而非审问   策略  向上归类  话题延伸至总结、深度  向下归类  概率具体伦  横向归类  扩展至同类、相似元素   补充  适当沉默 懂得倾听</description>
+    </item>
+    
+    <item>
+      <title>Spark </title>
+      <link>https://wrrwhn.github.io/domain/post/spark/</link>
+      <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/spark/</guid>
+      <description>[TOC]
+Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.</description>
+    </item>
+    
   </channel>
 </rss>

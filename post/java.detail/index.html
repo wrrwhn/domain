@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/java.detail/" title="Java.Detail">Java.Detail</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="finally">finally</h2>
+
+<ul>
+<li>用于及时释放资源以不影响系统性能</li>
+<li>遵循最晚申请，最早释放原则，就近释放
+
+<ul>
+<li>若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉</li>
+</ul></li>
+</ul>
+
+<h2 id="preparedstatement">preparedStatement</h2>
+
+<ul>
+<li>预编译语句，继承自Statement，用于处理大业务量的数据库操作</li>
+<li>效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数<code>重复高效</code>的使用</li>
+<li>示例
+<code>
+PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;);                //!!
+for(int i=0; i&lt; 1000; i++){
+    ps.setString(1, &quot;1000&quot;);
+    ResultSet rs = ps.executeQuery();
+    rs.close();
+}
+ps.close();                    //!!
+</code></li>
+<li>注
+
+<ul>
+<li>在高频率反复执行同一类业务量的数据处理任务时使用</li>
+</ul></li>
+</ul>
+
+<h2 id="连接池">连接池</h2>
+
+<ul>
+<li>为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数</li>
+<li>便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中</li>
+<li>优点
+
+<ul>
+<li>不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程</li>
+</ul></li>
+<li>类似使用
+
+<ul>
+<li>在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理</li>
+</ul></li>
+</ul>
+
+<h2 id="内存管理">内存管理</h2>
+
+<h3 id="引用类型">引用类型</h3>
+
+<h4 id="弱引用">弱引用</h4>
+
+<ul>
+<li>当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”</li>
+<li>回收标准
+
+<ul>
+<li>检查到该弱引用指向的对象，就会将其回收</li>
+</ul></li>
+<li>支持对象
+
+<ul>
+<li>WeakRefrence：弱引用对象</li>
+<li>WeakHashMap：专用于管理弱引用集合，消除由于<code>HashMap不释放</code>导致对象数据长期残留于内存的情况<br /></li>
+</ul></li>
+<li>事例
+<code>
+Sample sam = new Sample();
+WeakReference wr = new WeakReference(sam);  // 定义弱引用并指向创建的对象
+sam = null;                                 // 使对象变成了垃圾
+((sam)wr.get()).shout();                    // 验证对象是否还存在
+    System.gc();                            // 执行垃圾收集
+try{
+    Thread.sleep(80);                       // 主线程休眠，垃圾回收器运行
+}catch(Exception e){
+    e.printStackTrace();
+}
+</code></li>
+<li>用途
+
+<ul>
+<li>用于防止内存泄露</li>
+</ul></li>
+</ul>
+
+<h4 id="软引用">软引用</h4>
+
+<ul>
+<li>当被软引用指向的对象除软引用外部存在其他的引用指向这个对象，这个对象即为“软引用”</li>
+<li>回收标准
+
+<ul>
+<li>在内存即将耗尽的情况下，垃圾收集器在抛出异常之前尝试回收软引用指向对象的内存</li>
+</ul></li>
+<li>支持对象
+
+<ul>
+<li>SoftRefrence</li>
+</ul></li>
+<li>事例
+<code>
+Sample sam = new Sample();
+SoftRefrence sr = new SoftRefrence(sam);    // 定义弱引用并指向创建的对象
+sam = null;                                 // 使对象变成了垃圾
+((sam)sr.get()).shout();                    // 验证对象是否还存在
+    System.gc();                            // 执行垃圾收集
+try{
+    Thread.sleep(80);                       // 主线程休眠，垃圾回收器运行
+}catch(Exception e){
+    e.printStackTrace();
+}
+</code></li>
+<li>用途
+
+<ul>
+<li>作为缓冲区<br /></li>
+</ul></li>
+</ul>
+
+<h4 id="幻影引用">幻影引用</h4>
+
+<ul>
+<li>所指向的对象和一般的垃圾对象一样会被回收，并不能延长存活时间</li>
+<li>特点
+
+<ul>
+<li>必须和一个ReferenceQueue类一起使用。</li>
+<li>当一个被幻影引用指向的对象被垃圾收集器检测到需要回收时，垃圾收集器会将其挂到ReferenceQueue队列中，以起到消息传递的作用，并使对象内存在被回收前执行指定的pre-mortem操作<br /></li>
+</ul></li>
+</ul>
+
+<h3 id="小肥猪问题">小肥猪问题</h3>
+
+<ul>
+<li>一般出现在企业级服务器程序中，这些服务程序在起到的时候会创建一些对象，而这些对象在服务器运行中会产生新的对象。</li>
+<li>这些新产生的子对象如果没有及时在用完之后释放掉，就会衣服在创建它们的对象上，而这些对象便是“小肥猪”</li>
+</ul>
+
+<h2 id="string">String</h2>
+
+<ul>
+<li>对String对象使用+，实质上创建很多无用的中间对象，增加了系统的开销。</li>
+<li>推荐方法
+
+<ul>
+<li>StringBuffer.append(&ldquo;..&rdquo;);</li>
+<li>StringBuilder</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.detail%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Java.Detail&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.detail%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.detail%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjava.detail%2f&title=Java.Detail" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

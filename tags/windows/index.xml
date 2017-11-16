@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/windows/</link>
+    <description>Recent content in Windows on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Thu, 20 Jul 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows.Service</title>
+      <link>https://wrrwhn.github.io/domain/post/windows.service/</link>
+      <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/windows.service/</guid>
+      <description>[TOC]
+Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&amp;lt;ServerName&amp;gt;] control [&amp;lt;ServiceName&amp;gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &amp;lt;UserDefinedControlB&amp;gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,689 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/javascript.typescript/" title="JavaScript.TypeScript">JavaScript.TypeScript</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/typescript">typescript </a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="typescript">TypeScript</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/TypeScript">Wiki - TypeScript</a></li>
+<li><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/index.html">TypeScript Handbook（中文版）</a></li>
+<li><a href="http://www.typescriptlang.org/">官网</a></li>
+<li><a href="https://github.com/Microsoft/TypeScript">Microsoft/TypeScript</a></li>
+<li><a href="https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html">5分钟上手TypeScript</a></li>
+<li><a href="http://www.infoq.com/cn/articles/es6-in-depth-symbols">深入浅出ES6（八）：Symbols</a></li>
+</ul>
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>微软开发、开源的编程语言，为 JavaScript 的严格超集</li>
+<li>添加可选的<code>静态类型</code>和基于类的面向对象编程</li>
+<li>安德斯·海尔斯伯格参与设计</li>
+</ul>
+
+<h2 id="安装-使用">安装&amp;使用</h2>
+
+<ul>
+<li>安装
+
+<ul>
+<li><code>npm install -g typescript</code></li>
+</ul></li>
+<li>创建 hello.ts
+<code>
+function hello(user: string){
+    return &quot;Hello&quot;+ user;
+}
+var user = &quot;yao&quot;
+document.body.innerHTML= hello(user)
+</code></li>
+<li>编译
+
+<ul>
+<li><code>tsc hello.ts</code></li>
+</ul></li>
+</ul>
+
+<h2 id="扩展">扩展</h2>
+
+<h3 id="基础类型">基础类型</h3>
+
+<ul>
+<li>类型
+
+<ul>
+<li>number</li>
+<li>bool</li>
+<li>string</li>
+<li>Tuple
+
+<ul>
+<li><code>let x: [string, number]</code></li>
+</ul></li>
+<li>enum
+
+<ul>
+<li><code>enum Color {Red, Green, Blue}</code></li>
+</ul></li>
+<li>any
+
+<ul>
+<li>默认动态类型</li>
+</ul></li>
+<li>void</li>
+<li>null</li>
+<li>undefined</li>
+<li>never
+
+<ul>
+<li>总是抛出异常或根本不会返回值的函数表达式</li>
+<li>箭头函数表达式的返回值类型</li>
+</ul></li>
+</ul></li>
+<li>示例
+<code>
+function Add(left: number, right: number): number {
+    return left + right;
+}
+</code></li>
+<li>细节
+
+<ul>
+<li>类型批注被导出到<code>声明文件</code>，便于 javascript 和 TypeScript 脚本中类型信息均可使用</li>
+<li>类型断言
+
+<ul>
+<li>清楚确切的类型时，通知编译器进行类型转换，而<code>不进行特殊数据检查和解构</code></li>
+<li>写法
+
+<ul>
+<li><code>let len: number = (&lt;String&gt;val).length;</code></li>
+<li><code>let len: number = (val as string).length;</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="类型推断">类型推断</h3>
+
+<ul>
+<li>编译期自动推导出值的数据类型</li>
+</ul>
+
+<h3 id="变量声明">变量声明</h3>
+
+<ul>
+<li><p>var</p>
+
+<pre><code>function f() {
+    var a = 1;
+
+    a = 2;
+    var b = g();
+    a = 3;
+
+    return b;
+
+    function g() {
+        return a;
+    }
+}
+
+f(); // returns 2
+
+for (var i = 0; i &lt; 10; i++) {
+    setTimeout(function() { console.log(i); }, 100 * i);
+}
+10* 10 // 每当g被调用时，它都可以访问到f里的a变量。
+</code></pre></li>
+
+<li><p>let</p>
+
+<ul>
+<li>块作用域</li>
+<li>重定义与屏蔽</li>
+</ul></li>
+
+<li><p>const</p>
+
+<ul>
+<li>与 let 相同的作用域规则</li>
+<li>不能重新赋值</li>
+</ul></li>
+</ul>
+
+<h3 id="接口">接口</h3>
+
+<p>-
+    - <code>class</code> class <code>iplements</code> interface
+    - <code>interface</code> interface1 <code>extends</code> interface2
+    - <code>interface</code> interface <code>extends</code> class</p>
+
+<ul>
+<li><p>示例</p>
+
+<pre><code>interface LabelledValue {
+  label: string;
+  age?: number                // 可选属性
+  readonly val: number        // 只读属性
+
+  (source: string, subString: string): boolean;        // 参数名无需匹配，仅要求各位置参数类型匹配
+}
+let myObj = {size: 10, label: &quot;Size 10 Object&quot;};
+</code></pre></li>
+</ul>
+
+<h3 id="类">类</h3>
+
+<ul>
+<li>继承</li>
+<li>修饰符
+
+<ul>
+<li>public
+
+<ul>
+<li>默认</li>
+</ul></li>
+<li>private
+
+<ul>
+<li>仅在声明类中可用</li>
+</ul></li>
+<li>protected
+
+<ul>
+<li>派生类中仍可使用</li>
+</ul></li>
+<li>readonly</li>
+<li>static</li>
+</ul></li>
+<li>抽象类
+
+<ul>
+<li>abstract</li>
+</ul></li>
+<li>构造函数
+
+<ul>
+<li>关键词： constructor
+<code>
+class Greeter {
+greeting: string;
+constructor(message: string) {
+    this.greeting = message;
+}
+}
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="函数">函数</h3>
+
+<h3 id="泛型">泛型</h3>
+
+<pre><code>function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+</code></pre>
+
+<h3 id="类型推论">类型推论</h3>
+
+<ul>
+<li>根据最佳通用</li>
+<li>根据上下文类型</li>
+</ul>
+
+<h3 id="类型兼容性">类型兼容性</h3>
+
+<ul>
+<li>条件(A= B)
+
+<ul>
+<li>对象
+
+<ul>
+<li>B 至少含有 A 中所有属性</li>
+</ul></li>
+<li>函数
+
+<ul>
+<li>B 中必需参数<code>类型</code> A 中均有满足</li>
+<li>允许<code>忽略参数</code></li>
+</ul></li>
+<li>枚举
+
+<ul>
+<li>不同枚举类型之间不兼容</li>
+</ul></li>
+<li>类
+
+<ul>
+<li>仅比较<code>实例成员</code>，静态成员和构造函数不比较</li>
+<li>私有成员仅可来源于同类的对象的私有成员</li>
+</ul></li>
+<li>泛型
+
+<ul>
+<li>仅定义结构使用类型参数时相同，都可理解为 <code>any</code></li>
+<li>当定义泛型类型成员时，则会限制</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="高级类型">高级类型</h3>
+
+<ul>
+<li>交叉类型
+
+<ul>
+<li>function extend<T, U>( first: T, second: U): T &amp; U { &hellip; }</li>
+</ul></li>
+<li>联合类型-
+
+<ul>
+<li>function padLeft(value: string, padding: string | number) { &hellip; }</li>
+</ul></li>
+<li>类型保护与类型区分
+
+<ul>
+<li>if((<Fish>pet).swim)</li>
+<li>typeof x=== &ldquo;number&rdquo;</li>
+<li>x instanceof number</li>
+</ul></li>
+<li>可辨识联合
+
+<ul>
+<li>联合类型 + 属性可辨识 + 类型保护
+<code>
+function area(s: Shape) {                                // 类型保护
+type Shape = Square | Rectangle | Circle;            // 联合类型
+    interface Square { kind: &quot;square&quot;; size: number;}        // 属性可辨识，各类中均有同一属性
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="symbols">Symbols</h3>
+
+<ul>
+<li>新原生类型
+
+<ul>
+<li>ECMAScript 2015 版本产生</li>
+<li>唯一且不可改变，理解有点像 UUID 用来定义唯一值</li>
+<li>创建
+
+<ul>
+<li>Symbol()</li>
+<li>Symbol.for(string)</li>
+<li>Symbol.iterator</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="迭代器和生成器">迭代器和生成器</h3>
+
+<ul>
+<li>for (let entry of someArray)
+
+<ul>
+<li>迭代对象键对应值</li>
+</ul></li>
+<li>for (let i in list)
+
+<ul>
+<li>迭代对象的键列表
+<code>
+let list = [4, 5, 6];
+for (let i in list) console.log(i); // &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,
+for (let i of list) console.log(i); // &quot;4&quot;, &quot;5&quot;, &quot;6&quot;
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="模块">模块</h3>
+
+<ul>
+<li>默认&amp;推荐 for Node.js 应用</li>
+<li>导出
+
+<ul>
+<li>export class ZipCodeValidator implements StringValidator</li>
+<li>export const numberRegexp</li>
+<li>export { ZipCodeValidator as mainValidator };</li>
+<li>export * from &ldquo;./StringValidator&rdquo;;</li>
+<li>export default $;        // 默认导出名称</li>
+</ul></li>
+<li>导入
+
+<ul>
+<li>import { ZipCodeValidator } from &ldquo;./ZipCodeValidator&rdquo;;</li>
+<li>import { ZipCodeValidator as ZCV } from &ldquo;./ZipCodeValidator&rdquo;;</li>
+<li>import * as validator from &ldquo;./ZipCodeValidator&rdquo;;</li>
+</ul></li>
+</ul>
+
+<h3 id="命名空间">命名空间</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>位于全局命名空间下的普通带名字的 JavaScript 对象</li>
+<li>可在多文件同时使用，通过 <code>--outFile</code> 结合</li>
+</ul></li>
+</ul>
+
+<h3 id="命名空间和模块">命名空间和模块</h3>
+
+<pre><code>// 不推荐，不应该对模块使用命名空间
+export namespace Shapes {
+    export class Triangle { /* ... */ }
+}
+import * as shapes from &quot;./shapes&quot;;
+let t = new `shapes.Shapes`.Triangle();
+
+// 推荐
+export class Triangle { /* ... */ }
+import * as shapes from &quot;./shapes&quot;;
+let t = new shapes.Triangle();
+</code></pre>
+
+<h3 id="模块解析">模块解析</h3>
+
+<ul>
+<li>顺序
+
+<ul>
+<li>优先尝试定位导入模块的文件
+
+<ul>
+<li>Classic 策略</li>
+<li>Node 策略</li>
+</ul></li>
+<li>无果时尝试<code>外部模块声明</code></li>
+</ul></li>
+<li>方式
+
+<ul>
+<li>相对
+
+<ul>
+<li>以 <code>/</code>, <code>./</code>, <code>../</code> 开头</li>
+<li><code>import Entry from &quot;./components/Entry&quot;;</code></li>
+<li><code>import { DefaultHeaders } from &quot;../constants/http&quot;;</code></li>
+<li><code>import &quot;/mod&quot;;</code></li>
+</ul></li>
+<li>非相对
+
+<ul>
+<li><code>import * as $ from &quot;jQuery&quot;;</code></li>
+</ul></li>
+</ul></li>
+<li>策略
+
+<ul>
+<li>介绍
+
+<ul>
+<li>使用 <code>--moduleResolution</code> 指定策略</li>
+<li>使用 <code>--module AMD | System | ES2015</code> 默认为 <code>Classic</code>，其它情况为 <code>Node</code></li>
+</ul></li>
+<li>分类
+
+<ul>
+<li>Classic
+
+<ul>
+<li>TypeScript <code>默认</code>解析策略，存在主要为了<code>向后兼容</code></li>
+<li>相对导入
+
+<ul>
+<li><code>/root/src/folder/A.ts</code> 中使用引用
+
+<ul>
+<li>引用 <code>import { b } from &quot;./moduleB&quot;</code></li>
+<li>查找
+
+<ul>
+<li><code>/root/src/folder/moduleB.ts</code></li>
+<li><code>/root/src/folder/moduleB.d.ts</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>非相对
+
+<ul>
+<li>由包含导入文件的目录开始，依次向上级目录遍历</li>
+<li><code>/root/src/folder/A.ts</code> 使用引用
+
+<ul>
+<li>引用 <code>import { b } from &quot;moduleB&quot;</code></li>
+<li>查找
+
+<ul>
+<li>/root/src/folder/moduleB.ts</li>
+<li>/root/src/folder/moduleB.d.ts</li>
+<li>/root/src/moduleB.ts</li>
+<li>/root/src/moduleB.d.ts</li>
+<li>/root/moduleB.ts</li>
+<li>/root/moduleB.d.ts</li>
+<li>/moduleB.ts</li>
+<li>/moduleB.d.ts</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Node
+
+<ul>
+<li>同 <code>Node.js</code></li>
+<li>相对引用
+
+<ul>
+<li>检查 <code>/root/src/moduleB.js</code></li>
+<li>检查 <code>/root/src/moduleB/package.json</code>
+
+<ul>
+<li>如若包含 <code>{ &quot;main&quot;: &quot;lib/mainModule.js&quot; }</code> 则使用 <code>/root/src/moduleB/lib/mainModule.js</code></li>
+</ul></li>
+<li>检查 <code>/root/src/moduleB/index.js</code> ，并隐式当作 <code>main</code> 模块</li>
+</ul></li>
+<li>非相对引用
+
+<ul>
+<li>在特殊目录 <code>node_modules</code> 中查找模块</li>
+<li>依次向上寻找目录下 <code>node_modules</code> 中的 <code>moduleB.tx</code>,<code>moduleB.tsx</code>,<code>moduleB.d.ts</code>, <code>moduleB.js</code>, <code>moduleB/package.json</code>, <code>moduleB/index.js</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="声明合并">声明合并</h3>
+
+<h3 id="jsx">JSX</h3>
+
+<h3 id="装饰器">装饰器</h3>
+
+<h3 id="mixins">Mixins</h3>
+
+<h3 id="三斜线指令">三斜线指令</h3>
+
+<h2 id="补充">补充</h2>
+
+<ul>
+<li>静态类型
+
+<ul>
+<li>编译时确认变量类型，编译后类型信息和存储形式确定</li>
+</ul></li>
+<li>安德斯·海尔斯伯格
+
+<ul>
+<li>C#的首席架构师 创始人</li>
+<li>Delphi 创始人</li>
+<li>Turbo Pascal 创始人</li>
+</ul></li>
+<li>内部模块= 命名空间， 外部模块= 模块</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjavascript.typescript%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=JavaScript.TypeScript&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjavascript.typescript%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjavascript.typescript%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fjavascript.typescript%2f&title=JavaScript.TypeScript" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

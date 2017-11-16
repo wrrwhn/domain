@@ -1,0 +1,455 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用">Redis.使用</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/redis">redis</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="简介">简介</h2>
+
+<h3 id="介绍">介绍</h3>
+
+<ul>
+<li><p>支持网络，可基于内存亦可持久化的日志型、Key-Value数据库</p>
+
+<h3 id="参考">参考</h3></li>
+
+<li><p><a href="http://redis.io">官网</a></p></li>
+
+<li><p><a href="http://redis.io/documentation">文档</a></p></li>
+
+<li><p><a href="http://redis.readthedocs.org/en/2.4/index.html">命令</a></p></li>
+
+<li><p><a href="http://www.php100.com/html/webkaifa/PHP/PHPyingyong/2011/0406/7873.html">Linux下安装</a></p></li>
+
+<li><p><a href="http://javacrazyer.iteye.com/blog/1840161">Jedis使用示例</a></p></li>
+</ul>
+
+<h2 id="安装-windows">安装-WINDOWS</h2>
+
+<ul>
+<li>下载                    <code>http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317</code></li>
+<li>解压至 D:\redis-2.0.2，并更新替换redis.conf</li>
+<li>cmd执行 <code>D:\redis-2.0.2&gt;redis-server.exe redis.conf</code> 运行服务器</li>
+<li>cmd执行 <code>D:\redis-2.0.2&gt;redis-cli.exe -h 192.168.10.59 -p 6379</code> 运行客户端</li>
+<li>客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值</li>
+</ul>
+
+<h2 id="安装-linux">安装-LINUX</h2>
+
+<h3 id="vi环境下输入">VI环境下输入</h3>
+
+<ul>
+<li>下载程序
+
+<ul>
+<li><code>wget http://download.redis.io/releases/redis-2.8.3.tar.gz</code></li>
+</ul></li>
+<li>解压
+
+<ul>
+<li><code>tar xzf redis-2.8.3.tar.gz</code></li>
+</ul></li>
+<li>跳转至解压目录
+
+<ul>
+<li><code>cd redis-2.8.3</code></li>
+</ul></li>
+<li>安装Redis
+
+<ul>
+<li>make
+
+<ul>
+<li>若提示make指定未安装，执行<code>yum -y install gcc automake autoconf libtool make</code> 进行安装</li>
+</ul></li>
+</ul></li>
+<li>拷贝执行相关
+
+<ul>
+<li>src路径下的redis-server、redis-benchmark、redis-cli，redis-2.8.3目录下redis.conf至服务目录/usr/local/redis</li>
+<li><code>mkdir -p /usr/local/redis</code></li>
+<li><code>cp redis-server redis-benchmark redis-cli /usr/local/redis</code></li>
+<li><code>cd /usr/local/redis</code></li>
+</ul></li>
+<li>启动服务<br />
+
+<ul>
+<li><code>./redis-server   redis.conf</code></li>
+<li>若服务未后台启动，修改redis.conf的daemonize no为yes</li>
+</ul></li>
+<li>启动客户端
+
+<ul>
+<li><code>./redis-cli</code></li>
+</ul></li>
+<li>写数据
+
+<ul>
+<li><code>set name yao</code></li>
+</ul></li>
+<li>读数据
+
+<ul>
+<li><code>get name</code></li>
+</ul></li>
+</ul>
+
+<h2 id="调用-jedis">调用-Jedis</h2>
+
+<h3 id="实例">实例</h3>
+
+<pre><code>import redis.clients.jedis.Jedis;
+public class Client {
+    public static void main(String[] args) {
+        Jedis jedis= new Jedis(&quot;localhost&quot;);
+        jedis.set(&quot;age&quot;, &quot;25&quot;);
+        String name= jedis.get(&quot;name&quot;);
+        String age= jedis.get(&quot;age&quot;);
+        System.out.println(&quot;[name: &quot;+ name+&quot;, age: &quot;+ age+&quot;]&quot;);
+    }
+}
+</code></pre>
+
+<h3 id="常用方法">常用方法</h3>
+
+<ul>
+<li>新增覆盖<br />
+
+<ul>
+<li><code>jedis.set(&quot;name&quot;, &quot;minxr&quot;);</code></li>
+</ul></li>
+<li>获取<br />
+
+<ul>
+<li><code>jedis.get(&quot;name&quot;);</code></li>
+</ul></li>
+<li>追加<br />
+
+<ul>
+<li><code>jedis.append(&quot;name&quot;, &quot;jintao&quot;);</code></li>
+</ul></li>
+<li>删除<br />
+
+<ul>
+<li><code>jedis.del(&quot;name&quot;);</code></li>
+</ul></li>
+<li>清空数据<br />
+
+<ul>
+<li><code>jedis.flushDB();</code></li>
+</ul></li>
+<li>校验存在<br />
+
+<ul>
+<li><code>jedis.exists(&quot;foo&quot;);</code></li>
+</ul></li>
+<li>不存在时添加否则不操作
+
+<ul>
+<li><code>jedis.setnx(&quot;foo&quot;, &quot;foo not exits&quot;);</code></li>
+</ul></li>
+<li>2秒有效<br />
+
+<ul>
+<li><code>jedis.setex(&quot;foo&quot;, 2, &quot;foo not exits&quot;);</code></li>
+</ul></li>
+<li>截取值<br />
+
+<ul>
+<li><code>jedis.getrange(&quot;foo&quot;, 1, 3);</code></li>
+</ul></li>
+<li>批量赋值<br />
+
+<ul>
+<li><code>jedis.mset(&quot;name&quot;, &quot;minxr&quot;, &quot;jarorwar&quot;, &quot;aaa&quot;);</code></li>
+</ul></li>
+<li>批量获取<br />
+
+<ul>
+<li><code>jedis.mget(&quot;mset1&quot;, &quot;mset2&quot;, &quot;mset3&quot;, &quot;mset4&quot;);</code></li>
+</ul></li>
+<li>批量删除<br />
+
+<ul>
+<li><code>jedis.del(new String[] { &quot;foo&quot;, &quot;foo1&quot;, &quot;foo3&quot; });</code></li>
+</ul></li>
+</ul>
+
+<h2 id="实例-1">实例</h2>
+
+<h3 id="调用实现">调用实现</h3>
+
+<pre><code>org.springframework.data.redis.core.StringRedisTemplate
+@Autowired
+StringRedisTemplate stringRedisTemplate;
+</code></pre>
+
+<h3 id="数据结构">数据结构</h3>
+
+<pre><code>blog:id:hash
+  id  1
+  likeCount 12
+  blog  [...]
+blog:zset
+  1 10
+  2 2
+  4 0
+</code></pre>
+
+<h3 id="工具类">工具类</h3>
+
+<pre><code>public class RedisKeyUtils {
+    public static String generate(String key, Long id) {    //blog:l:%d:hash  10 -&gt; blog:l:10:hash
+        return String.format(key, id);
+    }
+}
+
+public class RedisSettings {    //Redis相关配置参数对象Bean
+    private String blogHashKey;
+    private String blogSortedSetKey;
+}
+
+public class ColleagueCircleConfig {      //Redis初始化
+    @Autowired
+    Environment environment;
+    @Bean
+    public RedisSettings microBlogRedisSettings() {
+        RedisSettings microBlogRedisSettings = new RedisSettings();
+        microBlogRedisSettings.setBlogSortedSetKey(&quot;blog:zset&quot;);
+        microBlogRedisSettings.setBlogHashKey(&quot;blog:%d:hash&quot;);
+        microBlogRedisSettings.setBlogCommentSortedSetKey(&quot;blog:%d:c:zset&quot;);
+        microBlogRedisSettings.setBlogCommentHashSetKey(&quot;blog:c:%d:hash&quot;);
+    }
+}
+@Configuration
+@Import(value = {ColleagueCircleConfig.class})
+public class AppConfig extends AbstractAppConfig    //于系统启动时进行初始化
+</code></pre>
+
+<h3 id="业务操作">业务操作</h3>
+
+<h4 id="新增">新增</h4>
+
+<pre><code>String likeHashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), microBlogLike.getBlogId());
+addToLikeHash(likeHashKey, microBlogLike);
+stringRedisTemplate.opsForHash().put(likeHashKey, microBlogLike.getId().toString(), jsonConverter.toJson(microBlogLike));
+
+stringRedisTemplate.opsForHash().increment(blogKey, MicroBlogServiceRedisImpl.BLOG_HASH_FIELD_LIKE_COUNT, 1);
+
+
+BoundHashOperations boundHashOperations = stringRedisTemplate.boundHashOps(key);
+Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
+map.put(BLOG_HASH_FIELD_BLOG, jsonConverter.toJson(microBlog));
+map.put(BLOG_HASH_FIELD_ATTACHMENTS, jsonConverter.toJson(attachments));
+map.put(BLOG_HASH_FIELD_RECEIVERS, jsonConverter.toJson(receivers));
+map.put(BLOG_HASH_FIELD_COMMENT_COUNT, &quot;0&quot;);
+map.put(BLOG_HASH_FIELD_LIKE_COUNT, &quot;0&quot;);
+boundHashOperations.putAll(map);
+</code></pre>
+
+<h4 id="删除">删除</h4>
+
+<pre><code>String key = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
+stringRedisTemplate.opsForHash().delete(key, microBlogLikeId.toString());
+</code></pre>
+
+<h4 id="查询">查询</h4>
+
+<pre><code>String hashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
+HashOperations&lt;String, String, String&gt; hashOperations = stringRedisTemplate.opsForHash();
+List&lt;String&gt; jsonList = hashOperations.multiGet(hashKey, microBlogLikeIdSet);
+
+stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);
+</code></pre>
+
+<h2 id="调用-springdataredis">调用-SpringDataRedis</h2>
+
+<h3 id="key">Key</h3>
+
+<ul>
+<li>redisTemplate.hasKey(key)</li>
+
+<li><p>redisTemplate.delete(key);</p>
+
+<h3 id="string">String</h3>
+
+<h3 id="list">List</h3>
+
+<h3 id="set">Set</h3>
+
+<h3 id="sorted-set">Sorted Set</h3></li>
+
+<li><p>redisTemplate.boundZSetOps(key).add(baseQaAnswer.getId(), 0);</p></li>
+
+<li><p>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY_DAY).incrementScore(baseQaAnswer.getQuestionId(), hotCnt);</p></li>
+
+<li><p>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY).remove(id);</p></li>
+
+<li><p>redisTemplate.opsForZSet().reverseRange(key, startIndex, endIndex);</p>
+
+<h3 id="hash">Hash</h3></li>
+
+<li><p>BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);</p>
+
+<ul>
+<li>boundHashOperations.putAll(map);</li>
+<li>boundHashOperations.expire(QaRedisConfig.QA_EXPIRE_HOURS, TimeUnit.HOURS);</li>
+<li>boundHashOperations.increment(userId.toString(), 1);</li>
+</ul></li>
+
+<li><p>redisTemplate.opsForHash().multiGet(key, HASH_FIELDS_ANSWER);</p></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fredis.%25E4%25BD%25BF%25E7%2594%25A8%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Redis.%e4%bd%bf%e7%94%a8&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fredis.%25E4%25BD%25BF%25E7%2594%25A8%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fredis.%25E4%25BD%25BF%25E7%2594%25A8%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fredis.%25E4%25BD%25BF%25E7%2594%25A8%2f&title=Redis.%e4%bd%bf%e7%94%a8" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

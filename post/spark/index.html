@@ -1,0 +1,863 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/spark/" title="Spark ">Spark </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.20">2017.10.20</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%A1%86%E6%9E%B6">框架</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/spark">spark</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="spark">Spark</h1>
+
+<h2 id="启动">启动</h2>
+
+<ul>
+<li>Spark
+
+<ul>
+<li>method
+
+<ul>
+<li>setUp
+
+<ul>
+<li>threadPool</li>
+<li>ipAddress</li>
+<li>port</li>
+<li>secure</li>
+</ul></li>
+<li>start
+
+<ul>
+<li>init</li>
+<li>stop</li>
+<li>webSocket</li>
+</ul></li>
+<li>other
+
+<ul>
+<li><method>(String path, Route route)
+
+<ul>
+<li>get</li>
+<li>post</li>
+<li>put</li>
+<li>patch</li>
+<li>delete</li>
+<li>head</li>
+<li>trace</li>
+<li>connect</li>
+<li>options</li>
+<li>before</li>
+<li>after</li>
+</ul></li>
+<li><method>(String path, String acceptType, Route route)</li>
+<li>webSocket(String path, Class&lt;?&gt; handler)</li>
+</ul></li>
+</ul></li>
+<li>class
+
+<ul>
+<li>SingletonHolder
+
+<ul>
+<li><code>static final SparkInstance INSTANCE = new SparkInstance();</code></li>
+</ul></li>
+<li>SparkInstance
+
+<ul>
+<li>parameter
+
+<ul>
+<li>port</li>
+<li>ipAddress</li>
+<li>max|min Threads</li>
+<li>webSocketHandlers</li>
+<li>SparkServer</li>
+<li>SimpleRouteMatcher</li>
+<li>CountDownLatch</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>init()
+
+<ul>
+<li><code>this.routeMatcher = RouteMatcherFactory.get();</code></li>
+<li><code>(new Thread(run&lt;invokedynamic&gt;(this))).start();</code></li>
+</ul></li>
+<li>getter/ setter</li>
+<li>webSocket(String path, Class&lt;?&gt; handler)</li>
+<li>addRoute(String httpMethod, RouteImpl route)</li>
+<li>addFilter(String httpMethod, FilterImpl filter)</li>
+</ul></li>
+<li>extends
+
+<ul>
+<li>Runnable</li>
+</ul></li>
+<li>used
+
+<ul>
+<li>HaltException</li>
+<li><strong>JettySparkServer</strong>
+
+<ul>
+<li>parameter
+
+<ul>
+<li>Handler</li>
+<li>Server</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>ignite(String host, int port, SslStores sslStores, String staticFilesFolder, String externalFilesFolder, CountDownLatch latch, int maxThreads, int minThreads, int threadIdleTimeoutMillis, Map<String, Class<?>&gt; webSocketHandlers, Optional<Integer> webSocketIdleTimeoutMillis)</li>
+</ul></li>
+<li>impl
+
+<ul>
+<li>SparkServer
+
+<ul>
+<li>ignite
+
+<ul>
+<li>init
+
+<ul>
+<li><code>Ignites the spark server, listening on the specified port, running SSL secured with the specified keystore and truststore</code></li>
+<li><code>JettyServerFactory.createServer(maxThreads, minThreads, threadIdleTimeoutMillis);</code></li>
+<li><code>SocketConnectorFactory.createSocketConnector(server, host, port);</code></li>
+<li><code>WebSocketServletContextHandlerFactory.create(webSocketHandlers, webSocketIdleTimeoutMillis);</code></li>
+<li><code>server.setHandler(handlers);</code></li>
+</ul></li>
+<li>start
+
+<ul>
+<li><code>server.start();</code></li>
+<li><code>latch.countDown();</code>
+
+<ul>
+<li><code>CountDownLatch latch = new CountDownLatch(1);</code></li>
+</ul></li>
+<li><code>server.join();</code></li>
+</ul></li>
+</ul></li>
+<li>stop
+
+<ul>
+<li><code>server.stop();</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>uesd
+
+<ul>
+<li>Handler
+
+<ul>
+<li>impl
+
+<ul>
+<li>AbstractHandler
+
+<ul>
+<li>impl
+
+<ul>
+<li>impl
+
+<ul>
+<li>HandlerWrapper
+
+<ul>
+<li>method
+
+<ul>
+<li>void handle(String target, Request baseRequest, HttpServletRequest request, HttpServletResponse response)
+
+<ul>
+<li>super.handle(target, baseRequest, request, response);</li>
+<li>cehck resource exists/ endsWith
+
+<ul>
+<li></li>
+</ul></li>
+<li>check last_modified/ etag/ mime
+
+<ul>
+<li></li>
+<li></li>
+<li></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Server
+
+<ul>
+<li>parameter
+
+<ul>
+<li>SessionIdManager</li>
+<li>List<Connector></li>
+<li>ThreadPool</li>
+<li>AttributesMap</li>
+<li>RequestLog</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>doStart()
+
+<ul>
+<li><code>ShutdownMonitor.getInstance().start();</code></li>
+<li>doStop()</li>
+<li>List<Future<Void>&gt; futures
+
+<ul>
+<li><code>futures.add(((Graceful)graceful).shutdown());</code>
+
+<ul>
+<li>添加各连接、子处理器的关闭进程结果</li>
+</ul></li>
+<li><code>future.isDone()</code>
+
+<ul>
+<li>检查是否均已关闭成功</li>
+</ul></li>
+<li><code>connector.stop();</code></li>
+</ul></li>
+</ul></li>
+<li>handle(HttpChannel connection)
+
+<ul>
+<li>!HttpMethod.OPTIONS.is(request.getMethod())
+
+<ul>
+<li><code>response.sendError(HttpStatus.BAD_REQUEST_400);</code></li>
+</ul></li>
+<li><code>handler.handle(target,baseRequest, request, response);</code></li>
+</ul></li>
+</ul></li>
+<li>used
+
+<ul>
+<li>HttpField
+
+<ul>
+<li>parameter
+
+<ul>
+<li>HttpHeader</li>
+<li>name</li>
+<li>value</li>
+<li>hash</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>getter/ setter</li>
+</ul></li>
+<li>used
+
+<ul>
+<li>HttpHeader
+
+<ul>
+<li>enum</li>
+<li>请求头各项</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>ShutdownMonitor
+
+<ul>
+<li>parameter
+
+<ul>
+<li>host</li>
+<li>port</li>
+<li>key
+
+<ul>
+<li>stop.key</li>
+</ul></li>
+<li>ServerSocket</li>
+<li>Thread</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>start()
+
+<ul>
+<li>new Thread(new ShutdownMonitorRunnable()).start()</li>
+<li>stopLifeCycles (boolean destroy)</li>
+</ul></li>
+<li>void stopOutput (Socket socket)</li>
+<li>void stopInput (Socket socket)</li>
+</ul></li>
+<li>used
+
+<ul>
+<li>ShutdownMonitorRunnable
+
+<ul>
+<li>method
+
+<ul>
+<li>ShutdownMonitorRunnable()
+
+<ul>
+<li>startListenSocket()</li>
+</ul></li>
+<li>run()
+
+<ul>
+<li>serverSocket.accept().getInputStream()</li>
+<li>&ldquo;stop&rdquo;.equalsIgnoreCase(cmd)
+
+<ul>
+<li>_lifeCycles.stop()</li>
+<li>_lifeCycles.destroy()</li>
+</ul></li>
+</ul></li>
+<li>stopInput (Socket socket)
+
+<ul>
+<li>close(serverSocket);</li>
+</ul></li>
+<li>stopOutput (Socket socket)
+
+<ul>
+<li>socket.shutdownOutput();</li>
+<li>close(socket);</li>
+</ul></li>
+<li>startListenSocket()
+
+<ul>
+<li><code>serverSocket = new ServerSocket();</code></li>
+<li><code>serverSocket.bind(new InetSocketAddress(InetAddress.getByName(host), port), 1);</code>
+
+<ul>
+<li>InetAddress.getByName(host)
+
+<ul>
+<li></li>
+</ul></li>
+</ul></li>
+<li><code>key = Long.toString((long)(Long.MAX_VALUE * Math.random() + this.hashCode() + System.currentTimeMillis()),36);</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>LifeCycle
+
+<ul>
+<li>method
+
+<ul>
+<li>server
+
+<ul>
+<li>start()</li>
+<li>stop()</li>
+</ul></li>
+<li>status
+
+<ul>
+<li>isRunning()</li>
+<li>isStarted()</li>
+<li>isStarting()</li>
+<li>isStopping()</li>
+<li>isStopped()</li>
+<li>isFailed()</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>ServerSocket
+
+<ul>
+<li>parameter
+
+<ul>
+<li>bCreated</li>
+<li>bBound</li>
+<li>bClosed</li>
+<li>bOldImpl</li>
+<li>closeLock</li>
+<li>SocketImpl</li>
+</ul></li>
+</ul></li>
+<li>SocketImpl
+
+<ul>
+<li>impl
+
+<ul>
+<li>AbstractPlainSocketImpl
+
+<ul>
+<li>method
+
+<ul>
+<li>create</li>
+<li>connect</li>
+<li>bind</li>
+<li>listen</li>
+<li>accept</li>
+</ul></li>
+<li>impl
+
+<ul>
+<li>TwoStacksPlainSocketImpl
+
+<ul>
+<li></li>
+</ul></li>
+<li>DualStackPlainSocketImpl</li>
+<li>PlainSocketImpl
+
+<ul>
+<li></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>extends
+
+<ul>
+<li>HandlerWrapper</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>SimpleRouteMatcher
+
+<ul>
+<li>parameter
+
+<ul>
+<li>List<RouteEntry> routes</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>addRoute(HttpMethod method, String url, String acceptedType, Object target)
+
+<ul>
+<li>List<RouteEntry></li>
+</ul></li>
+<li>removeRoute(String path, String httpMethod)</li>
+<li>findTargetsForRequestedRoute(HttpMethod httpMethod, String path)</li>
+</ul></li>
+</ul></li>
+<li>RouteEntry
+
+<ul>
+<li>parameter
+
+<ul>
+<li>httpMethod</li>
+<li>path</li>
+<li>acceptedType</li>
+<li>target</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>boolean matchPath(String path)</li>
+<li>boolean matches(HttpMethod httpMethod, String path)</li>
+</ul></li>
+<li>used
+
+<ul>
+<li>HttpMethod
+
+<ul>
+<li>Enum
+
+<ul>
+<li>get</li>
+<li>post</li>
+<li>put</li>
+<li>patch</li>
+<li>delete</li>
+<li>head</li>
+<li>trace</li>
+<li>connect</li>
+<li>options</li>
+<li>before</li>
+<li>after</li>
+</ul></li>
+</ul></li>
+<li>parameter
+
+<ul>
+<li>target</li>
+<li>matchUri</li>
+<li>requestURI</li>
+<li>acceptType</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>理解
+
+<ul>
+<li>服务启动</li>
+<li>端口监听</li>
+<li>handler 构造</li>
+</ul></li>
+</ul>
+
+<h2 id="渲染">渲染</h2>
+
+<ul>
+<li>Configurable
+
+<ul>
+<li>parameter
+
+<ul>
+<li>setUp
+
+<ul>
+<li>locale</li>
+<li>*Format</li>
+<li>timeZone</li>
+<li>encode</li>
+<li>autoFlush</li>
+<li>variables</li>
+</ul></li>
+<li>utils
+
+<ul>
+<li>objectMapper</li>
+<li>templateExceptionHandler</li>
+<li>TemplateClassResolver</li>
+</ul></li>
+</ul></li>
+<li>extends
+
+<ul>
+<li>Template
+
+<ul>
+<li>parameter
+
+<ul>
+<li>macros</li>
+<li>imports</li>
+<li>TemplateElement</li>
+<li>lines</li>
+<li>name/ encoding/ defaultNS - namespace</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>process(Object rootMap, Writer out, ObjectWrapper wrapper, TemplateNodeModel rootNode)
+
+<ul>
+<li>createProcessingEnvironment(rootMap, out, wrapper)</li>
+</ul></li>
+<li>Environment createProcessingEnvironment(Object rootMap, Writer out, ObjectWrapper wrapper)
+
+<ul>
+<li>convert map to Enviroment</li>
+</ul></li>
+</ul></li>
+<li>class
+
+<ul>
+<li>LineTableBuilder
+
+<ul>
+<li>处理行信息中回车、TAB</li>
+</ul></li>
+</ul></li>
+<li>Used
+
+<ul>
+<li>FMParser</li>
+<li>TemplateElement
+
+<ul>
+<li>树形结构</li>
+</ul></li>
+<li>TemplateCache
+
+<ul>
+<li>parameter
+
+<ul>
+<li>delay</li>
+<li>CacheStorage</li>
+<li>localizedLookup</li>
+<li>Configuration</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>removeTemplate(String name, Locale locale, String encoding, boolean parse)
+
+<ul>
+<li>storage.remove(tk);</li>
+</ul></li>
+<li>getTemplate(String name, Locale locale, String encoding, boolean parse)
+
+<ul>
+<li>storage.get(tk)</li>
+</ul></li>
+</ul></li>
+<li>class
+
+<ul>
+<li>CachedTemplate
+
+<ul>
+<li>parameter
+
+<ul>
+<li>templateOrException</li>
+<li>source</li>
+<li>lastChecked</li>
+<li>lastModified</li>
+</ul></li>
+</ul></li>
+<li>TemplateKey
+
+<ul>
+<li>parameter
+
+<ul>
+<li>name</li>
+<li>locale</li>
+<li>encoding</li>
+<li>parse</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>CacheStorage
+
+<ul>
+<li>method
+
+<ul>
+<li>get</li>
+<li>put</li>
+<li>remove</li>
+<li>clear</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>TemplateEngine
+
+<ul>
+<li>parameter
+
+<ul>
+<li>Configuration</li>
+</ul></li>
+<li>method
+
+<ul>
+<li>String render(ModelAndView modelAndView)
+
+<ul>
+<li>this.configuration.getTemplate(modelAndView.getViewName());</li>
+<li>template.process(modelAndView.getModel(), e);</li>
+</ul></li>
+</ul></li>
+<li>extends
+
+<ul>
+<li>FreeMarkerEngine</li>
+</ul></li>
+</ul></li>
+<li>理解
+
+<ul>
+<li>初始化解析器
+
+<ul>
+<li>资源加载</li>
+<li>格式转换</li>
+</ul></li>
+<li>模板存取</li>
+<li>模板的应用、语法解析</li>
+<li>国际化、语种等相关通用设置</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspark%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Spark%20&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspark%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspark%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fspark%2f&title=Spark%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

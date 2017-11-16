@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sublime on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/sublime/</link>
+    <description>Recent content in Sublime on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sublime.Plugin</title>
+      <link>https://wrrwhn.github.io/domain/post/sublime.plugin/</link>
+      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/sublime.plugin/</guid>
+      <description>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&amp;gt; new plugin&amp;hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&amp;lsquo;example&amp;rsquo;) -&amp;gt; 即可看到当前文章头部插入 &amp;lsquo;Hello, World!&amp;rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp;amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.</description>
+    </item>
+    
+  </channel>
+</rss>

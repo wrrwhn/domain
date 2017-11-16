@@ -1,0 +1,311 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/goruntime">goruntime </a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6159">Go语言并发与并行学习笔记</a></li>
+<li><a href="https://stackoverflow.com/questions/13107958/what-exactly-does-runtime-gosched-do">What exactly does runtime.Gosched do?</a></li>
+<li><a href="https://segmentfault.com/q/1010000000207474">关于GoRoutine的一个运行问题</a></li>
+</ul>
+
+<h2 id="概念">概念</h2>
+
+<h3 id="默认设置">默认设置</h3>
+
+<ul>
+<li>所有 goruutime 均在单原生线程中运行，仅占用单 CPU</li>
+<li>当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime</li>
+<li>当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程</li>
+</ul>
+
+<h3 id="并行-并发">并行&amp; 并发</h3>
+
+<ul>
+<li><img src="http://hit9.qiniudn.com/con_and_par.jpg" alt="" /></li>
+<li>并行
+
+<ul>
+<li>多套环境</li>
+<li>配套任务队列和消息处理</li>
+</ul></li>
+<li>并发
+
+<ul>
+<li>一套环境</li>
+<li>多任务队列和单一消息处理</li>
+</ul></li>
+</ul>
+
+<h2 id="重点">重点</h2>
+
+<ul>
+<li>显式多核
+
+<ul>
+<li><code>runtime.GOMAXPROCS</code></li>
+</ul></li>
+<li>手动显式调用
+
+<ul>
+<li><code>runtime.Gosched</code></li>
+</ul></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<ul>
+<li><p>单线程多任务串行</p>
+
+<ul>
+<li>并发，逐一执行
+```
+var quit chan int = make(chan int)</li>
+</ul>
+
+<p>func loop() {
+    for i := 0; i &lt; 10; i++ {
+        fmt.Printf(&ldquo;%d &ldquo;, i)
+    }
+    quit &lt;- 0
+}</p>
+
+<p>func main() {
+    go loop() * 2</p>
+
+<pre><code>for i := 0; i &lt; 2; i++ {
+    &lt;- quit
+}
+</code></pre>
+
+<p>}
+```</p></li>
+
+<li><p>单线程多任务并发</p>
+
+<ul>
+<li>并发，多任务阻塞后切换执行
+```
+var quit chan int</li>
+</ul>
+
+<p>func foo(id int) {
+    fmt.Println(id)
+    time.Sleep(time.Second)
+    quit &lt;- 0
+}</p>
+
+<p>func main() {
+    count := 1000
+    quit = make(chan int, count)</p>
+
+<pre><code>for i := 0; i &lt; count; i++ {
+    go foo(i)
+}
+
+for i :=0 ; i &lt; count; i++ {
+    &lt;- quit
+}
+</code></pre>
+
+<p>}
+```</p></li>
+
+<li><p>多线程并行</p>
+
+<ul>
+<li>两个线程任务同时进行
+```
+var quit chan int = make(chan int)</li>
+</ul>
+
+<p>func loop() {
+    for i := 0; i &lt; 100; i++ {
+        fmt.Printf(&ldquo;%d &ldquo;, i)
+    }
+    quit &lt;- 0
+}</p>
+
+<p>func main() {
+    runtime.GOMAXPROCS(2)
+    go loop()* 2
+    for i := 0; i &lt; 2; i++ {
+        &lt;- quit
+    }
+}
+```</p></li>
+
+<li><p>单线程并发</p>
+
+<ul>
+<li>多线程多任务显式切换
+<code>
+func loop() {
+for i := 0; i &lt; 10; i++ {
+    runtime.Gosched()
+    fmt.Printf(&quot;%d &quot;, i)
+}
+quit &lt;- 0
+}
+</code></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25B9%25B6%25E8%25A1%258C%25E5%25B9%25B6%25E5%258F%2591%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Go.%e5%b9%b6%e8%a1%8c%26%e5%b9%b6%e5%8f%91%20&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25B9%25B6%25E8%25A1%258C%25E5%25B9%25B6%25E5%258F%2591%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25B9%25B6%25E8%25A1%258C%25E5%25B9%25B6%25E5%258F%2591%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.%25E5%25B9%25B6%25E8%25A1%258C%25E5%25B9%25B6%25E5%258F%2591%2f&title=Go.%e5%b9%b6%e8%a1%8c%26%e5%b9%b6%e5%8f%91%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

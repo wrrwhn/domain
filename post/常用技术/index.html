@@ -1,0 +1,802 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术">常用技术</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h2 id="灰化-http-james-padolsey-com-demos-grayscale-grayscale-js"><a href="http://james.padolsey.com/demos/grayscale/grayscale.js">灰化</a></h2>
+
+<pre><code>grayscale(document.body);
+</code></pre>
+
+<h2 id="遮罩">遮罩</h2>
+
+<pre><code>    //隐藏页面上一些特殊的控件
+    function HideElement(){
+        var HideElementTemp = new Array('IMG','SELECT','OBJECT','IFRAME');
+        for(var j=0;j&lt;HideElementTemp.length;j++){
+            try{
+                    var strElementTagName=HideElementTemp[j];
+                    for(i=0;i&lt;document.all.tags(strElementTagName).length; i++){
+                        var objTemp = document.all.tags(strElementTagName)[i];
+                        if(!objTemp||!objTemp.offsetParent)
+                                 continue;
+                       //objTemp.style.visibility=&quot;hidden&quot;;
+                       objTemp.disabled=&quot;disabled&quot;
+                    }
+            }
+            catch(e){}
+        }
+    }
+
+    //隐藏特殊控件+ 全网页置灰
+    function MaskAndGray(){
+        HideElement();
+
+        grayscale(document.body);                                    //全网页置灰
+
+        var shield = document.createElement(&quot;DIV&quot;);                //产生一个背景遮罩层
+        shield.id = &quot;shield&quot;;
+        shield.style.position = &quot;absolute&quot;;
+        shield.style.left = &quot;0px&quot;;
+        shield.style.top = &quot;0px&quot;;
+        shield.style.width = &quot;100%&quot;;
+        shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&quot;px&quot;;
+        shield.style.background = &quot;#333&quot;;
+        shield.style.textAlign = &quot;center&quot;;
+        shield.style.zIndex = &quot;10000&quot;;
+        shield.style.filter = &quot;alpha(opacity=0)&quot;;
+        shield.style.opacity = 0;
+        document.body.appendChild(shield);
+
+        /*
+        var alertFram = document.createElement(&quot;DIV&quot;);            //产生一个提示框
+        var height=&quot;45px&quot;;
+        alertFram.id=&quot;alertFram&quot;;
+        alertFram.style.position = &quot;absolute&quot;;
+        alertFram.style.width = &quot;200px&quot;;
+        alertFram.style.height = height;
+        alertFram.style.left = &quot;35%&quot;;
+        alertFram.style.top = &quot;30%&quot;;
+        alertFram.style.background = &quot;#fff&quot;;
+        alertFram.style.textAlign = &quot;center&quot;;
+        alertFram.style.lineHeight = height;
+        alertFram.style.zIndex = &quot;10001&quot;;
+        alertFram.innerHTML=msg;
+        document.body.appendChild(alertFram);                    //将遮罩与提示添加至当前界面
+        */
+
+        this.setOpacity = function(obj,opacity){
+            if(opacity&gt;=1)opacity=opacity/100;
+            try{ obj.style.opacity=opacity; }catch(e){}
+            try{
+                if(obj.filters.length&gt;0&amp;&amp;obj.filters(&quot;alpha&quot;)){
+                obj.filters(&quot;alpha&quot;).opacity=opacity*100;
+                }else{
+                obj.style.filter=&quot;alpha(opacity=\&quot;&quot;+(opacity*100)+&quot;\&quot;)&quot;;
+                }
+            }
+            catch(e){}
+        }
+
+        var c = 0;
+        this.doAlpha = function(){
+        if (++c &gt; 20){clearInterval(ad);return 0;}
+        setOpacity(shield,c);
+        }
+        var ad = setInterval(&quot;doAlpha()&quot;,1);//渐变效果
+        document.body.onselectstart = function(){return false;}
+        document.body.oncontextmenu = function(){return false;}
+    }
+</code></pre>
+
+<h2 id="java读取properties">java读取properties</h2>
+
+<pre><code>Properties po = new Properties();
+InputStream in = null;
+String dwzszfVersion = &quot;&quot;;
+try {
+    in = TbYwJjxmWpzListAction.class.getResourceAsStream(&quot;/intelliweb2Syncweb.properties&quot;);
+    po.load(in);
+    if(po.containsKey(&quot;url4IntelliWeb2SyncWeb&quot;)){
+        dwzszfVersion = po.getProperty(&quot;url4IntelliWeb2SyncWeb&quot;);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}finally{
+    try {
+        if(in!=null){
+            in.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<h3 id="java调用控制台指令">java调用控制台指令</h3>
+
+<pre><code>String[] cmd = new String[5];
+cmd[0] = &quot;cmd&quot;;
+cmd[1] = &quot;/c&quot;;
+cmd[2] = &quot;start&quot;;
+cmd[3] = &quot; &quot;;
+cmd[4] = localTempPath;
+Runtime.getRuntime().exec(cmd);
+</code></pre>
+
+<h2 id="servlet文件下载">SERVLET文件下载</h2>
+
+<h3 id="文件服务支持形式">文件服务支持形式</h3>
+
+<h4 id="web-xml文件配置">WEB.XML文件配置</h4>
+
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;FileBatchDownServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.longtop.ywgl.fileUpload.web.FileBatchDownServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;FileBatchDownServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/fileBatchDownServlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+
+<h4 id="界面调用方式">界面调用方式</h4>
+
+<pre><code>/**
+ *     文件批量下载功能
+ *         @author    姚清居
+ *         @param wjbhs    指定文件编号，并以逗号格开
+ *         @param fileName    指定下载文件的名称
+ *         @return    false    无作用，只针对于使用open方式打开时的强制返回
+ */
+function fileBatchDown(wjbhs, fileName){
+    var id= window.open(&quot;/ggzypz/fileBatchDownServlet?wjbhs=&quot;+ wjbhs+ &quot;&amp;fileName=&quot;+ fileName);
+    return false;
+}
+</code></pre>
+
+<h4 id="代码实现">代码实现</h4>
+
+<pre><code>/***
+ * 文件批量下载
+ * @author 姚清居
+ *
+ */
+public class FileBatchDownServlet extends HttpServlet {
+
+    /**
+     * 序列号
+     */
+    private static final long serialVersionUID = 998L;
+    private static final int BUFFER = 2048;
+
+    /***
+     * @author 姚清居
+     *
+     * 初始实现逻辑：
+     *         1、获取指定文档对应的各文件编号，并以，隔开
+     *         2、关联查询出该批次的文件编号对应的上传文件的文件名称及现文件名称
+     *         3、保存至本地的C盘/报名审核文件_当前系统时期（精确至毫秒）的文件夹中
+     *         4、保存完成后默认打开该文件夹
+     *     异常：
+     *         该种方式的文件只会默认保存在服务器的C盘，而非用户的C盘
+     *
+     *     更新逻辑
+     *         1和2、3步骤不变
+     *         4、重新进行读取临时文件夹中的各文件信息，并将之一起封闭成Zip文件
+     *         5、将之作为输出流返回给客户端
+     * @throws IOException
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    protected void doPost(HttpServletRequest requse, HttpServletResponse response) throws IOException  {
+        String wjbhs = requse.getParameter(&quot;wjbhs&quot;);
+        String fileName = requse.getParameter(&quot;fileName&quot;);
+        YwglBaseService ywglBaseService = (YwglBaseService) SpringBeanFactory.getBean(YwglBaseService.BEAN_ID);
+        String localZip = &quot;C:/报名审核文件_&quot;+ DateUtil.getNow(DateEnum.YYYYMMDDHHMMSSSSS)+ &quot;.zip&quot;;
+        File zipFile=new File(localZip);
+        FTPClient ftp= FTPUtil.getFTPClient();
+        byte data[]= new byte[BUFFER];
+        int count;
+        InputStream is = null;
+        OutputStream out = null;
+        ZipOutputStream zipOut= null;
+
+        try {
+            //查询指定文件编号对应文件名称
+            Map param= new HashMap&lt;String, String&gt;();
+            param.put(&quot;wjbhs&quot;, wjbhs);
+            List&lt;MyMap&gt; list= ywglBaseService.queryForListBySql(&quot;ywgl-wjscxx-sqlmap.queryTbYwWjscxx&quot;, param);
+            zipOut=new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile), BUFFER));
+            if(list!= null &amp;&amp; list.size()&gt; 0){
+                for(MyMap wjssxx: list){
+                    if(wjssxx!= null &amp;&amp; wjssxx.get(&quot;wjmc&quot;)!= null){
+                        is= ftp.retrieveFileStream(wjssxx.getString(&quot;wjmc&quot;));
+                        if(null!= is){
+                            zipOut.putNextEntry(new ZipEntry(wjssxx.get(&quot;ywjmc&quot;).toString()));        //在向ZIP输出流写入数据之前，必须首先使用out.putNextEntry(entry); 方法安置压缩条目对象
+                            zipOut.setEncoding(&quot;GBK&quot;);
+
+                            while((count=is.read(data, 0, BUFFER))!=-1){                                //向ZIP 文件写入数据
+                                zipOut.write(data, 0, count);
+                            }
+
+                            zipOut.closeEntry();
+                            is.close();
+                            is= null;
+
+                            if(!ftp.completePendingCommand()){                //调用retrieveFileStream之后必须检查该服务是否完成
+                                ftp.logout();
+                                ftp.disconnect();
+                                ftp= FTPUtil.getFTPClient();
+                                System.out.println(wjssxx.get(&quot;ywjmc&quot;)+ &quot;输出流没有关闭成功！&quot;);
+                            }
+                        }
+                    }
+                }
+            }
+            zipOut.flush();
+            zipOut.close();
+            zipOut= null;
+            /**
+             *     客户使用保存文件的对话框
+             *         首先，进行输出的流的配置，其中filename为固定写法，不能随意修改
+             *         其次，获取输出流的流对象，并使用它进行数据输出
+             *         最后，使用完成之后，注意流对象的缓存输出与关闭
+             */
+            response.reset();
+            response.setContentType(&quot;application/x-msdownload&quot;);        //x-msdownload    octet-stream
+            response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment; filename=&quot; + new String(fileName.getBytes(), &quot;ISO-8859-1&quot;));       
+            out = response.getOutputStream();
+
+            zipFile=new File(localZip);
+            if(zipFile.exists()){
+                FileInputStream fis= new FileInputStream(zipFile);
+                while((count=fis.read(data, 0, BUFFER))!=-1){
+                    out.write(data, 0, count);
+                }
+                fis.close();
+            }else{
+                System.out.println(localZip+ &quot;不存在！&quot;);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            if(null!= zipOut){
+                zipOut.flush();
+                zipOut.close();
+            }
+            if(null!= out){
+                out.flush();
+                out.close();
+            }
+            if(zipFile.exists()){
+                zipFile.delete();
+            }
+        }
+    }
+
+    protected void doGet(HttpServletRequest requse, HttpServletResponse response) throws ServletException, IOException {
+        doPost(requse, response);
+    }
+}
+</code></pre>
+
+<h3 id="文件服务支持形式-1">文件服务支持形式</h3>
+
+<h4 id="web-xml文件配置-1">WEB.XML文件配置</h4>
+
+<pre><code>&lt;servlet&gt;
+   &lt;servlet-name&gt;ServerData&lt;/servlet-name&gt;
+   &lt;display-name&gt;ServerData&lt;/display-name&gt;
+   &lt;description&gt;中文名文件下载&lt;/description&gt;
+   &lt;servlet-class&gt;com.syncsoft.framework.utils.ServerData&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;ServerData&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/ServerData&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt; 
+</code></pre>
+
+<h4 id="界面调用方式-1">界面调用方式</h4>
+
+<pre><code>        &lt;a href=&quot;/clgl/ServerData?abosulte=false&amp;fileName=需求分析规格.docx&amp;url=/fileDownload/xqfxgg.docx&quot; target='_self' /&gt;
+</code></pre>
+
+<h4 id="代码实现-1">代码实现</h4>
+
+<pre><code>/**
+ *     doGet模式进行数据读取
+ *         PARAM：
+ *             URL-文件下载地址（路径+文件名+文件格式）
+ *             ABOSULUTE-是否绝对路径
+ *             DOWNLOAD_NAME-下载文件名称
+ */
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String isAbosulute= request.getParameter(&quot;abosulte&quot;);
+    String url= request.getParameter(&quot;url&quot;);
+    String fileName= request.getParameter(&quot;fileName&quot;);
+    String sysPath= Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+    String systemPath= sysPath.substring(0, sysPath.indexOf(&quot;WEB-INF&quot;)-1);
+
+    if (url == null || url.equals(&quot;&quot;)) {
+        throw new IllegalArgumentException(url+ &quot;: 路径下不存在!&quot;);
+    }else if(fileName == null || fileName.equals(&quot;&quot;)) {
+        fileName= url.substring(url.lastIndexOf(&quot;/&quot;));
+    }else{
+        fileName= new String(fileName.getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;);
+    }
+
+
+    File file = new File((Boolean.valueOf(isAbosulute)? &quot;&quot;: systemPath)+ url);
+    if (!file.exists()) {
+        throw new IOException(file+ &quot;: 指定下载文件路径不存在!&quot;);
+    }
+
+    OutputStream os = response.getOutputStream();
+    FileInputStream fips = new FileInputStream(file);
+    byte[] btImg = readStream(fips);
+    response.setContentType(&quot;application/x-msdownload&quot;);
+    response.addHeader(&quot;Content-disposition&quot;, &quot;attachment;filename=\&quot;&quot; + new String(fileName.getBytes(&quot;UTF-8&quot;), &quot;ISO-8859-1&quot;) + &quot;\&quot;&quot;);
+    os.write(btImg);
+    os.flush();
+    fips.close();
+}
+</code></pre>
+
+<h2 id="解析超链接中文参数">解析超链接中文参数</h2>
+
+<pre><code>java.net.URLEncoder.encode(&quot;要解析的参数&quot;, &quot;UTF-8&quot;)
+</code></pre>
+
+<h2 id="java发送post-get请求">Java发送POST/GET请求</h2>
+
+<pre><code>/**
+ * 调用GET方法请求
+ */
+@SuppressWarnings(&quot;deprecation&quot;)
+public static void getProperties4intelliweb2Syncweb(String key, String param){
+    try {
+        URL url = new URL(FileUtils.getPropertiesContent(properties4intelliweb2Syncweb, key)+ param);
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection(); 
+        urlConnection.setRequestMethod(Constants.REQUEST_METHOD_GET);
+        urlConnection.connect();
+        urlConnection.getInputStream();
+        urlConnection.disconnect();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+/**
+ * 调用POST方法请求
+ */
+public static void getProperties4intelliweb2SyncwebByPost(String key, String param){
+    try {
+        URL url = new URL(FileUtils.getPropertiesContent(properties4intelliweb2Syncweb, key));
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection(); 
+        urlConnection.setRequestMethod(Constants.REQUEST_METHOD_POST);
+        urlConnection.setUseCaches(false);
+        urlConnection.setDoOutput(true);
+        urlConnection.setInstanceFollowRedirects(true);
+        urlConnection.setRequestProperty(&quot; Content-Type &quot;,&quot; application/x-www-form-urlencoded &quot;);
+        DataOutputStream out = new DataOutputStream(urlConnection.getOutputStream());//getOutputStram()隐含调用connect()
+        out.writeBytes(param);
+        out.flush();
+        out.close();
+        urlConnection.getInputStream();
+        urlConnection.disconnect();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<h2 id="log4j多日志配置">Log4j多日志配置</h2>
+
+<h3 id="配置-log4j-properties">配置-log4j.properties</h3>
+
+<pre><code>#Interface
+    log4j.logger.interface= DEBUG, interface                         --【对应log4j.appender.interface的interface】
+    log4j.additivity.interface= true                                          --配置开关
+    log4j.appender.interface=org.apache.log4j.DailyRollingFileAppender
+    log4j.appender.interface.File=logs/clgl4Interface.log                                          --日志存储位置
+    log4j.appender.interface.layout=org.apache.log4j.PatternLayout
+    log4j.appender.interface.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+</code></pre>
+
+<h3 id="业务代码中">业务代码中</h3>
+
+<pre><code>    private static Logger log = Logger.getLogger(Constants.LOG4INTERFACE);
+    log.info(&quot;\t\t短信发送结果：&quot;+result);
+</code></pre>
+
+<h2 id="oracle指定节点数据">ORACLE指定节点数据</h2>
+
+<pre><code>select * from TB_YW_BJXXPZ as of timestamp to_timestamp('2014-05-04 17:01:43','yyyy-mm-dd hh24:mi:ss') ;
+</code></pre>
+
+<h2 id="jsp界面乱码">JSP界面乱码</h2>
+
+<ul>
+<li>于JSP文件最上方补充这两个文件引入
+
+<ul>
+<li><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;utf-8&quot;%&gt;</code></li>
+<li><code>&lt;%@ page contentType=&quot;text/html;charset=utf-8&quot;%&gt;</code></li>
+</ul></li>
+</ul>
+
+<h2 id="界面获取项目名称">界面获取项目名称</h2>
+
+<ul>
+<li>代码获取：&lt;%= this.getServletContext().getContextPath() %&gt;</li>
+<li>EL表达式：${pageContext.request.contextPath}</li>
+</ul>
+
+<h2 id="加密-解密">加密&amp;解密</h2>
+
+<h3 id="推荐网址">推荐网址：</h3>
+
+<ul>
+<li><a href="http://snowolf.iteye.com/blog/379860">各种算法介绍及相关使用方法</a></li>
+<li><a href="http://blog.csdn.net/yangcp1/article/details/5348066">RSA密钥保存</a></li>
+<li><a href="http://blog.csdn.net/chaijunkun/article/details/7275632">RSA公私钥加解密-OpenSSL方式</a></li>
+
+<li><p><a href="http://www.openssl.org/news/vulnerabilities.html">OpenSSL官网</a></p>
+
+<h3 id="算法介绍">算法介绍：</h3></li>
+
+<li><p>BASE64</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Base64内容传送编码被设计用来把任意序列的8位字节描述为一种不易被人直接识别的形式。</li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>邮件</li>
+<li>http加密
+
+<ul>
+<li>截取http信息，你就会发现登录操作的用户名、密码字段加密</li>
+</ul></li>
+</ul></li>
+<li>实现
+sun.misc.BASE64Decoder
+ 解密：(new BASE64Decoder()).decodeBuffer(String key);
+ 加密：(new BASE64Encoder()).encodeBuffer(byte[] key);</li>
+</ul></li>
+
+<li><p>MD5</p>
+
+<ul>
+<li>特点：
+
+<ul>
+<li>message-digest algorithm 5 （信息-摘要算法）缩写，且无法进行解密
+可由碰撞法破解</li>
+</ul></li>
+<li>用途：
+
+<ul>
+<li>不管文件多大，经过MD5后都能生成唯一的MD5值。</li>
+</ul></li>
+<li>实现：
+
+<ul>
+<li>MessageDigest.getInstance(&ldquo;MD5&rdquo;).update(byte[] data).digest();</li>
+</ul></li>
+</ul></li>
+
+<li><p>SHA</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Secure Hash Algorithm，安全散列算法</li>
+<li>可由碰撞法破解</li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>电子商务等信息安全领域</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>MessageDigest.getInstance(&ldquo;SHA&rdquo;).update(byte[] data).digest();</li>
+</ul></li>
+</ul></li>
+
+<li><p>HMAC</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Hash Message Authentication Code，散列消息鉴别码，基于密钥的Hash算法的认证协议</li>
+</ul></li>
+<li>原理
+
+<ul>
+<li>用公开函数和密钥产生一个固定长度的值作为认证标识，用这个标识鉴别消息的完整性。</li>
+<li>使用一个密钥生成一个固定大小的小数据块，即MAC，并将其加入到消息中，然后传输。</li>
+<li>接收方利用与发送方共享的密钥进行鉴别认证等。</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li><code>MessageDigest.getInstance(&quot;SHA&quot;).update(byte[] data).digest();</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>RSA</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>RSA同时有两把钥匙，公钥与私钥。同时支持数字签名。</li>
+<li>数字签名的意义在于，对传输过来的数据进行校验。确保数据在传输工程中不被修改。</li>
+</ul></li>
+<li>流程
+
+<ul>
+<li>甲方构建密钥对儿，将公钥公布给乙方，将私钥保留。</li>
+<li>甲方使用私钥加密数据，然后用私钥对加密后的数据签名，发送给乙方签名以及加密后的数据；乙方使用公钥、签名来验证待解密数据是否有效，如果有效使用公钥对数据解密。</li>
+<li>乙方使用公钥加密数据，向甲方发送经过加密后的数据；甲方获得加密数据，通过私钥解密。</li>
+</ul></li>
+<li>注意
+
+<ul>
+<li>公钥和私钥是匹配产生，且格式为A[换行]B[换行]C，其中[换行]在保存为文本时以/r或/n替换使用均无法正常使用，保存方式待定</li>
+</ul></li>
+</ul></li>
+
+<li><p>DES</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Data Encryption Standard,即数据加密算法，典型对称加密方法</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>DES算法的入口参数有三个:Key、Data、Mode。</li>
+<li>其中Key为8个字节共64位,是DES算法的工作密钥;Data也为8个字节64位,是要被加密或被解密的数据;Mode为DES的工作方式,有两种:加密或解密。</li>
+</ul></li>
+</ul></li>
+
+<li><p>实际使用
+具体各算法建议参见推荐网址第一个，均有详细介绍。</p></li>
+</ul>
+
+<h2 id="图片转换为文字">图片转换为文字</h2>
+
+<ul>
+<li>将指定文档转换后 PDF</li>
+<li>下载安装 CAJViewer 7.2.self</li>
+<li>打开 CAJViewer 并加载该 PDF，后选取“文字识别功能”圈取要识别文字的区块</li>
+</ul>
+
+<h2 id="加密-解密-1">加密&amp;解密</h2>
+
+<h2 id="视频转gif">视频转Gif</h2>
+
+<ul>
+<li>软件
+
+<ul>
+<li>Ulead GIF Animator</li>
+<li>PotPlayer</li>
+</ul></li>
+<li>过程
+
+<ul>
+<li>使用 PotPlayer 打开影片并拖至要截取视频片段开始处，点击 Ctrl+G 设置好时间间隔和张数后点击开始，完成后点击停止
+
+<ul>
+<li>该环节会保存多张过程图片</li>
+</ul></li>
+<li>运行 Ulead GIF Animator ，新建并调整合适显示大小，后将「1」中保存的图片拖入下侧进度条，并选择插入新建帧</li>
+<li>点击「文件-另存为-Gif文件」即可</li>
+</ul></li>
+</ul>
+
+<h2 id="java-文件上传">Java-文件上传</h2>
+
+<h3 id="单个">单个</h3>
+
+<pre><code>@RequestMapping(value = &quot;/upload&quot;, method = RequestMethod.POST)
+public BasicResource upload(
+    @RequestBody @NotNull MultipartFile file,
+    @RequestParam(value = &quot;type&quot;, required = false) String type)
+</code></pre>
+
+<h3 id="多个">多个</h3>
+
+<pre><code>@RequestMapping(value = &quot;/writeback&quot;, method = RequestMethod.POST)
+public void writeBack2(
+    MultipartHttpServletRequest request,
+    @RequestParam(value = &quot;topicId&quot;, required = true) long topicId) {
+    List&lt;MultipartFile&gt; files = request.getFiles(&quot;file&quot;);
+}
+</code></pre>
+
+<h2 id="界面操作作转-gif">界面操作作转 Gif</h2>
+
+<ul>
+<li>软件
+
+<ul>
+<li>灵者 Gif 录制 （GifGod）</li>
+</ul></li>
+<li>过程
+
+<ul>
+<li>点击“选定区域”，鼠标选框后回车
+
+<ul>
+<li>建议取消“跟随鼠标坐标”</li>
+</ul></li>
+<li>“录制” -&gt; “停止”</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2f%25E5%25B8%25B8%25E7%2594%25A8%25E6%258A%2580%25E6%259C%25AF%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%e5%b8%b8%e7%94%a8%e6%8a%80%e6%9c%af&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2f%25E5%25B8%25B8%25E7%2594%25A8%25E6%258A%2580%25E6%259C%25AF%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2f%25E5%25B8%25B8%25E7%2594%25A8%25E6%258A%2580%25E6%259C%25AF%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2f%25E5%25B8%25B8%25E7%2594%25A8%25E6%258A%2580%25E6%259C%25AF%2f&title=%e5%b8%b8%e7%94%a8%e6%8a%80%e6%9c%af" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

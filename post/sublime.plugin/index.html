@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/sublime">sublime</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://mux.alimama.com/posts/541">sublime插件开发</a></li>
+</ul>
+
+<h1 id="结构">结构</h1>
+
+<ul>
+<li>Packages</li>
+<li>plugin-fodler</li>
+<li>plugin.sublime-package(.zip)</li>
+<li>default</li>
+<li>key/ menu/ setup</li>
+<li>user</li>
+<li>read at lastest</li>
+<li>plugin-command</li>
+<li>Text Commands:  current view</li>
+<li>Window Commands:  current windows</li>
+<li>Application Commands: nothing</li>
+<li>注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式</li>
+</ul>
+
+<h1 id="流程">流程</h1>
+
+<ul>
+<li>Tools-&gt; new plugin&hellip;</li>
+<li>mkdir Packages/ hello_world/ hello_world.py： 同名</li>
+<li>ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;</li>
+</ul>
+
+<hr />
+
+<h1 id="sublime插件开发手记-http-blog-hickwu-com-sublime-e6-8f-92-e4-bb-b6-e5-bc-80-e5-8f-91-e6-89-8b-e8-ae-b0"><strong><a href="http://blog.hickwu.com/sublime%E6%8F%92%E4%BB%B6%E5%BC%80%E5%8F%91%E6%89%8B%E8%AE%B0">sublime插件开发手记</a></strong></h1>
+
+<h1 id="sublime插件开发api手册-http-mux-alimama-com-posts-549"><a href="http://mux.alimama.com/posts/549">Sublime插件开发API手册</a></h1>
+
+<ul>
+<li>API</li>
+<li>Sublime</li>
+<li>error/ message</li>
+<li>clipboard.setter&amp; getter</li>
+<li>run_command(string, <args>)</li>
+<li>log_commands/input(flag)</li>
+<li>version/ platform/ arch</li>
+<li>View - 缓冲区视图</li>
+<li>run_command(string, <args>)</li>
+<li>insert/ erase/ replace/ find</li>
+<li>sel()/ rowcol</li>
+<li>show/ fold/ unfold</li>
+<li>run_command</li>
+<li>RegionSet</li>
+<li>Region</li>
+<li>Edit</li>
+<li>Window</li>
+<li>new_file([file_name, <flag>])</li>
+<li>flag</li>
+<li>sublime.ENCODED_POSITION - 查找文件名后缀</li>
+<li>sublime.TRANSIENT - 指定预览打开</li>
+<li>active_view/ focus_view/ views</li>
+<li>Settings - sublime.load_settings</li>
+<li>get/ set/ erase</li>
+<li>Basic</li>
+<li>EventListener</li>
+<li>new/ clone/ load/ close/ preSave/ postSave/ modified/ selectionModified/ activated</li>
+<li>ApplicationCommand</li>
+<li>run</li>
+<li>isEnabled/ isVisible</li>
+<li>description</li>
+<li>WindowCommand</li>
+<li>每个 window 只初始化一次，方法同 ApplicationCommand</li>
+<li>TextCommand</li>
+<li>每个 view 只初始化一次，方法同 ApplicationCommand</li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fsublime.plugin%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Sublime.Plugin&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fsublime.plugin%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fsublime.plugin%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fsublime.plugin%2f&title=Sublime.Plugin" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

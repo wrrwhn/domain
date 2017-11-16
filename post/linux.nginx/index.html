@@ -1,0 +1,876 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.nginx/" title="Linux.Nginx ">Linux.Nginx </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.04">2017.10.04</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="linux-nginx">Linux.Nginx</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://github.com/moonbingbing/openresty-best-practices/blob/master/ngx/reverse_proxy.md">反向代理</a></li>
+<li><a href="http://www.barretlee.com/blog/2016/11/19/nginx-configuration-start/">Nginx 配置简述</a></li>
+<li><a href="https://segmentfault.com/a/1190000002797601">nginx服务器安装及配置文件详解</a></li>
+<li><a href="https://segmentfault.com/a/1190000007116797">nginx服务器详细安装过程</a></li>
+<li><a href="http://www.jianshu.com/p/d5114a2a2052">Centos下 Nginx安装与配置</a></li>
+<li><a href="http://nginx.org/">nginx 官网</a></li>
+<li><a href="http://seanlook.com/2015/05/17/nginx-location-rewrite/">nginx配置location总结及rewrite规则写法</a></li>
+<li><a href="https://xuexb.com/post/nginx-url-rewrite.html">nginx配置url重写</a></li>
+<li>[]()</li>
+</ul>
+
+<h2 id="概念">概念</h2>
+
+<h3 id="反向代理">反向代理</h3>
+
+<ul>
+<li>概念
+
+<ul>
+<li>用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端</li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/0b924f9c-91dd-49cb-af53-0338dea58fd8.png" alt="proxy.png" /></li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>将防火墙后面的服务器提供给 Internet 用户访问
+
+<ul>
+<li>负载均衡</li>
+<li>缓冲</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="nginx">Nginx</h3>
+
+<h2 id="安装">安装</h2>
+
+<ul>
+<li><code>yum install nginx</code>
+
+<ul>
+<li>默认安装许多模块，影响以后安装第三方模块</li>
+</ul></li>
+</ul>
+
+<h2 id="指令">指令</h2>
+
+<ul>
+<li><code>nginx -s [start|reload|stop]</code>
+
+<ul>
+<li>通过 <code>signal</code> 向 <code>nginx</code>发送指令</li>
+</ul></li>
+<li><code>nginx -t</code>
+
+<ul>
+<li>查看 nginx 配置文件位置</li>
+</ul></li>
+</ul>
+
+<h2 id="基本配置">基本配置</h2>
+
+<h2 id="明细配置项">明细配置项</h2>
+
+<h3 id="main">main</h3>
+
+<h4 id="common">Common</h4>
+
+<ul>
+<li>全局配置，与具体业务无关</li>
+<li><code>woker_processes 2</code>
+
+<ul>
+<li>工作进程的个数
+
+<ul>
+<li>默认设置为 CPU 的核数
+
+<ul>
+<li><code>grep ^processor /proc/cpuinfo | wc -l</code></li>
+</ul></li>
+<li>cpu* (<code>ssl|gzip</code>? [1|2]: 1)
+
+<ul>
+<li>可以减少I/O操作</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>worker_cpu_affinity 0001 0010 0100 1000</code>
+
+<ul>
+<li>设置cpu粘性来降低由于高并发情况下多CPU核切换造成的寄存器等现场重建带来的性能损耗</li>
+<li>示例为四核情况下配置</li>
+</ul></li>
+<li><code>worker_connections 2048</code>
+
+<ul>
+<li>每一个worker进程能并发 [处理|发起] 的最大连接数，包括与客户端、后端代理之间的所有连接</li>
+<li>记录于 <code>events</code> 中</li>
+<li>最大连接数计算
+
+<ul>
+<li>反向代理
+
+<ul>
+<li><code>worker_processes * worker_connections/4</code></li>
+</ul></li>
+<li>http 服务
+
+<ul>
+<li><code>worker_processes * worker_connections/2</code></li>
+</ul></li>
+<li>不能超过 <code>worker_rlimit_nofile</code></li>
+</ul></li>
+</ul></li>
+<li><code>worker_rlimit_nofile 10240</code>
+
+<ul>
+<li>无默认值</li>
+<li>上限为操作系统最大的限制 <code>65535</code></li>
+</ul></li>
+<li><code>use epoll</code>
+
+<ul>
+<li>记录于 <code>events</code> 中</li>
+<li><code>Linux</code> 下使用 <code>epoll</code></li>
+<li><code>OpenBSD|FreeBSD</code> 系统中使用类 <code>epoll</code> 的事件模型 <code>kqueue</code></li>
+<li>不支持这些高效模型情况下，才使用 <code>select</code></li>
+</ul></li>
+</ul>
+
+<h5 id="http">Http</h5>
+
+<ul>
+<li>Http 服务相关配置</li>
+<li><code>sendfile on</code>
+
+<ul>
+<li>开启高效文件传输模式，sendfile指令指定nginx是否调用sendfile函数来输出文件，减少用户空间到内核空间的上下文切换</li>
+<li>进行「下载」等应用磁盘IO重负载应用，可设置为「off」</li>
+</ul></li>
+<li><code>keepalive_timeout 65</code>
+
+<ul>
+<li>长连接超时时间，单位是秒</li>
+<li>过长容易占用资源，过小则影响大文件上传等服务请求</li>
+</ul></li>
+<li><code>send_timeout</code>
+
+<ul>
+<li>指定响应客户端的超时时间</li>
+</ul></li>
+<li><code>client_max_body_size 10m</code>
+
+<ul>
+<li>允许客户端请求的最大单文件字节数</li>
+</ul></li>
+<li><code>client_body_buffer_size 128k</code>
+
+<ul>
+<li>缓冲区代理缓冲用户端请求的最大字节数</li>
+</ul></li>
+</ul>
+
+<h4 id="http-proxy">Http-Proxy</h4>
+
+<ul>
+<li>反向代理与缓存实现</li>
+<li><code>proxy_connect_timeout 60</code>
+
+<ul>
+<li>nginx跟后端服务器连接超时时间</li>
+</ul></li>
+<li><code>proxy_read_timeout 60</code>
+
+<ul>
+<li>连接成功后，与后端服务器两个成功的响应操作之间超时时间</li>
+</ul></li>
+<li><code>proxy_buffer_size 4k</code>
+
+<ul>
+<li>从后端realserver读取并保存用户头信息的缓冲区大小</li>
+<li>默认与<code>proxy_buffers</code>大小相同</li>
+</ul></li>
+<li><code>proxy_buffers 4 32k</code>
+
+<ul>
+<li>对单个连接缓存来自后端的响应，网页平均在32k以下</li>
+</ul></li>
+<li><code>proxy_busy_buffers_size 64k</code>
+
+<ul>
+<li>高负荷下缓冲大小</li>
+<li><code>proxy_buffers*2</code></li>
+</ul></li>
+<li><code>proxy_max_temp_file_size</code>
+
+<ul>
+<li>响应内容超出 <code>proxy_buffers</code> 时，将部分内容更新至硬盘临时文件中</li>
+<li>设置最大临时文件大小</li>
+<li>默认1024M，设置为0时表示禁用</li>
+</ul></li>
+<li><code>proxy_temp_file_write_size 64k</code>
+
+<ul>
+<li>限制每次写临时文件的大小</li>
+</ul></li>
+<li><code>proxy_temp_path</code>
+
+<ul>
+<li>编译时指定，设置缓存临时文件路径</li>
+</ul></li>
+</ul>
+
+<h4 id="http-gzip">Http-GZip</h4>
+
+<ul>
+<li><code>gzip on</code>
+
+<ul>
+<li>开启gzip压缩输出，减少网络传输</li>
+</ul></li>
+<li><code>gzip_min_length 1k</code>
+
+<ul>
+<li>设置允许压缩的页面最小字节数</li>
+<li>页面字节数从header头得content-length中获取</li>
+<li>默认20，建议1K+，避免越压越大</li>
+</ul></li>
+<li><code>gzip_buffers 4 16k</code>
+
+<ul>
+<li>设置系统获取「几个单位」的缓存用于存储gzip的压缩结果数据流</li>
+<li><code>4 16k</code>代表以16k为单位，安装原始数据大小以16k为单位的4倍申请内存</li>
+</ul></li>
+<li><code>gzip_http_version 1.0</code>
+
+<ul>
+<li>识别 http 协议的版本</li>
+<li>支持早期的浏览器</li>
+</ul></li>
+<li><code>gzip_comp_level 6</code>
+
+<ul>
+<li>gzip压缩比</li>
+<li>1压缩比最小处理速度最快</li>
+<li>9压缩比最大但处理速度最慢</li>
+</ul></li>
+<li><code>gzip_types</code>
+
+<ul>
+<li>匹配mime类型进行压缩</li>
+<li>无论是否指定,”text/html”类型总是会被压缩的</li>
+</ul></li>
+<li><code>gzip_proxied any</code>
+
+<ul>
+<li>Nginx作为反向代理的时候启用</li>
+<li>决定开启或者关闭后端服务器「返回的结果是否压缩」</li>
+<li>前提是后端服务器必须要返回包含”Via”的 header头</li>
+</ul></li>
+<li><code>gzip_vary on</code>
+
+<ul>
+<li>在响应头加个 Vary: Accept-Encoding</li>
+<li>让前端的缓存服务器缓存经过gzip压缩的页面</li>
+</ul></li>
+</ul>
+
+<h3 id="server">Server</h3>
+
+<ul>
+<li>指定虚拟主机域名、IP 和端口</li>
+<li><code>listen</code>
+
+<ul>
+<li>默认80，小于1024的要以root启动</li>
+<li><code>listen *:80</code> <code>listen 127.0.0.1:80</code> 等形式</li>
+</ul></li>
+<li><code>server_name</code>
+
+<ul>
+<li>如 <code>localhost</code> <code>www.example.com</code>或正则匹配</li>
+</ul></li>
+<li><code>rewrite</code>
+
+<ul>
+<li><code>rewrite &lt;rules&gt; &lt;pathes&gt; &lt;types&gt;;</code>
+
+<ul>
+<li>rules
+
+<ul>
+<li>字符串 | 正则表达式</li>
+</ul></li>
+<li>pathes
+
+<ul>
+<li>指定匹配路径要更新的地址</li>
+<li>建议使用正则，使用捕获分组功能</li>
+</ul></li>
+<li>types
+
+<ul>
+<li><code>last</code>
+
+<ul>
+<li>表示完成rewrite，无特殊含义</li>
+<li>浏览器地址栏URL地址不变</li>
+</ul></li>
+<li><code>break</code>
+
+<ul>
+<li>本条规则匹配完成后，终止匹配</li>
+<li>浏览器地址栏URL地址不变</li>
+</ul></li>
+<li><code>redirect</code>
+
+<ul>
+<li>返回<code>302临时重定向</code>，浏览器地址会显示跳转后的URL地址</li>
+</ul></li>
+<li><code>permanent</code>
+
+<ul>
+<li>返回<code>301永久重定向</code>，浏览器地址栏会显示跳转后的URL地址</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="global-args">Global-Args</h3>
+
+<ul>
+<li><code>$args</code>
+
+<ul>
+<li>变量等于请求行中的参数，同$query_string</li>
+</ul></li>
+<li><code>$content_length</code>
+
+<ul>
+<li>请求头中的Content-length字段。</li>
+</ul></li>
+<li><code>$content_type</code>
+
+<ul>
+<li>请求头中的Content-Type字段。</li>
+</ul></li>
+<li><code>$document_root</code>
+
+<ul>
+<li>当前请求在root指令中指定的值。</li>
+</ul></li>
+<li><code>$host</code>
+
+<ul>
+<li>请求主机头字段，否则为服务器名称。</li>
+</ul></li>
+<li><code>$http_user_agent</code>
+
+<ul>
+<li>客户端agent信息</li>
+</ul></li>
+<li><code>$http_cookie</code>
+
+<ul>
+<li>客户端cookie信息</li>
+</ul></li>
+<li><code>$limit_rate</code>
+
+<ul>
+<li>这个变量可以限制连接速率。</li>
+</ul></li>
+<li><code>$request_method</code>
+
+<ul>
+<li>客户端请求的动作，通常为GET或POST。</li>
+</ul></li>
+<li><code>$remote_addr</code>
+
+<ul>
+<li>客户端的IP地址。</li>
+</ul></li>
+<li><code>$remote_port</code>
+
+<ul>
+<li>客户端的端口。</li>
+</ul></li>
+<li><code>$remote_user</code>
+
+<ul>
+<li>已经经过Auth Basic Module验证的用户名。</li>
+</ul></li>
+<li><code>$request_filename</code>
+
+<ul>
+<li>当前请求的文件路径，由root或alias指令与URI请求生成。</li>
+</ul></li>
+<li><code>$scheme</code>
+
+<ul>
+<li>HTTP方法（如http，https）。</li>
+</ul></li>
+<li><code>$server_protocol</code>
+
+<ul>
+<li>请求使用的协议，通常是HTTP/1.0或HTTP/1.1。</li>
+</ul></li>
+<li><code>$server_addr</code>
+
+<ul>
+<li>服务器地址，在完成一次系统调用后可以确定这个值。</li>
+</ul></li>
+<li><code>$server_name</code>
+
+<ul>
+<li>服务器名称。</li>
+</ul></li>
+<li><code>$server_port</code>
+
+<ul>
+<li>请求到达服务器的端口号。</li>
+</ul></li>
+<li><code>$request_uri</code>
+
+<ul>
+<li>包含请求参数的原始URI，不包含主机名，如：”/foo/bar.php?arg=baz”。</li>
+</ul></li>
+<li><code>$uri</code>
+
+<ul>
+<li>不带请求参数的当前URI，$uri不包含主机名，如”/foo/bar.html”。</li>
+</ul></li>
+<li><code>$document_uri</code>
+
+<ul>
+<li>与$uri相同。</li>
+</ul></li>
+</ul>
+
+<h3 id="upstream">Upstream</h3>
+
+<ul>
+<li>针对特定 URL 对应的系列配置项</li>
+<li><code>root /var/www/html</code>
+
+<ul>
+<li>定义服务器的默认网站根目录位置</li>
+<li>于 <code>server</code> 或 <code>/</code> 下生效</li>
+</ul></li>
+<li><code>index index.jsp index.html index.htm</code>
+
+<ul>
+<li>定义路径下默认访问的文件名</li>
+<li><code>root</code> 搭配使用</li>
+</ul></li>
+<li><code>proxy_pass http:/backend</code>
+
+<ul>
+<li>请求转向 <code>backend</code> 对应的服务器列表
+
+<ul>
+<li>反向代理</li>
+<li>对应 <code>upstream</code> 负载均衡器</li>
+</ul></li>
+<li><code>proxy_pass http://ip:port</code></li>
+</ul></li>
+<li><code>proxy_redirect off;</code></li>
+<li><code>proxy_set_header Host $host;</code></li>
+<li><code>proxy_set_header X-Real-IP $remote_addr;</code></li>
+<li><code>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</code></li>
+</ul>
+
+<h3 id="location">Location</h3>
+
+<ul>
+<li>匹配网页位置</li>
+<li><code>~</code>
+
+<ul>
+<li>执行一个正则匹配，区分大小写</li>
+</ul></li>
+<li><code>~*</code>
+
+<ul>
+<li>执行一个正则匹配，不区分大小写</li>
+</ul></li>
+<li><code>^~</code>
+
+<ul>
+<li>普通字符匹配，如果该选项匹配则结束</li>
+<li>一般用于匹配目录</li>
+</ul></li>
+<li><code>=</code>
+
+<ul>
+<li>普通字符精确匹配</li>
+</ul></li>
+</ul>
+
+<h3 id="alias-root">Alias &amp; Root</h3>
+
+<ul>
+<li><p>Alias</p>
+
+<pre><code>location /c/ {
+# 末尾必须加 /
+# http://localhost/c= /a/ 目录
+alias /a/;
+}
+</code></pre></li>
+
+<li><p>Root</p>
+
+<pre><code>location /c/ {
+# http://localshot/c= /a/c 目录
+root /a/;
+}
+</code></pre></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<h3 id="默认配置">默认配置</h3>
+
+<pre><code>user  www www;
+worker_processes  2;
+
+error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+pid        logs/nginx.pid;
+
+
+events {
+    use epoll;
+    worker_connections  2048;
+}
+
+
+http {
+    include       mime.types;
+    default_type  application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+    #                  '$status $body_bytes_sent &quot;$http_referer&quot; '
+    #                  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+    #access_log  logs/access.log  main;
+
+    sendfile        on;
+    # tcp_nopush     on;
+
+    keepalive_timeout  65;
+
+  # gzip压缩功能设置
+    gzip on;
+    gzip_min_length 1k;
+    gzip_buffers    4 16k;
+    gzip_http_version 1.0;
+    gzip_comp_level 6;
+    gzip_types text/html text/plain text/css text/javascript application/json application/javascript application/x-javascript application/xml;
+    gzip_vary on;
+
+  # http_proxy 设置
+    client_max_body_size   10m;
+    client_body_buffer_size   128k;
+    proxy_connect_timeout   75;
+    proxy_send_timeout   75;
+    proxy_read_timeout   75;
+    proxy_buffer_size   4k;
+    proxy_buffers   4 32k;
+    proxy_busy_buffers_size   64k;
+    proxy_temp_file_write_size  64k;
+    proxy_temp_path   /usr/local/nginx/proxy_temp 1 2;
+
+  # 设定负载均衡后台服务器列表
+    upstream  backend  {
+              #ip_hash;
+              server   192.168.10.100:8080 max_fails=2 fail_timeout=30s ;
+              server   192.168.10.101:8080 max_fails=2 fail_timeout=30s ;
+    }
+
+  # 很重要的虚拟主机配置
+    server {
+        listen       80;
+        server_name  itoatest.example.com;
+        root   /apps/oaapp;
+
+        charset utf-8;
+        access_log  logs/host.access.log  main;
+
+        #对 / 所有做负载均衡+反向代理
+        location / {
+            root   /apps/oaapp;
+            index  index.jsp index.html index.htm;
+
+            proxy_pass        http://backend;
+            proxy_redirect off;
+            # 后端的Web服务器可以通过X-Forwarded-For获取用户真实IP
+            proxy_set_header  Host  $host;
+            proxy_set_header  X-Real-IP  $remote_addr;
+            proxy_set_header  X-Forwarded-For  $proxy_add_x_forwarded_for;
+            proxy_next_upstream error timeout invalid_header http_500 http_502 http_503 http_504;
+
+        }
+
+        #静态文件，nginx自己处理，不去backend请求tomcat
+        location  ~* /download/ {
+            root /apps/oa/fs;
+
+        }
+        location ~ .*\.(gif|jpg|jpeg|bmp|png|ico|txt|js|css)$   
+        {   
+            root /apps/oaapp;   
+            expires      7d;
+        }
+        location /nginx_status {
+            stub_status on;
+            access_log off;
+            allow 192.168.10.0/24;
+            deny all;
+        }
+
+        location ~ ^/(WEB-INF)/ {   
+            deny all;   
+        }
+        #error_page  404              /404.html;
+
+        # redirect server error pages to the static page /50x.html
+        #
+        error_page   500 502 503 504  /50x.html;
+        location = /50x.html {
+            root   html;
+        }
+    }
+
+  ## 其它虚拟主机，server 指令开始
+}
+
+</code></pre>
+
+<h3 id="匹配任何以-images-开始的请求-并停止匹配-其它location">匹配任何以 /images/ 开始的请求，并停止匹配 其它location</h3>
+
+<pre><code>location ^~ /images/ {...}
+</code></pre>
+
+<h3 id="负载均衡">负载均衡</h3>
+
+<pre><code>upstream myserver; {
+    # 指明按照用户 IP 进行分配
+    # 可选类型为轮询、指定权重轮询、fair、url_hash 等
+    ip_hash;   
+    server 172.16.1.1:8001;
+    server 172.16.1.2:8002;
+    server 172.16.1.3;
+    server 172.16.1.4;
+}
+location / {
+    proxy_pass http://myserver;
+}
+</code></pre>
+
+<h3 id="域名跳转">域名跳转</h3>
+
+<ul>
+<li><p>针对非 ROOT 项目</p>
+
+<pre><code>server {
+listen  80;
+server_name www.weixinqdh.com weixinqdh.com;
+
+access_log  /data/service/logs/nginx/weixinqdh.access.log  main;
+error_log  /data/service/logs/nginx/weixinqdh.error.log;
+
+ location / {
+    rewrite ^ /wechat-forum-dev redirect;
+}
+
+location /wechat-forum-dev/ {
+    expires         -1;
+    proxy_set_header Host   $http_host;
+    proxy_pass              http://localhost:9015/wechat-forum-dev/;
+    proxy_redirect          off;
+    proxy_set_header        X-Real-IP        $remote_addr;
+    proxy_set_header        X-Forwarded-For  $proxy_add_x_forwarded_for;
+}
+}
+</code></pre></li>
+</ul>
+
+<h3 id="停止后重启-找不到nginx-pid">停止后重启，找不到nginx.pid</h3>
+
+<pre><code>/usr/local/nginx/sbin/nginx -c  /usr/local/nginx/conf/nginx.conf
+</code></pre>
+
+<h3 id="资源转跳">资源转跳</h3>
+
+<pre><code>location ~ ^/upload/(.*)\.(jpg|jpeg|png|gif)$ {
+        root         /data/service/tomcat/webapps;
+        access_log   off;
+        expires      7d;
+}
+
+location ~ ^/wechat-forum-dev/upload/(.*)\.(jpg|jpeg|png|gif)$ {
+        rewrite /wechat-forum-dev/(.*) /$1 last;
+}
+</code></pre>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.nginx%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Linux.Nginx%20&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.nginx%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.nginx%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2flinux.nginx%2f&title=Linux.Nginx%20" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

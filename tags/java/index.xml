@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/java/</link>
+    <description>Recent content in Java on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/java/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java.Log4j</title>
+      <link>https://wrrwhn.github.io/domain/post/java.log4j/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.log4j/</guid>
+      <description>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.</description>
+    </item>
+    
+    <item>
+      <title>Java.注意事项</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
+      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
+      <description>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&amp;quot;select * from student where stuNo=?&amp;quot;); //!! for(int i=0; i&amp;lt; 1000; i++){ ps.setString(1, &amp;quot;1000&amp;quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况</description>
+    </item>
+    
+    <item>
+      <title>Java.Basic</title>
+      <link>https://wrrwhn.github.io/domain/post/java.basic/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.basic/</guid>
+      <description>[TOC]
+参考  使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁  功能 获取路径 分类  绝对路径  主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 例  C:xyz est.txt  代表了test.txt文件的绝对路径    相对路径  相对与某个基准目录（一般对照WEB）的路径。 示例  &amp;quot;/&amp;quot;代表Web应用的跟目录 &amp;quot;./&amp;quot; 代表当前目录 &amp;quot;../&amp;quot;代表上级目录   注  JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的   获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&amp;quot;？&amp;quot;) --&amp;gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&amp;quot;\&amp;quot;) //站点绝对路径 application.getRealPath(&amp;quot;&amp;quot;) //JSP界面使用 ServletContext().getRealPath(&amp;quot;&amp;quot;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ \.</description>
+    </item>
+    
+    <item>
+      <title>Java.Command</title>
+      <link>https://wrrwhn.github.io/domain/post/java.command/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.command/</guid>
+      <description> [TOC]
+Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&amp;gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&amp;hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&amp;gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy    </description>
+    </item>
+    
+    <item>
+      <title>Java.Detail</title>
+      <link>https://wrrwhn.github.io/domain/post/java.detail/</link>
+      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.detail/</guid>
+      <description>[TOC]
+finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&amp;quot;select * from student where stuNo=?&amp;quot;); //!! for(int i=0; i&amp;lt; 1000; i++){ ps.setString(1, &amp;quot;1000&amp;quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况</description>
+    </item>
+    
+    <item>
+      <title>Java.常用技术</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</link>
+      <pubDate>Fri, 09 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
+      <description>参考  http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/ http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html http://ifeve.com/locks/  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&amp;rdquo;/&amp;ldquo;代表Web应用的跟目录， &amp;ldquo;./&amp;rdquo; 代表当前目录,&amp;ldquo;../&amp;ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
+获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&amp;ldquo;？&amp;rdquo;) &amp;ndash;&amp;gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&amp;rdquo;\&amp;ldquo;) //站点绝对路径 application.getRealPath(&amp;ldquo;&amp;rdquo;) //JSP界面使用 ServletContext().getRealPath(&amp;ldquo;&amp;rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&amp;ldquo;&amp;rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&amp;ldquo;&amp;rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&amp;ldquo;&amp;rdquo;).getPath()  返回字串</description>
+    </item>
+    
+    <item>
+      <title>DWR</title>
+      <link>https://wrrwhn.github.io/domain/post/dwr/</link>
+      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/dwr/</guid>
+      <description>[TOC]
+参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt;  springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt; &amp;lt;!-- 打开dwr的控制器 --&amp;gt; &amp;lt;dwr:controller id=&amp;quot;dwrController&amp;quot; debug=&amp;quot;true&amp;quot; &amp;gt; &amp;lt;dwr:config-param name=&amp;quot;allowScriptTagRemoting&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;crossDomainSessionSecurity&amp;quot; value=&amp;quot;false&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;activeReverseAjaxEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;/dwr:controller&amp;gt; &amp;lt;dwr:url-mapping/&amp;gt; &amp;lt;bean class=&amp;quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;alwaysUseFullPath&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;property name=&amp;quot;mappings&amp;quot;&amp;gt; &amp;lt;props&amp;gt; &amp;lt;prop key=&amp;quot;/dwr/**/*&amp;quot;&amp;gt;dwrController&amp;lt;/prop&amp;gt; &amp;lt;/props&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;!</description>
+    </item>
+    
+  </channel>
+</rss>
