@@ -47,7 +47,7 @@
             
 <h1><a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka">Kafka</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
 
     &middot; 
         
@@ -70,6 +70,9 @@
 <li><a href="http://www.infoq.com/cn/articles/kafka-analysis-part-1">Kafka剖析（一）：Kafka背景及架构介绍</a></li>
 <li><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html">Apache kafka 工作原理介绍</a></li>
 <li><a href="https://kafka.apache.org/quickstart">Quickstart</a></li>
+<li><a href="http://blog.csdn.net/kuluzs/article/details/51577678">Kafka系列2-producer和consumer报错</a></li>
+<li><a href="https://issues.apache.org/jira/browse/KAFKA-4740">Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop</a></li>
+<li><a href="https://stackoverflow.com/questions/27606065/how-to-find-the-kafka-version-in-linux">How to find the kafka version in linux</a></li>
 </ul>
 
 <h2 id="简介">简介</h2>
@@ -319,7 +322,138 @@ log.cleaner.enable=false
 <h2 id="使用">使用</h2>
 
 <ul>
-<li>暂略</li>
+<li>dowwnload
+
+<ul>
+<li><code>tar -xzf kafka_2.11-1.0.0.tgz</code></li>
+</ul></li>
+<li>server.*
+
+<ul>
+<li><code>bin/zookeeper-server-start.sh config/zookeeper.properties</code></li>
+<li><code>bin/kafka-server-start.sh config/server.properties</code></li>
+</ul></li>
+<li>topic.*
+
+<ul>
+<li><code>bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic [av]</code></li>
+<li><code>bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic avRes</code></li>
+<li><code>bin/kafka-topics.sh --list --zookeeper localhost:2181</code></li>
+</ul></li>
+<li>producer
+
+<ul>
+<li><code>bin/kafka-console-producer.sh --broker-list localhost:9092 --topic [av]</code></li>
+</ul></li>
+<li>consumer
+
+<ul>
+<li><code>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic [av] --from-beginning</code></li>
+</ul></li>
+<li>version
+
+<ul>
+<li><code>find ./libs/ -name 'kafka_*.jar.asc' |head -n1 | cut -d'/' -f3</code></li>
+<li><code>find ./libs/ -name \*kafka_\* | head -1 | grep -o '\kafka[^\n]*'</code>
+
+<ul>
+<li><code>kafka_2.10-0.8.2-beta.jar</code>
+
+<ul>
+<li><code>2.10</code>
+
+<ul>
+<li>Scala.version</li>
+</ul></li>
+<li><code>0.8.2-beta</code>
+
+<ul>
+<li>Kafka.version</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="异常">异常</h2>
+
+<h3 id="本地生产-消费进程启动时报错">本地生产、消费进程启动时报错</h3>
+
+<ul>
+<li>异常信息
+
+<ul>
+<li><code>[2016-06-03 11:44:16,932] WARN Error while fetching metadata with correlation id 0 : {test=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)</code></li>
+</ul></li>
+<li>修复
+
+<ul>
+<li><code>vim config/server.properties</code>
+
+<ul>
+<li><code>listeners=PLAINTEXT://localhost:9092</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="java-接收消息时报错">Java 接收消息时报错</h3>
+
+<ul>
+<li>版本
+
+<ul>
+<li>kafka
+
+<ul>
+<li>0.10.0.0</li>
+<li>1.0.0</li>
+</ul></li>
+<li>java
+
+<ul>
+<li>spring-kafka-1.0.3.RELEASE.jar</li>
+</ul></li>
+<li>go
+
+<ul>
+<li>github.com/Shopify/sarama
+
+<ul>
+<li>Version 1.14.0</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>异常消息
+
+<ul>
+<li><code>2017-11-28 15:46:30.927 ERROR 53444 --- [afka-consumer-1] org.apache.kafka.clients.NetworkClient   : Uncaught error in request completion: org.apache.kafka.common.errors.SerializationException: Size of data received by IntegerDeserializer is not 4</code></li>
+</ul></li>
+
+<li><p>解决</p>
+
+<ul>
+<li><p>KafkaIntegerDeserializer</p>
+
+<pre><code>public class KafkaIntegerDeserializer implements Deserializer&lt;Integer&gt; {
+
+@Override
+public Integer deserialize(String topic, byte[] data) {
+
+    if (data.length != 4) {
+        System.err.println(&quot;Size of data received by IntegerDeserializer is not 4&quot;);        // 将 throw new SerializationException 更新为提示，并跳出处理
+        return null;
+    }
+</code></pre></li>
+
+<li><p>KafkaConfig</p>
+
+<pre><code>@Configuration
+public class KafkaConfig {
+
+private Map&lt;String, Object&gt; consumerConfigs() {
+    props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaIntegerDeserializer.class);        // 替换 IntegerDeserializer 为 KafkaIntegerDeserializer
+</code></pre></li>
+</ul></li>
 </ul>
 
             <ul class="share-buttons">

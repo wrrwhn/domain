@@ -46,6 +46,66 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/javascript.typescript/" title="JavaScript.TypeScript">JavaScript.TypeScript</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/typescript">typescript </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;+ user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/javascript.typescript/" title="JavaScript.TypeScript"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
+必要参数 -c
+ 显示更改的部分的信息  -f
+ 忽略错误信息  -h
+ 修复符号链接  -R
+ 处理指定目录以及其子目录下的所有文件  -v
+ 显示详细的处理信息  -deference
+ 作用于符号链接的指向，而不是链接文件本身
+选择参数  &ndash;reference=&lt;目录或文件&gt;
+ 把指定的目录/文件作为参考，把操作的文件/目录设置成参考文件/目录相同拥有者和群组  &ndash;from=&lt;当前用户：当前群组&gt;
+ 只有当前用户和群组跟指定的用户和群组相同时才进行改变  &ndash;help
+ 显示帮助信息  &ndash;version
+ 显示版本信息
+实例  chown -R appuser:appuser yao
+ 将 root 权限下文件夹分配给 appuser 用户&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/linux.git/" title="Linux.Git">Linux.Git</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -244,50 +304,6 @@ Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  
  产生文件所存放目录的[绝对|相对]路径  相对于 $CATALINA_HOME 默认为 logs   pattern
  %a - 远程IP地址 %A - 本地IP地址 %b - 发送的字节数(Bytes sent), 不包括HTTP headers的字节，如果为0则展示&rsquo;-&rsquo; %B - 发送的字节数(Bytes sent), 不包括HTTP headers的字节 %h - 远程主机名称(如果resolveHosts为false则展示IP) %H - 请求协议 %l - 远程用户名，始终为&rsquo;-&lsquo;(Remote logical username from identd) %m - 请求的方法(GET, POST等) %p - 接受请求的本地端口 %q - 查询字符串，如果存在，有一个前置的&rsquo;?&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/tomcat.-accesslog/" title="Tomcat. AccessLog "> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.xargs/" title="Linux.XArgs">Linux.XArgs</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.16">2017.10.16</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d  指定输入的分隔符 -d\n  ``  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.xargs/" title="Linux.XArgs"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/redis.keys-del/" title="Redis.Keys-Del">Redis.Keys-Del</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.16">2017.10.16</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/redis">redis</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key  明细  Login  /opt/redis/redis-cli -p &lt;port&gt; -a &lt;password&gt;  Search-Delete  /opt/redis/redis-cli keys &quot;<em>&quot; | xargs /opt/redis/redis-cli del   示例 删除指定练习相关缓存  导出以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203</em>&quot; &gt; /data/op-script/redis/exercises:10203  列举所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203<em>&quot;  删除所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203</em>&quot; | xargs /usr/local/bin/redis-cli -p 37652 -a 5c!&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/redis.keys-del/" title="Redis.Keys-Del"> &raquo;</a>
 </article>
 
         

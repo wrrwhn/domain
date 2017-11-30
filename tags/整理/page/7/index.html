@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令">常用CMD指令</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.23">2017.02.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/cmd">cmd</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &ldquo;9050&rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &ldquo;2748&rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD">XSD</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
@@ -274,29 +297,6 @@ AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着�
 public interface Greeting { void sayHello(String name); }  implement
 public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&quot;Hello! &quot; + name); after(); } private void before() { System.out.println(&quot;Before&quot;); } private void after() { System.out.println(&quot;After&quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/spring.basic/" title="Spring.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC] 文章来源 Spring Data JPA - Reference Documentation
-学习整理 Basic Example Entity @Entity @Table(name = &quot;user&quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &quot;user_name&quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&lt;User, Long&gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&lt;User&gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &quot;com.yunkai&quot;) @EntityScan(basePackages = &quot;com.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA"> &raquo;</a>
 </article>
 
         

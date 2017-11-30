@@ -46,6 +46,52 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译">Go.交叉编译</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.28">2017.08.28</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译  作用  Go作为编译型语言，在不同平台上需要编译生成不同格式的二进制包  参数  GOOS  程序构建目标环境的操作系统  GOARCH  程序构建目标环境的计算机架构  CGO_ENABLED  当值为 0 时表示设置 CGO 不可用   示例 Linux 64bit  GOOS=linux GOARCH=amd64 go build -o app.linux  -o 用于指定二进制文件名   Linux 32bit  GOOS=linux GOARCH=386 go build  windows 64bit  GOOS=windows GOARCH=amd64 go build  windows 32bit  GOOS=windows GOARCH=386 go build  Mac OS 64bit  GOOS=darwin GOARCH=amd64 go build  备注  CGO  GO 语言自带工具，用于支持调用 C 语言代码的 GO 语言源码文件  1.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run">Linux.Run</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.28">2017.08.28</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+命令后台运行 参考  Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令  类型  后台运行，终端关闭时停止 后台运行，终端关掉后仍继续运行  方法 前后台切换  流程  执行复杂语句 使用 Ctrl+ Z 挂起复杂程序  [1]+ Stopped /data/service/webapps/engine-dev/main  使用 jobs 查询后台工作情况  [1]+ Stopped /data/service/webapps/engine-dev/main  输入 fg 1 继续执行复杂语句 输入 bg 1 在后台继续执行语句  [1]+ /data/service/webapps/engine-dev/main jobs  [1]+ Running /data/service/webapps/engine-dev/main     后台执行  &amp;  后台运行，终端关闭时停止  当前终端 shell 进程退出，会发送 hangup 信号给所有子进程 子进程收到 hangup 后退出  日志仍会打印到前台 示例  /data/service/webapps/engine-dev/main &amp; /data/service/webapps/engine-dev/main &gt; out.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.25">2017.08.25</time>
@@ -233,53 +279,6 @@ firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用F
  firewall-cmd [&ndash;zone=&lt;zone&gt;] &ndash;add-port=&lt;port&gt;[-&lt;port&gt;]/&lt;protocol&gt; [&ndash;timeout=&lt;seconds&gt;]  运行
  查看运行状态  systemctl status firewalld.service  开关  systemctl [stop|start] firewalld firewall-cmd &ndash;reload  服务相关  firewall-cmd &ndash;list-services firewall-cmd &ndash;[add|remove]-service=mysql firewall-cmd &ndash;permanent &ndash;[add|remove]-service=mysql  端口相关  firewall-cmd &ndash;zone=public &ndash;add-port=3306/tcp &ndash;permanent firewall-cmd &ndash;zone=public &ndash;list-ports firewall-cmd &ndash;zone=public &ndash;query-port=3306/tcp   开机启动&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/linux.firewalld/" title="Linux.Firewalld"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a> rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &lsquo;root&rsquo;@&lsquo;localhost&rsquo; =password(&lsquo;root.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.mysql/" title="Linux.Mysql"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/dump.analyze/" title="Dump.Analyze">Dump.Analyze</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/dump">dump</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>使用  安装 Dump 包分析软件 安装完成后进行初始化设置  设置【File/ Symbol file path】的属性值为【D:\MyCodesSymbols;SRV*c:\symbols*<a href="http://symbols.mozilla.org/firefox">http://symbols.mozilla.org/firefox</a>; SRV*D:\MyLocalSymbols<em><a href="http://msdl.microsoft.com/download/symbols;C:Windowssymbols】">http://msdl.microsoft.com/download/symbols;C:Windowssymbols】</a>  编辑 vbs 文件，调整 windbg 执行目录 双击执行，并输入任务管理器中的指定监控软件的 PID 值 操作软件，并至崩溃状态（崩溃后会自动启动 windbg 进行 Dump 包存储） 开启 windbg x86 程序，并打开该 Dump 包（File/ Open Crash Dump） 待加载完成后输入【~</em> kp】显示异常堆栈 输入【!analyze -v -f】分析具体异常  资源  X86 Debuggers And Tools-x86_en-us.msi crashdump.vbs 命令集合.xlsx&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/dump.analyze/" title="Dump.Analyze"> &raquo;</a>
 </article>
 
         

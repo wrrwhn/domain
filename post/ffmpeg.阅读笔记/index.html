@@ -47,7 +47,7 @@
             
 <h1><a href="https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.20">2017.02.20</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
 
     &middot; 
         
@@ -68,9 +68,41 @@
 
 <ul>
 <li><a href="https://ffmpeg.org/">FFmpeg</a></li>
+<li><a href="https://www.ffmpeg.org/ffmpeg.html">ffmpeg</a></li>
+<li><a href="https://ffmpeg.org/ffmpeg-formats.html">FFmpeg Formats Documentation</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/FFmpeg">FFmpeg - wiki</a></li>
 <li><a href="https://github.com/FFmpeg/FFmpeg">FFmpeg - github</a></li>
+<li><a href="https://segmentfault.com/q/1010000003834362?sort=created">使用ffmpeg将视频转ts</a></li>
 </ul>
+
+<h2 id="概要">概要</h2>
+
+<ul>
+<li><code>ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...</code></li>
+</ul>
+
+<h2 id="流程">流程</h2>
+
+<pre><code> _______              ______________
+|       |            |              |
+| input |  demuxer   | encoded data |   decoder
+| file  | ---------&gt; | packets      | -----+
+|_______|            |______________|      |
+                                           v
+                                       _________
+                                      |         |
+                                      | decoded |
+                                      | frames  |
+                                      |_________|
+ ________             ______________       |
+|        |           |              |      |
+| output | &lt;-------- | encoded data | &lt;----+
+| file   |   muxer   | packets      |   encoder
+|________|           |______________|
+
+</code></pre>
+
+<h2 id="选项">选项</h2>
 
 <h2 id="实例">实例</h2>
 
@@ -129,12 +161,52 @@
 </ul></li>
 </ul>
 
-<p>###
-- 指令
-  + <code>ffmpeg -i old.audio -vn -acodec libmp3lame -write_xing 0 -ar 22050 -ab 24k -y new.audio</code>
-- 解析
-  + <code>-vn</code>
-    * 禁止视频记录</p>
+<h3 id="音频解码">音频解码</h3>
+
+<ul>
+<li>指令
+
+<ul>
+<li><code>ffmpeg -i old.audio -vn -acodec libmp3lame -write_xing 0 -ar 22050 -ab 24k -y new.audio</code></li>
+</ul></li>
+<li>解析
+
+<ul>
+<li><code>-vn</code></li>
+<li>禁止视频记录</li>
+</ul></li>
+</ul>
+
+<h3 id="mp4-转-hls">MP4 转 HLS</h3>
+
+<ul>
+<li>指令
+
+<ul>
+<li><code>ffmpeg -i origin.wmv -codec:v libx264 -codec:a mp3 -map 0 -f ssegment -segment_format mpegts -segment_list ./m3u8/index.m3u8 -segment_time 10 ./m3u8/’%03d.ts’</code></li>
+</ul></li>
+<li>解析
+
+<ul>
+<li><code>-codec:v libx264</code></li>
+<li>针对视频使用 H.264/MPEG-4 AVC encoder</li>
+<li><code>-codec:a mp3</code></li>
+<li>针对音频使用 mp3 编码器</li>
+<li><code>-map 0</code></li>
+<li>指定你所要从输入流中 选择或拷贝 到输出流中的片段</li>
+<li>-map [-]input_file_id[:stream_specifier][?][,sync_file_id[:stream_specifier]] | <a href="output">linklabel</a></li>
+<li>如 <code>-map 1:0 -map 1:1</code> 表示将第二个输入文件的第一个流和第二个流写入输出文件</li>
+<li><code>-f ssegment</code></li>
+<li>强制使用 <code>ssegment</code> 格式</li>
+<li><code>-segment_format mpegts</code></li>
+<li>重置内部容器格式，默认通过文件后缀自动选定</li>
+<li><code>-segment_list ./m3u8/index.m3u8</code></li>
+<li>生成指定名称的列表目录信息文件，默认不生成</li>
+<li><code>-segment_time 10 './m3u8/’%03d.ts'</code></li>
+<li>指定分割片段的时长，必须为延续时间段</li>
+<li>默认值为 2 秒，且分割不一定是精确的，除非给定指定时间上的参照流的关键帧</li>
+</ul></li>
+</ul>
 
             <ul class="share-buttons">
     <li></li>
