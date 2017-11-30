@@ -1,5 +1,5 @@
 +++
-date = "2017-11-15T22:07:46+08:00"
+date = "2017-11-29T22:07:46+08:00"
 title = "Kafka"
 draft = false
 tags = ["整理","Kafka"]
@@ -12,6 +12,9 @@ share = true
 - [Kafka剖析（一）：Kafka背景及架构介绍](http://www.infoq.com/cn/articles/kafka-analysis-part-1)
 - [Apache kafka 工作原理介绍](https://www.ibm.com/developerworks/cn/opensource/os-cn-kafka/index.html)
 - [Quickstart](https://kafka.apache.org/quickstart)
+- [Kafka系列2-producer和consumer报错](http://blog.csdn.net/kuluzs/article/details/51577678)
+- [Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop](https://issues.apache.org/jira/browse/KAFKA-4740)
+- [How to find the kafka version in linux](https://stackoverflow.com/questions/27606065/how-to-find-the-kafka-version-in-linux)
 
 
 ## 简介
@@ -135,4 +138,66 @@ share = true
 
 
 ## 使用
-- 暂略
+- dowwnload
+    - `tar -xzf kafka_2.11-1.0.0.tgz`
+- server.*
+    - `bin/zookeeper-server-start.sh config/zookeeper.properties`
+    - `bin/kafka-server-start.sh config/server.properties`
+- topic.*
+    - `bin/kafka-topics.sh --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic [av]`
+    - `bin/kafka-topics.sh --delete --zookeeper localhost:2181 --topic avRes`
+    - `bin/kafka-topics.sh --list --zookeeper localhost:2181`
+- producer
+    - `bin/kafka-console-producer.sh --broker-list localhost:9092 --topic [av]`
+- consumer
+    - `bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic [av] --from-beginning`
+- version
+    - `find ./libs/ -name 'kafka_*.jar.asc' |head -n1 | cut -d'/' -f3`
+    - `find ./libs/ -name \*kafka_\* | head -1 | grep -o '\kafka[^\n]*'`
+        - `kafka_2.10-0.8.2-beta.jar`
+            - `2.10` 
+                - Scala.version
+            - `0.8.2-beta`
+                - Kafka.version
+
+## 异常
+### 本地生产、消费进程启动时报错
+- 异常信息
+    - `[2016-06-03 11:44:16,932] WARN Error while fetching metadata with correlation id 0 : {test=LEADER_NOT_AVAILABLE} (org.apache.kafka.clients.NetworkClient)`
+- 修复
+    - `vim config/server.properties`
+        - `listeners=PLAINTEXT://localhost:9092`
+
+### Java 接收消息时报错
+- 版本
+    - kafka
+        - 0.10.0.0
+        - 1.0.0
+    - java
+        - spring-kafka-1.0.3.RELEASE.jar
+    - go
+        - github.com/Shopify/sarama
+            - Version 1.14.0
+- 异常消息
+    - `2017-11-28 15:46:30.927 ERROR 53444 --- [afka-consumer-1] org.apache.kafka.clients.NetworkClient   : Uncaught error in request completion: org.apache.kafka.common.errors.SerializationException: Size of data received by IntegerDeserializer is not 4`
+- 解决
+    - KafkaIntegerDeserializer
+    ```
+    public class KafkaIntegerDeserializer implements Deserializer<Integer> {
+
+        @Override
+        public Integer deserialize(String topic, byte[] data) {
+
+            if (data.length != 4) {
+                System.err.println("Size of data received by IntegerDeserializer is not 4");        // 将 throw new SerializationException 更新为提示，并跳出处理
+                return null;
+            }
+    ```
+    - KafkaConfig
+    ```
+    @Configuration
+    public class KafkaConfig {
+
+        private Map<String, Object> consumerConfigs() {
+            props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, KafkaIntegerDeserializer.class);        // 替换 IntegerDeserializer 为 KafkaIntegerDeserializer
+    ```

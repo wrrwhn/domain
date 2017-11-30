@@ -7,10 +7,41 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="https://wrrwhn.github.io/domain/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Kafka</title>
+      <link>https://wrrwhn.github.io/domain/post/kafka/</link>
+      <pubDate>Wed, 29 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/kafka/</guid>
+      <description>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</description>
+    </item>
+    
+    <item>
+      <title>FFmpeg.阅读笔记</title>
+      <link>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+      <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <description>[TOC]
+简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file | muxer | packets | encoder |________| |______________|  选项 实例 裁剪  指令  ffmpeg -i old.</description>
+    </item>
+    
+    <item>
+      <title>Git.Subtree</title>
+      <link>https://wrrwhn.github.io/domain/post/git.subtree/</link>
+      <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/git.subtree/</guid>
+      <description>参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
+ 适用情况
+ 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
+ Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.</description>
+    </item>
     
     <item>
       <title>20岁的你</title>
@@ -111,6 +142,16 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
  UML 图 DFD 图 结构图 Petri 网络图 状态迁移图 流程图 决策图
 站在 雇主/客户/产品 的角度   说“不” 拒绝说“试一试”  在上级眼里意味着你可以 另一方面，如果能完成，意味着之前有所保留，并未全然尽力
 描述清楚实现的难度 认真理解说“是”的成本  说“是” 承诺用语  为自己的承诺负责 理解对方言语承诺的成分 坚守原则，避免放松代码追求  承诺无效 关键词  需要|应当  我们要把这个活干完 有人应当负责去推动这件事  希望|但愿  希望明天我能完成这件事 但愿我有时间做这件事  让我们</description>
+    </item>
+    
+    <item>
+      <title>卡西欧-CASIO</title>
+      <link>https://wrrwhn.github.io/domain/post/%E5%8D%A1%E8%A5%BF%E6%AC%A7-casio/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E5%8D%A1%E8%A5%BF%E6%AC%A7-casio/</guid>
+      <description> [TOC]
+品牌 简介  1946年4月  由㭴尾忠雄创立 生产香烟指环  1954年成功研制首台电子计算机 1957年  卡西欧推出14-A型、全球首款全电子计算机 公司更名称卡西欧计算机株式会社，专门研发电子产品  1983年  伊部菊雄设计的首款 G-Shock 问世   参考  CASIO 官网 G-Shock 官网  明细 G-SHOCK MTGS1000V-1A 价格  7,000  机芯  SMART ACCESS  规格  表壳纵向尺寸  58.6mm  表壳横向尺寸  53.5mm  表壳厚度尺寸  15.5mm  重量  188g   功能  3G防护构造 200M 防水 夜光 太阳能 6局电波 指针位置自动修正 世界时间(29个城市) 秒表（1/20秒） 倒计时 蜂鸣响音闹铃 低电量警告 全自动日历  参考  一块与众不同的G-SHOCK-MTG-S1000V-1AJF MTGS1000V-1A  欣赏       </description>
     </item>
     
     <item>
@@ -404,15 +445,6 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <guid>https://wrrwhn.github.io/domain/post/javascript.typescript/</guid>
       <description>[TOC]
 TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &amp;quot;Hello&amp;quot;+ user; } var user = &amp;quot;yao&amp;quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&amp;lt;String&amp;gt;val).</description>
-    </item>
-    
-    <item>
-      <title>Kafka</title>
-      <link>https://wrrwhn.github.io/domain/post/kafka/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
-      
-      <guid>https://wrrwhn.github.io/domain/post/kafka/</guid>
-      <description>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</description>
     </item>
     
     <item>
@@ -1024,16 +1056,6 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
       <guid>https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/</guid>
       <description> [TOC]
 强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &amp;ldquo;9050&amp;rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &amp;ldquo;2748&amp;rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a  </description>
-    </item>
-    
-    <item>
-      <title>FFmpeg.阅读笔记</title>
-      <link>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Mon, 20 Feb 2017 22:07:46 +0800</pubDate>
-      
-      <guid>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
-      <description>[TOC]
-简介  FFmpeg FFmpeg - wiki FFmpeg - github  实例 裁剪  指令  ffmpeg -i old.mp3 -ss 56.808 -write_xing 0 new.mp3  解析  -i old.mp3 来源 -ss 56.808 起始时间点，单位秒 -t 999 结束时间，单位秒 -write_xing 0 微信-IOS 音频支持   转 MP4  指令  ffmpeg -i old.video -vcodec libx264 -r 24 -s 640x360 -acodec libmp3lame -write_xing 0 -ar 22050 -ab 24k -y new.mp4  解析  -vcodec libx264 设置视频视频编解码器，未设置时则使用与输入文件相同之编解码器 -r 24 每秒帧数 frames per second，默认25 -s 640x360 设置帧尺寸  WXH 与来源一致 640x360 指定尺寸  -acodec libmp3lame 设置音频编解码器 -ar 22050 设置音频采样频率,默认24000 -ab 24k 设置声音比特率，32/ 64/ 96/ 128 -y 覆盖输出文件   ### - 指令 + ffmpeg -i old.</description>
     </item>
     
     <item>

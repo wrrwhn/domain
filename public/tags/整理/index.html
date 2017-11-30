@@ -46,6 +46,76 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka">Kafka</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/kafka">kafka</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/ffmpeg">ffmpeg</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} &hellip; {[output_file_options] output_url} &hellip;  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | &mdash;&mdash;&mdash;&gt; | packets | &mdash;&ndash;+ |____<strong><em>| |</em></strong>___________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;&mdash;&mdash;&ndash; | encoded data | &lt;&mdash;-+ | file | muxer | packets | encoder |_____<strong><em>| |</em></strong>___________|  选项 实例 裁剪  指令  ffmpeg -i old.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/git.subtree/" title="Git.Subtree">Git.Subtree</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
+ 适用情况
+ 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
+ Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/git.subtree/" title="Git.Subtree"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
@@ -209,88 +279,6 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 
     <p>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/javascript.typescript/" title="JavaScript.TypeScript">JavaScript.TypeScript</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/typescript">typescript </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;+ user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/javascript.typescript/" title="JavaScript.TypeScript"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka">Kafka</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/kafka">kafka</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/kafka/" title="Kafka"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
-必要参数 -c
- 显示更改的部分的信息  -f
- 忽略错误信息  -h
- 修复符号链接  -R
- 处理指定目录以及其子目录下的所有文件  -v
- 显示详细的处理信息  -deference
- 作用于符号链接的指向，而不是链接文件本身
-选择参数  &ndash;reference=&lt;目录或文件&gt;
- 把指定的目录/文件作为参考，把操作的文件/目录设置成参考文件/目录相同拥有者和群组  &ndash;from=&lt;当前用户：当前群组&gt;
- 只有当前用户和群组跟指定的用户和群组相同时才进行改变  &ndash;help
- 显示帮助信息  &ndash;version
- 显示版本信息
-实例  chown -R appuser:appuser yao
- 将 root 权限下文件夹分配给 appuser 用户&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown"> &raquo;</a>
 </article>
 
         

@@ -46,6 +46,51 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic">Redis.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/redis">redis</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术">Java.常用技术</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  <a href="http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/">http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/</a> <a href="http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html">http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html</a> <a href="http://ifeve.com/locks/">http://ifeve.com/locks/</a>  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&rdquo;/&ldquo;代表Web应用的跟目录， &ldquo;./&rdquo; 代表当前目录,&ldquo;../&ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
+获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&ldquo;？&rdquo;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&rdquo;&amp;ldquo;) //站点绝对路径 application.getRealPath(&ldquo;&rdquo;) //JSP界面使用 ServletContext().getRealPath(&ldquo;&rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&ldquo;&rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&ldquo;&rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&ldquo;&rdquo;).getPath()  返回字串&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/maven/" title="Maven">Maven</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
