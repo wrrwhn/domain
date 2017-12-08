@@ -45,6 +45,221 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq">Go.Nsq</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+[NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 &ndash;mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.make/" title="Linux.Make">Linux.Make</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.make/" title="Linux.Make"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM">Go.GPM</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.23">2017.07.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/windows.service/" title="Windows.Service">Windows.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/windows">windows</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&lt;ServerName&gt;] control [&lt;ServiceName&gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &lt;UserDefinedControlB&gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/windows.service/" title="Windows.Service"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/chrome">chrome</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  Getting Started: Building a Chrome Extension Overview Developer&rsquo;s Guide Sample Extensions  示例解析  目录结构
+html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，<strong>要求 js 和 html 分开存放</strong> manifest.json // 插件配置文件  manifest.json
+{ &quot;manifest_version&quot;: 2, // 配置文件版本 &quot;name&quot;: &quot;插件名称&quot;, &quot;description&quot;: &quot;插件功能描述&quot;, &quot;version&quot;: &quot;0.1&quot;, // 插件当前开发版本 // 通用型 &quot;browser_action&quot;: { // 浏览器级动作 &quot;default_icon&quot;: &quot;/images/icon.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
+ 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
+ 操作返回值
+// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
+ 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.26">2017.04.26</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &quot;autocomplete_builtins&quot;: true, &quot;autocomplete_closures&quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/go.flag/" title="Go.Flag">Go.Flag</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.24">2017.04.24</time>
@@ -66,223 +281,6 @@ Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl">Linux.Curl</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.01">2017.04.01</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 &ndash;trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| &hellip;]  支持其它类型参数  &ndash;data &quot;arg=val&quot;  传递参数  &ndash;user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &quot;Content-Type:application/json&quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &quot;Content-Type: application/json;charset=UTF-8&quot; -d &lsquo;{&quot;username&quot;:&quot;15880777595&quot;,&quot;pwd&quot;:&quot;1&quot;}&rsquo; &ndash;cookie-jar /data/cdn/resource/curl-cookie <a href="http://live">http://live</a>.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授">加藤鹰-秘技传授</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.03.20">2017.03.20</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/sex">sex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-加藤鹰-秘技传授 接吻  搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧  爱抚 耳朵  待定  舌技  待定  指技  待定  异物插入  待定  插入  待定&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema">MYSQL.Information_schema</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.26">2017.02.26</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令">常用CMD指令</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.23">2017.02.23</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/cmd">cmd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &ldquo;9050&rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &ldquo;2748&rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD">XSD</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/xsd">xsd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：<a href="http://www.w3school.com.cn/schema/">http://www.w3school.com.cn/schema/</a> 手册：<a href="http://www.w3school.com.cn/schema/schema_elements_ref.asp">http://www.w3school.com.cn/schema/schema_elements_ref.asp</a> 验证：<a href="http://www.ltg.ed.ac.uk/~ht/xsv-status.html">http://www.ltg.ed.ac.uk/~ht/xsv-status.html</a> 实例：<a href="http://www.w3school.com.cn/schema/schema_example.asp">http://www.w3school.com.cn/schema/schema_example.asp</a>
-使用 XML结构 &lt;?xml version=&quot;1.0&quot;?&gt; &lt;note&gt; &lt;to&gt;George&lt;/to&gt; &lt;from&gt;John&lt;/from&gt; &lt;heading&gt;Reminder&lt;/heading&gt; &lt;body&gt;Don&rsquo;t forget the meeting!&lt;/body&gt; &lt;/note&gt;   定义 - note.xsd &lt;?xml version=&quot;1.0&quot;?&gt; &lt;xs:schema xmlns:xs=&quot;<a href="http://www.w3.org/2001/XMLSchema&quot;">http://www.w3.org/2001/XMLSchema&quot;</a> // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 指定默认命名空间 elementFormDefault=&quot;qualified&quot; &gt; &lt;xs:element name=&quot;note&quot;&gt; &lt;xs:complexType&gt; &lt;xs:sequence&gt; &lt;xs:element name=&quot;to&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;from&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;body&quot; type=&quot;xs:string&quot;/&gt; &lt;/xs:sequence&gt; &lt;/xs:complexType&gt; &lt;/xs:element&gt; &lt;/xs:schema&gt;  引用 &lt;?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数">Oracle.分析函数</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.15">2016.12.15</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>统计方面 合并  Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&hellip;)  按照COLX的降序层次逐层汇总合并  CUBE(COL1, COL2&hellip;)  排序  Rank() Over ([Partition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，但下一记录会空出其中的排名  Dense_rank() Over ([Patition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，之后数据接上一次序继续  Row_number() Over ([Partitionby ] [Order by ] [Nulls First/Last])  碰到相同数据时不做处理依照记录顺序依次递增  Ntile( ) Over ([Partition by ] [Order by ])  最值  [Min|Max]() Keep (Dense_rank First/Last [Partition by ] [Order by ])  MIN 用于确保返回唯一记录 KEEP 用于告知Oracle保留符合KEEP条件的记录 Dense_rank 固定写法，不可更改  Ratio_to_report(value)  Ratio_to_report(value)= value/ sum(value)   首/末记录  [First_value|Last_value|(Sum() Over ([Patition by ] [Order by ] Rows Between Preceding And Following ))  相邻记录比较  LAG(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LAG(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])  LEAD(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LEAD(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])   家族树  START WITH COL1= &lsquo;XXX&rsquo; CONNECT BY COL1= PRIOR COL2  语法  1&gt;语句顺序：SELECT&gt; FROM&gt; WHERE&gt; START WITH&gt; CONNECT BY&gt; ORDER BY 2&gt;PRIOR位置：在前（CONNECT BY PRIOR COL1=COL2），强制由根到叶自顶向上，置于后面则相反由叶到根 3&gt;WHERE可以排除树中个体，但无法排除其子孙或祖先 4&gt;CONNECT BY条件则可以排除个体及其后代信息 5&gt;CONNECT BY不以和WHERE子句中表连接使用  例子  SELECT LEVEL, NVL(B.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/angularjs.basic/" title="AngularJS.Basic">AngularJS.Basic</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/angularjs">angularjs</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>导言和准备  地址 源码 图解Git  引导程序 参考 - 详细：<a href="http://angularjs.cn/A003">http://angularjs.cn/A003</a> - 源码：<a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a> - 环境：<a href="https://github.com/nodejs/node-gyp">https://github.com/nodejs/node-gyp</a> - 安装异常：<a href="http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm">http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm</a> - 安装异常：<a href="http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html">http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html</a>  启动服务  npm install npm start
- 需要行先安装 python，仅目前只支持 2.<em>.，不支持 3..</em> 并将 git 设置为环境变量，即将 D:\Program Files (x86)\Git\bin\;D:\Program Files (x86)\Git\libexec\git-core; 加入环境变量中
- 注：有时需要重启才能生效 更多注意事项请看 <a href="https://github.com/nodejs/node-gyp">https://github.com/nodejs/node-gyp</a>
-测试服务   npm test
-切换服务 git checkout -f step-0
- 其中各阶段主要重点均在 <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a>
-应用界面  <a href="http://localhost:8000/app/index.html">http://localhost:8000/app/index.html</a>
-核心代码解析 &lt;!&ndash; np-app 指令，用于标记 AngularJS 脚本的作用域 &ndash;&gt; &lt;html lang=&quot;en&quot; ng-app&gt; &lt;!&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/angularjs.basic/" title="AngularJS.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术">常用技术</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&lsquo;IMG&rsquo;,&lsquo;SELECT&rsquo;,&lsquo;OBJECT&rsquo;,&lsquo;IFRAME&rsquo;); for(var j=0;j&lt;HideElementTemp.length;j++){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i++){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件+ 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" title="Git.命令小结">Git.命令小结</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-查看 分支状态  git status git branch
- 分支列表 &ndash;merged：查看哪些分支被合并到当前分支 &ndash;no-merged：查看哪些分支未并合并到当前分支
-日志  git log
- &ndash;pretty=oneline：单行显示 &ndash;graph：图形分支
-标签  git tag
- &lt;&gt;：查看当前分支标签 -l &lsquo;v1.4*&lsquo;：查看所有匹配该正则的标签信息
-文件提交明细  git blame &lt;fileName&gt;：查看文件每行的提交 hash / author/ time
-  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &lt;branch&gt; ###新增提交 git add -A git commit -m &ldquo;commit content&rdquo; git push origin &lt;branch&gt;
-修改提交 git commit -a -m &ldquo;commit content&rdquo;&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" title="Git.命令小结"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -290,7 +288,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 	<a class="btn newer" href="/domain/page/9/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 10  12</p>
+	<p class="counter"> 10  13</p>
 
 
 	

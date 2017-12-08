@@ -1,0 +1,250 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>姚清居到此一游</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
+        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
+        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
+        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
+        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+            
+<h1><a href="https://wrrwhn.github.io/domain/post/go.upload.qiniu/" title="Go.Upload.Qiniu">Go.Upload.Qiniu</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.07">2017.09.07</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/qiniu">qiniu</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h2 id="描述">描述</h2>
+
+<ul>
+<li>将指定 [文件|文件夹|当前文件夹] 的内容上传至 <code>七牛云</code></li>
+<li>上传完毕后将链接转换为 <code>Markdown</code> 格式文本</li>
+<li>将结果数据更新至<code>剪贴板</code></li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://developer.qiniu.com/kodo/sdk/1238/go">Go SDK</a></li>
+<li><a href="https://github.com/qiniu/api.v7">qiniu/api.v7</a></li>
+<li><a href="https://godoc.org/golang.org/x/net/context">package context</a></li>
+<li><a href="https://github.com/tjgq/clipboard">tjgq/clipboard</a></li>
+<li><a href="https://godoc.org/github.com/tjgq/clipboard">package clipboard</a></li>
+</ul>
+
+<h2 id="需求">需求</h2>
+
+<ul>
+<li>将链接中的图片等本地保存后，再重新上传生成链接</li>
+<li>命令行可全局快速调用，考虑结合 wox 等工具</li>
+<li>快速选择多个文件等</li>
+<li>文件夹仅操作当层</li>
+</ul>
+
+<h2 id="测试">测试</h2>
+
+<ul>
+<li>单文件
+```
+go run main.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg</li>
+</ul>
+
+<p>![76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg][<a href="http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg">http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg</a>]</p>
+
+<pre><code>
+- 文件夹
+</code></pre>
+
+<p>go run main.go -path=D:\data\soft\OneDrive\Documents\Write\work\云开</p>
+
+<p>[人员列表.xls][<a href="http://otzm88f21.bkt.clouddn.com/a.xls">http://otzm88f21.bkt.clouddn.com/a.xls</a>]
+[六步搞定实地辅导-20170822.md][<a href="http://otzm88f21.bkt.clouddn.com/b.md">http://otzm88f21.bkt.clouddn.com/b.md</a>]
+[人员列表.txt][<a href="http://otzm88f21.bkt.clouddn.com/c.txt">http://otzm88f21.bkt.clouddn.com/c.txt</a>]</p>
+
+<pre><code>
+- Exe 方式调用[**异常**]
+</code></pre>
+
+<p>go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg</p>
+
+<p>[新建 Microsoft PowerPoint 演示文稿.pptx][<a href="http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx">http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx</a>]
+uplaod.exe%!(EXTRA string=<a href="http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe">http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe</a>)
+```</p>
+
+<h2 id="补充">补充</h2>
+
+<ul>
+<li><p>path</p>
+
+<ul>
+<li><code>cd D:\work\git\yao\go\Utils_Go\src\upload\qiniu</code></li>
+<li><code>d:</code></li>
+</ul></li>
+
+<li><p>config</p>
+
+<ul>
+<li><code>set gopath=D:\server\go\lib;D:\work\git\yao\go\Hello_Go;D:\work\git\yk\go\pptconverter-gateway\code;D:\work\git\yao\go\Utils_Go;D:\work\git\401\go\Go_WuKong;D:\work\git\yao\go\Utils_Go\src\upload\qiniu</code></li>
+<li><code>set path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\WIDCOMM\Bluetooth Software\;C:\Program Files\WIDCOMM\Bluetooth Software\syswow64;D:\server\java\jdk1.8.0_65\bin;D:\server\java\jdk1.8.0_65\jre\bin;D:\server\maven\apache-maven-3.5.0\bin;C:\Program Files\Git\cmd;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;D:\Program Files\nodejs\;D:\server\go\1.8\bin;D:\server\python\python36;D:\server\python\python36\Scripts;C:\Program Files (x86)\Microsoft Visual Studio\Shared\14.0\VC\bin\amd64;C:\Program Files\dotnet\;D:\server\MinGW\mingw-w64\x86_64-7.1.0-posix-seh-rt_v5-rev2\mingw64\bin;D:\server\bin;C:\Users\Yao\AppData\Local\Microsoft\WindowsApps;C:\Users\Yao\AppData\Roaming\npm;C:\Program Files (x86)\Microsoft VS Code\bin;C:\Users\Yao\AppData\Local\Programs\Fiddler;D:\server\bin</code></li>
+<li><code>set QINIU_ACCESS_KEY=DraImie8qSbwoPoyrHV38lfTnVr9aj8S487egGsC</code></li>
+<li><code>set QINIU_SECRET_KEY=62PYqPKVBwFIHvObxdrzeRcqB7Ep_ufpqTXLZ_8b</code></li>
+</ul></li>
+
+<li><p>args</p>
+
+<ul>
+<li><code>-ak=DraImie8qSbwoPoyrHV38lfTnVr9aj8S487egGsC</code></li>
+<li><code>-sk=62PYqPKVBwFIHvObxdrzeRcqB7Ep_ufpqTXLZ_8b</code></li>
+<li><code>-domain=http://otzm88f21.bkt.clouddn.com</code></li>
+<li><code>-bucket=document</code></li>
+<li><code>-path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg</code></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.upload.qiniu%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Go.Upload.Qiniu&amp;url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.upload.qiniu%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.upload.qiniu%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=https%3a%2f%2fwrrwhn.github.io%2fdomain%2fpost%2fgo.upload.qiniu%2f&title=Go.Upload.Qiniu" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
+        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

@@ -46,6 +46,167 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/java.command/" title="Java.Command">Java.Command</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.command/" title="Java.Command"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/java.detail/" title="Java.Detail">Java.Detail</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.detail/" title="Java.Detail"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.vim/" title="Linux.Vim">Linux.Vim</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.08">2017.08.08</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+简明 VIM 练级攻略 阶段  存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力  存活  i  Insert 模式  ESC  返回 Normal 模式  x  删除当前光标所有的一个字符  dd  剪切当前行  p  粘贴  hjkl  对应左下右上  :q&lt;enter&gt;  不保存退出   感觉良好 插入  i  在光标前插入  a  在光标后插入  O  在当前行前插入新行  o  在当前行后插入新行  cw  替换从光标所在位置后到一个单词结尾的字符   移动  0  行头  $  行尾  ^  到本行第一个 非blank 字符位置 blank= 空格| tab| 换行| 回车  g_  到本行最后一个非blank字符位置  /pattern  搜索 pattern 字符串   拷贝/ 粘贴  p  粘贴  yy  复制   Undo/ Redo  u  撤消   文件操作  :e  打开文件  :w  保存  ：saveas &lt;path&gt;  将文件另存至   :q!&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.vim/" title="Linux.Vim"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.vscode/" title="Go.VSCode">Go.VSCode</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.31">2017.07.31</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows  安装  安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukehoban - Go」 版本  调试  切换到「调试」界面，并点击「打开 launch.json」打开配置 调整指定配置项  &lt;!&ndash; 当前项目于 GOPATH 中的路径 &ndash;&gt; &quot;program&quot;: &quot;${workspaceRoot}\Utils_Go\src\md5&quot;, &lt;!&ndash;设置当前环境变量 &ndash;&gt; &quot;env&quot;: { &quot;GOPATH&quot;: &quot;D:\server\go\lib;D:\work\git\yao\go\Hello_Go;D:\work\git\yk\go\pptconverter-gateway\code;${workspaceRoot}\Utils_Go&quot; }, &lt;!&ndash;设置启动参数 &ndash;&gt; &quot;args&quot;: [ &quot;-c=1&quot;, &quot;-p=D:\work\git\yao\go\Utils_Go\template\dest.mp4&quot; ],  设置断点、进行调试  注  安装「lukehoban - Go」时，部分「go get」部分来源需要翻墙 调试相关快捷键同 visual stuio&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.vscode/" title="Go.VSCode"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq">Go.Nsq</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+[NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 &ndash;mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.nsq/" title="Go.Nsq"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/linux.make/" title="Linux.Make">Linux.Make</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/linux.make/" title="Linux.Make"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM">Go.GPM</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.23">2017.07.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
@@ -114,171 +275,6 @@ Windows 程序服务化 参考  SC NSSM windows service startup timeout reset se
 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，<strong>要求 js 和 html 分开存放</strong> manifest.json // 插件配置文件  manifest.json
 { &quot;manifest_version&quot;: 2, // 配置文件版本 &quot;name&quot;: &quot;插件名称&quot;, &quot;description&quot;: &quot;插件功能描述&quot;, &quot;version&quot;: &quot;0.1&quot;, // 插件当前开发版本 // 通用型 &quot;browser_action&quot;: { // 浏览器级动作 &quot;default_icon&quot;: &quot;/images/icon.&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
- 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
- 操作返回值
-// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
- 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.26">2017.04.26</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &quot;autocomplete_builtins&quot;: true, &quot;autocomplete_closures&quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.flag/" title="Go.Flag">Go.Flag</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.24">2017.04.24</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令行参数的功能接口  常用  flag.Xxx<a href="name string, default-value Xxx, usage-info string">String| Bool| Int</a>  返回相应指针  flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info)  将 flag 绑定到变量  flag.Var(&amp;custom-type, name, usage-info)  custom-type 需要实现 Value 接口  flag.Parse()  直接使用国指针，绑定参数则为实际值 flag.Args() flag.Arg(i)  flag.PrintDefaults  define  flag.String(&quot;I&quot;, &quot;&quot;, &quot;searchdirectoryfor include files&quot;)  output  -I directory search directory for include files.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.flag/" title="Go.Flag"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl">Linux.Curl</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.01">2017.04.01</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 &ndash;trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| &hellip;]  支持其它类型参数  &ndash;data &quot;arg=val&quot;  传递参数  &ndash;user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &quot;Content-Type:application/json&quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &quot;Content-Type: application/json;charset=UTF-8&quot; -d &lsquo;{&quot;username&quot;:&quot;15880777595&quot;,&quot;pwd&quot;:&quot;1&quot;}&rsquo; &ndash;cookie-jar /data/cdn/resource/curl-cookie <a href="http://live">http://live</a>.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授">加藤鹰-秘技传授</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.03.20">2017.03.20</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/sex">sex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-加藤鹰-秘技传授 接吻  搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧  爱抚 耳朵  待定  舌技  待定  指技  待定  异物插入  待定  插入  待定&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema">MYSQL.Information_schema</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.26">2017.02.26</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema"> &raquo;</a>
 </article>
 
         

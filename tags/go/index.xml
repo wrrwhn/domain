@@ -34,12 +34,36 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
     
     <item>
       <title>Go.并行&amp;并发 </title>
+      <link>https://wrrwhn.github.io/domain/post/go.goruntime/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.goruntime/</guid>
+      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+    </item>
+    
+    <item>
+      <title>Go.并行&amp;并发 </title>
       <link>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</link>
       <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
       <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
  并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+    </item>
+    
+    <item>
+      <title>Go.Upload.Qiniu</title>
+      <link>https://wrrwhn.github.io/domain/post/go.upload.qiniu/</link>
+      <pubDate>Thu, 07 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.upload.qiniu/</guid>
+      <description>[TOC]
+描述  将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板  参考  Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard  需求  将链接中的图片等本地保存后，再重新上传生成链接 命令行可全局快速调用，考虑结合 wox 等工具 快速选择多个文件等 文件夹仅操作当层  测试  单文件 ``` go run main.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg  ![76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg][http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg]
+ - 文件夹  go run main.go -path=D:\data\soft\OneDrive\Documents\Write\work\云开
+[人员列表.xls][http://otzm88f21.bkt.clouddn.com/a.xls] [六步搞定实地辅导-20170822.md][http://otzm88f21.bkt.clouddn.com/b.md] [人员列表.txt][http://otzm88f21.bkt.clouddn.com/c.txt]
+ - Exe 方式调用[**异常**]  go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg
+[新建 Microsoft PowerPoint 演示文稿.pptx][http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx] uplaod.exe%!(EXTRA string=http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe) ```</description>
     </item>
     
     <item>
@@ -70,6 +94,16 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
       <guid>https://wrrwhn.github.io/domain/post/go.nsq/</guid>
       <description>[TOC]
 [NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 --mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.</description>
+    </item>
+    
+    <item>
+      <title>Go.GPM</title>
+      <link>https://wrrwhn.github.io/domain/post/go.gpm/</link>
+      <pubDate>Sun, 23 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.gpm/</guid>
+      <description>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm &amp;ndash;no-check-certificate &amp;amp;&amp;amp; chmod +x gpm &amp;amp;&amp;amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.</description>
     </item>
     
     <item>

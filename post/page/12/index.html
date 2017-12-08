@@ -46,7 +46,212 @@
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic">Redis.Basic</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关">HTTP.协议相关</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/http">http</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST <a href="http://dev-p.yunkai.com/api/resource/upload">http://dev-p.yunkai.com/api/resource/upload</a> HTTP/1.1  Header 头文件  Accept: application/json, text/plain, <em>/</em> Content-Type: multipart/form-data; boundary=&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;7e016f3be0a4a Referer: <a href="http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas">http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas</a> Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;7e016f3be0a4a Content-Disposition: form-data; name=&quot;file&quot;; filename=&quot;B2283659A4B9302BE09FE2EC97690382.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范">MYSQL.开发规范</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
+例 CREATE DATABASE test CHARACTER SET &lsquo;utf8&rsquo; COLLATE &lsquo;utf8_general_ci&rsquo;;
+  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
+列 列名称命名采用英文单词或缩写，关联具体业务
+ 尽量不允许为 Null，用默认值代替
+例 FetionUser.FU<em>TableName.ColName
+  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]</em>[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &gt; 9520 ORDER BY id ASC LIMIT 20;  !&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/markdown/" title="Markdown">Markdown</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/markdown">markdown</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>目录 [TOC]
+标题 二级标题 ####### 最大支持六级标题
+注：序号和*号，与内容之间均需要一个空格
+ 列表1 列表2 列表3   无序列表 无序列表  无序列表缩进  无序列表  字体支持很多样式，比如加粗、*斜体*、删除线等特别样式
+当然也可以引用名人名言 &gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦
+百度
+代码格式表示
+ for(var i= 0; i&lt; count; i++)  表格 |为知| md| |-|-| |WizNote|Markdown|
+公式啊！！！ $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+st=&gt;start: Start:&gt;<a href="http://www.google.com[blank">http://www.google.com[blank</a>] e=&gt;end:&gt;<a href="http://www.google.com">http://www.google.com</a> op1=&gt;operation: My Operation sub1=&gt;subroutine: My Subroutine cond=&gt;condition: Yes or No?:&gt;<a href="http://www.google.com">http://www.google.com</a> io=&gt;inputoutput: catch something&hellip; st-&gt;op1-&gt;cond cond(yes)-&gt;io-&gt;e cond(no)-&gt;sub1(right)-&gt;op1  Title: <a href="http://bramp.github.io/js-sequence-diagrams/">教程可以看</a> A-&gt;B: 【备注演示】 Note left of A: 此轮回应前\nA 左侧备注 Note over A: 此轮 A 线上的备注 Note right of A: 此轮回应前A 右侧备注 Note over A,B:此轮回应前横跨 AB 两线的备注 A-&gt;B: 【线型演示】 A-&gt;B: 实线三角标 B&ndash;&gt;A: 虚线三角标 A-&gt;&gt;B: 实线角标 B&ndash;&gt;&gt;A: 虚线角标&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/markdown/" title="Markdown"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/spring.basic/" title="Spring.Basic">Spring.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/spring">spring</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
+public interface Greeting { void sayHello(String name); }  implement
+public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&quot;Hello! &quot; + name); after(); } private void before() { System.out.println(&quot;Before&quot;); } private void after() { System.out.println(&quot;After&quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/spring.basic/" title="Spring.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 文章来源 Spring Data JPA - Reference Documentation
+学习整理 Basic Example Entity @Entity @Table(name = &quot;user&quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &quot;user_name&quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&lt;User, Long&gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&lt;User&gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &quot;com.yunkai&quot;) @EntityScan(basePackages = &quot;com.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/springboot.jpa/" title="SpringBoot.JPA"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a> xsi:schemaLocation=&quot;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</a> &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.midgetontoes&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;properties&gt; &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;executions&gt; &lt;execution&gt; &lt;goals&gt; &lt;goal&gt;repackage&lt;/goal&gt; &lt;/goals&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&quot;/&quot;) String home() { return &quot;Hello World!&quot;; } public static void main(String[] args) throws Exception { SpringApplication.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm">Storm</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/storm">storm</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
+进程间通信协议 Connection
+ recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
+ bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
+ 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
+ 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/sublime">sublime</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
 
@@ -54,136 +259,42 @@
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/redis">redis</a>
+        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
         
     
 
 </span>
 </footer>
 
-    <p>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic"> &raquo;</a>
+    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术">Java.常用技术</a></h1>
+<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
 
     &middot; 
         
         <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/java">java </a>
+        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
         
     
 
 </span>
 </footer>
 
-    <p>参考  <a href="http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/">http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/</a> <a href="http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html">http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html</a> <a href="http://ifeve.com/locks/">http://ifeve.com/locks/</a>  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&rdquo;/&ldquo;代表Web应用的跟目录， &ldquo;./&rdquo; 代表当前目录,&ldquo;../&ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
-获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&ldquo;？&rdquo;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&rdquo;&amp;ldquo;) //站点绝对路径 application.getRealPath(&ldquo;&rdquo;) //JSP界面使用 ServletContext().getRealPath(&ldquo;&rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&ldquo;&rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&ldquo;&rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&ldquo;&rdquo;).getPath()  返回字串&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/maven/" title="Maven">Maven</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/maven">maven</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-部署安装 下载地址  <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
-各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
- clean remove all files generated by the previous build
- post-clean executes processes needed to finalize the project cleaning
-Default Lifecycle validate validate the project is correct and all necessary information is available.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/maven/" title="Maven"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/dwr/" title="DWR">DWR</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/dwr">dwr</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &lt;servlet-mapping&gt; &lt;servlet-name&gt;springServlet&lt;/servlet-name&gt; &lt;url-pattern&gt;/dwr/*&lt;/url-pattern&gt; &lt;/servlet-mapping&gt;  springmvc.xml &lt;!&ndash; DWR3.0配置 &ndash;&gt; &lt;!&ndash; 打开dwr的控制器 &ndash;&gt; &lt;dwr:controller id=&quot;dwrController&quot; debug=&quot;true&quot; &gt; &lt;dwr:config-param name=&quot;allowScriptTagRemoting&quot; value=&quot;true&quot; /&gt; &lt;dwr:config-param name=&quot;crossDomainSessionSecurity&quot; value=&quot;false&quot; /&gt; &lt;dwr:config-param name=&quot;activeReverseAjaxEnabled&quot; value=&quot;true&quot;/&gt; &lt;/dwr:controller&gt; &lt;dwr:url-mapping/&gt; &lt;bean class=&quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&quot;&gt; &lt;property name=&quot;alwaysUseFullPath&quot; value=&quot;true&quot;/&gt; &lt;property name=&quot;mappings&quot;&gt; &lt;props&gt; &lt;prop key=&quot;/dwr/*<em>/</em>&quot;&gt;dwrController&lt;/prop&gt; &lt;/props&gt; &lt;/property&gt; &lt;/bean&gt; &lt;!&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/dwr/" title="DWR"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/regex/" title="Regex">Regex</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/regex">regex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 + 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/regex/" title="Regex"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/spring.cache/" title="Spring.Cache">Spring.Cache</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/spring">spring</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/cache">cache</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考链接  <a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a>  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;]) @CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/spring.cache/" title="Spring.Cache"> &raquo;</a>
+    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
+The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
+Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
+  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
+ 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
+Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
 </article>
 
         
@@ -194,9 +305,11 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 	<a class="btn newer" href="/domain/post/page/11/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 12  12</p>
+	<p class="counter"> 12  13</p>
 
 
+	
+	<a class="btn older" href="/domain/post/page/13/" title=""> &raquo;</a>
 	
 
 </nav>

@@ -46,6 +46,177 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/sublime">sublime</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
+The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
+Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
+  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
+ 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
+Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic">Redis.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/redis">redis</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/redis.basic/" title="Redis.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术">Java.常用技术</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  <a href="http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/">http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/</a> <a href="http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html">http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html</a> <a href="http://ifeve.com/locks/">http://ifeve.com/locks/</a>  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&rdquo;/&ldquo;代表Web应用的跟目录， &ldquo;./&rdquo; 代表当前目录,&ldquo;../&ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
+获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&ldquo;？&rdquo;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&rdquo;&amp;ldquo;) //站点绝对路径 application.getRealPath(&ldquo;&rdquo;) //JSP界面使用 ServletContext().getRealPath(&ldquo;&rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&ldquo;&rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&ldquo;&rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&ldquo;&rdquo;).getPath()  返回字串&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/maven/" title="Maven">Maven</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/maven">maven</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+部署安装 下载地址  <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
+各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
+ clean remove all files generated by the previous build
+ post-clean executes processes needed to finalize the project cleaning
+Default Lifecycle validate validate the project is correct and all necessary information is available.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/maven/" title="Maven"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/dwr/" title="DWR">DWR</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/java">java</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/dwr">dwr</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &lt;servlet-mapping&gt; &lt;servlet-name&gt;springServlet&lt;/servlet-name&gt; &lt;url-pattern&gt;/dwr/*&lt;/url-pattern&gt; &lt;/servlet-mapping&gt;  springmvc.xml &lt;!&ndash; DWR3.0配置 &ndash;&gt; &lt;!&ndash; 打开dwr的控制器 &ndash;&gt; &lt;dwr:controller id=&quot;dwrController&quot; debug=&quot;true&quot; &gt; &lt;dwr:config-param name=&quot;allowScriptTagRemoting&quot; value=&quot;true&quot; /&gt; &lt;dwr:config-param name=&quot;crossDomainSessionSecurity&quot; value=&quot;false&quot; /&gt; &lt;dwr:config-param name=&quot;activeReverseAjaxEnabled&quot; value=&quot;true&quot;/&gt; &lt;/dwr:controller&gt; &lt;dwr:url-mapping/&gt; &lt;bean class=&quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&quot;&gt; &lt;property name=&quot;alwaysUseFullPath&quot; value=&quot;true&quot;/&gt; &lt;property name=&quot;mappings&quot;&gt; &lt;props&gt; &lt;prop key=&quot;/dwr/*<em>/</em>&quot;&gt;dwrController&lt;/prop&gt; &lt;/props&gt; &lt;/property&gt; &lt;/bean&gt; &lt;!&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/dwr/" title="DWR"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/regex/" title="Regex">Regex</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>

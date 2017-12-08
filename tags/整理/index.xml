@@ -44,6 +44,38 @@
     </item>
     
     <item>
+      <title>Java.Native</title>
+      <link>https://wrrwhn.github.io/domain/post/java.native/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.native/</guid>
+      <description> 参考  http://blog.csdn.net/xw13106209/article/details/6989415 http://www.iteye.com/topic/304594  概念  Jni  sun 提供 支持通过与 c/c++ 交互调用系统的相关技术  Jawin  sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法  Jacob  sourceforge 提供 提供调用 microsoft 的 com 对象方法  补充        开发流程  Java 调用类 javah 生成 c/c++ 原生函数头文件 c/c++ 中实现原生函数 将项目依赖的所有*原生库和资源*加入至 java 项目的 java.library.path 生成 java 程序 发布 java 应用和 dll 库  </description>
+    </item>
+    
+    <item>
+      <title>Java.泛型</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E6%B3%9B%E5%9E%8B/</guid>
+      <description>[TOC]
+泛型 与 C++ 的比较  优点  泛型实现参数化类型 创建泛型的一个实例时，编译器负责转型并保证类型的正确性  缺点  其它语言能做、好做的，java 中却不支持，难以实现  注
+ 理解泛型的边界！
+简单泛型  告诉编译器想使用类型，然后由编译器帮你处理一切细节
+ 元组：一组对象打包存储于一单一对象
+泛型接口 事例
+public interface Generator&amp;lt;T&amp;gt; { T next(); }  基本类型无法作为类型参数
+泛型方法 事例
+public &amp;lt;T&amp;gt; void printClass(T t) { System.out.println(t.getClass().getName()); }  类型推断只对赋值操作有效
+泛型内部类 构建复杂模型 类型安全且可管理
+擦除的神秘之处 在泛型代码内部，无法获得任何有关泛型参数类型的信息
+ T extends class/interface
+ 于静态类型检查期后，所有泛型类型均被擦除，并替换为其非泛型上界
+ List&amp;lt;T&amp;gt; -&amp;gt; List &amp;lt;T&amp;gt; -&amp;gt; Object  使用擦除实现，唯一知道是在使用一个对象
+ List&amp;lt;String&amp;gt;= List&amp;lt;Object&amp;gt;= List List&amp;lt;Integer&amp;gt;= List&amp;lt;Object&amp;gt;= List  与 C++ 对比</description>
+    </item>
+    
+    <item>
       <title>Linux.Vimium</title>
       <link>https://wrrwhn.github.io/domain/post/linux.vimium/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
@@ -57,6 +89,15 @@
  http://www.phperz.com/article/15/1231/179223.html http://www.phperz.com/article/15/1231/  gU 跳转至当前 URL 的最高层
  http://www.phperz.com/article/15/1231/179223.html http://www.phperz.com/  f 在当前标签页打开此标签页中的一个链接
   使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?</description>
+    </item>
+    
+    <item>
+      <title>PowerPoint.CoverExport</title>
+      <link>https://wrrwhn.github.io/domain/post/powerpoint.coverexport/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/powerpoint.coverexport/</guid>
+      <description> 文件法 实现  将 .pptx 文件后缀更新为 .zip 获取 /docProps/thumbnail.jpeg  缺点  仅适用于 .pptx  windows api + code 实现 环境要求&amp;amp; 版本限制  v4.0.30319  缺点  与「文件法」一致，导出图片尺寸过小  PPT 操作导出 - 79KB 1024x766 api 导出 - 24KB 960x720  部分 PPT 无缩略图，导出的均为 PPT 默认图片  OpenXML + code 现服务转换方式  高清无码  环境要求&amp;amp; 版本限制  v2.0.50727 安装有 Microsoft.PowerPoint  缺点  要求本地安装有指定以上版本 PPT  </description>
     </item>
     
     <item>
@@ -271,7 +312,7 @@ Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  
       <pubDate>Wed, 04 Oct 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/post/linux.nginx/</guid>
-      <description>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写 []()  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?</description>
+      <description>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?</description>
     </item>
     
     <item>
@@ -282,6 +323,16 @@ Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  
       <guid>https://wrrwhn.github.io/domain/post/linux.grep/</guid>
       <description>[TOC]
 Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep  格式  grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]  参数 匹配器选择  -E, --extended-regexp  扩展正则表达式 由 POSIX 指定  -F, --fixed-strings, --fixed-regexp  模式解析为固定字符串列表，以换行符分隔，任一匹配 弃用别名  -G, --basic-regexp  解析为基本正则表达式 默认配置  -P, --perl-regexp  模式解析为 Perl 正则表达式 开发阶段，会提示未实现的特性   匹配控制  -e PATTERN, --regexp=PATTERN  文本正则  -f FILE, --file=FILE  正则条件文本文件，以换行符分隔 空文件则匹配不到任何东西  -i, --ignore-case  忽略正则表达式和内容的字符大小写匹配限制  -v, --invert-match  反向匹配 输出正则匹配到的元素之外的信息  -w, --word-regexp  全字匹配  -x, --line-regexp  全行匹配  -y  -i 的弃用同义词   控制输出  -c, --count  输出匹配的各文件中的行数  --color[=WHEN], --colour[=WHEN]  在终端以颜色区分匹配字符串，以转义字符显示包围的相关分隔符等信息 默认根据系统参数 GREP_COLORS 显示，但目前已弃用，优先级降低  -L, --files-without-match  打印出每个输入文件名称 终止于第一条匹配数据  -l, --files-with-matches  同 -L 由 POSIX 指定  -m NUM, --max-count=NUM  最多输出 NUM 个匹配项  -o, --only-matching  仅打印匹配行，以换行符分隔  -q, --quiet, --silent  不打印标准输出 成功时以 0 状态退出，失败时以 非0 值退出  -s, --no-messages  不打印异常消息   输出前缀控制  -b, --byte-offset  每行输出，0字节偏移  -H, --with-filename  打印每个匹配的文件名  -h, --no-filename  输出时忽略文件前缀 默认  --label=LABEL  以实际标准输入作为  文件的输入 gzip -cd foo.</description>
+    </item>
+    
+    <item>
+      <title>Go.并行&amp;并发 </title>
+      <link>https://wrrwhn.github.io/domain/post/go.goruntime/</link>
+      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.goruntime/</guid>
+      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
     </item>
     
     <item>
@@ -333,6 +384,20 @@ query { hero { name } droid(id: &amp;quot;2000&amp;quot;) { name } }  Mutation `
       
       <guid>https://wrrwhn.github.io/domain/post/windows.right-click.menu/</guid>
       <description> 右键菜单绑定 参考  Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令  右键上传  修改注册表  结构  HKEY_CLASSES_ROOT  *  shell  （╯‵□′）╯︵┴─┴  新增「项」，其中名称为右键菜单要展示的名称 command  新增「项」，对应点击后执行的内容  默认  cmd.exe /k upload.exe -path=%1 &amp;amp;&amp;amp; exit  cmd.exe /k XXXXX  在 cmd 中执行 XXXXX 指令 &amp;amp;&amp;amp; 于前一条指令执行完成后执行           示例       </description>
+    </item>
+    
+    <item>
+      <title>Go.Upload.Qiniu</title>
+      <link>https://wrrwhn.github.io/domain/post/go.upload.qiniu/</link>
+      <pubDate>Thu, 07 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.upload.qiniu/</guid>
+      <description>[TOC]
+描述  将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板  参考  Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard  需求  将链接中的图片等本地保存后，再重新上传生成链接 命令行可全局快速调用，考虑结合 wox 等工具 快速选择多个文件等 文件夹仅操作当层  测试  单文件 ``` go run main.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg  ![76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg][http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg]
+ - 文件夹  go run main.go -path=D:\data\soft\OneDrive\Documents\Write\work\云开
+[人员列表.xls][http://otzm88f21.bkt.clouddn.com/a.xls] [六步搞定实地辅导-20170822.md][http://otzm88f21.bkt.clouddn.com/b.md] [人员列表.txt][http://otzm88f21.bkt.clouddn.com/c.txt]
+ - Exe 方式调用[**异常**]  go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg
+[新建 Microsoft PowerPoint 演示文稿.pptx][http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx] uplaod.exe%!(EXTRA string=http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe) ```</description>
     </item>
     
     <item>
@@ -433,6 +498,17 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
       <guid>https://wrrwhn.github.io/domain/post/linux.tomcat/</guid>
       <description>[TOC]
 参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.</description>
+    </item>
+    
+    <item>
+      <title>Mysql.SELECT-INTO</title>
+      <link>https://wrrwhn.github.io/domain/post/mysql.select-into/</link>
+      <pubDate>Tue, 15 Aug 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/mysql.select-into/</guid>
+      <description>[TOC]
+参考  SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE  命令  SELECT ... INTO
+ VAR_LIST  将栏目值存储至变量 栏目值需与变量名数据一致 仅返回一条记录  无数据返回，则报 Error（1329） 多行记录返回，则报 Error（1172） 建议使用 LIMIT 1   OUTFILE  将选择栏目值存储至文件 存储于服务器，需持有文件权限 文件路径不能为已存在文件  客户端执行 mysql -e &amp;quot;SELECT ...&amp;quot; &amp;gt; file_name 导出文件  文件格式使用情况  .txt  数据会以 TAB 间隔  csv  csv格式，但数据均存储至同一单元格内    DUMPFILE  将单行数据以任意形式文件导出   OUTPUT FORMAT</description>
     </item>
     
     <item>
@@ -544,6 +620,16 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
       <guid>https://wrrwhn.github.io/domain/post/linux.make/</guid>
       <description>[TOC]
 Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.</description>
+    </item>
+    
+    <item>
+      <title>Go.GPM</title>
+      <link>https://wrrwhn.github.io/domain/post/go.gpm/</link>
+      <pubDate>Sun, 23 Jul 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/go.gpm/</guid>
+      <description>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm &amp;ndash;no-check-certificate &amp;amp;&amp;amp; chmod +x gpm &amp;amp;&amp;amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.</description>
     </item>
     
     <item>

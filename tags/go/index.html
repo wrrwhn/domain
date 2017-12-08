@@ -96,6 +96,31 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/go.goruntime/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/goruntime">goruntime </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.goruntime/" title="Go.并行&amp;并发 "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
@@ -116,6 +141,35 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
     <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
  并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.upload.qiniu/" title="Go.Upload.Qiniu">Go.Upload.Qiniu</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.07">2017.09.07</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/qiniu">qiniu</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+描述  将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板  参考  Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard  需求  将链接中的图片等本地保存后，再重新上传生成链接 命令行可全局快速调用，考虑结合 wox 等工具 快速选择多个文件等 文件夹仅操作当层  测试  单文件 <code>go run main.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg  ![76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg][http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg]
+ - 文件夹  go run main.go -path=D:\data\soft\OneDrive\Documents\Write\work\云开
+[人员列表.xls][http://otzm88f21.bkt.clouddn.com/a.xls] [六步搞定实地辅导-20170822.md][http://otzm88f21.bkt.clouddn.com/b.md] [人员列表.txt][http://otzm88f21.bkt.clouddn.com/c.txt]
+ - Exe 方式调用[**异常**]  go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg
+[新建 Microsoft PowerPoint 演示文稿.pptx][http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx] uplaod.exe%!(EXTRA string=http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe)</code>&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.upload.qiniu/" title="Go.Upload.Qiniu"> &raquo;</a>
 </article>
 
         
@@ -190,6 +244,29 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM">Go.GPM</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.23">2017.07.23</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.gpm/" title="Go.GPM"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
@@ -208,79 +285,6 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
     <p>[TOC]
 Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
- 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
- 操作返回值
-// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
- 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.26">2017.04.26</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &quot;autocomplete_builtins&quot;: true, &quot;autocomplete_closures&quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime"> &raquo;</a>
 </article>
 
         

@@ -265,6 +265,24 @@
     </item>
     
     <item>
+      <title>Powerpoint</title>
+      <link>https://wrrwhn.github.io/domain/tags/powerpoint/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/tags/powerpoint/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Qiniu</title>
+      <link>https://wrrwhn.github.io/domain/tags/qiniu/</link>
+      <pubDate>Thu, 07 Sep 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/tags/qiniu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Redis</title>
       <link>https://wrrwhn.github.io/domain/tags/redis/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
@@ -279,6 +297,15 @@
       <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/tags/regex/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Service Mesh</title>
+      <link>https://wrrwhn.github.io/domain/tags/service-mesh/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/tags/service-mesh/</guid>
       <description></description>
     </item>
     
@@ -393,7 +420,7 @@
     <item>
       <title>中国</title>
       <link>https://wrrwhn.github.io/domain/tags/%E4%B8%AD%E5%9B%BD/</link>
-      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 04 Dec 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/tags/%E4%B8%AD%E5%9B%BD/</guid>
       <description></description>
@@ -420,7 +447,7 @@
     <item>
       <title>厦门</title>
       <link>https://wrrwhn.github.io/domain/tags/%E5%8E%A6%E9%97%A8/</link>
-      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 04 Dec 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/tags/%E5%8E%A6%E9%97%A8/</guid>
       <description></description>
@@ -501,7 +528,7 @@
     <item>
       <title>旅游</title>
       <link>https://wrrwhn.github.io/domain/tags/%E6%97%85%E6%B8%B8/</link>
-      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 04 Dec 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/tags/%E6%97%85%E6%B8%B8/</guid>
       <description></description>
@@ -589,6 +616,15 @@
     </item>
     
     <item>
+      <title>视频</title>
+      <link>https://wrrwhn.github.io/domain/tags/%E8%A7%86%E9%A2%91/</link>
+      <pubDate>Wed, 08 Feb 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/tags/%E8%A7%86%E9%A2%91/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>调酒</title>
       <link>https://wrrwhn.github.io/domain/tags/%E8%B0%83%E9%85%92/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
@@ -621,6 +657,15 @@
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>音频</title>
+      <link>https://wrrwhn.github.io/domain/tags/%E9%9F%B3%E9%A2%91/</link>
+      <pubDate>Wed, 08 Feb 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/tags/%E9%9F%B3%E9%A2%91/</guid>
       <description></description>
     </item>
     
