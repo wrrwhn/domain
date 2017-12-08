@@ -26,6 +26,38 @@
     </item>
     
     <item>
+      <title>Java.Native</title>
+      <link>https://wrrwhn.github.io/domain/post/java.native/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.native/</guid>
+      <description> 参考  http://blog.csdn.net/xw13106209/article/details/6989415 http://www.iteye.com/topic/304594  概念  Jni  sun 提供 支持通过与 c/c++ 交互调用系统的相关技术  Jawin  sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法  Jacob  sourceforge 提供 提供调用 microsoft 的 com 对象方法  补充        开发流程  Java 调用类 javah 生成 c/c++ 原生函数头文件 c/c++ 中实现原生函数 将项目依赖的所有*原生库和资源*加入至 java 项目的 java.library.path 生成 java 程序 发布 java 应用和 dll 库  </description>
+    </item>
+    
+    <item>
+      <title>Java.泛型</title>
+      <link>https://wrrwhn.github.io/domain/post/java.%E6%B3%9B%E5%9E%8B/</link>
+      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/java.%E6%B3%9B%E5%9E%8B/</guid>
+      <description>[TOC]
+泛型 与 C++ 的比较  优点  泛型实现参数化类型 创建泛型的一个实例时，编译器负责转型并保证类型的正确性  缺点  其它语言能做、好做的，java 中却不支持，难以实现  注
+ 理解泛型的边界！
+简单泛型  告诉编译器想使用类型，然后由编译器帮你处理一切细节
+ 元组：一组对象打包存储于一单一对象
+泛型接口 事例
+public interface Generator&amp;lt;T&amp;gt; { T next(); }  基本类型无法作为类型参数
+泛型方法 事例
+public &amp;lt;T&amp;gt; void printClass(T t) { System.out.println(t.getClass().getName()); }  类型推断只对赋值操作有效
+泛型内部类 构建复杂模型 类型安全且可管理
+擦除的神秘之处 在泛型代码内部，无法获得任何有关泛型参数类型的信息
+ T extends class/interface
+ 于静态类型检查期后，所有泛型类型均被擦除，并替换为其非泛型上界
+ List&amp;lt;T&amp;gt; -&amp;gt; List &amp;lt;T&amp;gt; -&amp;gt; Object  使用擦除实现，唯一知道是在使用一个对象
+ List&amp;lt;String&amp;gt;= List&amp;lt;Object&amp;gt;= List List&amp;lt;Integer&amp;gt;= List&amp;lt;Object&amp;gt;= List  与 C++ 对比</description>
+    </item>
+    
+    <item>
       <title>Java.Log4j</title>
       <link>https://wrrwhn.github.io/domain/post/java.log4j/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>

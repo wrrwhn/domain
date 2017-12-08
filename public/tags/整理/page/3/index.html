@@ -46,6 +46,84 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结">项目发布总结</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E5%8F%91%E5%B8%83">发布</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>域名相关 购买：  购买网站  万网 www.net.cn  示例：
+ fzsfxd.com 有限时间三年，金额为149元
+服务器备案  若使用国内服务器，且要使用购买的域名，均需要进行备案，周期大概要半个月（个人，较快）
+ 介绍
+ <a href="http://beian.aliyun.com">http://beian.aliyun.com</a>  流程
+ 网站信息、相关企业个人身份证等相关资质填写。 申报人拍照，不允许 PS，其中背景需要为指定幕布（可免费向阿里申请） 网络管理局审批，较慢。   服务器相关 购买  购买网站：阿里云 <a href="http://www.aliyun.com/">http://www.aliyun.com/</a> 配置
+  环境配置  使用镜像市场中 【Java 多版本环境】 -&gt; 有坑！！！ 每种东西都留有坑，自己在使用过程中，除了 java 没动，其它 tomcat / mysql/ nginx 都重新安装配置过，囧。后面看它描述，帮忙发布调优啥的都要收费！！
+  项目发布和域名解析  域名解析：进入域名解析界面，配置服务器 IP 地址，如 115.28.146.6 项目发布：Tomcat环境发布，本次将服务名称调整为 Root，以便输入 IP 端口后直接访问 Nginx：配置域名和指定服务的绑定，配置如下（安装使用 yum 安装）    注  其中 mysql/ tomcat/nginx 使用时都要注意端口是否有开放   项目收费  个人与企业进行交易，对方可能会要求你提供发票，甚至于企业开具的网站开发的增值税（或非增值）发票。  解决方法  找公司代开，如琴峰，但可能遇到情况是像琴峰他们公司，该操作会影响财务税点啥的，是不愿意操作。 找记账公司代开，但税点要求6，且无若金额太小别人是不鸟的。（此次金额5K）  最好的办法  事先讲好，个人性质，将不提供发票来着。&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/tomcat.service/" title="Tomcat.Service">Tomcat.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.09">2017.11.09</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/tomcat">tomcat</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/tomcat.service/" title="Tomcat.Service"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/tomcat.-accesslog/" title="Tomcat. AccessLog ">Tomcat. AccessLog </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.21">2017.10.21</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/tomcat">tomcat</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  设置请求日志中的日志输出格式  详解 位置  conf.server.xml  value.className= *.AccessLogValve   参数  className  执行类  org.apache.catalina.valves.AccessLogValve  默认  org.apache.catalina.valves.FastCommonAccessLogValve  仅支持 common 和 combined patterns
+    directory
+ 产生文件所存放目录的[绝对|相对]路径  相对于 $CATALINA_HOME 默认为 logs   pattern
+ %a - 远程IP地址 %A - 本地IP地址 %b - 发送的字节数(Bytes sent), 不包括HTTP headers的字节，如果为0则展示&rsquo;-&rsquo; %B - 发送的字节数(Bytes sent), 不包括HTTP headers的字节 %h - 远程主机名称(如果resolveHosts为false则展示IP) %H - 请求协议 %l - 远程用户名，始终为&rsquo;-&lsquo;(Remote logical username from identd) %m - 请求的方法(GET, POST等) %p - 接受请求的本地端口 %q - 查询字符串，如果存在，有一个前置的&rsquo;?&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/tomcat.-accesslog/" title="Tomcat. AccessLog "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/linux.xargs/" title="Linux.XArgs">Linux.XArgs</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.10.16">2017.10.16</time>
@@ -105,7 +183,7 @@
 </span>
 </footer>
 
-    <p>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写 []()  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?&hellip;</p>
+    <p>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/linux.nginx/" title="Linux.Nginx "> &raquo;</a>
 </article>
 
@@ -130,6 +208,31 @@
     <p>[TOC]
 Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep  格式  grep [OPTIONS] PATTERN [FILE&hellip;] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE&hellip;]  参数 匹配器选择  -E, &ndash;extended-regexp  扩展正则表达式 由 POSIX 指定  -F, &ndash;fixed-strings, &ndash;fixed-regexp  模式解析为固定字符串列表，以换行符分隔，任一匹配 弃用别名  -G, &ndash;basic-regexp  解析为基本正则表达式 默认配置  -P, &ndash;perl-regexp  模式解析为 Perl 正则表达式 开发阶段，会提示未实现的特性   匹配控制  -e PATTERN, &ndash;regexp=PATTERN  文本正则  -f FILE, &ndash;file=FILE  正则条件文本文件，以换行符分隔 空文件则匹配不到任何东西  -i, &ndash;ignore-case  忽略正则表达式和内容的字符大小写匹配限制  -v, &ndash;invert-match  反向匹配 输出正则匹配到的元素之外的信息  -w, &ndash;word-regexp  全字匹配  -x, &ndash;line-regexp  全行匹配  -y  -i 的弃用同义词   控制输出  -c, &ndash;count  输出匹配的各文件中的行数  &ndash;color[=WHEN], &ndash;colour[=WHEN]  在终端以颜色区分匹配字符串，以转义字符显示包围的相关分隔符等信息 默认根据系统参数 GREP_COLORS 显示，但目前已弃用，优先级降低  -L, &ndash;files-without-match  打印出每个输入文件名称 终止于第一条匹配数据  -l, &ndash;files-with-matches  同 -L 由 POSIX 指定  -m NUM, &ndash;max-count=NUM  最多输出 NUM 个匹配项  -o, &ndash;only-matching  仅打印匹配行，以换行符分隔  -q, &ndash;quiet, &ndash;silent  不打印标准输出 成功时以 0 状态退出，失败时以 非0 值退出  -s, &ndash;no-messages  不打印异常消息   输出前缀控制  -b, &ndash;byte-offset  每行输出，0字节偏移  -H, &ndash;with-filename  打印每个匹配的文件名  -h, &ndash;no-filename  输出时忽略文件前缀 默认  &ndash;label=LABEL  以实际标准输入作为  文件的输入 gzip -cd foo.&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/linux.grep/" title="Linux.Grep"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/go.goruntime/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/goruntime">goruntime </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/go.goruntime/" title="Go.并行&amp;并发 "> &raquo;</a>
 </article>
 
         
@@ -180,97 +283,6 @@ GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language gra
 query { hero { name } droid(id: &quot;2000&quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
   { &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;, &ldquo;review&rdquo;: { &ldquo;stars&rdquo;: 5, &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/graphql/" title="GraphQL"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/wechat.export/" title="Wechat.Export">Wechat.Export</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/wechat">wechat</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder
-流程  将语音收藏 在手机完整收听 使用目录管理搜索提取  ./sdcard/tecent/MicroMsg/ 搜索 .silk 文件  拷贝至电脑 使用 silk2mp3 工具将音频*转换*为 mp3 格式文件  注意  SILK v3  为 skype 向第三方开发人员或硬件制造商提供的免版税谁的 Silk 宽音频编码器 文件更为精简  xxx.silk 18KB xxx.mp3 189KB&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/wechat.export/" title="Wechat.Export"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.error/" title="Mysql.Error">Mysql.Error</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.12">2017.09.12</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.error/" title="Mysql.Error"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/windows.right-click.menu/" title="右键菜单绑定">右键菜单绑定</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.08">2017.09.08</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8">注册表</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>右键菜单绑定 参考  Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令  右键上传  修改注册表  结构  HKEY_CLASSES_ROOT  *  shell  （╯‵□′）╯︵┴─┴  新增「项」，其中名称为右键菜单要展示的名称 command  新增「项」，对应点击后执行的内容  默认  cmd.exe /k upload.exe -path=%1 &amp;&amp; exit  cmd.exe /k XXXXX  在 cmd 中执行 XXXXX 指令 &amp;&amp; 于前一条指令执行完成后执行           示例&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/windows.right-click.menu/" title="右键菜单绑定"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/herman-miller/" title="Herman Miller ">Herman Miller </a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.01">2017.09.01</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E5%93%81%E7%89%8C">品牌</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Herman Miller 参考  Herman Miller 官网  里程碑  60s  行动式办公室  Action Office Robert Propst 开放式办公屏风系统   1976  Ergon  1984  Equa  1994  Aeron 网椅  近期  Embody   推荐 Aeron  价位  天猫 Herman Miller 新款 Aeron【高端配置】 天猫 Herman Miller Aeron 座椅 标准配置（骶骨承托） 京东 Herman Miller 新款 Aeron【高端配置】-14天内发货 抛光底座/碳灰织物 大号 京东 Herman Miller Aeron 座椅 标准配置（骶骨承托） 碳黑色 中号  参考  Aeron座椅  欣赏        Embody  价位  天猫 Herman Miller Embody 座椅 标准配置【Rhythm织物】 京东 Herman Miller Embody 座椅 【Rhythm织物】 Rhythm织物\纯黑色 钛合金底座/白框  参考  Embody座椅  欣赏        T2  价位  [暂无]()  参考  T2  欣赏        Envelop办公桌  价位  天猫 Herman Miller Envelop 书桌【脚垫\部分现货】  参考  Envelop办公桌  欣赏       产品线 座椅  参考  座椅  系列  工作椅 主管椅 多用途/客椅 堆叠座椅 高脚凳 休闲座椅 公共座椅 长凳 户外座椅   工作空间  参考  工作空间  系列  个人工作站 私人办公室 办公桌 协作式家具 分隔屏风   桌子  参考  桌子  系列  会议桌 高度可调桌子 餐桌 多功能桌 户外桌子   储物  参考  储物  系列  配件  参考  配件  系列  人体工程学配件 照明 办公桌配件 装饰品   经典系列  参考  HermanMiller Collection&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/herman-miller/" title="Herman Miller "> &raquo;</a>
 </article>
 
         
