@@ -445,3 +445,10 @@ location ~ ^/wechat-forum-dev/upload/(.*)\.(jpg|jpeg|png|gif)$ {
         rewrite /wechat-forum-dev/(.*) /$1 last;
 }
 ```
+
+### FFMPEG 推流报 499
+```
+proxy_http_version      1.1;
+proxy_request_buffering off;
+proxy_ignore_client_abort on;
+```

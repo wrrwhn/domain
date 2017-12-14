@@ -106,3 +106,14 @@ share = true
   - `-segment_time 10 './m3u8/’%03d.ts'`
     - 指定分割片段的时长，必须为延续时间段
     - 默认值为 2 秒，且分割不一定是精确的，除非给定指定时间上的参照流的关键帧
+
+### 定时请求代理
+- 指令
+  - `ffmpeg -re -i big.mp3 -f mp3 http://rtmp.com/proxy/dc6af2ec`
+- 解析
+  - `-re`
+    - 以本机帧速率来读取输入
+  - `-f mp3`
+    - 强制输入或输出的文件格式
+  - `http://rtmp.com/proxy/dc6af2ec`
+    - 代理请求接口
