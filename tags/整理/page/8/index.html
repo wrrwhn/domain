@@ -46,6 +46,51 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD">XSD</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/xsd">xsd</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：<a href="http://www.w3school.com.cn/schema/">http://www.w3school.com.cn/schema/</a> 手册：<a href="http://www.w3school.com.cn/schema/schema_elements_ref.asp">http://www.w3school.com.cn/schema/schema_elements_ref.asp</a> 验证：<a href="http://www.ltg.ed.ac.uk/~ht/xsv-status.html">http://www.ltg.ed.ac.uk/~ht/xsv-status.html</a> 实例：<a href="http://www.w3school.com.cn/schema/schema_example.asp">http://www.w3school.com.cn/schema/schema_example.asp</a>
+使用 XML结构 &lt;?xml version=&quot;1.0&quot;?&gt; &lt;note&gt; &lt;to&gt;George&lt;/to&gt; &lt;from&gt;John&lt;/from&gt; &lt;heading&gt;Reminder&lt;/heading&gt; &lt;body&gt;Don&rsquo;t forget the meeting!&lt;/body&gt; &lt;/note&gt;   定义 - note.xsd &lt;?xml version=&quot;1.0&quot;?&gt; &lt;xs:schema xmlns:xs=&quot;<a href="http://www.w3.org/2001/XMLSchema&quot;">http://www.w3.org/2001/XMLSchema&quot;</a> // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 指定默认命名空间 elementFormDefault=&quot;qualified&quot; &gt; &lt;xs:element name=&quot;note&quot;&gt; &lt;xs:complexType&gt; &lt;xs:sequence&gt; &lt;xs:element name=&quot;to&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;from&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;body&quot; type=&quot;xs:string&quot;/&gt; &lt;/xs:sequence&gt; &lt;/xs:complexType&gt; &lt;/xs:element&gt; &lt;/xs:schema&gt;  引用 &lt;?&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/xsd/" title="XSD"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数">Oracle.分析函数</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.15">2016.12.15</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>统计方面 合并  Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&hellip;)  按照COLX的降序层次逐层汇总合并  CUBE(COL1, COL2&hellip;)  排序  Rank() Over ([Partition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，但下一记录会空出其中的排名  Dense_rank() Over ([Patition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，之后数据接上一次序继续  Row_number() Over ([Partitionby ] [Order by ] [Nulls First/Last])  碰到相同数据时不做处理依照记录顺序依次递增  Ntile( ) Over ([Partition by ] [Order by ])  最值  [Min|Max]() Keep (Dense_rank First/Last [Partition by ] [Order by ])  MIN 用于确保返回唯一记录 KEEP 用于告知Oracle保留符合KEEP条件的记录 Dense_rank 固定写法，不可更改  Ratio_to_report(value)  Ratio_to_report(value)= value/ sum(value)   首/末记录  [First_value|Last_value|(Sum() Over ([Patition by ] [Order by ] Rows Between Preceding And Following ))  相邻记录比较  LAG(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LAG(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])  LEAD(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LEAD(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])   家族树  START WITH COL1= &lsquo;XXX&rsquo; CONNECT BY COL1= PRIOR COL2  语法  1&gt;语句顺序：SELECT&gt; FROM&gt; WHERE&gt; START WITH&gt; CONNECT BY&gt; ORDER BY 2&gt;PRIOR位置：在前（CONNECT BY PRIOR COL1=COL2），强制由根到叶自顶向上，置于后面则相反由叶到根 3&gt;WHERE可以排除树中个体，但无法排除其子孙或祖先 4&gt;CONNECT BY条件则可以排除个体及其后代信息 5&gt;CONNECT BY不以和WHERE子句中表连接使用  例子  SELECT LEVEL, NVL(B.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/angularjs.basic/" title="AngularJS.Basic">AngularJS.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
@@ -255,55 +300,6 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/springboot">springboot</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a> xsi:schemaLocation=&quot;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</a> &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.midgetontoes&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;properties&gt; &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;executions&gt; &lt;execution&gt; &lt;goals&gt; &lt;goal&gt;repackage&lt;/goal&gt; &lt;/goals&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&quot;/&quot;) String home() { return &quot;Hello World!&quot;; } public static void main(String[] args) throws Exception { SpringApplication.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm">Storm</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/storm">storm</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
-进程间通信协议 Connection
- recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
- bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
- 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
- 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/storm/" title="Storm"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -311,7 +307,7 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
 	<a class="btn newer" href="/domain/tags/%E6%95%B4%E7%90%86/page/7/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 8  9</p>
+	<p class="counter"> 8  10</p>
 
 
 	

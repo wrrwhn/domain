@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/</loc>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wrrwhn.github.io/domain/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8-%E5%90%8C%E5%AE%89.%E7%BE%8E%E9%A3%9F/</loc>
     <lastmod>2017-12-04T22:07:46+08:00</lastmod>
   </url>
@@ -811,6 +821,12 @@
   </url>
   
   <url>
+    <loc>https://wrrwhn.github.io/domain/tags/osi/</loc>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://wrrwhn.github.io/domain/tags/plugin/</loc>
     <lastmod>2017-06-28T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -818,7 +834,7 @@
   
   <url>
     <loc>https://wrrwhn.github.io/domain/post/</loc>
-    <lastmod>2017-12-04T22:07:46+08:00</lastmod>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -897,6 +913,12 @@
   <url>
     <loc>https://wrrwhn.github.io/domain/tags/tcp/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/tags/tcp/ip/</loc>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -986,7 +1008,7 @@
   
   <url>
     <loc>https://wrrwhn.github.io/domain/</loc>
-    <lastmod>2017-12-04T22:07:46+08:00</lastmod>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1004,7 +1026,7 @@
   
   <url>
     <loc>https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2017-11-29T22:07:46+08:00</lastmod>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1059,6 +1081,12 @@
   <url>
     <loc>https://wrrwhn.github.io/domain/tags/%E7%BC%96%E7%A8%8B%E6%80%9D%E6%83%B3/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://wrrwhn.github.io/domain/tags/%E7%BD%91%E7%BB%9C/</loc>
+    <lastmod>2017-12-08T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   

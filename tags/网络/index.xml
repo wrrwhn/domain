@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>网络 on 姚清居到此一游</title>
+    <link>https://wrrwhn.github.io/domain/tags/%E7%BD%91%E7%BB%9C/</link>
+    <description>Recent content in 网络 on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Fri, 08 Dec 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="https://wrrwhn.github.io/domain/tags/%E7%BD%91%E7%BB%9C/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>网络-七层协议</title>
+      <link>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Fri, 08 Dec 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</guid>
+      <description>参考  深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为谅用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等     表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信    会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP IPX   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  ATM FDDI  确定网络数据包的形式   产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.</description>
+    </item>
+    
+    <item>
+      <title>网络-四层协议</title>
+      <link>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/</link>
+      <pubDate>Fri, 08 Dec 2017 22:07:46 +0800</pubDate>
+      
+      <guid>https://wrrwhn.github.io/domain/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/</guid>
+      <description>参考  TCP/IP四层模型 深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 TCP/IP四层模型 OSI七层和TCP/IP四层的关系  定义  网络事实上的标准 又名 TCP/IP 协议族或 TCP/IP 协议栈  Transmission Control Protocol 传输控制协议 Internet Protocol 互联网协议      分层 应用层  定义  = OSI.应用层+ OSI.表示层 + OSI.会话层  示例  FTP/ TELNET/ HTTP   传输层  定义  = OSI.传输层 对数据进行缓存、报文的拆解和重组  示例  TCP  传输控制协议 transmission control protocol  UDP  用户数据报协议 user datagram protocol    网间层  定义 = OSI.</description>
+    </item>
+    
+  </channel>
+</rss>

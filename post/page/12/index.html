@@ -46,6 +46,57 @@
         
             <article class="post">
     
+<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术">常用技术</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&lsquo;IMG&rsquo;,&lsquo;SELECT&rsquo;,&lsquo;OBJECT&rsquo;,&lsquo;IFRAME&rsquo;); for(var j=0;j&lt;HideElementTemp.length;j++){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i++){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件+ 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" title="Git.命令小结">Git.命令小结</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+查看 分支状态  git status git branch
+ 分支列表 &ndash;merged：查看哪些分支被合并到当前分支 &ndash;no-merged：查看哪些分支未并合并到当前分支
+日志  git log
+ &ndash;pretty=oneline：单行显示 &ndash;graph：图形分支
+标签  git tag
+ &lt;&gt;：查看当前分支标签 -l &lsquo;v1.4*&lsquo;：查看所有匹配该正则的标签信息
+文件提交明细  git blame &lt;fileName&gt;：查看文件每行的提交 hash / author/ time
+  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &lt;branch&gt; ###新增提交 git add -A git commit -m &ldquo;commit content&rdquo; git push origin &lt;branch&gt;
+修改提交 git commit -a -m &ldquo;commit content&rdquo;&hellip;</p>
+    <a href="https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" title="Git.命令小结"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="https://wrrwhn.github.io/domain/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/" title="HTTP.协议相关">HTTP.协议相关</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
@@ -246,55 +297,6 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
     <p>[TOC]
 参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
     <a href="https://wrrwhn.github.io/domain/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/oracle">oracle</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
-The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
-Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
-  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
- 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
-Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
 </article>
 
         
