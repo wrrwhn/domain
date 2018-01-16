@@ -8,25 +8,25 @@
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
-        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
-        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
-        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
         
         <style>
         .site-header h2 .logo {
-        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
         }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           .site-header h2 .logo {
-            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
         }}
        .site-header {
-         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
          z-index: -1;
         }
         </style>
@@ -41,22 +41,44 @@
 
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/tcp">tcp</a>
+        <a href="http://domain.yqjdcyy.com/tags/tcp">tcp</a>
         
     
 
@@ -65,21 +87,21 @@
 
     <p>[TOC]
 Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -94,21 +116,21 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
  <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/article/15/1231/">http://www.phperz.com/article/15/1231/</a>  gU 跳转至当前 URL 的最高层
  <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
   使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -131,23 +153,23 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
  显示版本信息
 实例  chown -R appuser:appuser yao
  将 root 权限下文件夹分配给 appuser 用户&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.chown/" title="Linux.Chown"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.chown/" title="Linux.Chown"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.git/" title="Linux.Git">Linux.Git</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.git/" title="Linux.Git">Linux.Git</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/git">git</a>
+        <a href="http://domain.yqjdcyy.com/tags/git">git</a>
         
     
 
@@ -156,21 +178,21 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
 
     <p>[TOC]
 参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.git/" title="Linux.Git"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.git/" title="Linux.Git"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.scp/" title="Linux.Scp">Linux.Scp</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.scp/" title="Linux.Scp">Linux.Scp</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -179,21 +201,21 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
 
     <p>[TOC]
 参考  <a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html</a>  特点  scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷  rsync 快一点，但小文件多时会导致硬盘 I/O 非常高   格式  scp [参数] [原路径] [目标路径]  参数  -1  强制scp命令使用协议ssh1  -2  强制scp命令使用协议ssh2  -4  强制scp命令只使用IPv4寻址  -6  强制scp命令只使用IPv6寻址  -B  使用批处理模式（传输过程中不询问传输口令或短语）  -C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  -p  留原文件的修改时间，访问时间和访问权限。  -q  不显示传输进度条。  -r  递归复制整个目录。  -v  详细方式显示输出。 scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。  -c  cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。  -F  ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。  -i  identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。  -l  limit 限定用户所能使用的带宽，以Kbit/s为单位。  -o  ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，  -P  port 注意是大写的P, port是指定数据传输用到的端口号  -S  program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。   事例  scp -r root@10.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.scp/" title="Linux.Scp"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.scp/" title="Linux.Scp"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.xargs/" title="Linux.XArgs">Linux.XArgs</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.xargs/" title="Linux.XArgs">Linux.XArgs</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.10.16">2017.10.16</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -201,21 +223,21 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
 </footer>
 
     <p>参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d  指定输入的分隔符 -d\n  ``  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.xargs/" title="Linux.XArgs"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.xargs/" title="Linux.XArgs"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.nginx/" title="Linux.Nginx ">Linux.Nginx </a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.nginx/" title="Linux.Nginx ">Linux.Nginx </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.10.04">2017.10.04</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -223,21 +245,21 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
 </footer>
 
     <p>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.nginx/" title="Linux.Nginx "> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.nginx/" title="Linux.Nginx "> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.grep/" title="Linux.Grep">Linux.Grep</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.grep/" title="Linux.Grep">Linux.Grep</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.20">2017.09.20</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -246,21 +268,21 @@ chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
 
     <p>[TOC]
 Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep  格式  grep [OPTIONS] PATTERN [FILE&hellip;] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE&hellip;]  参数 匹配器选择  -E, &ndash;extended-regexp  扩展正则表达式 由 POSIX 指定  -F, &ndash;fixed-strings, &ndash;fixed-regexp  模式解析为固定字符串列表，以换行符分隔，任一匹配 弃用别名  -G, &ndash;basic-regexp  解析为基本正则表达式 默认配置  -P, &ndash;perl-regexp  模式解析为 Perl 正则表达式 开发阶段，会提示未实现的特性   匹配控制  -e PATTERN, &ndash;regexp=PATTERN  文本正则  -f FILE, &ndash;file=FILE  正则条件文本文件，以换行符分隔 空文件则匹配不到任何东西  -i, &ndash;ignore-case  忽略正则表达式和内容的字符大小写匹配限制  -v, &ndash;invert-match  反向匹配 输出正则匹配到的元素之外的信息  -w, &ndash;word-regexp  全字匹配  -x, &ndash;line-regexp  全行匹配  -y  -i 的弃用同义词   控制输出  -c, &ndash;count  输出匹配的各文件中的行数  &ndash;color[=WHEN], &ndash;colour[=WHEN]  在终端以颜色区分匹配字符串，以转义字符显示包围的相关分隔符等信息 默认根据系统参数 GREP_COLORS 显示，但目前已弃用，优先级降低  -L, &ndash;files-without-match  打印出每个输入文件名称 终止于第一条匹配数据  -l, &ndash;files-with-matches  同 -L 由 POSIX 指定  -m NUM, &ndash;max-count=NUM  最多输出 NUM 个匹配项  -o, &ndash;only-matching  仅打印匹配行，以换行符分隔  -q, &ndash;quiet, &ndash;silent  不打印标准输出 成功时以 0 状态退出，失败时以 非0 值退出  -s, &ndash;no-messages  不打印异常消息   输出前缀控制  -b, &ndash;byte-offset  每行输出，0字节偏移  -H, &ndash;with-filename  打印每个匹配的文件名  -h, &ndash;no-filename  输出时忽略文件前缀 默认  &ndash;label=LABEL  以实际标准输入作为  文件的输入 gzip -cd foo.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.grep/" title="Linux.Grep"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.grep/" title="Linux.Grep"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run">Linux.Run</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.run/" title="Linux.Run">Linux.Run</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.28">2017.08.28</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -269,30 +291,7 @@ Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep
 
     <p>[TOC]
 命令后台运行 参考  Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令  类型  后台运行，终端关闭时停止 后台运行，终端关掉后仍继续运行  方法 前后台切换  流程  执行复杂语句 使用 Ctrl+ Z 挂起复杂程序  [1]+ Stopped /data/service/webapps/engine-dev/main  使用 jobs 查询后台工作情况  [1]+ Stopped /data/service/webapps/engine-dev/main  输入 fg 1 继续执行复杂语句 输入 bg 1 在后台继续执行语句  [1]+ /data/service/webapps/engine-dev/main jobs  [1]+ Running /data/service/webapps/engine-dev/main     后台执行  &amp;  后台运行，终端关闭时停止  当前终端 shell 进程退出，会发送 hangup 信号给所有子进程 子进程收到 hangup 后退出  日志仍会打印到前台 示例  /data/service/webapps/engine-dev/main &amp; /data/service/webapps/engine-dev/main &gt; out.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.25">2017.08.25</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.run/" title="Linux.Run"> &raquo;</a>
 </article>
 
         
@@ -305,7 +304,7 @@ Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inod
 
 
 	
-	<a class="btn older" href="/domain/tags/linux/page/2/" title=""> &raquo;</a>
+	<a class="btn older" href="/tags/linux/page/2/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -314,7 +313,7 @@ Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inod
     </main>
 
     <aside class="author">
-  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
   <p class="name"> 
   <strong>姚清居</strong></p>
   <p class="address">Earth</p>
@@ -338,7 +337,7 @@ Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inod
 
 
 
-<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
   </ul>
   <br><br>
@@ -347,16 +346,16 @@ Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inod
 </div>
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
-        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
 
 
 

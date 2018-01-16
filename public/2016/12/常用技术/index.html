@@ -1,0 +1,1277 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>常用技术</title>
+    <meta name="author" content="姚清居到此一游">
+    <meta name="keywords" content=", 姚清居">
+
+    <link rel="icon" href="logo.png">
+    
+
+    
+    <meta name="description" content="灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&#39;IMG&#39;,&#39;SELECT&#39;,&#39;OBJECT&#39;,&#39;IFRAME&#39;); for(var j=0;j&lt;HideElementTemp.length;j&#43;&#43;){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i&#43;&#43;){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件&#43; 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)&#43;&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.">
+    <meta property="og:description" content="灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&#39;IMG&#39;,&#39;SELECT&#39;,&#39;OBJECT&#39;,&#39;IFRAME&#39;); for(var j=0;j&lt;HideElementTemp.length;j&#43;&#43;){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i&#43;&#43;){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件&#43; 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)&#43;&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="常用技术">
+    <meta property="og:url" content="/2016/12/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/">
+    <meta property="og:site_name" content="姚清居到此一游">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="姚清居到此一游">
+    <meta name="twitter:description" content="灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&#39;IMG&#39;,&#39;SELECT&#39;,&#39;OBJECT&#39;,&#39;IFRAME&#39;); for(var j=0;j&lt;HideElementTemp.length;j&#43;&#43;){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i&#43;&#43;){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件&#43; 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)&#43;&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="3">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://wrrwhn.github.io/domain/">姚清居到此一游</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://wrrwhn.github.io/domain/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="3">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://wrrwhn.github.io/domain/#about">
+          <img class="sidebar-profile-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+        </a>
+        <h4 class="sidebar-profile-name">姚清居到此一游</h4>
+        
+          <h5 class="sidebar-profile-bio"><a href="https://github.com/wrrwhn">https://github.com/wrrwhn</a></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/wrrwhn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="3"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      常用技术
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2016-12-14T22:07:46&#43;08:00">
+        
+   14, 2016
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<h2 id="灰化-http-james-padolsey-com-demos-grayscale-grayscale-js"><a href="http://james.padolsey.com/demos/grayscale/grayscale.js">灰化</a></h2>
+
+<pre><code>grayscale(document.body);
+</code></pre>
+
+<h2 id="遮罩">遮罩</h2>
+
+<pre><code>    //隐藏页面上一些特殊的控件
+    function HideElement(){
+        var HideElementTemp = new Array('IMG','SELECT','OBJECT','IFRAME');
+        for(var j=0;j&lt;HideElementTemp.length;j++){
+            try{
+                    var strElementTagName=HideElementTemp[j];
+                    for(i=0;i&lt;document.all.tags(strElementTagName).length; i++){
+                        var objTemp = document.all.tags(strElementTagName)[i];
+                        if(!objTemp||!objTemp.offsetParent)
+                                 continue;
+                       //objTemp.style.visibility=&quot;hidden&quot;;
+                       objTemp.disabled=&quot;disabled&quot;
+                    }
+            }
+            catch(e){}
+        }
+    }
+
+    //隐藏特殊控件+ 全网页置灰
+    function MaskAndGray(){
+        HideElement();
+
+        grayscale(document.body);                                    //全网页置灰
+
+        var shield = document.createElement(&quot;DIV&quot;);                //产生一个背景遮罩层
+        shield.id = &quot;shield&quot;;
+        shield.style.position = &quot;absolute&quot;;
+        shield.style.left = &quot;0px&quot;;
+        shield.style.top = &quot;0px&quot;;
+        shield.style.width = &quot;100%&quot;;
+        shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&quot;px&quot;;
+        shield.style.background = &quot;#333&quot;;
+        shield.style.textAlign = &quot;center&quot;;
+        shield.style.zIndex = &quot;10000&quot;;
+        shield.style.filter = &quot;alpha(opacity=0)&quot;;
+        shield.style.opacity = 0;
+        document.body.appendChild(shield);
+
+        /*
+        var alertFram = document.createElement(&quot;DIV&quot;);            //产生一个提示框
+        var height=&quot;45px&quot;;
+        alertFram.id=&quot;alertFram&quot;;
+        alertFram.style.position = &quot;absolute&quot;;
+        alertFram.style.width = &quot;200px&quot;;
+        alertFram.style.height = height;
+        alertFram.style.left = &quot;35%&quot;;
+        alertFram.style.top = &quot;30%&quot;;
+        alertFram.style.background = &quot;#fff&quot;;
+        alertFram.style.textAlign = &quot;center&quot;;
+        alertFram.style.lineHeight = height;
+        alertFram.style.zIndex = &quot;10001&quot;;
+        alertFram.innerHTML=msg;
+        document.body.appendChild(alertFram);                    //将遮罩与提示添加至当前界面
+        */
+
+        this.setOpacity = function(obj,opacity){
+            if(opacity&gt;=1)opacity=opacity/100;
+            try{ obj.style.opacity=opacity; }catch(e){}
+            try{
+                if(obj.filters.length&gt;0&amp;&amp;obj.filters(&quot;alpha&quot;)){
+                obj.filters(&quot;alpha&quot;).opacity=opacity*100;
+                }else{
+                obj.style.filter=&quot;alpha(opacity=\&quot;&quot;+(opacity*100)+&quot;\&quot;)&quot;;
+                }
+            }
+            catch(e){}
+        }
+
+        var c = 0;
+        this.doAlpha = function(){
+        if (++c &gt; 20){clearInterval(ad);return 0;}
+        setOpacity(shield,c);
+        }
+        var ad = setInterval(&quot;doAlpha()&quot;,1);//渐变效果
+        document.body.onselectstart = function(){return false;}
+        document.body.oncontextmenu = function(){return false;}
+    }
+</code></pre>
+
+<h2 id="java读取properties">java读取properties</h2>
+
+<pre><code>Properties po = new Properties();
+InputStream in = null;
+String dwzszfVersion = &quot;&quot;;
+try {
+    in = TbYwJjxmWpzListAction.class.getResourceAsStream(&quot;/intelliweb2Syncweb.properties&quot;);
+    po.load(in);
+    if(po.containsKey(&quot;url4IntelliWeb2SyncWeb&quot;)){
+        dwzszfVersion = po.getProperty(&quot;url4IntelliWeb2SyncWeb&quot;);
+    }
+} catch (IOException e) {
+    e.printStackTrace();
+}finally{
+    try {
+        if(in!=null){
+            in.close();
+        }
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<h3 id="java调用控制台指令">java调用控制台指令</h3>
+
+<pre><code>String[] cmd = new String[5];
+cmd[0] = &quot;cmd&quot;;
+cmd[1] = &quot;/c&quot;;
+cmd[2] = &quot;start&quot;;
+cmd[3] = &quot; &quot;;
+cmd[4] = localTempPath;
+Runtime.getRuntime().exec(cmd);
+</code></pre>
+
+<h2 id="servlet文件下载">SERVLET文件下载</h2>
+
+<h3 id="文件服务支持形式">文件服务支持形式</h3>
+
+<h4 id="web-xml文件配置">WEB.XML文件配置</h4>
+
+<pre><code>&lt;servlet&gt;
+    &lt;servlet-name&gt;FileBatchDownServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.longtop.ywgl.fileUpload.web.FileBatchDownServlet&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+    &lt;servlet-name&gt;FileBatchDownServlet&lt;/servlet-name&gt;
+    &lt;url-pattern&gt;/fileBatchDownServlet&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt;
+</code></pre>
+
+<h4 id="界面调用方式">界面调用方式</h4>
+
+<pre><code>/**
+ *     文件批量下载功能
+ *         @author    姚清居
+ *         @param wjbhs    指定文件编号，并以逗号格开
+ *         @param fileName    指定下载文件的名称
+ *         @return    false    无作用，只针对于使用open方式打开时的强制返回
+ */
+function fileBatchDown(wjbhs, fileName){
+    var id= window.open(&quot;/ggzypz/fileBatchDownServlet?wjbhs=&quot;+ wjbhs+ &quot;&amp;fileName=&quot;+ fileName);
+    return false;
+}
+</code></pre>
+
+<h4 id="代码实现">代码实现</h4>
+
+<pre><code>/***
+ * 文件批量下载
+ * @author 姚清居
+ *
+ */
+public class FileBatchDownServlet extends HttpServlet {
+
+    /**
+     * 序列号
+     */
+    private static final long serialVersionUID = 998L;
+    private static final int BUFFER = 2048;
+
+    /***
+     * @author 姚清居
+     *
+     * 初始实现逻辑：
+     *         1、获取指定文档对应的各文件编号，并以，隔开
+     *         2、关联查询出该批次的文件编号对应的上传文件的文件名称及现文件名称
+     *         3、保存至本地的C盘/报名审核文件_当前系统时期（精确至毫秒）的文件夹中
+     *         4、保存完成后默认打开该文件夹
+     *     异常：
+     *         该种方式的文件只会默认保存在服务器的C盘，而非用户的C盘
+     *
+     *     更新逻辑
+     *         1和2、3步骤不变
+     *         4、重新进行读取临时文件夹中的各文件信息，并将之一起封闭成Zip文件
+     *         5、将之作为输出流返回给客户端
+     * @throws IOException
+     */
+    @SuppressWarnings(&quot;unchecked&quot;)
+    protected void doPost(HttpServletRequest requse, HttpServletResponse response) throws IOException  {
+        String wjbhs = requse.getParameter(&quot;wjbhs&quot;);
+        String fileName = requse.getParameter(&quot;fileName&quot;);
+        YwglBaseService ywglBaseService = (YwglBaseService) SpringBeanFactory.getBean(YwglBaseService.BEAN_ID);
+        String localZip = &quot;C:/报名审核文件_&quot;+ DateUtil.getNow(DateEnum.YYYYMMDDHHMMSSSSS)+ &quot;.zip&quot;;
+        File zipFile=new File(localZip);
+        FTPClient ftp= FTPUtil.getFTPClient();
+        byte data[]= new byte[BUFFER];
+        int count;
+        InputStream is = null;
+        OutputStream out = null;
+        ZipOutputStream zipOut= null;
+
+        try {
+            //查询指定文件编号对应文件名称
+            Map param= new HashMap&lt;String, String&gt;();
+            param.put(&quot;wjbhs&quot;, wjbhs);
+            List&lt;MyMap&gt; list= ywglBaseService.queryForListBySql(&quot;ywgl-wjscxx-sqlmap.queryTbYwWjscxx&quot;, param);
+            zipOut=new ZipOutputStream(new BufferedOutputStream(new FileOutputStream(zipFile), BUFFER));
+            if(list!= null &amp;&amp; list.size()&gt; 0){
+                for(MyMap wjssxx: list){
+                    if(wjssxx!= null &amp;&amp; wjssxx.get(&quot;wjmc&quot;)!= null){
+                        is= ftp.retrieveFileStream(wjssxx.getString(&quot;wjmc&quot;));
+                        if(null!= is){
+                            zipOut.putNextEntry(new ZipEntry(wjssxx.get(&quot;ywjmc&quot;).toString()));        //在向ZIP输出流写入数据之前，必须首先使用out.putNextEntry(entry); 方法安置压缩条目对象
+                            zipOut.setEncoding(&quot;GBK&quot;);
+
+                            while((count=is.read(data, 0, BUFFER))!=-1){                                //向ZIP 文件写入数据
+                                zipOut.write(data, 0, count);
+                            }
+
+                            zipOut.closeEntry();
+                            is.close();
+                            is= null;
+
+                            if(!ftp.completePendingCommand()){                //调用retrieveFileStream之后必须检查该服务是否完成
+                                ftp.logout();
+                                ftp.disconnect();
+                                ftp= FTPUtil.getFTPClient();
+                                System.out.println(wjssxx.get(&quot;ywjmc&quot;)+ &quot;输出流没有关闭成功！&quot;);
+                            }
+                        }
+                    }
+                }
+            }
+            zipOut.flush();
+            zipOut.close();
+            zipOut= null;
+            /**
+             *     客户使用保存文件的对话框
+             *         首先，进行输出的流的配置，其中filename为固定写法，不能随意修改
+             *         其次，获取输出流的流对象，并使用它进行数据输出
+             *         最后，使用完成之后，注意流对象的缓存输出与关闭
+             */
+            response.reset();
+            response.setContentType(&quot;application/x-msdownload&quot;);        //x-msdownload    octet-stream
+            response.setHeader(&quot;Content-Disposition&quot;, &quot;attachment; filename=&quot; + new String(fileName.getBytes(), &quot;ISO-8859-1&quot;));       
+            out = response.getOutputStream();
+
+            zipFile=new File(localZip);
+            if(zipFile.exists()){
+                FileInputStream fis= new FileInputStream(zipFile);
+                while((count=fis.read(data, 0, BUFFER))!=-1){
+                    out.write(data, 0, count);
+                }
+                fis.close();
+            }else{
+                System.out.println(localZip+ &quot;不存在！&quot;);
+            }
+        }catch (Exception e) {
+            e.printStackTrace();
+        }finally{
+            if(null!= zipOut){
+                zipOut.flush();
+                zipOut.close();
+            }
+            if(null!= out){
+                out.flush();
+                out.close();
+            }
+            if(zipFile.exists()){
+                zipFile.delete();
+            }
+        }
+    }
+
+    protected void doGet(HttpServletRequest requse, HttpServletResponse response) throws ServletException, IOException {
+        doPost(requse, response);
+    }
+}
+</code></pre>
+
+<h3 id="文件服务支持形式-1">文件服务支持形式</h3>
+
+<h4 id="web-xml文件配置-1">WEB.XML文件配置</h4>
+
+<pre><code>&lt;servlet&gt;
+   &lt;servlet-name&gt;ServerData&lt;/servlet-name&gt;
+   &lt;display-name&gt;ServerData&lt;/display-name&gt;
+   &lt;description&gt;中文名文件下载&lt;/description&gt;
+   &lt;servlet-class&gt;com.syncsoft.framework.utils.ServerData&lt;/servlet-class&gt;
+&lt;/servlet&gt;
+&lt;servlet-mapping&gt;
+   &lt;servlet-name&gt;ServerData&lt;/servlet-name&gt;
+   &lt;url-pattern&gt;/ServerData&lt;/url-pattern&gt;
+&lt;/servlet-mapping&gt; 
+</code></pre>
+
+<h4 id="界面调用方式-1">界面调用方式</h4>
+
+<pre><code>        &lt;a href=&quot;/clgl/ServerData?abosulte=false&amp;fileName=需求分析规格.docx&amp;url=/fileDownload/xqfxgg.docx&quot; target='_self' /&gt;
+</code></pre>
+
+<h4 id="代码实现-1">代码实现</h4>
+
+<pre><code>/**
+ *     doGet模式进行数据读取
+ *         PARAM：
+ *             URL-文件下载地址（路径+文件名+文件格式）
+ *             ABOSULUTE-是否绝对路径
+ *             DOWNLOAD_NAME-下载文件名称
+ */
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String isAbosulute= request.getParameter(&quot;abosulte&quot;);
+    String url= request.getParameter(&quot;url&quot;);
+    String fileName= request.getParameter(&quot;fileName&quot;);
+    String sysPath= Thread.currentThread().getContextClassLoader().getResource(&quot;&quot;).getPath();
+    String systemPath= sysPath.substring(0, sysPath.indexOf(&quot;WEB-INF&quot;)-1);
+
+    if (url == null || url.equals(&quot;&quot;)) {
+        throw new IllegalArgumentException(url+ &quot;: 路径下不存在!&quot;);
+    }else if(fileName == null || fileName.equals(&quot;&quot;)) {
+        fileName= url.substring(url.lastIndexOf(&quot;/&quot;));
+    }else{
+        fileName= new String(fileName.getBytes(&quot;ISO-8859-1&quot;), &quot;UTF-8&quot;);
+    }
+
+
+    File file = new File((Boolean.valueOf(isAbosulute)? &quot;&quot;: systemPath)+ url);
+    if (!file.exists()) {
+        throw new IOException(file+ &quot;: 指定下载文件路径不存在!&quot;);
+    }
+
+    OutputStream os = response.getOutputStream();
+    FileInputStream fips = new FileInputStream(file);
+    byte[] btImg = readStream(fips);
+    response.setContentType(&quot;application/x-msdownload&quot;);
+    response.addHeader(&quot;Content-disposition&quot;, &quot;attachment;filename=\&quot;&quot; + new String(fileName.getBytes(&quot;UTF-8&quot;), &quot;ISO-8859-1&quot;) + &quot;\&quot;&quot;);
+    os.write(btImg);
+    os.flush();
+    fips.close();
+}
+</code></pre>
+
+<h2 id="解析超链接中文参数">解析超链接中文参数</h2>
+
+<pre><code>java.net.URLEncoder.encode(&quot;要解析的参数&quot;, &quot;UTF-8&quot;)
+</code></pre>
+
+<h2 id="java发送post-get请求">Java发送POST/GET请求</h2>
+
+<pre><code>/**
+ * 调用GET方法请求
+ */
+@SuppressWarnings(&quot;deprecation&quot;)
+public static void getProperties4intelliweb2Syncweb(String key, String param){
+    try {
+        URL url = new URL(FileUtils.getPropertiesContent(properties4intelliweb2Syncweb, key)+ param);
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection(); 
+        urlConnection.setRequestMethod(Constants.REQUEST_METHOD_GET);
+        urlConnection.connect();
+        urlConnection.getInputStream();
+        urlConnection.disconnect();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+
+/**
+ * 调用POST方法请求
+ */
+public static void getProperties4intelliweb2SyncwebByPost(String key, String param){
+    try {
+        URL url = new URL(FileUtils.getPropertiesContent(properties4intelliweb2Syncweb, key));
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection(); 
+        urlConnection.setRequestMethod(Constants.REQUEST_METHOD_POST);
+        urlConnection.setUseCaches(false);
+        urlConnection.setDoOutput(true);
+        urlConnection.setInstanceFollowRedirects(true);
+        urlConnection.setRequestProperty(&quot; Content-Type &quot;,&quot; application/x-www-form-urlencoded &quot;);
+        DataOutputStream out = new DataOutputStream(urlConnection.getOutputStream());//getOutputStram()隐含调用connect()
+        out.writeBytes(param);
+        out.flush();
+        out.close();
+        urlConnection.getInputStream();
+        urlConnection.disconnect();
+    } catch (IOException e) {
+        e.printStackTrace();
+    }
+}
+</code></pre>
+
+<h2 id="log4j多日志配置">Log4j多日志配置</h2>
+
+<h3 id="配置-log4j-properties">配置-log4j.properties</h3>
+
+<pre><code>#Interface
+    log4j.logger.interface= DEBUG, interface                         --【对应log4j.appender.interface的interface】
+    log4j.additivity.interface= true                                          --配置开关
+    log4j.appender.interface=org.apache.log4j.DailyRollingFileAppender
+    log4j.appender.interface.File=logs/clgl4Interface.log                                          --日志存储位置
+    log4j.appender.interface.layout=org.apache.log4j.PatternLayout
+    log4j.appender.interface.layout.ConversionPattern=%d [%t] %-5p [%c] - %m%n
+</code></pre>
+
+<h3 id="业务代码中">业务代码中</h3>
+
+<pre><code>    private static Logger log = Logger.getLogger(Constants.LOG4INTERFACE);
+    log.info(&quot;\t\t短信发送结果：&quot;+result);
+</code></pre>
+
+<h2 id="oracle指定节点数据">ORACLE指定节点数据</h2>
+
+<pre><code>select * from TB_YW_BJXXPZ as of timestamp to_timestamp('2014-05-04 17:01:43','yyyy-mm-dd hh24:mi:ss') ;
+</code></pre>
+
+<h2 id="jsp界面乱码">JSP界面乱码</h2>
+
+<ul>
+<li>于JSP文件最上方补充这两个文件引入
+
+<ul>
+<li><code>&lt;%@ page language=&quot;java&quot; import=&quot;java.util.*&quot; pageEncoding=&quot;utf-8&quot;%&gt;</code></li>
+<li><code>&lt;%@ page contentType=&quot;text/html;charset=utf-8&quot;%&gt;</code></li>
+</ul></li>
+</ul>
+
+<h2 id="界面获取项目名称">界面获取项目名称</h2>
+
+<ul>
+<li>代码获取：&lt;%= this.getServletContext().getContextPath() %&gt;</li>
+<li>EL表达式：${pageContext.request.contextPath}</li>
+</ul>
+
+<h2 id="加密-解密">加密&amp;解密</h2>
+
+<h3 id="推荐网址">推荐网址：</h3>
+
+<ul>
+<li><a href="http://snowolf.iteye.com/blog/379860">各种算法介绍及相关使用方法</a></li>
+<li><a href="http://blog.csdn.net/yangcp1/article/details/5348066">RSA密钥保存</a></li>
+<li><a href="http://blog.csdn.net/chaijunkun/article/details/7275632">RSA公私钥加解密-OpenSSL方式</a></li>
+
+<li><p><a href="http://www.openssl.org/news/vulnerabilities.html">OpenSSL官网</a></p>
+
+<h3 id="算法介绍">算法介绍：</h3></li>
+
+<li><p>BASE64</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Base64内容传送编码被设计用来把任意序列的8位字节描述为一种不易被人直接识别的形式。</li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>邮件</li>
+<li>http加密
+
+<ul>
+<li>截取http信息，你就会发现登录操作的用户名、密码字段加密</li>
+</ul></li>
+</ul></li>
+<li>实现
+sun.misc.BASE64Decoder
+ 解密：(new BASE64Decoder()).decodeBuffer(String key);
+ 加密：(new BASE64Encoder()).encodeBuffer(byte[] key);</li>
+</ul></li>
+
+<li><p>MD5</p>
+
+<ul>
+<li>特点：
+
+<ul>
+<li>message-digest algorithm 5 （信息-摘要算法）缩写，且无法进行解密
+可由碰撞法破解</li>
+</ul></li>
+<li>用途：
+
+<ul>
+<li>不管文件多大，经过MD5后都能生成唯一的MD5值。</li>
+</ul></li>
+<li>实现：
+
+<ul>
+<li>MessageDigest.getInstance(&ldquo;MD5&rdquo;).update(byte[] data).digest();</li>
+</ul></li>
+</ul></li>
+
+<li><p>SHA</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Secure Hash Algorithm，安全散列算法</li>
+<li>可由碰撞法破解</li>
+</ul></li>
+<li>用途
+
+<ul>
+<li>电子商务等信息安全领域</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>MessageDigest.getInstance(&ldquo;SHA&rdquo;).update(byte[] data).digest();</li>
+</ul></li>
+</ul></li>
+
+<li><p>HMAC</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Hash Message Authentication Code，散列消息鉴别码，基于密钥的Hash算法的认证协议</li>
+</ul></li>
+<li>原理
+
+<ul>
+<li>用公开函数和密钥产生一个固定长度的值作为认证标识，用这个标识鉴别消息的完整性。</li>
+<li>使用一个密钥生成一个固定大小的小数据块，即MAC，并将其加入到消息中，然后传输。</li>
+<li>接收方利用与发送方共享的密钥进行鉴别认证等。</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li><code>MessageDigest.getInstance(&quot;SHA&quot;).update(byte[] data).digest();</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>RSA</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>RSA同时有两把钥匙，公钥与私钥。同时支持数字签名。</li>
+<li>数字签名的意义在于，对传输过来的数据进行校验。确保数据在传输工程中不被修改。</li>
+</ul></li>
+<li>流程
+
+<ul>
+<li>甲方构建密钥对儿，将公钥公布给乙方，将私钥保留。</li>
+<li>甲方使用私钥加密数据，然后用私钥对加密后的数据签名，发送给乙方签名以及加密后的数据；乙方使用公钥、签名来验证待解密数据是否有效，如果有效使用公钥对数据解密。</li>
+<li>乙方使用公钥加密数据，向甲方发送经过加密后的数据；甲方获得加密数据，通过私钥解密。</li>
+</ul></li>
+<li>注意
+
+<ul>
+<li>公钥和私钥是匹配产生，且格式为A[换行]B[换行]C，其中[换行]在保存为文本时以/r或/n替换使用均无法正常使用，保存方式待定</li>
+</ul></li>
+</ul></li>
+
+<li><p>DES</p>
+
+<ul>
+<li>特点
+
+<ul>
+<li>Data Encryption Standard,即数据加密算法，典型对称加密方法</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>DES算法的入口参数有三个:Key、Data、Mode。</li>
+<li>其中Key为8个字节共64位,是DES算法的工作密钥;Data也为8个字节64位,是要被加密或被解密的数据;Mode为DES的工作方式,有两种:加密或解密。</li>
+</ul></li>
+</ul></li>
+
+<li><p>实际使用
+具体各算法建议参见推荐网址第一个，均有详细介绍。</p></li>
+</ul>
+
+<h2 id="图片转换为文字">图片转换为文字</h2>
+
+<ul>
+<li>将指定文档转换后 PDF</li>
+<li>下载安装 CAJViewer 7.2.self</li>
+<li>打开 CAJViewer 并加载该 PDF，后选取“文字识别功能”圈取要识别文字的区块</li>
+</ul>
+
+<h2 id="加密-解密-1">加密&amp;解密</h2>
+
+<h2 id="视频转gif">视频转Gif</h2>
+
+<ul>
+<li>软件
+
+<ul>
+<li>Ulead GIF Animator</li>
+<li>PotPlayer</li>
+</ul></li>
+<li>过程
+
+<ul>
+<li>使用 PotPlayer 打开影片并拖至要截取视频片段开始处，点击 Ctrl+G 设置好时间间隔和张数后点击开始，完成后点击停止
+
+<ul>
+<li>该环节会保存多张过程图片</li>
+</ul></li>
+<li>运行 Ulead GIF Animator ，新建并调整合适显示大小，后将「1」中保存的图片拖入下侧进度条，并选择插入新建帧</li>
+<li>点击「文件-另存为-Gif文件」即可</li>
+</ul></li>
+</ul>
+
+<h2 id="java-文件上传">Java-文件上传</h2>
+
+<h3 id="单个">单个</h3>
+
+<pre><code>@RequestMapping(value = &quot;/upload&quot;, method = RequestMethod.POST)
+public BasicResource upload(
+    @RequestBody @NotNull MultipartFile file,
+    @RequestParam(value = &quot;type&quot;, required = false) String type)
+</code></pre>
+
+<h3 id="多个">多个</h3>
+
+<pre><code>@RequestMapping(value = &quot;/writeback&quot;, method = RequestMethod.POST)
+public void writeBack2(
+    MultipartHttpServletRequest request,
+    @RequestParam(value = &quot;topicId&quot;, required = true) long topicId) {
+    List&lt;MultipartFile&gt; files = request.getFiles(&quot;file&quot;);
+}
+</code></pre>
+
+<h2 id="界面操作作转-gif">界面操作作转 Gif</h2>
+
+<ul>
+<li>软件
+
+<ul>
+<li>灵者 Gif 录制 （GifGod）</li>
+</ul></li>
+<li>过程
+
+<ul>
+<li>点击“选定区域”，鼠标选框后回车
+
+<ul>
+<li>建议取消“跟随鼠标坐标”</li>
+</ul></li>
+<li>“录制” -&gt; “停止”</li>
+</ul></li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86/">整理</a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2016/12/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" data-tooltip="Git.命令小结">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2016/12/angularjs.basic/" data-tooltip="AngularJS.Basic">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 姚清居到此一游. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2016/12/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/" data-tooltip="Git.命令小结">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2016/12/angularjs.basic/" data-tooltip="AngularJS.Basic">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+    
+    <h4 id="about-card-name">姚清居到此一游</h4>
+    
+      <div id="about-card-bio"><a href="https://github.com/wrrwhn">https://github.com/wrrwhn</a></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国-福建-厦门
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/uml/">
+                <h3 class="media-heading">UML</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> [TOC]
+UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj   </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/linux.lsof/">
+                <h3 class="media-heading">Linux.Lsof</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/">
+                <h3 class="media-heading">网络-七层协议</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  深入浅出－网络七层模型&amp;&amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/">
+                <h3 class="media-heading">网络-四层协议</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  TCP/IP四层模型 深入浅出－网络七层模型&amp;&amp;网络数据包 TCP/IP四层模型 OSI七层和TCP/IP四层的关系  定义  网络事实上的标准 又名 TCP/IP 协议族或 TCP/IP 协议栈  Transmission Control Protocol 传输控制协议 Internet Protocol 互联网协议      分层 应用层  定义  = OSI.应用层+ OSI.表示层 + OSI.会话层  示例  FTP/ TELNET/ HTTP   传输层  定义  = OSI.传输层 对数据进行缓存、报文的拆解和重组  示例  TCP  传输控制协议 transmission control protocol  UDP  用户数据报协议 user datagram protocol    网间层  定义 = OSI.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8-%E5%90%8C%E5%AE%89/">
+                <h3 class="media-heading">中国-厦门-同安</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  揣着100块钱来同安吃1整天！  路线  T4候机楼站 凤岗大肠国大肠血  BRT快2线，至同安枢纽站  阿呆盐鸭店  630A，由同安枢纽站至小西门  鑫旺旺汤包  步行  味源小吃  630A，由小西门至同安电视台站  台湾番婆冰  步行  肥栋满煎糕  步行  秀英食品  步行  双鹿老铺  步行  陆丰煎饼  612，由金安大厦至新西桥站  杨强芙蓉香骨鸡腿  625，由新西桥至同安劳动力市场站   介绍 凤岗大肠国  位置  凤岗岗头里786 同安枢纽站 直行50米左转进入凤岗路 直走600米  特色菜  纯猪血大肠  单价  15元/碗    阿呆盐鸭店  位置  小西门 下车前行50米后左转200米进入东山路  特色菜  盐鸭  单价  50元/只    鑫旺旺汤包  位置  沿着东山路走250米，进中山路再走200米  特色菜  汤包  单价  10元/笼    味源小吃  位置  同安电视台站  特色菜  碗仔粿  单价  3元/小碗 4元/大碗    台湾番婆冰  位置  沿着凤山路往南门桥走350米  特色菜  芒果冰 芋泥  单价  22元/芒果冰 6元/芋泥    肥栋满煎糕  位置  出了番婆冰右转20米就到  特色菜  满煎糕  单价  10元/个    秀英食品  位置  从番婆冰门口上桥，过桥左转沿路走到尽头右转300米，再右转上同新路，80米后左转直行100米  特色菜  醋肉  单价  20元/份    双鹿老铺  位置  从秀英出门右转到松柏林中路，200米后右转进南门路，再走70米  特色菜  马蹄酥  单价  6元/袋-10个    陆丰煎饼  位置  612路 金安大厦-新西桥站（2站） 步行到古庄大社里21号 下午三点开门  特色菜  煎饼  单价  4元/个 5.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/">
+                <h3 class="media-heading">云开-服务端架构-20171203</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/kafka/">
+                <h3 class="media-heading">Kafka</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+                <h3 class="media-heading">FFmpeg.阅读笔记</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">[TOC]
+简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;-------- | encoded data | &lt;----+ | file | muxer | packets | encoder |________| |______________|  选项 实例 裁剪  指令  ffmpeg -i old.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/git.subtree/">
+                <h3 class="media-heading">Git.Subtree</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
+ 适用情况
+ 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
+ Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/20%E5%B2%81%E7%9A%84%E4%BD%A0/">
+                <h3 class="media-heading">20岁的你</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> [TOC]
+20岁时做什么到40岁时才不会后悔？ 要点  知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础 试错和重启 谨慎选择与谁一起共度 谨防短期情绪波动 一定要把收入的一部分用于储蓄 投资 写作将点燃你的头脑 要建立良好的个人品牌 设计你的生活永远不会太迟 没有人把一切都想通了  忧虑就是你在偿还你并未欠的债 - 马克吐温  了解，沟通是一切 提问 如果你发现自己不知道或不确定，就主动发问吧 做饭 冥想让头脑深度休息 更新你的心灵的操作系统  关键字  健康、控制情绪 尝试  投资理财 做饭  提问、思考、设计人生  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         132 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://wrrwhn.github.io/domain/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://wrrwhn.github.io/domain/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+

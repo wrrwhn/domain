@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>阅读 on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB/</link>
+    <link>http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/</link>
     <description>Recent content in 阅读 on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>20岁的你</title>
-      <link>https://wrrwhn.github.io/domain/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</link>
+      <link>http://domain.yqjdcyy.com/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</guid>
+      <guid>http://domain.yqjdcyy.com/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</guid>
       <description> [TOC]
 20岁时做什么到40岁时才不会后悔？ 要点  知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础 试错和重启 谨慎选择与谁一起共度 谨防短期情绪波动 一定要把收入的一部分用于储蓄 投资 写作将点燃你的头脑 要建立良好的个人品牌 设计你的生活永远不会太迟 没有人把一切都想通了  忧虑就是你在偿还你并未欠的债 - 马克吐温  了解，沟通是一切 提问 如果你发现自己不知道或不确定，就主动发问吧 做饭 冥想让头脑深度休息 更新你的心灵的操作系统  关键字  健康、控制情绪 尝试  投资理财 做饭  提问、思考、设计人生  </description>
     </item>
     
     <item>
       <title>Apache.Beam的前世今生</title>
-      <link>https://wrrwhn.github.io/domain/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
+      <link>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
+      <guid>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
       <description> {TOC}
 Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 足够多模型才能促使项目成功  简介  基础  Cloud Dataflow  介绍  构建、管理和优化复杂数据流水线的方法 用于构建移动应用、调试、追踪和监控产品级云应用  技术  Flume：数据高效并行处理 MilWhell：互联网级别流处理，优秀的容错机制     介绍  统一编程框架，提供开源、统一的编程模型  特点  统一：对于批处理和流式处理，使用单一的编程模型 可移植：可以支持多种执行环境，包括Apache Apex、Apache Flink、Apache Spark和谷歌Cloud Dataflow等 可扩展：可以实现和分享更多的新SDK、IO连接器、转换操作库等  适用场景  并发数据处理任务  将要处理的数据集分解成许多相互独立而又可以并行处理的小集合  ETL任务 数据整合  组成  Beam SDK  针对各数据来源、形式，采用相同的数据模型处理、封装  Beam Pipeline Runner  将 Beam 模型定义开发的处理流程，翻译成底层分布式数据处理平台支持的运行时环境 需要指明底层的 Runner  目前支持 Flink/ Spark/ Apex/ Cloud Dataflow     设计  问题  数据  已持久化的有限数据集，如 HDFS文件，HBase 表 实时数据流，如 Kafka中的系统日志流，Twitter 流 注：有限数据集可看为实时数据流的一个子集  时间  process time：数据进入分布式处理框架时间 event time：数据产生时间  乱序  数据到达时间与 event-time 无法完全符合   解决方法(WWWH)  [W]hat are you computing  Element-Wise 元素级 Aggregating 聚合 Composite 复合  [W]here in event time    [W]hen in processing time  使用 Trigger 机制，配合 SDK 中的水位线和触发器进行时机指定  [H]ow do refinements relate  指定如何处理迟到数据，增量或合并输出 由 SDK 中的 Accumulation 指定    </description>
     </item>
     
     <item>
       <title>ImageMagick</title>
-      <link>https://wrrwhn.github.io/domain/post/imagemagick.basic/</link>
+      <link>http://domain.yqjdcyy.com/post/imagemagick.basic/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/imagemagick.basic/</guid>
+      <guid>http://domain.yqjdcyy.com/post/imagemagick.basic/</guid>
       <description>[TOC]
 ImageMagick Reference  官网  Anatomy  convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]  Input FileNames FileName Globbing  Analysis  pattern match about */?  Example
  convert *.jpg images.gif
@@ -48,10 +48,10 @@ Explicit Image Format  Analysis
     
     <item>
       <title>Java.9.Feature</title>
-      <link>https://wrrwhn.github.io/domain/post/java.9.feature/</link>
+      <link>http://domain.yqjdcyy.com/post/java.9.feature/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/java.9.feature/</guid>
+      <guid>http://domain.yqjdcyy.com/post/java.9.feature/</guid>
       <description>深入解读 Java 9 新特性 参考  深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力  Jigsaw  核心 -实现 Java 平台模块化系统 - JPMS (Java Platform Module System)
  针对问题
  易错的 classpath  应用不同部分依赖同一类库的不同版本 ClassLoading 复杂而不明确，导致 ClassNotFoundException、 NoClassDefFoundError 等异常  JDK 过于臃肿，无法按不同需求进行定制或优化  目标
@@ -61,29 +61,29 @@ Explicit Image Format  Analysis
     
     <item>
       <title>Linux 单TCP连接占用最少内存</title>
-      <link>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
+      <link>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
       <description>[TOC]
 Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &amp;gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | &amp;mdash;- | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; | | file | 256 | &amp;ldquo;filp&amp;rdquo; | | dentry | 192 | &amp;ldquo;dentry&amp;rdquo; | | socket_alloc | 640 | &amp;ldquo;sock_inode_cache&amp;rdquo; | | tcp_sock | 1792 | &amp;ldquo;TCP&amp;rdquo; | | socket_wq | 64 | &amp;ldquo;kmalloc-64&amp;rdquo; | | inet_bind_bucket | 64 | &amp;ldquo;tcp_bind_bucket&amp;rdquo; | | epitem | 128 | &amp;ldquo;eventpoll_epi&amp;rdquo; | | tcp_request_sock | 256 | &amp;ldquo;request_sock_TCP&amp;rdquo; |</description>
     </item>
     
     <item>
       <title>ServiceMesh</title>
-      <link>https://wrrwhn.github.io/domain/post/servicemesh/</link>
+      <link>http://domain.yqjdcyy.com/post/servicemesh/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/servicemesh/</guid>
+      <guid>http://domain.yqjdcyy.com/post/servicemesh/</guid>
       <description> 参考  Java未来也许不再是电商的首选开发语言 从零开始k8s  明细 首选语言  优点  JVM 运行时强大 工具链成熟 Spring 庞大的生态  dubbo Spring Cloud   缺点  开发繁琐 包体积大 运行时开销大   框架 Service Mesh  定义  基础设施层，处理服务间通讯 轻量网络代理，负责复杂服务拓扑的请求的可靠传递 对应用程序透明 利于多语言应用共存  优点  聚焦于业务逻辑 不再于开发层面关注负载均衡、路由、熔断、限流、服务注册  工具  Kubernetes   </description>
     </item>
     
     <item>
       <title>代码整洁之道.程序员的职业素养</title>
-      <link>https://wrrwhn.github.io/domain/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</link>
+      <link>http://domain.yqjdcyy.com/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</guid>
       <description>[TOC]
 代码整洁之道 - 程序员的职业素养 专业主义 为自身错误埋单 注重自测  要求自测基本完整覆盖
 建议要求 设计模式
@@ -98,59 +98,59 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
     
     <item>
       <title>技术人员的发展之路</title>
-      <link>https://wrrwhn.github.io/domain/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
+      <link>http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
       <description> [TOC]
 技术人员的发展之路 阶段和标志 20-30岁  提升学习和解决难题的能力 提升领导力  高效学习能力  基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独立思考  解决问题能力  见过许多场景 犯过、处理过很多错误 防火   帮人解决问题 被人所信赖  发展方向 职场打拼  去顶尖公司 去真正的创业公司  小心了解创始人和业务情况、想法、理念 排除创业时的.侥幸和驱利心理  职业生涯发展  关心并处理复杂人事关系 学会使用政治手段  在下属和领导，员工和公司之间周旋 审时站队，迎合、妥协和交换 厚黑与真诚    经历有意义、价值的事  到技术创新的发源地去经历创新 去经历下一个热点技术的发展  追求一种自由的生活  工作自由  能力出众，不愁找不到工作  技能自由  自由职业者  自动化 App 上做软件个体户 开源软件，社区捐款   物质自由  投资&amp;amp; 风险 关注未来和长远的成长   </description>
     </item>
     
     <item>
       <title>浏览器缓存知识小结及应用</title>
-      <link>https://wrrwhn.github.io/domain/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <link>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
       <description> 浏览器缓存知识小结及应用 分类  强缓存  判断命中，则直接从浏览器缓存中读取资源，不发请求至服务器（200）  协商缓存  发请求至服务器，协商缓存命中，则返回请求（304），告知浏览器从缓存中加载   实现  强缓存  请求资源时，资源及其 response header 一并被缓存 再次请求时，优先比对该资源 header 中的  Expries（失效时间） 或 Cache-Control：max-age=315360000 &amp;amp; Date: Mon, 11 Jan 2016 06:41:22 GMT  对比判断是否命中 注：Cache-Control 为相对时间，都使用客户端时间进行判断，相比 Expries 的服务器时间对比更安全。  协商缓存  请求资源时，资源及其 response header 一并被缓存 再次和服务器请求该请求时，一并传上  header.Last-Modified: Tue 12 Jan 2016 03:08:53 GMT - 服务器上该资源的最后修改时间 header.If-Modified-Since: Tue 12 Jan 2016 03:08:53 GMT - 上一次浏览器请求时返回的 Last-Modified 值 或 ETag: &amp;ldquo;17fd8-5291a5f96fd20&amp;rdquo; - 请求资源的唯一标识 If-None-Match: &amp;ldquo;17fd8-5291a5f96fd20&amp;rdquo; - 上一次请求时的 ETag 值    </description>
     </item>
     
     <item>
       <title>股权&amp;期权</title>
-      <link>https://wrrwhn.github.io/domain/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</link>
+      <link>http://domain.yqjdcyy.com/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</guid>
       <description>[TOC]
 股权、期权有哪些坑？从技术创业的角度说开去 比例 依赖独特技术  技术* 50% 业务* 40% 管理* 10%  依赖业务领先  技术* 40% 业务* 50% 管理* 10%  注意  一开始就要定位准确！  股权 经营  退出机制  建议股份强制回收 提前写好退出机制和退出价格 退出价格为下列最高值  上一轮融资估值* 50% 上一年财务合同额 公司总资产 真实投资资金年利息* 115%  退出股权优先卖给现有参与经营的股东   注意  股权比例，即合伙人配比  期权 使用  第一期建议 10%  吸引人才，后根据每年需求发放 CEO 出方案定值，后股东投票  一次性强留足 30%  发完回收才会发现这个问题   规则  时间  分3年给，每年落实 1&amp;frasl;3  行权  可象征性出点 在期权池公司落实工商登记股分  价格  同股权一样商量  权益  仅分红，无投票  落实  设置持股公司  期权池公司拷贝母公司 10% 股分 初始期权池公司 CEO 100%的持有 签订员工期权协议，分3年在期权池公司落实工商登记股份 每年变更一次期权池公司名录和股分比例，落实员工利益    注意  作用  对股权结构不合理信息的弥补 对核心员工的奖励  来源  全体股东一起稀释  按比例，不要按数量 后面增发期权，则再创建一持股子公司即可  投资 是否要  要！  需要外部投资人作为第三方的视角审查   时机  产品出来 有真实用户和运营数据 估值清晰 数据客观  创业落脚点 明确越高越难  不违法 不违反道德 创新技术 创新业务 改变人类生活  类型 战略  你的战略是投资人的子战略  天花板就在那 在乎的是投资人自己的梦想，不在乎你的梦想  战略完全一致的是竞争对手 战略投资协议需补签  财务  投资人在乎赚钱、回报 给压力实现盈利、实现价值用户数量 尽量不要签对赌协议  众筹  对象  外面的朋友 顾问   初创  自行掏钱，会更谨慎 找天使投资人，看个人魅力  本质 商业= 生意+ 梦想  思考点  细分行业 细分客群 细分产品 细分用户 创造新概念 开拓新产品  图例</description>
     </item>
     
     <item>
       <title>语言类型</title>
-      <link>https://wrrwhn.github.io/domain/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</link>
+      <link>http://domain.yqjdcyy.com/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</guid>
       <description> [TOC]
 语言类型 参考  编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别 弱类型、强类型、动态类型、静态类型语言的区别是什么？  类型 编译型语言  描述  通过编译器将源代码编译成机器码 通过链接将各模块机器码和依赖库串连运行  优点  预编译时对代码进行优化 执行效率高，可脱离语言环境独立运行  缺点  编译后修改需整个模块重新编译 需根据运行环境编译  代表  C/ C++/ swift   解释型语言  描述  运行程序时逐行翻译  优点  优秀的平台兼容性（安装解释器|虚拟机）  缺点  每次运行都要解释，效率较低  代表  JavaScript/ Python   混合类型语言  描述  取编译和解释型优点而成 编译成中间码，后通过中间语言运行库运行  如 C# 中会编译成 IL代码，后保存在dll中；首次运行时由 JIT 在编译成机器码缓存在内存中，下次直接执行   代表  C#   动态语言  描述  运行时可改变代码结构  新函数、新对象、引入代码   代表  C#/ JavaScript/ Python   静态语言  描述  运行时结构不可变  代码  Java/ C/ C++   静态类型语言  描述  编写代码时，需明确变量的数量类型  代表  C/ C++/ C#/ Java   动态类型语言  描述  运行期间才进行数据类型检查  代表  JavaScript/ Python   强类型语言  描述  变量确定类型后将不可改变  代表  Java/ C#/ Python   弱类型语言  描述  变量可被赋予不同类型值  代表  JavaScript/ C   </description>
     </item>
     
     <item>
       <title>销售就是要搞定人 </title>
-      <link>https://wrrwhn.github.io/domain/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</link>
+      <link>http://domain.yqjdcyy.com/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</guid>
       <description>[TOC]
 销售就是要搞定人 对自己  提升能力  解决问题  全局前提：了解局部、推荐人、相关影响人、决策人和拍板人 局部前提：搞定局部相关人员 搞定关键人前提：善于答定人&amp;amp; 敏感&amp;amp; 拉近和客户的距离  提高  魄力  胡雪岩穷得叮当响时，居然敢赞助同样落魄的王有龄。后王发迹了，也才有了胡的红顶商人神话  心态 守原则，会变通！ 多看新闻联播和地方新闻，即是方向，也是谈话资本   注意形象  用最少的时间、金钱和精力，树立起一个最为大家所尊重的悦纳的个人形象 身上一定要有抢眼的地方，比如戴表 自信！ 注意事项  绝不可弯腰驼背 绝不可让大公文包遮在身体前面   忌讳交浅言深！  话要说给懂的人听，给需要的人听 时机！  时机未到提前说，叫轻浮 应该说却不说，叫误事  地点  办公室永远要说光明正大的事 私人场所，便不必再说办公室内的套话   明哲保身的前提是了解各种情况，顺势而为，谋定后动 在任何时候都要冷静，不让表面现象牵着鼻子走，一定要看清本质才动手 人与人之间的差距在于理想。 不谋万世者，不足谋一时；不谋全局者，不足谋一域 制定目标，明确实现步骤，完善细节。而若随遇而安，运气等不确定因素来决定你命运的感觉，你愿意？  对下属  团队带领，忠心比能力重要  对同行  敌人也可以是朋友  对目标客户  先做朋友，再做生意 对手拿失败案子说事时也是销售机会，可以偿试简单介绍确有此事，然后重要介绍自己也是受害者 打开客户最有效、省钱的办法就是适宜的赞美  方法论  节奏  三个月订货为例  第一个月两个星期去一次，金钱投入一般即可 第二个月一星期去一次，适当请吃 第三个月需要天天出现   手段  初级  简单局面复杂化 落后时浑水摸鱼，乱中取胜  高级  复杂局面简单化 设置障碍，扼杀竞争对手；关键时机做表现最好的事  例  唐大诗人陈子昂学业有成后前往长安，但得不到名家的赏识。一日遇到一个卖胡琴者，有胡琴索价百万，陈子昂买了这把胡琴，邀众人至家中赏玩，竟当众摔琴。陈对大家说他只是一介书生，不懂琴艺，但会写文章，请大家欣赏他的文章。于是名动京师。   五步推销法  搜寻你的客户  了解哪些人有需求，不在无需求的人身上花费精力  接近你的客户  注意第一印象，使用幽默方式  引起客户的注意 激起客户的欲望 满足和客户的欲望  钩  客户类型  活泼型  喜欢讲 追求瞩目与喝彩，担心失去关注，反感受约束 让其多说，注意聆听，明确支持，多戴高帽  懦弱型  喜欢听 追求平稳和普遍接受，担心突然变化 不急，定目标鼓动，迫使其决定，以谈感情为主  利益型  冷静分析 追求认真准确，做事一丝不苟，担心被批评，反感盲目从事 提供严密技术方案，遵守承诺； 以干练形象示人，遵守规则  权力型  不耐烦听而打断你 追求支配地位和效率，担心被强迫、命令，反感优柔寡断 开门见山，尊重其地位，坚持多沟通多汇报    奇正相和  提炼自己的差异化，阒然于众 例  蔡泽，战国时期燕国人，博学善辩，为纵横家代表人物之一。先前游学过很多大小诸侯国，但未被人发现其才学，所以一直怀才不遇。但后来听说范雎以前推荐的郑安平和王稽都背叛了秦国，郑安平降赵，王稽与魏国私通。蔡泽曾对范雎说：“君子以义死难，视- 死如归；生而辱不如死而荣。士固有杀身以成名，虽义之所在，虽死无所恨。何为不可哉？”所以前往秦国游说范雎让贤于他，因为秦国有一条法律：“凡荐人不效者，与所荐之人同罪。”虽然秦昭王不加怪罪，但范雎心中已有畏惧。从而使蔡泽说服范雎成功而成为丞相。   解决问题首先是战略上的，是对规律的掌握，然后才是技巧上的，最后才是心态、细节上的 试错，总结原因  故事  资本论  如果有百分之二十的利润，资本就会蠢蠢欲动； 如果有百分之五十的利润，资本就会冒险； 如果有百分之一百的利润，资本就敢于冒绞首的危险； 如果有百分之三百的利润，资本就敢于践踏人间一切法律。  同样销售阀门，有的一年销售额达到300万就沾沾自喜，但我知道2007年有个销售高手一个订单是2.</description>
     </item>
     
     <item>
       <title>如何炼成商业分析能力</title>
-      <link>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</link>
+      <link>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</link>
       <pubDate>Mon, 13 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</guid>
       <description>如何炼成商业分析能力 参考  商业分析能力是怎样炼成的？  前言  幸存者偏差
  任何商业活动最终的成败，都是由一系列完整的环节相互作用所决定的 成功的商业决策者和普通消费者之间的区别  前者对于同样的现象，更能从本质上细致而深刻地理解成因，并知道如何采取相对应的措施去改变现象（即使这种判断不是100%精确的）。  唯有在不断的学习和实践中不断提升自身的商业能力，才有可能在残酷的商业世界的“存活者偏差”现象中成为“幸运”的存活者  学习内容
  会计和金融 战略和市场 营运和管理  迷男方法
@@ -162,10 +162,10 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
     
     <item>
       <title>如何轻松聊天</title>
-      <link>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</link>
+      <link>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</link>
       <pubDate>Wed, 08 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</guid>
       <description>如何轻松聊天 参考  不懂跟异性轻松聊天，你如何get到这个技能  因素 心态  影响
  自信心 个人价值  提升
  提升个人价值  提高立身处世能力 收拾外表、整洁干净  与价值相当的人交往 丰富阅历   策略  了解对方需求，针对性满足 言语关怀，行动辅助  口才  避免由表面印象决定交流方式  轻率定高，无法不卑不亢聊天 定低则所决定的聊天方式、内容，容易让对方认定自己的低价值形式 采用*态度大方*表达句式  表达大方自然，干净利落 面对拒绝不强求，有意识不卑不亢   有效幽默  针对 聊天冷场 技能  方式  懂得利用话题 懂得如何问答 懂得发表意见  总结  就是利用对方感兴趣的话题作为切入点 然后在和对方问与答的互动之中 发表对事情的看法和见解  注意  注意节奏，交流而非审问   策略  向上归类  话题延伸至总结、深度  向下归类  概率具体伦  横向归类  扩展至同类、相似元素   补充  适当沉默 懂得倾听</description>
@@ -173,20 +173,20 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
     
     <item>
       <title>Spark </title>
-      <link>https://wrrwhn.github.io/domain/post/spark/</link>
+      <link>http://domain.yqjdcyy.com/post/spark/</link>
       <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/spark/</guid>
+      <guid>http://domain.yqjdcyy.com/post/spark/</guid>
       <description>[TOC]
 Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.</description>
     </item>
     
     <item>
       <title>音视频的相关名词</title>
-      <link>https://wrrwhn.github.io/domain/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
+      <link>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
       <pubDate>Wed, 08 Feb 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
       <description>参考  码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清  解析 码率  解析  Data Rate，又名码流、码流率 视频文件在单位时间内使用的数据流量，单位为 Kb/s 或 Mb/s 通指视频文中的音频和视频码流率总和 视频画面质量控制中最重要的部分  计算  File.size= duration* Data.Rate/ 8 90m 1Mbps 720P RMVB= 90* 60s* 1Mb/s/ 8= 675 MB   采样率  归类  音频  解析  Sampling Rate，又名采样辣度、采样频率 指将从连续信号中提取并组成离散信号的采样个数，单位为 Hz 以 44.1kHZ 采样率记录并播放，即可听到连续声音；越高则越连贯  人的听觉和视觉分辨采样率上限即为 44.1kHZ -   计算  比特率= 采样率* 采样位数* 声道数 CD 每秒 44100 次取样，2 个声道，13 位PCM编码  = 44100* 2* 13 = 144 KB/s   补充  位数  类比于画面的颜色数 上限  听觉 - 16位 视觉 - 24位   声道   比特率  解析  Bit Rate 每秒传送的比特数，单位为b/s 指将为数字声音、视频由模拟格式转化为数字格式的采样率  常见编码  VBR- Variable Bitrate  动态比特率，压缩时根据音频数据即时确定 质量前提，文件大小兼顾 推荐编码模式  ABR- Averate Bitrate  指定文件大小内，以每50帧为段，低频与不敏感使用较低流量，高频与动态表现时使用高流量 VBR 和 CBR 的折衷  CBR- Constant Bitrate  固定使用一位速率 压缩文件体积大，且音质无明显提高    帧速率  解析  FPS，Frames PerSecond 每秒钟刷新的图片的帧数，为图形处理器每秒刷新次数，单位为 f/s   分辨率  解析  指每帧图像的大小，如640* 480   720P 1080P  解析  分辨率简称  720P= 1280*720 1080P= 1920*1080  采用编码格式有MPEG2/ VC-1/ H.</description>
     </item>
     

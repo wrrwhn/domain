@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>注册表 on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
+    <link>http://domain.yqjdcyy.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/</link>
     <description>Recent content in 注册表 on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 08 Sep 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>右键菜单绑定</title>
-      <link>https://wrrwhn.github.io/domain/post/windows.right-click.menu/</link>
+      <link>http://domain.yqjdcyy.com/post/windows.right-click.menu/</link>
       <pubDate>Fri, 08 Sep 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/windows.right-click.menu/</guid>
+      <guid>http://domain.yqjdcyy.com/post/windows.right-click.menu/</guid>
       <description> 右键菜单绑定 参考  Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令  右键上传  修改注册表  结构  HKEY_CLASSES_ROOT  *  shell  （╯‵□′）╯︵┴─┴  新增「项」，其中名称为右键菜单要展示的名称 command  新增「项」，对应点击后执行的内容  默认  cmd.exe /k upload.exe -path=%1 &amp;amp;&amp;amp; exit  cmd.exe /k XXXXX  在 cmd 中执行 XXXXX 指令 &amp;amp;&amp;amp; 于前一条指令执行完成后执行           示例       </description>
     </item>
     

@@ -1,0 +1,1167 @@
+
+
+  
+    
+  
+
+
+  
+
+
+
+
+
+  
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="Hugo 0.30.2 with theme Tranquilpeak 0.4.3-BETA">
+    <title>JavaScript.TypeScript</title>
+    <meta name="author" content="姚清居到此一游">
+    <meta name="keywords" content=", 姚清居">
+
+    <link rel="icon" href="logo.png">
+    
+
+    
+    <meta name="description" content="[TOC]
+TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;&#43; user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left &#43; right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).">
+    <meta property="og:description" content="[TOC]
+TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;&#43; user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left &#43; right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).">
+    <meta property="og:type" content="blog">
+    <meta property="og:title" content="JavaScript.TypeScript">
+    <meta property="og:url" content="/2017/11/javascript.typescript/">
+    <meta property="og:site_name" content="姚清居到此一游">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="姚清居到此一游">
+    <meta name="twitter:description" content="[TOC]
+TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;&#43; user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left &#43; right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).">
+    
+    
+
+    
+    
+
+    
+      <meta property="og:image" content="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png">
+    
+
+    
+    
+    
+
+    
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/style-jsjn0006wyhpyzivf6yceb31gvpjatbcs3qzjvlumobfnugccvobqwxnnaj8.min.css" />
+    
+    
+
+    
+      
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="3">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="https://wrrwhn.github.io/domain/">姚清居到此一游</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="https://wrrwhn.github.io/domain/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="3">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="https://wrrwhn.github.io/domain/#about">
+          <img class="sidebar-profile-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+        </a>
+        <h4 class="sidebar-profile-name">姚清居到此一游</h4>
+        
+          <h5 class="sidebar-profile-bio"><a href="https://github.com/wrrwhn">https://github.com/wrrwhn</a></h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">分类</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">标签</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">归档</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">关于</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/wrrwhn" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://wrrwhn.github.io/domain/index.xml">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-rss"></i>
+      
+      <span class="sidebar-button-desc">RSS</span>
+    </a>
+  </li>
+
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="3"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      JavaScript.TypeScript
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2017-11-15T22:07:46&#43;08:00">
+        
+   15, 2017
+
+      </time>
+    
+    
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              
+
+<p>[TOC]</p>
+
+<h1 id="typescript">TypeScript</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/TypeScript">Wiki - TypeScript</a></li>
+<li><a href="https://zhongsp.gitbooks.io/typescript-handbook/content/index.html">TypeScript Handbook（中文版）</a></li>
+<li><a href="http://www.typescriptlang.org/">官网</a></li>
+<li><a href="https://github.com/Microsoft/TypeScript">Microsoft/TypeScript</a></li>
+<li><a href="https://www.tslang.cn/docs/handbook/typescript-in-5-minutes.html">5分钟上手TypeScript</a></li>
+<li><a href="http://www.infoq.com/cn/articles/es6-in-depth-symbols">深入浅出ES6（八）：Symbols</a></li>
+</ul>
+
+<h2 id="简介">简介</h2>
+
+<ul>
+<li>微软开发、开源的编程语言，为 JavaScript 的严格超集</li>
+<li>添加可选的<code>静态类型</code>和基于类的面向对象编程</li>
+<li>安德斯·海尔斯伯格参与设计</li>
+</ul>
+
+<h2 id="安装-使用">安装&amp;使用</h2>
+
+<ul>
+<li>安装
+
+<ul>
+<li><code>npm install -g typescript</code></li>
+</ul></li>
+<li>创建 hello.ts
+<code>
+function hello(user: string){
+    return &quot;Hello&quot;+ user;
+}
+var user = &quot;yao&quot;
+document.body.innerHTML= hello(user)
+</code></li>
+<li>编译
+
+<ul>
+<li><code>tsc hello.ts</code></li>
+</ul></li>
+</ul>
+
+<h2 id="扩展">扩展</h2>
+
+<h3 id="基础类型">基础类型</h3>
+
+<ul>
+<li>类型
+
+<ul>
+<li>number</li>
+<li>bool</li>
+<li>string</li>
+<li>Tuple
+
+<ul>
+<li><code>let x: [string, number]</code></li>
+</ul></li>
+<li>enum
+
+<ul>
+<li><code>enum Color {Red, Green, Blue}</code></li>
+</ul></li>
+<li>any
+
+<ul>
+<li>默认动态类型</li>
+</ul></li>
+<li>void</li>
+<li>null</li>
+<li>undefined</li>
+<li>never
+
+<ul>
+<li>总是抛出异常或根本不会返回值的函数表达式</li>
+<li>箭头函数表达式的返回值类型</li>
+</ul></li>
+</ul></li>
+<li>示例
+<code>
+function Add(left: number, right: number): number {
+    return left + right;
+}
+</code></li>
+<li>细节
+
+<ul>
+<li>类型批注被导出到<code>声明文件</code>，便于 javascript 和 TypeScript 脚本中类型信息均可使用</li>
+<li>类型断言
+
+<ul>
+<li>清楚确切的类型时，通知编译器进行类型转换，而<code>不进行特殊数据检查和解构</code></li>
+<li>写法
+
+<ul>
+<li><code>let len: number = (&lt;String&gt;val).length;</code></li>
+<li><code>let len: number = (val as string).length;</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="类型推断">类型推断</h3>
+
+<ul>
+<li>编译期自动推导出值的数据类型</li>
+</ul>
+
+<h3 id="变量声明">变量声明</h3>
+
+<ul>
+<li><p>var</p>
+
+<pre><code>function f() {
+    var a = 1;
+
+    a = 2;
+    var b = g();
+    a = 3;
+
+    return b;
+
+    function g() {
+        return a;
+    }
+}
+
+f(); // returns 2
+
+for (var i = 0; i &lt; 10; i++) {
+    setTimeout(function() { console.log(i); }, 100 * i);
+}
+10* 10 // 每当g被调用时，它都可以访问到f里的a变量。
+</code></pre></li>
+
+<li><p>let</p>
+
+<ul>
+<li>块作用域</li>
+<li>重定义与屏蔽</li>
+</ul></li>
+
+<li><p>const</p>
+
+<ul>
+<li>与 let 相同的作用域规则</li>
+<li>不能重新赋值</li>
+</ul></li>
+</ul>
+
+<h3 id="接口">接口</h3>
+
+<p>-
+    - <code>class</code> class <code>iplements</code> interface
+    - <code>interface</code> interface1 <code>extends</code> interface2
+    - <code>interface</code> interface <code>extends</code> class</p>
+
+<ul>
+<li><p>示例</p>
+
+<pre><code>interface LabelledValue {
+  label: string;
+  age?: number                // 可选属性
+  readonly val: number        // 只读属性
+
+  (source: string, subString: string): boolean;        // 参数名无需匹配，仅要求各位置参数类型匹配
+}
+let myObj = {size: 10, label: &quot;Size 10 Object&quot;};
+</code></pre></li>
+</ul>
+
+<h3 id="类">类</h3>
+
+<ul>
+<li>继承</li>
+<li>修饰符
+
+<ul>
+<li>public
+
+<ul>
+<li>默认</li>
+</ul></li>
+<li>private
+
+<ul>
+<li>仅在声明类中可用</li>
+</ul></li>
+<li>protected
+
+<ul>
+<li>派生类中仍可使用</li>
+</ul></li>
+<li>readonly</li>
+<li>static</li>
+</ul></li>
+<li>抽象类
+
+<ul>
+<li>abstract</li>
+</ul></li>
+<li>构造函数
+
+<ul>
+<li>关键词： constructor
+<code>
+class Greeter {
+greeting: string;
+constructor(message: string) {
+    this.greeting = message;
+}
+}
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="函数">函数</h3>
+
+<h3 id="泛型">泛型</h3>
+
+<pre><code>function identity&lt;T&gt;(arg: T): T {
+    return arg;
+}
+</code></pre>
+
+<h3 id="类型推论">类型推论</h3>
+
+<ul>
+<li>根据最佳通用</li>
+<li>根据上下文类型</li>
+</ul>
+
+<h3 id="类型兼容性">类型兼容性</h3>
+
+<ul>
+<li>条件(A= B)
+
+<ul>
+<li>对象
+
+<ul>
+<li>B 至少含有 A 中所有属性</li>
+</ul></li>
+<li>函数
+
+<ul>
+<li>B 中必需参数<code>类型</code> A 中均有满足</li>
+<li>允许<code>忽略参数</code></li>
+</ul></li>
+<li>枚举
+
+<ul>
+<li>不同枚举类型之间不兼容</li>
+</ul></li>
+<li>类
+
+<ul>
+<li>仅比较<code>实例成员</code>，静态成员和构造函数不比较</li>
+<li>私有成员仅可来源于同类的对象的私有成员</li>
+</ul></li>
+<li>泛型
+
+<ul>
+<li>仅定义结构使用类型参数时相同，都可理解为 <code>any</code></li>
+<li>当定义泛型类型成员时，则会限制</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="高级类型">高级类型</h3>
+
+<ul>
+<li>交叉类型
+
+<ul>
+<li>function extend<T, U>( first: T, second: U): T &amp; U { &hellip; }</li>
+</ul></li>
+<li>联合类型-
+
+<ul>
+<li>function padLeft(value: string, padding: string | number) { &hellip; }</li>
+</ul></li>
+<li>类型保护与类型区分
+
+<ul>
+<li>if((<Fish>pet).swim)</li>
+<li>typeof x=== &ldquo;number&rdquo;</li>
+<li>x instanceof number</li>
+</ul></li>
+<li>可辨识联合
+
+<ul>
+<li>联合类型 + 属性可辨识 + 类型保护
+<code>
+function area(s: Shape) {                                // 类型保护
+type Shape = Square | Rectangle | Circle;            // 联合类型
+    interface Square { kind: &quot;square&quot;; size: number;}        // 属性可辨识，各类中均有同一属性
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="symbols">Symbols</h3>
+
+<ul>
+<li>新原生类型
+
+<ul>
+<li>ECMAScript 2015 版本产生</li>
+<li>唯一且不可改变，理解有点像 UUID 用来定义唯一值</li>
+<li>创建
+
+<ul>
+<li>Symbol()</li>
+<li>Symbol.for(string)</li>
+<li>Symbol.iterator</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="迭代器和生成器">迭代器和生成器</h3>
+
+<ul>
+<li>for (let entry of someArray)
+
+<ul>
+<li>迭代对象键对应值</li>
+</ul></li>
+<li>for (let i in list)
+
+<ul>
+<li>迭代对象的键列表
+<code>
+let list = [4, 5, 6];
+for (let i in list) console.log(i); // &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,
+for (let i of list) console.log(i); // &quot;4&quot;, &quot;5&quot;, &quot;6&quot;
+</code></li>
+</ul></li>
+</ul>
+
+<h3 id="模块">模块</h3>
+
+<ul>
+<li>默认&amp;推荐 for Node.js 应用</li>
+<li>导出
+
+<ul>
+<li>export class ZipCodeValidator implements StringValidator</li>
+<li>export const numberRegexp</li>
+<li>export { ZipCodeValidator as mainValidator };</li>
+<li>export * from &ldquo;./StringValidator&rdquo;;</li>
+<li>export default $;        // 默认导出名称</li>
+</ul></li>
+<li>导入
+
+<ul>
+<li>import { ZipCodeValidator } from &ldquo;./ZipCodeValidator&rdquo;;</li>
+<li>import { ZipCodeValidator as ZCV } from &ldquo;./ZipCodeValidator&rdquo;;</li>
+<li>import * as validator from &ldquo;./ZipCodeValidator&rdquo;;</li>
+</ul></li>
+</ul>
+
+<h3 id="命名空间">命名空间</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>位于全局命名空间下的普通带名字的 JavaScript 对象</li>
+<li>可在多文件同时使用，通过 <code>--outFile</code> 结合</li>
+</ul></li>
+</ul>
+
+<h3 id="命名空间和模块">命名空间和模块</h3>
+
+<pre><code>// 不推荐，不应该对模块使用命名空间
+export namespace Shapes {
+    export class Triangle { /* ... */ }
+}
+import * as shapes from &quot;./shapes&quot;;
+let t = new `shapes.Shapes`.Triangle();
+
+// 推荐
+export class Triangle { /* ... */ }
+import * as shapes from &quot;./shapes&quot;;
+let t = new shapes.Triangle();
+</code></pre>
+
+<h3 id="模块解析">模块解析</h3>
+
+<ul>
+<li>顺序
+
+<ul>
+<li>优先尝试定位导入模块的文件
+
+<ul>
+<li>Classic 策略</li>
+<li>Node 策略</li>
+</ul></li>
+<li>无果时尝试<code>外部模块声明</code></li>
+</ul></li>
+<li>方式
+
+<ul>
+<li>相对
+
+<ul>
+<li>以 <code>/</code>, <code>./</code>, <code>../</code> 开头</li>
+<li><code>import Entry from &quot;./components/Entry&quot;;</code></li>
+<li><code>import { DefaultHeaders } from &quot;../constants/http&quot;;</code></li>
+<li><code>import &quot;/mod&quot;;</code></li>
+</ul></li>
+<li>非相对
+
+<ul>
+<li><code>import * as $ from &quot;jQuery&quot;;</code></li>
+</ul></li>
+</ul></li>
+<li>策略
+
+<ul>
+<li>介绍
+
+<ul>
+<li>使用 <code>--moduleResolution</code> 指定策略</li>
+<li>使用 <code>--module AMD | System | ES2015</code> 默认为 <code>Classic</code>，其它情况为 <code>Node</code></li>
+</ul></li>
+<li>分类
+
+<ul>
+<li>Classic
+
+<ul>
+<li>TypeScript <code>默认</code>解析策略，存在主要为了<code>向后兼容</code></li>
+<li>相对导入
+
+<ul>
+<li><code>/root/src/folder/A.ts</code> 中使用引用
+
+<ul>
+<li>引用 <code>import { b } from &quot;./moduleB&quot;</code></li>
+<li>查找
+
+<ul>
+<li><code>/root/src/folder/moduleB.ts</code></li>
+<li><code>/root/src/folder/moduleB.d.ts</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>非相对
+
+<ul>
+<li>由包含导入文件的目录开始，依次向上级目录遍历</li>
+<li><code>/root/src/folder/A.ts</code> 使用引用
+
+<ul>
+<li>引用 <code>import { b } from &quot;moduleB&quot;</code></li>
+<li>查找
+
+<ul>
+<li>/root/src/folder/moduleB.ts</li>
+<li>/root/src/folder/moduleB.d.ts</li>
+<li>/root/src/moduleB.ts</li>
+<li>/root/src/moduleB.d.ts</li>
+<li>/root/moduleB.ts</li>
+<li>/root/moduleB.d.ts</li>
+<li>/moduleB.ts</li>
+<li>/moduleB.d.ts</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>Node
+
+<ul>
+<li>同 <code>Node.js</code></li>
+<li>相对引用
+
+<ul>
+<li>检查 <code>/root/src/moduleB.js</code></li>
+<li>检查 <code>/root/src/moduleB/package.json</code>
+
+<ul>
+<li>如若包含 <code>{ &quot;main&quot;: &quot;lib/mainModule.js&quot; }</code> 则使用 <code>/root/src/moduleB/lib/mainModule.js</code></li>
+</ul></li>
+<li>检查 <code>/root/src/moduleB/index.js</code> ，并隐式当作 <code>main</code> 模块</li>
+</ul></li>
+<li>非相对引用
+
+<ul>
+<li>在特殊目录 <code>node_modules</code> 中查找模块</li>
+<li>依次向上寻找目录下 <code>node_modules</code> 中的 <code>moduleB.tx</code>,<code>moduleB.tsx</code>,<code>moduleB.d.ts</code>, <code>moduleB.js</code>, <code>moduleB/package.json</code>, <code>moduleB/index.js</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="声明合并">声明合并</h3>
+
+<h3 id="jsx">JSX</h3>
+
+<h3 id="装饰器">装饰器</h3>
+
+<h3 id="mixins">Mixins</h3>
+
+<h3 id="三斜线指令">三斜线指令</h3>
+
+<h2 id="补充">补充</h2>
+
+<ul>
+<li>静态类型
+
+<ul>
+<li>编译时确认变量类型，编译后类型信息和存储形式确定</li>
+</ul></li>
+<li>安德斯·海尔斯伯格
+
+<ul>
+<li>C#的首席架构师 创始人</li>
+<li>Delphi 创始人</li>
+<li>Turbo Pascal 创始人</li>
+</ul></li>
+<li>内部模块= 命名空间， 外部模块= 模块</li>
+</ul>
+
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small"></span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86/">整理</a>
+
+  <a class="tag tag--primary tag--small" href="https://wrrwhn.github.io/domain/tags/typescript/">TypeScript </a>
+
+                  </div>
+                
+              
+            
+            
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2017/11/linux.chown/" data-tooltip="Linux.Chown">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2017/11/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-tooltip="Java.注意事项">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2017 姚清居到此一游. 
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="3">
+        
+  <div class="post-actions-wrap">
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2017/11/linux.chown/" data-tooltip="Linux.Chown">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml"></span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="https://wrrwhn.github.io/domain/2017/11/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" data-tooltip="Java.注意事项">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr"></span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="3">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="http://otzm88f21.bkt.clouddn.com/45fdfc23-9844-433b-872c-dc78cddf7b21.png" alt="" />
+    
+    <h4 id="about-card-name">姚清居到此一游</h4>
+    
+      <div id="about-card-bio"><a href="https://github.com/wrrwhn">https://github.com/wrrwhn</a></div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Engineer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        中国-福建-厦门
+      </div>
+    
+  </div>
+</div>
+
+    <div id="algolia-search-modal" class="modal-container">
+  <div class="modal">
+    <div class="modal-header">
+      <span class="close-button"><i class="fa fa-close"></i></span>
+      <a href="https://algolia.com" target="_blank" rel="noopener" class="searchby-algolia text-color-light link-unstyled">
+        <span class="searchby-algolia-text text-color-light text-small">by</span>
+        <img class="searchby-algolia-logo" src="https://www.algolia.com/static_assets/images/press/downloads/algolia-light.svg">
+      </a>
+      <i class="search-icon fa fa-search"></i>
+      <form id="algolia-search-form">
+        <input type="text" id="algolia-search-input" name="search"
+          class="form-control input--large search-input" placeholder="" />
+      </form>
+    </div>
+    <div class="modal-body">
+      <div class="no-result text-color-light text-center"></div>
+      <div class="results">
+        
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/uml/">
+                <h3 class="media-heading">UML</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> [TOC]
+UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj   </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/linux.lsof/">
+                <h3 class="media-heading">Linux.Lsof</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/">
+                <h3 class="media-heading">网络-七层协议</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  深入浅出－网络七层模型&amp;&amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/">
+                <h3 class="media-heading">网络-四层协议</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  TCP/IP四层模型 深入浅出－网络七层模型&amp;&amp;网络数据包 TCP/IP四层模型 OSI七层和TCP/IP四层的关系  定义  网络事实上的标准 又名 TCP/IP 协议族或 TCP/IP 协议栈  Transmission Control Protocol 传输控制协议 Internet Protocol 互联网协议      分层 应用层  定义  = OSI.应用层+ OSI.表示层 + OSI.会话层  示例  FTP/ TELNET/ HTTP   传输层  定义  = OSI.传输层 对数据进行缓存、报文的拆解和重组  示例  TCP  传输控制协议 transmission control protocol  UDP  用户数据报协议 user datagram protocol    网间层  定义 = OSI.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8-%E5%90%8C%E5%AE%89/">
+                <h3 class="media-heading">中国-厦门-同安</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  揣着100块钱来同安吃1整天！  路线  T4候机楼站 凤岗大肠国大肠血  BRT快2线，至同安枢纽站  阿呆盐鸭店  630A，由同安枢纽站至小西门  鑫旺旺汤包  步行  味源小吃  630A，由小西门至同安电视台站  台湾番婆冰  步行  肥栋满煎糕  步行  秀英食品  步行  双鹿老铺  步行  陆丰煎饼  612，由金安大厦至新西桥站  杨强芙蓉香骨鸡腿  625，由新西桥至同安劳动力市场站   介绍 凤岗大肠国  位置  凤岗岗头里786 同安枢纽站 直行50米左转进入凤岗路 直走600米  特色菜  纯猪血大肠  单价  15元/碗    阿呆盐鸭店  位置  小西门 下车前行50米后左转200米进入东山路  特色菜  盐鸭  单价  50元/只    鑫旺旺汤包  位置  沿着东山路走250米，进中山路再走200米  特色菜  汤包  单价  10元/笼    味源小吃  位置  同安电视台站  特色菜  碗仔粿  单价  3元/小碗 4元/大碗    台湾番婆冰  位置  沿着凤山路往南门桥走350米  特色菜  芒果冰 芋泥  单价  22元/芒果冰 6元/芋泥    肥栋满煎糕  位置  出了番婆冰右转20米就到  特色菜  满煎糕  单价  10元/个    秀英食品  位置  从番婆冰门口上桥，过桥左转沿路走到尽头右转300米，再右转上同新路，80米后左转直行100米  特色菜  醋肉  单价  20元/份    双鹿老铺  位置  从秀英出门右转到松柏林中路，200米后右转进南门路，再走70米  特色菜  马蹄酥  单价  6元/袋-10个    陆丰煎饼  位置  612路 金安大厦-新西桥站（2站） 步行到古庄大社里21号 下午三点开门  特色菜  煎饼  单价  4元/个 5.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/12/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/">
+                <h3 class="media-heading">云开-服务端架构-20171203</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Dec 12, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/kafka/">
+                <h3 class="media-heading">Kafka</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">
+                <h3 class="media-heading">FFmpeg.阅读笔记</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">[TOC]
+简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;-------- | encoded data | &lt;----+ | file | muxer | packets | encoder |________| |______________|  选项 实例 裁剪  指令  ffmpeg -i old.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/git.subtree/">
+                <h3 class="media-heading">Git.Subtree</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather">参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
+ 适用情况
+ 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
+ Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.</div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+          <div class="media">
+            
+            <div class="media-body">
+              <a class="link-unstyled" href="https://wrrwhn.github.io/domain/2017/11/20%E5%B2%81%E7%9A%84%E4%BD%A0/">
+                <h3 class="media-heading">20岁的你</h3>
+              </a>
+              <span class="media-meta">
+                <span class="media-date text-small">
+                  Nov 11, 2017
+                </span>
+              </span>
+              <div class="media-content hide-xs font-merryweather"> [TOC]
+20岁时做什么到40岁时才不会后悔？ 要点  知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础 试错和重启 谨慎选择与谁一起共度 谨防短期情绪波动 一定要把收入的一部分用于储蓄 投资 写作将点燃你的头脑 要建立良好的个人品牌 设计你的生活永远不会太迟 没有人把一切都想通了  忧虑就是你在偿还你并未欠的债 - 马克吐温  了解，沟通是一切 提问 如果你发现自己不知道或不确定，就主动发问吧 做饭 冥想让头脑深度休息 更新你的心灵的操作系统  关键字  健康、控制情绪 尝试  投资理财 做饭  提问、思考、设计人生  </div>
+            </div>
+            <div style="clear:both;"></div>
+            <hr>
+          </div>
+        
+      </div>
+    </div>
+    <div class="modal-footer">
+      <p class="results-count text-medium"
+         data-message-zero=""
+         data-message-one=""
+         data-message-other="">
+         132 posts found
+      </p>
+    </div>
+  </div>
+</div>
+    
+  
+    
+    <div id="cover" style="background-image:url('https://wrrwhn.github.io/domain/images/cover.jpg');"></div>
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="https://wrrwhn.github.io/domain/js/script-qi9wbxp2ya2j6p7wx1i6tgavftewndznf4v0hy2gvivk1rxgc3lm7njqb6bz.min.js"></script>
+
+
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+    
+  </body>
+</html>
+

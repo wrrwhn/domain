@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tcp on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/tcp/</link>
+    <link>http://domain.yqjdcyy.com/tags/tcp/</link>
     <description>Recent content in Tcp on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/tcp/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Linux 单TCP连接占用最少内存</title>
-      <link>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
+      <link>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
       <description>[TOC]
 Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &amp;gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | &amp;mdash;- | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; | | file | 256 | &amp;ldquo;filp&amp;rdquo; | | dentry | 192 | &amp;ldquo;dentry&amp;rdquo; | | socket_alloc | 640 | &amp;ldquo;sock_inode_cache&amp;rdquo; | | tcp_sock | 1792 | &amp;ldquo;TCP&amp;rdquo; | | socket_wq | 64 | &amp;ldquo;kmalloc-64&amp;rdquo; | | inet_bind_bucket | 64 | &amp;ldquo;tcp_bind_bucket&amp;rdquo; | | epitem | 128 | &amp;ldquo;eventpoll_epi&amp;rdquo; | | tcp_request_sock | 256 | &amp;ldquo;request_sock_TCP&amp;rdquo; |</description>
     </item>

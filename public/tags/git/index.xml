@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/git/</link>
+    <link>http://domain.yqjdcyy.com/tags/git/</link>
     <description>Recent content in Git on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 23 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/git/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Git.Subtree</title>
-      <link>https://wrrwhn.github.io/domain/post/git.subtree/</link>
+      <link>http://domain.yqjdcyy.com/post/git.subtree/</link>
       <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/git.subtree/</guid>
+      <guid>http://domain.yqjdcyy.com/post/git.subtree/</guid>
       <description>参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
  适用情况
  使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
@@ -26,30 +26,30 @@
     
     <item>
       <title>Linux.Git</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.git/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.git/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.git/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
       <description> [TOC]
 参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen    </description>
     </item>
     
     <item>
       <title>Git.Install</title>
-      <link>https://wrrwhn.github.io/domain/post/git.install/</link>
+      <link>http://domain.yqjdcyy.com/post/git.install/</link>
       <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/git.install/</guid>
+      <guid>http://domain.yqjdcyy.com/post/git.install/</guid>
       <description>[TOC]
 Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &amp;quot;yqjdcyy@gmail.com&amp;quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git --version git config --global user.name &amp;quot;wrrwhn&amp;quot; git config --global user.email yaoqingju@gmail.com cat ~/.</description>
     </item>
     
     <item>
       <title>Git.命令小结</title>
-      <link>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
+      <link>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
+      <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
       <description>[TOC]
 查看 分支状态  git status git branch
  分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到当前分支

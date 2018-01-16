@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Redis on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/redis/</link>
+    <link>http://domain.yqjdcyy.com/tags/redis/</link>
     <description>Recent content in Redis on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Redis.使用</title>
-      <link>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</link>
+      <link>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/redis.%E4%BD%BF%E7%94%A8/</guid>
+      <guid>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</guid>
       <description>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
 参考 官网
  文档
@@ -29,19 +29,19 @@
     
     <item>
       <title>Redis.Keys-Del</title>
-      <link>https://wrrwhn.github.io/domain/post/redis.keys-del/</link>
+      <link>http://domain.yqjdcyy.com/post/redis.keys-del/</link>
       <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/redis.keys-del/</guid>
+      <guid>http://domain.yqjdcyy.com/post/redis.keys-del/</guid>
       <description>参考  Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key  明细  Login  /opt/redis/redis-cli -p &amp;lt;port&amp;gt; -a &amp;lt;password&amp;gt;  Search-Delete  /opt/redis/redis-cli keys &amp;quot;*&amp;quot; | xargs /opt/redis/redis-cli del   示例 删除指定练习相关缓存  导出以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; &amp;gt; /data/op-script/redis/exercises:10203  列举所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot;  删除所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c\!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &amp;quot;exercises:10203*&amp;quot; | xargs /usr/local/bin/redis-cli -p 37652 -a 5c\!</description>
     </item>
     
     <item>
       <title>Redis.Basic</title>
-      <link>https://wrrwhn.github.io/domain/post/redis.basic/</link>
+      <link>http://domain.yqjdcyy.com/post/redis.basic/</link>
       <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/redis.basic/</guid>
+      <guid>http://domain.yqjdcyy.com/post/redis.basic/</guid>
       <description>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&amp;hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节</description>
     </item>
     

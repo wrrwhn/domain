@@ -8,25 +8,25 @@
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
-        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
-        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
-        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
         
         <style>
         .site-header h2 .logo {
-        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
         }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           .site-header h2 .logo {
-            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
         }}
        .site-header {
-         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
          z-index: -1;
         }
         </style>
@@ -45,15 +45,111 @@
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/windows.right-click.menu/" title="右键菜单绑定">右键菜单绑定</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/goruntime">goruntime </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL">GraphQL</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/graphql">graphql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
+query { hero { name } droid(id: &quot;2000&quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
+  { &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;, &ldquo;review&rdquo;: { &ldquo;stars&rdquo;: 5, &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/wechat.export/" title="Wechat.Export">Wechat.Export</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/wechat">wechat</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder
+流程  将语音收藏 在手机完整收听 使用目录管理搜索提取  ./sdcard/tecent/MicroMsg/ 搜索 .silk 文件  拷贝至电脑 使用 silk2mp3 工具将音频*转换*为 mp3 格式文件  注意  SILK v3  为 skype 向第三方开发人员或硬件制造商提供的免版税谁的 Silk 宽音频编码器 文件更为精简  xxx.silk 18KB xxx.mp3 189KB&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/wechat.export/" title="Wechat.Export"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.error/" title="Mysql.Error">Mysql.Error</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.12">2017.09.12</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.error/" title="Mysql.Error"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/windows.right-click.menu/" title="右键菜单绑定">右键菜单绑定</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.08">2017.09.08</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8">注册表</a>
+        <a href="http://domain.yqjdcyy.com/tags/%E6%B3%A8%E5%86%8C%E8%A1%A8">注册表</a>
         
     
 
@@ -61,23 +157,23 @@
 </footer>
 
     <p>右键菜单绑定 参考  Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令  右键上传  修改注册表  结构  HKEY_CLASSES_ROOT  *  shell  （╯‵□′）╯︵┴─┴  新增「项」，其中名称为右键菜单要展示的名称 command  新增「项」，对应点击后执行的内容  默认  cmd.exe /k upload.exe -path=%1 &amp;&amp; exit  cmd.exe /k XXXXX  在 cmd 中执行 XXXXX 指令 &amp;&amp; 于前一条指令执行完成后执行           示例&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/windows.right-click.menu/" title="右键菜单绑定"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/windows.right-click.menu/" title="右键菜单绑定"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.upload.qiniu/" title="Go.Upload.Qiniu">Go.Upload.Qiniu</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.upload.qiniu/" title="Go.Upload.Qiniu">Go.Upload.Qiniu</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.07">2017.09.07</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/qiniu">qiniu</a>
+        <a href="http://domain.yqjdcyy.com/tags/qiniu">qiniu</a>
         
     
 
@@ -90,21 +186,21 @@
 [人员列表.xls][http://otzm88f21.bkt.clouddn.com/a.xls] [六步搞定实地辅导-20170822.md][http://otzm88f21.bkt.clouddn.com/b.md] [人员列表.txt][http://otzm88f21.bkt.clouddn.com/c.txt]
  - Exe 方式调用[**异常**]  go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg
 [新建 Microsoft PowerPoint 演示文稿.pptx][http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx] uplaod.exe%!(EXTRA string=http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe)</code>&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.upload.qiniu/" title="Go.Upload.Qiniu"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.upload.qiniu/" title="Go.Upload.Qiniu"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/herman-miller/" title="Herman Miller ">Herman Miller </a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/herman-miller/" title="Herman Miller ">Herman Miller </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.01">2017.09.01</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E5%93%81%E7%89%8C">品牌</a>
+        <a href="http://domain.yqjdcyy.com/tags/%E5%93%81%E7%89%8C">品牌</a>
         
     
 
@@ -113,21 +209,21 @@
 
     <p>[TOC]
 Herman Miller 参考  Herman Miller 官网  里程碑  60s  行动式办公室  Action Office Robert Propst 开放式办公屏风系统   1976  Ergon  1984  Equa  1994  Aeron 网椅  近期  Embody   推荐 Aeron  价位  天猫 Herman Miller 新款 Aeron【高端配置】 天猫 Herman Miller Aeron 座椅 标准配置（骶骨承托） 京东 Herman Miller 新款 Aeron【高端配置】-14天内发货 抛光底座/碳灰织物 大号 京东 Herman Miller Aeron 座椅 标准配置（骶骨承托） 碳黑色 中号  参考  Aeron座椅  欣赏        Embody  价位  天猫 Herman Miller Embody 座椅 标准配置【Rhythm织物】 京东 Herman Miller Embody 座椅 【Rhythm织物】 Rhythm织物\纯黑色 钛合金底座/白框  参考  Embody座椅  欣赏        T2  价位  [暂无]()  参考  T2  欣赏        Envelop办公桌  价位  天猫 Herman Miller Envelop 书桌【脚垫\部分现货】  参考  Envelop办公桌  欣赏       产品线 座椅  参考  座椅  系列  工作椅 主管椅 多用途/客椅 堆叠座椅 高脚凳 休闲座椅 公共座椅 长凳 户外座椅   工作空间  参考  工作空间  系列  个人工作站 私人办公室 办公桌 协作式家具 分隔屏风   桌子  参考  桌子  系列  会议桌 高度可调桌子 餐桌 多功能桌 户外桌子   储物  参考  储物  系列  配件  参考  配件  系列  人体工程学配件 照明 办公桌配件 装饰品   经典系列  参考  HermanMiller Collection&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/herman-miller/" title="Herman Miller "> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/herman-miller/" title="Herman Miller "> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译">Go.交叉编译</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译">Go.交叉编译</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.28">2017.08.28</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
         
     
 
@@ -136,21 +232,21 @@ Herman Miller 参考  Herman Miller 官网  里程碑  60s  行动式办公室  
 
     <p>[TOC]
 Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译  作用  Go作为编译型语言，在不同平台上需要编译生成不同格式的二进制包  参数  GOOS  程序构建目标环境的操作系统  GOARCH  程序构建目标环境的计算机架构  CGO_ENABLED  当值为 0 时表示设置 CGO 不可用   示例 Linux 64bit  GOOS=linux GOARCH=amd64 go build -o app.linux  -o 用于指定二进制文件名   Linux 32bit  GOOS=linux GOARCH=386 go build  windows 64bit  GOOS=windows GOARCH=amd64 go build  windows 32bit  GOOS=windows GOARCH=386 go build  Mac OS 64bit  GOOS=darwin GOARCH=amd64 go build  备注  CGO  GO 语言自带工具，用于支持调用 C 语言代码的 GO 语言源码文件  1.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/" title="Go.交叉编译"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run">Linux.Run</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.run/" title="Linux.Run">Linux.Run</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.28">2017.08.28</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -159,21 +255,21 @@ Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 
 
     <p>[TOC]
 命令后台运行 参考  Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令  类型  后台运行，终端关闭时停止 后台运行，终端关掉后仍继续运行  方法 前后台切换  流程  执行复杂语句 使用 Ctrl+ Z 挂起复杂程序  [1]+ Stopped /data/service/webapps/engine-dev/main  使用 jobs 查询后台工作情况  [1]+ Stopped /data/service/webapps/engine-dev/main  输入 fg 1 继续执行复杂语句 输入 bg 1 在后台继续执行语句  [1]+ /data/service/webapps/engine-dev/main jobs  [1]+ Running /data/service/webapps/engine-dev/main     后台执行  &amp;  后台运行，终端关闭时停止  当前终端 shell 进程退出，会发送 hangup 信号给所有子进程 子进程收到 hangup 后退出  日志仍会打印到前台 示例  /data/service/webapps/engine-dev/main &amp; /data/service/webapps/engine-dev/main &gt; out.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.run/" title="Linux.Run"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.run/" title="Linux.Run"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限">Linux 的目录与权限</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.25">2017.08.25</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -182,101 +278,7 @@ Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 
 
     <p>[TOC]
 Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/idea.mybatiscodehelper/" title="IDEA.MyBatisCodeHelper">IDEA.MyBatisCodeHelper</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.21">2017.08.21</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/idea">idea</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，极大提升效率  描述  根据 JavaBean 生成 MyBatis 和 SQL.Create 更新方法名生成表单操作  使用  详见参考二中动态图&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/idea.mybatiscodehelper/" title="IDEA.MyBatisCodeHelper"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.user/" title="Linux.User">Linux.User</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.user/" title="Linux.User"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.jenkins/" title="Linux.Jenkins">Linux.Jenkins</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.17">2017.08.17</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification failed [WARNING] Failed to create parent directories for tracking file  流程 war  DOWNLOAD  wget <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  COPY  cp jenkins.war /data/service/webapps/jenkins/webapps/ROOT.war  CONFIG.JENKINS.TOMCAT  CATALINA_OPTS=&quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot; export CATALINA_OPTS   yum  YUM.CONFIG  wget -O /etc/yum.repos.d/jenkins.repo <a href="http://jenkins-ci.org/redhat/jenkins.repo">http://jenkins-ci.org/redhat/jenkins.repo</a> rpm &ndash;import <a href="http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key">http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key</a>  YUM  yum install jenkins  JENKINS.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.jenkins/" title="Linux.Jenkins"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.maven/" title="Linux.Maven">Linux.Maven</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.17">2017.08.17</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/maven">maven</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz  流程 Java.config  check $JAVA_HOME  Maven.config  UNZIP  /data/soft/apache-maven-3.5.0  EXPORT.ADD  /etc/profile  export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&lsquo;-Xms256m -Xmx512m&rsquo; export PATH=${PATH}:${M2}   EXPORT.SAVE  source /etc/profile  CHECK  mvn -v  MAVEN.CONFIG  /data/soft/apache-maven-3.5.0/conf/settings.xml  &lt;localRepository&gt;/data/soft/apache-maven-3.5.0/repo&lt;/localRepository&gt;    常用指令  clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X  显示 Debbug 信息&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.maven/" title="Linux.Maven"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
 </article>
 
         
@@ -284,14 +286,14 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
 <nav>
 
     
-	<a class="btn newer" href="/domain/page/7/" title="">&laquo; </a>
+	<a class="btn newer" href="/page/7/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 8  13</p>
+	<p class="counter"> 8  14</p>
 
 
 	
-	<a class="btn older" href="/domain/page/9/" title=""> &raquo;</a>
+	<a class="btn older" href="/page/9/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -300,7 +302,7 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
     </main>
 
     <aside class="author">
-  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
   <p class="name"> 
   <strong>姚清居</strong></p>
   <p class="address">Earth</p>
@@ -324,7 +326,7 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
 
 
 
-<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
   </ul>
   <br><br>
@@ -334,16 +336,16 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
 
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
-        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
 
 
 

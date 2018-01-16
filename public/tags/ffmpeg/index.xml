@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ffmpeg on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/ffmpeg/</link>
+    <link>http://domain.yqjdcyy.com/tags/ffmpeg/</link>
     <description>Recent content in Ffmpeg on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 23 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>FFmpeg.阅读笔记</title>
-      <link>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
+      <link>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
+      <guid>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
       <description>[TOC]
 简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ...  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file | muxer | packets | encoder |________| |______________|  选项 实例 裁剪  指令  ffmpeg -i old.</description>
     </item>

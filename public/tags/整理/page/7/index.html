@@ -8,25 +8,25 @@
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
-        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
-        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
-        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
         
         <style>
         .site-header h2 .logo {
-        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
         }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           .site-header h2 .logo {
-            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
         }}
        .site-header {
-         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
          z-index: -1;
         }
         </style>
@@ -41,20 +41,89 @@
 
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/windows.service/" title="Windows.Service">Windows.Service</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make">Linux.Make</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/go.gpm/" title="Go.GPM">Go.GPM</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.23">2017.07.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.gpm/" title="Go.GPM"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/windows">windows</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service">Windows.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/windows">windows</a>
         
     
 
@@ -63,23 +132,23 @@
 
     <p>[TOC]
 Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&lt;ServerName&gt;] control [&lt;ServiceName&gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &lt;UserDefinedControlB&gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/windows.service/" title="Windows.Service"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/chrome">chrome</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/chrome">chrome</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/plugin">plugin</a>
+        <a href="http://domain.yqjdcyy.com/tags/plugin">plugin</a>
         
     
 
@@ -90,21 +159,21 @@ Windows 程序服务化 参考  SC NSSM windows service startup timeout reset se
 参考  Getting Started: Building a Chrome Extension Overview Developer&rsquo;s Guide Sample Extensions  示例解析  目录结构
 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，<strong>要求 js 和 html 分开存放</strong> manifest.json // 插件配置文件  manifest.json
 { &quot;manifest_version&quot;: 2, // 配置文件版本 &quot;name&quot;: &quot;插件名称&quot;, &quot;description&quot;: &quot;插件功能描述&quot;, &quot;version&quot;: &quot;0.1&quot;, // 插件当前开发版本 // 通用型 &quot;browser_action&quot;: { // 浏览器级动作 &quot;default_icon&quot;: &quot;/images/icon.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
         
     
 
@@ -113,21 +182,21 @@ html setting.html // 弹出界面 images icon.png // banner 上小图标，推�
 
     <p>[TOC]
 配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
         
     
 
@@ -140,21 +209,21 @@ Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer,
  操作返回值
 // return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
  内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.26">2017.04.26</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
         
     
 
@@ -163,21 +232,21 @@ Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer,
 
     <p>[TOC]
 注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &quot;autocomplete_builtins&quot;: true, &quot;autocomplete_closures&quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.gosublime/" title="Go.GoSublime"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.gosublime/" title="Go.GoSublime"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.flag/" title="Go.Flag">Go.Flag</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.flag/" title="Go.Flag">Go.Flag</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.24">2017.04.24</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
         
     
 
@@ -186,21 +255,21 @@ Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer,
 
     <p>[TOC]
 Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令行参数的功能接口  常用  flag.Xxx<a href="name string, default-value Xxx, usage-info string">String| Bool| Int</a>  返回相应指针  flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info)  将 flag 绑定到变量  flag.Var(&amp;custom-type, name, usage-info)  custom-type 需要实现 Value 接口  flag.Parse()  直接使用国指针，绑定参数则为实际值 flag.Args() flag.Arg(i)  flag.PrintDefaults  define  flag.String(&quot;I&quot;, &quot;&quot;, &quot;searchdirectoryfor include files&quot;)  output  -I directory search directory for include files.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.flag/" title="Go.Flag"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.flag/" title="Go.Flag"> &raquo;</a>
 </article>
 
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl">Linux.Curl</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/linux.curl/" title="Linux.Curl">Linux.Curl</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.01">2017.04.01</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/linux">linux</a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -209,76 +278,7 @@ Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令
 
     <p>[TOC]
 参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 &ndash;trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| &hellip;]  支持其它类型参数  &ndash;data &quot;arg=val&quot;  传递参数  &ndash;user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &quot;Content-Type:application/json&quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &quot;Content-Type: application/json;charset=UTF-8&quot; -d &lsquo;{&quot;username&quot;:&quot;15880777595&quot;,&quot;pwd&quot;:&quot;1&quot;}&rsquo; &ndash;cookie-jar /data/cdn/resource/curl-cookie <a href="http://live">http://live</a>.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/linux.curl/" title="Linux.Curl"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授">加藤鹰-秘技传授</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.03.20">2017.03.20</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/sex">sex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-加藤鹰-秘技传授 接吻  搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧  爱抚 耳朵  待定  舌技  待定  指技  待定  异物插入  待定  插入  待定&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema">MYSQL.Information_schema</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.26">2017.02.26</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/mysql.information_schema/" title="MYSQL.Information_schema"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令">常用CMD指令</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.23">2017.02.23</time>
-
-    &middot; 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="https://wrrwhn.github.io/domain/tags/cmd">cmd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &ldquo;9050&rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &ldquo;2748&rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/linux.curl/" title="Linux.Curl"> &raquo;</a>
 </article>
 
         
@@ -286,14 +286,14 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 <nav>
 
     
-	<a class="btn newer" href="/domain/tags/%E6%95%B4%E7%90%86/page/6/" title="">&laquo; </a>
+	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/6/" title="">&laquo; </a>
 	
 
 	<p class="counter"> 7  10</p>
 
 
 	
-	<a class="btn older" href="/domain/tags/%E6%95%B4%E7%90%86/page/8/" title=""> &raquo;</a>
+	<a class="btn older" href="/tags/%E6%95%B4%E7%90%86/page/8/" title=""> &raquo;</a>
 	
 
 </nav>
@@ -302,7 +302,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
     </main>
 
     <aside class="author">
-  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
   <p class="name"> 
   <strong>姚清居</strong></p>
   <p class="address">Earth</p>
@@ -326,7 +326,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 
 
 
-<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
   </ul>
   <br><br>
@@ -335,16 +335,16 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 </div>
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
-        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
 
 
 

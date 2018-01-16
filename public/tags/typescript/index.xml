@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Typescript on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/typescript/</link>
+    <link>http://domain.yqjdcyy.com/tags/typescript/</link>
     <description>Recent content in Typescript on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>JavaScript.TypeScript</title>
-      <link>https://wrrwhn.github.io/domain/post/javascript.typescript/</link>
+      <link>http://domain.yqjdcyy.com/post/javascript.typescript/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/javascript.typescript/</guid>
+      <guid>http://domain.yqjdcyy.com/post/javascript.typescript/</guid>
       <description>[TOC]
 TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &amp;quot;Hello&amp;quot;+ user; } var user = &amp;quot;yao&amp;quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&amp;lt;String&amp;gt;val).</description>
     </item>

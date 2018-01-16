@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Xsd on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/xsd/</link>
+    <link>http://domain.yqjdcyy.com/tags/xsd/</link>
     <description>Recent content in Xsd on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 16 Dec 2016 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/xsd/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/xsd/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>XSD</title>
-      <link>https://wrrwhn.github.io/domain/post/xsd/</link>
+      <link>http://domain.yqjdcyy.com/post/xsd/</link>
       <pubDate>Fri, 16 Dec 2016 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/xsd/</guid>
+      <guid>http://domain.yqjdcyy.com/post/xsd/</guid>
       <description>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：http://www.w3school.com.cn/schema/ 手册：http://www.w3school.com.cn/schema/schema_elements_ref.asp 验证：http://www.ltg.ed.ac.uk/~ht/xsv-status.html 实例：http://www.w3school.com.cn/schema/schema_example.asp
 使用 XML结构 &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;note&amp;gt; &amp;lt;to&amp;gt;George&amp;lt;/to&amp;gt; &amp;lt;from&amp;gt;John&amp;lt;/from&amp;gt; &amp;lt;heading&amp;gt;Reminder&amp;lt;/heading&amp;gt; &amp;lt;body&amp;gt;Don&#39;t forget the meeting!&amp;lt;/body&amp;gt; &amp;lt;/note&amp;gt;   定义 - note.xsd &amp;lt;?xml version=&amp;quot;1.0&amp;quot;?&amp;gt; &amp;lt;xs:schema xmlns:xs=&amp;quot;http://www.w3.org/2001/XMLSchema&amp;quot; // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&amp;quot;http://www.w3school.com.cn&amp;quot; // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&amp;quot;http://www.w3school.com.cn&amp;quot; // 指定默认命名空间 elementFormDefault=&amp;quot;qualified&amp;quot; &amp;gt; &amp;lt;xs:element name=&amp;quot;note&amp;quot;&amp;gt; &amp;lt;xs:complexType&amp;gt; &amp;lt;xs:sequence&amp;gt; &amp;lt;xs:element name=&amp;quot;to&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;from&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;heading&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;xs:element name=&amp;quot;body&amp;quot; type=&amp;quot;xs:string&amp;quot;/&amp;gt; &amp;lt;/xs:sequence&amp;gt; &amp;lt;/xs:complexType&amp;gt; &amp;lt;/xs:element&amp;gt; &amp;lt;/xs:schema&amp;gt;  引用 &amp;lt;?</description>
     </item>

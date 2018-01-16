@@ -8,25 +8,25 @@
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="https://wrrwhn.github.io/domain/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/styles.css">
-        <link rel="icon" href="https://wrrwhn.github.io/domain/favicon.ico">
-        <link rel="apple-touch-icon" href="https://wrrwhn.github.io/domain/apple-touch-icon.png" />
-        <link rel="stylesheet" href="https://wrrwhn.github.io/domain/css/highlightjs/monokai.css">
-        <script src="https://wrrwhn.github.io/domain/js/vendor/modernizr-2.8.0.min.js"></script>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
         
         <style>
         .site-header h2 .logo {
-        background: url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat 0 0;
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
         }
         @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
           .site-header h2 .logo {
-            background-image: url(https://wrrwhn.github.io/domain/img/desk.jpg);
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
         }}
        .site-header {
-         background: #2a373d url(https://wrrwhn.github.io/domain/img/desk.jpg) no-repeat center center;
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
          z-index: -1;
         }
         </style>
@@ -41,22 +41,22 @@
 
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="https://wrrwhn.github.io/domain/" title="">&laquo; </a>
+        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
         
             <article class="post">
     
-<h1><a href="https://wrrwhn.github.io/domain/post/go.wukong/" title="Go.Wukong">Go.Wukong</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong">Go.Wukong</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
 
     &middot; 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/go">go</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
         
-        <a href="https://wrrwhn.github.io/domain/tags/%E6%9F%A2">柢</a>
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9F%A2">柢</a>
         
     
 
@@ -66,7 +66,7 @@
     <p>[TOC]
 悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
 searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &quot;./dict/dictionary.txt&quot;, StopTokenFile: &quot;./dict/stop_tokens.txt&quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.&hellip;</p>
-    <a href="https://wrrwhn.github.io/domain/post/go.wukong/" title="Go.Wukong"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong"> &raquo;</a>
 </article>
 
         
@@ -82,7 +82,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
     </main>
 
     <aside class="author">
-  <img class="profile-image" src="https://wrrwhn.github.io/domain/img/profile-image.png" alt="姚清居" />
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
   <p class="name"> 
   <strong>姚清居</strong></p>
   <p class="address">Earth</p>
@@ -106,7 +106,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 
 
 
-<li><a href="https://wrrwhn.github.io/domain/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
 
   </ul>
   <br><br>
@@ -115,16 +115,16 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 </div>
 <footer class="main-footer">
   <div class="container clearfix">
-        <a class="icon-rss" href="https://wrrwhn.github.io/domain/post/index.xml" title="RSS"></a>
-        <p>&copy; 2017 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="https:\/\/wrrwhn.github.io\/domain\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="https://wrrwhn.github.io/domain/js/plugins.js"></script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
 
 
 

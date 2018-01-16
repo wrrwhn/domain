@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Spark on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/spark/</link>
+    <link>http://domain.yqjdcyy.com/tags/spark/</link>
     <description>Recent content in Spark on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 20 Oct 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/spark/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/spark/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Spark </title>
-      <link>https://wrrwhn.github.io/domain/post/spark/</link>
+      <link>http://domain.yqjdcyy.com/post/spark/</link>
       <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/spark/</guid>
+      <guid>http://domain.yqjdcyy.com/post/spark/</guid>
       <description>[TOC]
 Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.</description>
     </item>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Powerpoint on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/powerpoint/</link>
+    <link>http://domain.yqjdcyy.com/tags/powerpoint/</link>
     <description>Recent content in Powerpoint on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/powerpoint/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/powerpoint/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PowerPoint.CoverExport</title>
-      <link>https://wrrwhn.github.io/domain/post/powerpoint.coverexport/</link>
+      <link>http://domain.yqjdcyy.com/post/powerpoint.coverexport/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/powerpoint.coverexport/</guid>
+      <guid>http://domain.yqjdcyy.com/post/powerpoint.coverexport/</guid>
       <description> 文件法 实现  将 .pptx 文件后缀更新为 .zip 获取 /docProps/thumbnail.jpeg  缺点  仅适用于 .pptx  windows api + code 实现 环境要求&amp;amp; 版本限制  v4.0.30319  缺点  与「文件法」一致，导出图片尺寸过小  PPT 操作导出 - 79KB 1024x766 api 导出 - 24KB 960x720  部分 PPT 无缩略图，导出的均为 PPT 默认图片  OpenXML + code 现服务转换方式  高清无码  环境要求&amp;amp; 版本限制  v2.0.50727 安装有 Microsoft.PowerPoint  缺点  要求本地安装有指定以上版本 PPT  </description>
     </item>
     

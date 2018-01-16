@@ -2,32 +2,41 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/linux/</link>
+    <link>http://domain.yqjdcyy.com/tags/linux/</link>
     <description>Recent content in Linux on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 11 Dec 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Linux.Lsof</title>
+      <link>http://domain.yqjdcyy.com/post/linux.lsof/</link>
+      <pubDate>Mon, 11 Dec 2017 22:07:46 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.lsof/</guid>
+      <description>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &amp;lt;进程名&amp;gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &amp;lt;文件号&amp;gt;  列出占用该文件号的进程  +d &amp;lt;目录&amp;gt;  列出目录下被打开的文件  +D &amp;lt;目录&amp;gt;  递归列出目录下被打开的文件  -n &amp;lt;目录&amp;gt;  列出使用NFS的文件  -i &amp;lt;条件&amp;gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &amp;lt;进程号&amp;gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.</description>
+    </item>
+    
+    <item>
       <title>Linux 单TCP连接占用最少内存</title>
-      <link>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
+      <link>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
       <description>[TOC]
 Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &amp;gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | &amp;mdash;- | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; | | file | 256 | &amp;ldquo;filp&amp;rdquo; | | dentry | 192 | &amp;ldquo;dentry&amp;rdquo; | | socket_alloc | 640 | &amp;ldquo;sock_inode_cache&amp;rdquo; | | tcp_sock | 1792 | &amp;ldquo;TCP&amp;rdquo; | | socket_wq | 64 | &amp;ldquo;kmalloc-64&amp;rdquo; | | inet_bind_bucket | 64 | &amp;ldquo;tcp_bind_bucket&amp;rdquo; | | epitem | 128 | &amp;ldquo;eventpoll_epi&amp;rdquo; | | tcp_request_sock | 256 | &amp;ldquo;request_sock_TCP&amp;rdquo; |</description>
     </item>
     
     <item>
       <title>Linux.Vimium</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.vimium/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.vimium/</link>
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.vimium/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.vimium/</guid>
       <description>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
  r 刷新界面
  yy 复制当前界面 URL
@@ -40,10 +49,10 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
     
     <item>
       <title>Linux.Chown</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.chown/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.chown/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.chown/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.chown/</guid>
       <description> [TOC]
 chown 格式  chown [option]* [user[:[group]*]] [file|group]*
 必要参数 -c
@@ -64,118 +73,118 @@ chown 格式  chown [option]* [user[:[group]*]] [file|group]*
     
     <item>
       <title>Linux.Git</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.git/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.git/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.git/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
       <description> [TOC]
 参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen    </description>
     </item>
     
     <item>
       <title>Linux.Scp</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.scp/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.scp/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.scp/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.scp/</guid>
       <description>[TOC]
 参考  http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html  特点  scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷  rsync 快一点，但小文件多时会导致硬盘 I/O 非常高   格式  scp [参数] [原路径] [目标路径]  参数  -1  强制scp命令使用协议ssh1  -2  强制scp命令使用协议ssh2  -4  强制scp命令只使用IPv4寻址  -6  强制scp命令只使用IPv6寻址  -B  使用批处理模式（传输过程中不询问传输口令或短语）  -C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  -p  留原文件的修改时间，访问时间和访问权限。  -q  不显示传输进度条。  -r  递归复制整个目录。  -v  详细方式显示输出。 scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。  -c  cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。  -F  ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。  -i  identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。  -l  limit 限定用户所能使用的带宽，以Kbit/s为单位。  -o  ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，  -P  port 注意是大写的P, port是指定数据传输用到的端口号  -S  program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。   事例  scp -r root@10.</description>
     </item>
     
     <item>
       <title>Linux.XArgs</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.xargs/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.xargs/</link>
       <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.xargs/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.xargs/</guid>
       <description>参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d  指定输入的分隔符 -d\n  ``  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?</description>
     </item>
     
     <item>
       <title>Linux.Nginx </title>
-      <link>https://wrrwhn.github.io/domain/post/linux.nginx/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.nginx/</link>
       <pubDate>Wed, 04 Oct 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.nginx/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.nginx/</guid>
       <description>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?</description>
     </item>
     
     <item>
       <title>Linux.Grep</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.grep/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.grep/</link>
       <pubDate>Wed, 20 Sep 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.grep/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.grep/</guid>
       <description>[TOC]
 Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep  格式  grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...]  参数 匹配器选择  -E, --extended-regexp  扩展正则表达式 由 POSIX 指定  -F, --fixed-strings, --fixed-regexp  模式解析为固定字符串列表，以换行符分隔，任一匹配 弃用别名  -G, --basic-regexp  解析为基本正则表达式 默认配置  -P, --perl-regexp  模式解析为 Perl 正则表达式 开发阶段，会提示未实现的特性   匹配控制  -e PATTERN, --regexp=PATTERN  文本正则  -f FILE, --file=FILE  正则条件文本文件，以换行符分隔 空文件则匹配不到任何东西  -i, --ignore-case  忽略正则表达式和内容的字符大小写匹配限制  -v, --invert-match  反向匹配 输出正则匹配到的元素之外的信息  -w, --word-regexp  全字匹配  -x, --line-regexp  全行匹配  -y  -i 的弃用同义词   控制输出  -c, --count  输出匹配的各文件中的行数  --color[=WHEN], --colour[=WHEN]  在终端以颜色区分匹配字符串，以转义字符显示包围的相关分隔符等信息 默认根据系统参数 GREP_COLORS 显示，但目前已弃用，优先级降低  -L, --files-without-match  打印出每个输入文件名称 终止于第一条匹配数据  -l, --files-with-matches  同 -L 由 POSIX 指定  -m NUM, --max-count=NUM  最多输出 NUM 个匹配项  -o, --only-matching  仅打印匹配行，以换行符分隔  -q, --quiet, --silent  不打印标准输出 成功时以 0 状态退出，失败时以 非0 值退出  -s, --no-messages  不打印异常消息   输出前缀控制  -b, --byte-offset  每行输出，0字节偏移  -H, --with-filename  打印每个匹配的文件名  -h, --no-filename  输出时忽略文件前缀 默认  --label=LABEL  以实际标准输入作为  文件的输入 gzip -cd foo.</description>
     </item>
     
     <item>
       <title>Linux.Run</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.run/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.run/</link>
       <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.run/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.run/</guid>
       <description>[TOC]
 命令后台运行 参考  Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令  类型  后台运行，终端关闭时停止 后台运行，终端关掉后仍继续运行  方法 前后台切换  流程  执行复杂语句 使用 Ctrl+ Z 挂起复杂程序  [1]+ Stopped /data/service/webapps/engine-dev/main  使用 jobs 查询后台工作情况  [1]+ Stopped /data/service/webapps/engine-dev/main  输入 fg 1 继续执行复杂语句 输入 bg 1 在后台继续执行语句  [1]+ /data/service/webapps/engine-dev/main jobs  [1]+ Running /data/service/webapps/engine-dev/main     后台执行  &amp;amp;  后台运行，终端关闭时停止  当前终端 shell 进程退出，会发送 hangup 信号给所有子进程 子进程收到 hangup 后退出  日志仍会打印到前台 示例  /data/service/webapps/engine-dev/main &amp;amp; /data/service/webapps/engine-dev/main &amp;gt; out.</description>
     </item>
     
     <item>
       <title>Linux 的目录与权限</title>
-      <link>https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</link>
+      <link>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</link>
       <pubDate>Fri, 25 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</guid>
       <description>[TOC]
 Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .</description>
     </item>
     
     <item>
       <title>Linux.User</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.user/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.user/</link>
       <pubDate>Fri, 18 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.user/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.user/</guid>
       <description>[TOC]
 参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &amp;lt;user.name&amp;gt;  OPTIONS  --home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  --quiet  即只打印警告和错误信息，忽略其他信息。  --debug  定位错误信息。  --conf  在创建用户时使用指定的 configuration 文件。  --force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &amp;lt;备注&amp;gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &amp;lt;登入目录&amp;gt;  指定用户登入时的启始目录；  D  变更预设值；  e &amp;lt;有效期限&amp;gt;  指定帐号的有效期限；  f &amp;lt;缓冲天数&amp;gt;  指定在密码过期后多少天即关闭该帐号；  g &amp;lt;群组&amp;gt;  指定用户所属的群组；  G &amp;lt;群组&amp;gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&amp;lt;shell&amp;gt;  指定用户登入后所使用的shell；  u&amp;lt;uid&amp;gt;  指定用户id。 ID 值尽量 &amp;gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &#39;useradd.</description>
     </item>
     
     <item>
       <title>Linux.Jenkins</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.jenkins/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.jenkins/</link>
       <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.jenkins/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.jenkins/</guid>
       <description>[TOC]
 参考  Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification failed [WARNING] Failed to create parent directories for tracking file  流程 war  DOWNLOAD  wget http://mirrors.jenkins-ci.org/war/latest/jenkins.war  COPY  cp jenkins.war /data/service/webapps/jenkins/webapps/ROOT.war  CONFIG.JENKINS.TOMCAT  CATALINA_OPTS=&amp;quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&amp;quot; export CATALINA_OPTS   yum  YUM.CONFIG  wget -O /etc/yum.repos.d/jenkins.repo http://jenkins-ci.org/redhat/jenkins.repo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key  YUM  yum install jenkins  JENKINS.</description>
     </item>
     
     <item>
       <title>Linux.Maven</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.maven/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.maven/</link>
       <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.maven/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.maven/</guid>
       <description> [TOC]
 参考  Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz  流程 Java.config  check $JAVA_HOME  Maven.config  UNZIP  /data/soft/apache-maven-3.5.0  EXPORT.ADD  /etc/profile  export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2}   EXPORT.SAVE  source /etc/profile  CHECK  mvn -v  MAVEN.CONFIG  /data/soft/apache-maven-3.5.0/conf/settings.xml  &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt;    常用指令  clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X  显示 Debbug 信息   </description>
     </item>
     
     <item>
       <title>Linux.Tomcat</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.tomcat/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.tomcat/</link>
       <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.tomcat/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.tomcat/</guid>
       <description>[TOC]
 参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.</description>
     </item>
     
     <item>
       <title>Linux.Firewalld</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.firewalld/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.firewalld/</link>
       <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.firewalld/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.firewalld/</guid>
       <description>[TOC]
 firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置  指令 常见  添加端口  firewall-cmd --permanent --zone=public --add-port=3306/tcp  重启  firewall-cmd --reload  添加服务  firewall-cmd --permanent --add-service=mysql   所有  通用
  firewall-cmd [--zone=&amp;lt;zone&amp;gt;] --add-port=&amp;lt;port&amp;gt;[-&amp;lt;port&amp;gt;]/&amp;lt;protocol&amp;gt; [--timeout=&amp;lt;seconds&amp;gt;]  运行
@@ -184,40 +193,40 @@ firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用F
     
     <item>
       <title>Linux.Mysql</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.mysql/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.mysql/</link>
       <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.mysql/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.mysql/</guid>
       <description>[TOC]
 参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &#39;root&#39;@&#39;localhost&#39; =password(&#39;root.</description>
     </item>
     
     <item>
       <title>Linux.Vim</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.vim/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.vim/</link>
       <pubDate>Tue, 08 Aug 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.vim/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.vim/</guid>
       <description>[TOC]
 简明 VIM 练级攻略 阶段  存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力  存活  i  Insert 模式  ESC  返回 Normal 模式  x  删除当前光标所有的一个字符  dd  剪切当前行  p  粘贴  hjkl  对应左下右上  :q&amp;lt;enter&amp;gt;  不保存退出   感觉良好 插入  i  在光标前插入  a  在光标后插入  O  在当前行前插入新行  o  在当前行后插入新行  cw  替换从光标所在位置后到一个单词结尾的字符   移动  0  行头  $  行尾  ^  到本行第一个 非blank 字符位置 blank= 空格| tab| 换行| 回车  g_  到本行最后一个非blank字符位置  /pattern  搜索 pattern 字符串   拷贝/ 粘贴  p  粘贴  yy  复制   Undo/ Redo  u  撤消   文件操作  :e  打开文件  :w  保存  ：saveas &amp;lt;path&amp;gt;  将文件另存至   :q!</description>
     </item>
     
     <item>
       <title>Linux.Make</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.make/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.make/</link>
       <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.make/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.make/</guid>
       <description>[TOC]
 Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.</description>
     </item>
     
     <item>
       <title>Linux.Curl</title>
-      <link>https://wrrwhn.github.io/domain/post/linux.curl/</link>
+      <link>http://domain.yqjdcyy.com/post/linux.curl/</link>
       <pubDate>Sat, 01 Apr 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/linux.curl/</guid>
+      <guid>http://domain.yqjdcyy.com/post/linux.curl/</guid>
       <description>[TOC]
 参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| ...]  支持其它类型参数  --data &amp;quot;arg=val&amp;quot;  传递参数  --user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &amp;quot;Content-Type:application/json&amp;quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &amp;quot;Content-Type: application/json;charset=UTF-8&amp;quot; -d &#39;{&amp;quot;username&amp;quot;:&amp;quot;15880777595&amp;quot;,&amp;quot;pwd&amp;quot;:&amp;quot;1&amp;quot;}&#39; --cookie-jar /data/cdn/resource/curl-cookie http://live.</description>
     </item>

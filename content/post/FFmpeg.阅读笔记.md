@@ -117,3 +117,20 @@ share = true
     - 强制输入或输出的文件格式
   - `http://rtmp.com/proxy/dc6af2ec`
     - 代理请求接口
+
+
+### M3U8 转 WEBM
+- 指令
+  - `ffmpeg -i index.m3u8 -vcodec libvpx -acodec vorbis -strict -2 -ac 2 -ar 22050 -ab 24k -y common.webm`
+
+### M3U8 转 MP3
+- 指令
+  - `ffmpeg -i index.m3u8 -vn -acodec libmp3lame -write_xing 0 -ar 22050 -ab 24k -y common.mp3`
+
+### M3U8 转 OGG
+- 指令
+  - `ffmpeg -i index.m3u8 -vn -acodec vorbis -strict -2 -ac 2 -ar 22050 -ab 24k -y common.ogg`
+
+### M3U8 转 MP4
+- 指令
+  - `ffmpeg -i index.m3u8 -codec copy -y common.mp4`    

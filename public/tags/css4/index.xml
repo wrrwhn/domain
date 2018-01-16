@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Css4 on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/css4/</link>
+    <link>http://domain.yqjdcyy.com/tags/css4/</link>
     <description>Recent content in Css4 on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/css4/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/css4/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS4.Color</title>
-      <link>https://wrrwhn.github.io/domain/post/css4.color/</link>
+      <link>http://domain.yqjdcyy.com/post/css4.color/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/css4.color/</guid>
+      <guid>http://domain.yqjdcyy.com/post/css4.color/</guid>
       <description>[TOC]
 CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 140 standard color names http://www.w3schools.com/colors/colors_names.asp HWB(0, 0%, 0%) sugguest in css4 hue+ white+ black white+black&amp;lt;= 100 CMYK(0%, 100%, 100%, 0%) cyan/ magenta/ yellow/ black suggest in css4, not supported in html R0, 0%, 0% close to HWB natural color(NCol) from W3Schools [R|G|B|Y|C|M][\d]0, white%, black% white+ black&amp;lt;= 100  Color type  shades of gray r= g= b | #080808 shades of red r=[0-255], g= b= 0 web safe color = 216  CSS3.</description>
     </item>

@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Chrome on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/chrome/</link>
+    <link>http://domain.yqjdcyy.com/tags/chrome/</link>
     <description>Recent content in Chrome on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 28 Jun 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/chrome/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Chrome.Plugin </title>
-      <link>https://wrrwhn.github.io/domain/post/chrome.plugin/</link>
+      <link>http://domain.yqjdcyy.com/post/chrome.plugin/</link>
       <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/chrome.plugin/</guid>
+      <guid>http://domain.yqjdcyy.com/post/chrome.plugin/</guid>
       <description>[TOC]
 参考  Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions  示例解析  目录结构
 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，__要求 js 和 html 分开存放__ manifest.json // 插件配置文件  manifest.json

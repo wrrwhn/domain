@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>视频 on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/%E8%A7%86%E9%A2%91/</link>
+    <link>http://domain.yqjdcyy.com/tags/%E8%A7%86%E9%A2%91/</link>
     <description>Recent content in 视频 on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 08 Feb 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/%E8%A7%86%E9%A2%91/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/%E8%A7%86%E9%A2%91/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>音视频的相关名词</title>
-      <link>https://wrrwhn.github.io/domain/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
+      <link>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
       <pubDate>Wed, 08 Feb 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
+      <guid>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
       <description>参考  码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清  解析 码率  解析  Data Rate，又名码流、码流率 视频文件在单位时间内使用的数据流量，单位为 Kb/s 或 Mb/s 通指视频文中的音频和视频码流率总和 视频画面质量控制中最重要的部分  计算  File.size= duration* Data.Rate/ 8 90m 1Mbps 720P RMVB= 90* 60s* 1Mb/s/ 8= 675 MB   采样率  归类  音频  解析  Sampling Rate，又名采样辣度、采样频率 指将从连续信号中提取并组成离散信号的采样个数，单位为 Hz 以 44.1kHZ 采样率记录并播放，即可听到连续声音；越高则越连贯  人的听觉和视觉分辨采样率上限即为 44.1kHZ -   计算  比特率= 采样率* 采样位数* 声道数 CD 每秒 44100 次取样，2 个声道，13 位PCM编码  = 44100* 2* 13 = 144 KB/s   补充  位数  类比于画面的颜色数 上限  听觉 - 16位 视觉 - 24位   声道   比特率  解析  Bit Rate 每秒传送的比特数，单位为b/s 指将为数字声音、视频由模拟格式转化为数字格式的采样率  常见编码  VBR- Variable Bitrate  动态比特率，压缩时根据音频数据即时确定 质量前提，文件大小兼顾 推荐编码模式  ABR- Averate Bitrate  指定文件大小内，以每50帧为段，低频与不敏感使用较低流量，高频与动态表现时使用高流量 VBR 和 CBR 的折衷  CBR- Constant Bitrate  固定使用一位速率 压缩文件体积大，且音质无明显提高    帧速率  解析  FPS，Frames PerSecond 每秒钟刷新的图片的帧数，为图形处理器每秒刷新次数，单位为 f/s   分辨率  解析  指每帧图像的大小，如640* 480   720P 1080P  解析  分辨率简称  720P= 1280*720 1080P= 1920*1080  采用编码格式有MPEG2/ VC-1/ H.</description>
     </item>
     

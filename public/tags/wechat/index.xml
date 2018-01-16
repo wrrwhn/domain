@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Wechat on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/wechat/</link>
+    <link>http://domain.yqjdcyy.com/tags/wechat/</link>
     <description>Recent content in Wechat on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 13 Sep 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/wechat/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Wechat.Export</title>
-      <link>https://wrrwhn.github.io/domain/post/wechat.export/</link>
+      <link>http://domain.yqjdcyy.com/post/wechat.export/</link>
       <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/wechat.export/</guid>
+      <guid>http://domain.yqjdcyy.com/post/wechat.export/</guid>
       <description> [TOC]
 微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&amp;frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder
 流程  将语音收藏 在手机完整收听 使用目录管理搜索提取  ./sdcard/tecent/MicroMsg/ 搜索 .silk 文件  拷贝至电脑 使用 silk2mp3 工具将音频*转换*为 mp3 格式文件  注意  SILK v3  为 skype 向第三方开发人员或硬件制造商提供的免版税谁的 Silk 宽音频编码器 文件更为精简  xxx.silk 18KB xxx.mp3 189KB    </description>

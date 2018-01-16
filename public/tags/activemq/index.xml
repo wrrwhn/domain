@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Activemq on 姚清居到此一游</title>
-    <link>https://wrrwhn.github.io/domain/tags/activemq/</link>
+    <link>http://domain.yqjdcyy.com/tags/activemq/</link>
     <description>Recent content in Activemq on 姚清居到此一游</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
-	<atom:link href="https://wrrwhn.github.io/domain/tags/activemq/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://domain.yqjdcyy.com/tags/activemq/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>ActiveMq</title>
-      <link>https://wrrwhn.github.io/domain/post/activemq/</link>
+      <link>http://domain.yqjdcyy.com/post/activemq/</link>
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
-      <guid>https://wrrwhn.github.io/domain/post/activemq/</guid>
+      <guid>http://domain.yqjdcyy.com/post/activemq/</guid>
       <description>地址  入门：http://www.cnblogs.com/xwdreamer/archive/2012/02/21/2360818.html 下载：http://activemq.apache.org/download-archives.html  运行  解压至 D:\server\activemq\apache-activemq-5.9.1  注：D:\Program Files 等路径上存在空格等的不适合当其路径，会影响项目正常启动  点击 /bin/activemq.bat 启动 ActiveMQ 程序 进入 http://localhost:8161/admin/ ，并输入账号/密码 admin/admin 创建一个名为 FirstQueue 的 Queue 运行代码（如下）  代码 依赖 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.activemq&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;activemq-core&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.5.0&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  模式 - Queue 发送 public class Sender { private static final int SEND_NUMBER = 5; public static void main(String[] args) { ConnectionFactory connectionFactory; Connection connection = null; Session session; Destination destination; MessageProducer producer; connectionFactory = new ActiveMQConnectionFactory( ActiveMQConnection.</description>
     </item>
     

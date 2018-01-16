@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Uml on 姚清居到此一游</title>
+    <link>http://domain.yqjdcyy.com/tags/uml/</link>
+    <description>Recent content in Uml on 姚清居到此一游</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
+    <lastBuildDate>Mon, 18 Dec 2017 22:07:46 +0800</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/uml/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UML</title>
+      <link>http://domain.yqjdcyy.com/post/uml/</link>
+      <pubDate>Mon, 18 Dec 2017 22:07:46 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/uml/</guid>
+      <description> [TOC]
+UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj   </description>
+    </item>
+    
+  </channel>
+</rss>
