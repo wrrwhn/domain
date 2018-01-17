@@ -271,6 +271,17 @@ HOME=/                                      # 指定在执行命令谨脚本时�
 
 <h2 id="事例">事例</h2>
 
+<h2 id="异常">异常</h2>
+
+<ul>
+<li><code>no crontab for root</code>
+
+<ul>
+<li><code>crontab -l</code> 时触发，因为该用户第一次使用，尚未生成对应文件导致</li>
+<li>可使用 <code>crontab -e</code> 后保存以解决</li>
+</ul></li>
+</ul>
+
             <ul class="share-buttons">
     <li></li>
     <li>
