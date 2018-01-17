@@ -7,10 +7,23 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jan 2018 16:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E4%B9%90%E8%B6%A3/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/linux.expect/</link>
+      <pubDate>Tue, 16 Jan 2018 16:07:46 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.expect/</guid>
+      <description>Linux.Expect 参考  expect spawn、linux expect 用法 expect spawn、linux expect 用法小记  作用  代替实现与终端的交换，根据系统的输出运行相应的命令 需要 Tcl 编程语言的支持  参数 Run  -c  在命令行中直接执行  i  脚本把多个参数当成一个连续的列表 事例  expect -i arg1 arg2 arg3   d  输出调试信息  D|Debug
+ 用于是否立即启动调试器，后面接入参数 0/1 事例
+ expect -c &#39;set timeout 10&#39; -D 1 -c &#39;set a 1&#39;
+ 优先执行 set timeout 10 调适器启动后执行 set a 1
+SPAWN    -re</description>
+    </item>
     
     <item>
       <title>不可描述</title>
