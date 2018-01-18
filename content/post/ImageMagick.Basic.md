@@ -1,5 +1,5 @@
 +++
-date = "2017-11-16T22:07:46+08:00"
+date = "2018-01-18T15:07:46+08:00"
 title = "ImageMagick"
 draft = false
 tags = ["阅读","ImageMagick"]
@@ -18,6 +18,7 @@ share = true
 
 ## Anatomy
 - convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]
+
 
 ### Input FileNames
 #### FileName Globbing
@@ -94,411 +95,33 @@ share = true
 
 ### Command-line Options
 #### ImageSetting
-- adjoin
-     - Analysis
-          - for save a sequence images
-     - Example
-          - convert logo: rose: -morph 15 my`%02d`morph.jpg
-              - my00morph.jpg
-              - .
-              - my16morph.jpg
-- affine
-     - Analysis
-          - 仿射
-     - Example
-          -
-- alpha
-     - Analysis
-          - α
-     - Example
-          -
-- alpha color
-     - Analysis
-          - 阿尔法颜色
-     - Example
-          -
-- antialias
-     - Analysis
-          - 反锯齿
-     - Example
-          -
-- authenticate
-     - Analysis
-          - 认证
-     - Example
-          -
-- background
-     - Analysis
-          - 背景
-     - Example
-          -
-- bias
-     - Analysis
-          - 偏压
-     - Example
-          -
-- black point compensation
-     - Analysis
-          - 黑点补偿
-     - Example
-          -
-- blue primary
-     - Analysis
-          - 蓝色三原色
-     - Example
-          -
-- border color
-     - Analysis
-          - 边框颜色
-     - Example
-          -
-- caption
-     - Analysis
-          - 标题
-     - Example
-          -
-- channel
-     - Analysis
-          - 渠道
-     - Example
-          -
-- comment
-     - Analysis
-          - 评论
-     - Example
-          -
-- compress
-     - Analysis
-          - 压缩
-     - Example
-          -
-- debug
-     - Analysis
-          - 调试
-     - Example
-          -
-- define
-     - Analysis
-          - 确定
-     - Example
-          -
-- delay
-     - Analysis
-          - 延迟
-     - Example
-          -
-- density
-     - Analysis
-          - 密度
-     - Example
-          -
-- depth
-     - Analysis
-          - 深度
-     - Example
-          -
-- direction
-     - Analysis
-          - 方向
-     - Example
-          -
-- display
-     - Analysis
-          - 显示
-     - Example
-          -
-- dispose
-     - Analysis
-          - 部署
-     - Example
-          -
-- dither
-     - Analysis
-          - 抖动
-     - Example
-          -
-- encoding
-     - Analysis
-          - 编码
-     - Example
-          -
-- endian
-     - Analysis
-          - 尾数
-     - Example
-          -
-- extract
-     - Analysis
-          - 提取
-     - Example
-          -
-- family
-     - Analysis
-          - 家庭
-     - Example
-          -
-- fill
-     - Analysis
-          - 填
-     - Example
-          -
-- filter
-     - Analysis
-          - 过滤
-     - Example
-          -
-- font
-     - Analysis
-          - 字形
-     - Example
-          -
-- format
-     - Analysis
-          - 格式
-     - Example
-          -
-- fuzz
-     - Analysis
-          - 模糊
-     - Example
-          -
-- geometry
-     - Analysis
-          - 几何
-     - Example
-          -
-- gravity
-     - Analysis
-          - 重力
-     - Example
-          -
-- green primary
-     - Analysis
-          - 绿色基色
-     - Example
-          -
-- interlace
-     - Analysis
-          - 交错
-     - Example
-          -
-- intent
-     - Analysis
-          - 意图
-     - Example
-          -
-- interpolate
-     - Analysis
-          - 插
-     - Example
-          -
-- label
-     - Analysis
-          - 标签
-     - Example
-          -
-- limit
-     - Analysis
-          - 限制
-     - Example
-          -
-- linewidth
-     - Analysis
-          - 行宽
-     - Example
-          -
-- log
-     - Analysis
-          - 日志
-     - Example
-          -
-- loop
-     - Analysis
-          - 循环
-     - Example
-          -
-- mask
-     - Analysis
-          - 面具
-     - Example
-          -
-- matte color
-     - Analysis
-          - 亚光色
-     - Example
-          -
-- monitor
-     - Analysis
-          - 监控
-     - Example
-          -
-- orient
-     - Analysis
-          - 东方
-     - Example
-          -
-- page
-     - Analysis
-          - 页
-     - Example
-          -
-- pointsize
-     - Analysis
-          - 的pointsize
-     - Example
-          -
-- preview
-     - Analysis
-          - 预习
-     - Example
-          -
-- quality
-     - Analysis
-          - 质量
-     - Example
-          -
-- quiet
-     - Analysis
-          - 安静
-     - Example
-          -
-- red primary
-     - Analysis
-          - 红原
-     - Example
-          -
-- region
-     - Analysis
-          - 地区
-     - Example
-          -
-- render
-     - Analysis
-          - 给予
-     - Example
-          -
-- repage
-     - Analysis
-          - repage
-     - Example
-          -
-- sampling factor
-     - Analysis
-          - 采样因素
-     - Example
-          -
-- scene
-     - Analysis
-          - 现场
-     - Example
-          -
-- seed
-     - Analysis
-          - 种子
-     - Example
-          -
-- size
-     - Analysis
-          - 尺寸
-     - Example
-          -
-- stretch
-     - Analysis
-          - 伸展
-     - Example
-          -
-- stroke
-     - Analysis
-          - 行程
-     - Example
-          -
-- stroke width
-     - Analysis
-          - 笔划宽度
-     - Example
-          -
-- style
-     - Analysis
-          - 样式
-     - Example
-          -
-- texture
-     - Analysis
-          - 质地
-     - Example
-          -
-- tile
-     - Analysis
-          - 瓦
-     - Example
-          -
-- transparent color
-     - Analysis
-          - 透明色
-     - Example
-          -
-- tree depth
-     - Analysis
-          - 树的深度
-     - Example
-          -
-- type
-     - Analysis
-          - 类型
-     - Example
-          -
-- undercolor
-     - Analysis
-          - 底色
-     - Example
-          -
-- units
-     - Analysis
-          - 单位
-     - Example
-          -
-- verbose
-     - Analysis
-          - 详细
-     - Example
-          -
-- virtual pixel
-     - Analysis
-          - 虚拟像素
-     - Example
-          -
-- weight
-     - Analysis
-          - 重量
-     - Example
-          -
 #### Image Operator
 #### Image Sequence Operator
 #### Image Geometry
 #### Image Stack
 
 
-composite -tile /data/cdn/resource/repeat.png /data/tmp/yao/from/yk-white.jpg jpg:- | convert - "/data/cdn/resource/logo.png" -gravity northeast -geometry +24+20 -composite jpg:- | convert -quality 75 - /data/tmp/yao/to/preview-yk-white.jpg
+## Example
+- 添加全屏水印图
+  - `composite -tile /data/cdn/resource/repeat.png /data/tmp/yao/from/yk-white.jpg /data/tmp/yao/from/yk-white-repeat.jpg`
+  - ![slide-rId3-blue.jpg](http://otzm88f21.bkt.clouddn.com/c954d58e-276f-40cb-9a00-9cbed0f08e0e.jpg)
+
+- 于指定位置添加水印图
+  - `convert slide-rId3.jpg "/data/cdn/resource/logo.png[300x100]" -gravity northeast -geometry +24+20 -composite jpg:- | convert - slide-rId3-logo.jpg`
+  - ![slide-rId3-logo.jpg](http://otzm88f21.bkt.clouddn.com/030cbd21-8248-45af-bee2-edd9beb189d4.jpg)
+
+- 添加文字水印
+  - 失败
+    - `convert -size 140x80 xc:none -fill grey -gravity NorthWest -draw "text 10,10 'live.yunkai.com'" -gravity SouthEast -draw \"text 5,15 'live.yunkai.com'\" miff:- | composite  -tile - slide-rId3-font.jpg slide-rId3-font-watermark.jpg`
+    - `convert slide-rId3.jpg -gravity southeast -fill white -pointsize 16 -draw "text 5,5 'http://live.yunkai.com'" slide-rId3-font-watermark.jpg`
+
+- 图片质量调整
+  - `convert -quality 75 slide-rId3.jpg slide-rId3-075.jpg`
+  - ![slide-rId3.jpg](http://otzm88f21.bkt.clouddn.com/4e978cef-096b-43a4-92d8-14660bd69f15.jpg)
+  - ![slide-rId3-075.jpg](http://otzm88f21.bkt.clouddn.com/36ae72dd-5ece-4bc7-8fbe-7154d2183006.jpg)
 
 
-
-
-
-convert -size 140x80 xc:none -fill grey -gravity NorthWest -draw "text 10,10 'live.yunkai.com'" -gravity SouthEast -draw \"text 5,15 'live.yunkai.com'\" miff:- | composite  -tile - resource/part.png to/test-image.png
-composite -tile resource/part.png from/slide2.jpg to/slide2-tile-part.jpg | convert - -gravity southeast -fill white -pointsize 16 -draw "text 5,5 'http://live.yunkai.com'" slide2_word_en.jpg
-convert slide2-tile-part.jpg -gravity southeast -fill white -pointsize 16 -draw "text 5,5 'http://live.yunkai.com'" slide2_word_en.jpg
-
-
-
-composite -tile resource/repeat-2.png from/slide2.jpg slide2-tile-repeat.jpg
-convert from/slide2.jpg resource/logo.png -scale 300% -gravity northeast -composite slide2-logo.jpg
-
-
-/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide2.jpg jpg:- | /usr/local/bin/convert - "/data/tmp/yao/resource/logo-2.png[182x27]" -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/tile-logo-quality-2.jpg
-
-/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide-rId4.jpg jpg:- | /usr/local/bin/convert - "/data/tmp/yao/resource/logo-2.png[182x27]" -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/to/slide-rId4.jpg
-
-/usr/local/bin/convert -quality 75 /data/cdn/dev/img/0c678b1d-1a03-40e3-84dd-870d7d557d04.jpg /data/cdn/dev/img/0c678b1d-1a03-40e3-84dd-870d7d557d04.jpg
-
-
-/usr/local/bin/composite -tile /data/tmp/yao/resource/repeat-4.png /data/tmp/yao/from/slide-rId4.jpg jpg:- | /usr/local/bin/convert - "/data/tmp/yao/resource/logo-2.png[182x27]" -gravity northeast -geometry +5+10 -composite jpg:- | /usr/local/bin/convert -quality 75 - /data/tmp/yao/to/slide-rId4.jpg
+- 动态图倒放
+  - `convert from.gif from/%d.png`
+  - `ls -[r]t from | paste -s -d`
+  - `convert -delay 10 - all.gif`
