@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E9%85%92.%E8%B0%83%E9%85%92/" title="酒.调酒">酒.调酒</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E4%B9%90%E8%B6%A3">乐趣</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E8%B0%83%E9%85%92">调酒</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Mojito 莫吉托 材料  白郎姆酒 40ml 青柠檬汁 30ml  可用屈臣氏青柠汁替换  薄荷叶 6片 白糖 2茶匙 苏打水  可用屈臣氏苏打水替换  冰块  杯子  海波杯  做法  薄荷叶+ 白糖+ 青柠（檬）汁混合捣碎 加苏打水后，加冰块填满本子 加入郎姆酒后添苏打水至满杯 以薄荷叶或柠檬片装饰&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E9%85%92.%E8%B0%83%E9%85%92/" title="酒.调酒"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/" title="销售就是要搞定人 ">销售就是要搞定人 </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
@@ -250,28 +273,6 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 
     <p>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项">Java.注意事项</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项"> &raquo;</a>
 </article>
 
         
