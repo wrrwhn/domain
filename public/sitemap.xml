@@ -73,11 +73,6 @@
   </url>
   
   <url>
-    <loc>http://domain.yqjdcyy.com/post/imagemagick.basic/</loc>
-    <lastmod>2017-11-16T22:07:46+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://domain.yqjdcyy.com/post/java.9.feature/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
   </url>
@@ -796,12 +791,6 @@
   </url>
   
   <url>
-    <loc>http://domain.yqjdcyy.com/tags/imagemagick/</loc>
-    <lastmod>2017-11-16T22:07:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>http://domain.yqjdcyy.com/tags/java/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -940,6 +929,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/</loc>
+    <lastmod>2018-01-17T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/</loc>
     <lastmod>2017-11-15T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -1050,12 +1045,6 @@
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E5%95%A4%E9%85%92/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-01-17T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   

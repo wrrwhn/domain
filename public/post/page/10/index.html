@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Posts &middot; 姚清居到此一游</title>
+        <title>Posts &middot; TODO</title>
         <meta name="author">
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="TODO" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="TODO" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
         <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
@@ -43,31 +43,6 @@
     <main role="main" class="content">
         <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.firewalld/" title="Linux.Firewalld">Linux.Firewalld</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置  指令 常见  添加端口  firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp  重启  firewall-cmd &ndash;reload  添加服务  firewall-cmd &ndash;permanent &ndash;add-service=mysql   所有  通用
- firewall-cmd [&ndash;zone=&lt;zone&gt;] &ndash;add-port=&lt;port&gt;[-&lt;port&gt;]/&lt;protocol&gt; [&ndash;timeout=&lt;seconds&gt;]  运行
- 查看运行状态  systemctl status firewalld.service  开关  systemctl [stop|start] firewalld firewall-cmd &ndash;reload  服务相关  firewall-cmd &ndash;list-services firewall-cmd &ndash;[add|remove]-service=mysql firewall-cmd &ndash;permanent &ndash;[add|remove]-service=mysql  端口相关  firewall-cmd &ndash;zone=public &ndash;add-port=3306/tcp &ndash;permanent firewall-cmd &ndash;zone=public &ndash;list-ports firewall-cmd &ndash;zone=public &ndash;query-port=3306/tcp   开机启动&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.firewalld/" title="Linux.Firewalld"> &raquo;</a>
-</article>
-
         
             <article class="post">
     
@@ -274,6 +249,29 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
     <p>[TOC]
 [NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 &ndash;mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/go.nsq/" title="Go.Nsq"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make">Linux.Make</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make"> &raquo;</a>
 </article>
 
         

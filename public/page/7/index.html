@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>姚清居到此一游 &middot; 姚清居到此一游</title>
+        <title>TODO &middot; TODO</title>
         <meta name="author">
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="TODO" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="TODO" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
         <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
@@ -42,29 +42,6 @@
 <div class="container clearfix">
     <main role="main" class="content">
         
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service">Tomcat.Service</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.09">2017.11.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tomcat">tomcat</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service"> &raquo;</a>
-</article>
-
         
             <article class="post">
     
@@ -277,6 +254,28 @@ Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  ini
 
     <p>参考  Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key  明细  Login  /opt/redis/redis-cli -p &lt;port&gt; -a &lt;password&gt;  Search-Delete  /opt/redis/redis-cli keys &quot;<em>&quot; | xargs /opt/redis/redis-cli del   示例 删除指定练习相关缓存  导出以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203</em>&quot; &gt; /data/op-script/redis/exercises:10203  列举所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203<em>&quot;  删除所有以指定键开头的缓存  /usr/local/bin/redis-cli -p 37652 -a 5c!1@a7z#5623qb2eee98e12b16d301466yunkai1024 keys &quot;exercises:10203</em>&quot; | xargs /usr/local/bin/redis-cli -p 37652 -a 5c!&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/redis.keys-del/" title="Redis.Keys-Del"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux.nginx/" title="Linux.Nginx ">Linux.Nginx </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.04">2017.10.04</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Linux.Nginx 参考  反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置location总结及rewrite规则写法 nginx配置url重写  概念 反向代理  概念  用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端   用途  将防火墙后面的服务器提供给 Internet 用户访问  负载均衡 缓冲    Nginx 安装  yum install nginx  默认安装许多模块，影响以后安装第三方模块   指令  nginx -s [start|reload|stop]  通过 signal 向 nginx发送指令  nginx -t  查看 nginx 配置文件位置   基本配置 明细配置项 main Common  全局配置，与具体业务无关 woker_processes 2  工作进程的个数  默认设置为 CPU 的核数  grep ^processor /proc/cpuinfo | wc -l  cpu* (ssl|gzip?&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.nginx/" title="Linux.Nginx "> &raquo;</a>
 </article>
 
         

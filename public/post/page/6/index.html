@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Posts &middot; 姚清居到此一游</title>
+        <title>Posts &middot; TODO</title>
         <meta name="author">
         <meta name="description" content="姚清居到此一游">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="姚清居到此一游" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="姚清居到此一游" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="TODO" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="TODO" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
         <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
@@ -43,28 +43,6 @@
     <main role="main" class="content">
         <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项">Java.注意事项</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项"> &raquo;</a>
-</article>
-
         
             <article class="post">
     
@@ -305,6 +283,29 @@ The Path Coordinate System (0,0) in the upper left of the shape&hellip;</p>
  强势品牌可以自发的导入流量 品牌的第一个作用就是导入流量。 一个商人商业能力的高低的首要标准，就是看他能为自己的生意导入多少流量  效率
  全网流量  微博和微信公众号 知乎和豆瓣  本地 O2O 流量  大众点评和美团 微博和微信    包装 - Package  基础&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/" title="如何炼成商业分析能力"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service">Tomcat.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.09">2017.11.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tomcat">tomcat</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service"> &raquo;</a>
 </article>
 
         
