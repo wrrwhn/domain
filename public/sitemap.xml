@@ -875,6 +875,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/</loc>
+    <lastmod>2018-01-17T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/redis/</loc>
     <lastmod>2017-11-15T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -925,12 +931,6 @@
   <url>
     <loc>http://domain.yqjdcyy.com/tags/sublime/</loc>
     <lastmod>2016-12-11T22:07:46+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-01-17T22:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   

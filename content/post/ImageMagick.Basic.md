@@ -2,7 +2,7 @@
 date = "2018-01-18T15:07:46+08:00"
 title = "ImageMagick"
 draft = false
-tags = ["阅读","ImageMagick"]
+tags = ["整理","ImageMagick"]
 share = true
 +++
 
