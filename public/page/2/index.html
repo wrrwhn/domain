@@ -45,6 +45,52 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议">网络-七层协议</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E7%BD%91%E7%BB%9C">网络</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/osi">osi</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  深入浅出－网络七层模型&amp;&amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-四层协议">网络-四层协议</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
@@ -231,54 +277,6 @@ Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 �
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature">Java.9.Feature</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>深入解读 Java 9 新特性 参考  深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力  Jigsaw  核心 -实现 Java 平台模块化系统 - JPMS (Java Platform Module System)
- 针对问题
- 易错的 classpath  应用不同部分依赖同一类库的不同版本 ClassLoading 复杂而不明确，导致 ClassNotFoundException、 NoClassDefFoundError 等异常  JDK 过于臃肿，无法按不同需求进行定制或优化  目标
- 可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
- JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native">Java.Native</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  <a href="http://blog.csdn.net/xw13106209/article/details/6989415">http://blog.csdn.net/xw13106209/article/details/6989415</a> <a href="http://www.iteye.com/topic/304594">http://www.iteye.com/topic/304594</a>  概念  Jni  sun 提供 支持通过与 c/c++ 交互调用系统的相关技术  Jawin  sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法  Jacob  sourceforge 提供 提供调用 microsoft 的 com 对象方法  补充        开发流程  Java 调用类 javah 生成 c/c++ 原生函数头文件 c/c++ 中实现原生函数 将项目依赖的所有*原生库和资源*加入至 java 项目的 java.library.path 生成 java 程序 发布 java 应用和 dll 库&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -286,7 +284,7 @@ Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 �
 	<a class="btn newer" href="/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 2  14</p>
+	<p class="counter"> 2  15</p>
 
 
 	

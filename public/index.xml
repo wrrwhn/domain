@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 22 Jan 2018 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jan 2018 20:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>恩佐·法拉利博物馆</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%81%A9%E4%BD%90%E6%B3%95%E6%8B%89%E5%88%A9%E5%8D%9A%E7%89%A9%E9%A6%86/</link>
+      <pubDate>Tue, 30 Jan 2018 20:07:46 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%81%A9%E4%BD%90%E6%B3%95%E6%8B%89%E5%88%A9%E5%8D%9A%E7%89%A9%E9%A6%86/</guid>
+      <description> 恩佐·法拉利博物馆 参考  恩佐·法拉利博物馆 List of Ferrari competition cars  简介 经典车型  GTO F40 F50 EnzoFerrari LaFerrari  经典系列  250 系列 Dino  经典赛车 F40  1987年在法兰克福车展首次亮相 庆祝建厂40周年而设计的 第一台时速能超过320km/h（最高极速324km/h）的民用跑车 创始人恩佐法拉利带领他的设计制造团队完成的最后一部法拉利作品   GTO  品牌释义是“天地之间，任我驰聘” 于1962年推出的250 GTO曾经横扫GT类比赛   F50  纪念建厂50周年发布了旗舰级超级跑车   Enzo  作为法拉利F50的替代品 于2002年制造，采用12缸中置引擎 采用了大量F1的技术，并配备F1的顺序换档变速箱和超大的碳纤陶瓷刹车碟 舒马赫也参加了该车的开发 官方0-100km/h加速为3.65s 极速则达到了350km/h以上   LaFerrari  于2013年3月在日内瓦车展首次亮相 限量499台 0-100km/h加速时间&amp;lt;3 秒。极速高达350km/h以上   F60America  庆祝北美分公司成立60周年推出 限量发售10台，售价高达$320万美元   Ferrari Superamerica  兼备法拉利12缸berlinetta的卓越性能以及多功能敞篷车上各种独创设计的优点 首个采用创新型旋转车顶的跑车 采用了专为大型玻璃表面研发的电致变色技术，在数秒之内即可将车辆从双门小轿车变身为敞篷跑车。   </description>
+    </item>
     
     <item>
       <title>第二届创始人代表大会</title>
@@ -67,6 +76,15 @@ Explicit Image Format  Analysis
  系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
 SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&amp;quot;&amp;quot; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily   用户任务调度
  用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig --list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &amp;lt;user&amp;gt;  调用指定用户 &amp;lt;user&amp;gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.</description>
+    </item>
+    
+    <item>
+      <title>区块链技术浅识</title>
+      <link>http://domain.yqjdcyy.com/post/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E6%B5%85%E8%AF%86/</link>
+      <pubDate>Tue, 16 Jan 2018 22:07:46 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E6%B5%85%E8%AF%86/</guid>
+      <description>区块链技术浅识 参考  区块链技术  前情  存在着各种互相孤立的数据系统及运作体系，这极大地影响了金融市场效率的进一步提升。 在世界银行的报告中，跨国汇款的成本接近 8%。 金融机构之间不能够无条件地信任对方，造成了金融领域数据孤岛的现象，进而导致了数字资产在互联网上流通成本居高不下。  特点  比特币系统就是基于区块链的记账机器；以太坊就是基于区块链的智能合约机器等等。 信任秘诀在于区块链的加密、公开且不可篡改的特性：  加密  区块链技术是以密码学和数学为基础的，这是信任的根本。  包括，椭圆曲线数字签名算法、非对称加密、哈希函数、梅克尔树等等。   公开  公开是赢得信任的最好手段。 基于区块链技术的系统的规则(程序)和数据都是公开的。 任何参与方都可以通过运行区块链的程序的方式加入进来，进而对数据进行验证。 在自己能验证，也能依靠第三方进行验证情况下，自己验证更可靠；  不可篡改  区块链技术不可篡改的特性，是数字资产不可复制的基础 删、改的操作的可行性几乎为零。  原理 状态机  比如以太坊系统，实际上就是多个节点维护同一个账本。 记账机器会在账本上记录每笔交易的信息。通过初始时各个账户的余额和已记录的信息，就可以推断出任意时刻的各个账户的余额。 区块链记账机器完成记账功能的基本原理是：状态机 &amp;gt; 在 state1 时，A B 都有 100；A 发起了一笔交易，支付 100 给 B，而这笔交易会被区块链系统记录下来。 我们可以通过 state1 的账户余额和区块链上的交易记录，计算出 state2 时 A B 的账户余额：A 有 50，B 有 150。  双重支付 描述  去中心化记账过程中遇到的双重支付的问题  双重支付就是同一笔钱可用于两次支付 &amp;gt; A 将 100 元，既支付给 B，又支付给 C。如果出现这种情况，A 就相当于把 100 元钱，当做 200 元钱来花了。 在中心化的记账系统中，无论这两笔交易是否同时进行，中心化的记账系统处理这两笔交易一定会有一个先后顺序。 去中心化的记账系统中的一些节点会先收到 B 的交易信息；另一些节点会先收到 C 的这笔交易信息。在去中心化的记账系统中，所有节点都是平等的。   处理  确定交易信息的先后顺序；</description>
     </item>
     
     <item>

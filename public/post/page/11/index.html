@@ -46,6 +46,52 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.command/" title="Java.Command">Java.Command</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.command/" title="Java.Command"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/java.detail/" title="Java.Detail">Java.Detail</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.detail/" title="Java.Detail"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.vim/" title="Linux.Vim">Linux.Vim</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.08">2017.08.08</time>
@@ -229,56 +275,6 @@ Windows 程序服务化 参考  SC NSSM windows service startup timeout reset se
 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，<strong>要求 js 和 html 分开存放</strong> manifest.json // 插件配置文件  manifest.json
 { &quot;manifest_version&quot;: 2, // 配置文件版本 &quot;name&quot;: &quot;插件名称&quot;, &quot;description&quot;: &quot;插件功能描述&quot;, &quot;version&quot;: &quot;0.1&quot;, // 插件当前开发版本 // 通用型 &quot;browser_action&quot;: { // 浏览器级动作 &quot;default_icon&quot;: &quot;/images/icon.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
- 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
- 操作返回值
-// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
- 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
 </article>
 
         
