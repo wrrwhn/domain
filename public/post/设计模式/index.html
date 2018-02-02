@@ -1,0 +1,746 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>READ FROM LIFE</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.02">2018.02.02</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="设计模式">设计模式</h1>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li>《HEAD_FIRST 设计模式》</li>
+<li><a href="http://design-patterns.readthedocs.io/zh_CN/latest/">图说设计模式</a></li>
+<li><a href="https://wizardforcel.gitbooks.io/design-pattern-lessons/">design pattern 包教不包会</a></li>
+</ul>
+
+<h2 id="设计原则">设计原则</h2>
+
+<ul>
+<li>找出应用中可能需要<strong>变化</strong>之处，把它们<strong>独立</strong>出来，不要和那些不需要变化的代码混在一起
+
+<ul>
+<li>系统中<strong>某部分改变不会影响其它部份</strong></li>
+</ul></li>
+<li><strong>针对接口编程</strong>，而不是针对实现编程
+
+<ul>
+<li>变量声明为抽象或接口，执行时动态赋值</li>
+</ul></li>
+<li><strong>多用组合</strong>，少用继承</li>
+<li>为了交互对象之间的<strong>松耦合</strong>设计而努力</li>
+<li>类应该对<strong>扩展开放</strong>，对<strong>修改关闭</strong>
+
+<ul>
+<li>根据业务和重要性，来取舍是否</li>
+</ul></li>
+<li>依赖倒置原则
+
+<ul>
+<li>要依赖抽象，不要依赖具体类
+
+<ul>
+<li>变量不可以持有具体类的引用
+
+<ul>
+<li>工厂</li>
+</ul></li>
+<li>不要让类派生自具体类
+
+<ul>
+<li>派生至接口或抽象类</li>
+</ul></li>
+<li>不要覆盖基类中已实现的方法
+
+<ul>
+<li>避免破坏基类中被继承的抽象</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><strong>最少知识</strong>原则
+
+<ul>
+<li>减少对象之间的交互</li>
+</ul></li>
+<li>好莱坞原则
+
+<ul>
+<li>别调用（打电话给）我们，我们会调用（打电话给）你</li>
+<li>避免高、低层组件的相互依赖，导致依赖腐败</li>
+<li>低层组件挂靠在高层组件，高层组件决定调用时机和方式</li>
+</ul></li>
+<li><strong>单一责任</strong>原则
+
+<ul>
+<li>一个类应该只有一个引起变化的原因</li>
+<li>高内聚
+
+<ul>
+<li>一个模块或一个类，被设计仅支持一组相关功能时</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="设计模式-1">设计模式</h2>
+
+<h3 id="策略模式">策略模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>定义算法族；分别封装后，让它们之间<strong>相互替换</strong></li>
+<li>行为被封装进一组类中，并于需要时<strong>动态改变</strong></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/deba098a-00ec-401c-a036-4ea2b2a12d61.jpg" alt="Strategy.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="观察者模式">观察者模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>定义对象之间的<strong>一对多</strong>依赖；当一个对象状态改变时，所有依赖者都会收到通知并自动更新
+
+<ul>
+<li>Java.Observervable</li>
+<li>Java.Observer</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/d1bb01c5-5df5-4933-aabe-c6aa4a12e6a8.jpg" alt="Observer-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/ce41ae37-8423-4360-81f4-36cec5a144ed.jpg" alt="Observer-java.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="装饰者模式">装饰者模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>动态地将责任附加到对象上，若要扩展功能，装饰者提供了比继承更为弹性的替代方案
+
+<ul>
+<li>装饰者可在所委托被装饰者的行为之前有或之后，<strong>加上自己的行为</strong>，以达到特定的目的</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/6582eb45-313f-4a83-8981-4ab8d9ce6762.jpg" alt="Decorator.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/a6ba0b19-ef4d-475f-b537-ad8bb36764b3.jpg" alt="Decorator-book.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="工厂模式">工厂模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>定义创建对象的接口，用于创建相关或依赖对象的家族，而不需要明确指定具体类
+
+<ul>
+<li>把类<strong>实例化</strong>推迟到子类</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/6ed6929c-0d1f-429b-a434-7f03aecfd411.jpg" alt="Factory-simple.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/bc6647cb-199f-4826-ab3c-1a60c0814c24.jpg" alt="Factory-abstract.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/6a1797a8-d88d-4948-b1c9-cdbc21592115.jpg" alt="Factory-abstract-implement.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="单例模式">单例模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>确保一个类<strong>只有一个</strong>实例，并提供<strong>全局访问点</strong></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/8511f4e7-3595-4ed3-8a9c-24ba3bf3cda3.jpg" alt="Singleton-basic.jpg" /></li>
+</ul></li>
+<li>优化
+
+<ul>
+<li>多线程
+
+<ul>
+<li><code>synchronized getInstance()</code>
+
+<ul>
+<li>性能效率降低非常</li>
+</ul></li>
+<li><code>private static Singleton ins= new Singleton();</code>
+
+<ul>
+<li>JVM 加载时即人创建唯一实例</li>
+</ul></li>
+<li><code>private volatile static VolatileSingleton ins;</code>
+
+<ul>
+<li><strong>双重检查加锁</strong>，最大限度减少同步</li>
+<li>volatile 可保障对应变量</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="命令模式">命令模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>将<strong>请求</strong>封装为<strong>对象</strong>，以便使用不同的请求、队列或者日志来参数化其它对象
+
+<ul>
+<li>宏命令用于支持多个命令</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/620058e8-776a-45d2-afd7-2b4eed251919.jpg" alt="Command.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="适配器模式">适配器模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>将一个类的接口，转换成客户期望的另一个接口
+
+<ul>
+<li>让原本接口不<strong>兼容</strong>的类可以使用无间</li>
+<li>类型
+
+<ul>
+<li>对象适配</li>
+<li>类适配，需要语言支持多重继承</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/9437f98b-3a64-44bb-85b1-9ad38e308adf.jpg" alt="Adapter-object.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f8d74cf8-4df6-474b-8df1-3a26e57ae646.jpg" alt="Adapter-class.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="外观模式">外观模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>提供统一的接口，用于访问子系统中的一群接口
+
+<ul>
+<li><strong>定义高层接口</strong>，让子系统更容易使用</li>
+<li>提供简化接口的同时，依然将完整的功能暴露出来</li>
+<li>将业务从子系统中<strong>解耦</strong>出来，有调整需求时仅须调整外观代码</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/baf5b3b8-f355-45f3-b792-573586e2eeba.jpg" alt="Facade.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="模板方法模式">模板方法模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>在一个方法中定义一个<strong>算法的框架</strong>，将一些步骤延迟到子类中
+
+<ul>
+<li>子类在不改变算法结构的前提下，重新定义算法的部分步骤</li>
+<li>通过预留<strong>钩子</strong>方法，保证算法的灵活性</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/8edede61-1f49-4218-a97e-e4740d86069c.jpg" alt="Template-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/d100b46b-2499-4abf-b3a4-bfad0d0c5204.jpg" alt="Template-hook.jpg" /></li>
+</ul></li>
+<li>示例
+
+<ul>
+<li>java
+
+<ul>
+<li>Arrays.sort</li>
+<li>InputStream.read(byte b[], int off, int len)</li>
+</ul></li>
+<li>模式
+
+<ul>
+<li>工厂模式</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="迭代器模式">迭代器模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>提供一种方法<strong>顺序访问</strong>一个聚合对象中的各个元素，而不暴露其内部的表示</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/9796fdda-c42d-43c7-94e1-3cc57d787686.jpg" alt="Iterator-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/d78372a2-23f4-49cf-9819-15eee81fd0cd.jpg" alt="Iterator-java.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="组合模式">组合模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>允许将对象组合成树形结构来表现<strong>整体/ 部分</strong>的层次结构</li>
+<li>组合能让客户以<strong>一致的方式处理</strong>个别对象以及对象组合</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/b4294698-46e0-4964-b86b-d1d537a36a6f.jpg" alt="Composite-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/11b4a6d6-1f29-4fcb-a802-0151f624c72f.jpg" alt="Composite-iterator.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="状态模式">状态模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>允许对象在内部<strong>状态</strong>改变时改变它的<strong>行为</strong>
+
+<ul>
+<li>对象看起来好像修改了它的类</li>
+<li>状态类可被多个 Context 实例共享</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/33696565-246d-4865-bec5-a39d17e74389.jpg" alt="State.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="代理模式">代理模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>为另一个对象提供一个替身或占位符以控件对这个对象的访问
+
+<ul>
+<li>适合远程、创建开销大、需要安全控制的对象</li>
+<li>缓存代理、保护代理、虚拟代理</li>
+</ul></li>
+</ul></li>
+<li>步骤
+
+<ul>
+<li>启动 <code>rmiregistry</code> 服务</li>
+<li>编译并使用 <code>rmic proxy.proxy.ProxyRemoteImpl</code> 自动生成 <code>ProxyRemoteImpl_Stub</code></li>
+<li>运行 ProxyRemoteImpl 服务</li>
+<li>运行 ProxyRemoteClient 请求服务</li>
+</ul></li>
+<li>常见异常
+
+<ul>
+<li>未在启动远程服务前<strong>先启动 <code>rmiregistry</code> 服务</strong></li>
+<li>须确认变量和返回值类型<strong>可序列化</strong>
+
+<ul>
+<li>编译时不可见，只在运行时发现</li>
+</ul></li>
+<li>未给客户端提供 <strong>stub 类</strong></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/0ea20303-74c7-405b-8631-f0509c4aba51.jpg" alt="Proxy-RMI.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/1eb7bdbd-b35c-417a-bddb-ae8cb2a2add9.jpg" alt="Proxy-protected.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/0c1e27cc-7e2c-413d-90af-0d273fd0f4aa.jpg" alt="Proxy-dynamic.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="复合模式">复合模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>结合两个或以上的模式，组成一个解决方案
+
+<ul>
+<li>解决一再发生的一般性问题</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/984d367e-b636-4554-b11c-0004c89b4ed3.jpg" alt="Compound-all.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/63c531c3-1fce-4f84-a415-0bd271665476.jpg" alt="Compound-mvc.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="桥接模式">桥接模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>将抽象部分与实现部分<strong>分离</strong>，保障它们<strong>独立地变化</strong></li>
+</ul></li>
+<li>实例
+
+<ul>
+<li>跨平台视频播放器
+
+<ul>
+<li>多平台：Windows、Linux、Unix 等</li>
+<li>多格式：MP4、AVI、RMVB 等</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/b4486594-1d3b-4af1-ba2f-7f5410449ad1.jpg" alt="Bridge.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="生成器模式">生成器模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>封装产品的构造过程，并允许按步骤构造</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f1fa715b-7d6e-4f0f-a269-e734bc0919a6.jpg" alt="Builder.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="责任链模式">责任链模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>让一个以上对象都有机会能处理某个请求</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/8f6a29f3-6e14-40a7-b395-978cde9d90eb.jpg" alt="Chain.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="绳量-享元模式">绳量|享元模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>为某个类提供<strong>多个虚拟</strong>实例</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/c854aa9d-305a-404d-a9ad-15f195b1aacc.jpg" alt="FlyWeight.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="解释器模式">解释器模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>定<strong>义出其文法</strong>的一种表示，并同时提供一个解释器</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/8eeb011b-8b13-4c88-b974-b3cd7a6a3ab1.jpg" alt="Interpreter.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="中介者模式">中介者模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>集中相关对象之间复杂的沟通和控制方式
+
+<ul>
+<li>通过将对象彼此解耦，增加对象的复用性</li>
+<li>将控制逻辑集中，简化系统维护</li>
+</ul></li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f684fd68-9725-425c-bf79-5f7fe60eae0d.jpg" alt="Mediator-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/c0a56875-8b15-4288-93da-e97c19895942.jpg" alt="Mediator-chatRoom.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="备忘录">备忘录</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>在不破坏封装性的前提下，捕获一个对象的内部状态，并在该对象之外保存这个状态</li>
+<li>可以将该对象<strong>恢复</strong>到原先保存的状态</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/a5499789-d257-4cac-9644-43ac0b653c60.jpg" alt="Memento-basic.jpg" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f7e75659-1ec1-40e5-9757-958f33749217.jpg" alt="Memento-try.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="原型模式">原型模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>用于在保证性能的前提下，创建重复的对象</li>
+<li>java.<strong>Clone</strong>able</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/5a4901fb-cf0c-442a-9b5d-58c95195e23a.jpg" alt="Prototype.jpg" /></li>
+</ul></li>
+</ul>
+
+<h3 id="访问者模式">访问者模式</h3>
+
+<ul>
+<li>定义
+
+<ul>
+<li>封装某些作用于某种数据结构中各元素的操作，它可以在不改变数据结构的前提下定义作用于这些元素的新的操作</li>
+</ul></li>
+<li>UML
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/a183d53f-033f-44c8-8070-51eeee88634e.jpg" alt="Visitor.jpg" /></li>
+</ul></li>
+</ul>
+
+<h2 id="注意事项">注意事项</h2>
+
+<ul>
+<li><code>实现一个接口</code>，非特指利用<code>implement</code>关键词实现接口，泛指<code>实现某个超类型的某个方法</code></li>
+<li>模式是在某情境下，针对某问题的某种解决方案
+
+<ul>
+<li>针对该问题约束的，可以解决此约束的通用设计</li>
+<li>关键词：问题、情境、解决方案</li>
+</ul></li>
+<li>推荐书籍
+
+<ul>
+<li>设计模式：可利用面向对象软件的基础</li>
+<li>The Timeless Way of building</li>
+<li>A Pattern Language</li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E8%25AE%25BE%25E8%25AE%25A1%25E6%25A8%25A1%25E5%25BC%258F%2f&title=%e8%ae%be%e8%ae%a1%e6%a8%a1%e5%bc%8f" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+
