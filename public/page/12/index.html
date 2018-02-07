@@ -45,6 +45,52 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service">Windows.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/windows">windows</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&lt;ServerName&gt;] control [&lt;ServiceName&gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &lt;UserDefinedControlB&gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
@@ -232,53 +278,6 @@ Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令
     <p>[TOC]
 MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/mysql.information_schema/" title="MYSQL.Information_schema"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令">常用CMD指令</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.23">2017.02.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/cmd">cmd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &ldquo;9050&rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &ldquo;2748&rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/" title="音视频的相关名词">音视频的相关名词</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.08">2017.02.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%9F%B3%E9%A2%91">音频</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%A7%86%E9%A2%91">视频</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清  解析 码率  解析  Data Rate，又名码流、码流率 视频文件在单位时间内使用的数据流量，单位为 Kb/s 或 Mb/s 通指视频文中的音频和视频码流率总和 视频画面质量控制中最重要的部分  计算  File.size= duration* Data.Rate/ 8 90m 1Mbps 720P RMVB= 90* 60s* 1Mb/s/ 8= 675 MB   采样率  归类  音频  解析  Sampling Rate，又名采样辣度、采样频率 指将从连续信号中提取并组成离散信号的采样个数，单位为 Hz 以 44.1kHZ 采样率记录并播放，即可听到连续声音；越高则越连贯  人的听觉和视觉分辨采样率上限即为 44.1kHZ -   计算  比特率= 采样率* 采样位数* 声道数 CD 每秒 44100 次取样，2 个声道，13 位PCM编码  = 44100* 2* 13 = 144 KB/s   补充  位数  类比于画面的颜色数 上限  听觉 - 16位 视觉 - 24位   声道   比特率  解析  Bit Rate 每秒传送的比特数，单位为b/s 指将为数字声音、视频由模拟格式转化为数字格式的采样率  常见编码  VBR- Variable Bitrate  动态比特率，压缩时根据音频数据即时确定 质量前提，文件大小兼顾 推荐编码模式  ABR- Averate Bitrate  指定文件大小内，以每50帧为段，低频与不敏感使用较低流量，高频与动态表现时使用高流量 VBR 和 CBR 的折衷  CBR- Constant Bitrate  固定使用一位速率 压缩文件体积大，且音质无明显提高    帧速率  解析  FPS，Frames PerSecond 每秒钟刷新的图片的帧数，为图形处理器每秒刷新次数，单位为 f/s   分辨率  解析  指每帧图像的大小，如640* 480   720P 1080P  解析  分辨率简称  720P= 1280*720 1080P= 1920*1080  采用编码格式有MPEG2/ VC-1/ H.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/" title="音视频的相关名词"> &raquo;</a>
 </article>
 
         
