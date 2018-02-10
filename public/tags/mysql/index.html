@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题">彻底终结MySQL同步延迟问题</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.07">2018.02.07</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>彻底终结MySQL同步延迟问题 参考  彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication  版本  MySQL.Version  5.7  Storage.Engine  TokuDB   影响因素 网络  主机或者从机的带宽打满 主从之间网络延迟很大  机器性能  从机使用了烂机器
+ 比如主机使用SSD而从机还是使用的SATA  从机高负载
+ 很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
+ 检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/mysql.error/" title="Mysql.Error">Mysql.Error</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.12">2017.09.12</time>

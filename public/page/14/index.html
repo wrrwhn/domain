@@ -45,6 +45,66 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范">MYSQL.开发规范</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
+例 CREATE DATABASE test CHARACTER SET &lsquo;utf8&rsquo; COLLATE &lsquo;utf8_general_ci&rsquo;;
+  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
+列 列名称命名采用英文单词或缩写，关联具体业务
+ 尽量不允许为 Null，用默认值代替
+例 FetionUser.FU<em>TableName.ColName
+  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]</em>[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &gt; 9520 ORDER BY id ASC LIMIT 20;  !&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/markdown/" title="Markdown">Markdown</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/markdown">markdown</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>目录 [TOC]
+标题 二级标题 ####### 最大支持六级标题
+注：序号和*号，与内容之间均需要一个空格
+ 列表1 列表2 列表3   无序列表 无序列表  无序列表缩进  无序列表  字体支持很多样式，比如加粗、*斜体*、删除线等特别样式
+当然也可以引用名人名言 &gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦
+百度
+代码格式表示
+ for(var i= 0; i&lt; count; i++)  表格 |为知| md| |-|-| |WizNote|Markdown|
+公式啊！！！ $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
+st=&gt;start: Start:&gt;<a href="http://www.google.com[blank">http://www.google.com[blank</a>] e=&gt;end:&gt;<a href="http://www.google.com">http://www.google.com</a> op1=&gt;operation: My Operation sub1=&gt;subroutine: My Subroutine cond=&gt;condition: Yes or No?:&gt;<a href="http://www.google.com">http://www.google.com</a> io=&gt;inputoutput: catch something&hellip; st-&gt;op1-&gt;cond cond(yes)-&gt;io-&gt;e cond(no)-&gt;sub1(right)-&gt;op1  Title: <a href="http://bramp.github.io/js-sequence-diagrams/">教程可以看</a> A-&gt;B: 【备注演示】 Note left of A: 此轮回应前\nA 左侧备注 Note over A: 此轮 A 线上的备注 Note right of A: 此轮回应前A 右侧备注 Note over A,B:此轮回应前横跨 AB 两线的备注 A-&gt;B: 【线型演示】 A-&gt;B: 实线三角标 B&ndash;&gt;A: 虚线三角标 A-&gt;&gt;B: 实线角标 B&ndash;&gt;&gt;A: 虚线角标&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/markdown/" title="Markdown"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/spring.basic/" title="Spring.Basic">Spring.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
@@ -233,56 +293,6 @@ Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文�
 
     <p>参考  Redis Virtual Memory: the story and the code ​Virtual Memory technical specification  数据类型 Keys  del key1 key2&hellip; keyN  删除给定KEY  type key  返回当前key类型  keys pattern  匹配指定模式的所有KEY  randomkey  返回当前库随机KEY  rename oldkey newkey  重命名，若newkey存在则以oldkey值覆盖  renamenx oldkey newkey  重命名，但newkey存在时返回0  dbsize  返回当前数据库key数量  expire key seconds  为KEY指定过期时间  ttl key  返回设置过期时间的KEY的剩余时间  select db-index  通过索引选择数据库，默认为0，默认数据库个数16个  move key db-index  将当前库中的KEY移动至指定索引库中  flushdb  删除当前库中所有KEY，不会失败  flushall  删除所有库中的所有KEY，不会失败   String 特点  最基本类型，二进制安全，可包含任何数据，上限为一G字节&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/redis.basic/" title="Redis.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术">Java.常用技术</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  <a href="http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/">http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/</a> <a href="http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html">http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html</a> <a href="http://ifeve.com/locks/">http://ifeve.com/locks/</a>  获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文件的绝对路径 - 相对路径：相对与某个基准目录（一般对照WEB）的路径。 - 例：&rdquo;/&ldquo;代表Web应用的跟目录， &ldquo;./&rdquo; 代表当前目录,&ldquo;../&ldquo;代表上级目录 - 注：JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的
-获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&ldquo;？&rdquo;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&rdquo;&amp;ldquo;) //站点绝对路径 application.getRealPath(&ldquo;&rdquo;) //JSP界面使用 ServletContext().getRealPath(&ldquo;&rdquo;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ . 空格 \web.xml）   工程Classes下路径（SRC/CLASS）  使用环境  SERVLET/JSP/JAVA（即任意CLASS）  使用语句  this.getClass()/JdomParse.class .getClassLoader().getResource(&ldquo;&rdquo;).getPath(); //注：因为三者均为JAVA程序，都为CLASS，故为三者通用方法 this.getClass()JdomParse.class .getResource(&ldquo;&rdquo;).getPath().toString(); //可用于不同WEB环境来确认路径 Thread.currentThread().getContextClassLoader().getResource(&ldquo;&rdquo;).getPath()  返回字串&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="Java.常用技术"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/maven/" title="Maven">Maven</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.09">2016.12.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/maven">maven</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-部署安装 下载地址  <a href="http://maven.apache.org/download.cgi">http://maven.apache.org/download.cgi</a>  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
-各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
- clean remove all files generated by the previous build
- post-clean executes processes needed to finalize the project cleaning
-Default Lifecycle validate validate the project is correct and all necessary information is available.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/maven/" title="Maven"> &raquo;</a>
 </article>
 
         
