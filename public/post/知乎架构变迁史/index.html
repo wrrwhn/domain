@@ -1,0 +1,420 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>READ FROM LIFE</title>
+        <meta name="author">
+        <meta name="description" content="姚清居到此一游">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/" title="知乎架构变迁史">知乎架构变迁史</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.12">2018.02.12</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9E%B6%E6%9E%84">架构</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<h1 id="知乎架构变迁史">知乎架构变迁史</h1>
+
+<h2 id="引言">引言</h2>
+
+<blockquote>
+<pre><code>You jump off a cliff and you assemble an aeroplane on the way down.
+- Reid Hoffman
+</code></pre>
+</blockquote>
+
+<h2 id="阶段">阶段</h2>
+
+<h3 id="上线">上线</h3>
+
+<ul>
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/5ff9e013-1f9b-4a35-a5c6-c898e55ecb8e.png" alt="zhihu-framework-v1.png" /></p></li>
+
+<li><p>选型</p>
+
+<ul>
+<li><strong>Python</strong>.<strong>Tornado</strong>
+
+<ul>
+<li>Python
+
+<ul>
+<li>简单强大、快速上手、开发效率高、社区活跃</li>
+</ul></li>
+<li>Tornado
+
+<ul>
+<li>支持异步、适合实时Comet应用开发、简单轻量、学习成本低</li>
+<li>FriendFeed 的成熟案例</li>
+<li>Facebook 的社区支持</li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>优化</p>
+
+<ul>
+<li>主从延迟
+
+<ul>
+<li>参见参考项「MySQL主从复制延迟的监测及缓解」和「彻底终结mysql同步延迟问题」</li>
+</ul></li>
+<li>资源隔离
+
+<ul>
+<li>图片资源独立部署</li>
+</ul></li>
+<li>内网优化
+
+<ul>
+<li>更换设备
+
+<ul>
+<li>硬盘升级</li>
+</ul></li>
+</ul></li>
+<li>应用层灵活调用</li>
+<li>Redis Shard
+
+<ul>
+<li>github.com/zhihu/redis-shard</li>
+</ul></li>
+</ul></li>
+
+<li><p>工具</p>
+
+<ul>
+<li>Profiling
+
+<ul>
+<li>性能分析 (performance analysis)</li>
+<li>以收集程序运行时信息为手段研究程序行为的分析方法，是一种动态程序分析的方法
+
+<ul>
+<li>统计性的事件汇总（轮廓，profile）</li>
+<li>所有事件的记录流（踪迹，trace）</li>
+<li>用hypervisor持续性的交互监控（针对事件连续性或周期性显示在显示屏上）</li>
+</ul></li>
+</ul></li>
+<li>Werkzeug
+
+<ul>
+<li>Python.WSGI工具包</li>
+</ul></li>
+<li>Puppet
+
+<ul>
+<li>开源系统<strong>配置管理</strong>工具</li>
+</ul></li>
+<li>Shipit
+
+<ul>
+<li>实现自动化的<strong>多服务器部署</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="日志">日志</h3>
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/45e5e999-f374-4b2a-a00d-2aaf637efc1c.png" alt="zhihu-kids.png" /></li>
+
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/6cd2f5b3-ed0c-4cc2-88f9-d1bd0a3fc619.png" alt="zhihu-framework-v1-detail.png" /></p></li>
+
+<li><p><a href="https://github.com/zhihu/kids">zhihu/kids</a></p>
+
+<ul>
+<li>支持分布式收集、集中存储、实时、可订阅和简单</li>
+<li>参考
+
+<ul>
+<li>Scribe    不支持订阅</li>
+</ul></li>
+<li>选型
+
+<ul>
+<li>Kafka     Scala-技术储备不足</li>
+<li>Flume     Java-技术储备不足</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="事件驱动">事件驱动</h3>
+
+<ul>
+<li><p>场景</p>
+
+<ul>
+<li>添加答案
+
+<ul>
+<li>更新通知</li>
+<li>更新动态</li>
+<li>更新索引</li>
+<li>更新计数</li>
+<li>内容审查</li>
+<li>&hellip;</li>
+</ul></li>
+</ul></li>
+
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/d7ebb832-5a43-4566-91b6-4f25392a145c.png" alt="zhihu-event-driver.png" /></p></li>
+
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/4ccb25d5-82c3-4333-94bf-17fe8e0f2a23.png" alt="zhihu-event-driver-detail.png" /></p></li>
+
+<li><p>示例</p>
+
+<ul>
+<li>用户回答问题
+
+<ul>
+<li>将问题插入 Mysql</li>
+<li>将消息插入至 Sink</li>
+<li>将问题返回给用户</li>
+</ul></li>
+<li>Sink 通过 Miller 将任务分发给 Beanstalkd， worker自行找到任务并处理</li>
+</ul></li>
+</ul>
+
+<h3 id="页面渲染优化">页面渲染优化</h3>
+
+<ul>
+<li>特点
+
+<ul>
+<li>计算密集型</li>
+<li>IO 密集型</li>
+</ul></li>
+<li>优化
+
+<ul>
+<li>组件化</li>
+<li>调整中数据获取机制
+
+<ul>
+<li>页面组件结构树，自上而下获取数据</li>
+</ul></li>
+</ul></li>
+<li>框架
+
+<ul>
+<li>ZhihuNode</li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/9a1e6656-027e-4705-bff6-04f0f9b4837b.png" alt="zhihu-UI.png" /></li>
+</ul></li>
+</ul>
+
+<h3 id="soa-rpc">SOA-RPC</h3>
+
+<ul>
+<li><p>版本迭代</p>
+
+<ul>
+<li>Wish
+
+<ul>
+<li>Protocol Buffers+ STP+ TCP
+
+<ul>
+<li>PB的描述代码过于冗长、校验严格不便使用</li>
+</ul></li>
+</ul></li>
+<li>Snow
+
+<ul>
+<li>JSON+ STP+ TCP
+
+<ul>
+<li>服务升级时，难以确认哪些服务需要调整</li>
+</ul></li>
+</ul></li>
+<li>Zone
+
+<ul>
+<li>Apache.Avro|JSON+ STP|Binary+ TCP</li>
+</ul></li>
+</ul></li>
+
+<li><p>服务拆分</p>
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/7e383da5-9c27-4ca7-b5ab-af5e22f2bf72.png" alt="zhihu-SOA-services.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/40ea607e-4f24-4436-a141-32082a62d401.png" alt="zhihu-SOA-level.png" /></li>
+</ul></li>
+</ul>
+
+<h3 id="工具">工具</h3>
+
+<ul>
+<li>Dash
+
+<ul>
+<li>Linux 服务器监控系统</li>
+<li>PHP 实现，直观展示 Linux 服务器的当前整体概况
+
+<ul>
+<li>内存、磁盘、网络、安装软件、用户、运行进程</li>
+</ul></li>
+</ul></li>
+<li>Heroin</li>
+<li>Crony</li>
+</ul>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/27813376">知乎架构变迁史</a></li>
+<li><a href="http://otzm88f21.bkt.clouddn.com/452c48f3-7d2a-43bd-9a49-6b7997fbfce0.pdf">ASBJ2014-李申申-知乎架构变迁史.pdf</a></li>
+<li><a href="http://www.infoq.com/cn/news/2014/12/zhihu-architecture-evolution">从0到100——知乎架构变迁史</a></li>
+<li><a href="http://blog.csdn.net/jiao_fuyou/article/details/15027447">MySQL主从复制延迟的监测及缓解</a></li>
+<li><a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/">彻底终结mysql同步延迟问题</a></li>
+<li><a href="https://github.com/zhihu/kids">zhihu/kids</a></li>
+<li><a href="http://python.jobbole.com/84765/">Python 工具包 werkzeug 初探</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/opensource/os-cn-puppet/index.html">Puppet：开源系统配置和管理工具</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%94%9F%E6%88%90%E6%A0%91%E5%8D%8F%E8%AE%AE">生成树协议</a></li>
+<li><a href="http://blog.topspeedsnail.com/archives/3652">linux-dash</a></li>
+<li><a href="http://blog.csdn.net/i_chips/article/details/45694029">Linux监控系统linux-dash安装和使用小结</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E7%259F%25A5%25E4%25B9%258E%25E6%259E%25B6%25E6%259E%2584%25E5%258F%2598%25E8%25BF%2581%25E5%258F%25B2%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=%e7%9f%a5%e4%b9%8e%e6%9e%b6%e6%9e%84%e5%8f%98%e8%bf%81%e5%8f%b2&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E7%259F%25A5%25E4%25B9%258E%25E6%259E%25B6%25E6%259E%2584%25E5%258F%2598%25E8%25BF%2581%25E5%258F%25B2%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E7%259F%25A5%25E4%25B9%258E%25E6%259E%25B6%25E6%259E%2584%25E5%258F%2598%25E8%25BF%2581%25E5%258F%25B2%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2f%25E7%259F%25A5%25E4%25B9%258E%25E6%259E%25B6%25E6%259E%2584%25E5%258F%2598%25E8%25BF%2581%25E5%258F%25B2%2f&title=%e7%9f%a5%e4%b9%8e%e6%9e%b6%e6%9e%84%e5%8f%98%e8%bf%81%e5%8f%b2" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/wrrwhn" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

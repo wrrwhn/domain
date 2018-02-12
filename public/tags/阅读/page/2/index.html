@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tcp">tcp</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/servicemesh/" title="ServiceMesh">ServiceMesh</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
@@ -260,31 +285,6 @@
  自信心 个人价值  提升
  提升个人价值  提高立身处世能力 收拾外表、整洁干净  与价值相当的人交往 丰富阅历   策略  了解对方需求，针对性满足 言语关怀，行动辅助  口才  避免由表面印象决定交流方式  轻率定高，无法不卑不亢聊天 定低则所决定的聊天方式、内容，容易让对方认定自己的低价值形式 采用*态度大方*表达句式  表达大方自然，干净利落 面对拒绝不强求，有意识不卑不亢   有效幽默  针对 聊天冷场 技能  方式  懂得利用话题 懂得如何问答 懂得发表意见  总结  就是利用对方感兴趣的话题作为切入点 然后在和对方问与答的互动之中 发表对事情的看法和见解  注意  注意节奏，交流而非审问   策略  向上归类  话题延伸至总结、深度  向下归类  概率具体伦  横向归类  扩展至同类、相似元素   补充  适当沉默 懂得倾听&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/" title="如何轻松聊天"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/spark/" title="Spark ">Spark </a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.20">2017.10.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%A1%86%E6%9E%B6">框架</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/spark">spark</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&lt;?&gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/spark/" title="Spark "> &raquo;</a>
 </article>
 
         

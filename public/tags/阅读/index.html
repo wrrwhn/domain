@@ -46,6 +46,30 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/" title="知乎架构变迁史">知乎架构变迁史</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.12">2018.02.12</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9E%B6%E6%9E%84">架构</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>知乎架构变迁史 引言  You jump off a cliff and you assemble an aeroplane on the way down. - Reid Hoffman   阶段 上线   选型
+ Python.Tornado  Python  简单强大、快速上手、开发效率高、社区活跃  Tornado  支持异步、适合实时Comet应用开发、简单轻量、学习成本低 FriendFeed 的成熟案例 Facebook 的社区支持    优化
+ 主从延迟  参见参考项「MySQL主从复制延迟的监测及缓解」和「彻底终结mysql同步延迟问题」  资源隔离  图片资源独立部署  内网优化  更换设备  硬盘升级   应用层灵活调用 Redis Shard  github.com/zhihu/redis-shard   工具&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/" title="知乎架构变迁史"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E6%B5%B7%E5%A7%86%E7%AB%8B%E5%85%8B%E6%80%A5%E6%95%91%E6%B3%95/" title="海姆立克急救法">海姆立克急救法</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.11">2018.02.11</time>
@@ -252,31 +276,6 @@ Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 �
  可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
  JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tcp">tcp</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
 </article>
 
         
