@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议">网络-七层协议</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
@@ -253,32 +275,6 @@
     <p>{TOC}
 Apache Beam的前世今生 开源原因  意识到开源软件的巨大价值 足够多模型才能促使项目成功  简介  基础  Cloud Dataflow  介绍  构建、管理和优化复杂数据流水线的方法 用于构建移动应用、调试、追踪和监控产品级云应用  技术  Flume：数据高效并行处理 MilWhell：互联网级别流处理，优秀的容错机制     介绍  统一编程框架，提供开源、统一的编程模型  特点  统一：对于批处理和流式处理，使用单一的编程模型 可移植：可以支持多种执行环境，包括Apache Apex、Apache Flink、Apache Spark和谷歌Cloud Dataflow等 可扩展：可以实现和分享更多的新SDK、IO连接器、转换操作库等  适用场景  并发数据处理任务  将要处理的数据集分解成许多相互独立而又可以并行处理的小集合  ETL任务 数据整合  组成  Beam SDK  针对各数据来源、形式，采用相同的数据模型处理、封装  Beam Pipeline Runner  将 Beam 模型定义开发的处理流程，翻译成底层分布式数据处理平台支持的运行时环境 需要指明底层的 Runner  目前支持 Flink/ Spark/ Apex/ Cloud Dataflow     设计  问题  数据  已持久化的有限数据集，如 HDFS文件，HBase 表 实时数据流，如 Kafka中的系统日志流，Twitter 流 注：有限数据集可看为实时数据流的一个子集  时间  process time：数据进入分布式处理框架时间 event time：数据产生时间  乱序  数据到达时间与 event-time 无法完全符合   解决方法(WWWH)  [W]hat are you computing  Element-Wise 元素级 Aggregating 聚合 Composite 复合  [W]here in event time    [W]hen in processing time  使用 Trigger 机制，配合 SDK 中的水位线和触发器进行时机指定  [H]ow do refinements relate  指定如何处理迟到数据，增量或合并输出 由 SDK 中的 Accumulation 指定&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/" title="Apache.Beam的前世今生"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature">Java.9.Feature</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>深入解读 Java 9 新特性 参考  深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力  Jigsaw  核心 -实现 Java 平台模块化系统 - JPMS (Java Platform Module System)
- 针对问题
- 易错的 classpath  应用不同部分依赖同一类库的不同版本 ClassLoading 复杂而不明确，导致 ClassNotFoundException、 NoClassDefFoundError 等异常  JDK 过于臃肿，无法按不同需求进行定制或优化  目标
- 可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
- JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature"> &raquo;</a>
 </article>
 
         
