@@ -45,6 +45,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Oracle.常见问题">Oracle.常见问题</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>ORA-12541:TNS:无监听程序  监听失败，自己遇到的情况是主机设置错误 -进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora  (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.101)(PORT = 1521))  更新HOST为本地即 HOST= 127.0.0.1 重启监听服务  ORA-01045 :user system lacks create session privilege; logon denied  由于新建的用户缺少机关的权限信息 用sys登入Oracle DB后,下grant create session to yqj;  ORA-12514问题，即TNS 监听程序不能识别给定的SID  指定的数据库未加入监听 进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora 指定位置添加相关文字  SID_LIST_LISTENER = (SID_LIST = (SID_DESC = (SID_NAME = PLSExtProc) (ORACLE_HOME = C:\oracle\product\10.2.0\db_1) (PROGRAM = extproc) ) /**NEW (SID_DESC = (GLOBAL_DBANAME = testDB) (ORACLE_HOME = C:\oracle\product\10.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Oracle.常见问题"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用">Redis.使用</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -270,32 +292,6 @@
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/tomcat.-accesslog/" title="Tomcat. AccessLog ">Tomcat. AccessLog </a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.10.21">2017.10.21</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tomcat">tomcat</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  设置请求日志中的日志输出格式  详解 位置  conf.server.xml  value.className= *.AccessLogValve   参数  className  执行类  org.apache.catalina.valves.AccessLogValve  默认  org.apache.catalina.valves.FastCommonAccessLogValve  仅支持 common 和 combined patterns
-    directory
- 产生文件所存放目录的[绝对|相对]路径  相对于 $CATALINA_HOME 默认为 logs   pattern
- %a - 远程IP地址 %A - 本地IP地址 %b - 发送的字节数(Bytes sent), 不包括HTTP headers的字节，如果为0则展示&rsquo;-&rsquo; %B - 发送的字节数(Bytes sent), 不包括HTTP headers的字节 %h - 远程主机名称(如果resolveHosts为false则展示IP) %H - 请求协议 %l - 远程用户名，始终为&rsquo;-&lsquo;(Remote logical username from identd) %m - 请求的方法(GET, POST等) %p - 接受请求的本地端口 %q - 查询字符串，如果存在，有一个前置的&rsquo;?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/tomcat.-accesslog/" title="Tomcat. AccessLog "> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -303,7 +299,7 @@ Tomcat. AccessLog 参考  Tomcat Access Log配置 Class AccessLogValve  作用  
 	<a class="btn newer" href="/page/7/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 8  16</p>
+	<p class="counter"> 8  15</p>
 
 
 	
