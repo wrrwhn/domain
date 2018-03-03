@@ -278,7 +278,7 @@
   </url>
   
   <url>
-    <loc>http://domain.yqjdcyy.com/post/%E9%85%92.%E8%B0%83%E9%85%92/</loc>
+    <loc>http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
   </url>
   
@@ -758,6 +758,11 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2016-02-08T18:07:46+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/about/</loc>
     <lastmod>2017-10-26T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -1179,6 +1184,12 @@
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E5%BB%BA%E7%AD%91/</loc>
     <lastmod>2018-01-16T22:07:46+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2016-02-08T18:07:46+08:00</lastmod>
     <priority>0</priority>
   </url>
   
