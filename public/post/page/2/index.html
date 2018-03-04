@@ -46,6 +46,59 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题">彻底终结MySQL同步延迟问题</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.07">2018.02.07</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>彻底终结MySQL同步延迟问题 参考  彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication  版本  MySQL.Version  5.7  Storage.Engine  TokuDB   影响因素 网络  主机或者从机的带宽打满 主从之间网络延迟很大  机器性能  从机使用了烂机器
+ 比如主机使用SSD而从机还是使用的SATA  从机高负载
+ 很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
+ 检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/" title="美国-夏威夷">美国-夏威夷</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.06">2018.02.06</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%B8%B8%E7%8E%A9">游玩</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E7%BE%8E%E5%9B%BD">美国</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E5%A4%8F%E5%A8%81%E5%A4%B7">夏威夷</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>夏威夷 参考  ALOHA! 夏威夷之旅  路线  夏威夷大岛（Islandof Hawaii） 茂宜岛（Maui） 欧湖岛（Oahu）檀香山  夏威夷大岛 - 火山  由两座活火山组成，分别为基拉韦厄（ Kilauea）和冒那罗亚（Mauna Loa） 路线
+ 火山国家公园  火山口链路  雨林 海岸  越野十英里 岩浆活跃区   赏析
+                 茂宜岛  路线
+ Kahului市 海纳之路 山顶牧场 哈雷阿卡拉死火山口 观鲸  赏析
+                   欧湖岛  赏析&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/" title="美国-夏威夷"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/" title="阿里为什么不去清华招人？">阿里为什么不去清华招人？</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.06">2018.02.06</time>
@@ -227,54 +280,6 @@ Explicit Image Format  Analysis
  specified a explicit image format is better than in the case of the image donot contain a signature of identify format  Example
  convert -size 640x480 -depth 8 rgb:image image.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/imagemagick.basic/" title="ImageMagick"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab">Linux.Crontab</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.17">2018.01.17</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Linux.Crontab 参考  每天一个linux命令（50）：crontab命令  简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
- 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
-SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&quot;&quot; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily   用户任务调度
- 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig &ndash;list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &lt;user&gt;  调用指定用户 &lt;user&gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/" title="约翰·帕森">约翰·帕森</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.16">2018.01.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%89%BA%E6%9C%AF">艺术</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%BB%BA%E7%AD%91">建筑</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-约翰·帕森 简介  John Pawson，极简主义之父，师从传奇设计大师仓俣史朗  参考  极简主义大师：约翰·帕森  风格  极简主义  作品  Moritzkirche教堂 以色列特拉维夫W酒店样板房 Hotel Puerta Picornell House St Tropez Houses North Sea Apartment  赏析&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/" title="约翰·帕森"> &raquo;</a>
 </article>
 
         

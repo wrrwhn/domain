@@ -2,7 +2,7 @@
 date = "2018-02-08T18:07:46+08:00"
 title = "IDEA.快捷键"
 draft = false
-tags = ["阅读","快捷键","IDEA"]
+tags = ["整理","快捷键","IDEA"]
 share = true
 +++
 

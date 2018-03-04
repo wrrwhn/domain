@@ -46,6 +46,79 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/css4.color/" title="CSS4.Color">CSS4.Color</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/css4">css4 </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 140 standard color names <a href="http://www.w3schools.com/colors/colors_names.asp">http://www.w3schools.com/colors/colors_names.asp</a> HWB(0, 0%, 0%) sugguest in css4 hue+ white+ black white+black&lt;= 100 CMYK(0%, 100%, 100%, 0%) cyan/ magenta/ yellow/ black suggest in css4, not supported in html R0, 0%, 0% close to HWB natural color(NCol) from W3Schools [R|G|B|Y|C|M][\d]0, white%, black% white+ black&lt;= 100  Color type  shades of gray r= g= b | #080808 shades of red r=[0-255], g= b= 0 web safe color = 216  CSS3.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/css4.color/" title="CSS4.Color"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong">Go.Wukong</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9F%A2">柢</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
+searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &quot;./dict/dictionary.txt&quot;, StopTokenFile: &quot;./dict/stop_tokens.txt&quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站">Hugo 建站</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/hugo">hugo</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Hugo 建站 参考  使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点 github Pages和Jekyll入门 3.5. 建立主页  安装  下载  gohugoio/hugo  安装  tar xvf hugo_0.15_linux_amd64.tar.gz -C /data/soft/hugo   生成  /data/soft/hugo/hugo new site /data/service/domain  archetypes config.toml  整体配置  content  文章  data layouts static themes  主题    安装主题  仅需将主题下载至 themes 文件下，并更 config.toml 中的 theme 为主题名称  下载  git clone <a href="https://github">https://github</a>.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j">Java.Log4j</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -223,85 +296,6 @@ The Path Coordinate System (0,0) in the upper left of the shape&hellip;</p>
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Oracle.常见问题">Oracle.常见问题</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/oracle">oracle</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>ORA-12541:TNS:无监听程序  监听失败，自己遇到的情况是主机设置错误 -进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora  (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.101)(PORT = 1521))  更新HOST为本地即 HOST= 127.0.0.1 重启监听服务  ORA-01045 :user system lacks create session privilege; logon denied  由于新建的用户缺少机关的权限信息 用sys登入Oracle DB后,下grant create session to yqj;  ORA-12514问题，即TNS 监听程序不能识别给定的SID  指定的数据库未加入监听 进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora 指定位置添加相关文字  SID_LIST_LISTENER = (SID_LIST = (SID_DESC = (SID_NAME = PLSExtProc) (ORACLE_HOME = C:\oracle\product\10.2.0\db_1) (PROGRAM = extproc) ) /**NEW (SID_DESC = (GLOBAL_DBANAME = testDB) (ORACLE_HOME = C:\oracle\product\10.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Oracle.常见问题"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用">Redis.使用</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/redis">redis</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
-参考 官网
- 文档
- 命令
- Linux下安装
- Jedis使用示例
-  安装-WINDOWS  下载 <a href="http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317">http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317</a> 解压至 D:\redis-2.0.2，并更新替换redis.conf cmd执行 D:\redis-2.0.2&gt;redis-server.exe redis.conf 运行服务器 cmd执行 D:\redis-2.0.2&gt;redis-cli.exe -h 192.168.10.59 -p 6379 运行客户端 客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值  安装-LINUX VI环境下输入  下载程序  wget <a href="http://download.redis.io/releases/redis-2.8.3.tar.gz">http://download.redis.io/releases/redis-2.8.3.tar.gz</a>  解压  tar xzf redis-2.8.3.tar.gz  跳转至解压目录  cd redis-2.8.3  安装Redis  make  若提示make指定未安装，执行yum -y install gcc automake autoconf libtool make 进行安装   拷贝执行相关  src路径下的redis-server、redis-benchmark、redis-cli，redis-2.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结">项目发布总结</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%8F%91%E5%B8%83">发布</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>域名相关 购买：  购买网站  万网 www.net.cn  示例：
- fzsfxd.com 有限时间三年，金额为149元
-服务器备案  若使用国内服务器，且要使用购买的域名，均需要进行备案，周期大概要半个月（个人，较快）
- 介绍
- <a href="http://beian.aliyun.com">http://beian.aliyun.com</a>  流程
- 网站信息、相关企业个人身份证等相关资质填写。 申报人拍照，不允许 PS，其中背景需要为指定幕布（可免费向阿里申请） 网络管理局审批，较慢。   服务器相关 购买  购买网站：阿里云 <a href="http://www.aliyun.com/">http://www.aliyun.com/</a> 配置
-  环境配置  使用镜像市场中 【Java 多版本环境】 -&gt; 有坑！！！ 每种东西都留有坑，自己在使用过程中，除了 java 没动，其它 tomcat / mysql/ nginx 都重新安装配置过，囧。后面看它描述，帮忙发布调优啥的都要收费！！
-  项目发布和域名解析  域名解析：进入域名解析界面，配置服务器 IP 地址，如 115.28.146.6 项目发布：Tomcat环境发布，本次将服务名称调整为 Root，以便输入 IP 端口后直接访问 Nginx：配置域名和指定服务的绑定，配置如下（安装使用 yum 安装）    注  其中 mysql/ tomcat/nginx 使用时都要注意端口是否有开放   项目收费  个人与企业进行交易，对方可能会要求你提供发票，甚至于企业开具的网站开发的增值税（或非增值）发票。  解决方法  找公司代开，如琴峰，但可能遇到情况是像琴峰他们公司，该操作会影响财务税点啥的，是不愿意操作。 找记账公司代开，但税点要求6，且无若金额太小别人是不鸟的。（此次金额5K）  最好的办法  事先讲好，个人性质，将不提供发票来着。&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -309,7 +303,7 @@ The Path Coordinate System (0,0) in the upper left of the shape&hellip;</p>
 	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/2/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 3  10</p>
+	<p class="counter"> 3  11</p>
 
 
 	

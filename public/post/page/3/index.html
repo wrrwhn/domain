@@ -46,6 +46,54 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab">Linux.Crontab</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.17">2018.01.17</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Linux.Crontab 参考  每天一个linux命令（50）：crontab命令  简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
+ 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
+SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&quot;&quot; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily   用户任务调度
+ 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig &ndash;list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &lt;user&gt;  调用指定用户 &lt;user&gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/" title="约翰·帕森">约翰·帕森</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.16">2018.01.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E8%89%BA%E6%9C%AF">艺术</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E5%BB%BA%E7%AD%91">建筑</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+约翰·帕森 简介  John Pawson，极简主义之父，师从传奇设计大师仓俣史朗  参考  极简主义大师：约翰·帕森  风格  极简主义  作品  Moritzkirche教堂 以色列特拉维夫W酒店样板房 Hotel Puerta Picornell House St Tropez Houses North Sea Apartment  赏析&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/" title="约翰·帕森"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.expect/" title="Linux.Expect">Linux.Expect</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.01.16">2018.01.16</time>
@@ -230,54 +278,6 @@ UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj&hell
 
     <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/ffmpeg">ffmpeg</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} &hellip; {[output_file_options] output_url} &hellip;  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | &mdash;&mdash;&mdash;&gt; | packets | &mdash;&ndash;+ |____<strong><em>| |</em></strong>___________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;&mdash;&mdash;&ndash; | encoded data | &lt;&mdash;-+ | file | muxer | packets | encoder |_____<strong><em>| |</em></strong>___________|  选项 实例 裁剪  指令  ffmpeg -i old.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/git.subtree/" title="Git.Subtree">Git.Subtree</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/git">git</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
- 适用情况
- 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
- Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/git.subtree/" title="Git.Subtree"> &raquo;</a>
 </article>
 
         

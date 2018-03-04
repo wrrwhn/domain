@@ -46,6 +46,80 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a> xsi:schemaLocation=&quot;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</a> &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.midgetontoes&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;properties&gt; &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;executions&gt; &lt;execution&gt; &lt;goals&gt; &lt;goal&gt;repackage&lt;/goal&gt; &lt;/goals&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&quot;/&quot;) String home() { return &quot;Hello World!&quot;; } public static void main(String[] args) throws Exception { SpringApplication.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/storm/" title="Storm">Storm</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/storm">storm</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
+进程间通信协议 Connection
+ recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
+ bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
+ 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
+ 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/storm/" title="Storm"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/sublime">sublime</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
@@ -212,30 +286,6 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/spring.cache/" title="Spring.Cache">Spring.Cache</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/cache">cache</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考链接  <a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a>  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;]) @CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/spring.cache/" title="Spring.Cache"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -243,9 +293,11 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/9/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 10  10</p>
+	<p class="counter"> 10  11</p>
 
 
+	
+	<a class="btn older" href="/tags/%E6%95%B4%E7%90%86/page/11/" title=""> &raquo;</a>
 	
 
 </nav>

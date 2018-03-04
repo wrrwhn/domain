@@ -45,6 +45,54 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/spring.basic/" title="Spring.Basic">Spring.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
+public interface Greeting { void sayHello(String name); }  implement
+public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&quot;Hello! &quot; + name); after(); } private void before() { System.out.println(&quot;Before&quot;); } private void after() { System.out.println(&quot;After&quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring.basic/" title="Spring.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 文章来源 Spring Data JPA - Reference Documentation
+学习整理 Basic Example Entity @Entity @Table(name = &quot;user&quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &quot;user_name&quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&lt;User, Long&gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&lt;User&gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &quot;com.yunkai&quot;) @EntityScan(basePackages = &quot;com.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/springboot.jpa/" title="SpringBoot.JPA"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
@@ -235,53 +283,6 @@ Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文�
  post-clean executes processes needed to finalize the project cleaning
 Default Lifecycle validate validate the project is correct and all necessary information is available.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/maven/" title="Maven"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/dwr/" title="DWR">DWR</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/dwr">dwr</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &lt;servlet-mapping&gt; &lt;servlet-name&gt;springServlet&lt;/servlet-name&gt; &lt;url-pattern&gt;/dwr/*&lt;/url-pattern&gt; &lt;/servlet-mapping&gt;  springmvc.xml &lt;!&ndash; DWR3.0配置 &ndash;&gt; &lt;!&ndash; 打开dwr的控制器 &ndash;&gt; &lt;dwr:controller id=&quot;dwrController&quot; debug=&quot;true&quot; &gt; &lt;dwr:config-param name=&quot;allowScriptTagRemoting&quot; value=&quot;true&quot; /&gt; &lt;dwr:config-param name=&quot;crossDomainSessionSecurity&quot; value=&quot;false&quot; /&gt; &lt;dwr:config-param name=&quot;activeReverseAjaxEnabled&quot; value=&quot;true&quot;/&gt; &lt;/dwr:controller&gt; &lt;dwr:url-mapping/&gt; &lt;bean class=&quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&quot;&gt; &lt;property name=&quot;alwaysUseFullPath&quot; value=&quot;true&quot;/&gt; &lt;property name=&quot;mappings&quot;&gt; &lt;props&gt; &lt;prop key=&quot;/dwr/*<em>/</em>&quot;&gt;dwrController&lt;/prop&gt; &lt;/props&gt; &lt;/property&gt; &lt;/bean&gt; &lt;!&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/dwr/" title="DWR"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/regex/" title="Regex">Regex</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/regex">regex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 + 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/regex/" title="Regex"> &raquo;</a>
 </article>
 
         

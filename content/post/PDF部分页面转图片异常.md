@@ -1,11 +1,12 @@
 +++
-date = "2018-03-04T18:07:46+08:00"
+date = "2018-03-04T10:07:46+08:00"
 title = "PDF部分页面转图片异常"
 draft = false
 tags = ["整理","异常处理","PDFBOX"]
 share = true
 +++
 
+[TOC]
 
 # Error
 ```
@@ -47,7 +48,6 @@ java.lang.IllegalArgumentException: Numbers of source Raster bands and source co
         at org.springframework.aop.interceptor.AsyncExecutionInterceptor$1.call(AsyncExecutionInterceptor.java:115)
         at java.util.concurrent.FutureTask.run(FutureTask.java:266)
         at java.lang.Thread.run(Thread.java:745)
-
 ```
 
 # 参考        
@@ -58,4 +58,3 @@ java.lang.IllegalArgumentException: Numbers of source Raster bands and source co
 # 优化
 - 单片转空白页
 - 尝试其它类型 ImageType
-
