@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Posts &middot; READ FROM LIFE</title>
+        <title>Posts &middot; 好久不见</title>
         <meta name="author">
-        <meta name="description" content="姚清居到此一游">
+        <meta name="description" content="好久不见">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="READ FROM LIFE" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
         <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
@@ -43,6 +43,31 @@
     <main role="main" class="content">
         <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
         
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL">GraphQL</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/graphql">graphql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
+query { hero { name } droid(id: &quot;2000&quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
+  { &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;, &ldquo;review&rdquo;: { &ldquo;stars&rdquo;: 5, &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL"> &raquo;</a>
+</article>
+
         
             <article class="post">
     
@@ -256,29 +281,6 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User">Linux.User</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -333,7 +335,7 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 

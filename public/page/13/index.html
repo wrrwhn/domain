@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>READ FROM LIFE &middot; READ FROM LIFE</title>
+        <title>好久不见 &middot; 好久不见</title>
         <meta name="author">
-        <meta name="description" content="姚清居到此一游">
+        <meta name="description" content="好久不见">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="READ FROM LIFE" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="READ FROM LIFE" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
         <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
         <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
@@ -42,6 +42,33 @@
 <div class="container clearfix">
     <main role="main" class="content">
         
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/chrome">chrome</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  Getting Started: Building a Chrome Extension Overview Developer&rsquo;s Guide Sample Extensions  示例解析  目录结构
+html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，<strong>要求 js 和 html 分开存放</strong> manifest.json // 插件配置文件  manifest.json
+{ &quot;manifest_version&quot;: 2, // 配置文件版本 &quot;name&quot;: &quot;插件名称&quot;, &quot;description&quot;: &quot;插件功能描述&quot;, &quot;version&quot;: &quot;0.1&quot;, // 插件当前开发版本 // 通用型 &quot;browser_action&quot;: { // 浏览器级动作 &quot;default_icon&quot;: &quot;/images/icon.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin "> &raquo;</a>
+</article>
+
         
             <article class="post">
     
@@ -255,29 +282,6 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/xsd/" title="XSD">XSD</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/xsd">xsd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：<a href="http://www.w3school.com.cn/schema/">http://www.w3school.com.cn/schema/</a> 手册：<a href="http://www.w3school.com.cn/schema/schema_elements_ref.asp">http://www.w3school.com.cn/schema/schema_elements_ref.asp</a> 验证：<a href="http://www.ltg.ed.ac.uk/~ht/xsv-status.html">http://www.ltg.ed.ac.uk/~ht/xsv-status.html</a> 实例：<a href="http://www.w3school.com.cn/schema/schema_example.asp">http://www.w3school.com.cn/schema/schema_example.asp</a>
-使用 XML结构 &lt;?xml version=&quot;1.0&quot;?&gt; &lt;note&gt; &lt;to&gt;George&lt;/to&gt; &lt;from&gt;John&lt;/from&gt; &lt;heading&gt;Reminder&lt;/heading&gt; &lt;body&gt;Don&rsquo;t forget the meeting!&lt;/body&gt; &lt;/note&gt;   定义 - note.xsd &lt;?xml version=&quot;1.0&quot;?&gt; &lt;xs:schema xmlns:xs=&quot;<a href="http://www.w3.org/2001/XMLSchema&quot;">http://www.w3.org/2001/XMLSchema&quot;</a> // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 指定默认命名空间 elementFormDefault=&quot;qualified&quot; &gt; &lt;xs:element name=&quot;note&quot;&gt; &lt;xs:complexType&gt; &lt;xs:sequence&gt; &lt;xs:element name=&quot;to&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;from&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;body&quot; type=&quot;xs:string&quot;/&gt; &lt;/xs:sequence&gt; &lt;/xs:complexType&gt; &lt;/xs:element&gt; &lt;/xs:schema&gt;  引用 &lt;?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/xsd/" title="XSD"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -333,7 +337,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.yqjdcyy.com">姚清居</a>.</p>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
   </div>
 </footer>
 
