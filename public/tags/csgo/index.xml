@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Csgo on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/csgo/</link>
+    <description>Recent content in Csgo on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
+    <lastBuildDate>Thu, 15 Mar 2018 14:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/csgo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>CSGO.脚本</title>
+      <link>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</link>
+      <pubDate>Thu, 15 Mar 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</guid>
+      <description>设置项  CSGO详细参数.md  脚本 示例  单人模式  single.cfg  sv_cheats 1 bot_kick sv_infinite_ammo 1 noclip bind &amp;quot;H&amp;quot; &amp;quot;noclip&amp;quot; mp_startmoney &amp;quot;16000&amp;quot; sv_grenade_trajectory &amp;quot;1&amp;quot; sv_grenade_trajectory_time &amp;quot;20&amp;quot; sv_grenade_trajectory_dash &amp;quot;0&amp;quot; sv_grenade_trajectory_thickness &amp;quot;1&amp;quot; sv_grenade_trajectory_time_spectator &amp;quot;1&amp;quot; sv_showimpacts 1 sv_showimpacts_time 25 mp_roundtime 99 mp_timelimit &amp;quot;999&amp;quot; mp_freezetime &amp;quot;0&amp;quot; mp_buy_anywhere &amp;quot;1&amp;quot; mp_buytime 9999 bind &amp;quot;k&amp;quot; &amp;quot;bot_add_ct&amp;quot; bind &amp;quot;l&amp;quot; &amp;quot;bot_add_t&amp;quot; bot_zombie &amp;quot;0&amp;quot;  备注  目前尝试无效项 冻结时间取消 金钱设置 回合时长    开启开发者控制台  「游戏设置选项」  「游戏设置」  「启用开发者控制台」    执行  将 single.</description>
+    </item>
+    
+  </channel>
+</rss>
