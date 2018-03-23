@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 15 Mar 2018 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 15 Mar 2018 15:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>CSGO.技巧.跳跃</title>
+      <link>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</link>
+      <pubDate>Thu, 15 Mar 2018 15:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</guid>
+      <description> 连跳  W Space+ A+ 鼠标左摆 落地时+ Space+ D  跳箱子  正对箱子，Ctrl+ Space Ctrl+ W  跳远  W Space A+ 鼠标左摆 D+ 鼠标右摆  参考  CSGO跳跃技巧及操作方法心得详解  </description>
+    </item>
     
     <item>
       <title>CSGO.脚本</title>
@@ -1759,6 +1768,16 @@ Default Lifecycle validate validate the project is correct and all necessary inf
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
       <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</guid>
+      <description>+++ date = &amp;quot;2018-03-23T17:00:00+08:00&amp;quot; title = &amp;quot;庄家杜均&amp;quot; draft = false tags = [&amp;quot;阅读&amp;quot;,&amp;quot;虚拟币&amp;quot;] share = true +++  [TOC]
+【深度调查】 庄家杜均 时间点 2013.7  杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。  2013.11  火币网上线，打出了“免交易手续费”的旗号  发展壮大后，连同国内几大交易所重新开始收取手续费，甚至开始向项目收取巨额的ICO“上币费”   2014  杜均创办了区块链代币媒体“金色财经” 杜均募集了自己的基金”节点资本”  2017.9  中国的监管机构下令禁止境内的ICO（首次代币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进融资的方式）交易，并陆续屏蔽境外ICO交易平台的域名。  2017.12  代币“WAX”登录“火币Pro”交易所后，狂跌99%的惨烈景象 IOST（Internet of Service Token）的区块链项目正在筹划ICO，募资数额巨大 每个币种登录火币Pro开始交易后，开放充值和提现的间隔时间越来越长  2018.1  包括杜均在内，币圈主要人物已经被限制出境  2018.2.15  名为“三点钟无眠区块链”的微信群横空出世，在各种区块链微信群里呼风唤雨的，是薛蛮子、徐小平、蔡文胜和王峰这样的传统天使风险投资人。  2018.3.3  全国政协十三届一次会议开幕，中国进入“两会时期”。  火币网公众号更名为 “huobicom” OKEx公众号被封号   关键点 杜均  重庆开县人，1986年出生 初中期间，杜均曾靠打游戏卖装备、建站赚广告费谋生，是早年间国内互联网野蛮生长时代孕育的无数- 个人站长之一。 凭借常年混迹互联网圈积累的经验和圈子，杜均成功进入知名企业家和天使投资人戴志康创立的康盛创想，在旗下Discuz!</description>
     </item>
     
   </channel>

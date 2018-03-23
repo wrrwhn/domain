@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</loc>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</loc>
     <lastmod>2018-03-15T14:00:00+08:00</lastmod>
   </url>
@@ -803,6 +808,10 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</loc>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/about/</loc>
     <lastmod>2017-10-26T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -851,7 +860,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/csgo/</loc>
-    <lastmod>2018-03-15T14:00:00+08:00</lastmod>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1007,7 +1016,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-03-15T14:00:00+08:00</lastmod>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1229,7 +1238,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-03-15T14:00:00+08:00</lastmod>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1288,6 +1297,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E6%8A%80%E5%B7%A7/</loc>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%8A%95%E8%B5%84/</loc>
     <lastmod>2018-02-22T18:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -1295,7 +1310,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-03-15T14:00:00+08:00</lastmod>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1361,7 +1376,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%B8%B8%E6%88%8F/</loc>
-    <lastmod>2018-03-15T14:00:00+08:00</lastmod>
+    <lastmod>2018-03-15T15:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

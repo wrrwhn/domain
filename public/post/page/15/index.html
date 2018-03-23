@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数">Oracle.分析函数</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.15">2016.12.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>统计方面 合并  Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&hellip;)  按照COLX的降序层次逐层汇总合并  CUBE(COL1, COL2&hellip;)  排序  Rank() Over ([Partition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，但下一记录会空出其中的排名  Dense_rank() Over ([Patition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，之后数据接上一次序继续  Row_number() Over ([Partitionby ] [Order by ] [Nulls First/Last])  碰到相同数据时不做处理依照记录顺序依次递增  Ntile( ) Over ([Partition by ] [Order by ])  最值  [Min|Max]() Keep (Dense_rank First/Last [Partition by ] [Order by ])  MIN 用于确保返回唯一记录 KEEP 用于告知Oracle保留符合KEEP条件的记录 Dense_rank 固定写法，不可更改  Ratio_to_report(value)  Ratio_to_report(value)= value/ sum(value)   首/末记录  [First_value|Last_value|(Sum() Over ([Patition by ] [Order by ] Rows Between Preceding And Following ))  相邻记录比较  LAG(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LAG(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])  LEAD(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LEAD(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])   家族树  START WITH COL1= &lsquo;XXX&rsquo; CONNECT BY COL1= PRIOR COL2  语法  1&gt;语句顺序：SELECT&gt; FROM&gt; WHERE&gt; START WITH&gt; CONNECT BY&gt; ORDER BY 2&gt;PRIOR位置：在前（CONNECT BY PRIOR COL1=COL2），强制由根到叶自顶向上，置于后面则相反由叶到根 3&gt;WHERE可以排除树中个体，但无法排除其子孙或祖先 4&gt;CONNECT BY条件则可以排除个体及其后代信息 5&gt;CONNECT BY不以和WHERE子句中表连接使用  例子  SELECT LEVEL, NVL(B.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/angularjs.basic/" title="AngularJS.Basic">AngularJS.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
@@ -277,33 +299,6 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/storm/" title="Storm">Storm</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/storm">storm</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
-进程间通信协议 Connection
- recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
- bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
- 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
- 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/storm/" title="Storm"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -311,7 +306,7 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
 	<a class="btn newer" href="/post/page/14/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 15  16</p>
+	<p class="counter"> 15  17</p>
 
 
 	
