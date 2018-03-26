@@ -23,6 +23,16 @@
     </item>
     
     <item>
+      <title>Python.__main__</title>
+      <link>http://domain.yqjdcyy.com/post/python.__mian__/</link>
+      <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
+      <description> [TOC]
+参考  Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解?  作用  保障模块既可以被导入，也可作为脚本来执行  直接运行时，模块名为 main，因为对应代码块可被运行 导入时，代码块不执行   </description>
+    </item>
+    
+    <item>
       <title>CSGO.技巧.跳跃</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</link>
       <pubDate>Thu, 15 Mar 2018 15:00:00 +0800</pubDate>

@@ -22,5 +22,15 @@
 作用  用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题  分类  conda  工具 提供包管理和环境管理 将所有工具、第三方包、python 和 conda自身均当成 package 对待  Anaconda  打包集合  预装 conda 特地版本 python 众多 apckages 科学计算工具   Miniconda  基础版本  仅包含 python 与 conda    安装  参考  Installation—Conda documentation Installing on Windows  确认      指令 环境管理  新增  conda create -n &amp;lt;env_name&amp;gt; &amp;lt;package_names|python[=version]&amp;gt;  删除  conda env remove -n &amp;lt;env_name&amp;gt;  列表  conda env list  进入  Windows  activate &amp;lt;env_name&amp;gt;  OSX | Linux  source activate &amp;lt;env_name&amp;gt;   退出  Windows  deactivate  OSX | Linux  source deactivate   导出配置  conda env export &amp;gt; &amp;lt;/path/environment.</description>
     </item>
     
+    <item>
+      <title>Python.__main__</title>
+      <link>http://domain.yqjdcyy.com/post/python.__mian__/</link>
+      <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
+      <description> [TOC]
+参考  Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解?  作用  保障模块既可以被导入，也可作为脚本来执行  直接运行时，模块名为 main，因为对应代码块可被运行 导入时，代码块不执行   </description>
+    </item>
+    
   </channel>
 </rss>
