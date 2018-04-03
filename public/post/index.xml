@@ -7,10 +7,32 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 26 Mar 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 03 Apr 2018 15:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>汽车.学车</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
+      <pubDate>Tue, 03 Apr 2018 15:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
+      <description>[TOC]
+参考条件  身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考  科目一 挂学时 刷题目 考试  自行前往车管所 到时先行录指纹 等叫到号时进入 完成考试后领取成绩单  科目二 注意事项  注意调整座椅、后视镜等  后视镜上沿可见后侧门把手 车身占后视镜 1&amp;frasl;4 左右   启动三保险  离合踩满 刹车踩满 挂空档  打满= 90度= 打三把  一把= 单手半圈   流程  注意事项  考试过程中，身体任意部位不能伸出车窗 考试不及格，需从专门车道返回重考 有一次重考机会 场地     入场  穿反光马甲 识别身份证，按指纹  启动  调整座位、后视镜 绑定安全带，挂空档，踩刹车、离合，启动 拉手刹、挂一档、打左车向灯前进  侧方停车  出库时打左转向灯 不及格  入库停止后，车身出线  扣10分  行驶中轮胎压线   定点与半坡起步  前保险框停于实线处 起步前手刹拉起三秒，打左转向灯 起步熄火时，立马踩刹车重新启动 不及格  前保险框停于虚线外 后溜超过30公分 未于30s内启动  扣10分  前保险框位于虚线内实线外 后溜30公分   直角转弯  不及格  行驶中车轮压线 中途停车   曲线  不及格  行驶中车轮压线 中途停车   倒车入库  不及格  不按规定路线、顺序行驶 车身出线 中途停车 时长超过4min    实际体验  申请  第一次预约  286&amp;frasl;300 提前几天通知预约失败 与教练确认是由于预约顺序与科目一考试的时间有关 提前几天，短信通知到预约失败  第二次预约  顺利   集合  6:55 训练场集合  入场  7:30 到达考场，后直接刷身份证进去  排队  安排的9:30的场 分排「8:00-9:30」与「9:30-12:00」的场    8点的场进去后便可进入  刷身份证+ 脱眼镜拍照   考试  进考场  坐在大厅等待提示 提示自己「6」号车后，对照了解需进第三号考场    去了一下洗手间，手机静音  考试  紧张等待「6」号车返回 听大妈讲刚考过，紧张到脚抖至走不动的故事 上车，检查座椅、左右后视镜  左右后视镜无法再调整，幸好还有辅助镜子  使用身份证签到，对摄像头拍照 重新启动出发  安全员搭话，忘记启动打左转向，囧  侧方 半坡  位置停不准  直角 S弯 倒库  80分及格   难点 倒车入库 左倒车  前进至车身挡住对面车道线，方向盘向左打满 直视前方，快对直时拉直（右打满） 继续前进至左侧远端黄线与手肘对齐 踩满离合、刹车后，挂倒档 倒至左侧后视镜杆挡住远端黄线时左转打满（左打三把） 观察左侧后视镜中，车身离左侧库角70厘米左右，回（右）1.</description>
+    </item>
+    
+    <item>
+      <title>License.Choose</title>
+      <link>http://domain.yqjdcyy.com/post/license.choose/</link>
+      <pubDate>Fri, 30 Mar 2018 11:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/license.choose/</guid>
+      <description>[TOC]
+作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明确允许，用户可以免费地使用、修改、共享版权软件。 版权法默认禁止共享，也就是说，没有许可证的软件，就等同于保留版权，虽然开源了，用户只能看看源码，不能用，一用就会侵犯版权。所以软件开源的话，必须明确地授予用户开源许可证。
+简诉    类型 MIT  历史  名源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称「X许可协议」（X License）或「X11许可协议」(X11 License）  声明
+The MIT License (MIT) Copyright (c) [year] [copyright holders] Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</description>
+    </item>
     
     <item>
       <title>Python.Conda</title>
@@ -67,16 +89,6 @@
       <guid>http://domain.yqjdcyy.com/post/jwt/</guid>
       <description>[TOC]
 定义 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密。  实现  组成  header.playload.signature header  typ  声明类型  alg  加密算法  RSA1_5 HS256    playload  组成  Registered Claim Names  iss  Issuer 该 JWT 的签发者 可选项，大小写敏感  sub  Subject 该JWT所面向的用户，局部上下文或全局唯一 可选项，大小写敏感  aud  Audience 接收该 JWT 的一方，指定应用方 可选项，大小写敏感  exp  Expiration Time 过期时间，Unix时间戳 可选项  nbf  Not Before 起始可用时间，Unix时间戳  iat  Issued At 标记签发时间，Unix时间戳 可选项  jti  JWT ID 可选项   Public Claim Names  可添加任意信息  常用于培养出用户、业务相关信息 不建议添加敏感信息   Private Claim Names  提供者和消费者的共同声明    signature  encrypt(base64(header)+ &amp;lsquo;.</description>
-    </item>
-    
-    <item>
-      <title>汽车.学车</title>
-      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
-      <pubDate>Wed, 07 Mar 2018 15:30:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
-      <description>[TOC]
-参考条件  身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考  科目二 注意事项  注意调整座椅、后视镜等  后视镜上沿可见后侧门把手 车身占后视镜 1&amp;frasl;4 左右   启动三保险  离合踩满 刹车踩满 挂空档  打满= 90度= 打三把  一把= 单手半圈   流程  注意事项  考试过程中，身体任意部位不能伸出车窗 考试不及格，需从专门车道返回重考 有一次重考机会 场地     入场  穿反光马甲 识别身份证，按指纹  启动  调整座位、后视镜 绑定安全带，挂空档，踩刹车、离合，启动 拉手刹、挂一档、打左车向灯前进  侧方停车  出库时打左转向灯 不及格  入库停止后，车身出线  扣10分  行驶中轮胎压线   定点与半坡起步  前保险框停于实线处 起步前手刹拉起三秒，打左转向灯 起步熄火时，立马踩刹车重新启动 不及格  前保险框停于虚线外 后溜超过30公分 未于30s内启动  扣10分  前保险框位于虚线内实线外 后溜30公分   直角转弯  不及格  行驶中车轮压线 中途停车   曲线  不及格  行驶中车轮压线 中途停车   倒车入库  不及格  不按规定路线、顺序行驶 车身出线 中途停车 时长超过4min    难点 倒车停车 左倒车  前进至车身挡住对面车道线，方向盘向左打满 直视前方，快对直时拉直（右打满） 继续前进至左侧远端黄线与手肘对齐 踩满离合、刹车后，挂倒档 倒至左侧后视镜杆挡住远端黄线时左转打满（左打三把） 观察左侧后视镜中，车身离左侧库角70厘米左右，回（右）1.</description>
     </item>
     
     <item>

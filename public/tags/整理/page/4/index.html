@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j">Java.Log4j</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项">Java.注意事项</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -277,29 +299,6 @@ The Path Coordinate System (0,0) in the upper left of the shape&hellip;</p>
   环境配置  使用镜像市场中 【Java 多版本环境】 -&gt; 有坑！！！ 每种东西都留有坑，自己在使用过程中，除了 java 没动，其它 tomcat / mysql/ nginx 都重新安装配置过，囧。后面看它描述，帮忙发布调优啥的都要收费！！
   项目发布和域名解析  域名解析：进入域名解析界面，配置服务器 IP 地址，如 115.28.146.6 项目发布：Tomcat环境发布，本次将服务名称调整为 Root，以便输入 IP 端口后直接访问 Nginx：配置域名和指定服务的绑定，配置如下（安装使用 yum 安装）    注  其中 mysql/ tomcat/nginx 使用时都要注意端口是否有开放   项目收费  个人与企业进行交易，对方可能会要求你提供发票，甚至于企业开具的网站开发的增值税（或非增值）发票。  解决方法  找公司代开，如琴峰，但可能遇到情况是像琴峰他们公司，该操作会影响财务税点啥的，是不愿意操作。 找记账公司代开，但税点要求6，且无若金额太小别人是不鸟的。（此次金额5K）  最好的办法  事先讲好，个人性质，将不提供发票来着。&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service">Tomcat.Service</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.09">2017.11.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tomcat">tomcat</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml  软件  java tomcat  scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat   目录结构  data  service  bin  运行脚本  wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh   logs  wechat-forum-dev  catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log  wechat-forum-dev_gc.log  run  wechat-forum-dev.pid  9015   tomcat  bin  启动、运行的相关二进制启动脚本 startup.sh shutup.sh version.sh  CATALINA_BASE  实例运行目录  CATALINA_HOME  安装目录  CATALINA_TMPDIR JRE_HOME CLASSPATH   conf  catalina.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/tomcat.service/" title="Tomcat.Service"> &raquo;</a>
 </article>
 
         
