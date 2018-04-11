@@ -426,36 +426,43 @@ logger.critical('critical message')
 <li>logging.conf
 ```
 [loggers]
-keys=root,example</li>
+keys=root,user</li>
 </ul>
 
 <p>[handlers]
-keys=consoleHandler</p>
+keys=consoleHandler,fileHandler</p>
 
 <p>[formatters]
-keys=simpleFormatter</p>
+keys=formatter</p>
 
 <p>[logger_root]
-level=DEBUG
+level=WARN
 handlers=consoleHandler</p>
 
-<p>[logger_example]
+<p>[logger_user]
 level=DEBUG
-handlers=consoleHandler
-qualname=example
+handlers=fileHandler
+qualname=user
 propagate=0</p>
 
 <p>[handler_consoleHandler]
 class=StreamHandler
 level=DEBUG
-formatter=simpleFormatter
+formatter=formatter
 args=(sys.stdout,)</p>
 
-<p>[formatter_simpleFormatter]
-format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+<p>[handler_fileHandler]
+class=FileHandler
+level=DEBUG
+formatter=formatter
+args=(&lsquo;file-conf.log&rsquo;,)</p>
+
+<p>[formatter_formatter]
+format=%(asctime)s\t%(levelname)s\t%(message)s
 datefmt=</p>
 
-<pre><code>- logging.yqml
+<pre><code>
+- logging.yqml
 </code></pre>
 
 <p>version: 1
@@ -483,14 +490,21 @@ root:
 <pre><code>import logging
 import logging.config
 
-logging.config.fileConfig('logging.conf')
-logger = logging.getLogger('example')
+logging.config.fileConfig(&quot;logging.conf&quot;)
 
-logger.debug('debug message')
-logger.info('info message')
-logger.warn('warn message')
-logger.error('error message')
-logger.critical('critical message')
+default = logging.getLogger()
+default.debug(&quot;File\tDefault\tdebug&quot;)
+default.info(&quot;File\tDefault\tinfo&quot;)
+default.warn(&quot;File\tDefault\twarn&quot;)
+default.error(&quot;File\tDefault\terror&quot;)
+default.critical(&quot;File\tDefault\tcritical&quot;)
+
+user = logging.getLogger(&quot;user&quot;)
+user.debug(&quot;File\tUser\tdebug&quot;)
+user.info(&quot;File\tUser\tinfo&quot;)
+user.warn(&quot;File\tUser\twarn&quot;)
+user.error(&quot;File\tUser\terror&quot;)
+user.critical(&quot;File\tUser\tcritical&quot;)
 </code></pre></li>
 
 <li><p>Output</p>
@@ -565,14 +579,29 @@ logging.info('Hello, log')
 <ul>
 <li><a href="https://docs.python.org/2/howto/logging.html">Logging HOWTO</a></li>
 <li><a href="https://docs.python.org/2/library/logging.html#formatter-objects">Formatter Objects</a></li>
+<li><a href="https://docs.python.org/2/library/logging.html#logrecord-attributes">LogRecord attributes</a></li>
+</ul>
 
-<li><p><a href="https://docs.python.org/2/library/logging.html#logrecord-attributes">LogRecord attributes</a></p>
+<h2 id="整理">整理</h2>
 
-<h2 id="整理">整理</h2></li>
+<ul>
+<li><a href="https://www.jianshu.com/p/feb86c06c4f4">python logging模块使用教程</a></li>
+<li><a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/logging.html">日志（Logging）</a></li>
+</ul>
 
-<li><p><a href="https://www.jianshu.com/p/feb86c06c4f4">python logging模块使用教程</a></p></li>
+<h2 id="配置">配置</h2>
 
-<li><p><a href="http://pythonguidecn.readthedocs.io/zh/latest/writing/logging.html">日志（Logging）</a></p></li>
+<ul>
+<li><a href="https://docs.python.org/2.4/lib/logging-config-fileformat.html">Configuration file format</a></li>
+<li><a href="https://stackoverflow.com/questions/13649664/how-to-use-logging-with-pythons-fileconfig-and-configure-the-logfile-filename">How to use logging with python&rsquo;s fileConfig</a></li>
+</ul>
+
+<h2 id="yaml">YAML</h2>
+
+<ul>
+<li><a href="http://pyyaml.org/wiki/PyYAML">官网</a></li>
+<li><a href="https://stackoverflow.com/questions/33665181/how-to-install-pyyaml-on-windows-10">How to install pyYAML on windows 10</a></li>
+<li><a href="https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyyaml">Unofficial Windows Binaries for Python Extension Packages</a></li>
 </ul>
 
             <ul class="share-buttons">

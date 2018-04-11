@@ -140,34 +140,41 @@ share = true
 	- logging.conf
 	```
 	[loggers]
-	keys=root,example
+	keys=root,user
 
 	[handlers]
-	keys=consoleHandler
+	keys=consoleHandler,fileHandler
 
 	[formatters]
-	keys=simpleFormatter
+	keys=formatter
 
 	[logger_root]
-	level=DEBUG
+	level=WARN
 	handlers=consoleHandler
 
-	[logger_example]
+	[logger_user]
 	level=DEBUG
-	handlers=consoleHandler
-	qualname=example
+	handlers=fileHandler
+	qualname=user
 	propagate=0
 
 	[handler_consoleHandler]
 	class=StreamHandler
 	level=DEBUG
-	formatter=simpleFormatter
+	formatter=formatter
 	args=(sys.stdout,)
 
-	[formatter_simpleFormatter]
-	format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+	[handler_fileHandler]
+	class=FileHandler
+	level=DEBUG
+	formatter=formatter
+	args=('file-conf.log',)
+
+	[formatter_formatter]
+	format=%(asctime)s\t%(levelname)s\t%(message)s
 	datefmt=
 	```
+
 	- logging.yqml
 	```
 	version: 1
@@ -195,14 +202,21 @@ share = true
 	import logging
 	import logging.config
 
-	logging.config.fileConfig('logging.conf')
-	logger = logging.getLogger('example')
+	logging.config.fileConfig("logging.conf")
 
-	logger.debug('debug message')
-	logger.info('info message')
-	logger.warn('warn message')
-	logger.error('error message')
-	logger.critical('critical message')
+	default = logging.getLogger()
+	default.debug("File\tDefault\tdebug")
+	default.info("File\tDefault\tinfo")
+	default.warn("File\tDefault\twarn")
+	default.error("File\tDefault\terror")
+	default.critical("File\tDefault\tcritical")
+
+	user = logging.getLogger("user")
+	user.debug("File\tUser\tdebug")
+	user.info("File\tUser\tinfo")
+	user.warn("File\tUser\twarn")
+	user.error("File\tUser\terror")
+	user.critical("File\tUser\tcritical")
 	```
 
 - Output
@@ -269,6 +283,16 @@ share = true
 - [Logging HOWTO](https://docs.python.org/2/howto/logging.html)
 - [Formatter Objects](https://docs.python.org/2/library/logging.html#formatter-objects)
 - [LogRecord attributes](https://docs.python.org/2/library/logging.html#logrecord-attributes)
+
 ## 整理
 - [python logging模块使用教程](https://www.jianshu.com/p/feb86c06c4f4)
 - [日志（Logging）](http://pythonguidecn.readthedocs.io/zh/latest/writing/logging.html)
+
+## 配置
+- [Configuration file format](https://docs.python.org/2.4/lib/logging-config-fileformat.html)
+- [How to use logging with python's fileConfig](https://stackoverflow.com/questions/13649664/how-to-use-logging-with-pythons-fileconfig-and-configure-the-logfile-filename)
+
+## YAML
+- [官网](http://pyyaml.org/wiki/PyYAML)
+- [How to install pyYAML on windows 10](https://stackoverflow.com/questions/33665181/how-to-install-pyyaml-on-windows-10)
+- [Unofficial Windows Binaries for Python Extension Packages](https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyyaml)
