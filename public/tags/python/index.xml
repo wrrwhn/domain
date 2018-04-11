@@ -7,10 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 26 Mar 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 18:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python.Logging</title>
+      <link>http://domain.yqjdcyy.com/post/python.logging/</link>
+      <pubDate>Wed, 11 Apr 2018 18:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
+      <description>[TOC]
+组成 Logger  作用  日志对外暴露接口  创建
+ logger = logging.getLogger(logger_name)
+Handler  作用
+ 将日志内容转至相应文件  类型
+ StreamHandler  sh = logging.StreamHandler(stream=None)  FileHandler  fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False)  NullHandler
+Filter  作用
+ 将日志内容进行过滤
+Formater  作用
+ 控制日志输出格式  LogRecord.对象
+ name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.</description>
+    </item>
+    
+    <item>
+      <title>Python.Pack</title>
+      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
+      <pubDate>Mon, 09 Apr 2018 19:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
+      <description>[TOC]
+类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 指令  安装  pip[3] install pyinstaller  版本  pyinstaller --version  执行  pyinstaller [option] *.</description>
+    </item>
     
     <item>
       <title>Python.Conda</title>

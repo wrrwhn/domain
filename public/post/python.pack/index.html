@@ -1,0 +1,399 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>好久不见</title>
+        <meta name="author">
+        <meta name="description" content="好久不见">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack">Python.Pack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.09">2018.04.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/python">python</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="类型">类型</h1>
+
+<ul>
+<li>.py
+
+<ul>
+<li>项目<strong>源码</strong></li>
+<li>需要安装 Python 及依赖库</li>
+</ul></li>
+<li>.pyc
+
+<ul>
+<li>Python 解释器可识别的<strong>二进制码</strong></li>
+<li>跨平台</li>
+<li>需要安装 Python 及依赖库</li>
+</ul></li>
+<li>.exe
+
+<ul>
+<li>不同平台的<strong>可执行文件</strong></li>
+</ul></li>
+</ul>
+
+<h1 id="工具比较">工具比较</h1>
+
+<table>
+<thead>
+<tr>
+<th>Solution</th>
+<th>Windows</th>
+<th>Linux</th>
+<th>OS X</th>
+<th>Python 3</th>
+<th>One file mode</th>
+<th>Zipfile import</th>
+<th>Eggs</th>
+<th>pkg_resources support</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>bbFreeze</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+
+<tr>
+<td>py2exe</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>no</td>
+</tr>
+
+<tr>
+<td><strong>pyInstaller</strong></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+
+<tr>
+<td><strong>cx_Freeze</strong></td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+</tr>
+
+<tr>
+<td>py2app</td>
+<td>no</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>no</td>
+<td>yes</td>
+<td>yes</td>
+<td>yes</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="详解">详解</h1>
+
+<h2 id="pyinstaller">pyInstaller</h2>
+
+<h3 id="指令">指令</h3>
+
+<ul>
+<li>安装
+
+<ul>
+<li><code>pip[3] install pyinstaller</code></li>
+</ul></li>
+<li>版本
+
+<ul>
+<li><code>pyinstaller --version</code></li>
+</ul></li>
+<li>执行
+
+<ul>
+<li><code>pyinstaller [option] *.py</code></li>
+<li>参数
+
+<ul>
+<li><code>-F</code>
+
+<ul>
+<li>打包出<strong>可独立运行 exe</strong></li>
+</ul></li>
+<li><code>-c</code>
+
+<ul>
+<li>使用<strong>控制台</strong>，无界面</li>
+<li><strong>默认项</strong></li>
+</ul></li>
+<li><code>-w|--noconsole</code>
+
+<ul>
+<li>去除控制台窗口，仅带 GUI 界面时推荐</li>
+<li>cmd 中执行时<strong>不显示相关日志</strong></li>
+</ul></li>
+<li><code>-i</code>
+
+<ul>
+<li>指定可执行文件的<strong>图标</strong></li>
+</ul></li>
+</ul></li>
+<li>示例
+
+<ul>
+<li><code>pyinstaller -F -i favicon.ico pack.py</code>
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/3d05119a-51e4-4dd9-b015-dd230f4d11fd.png" alt="pack-exe.png" /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>查看文件列表
+
+<ul>
+<li><code>pyi-archive_viewer *.exe</code></li>
+<li>示例
+
+<ul>
+<li><code>pyi-archive_viewer pack.exe</code>
+<code>
+pos, length, uncompressed, iscompressed, type, name
+[(0, 255, 323, 1, 'm', 'struct'),
+ (255, 1104, 1814, 1, 'm', 'pyimod01_os_path'),
+ (1359, 4287, 9268, 1, 'm', 'pyimod02_archive'),
+ (5646, 7221, 18489, 1, 'm', 'pyimod03_importers'),
+ (12867, 1859, 4171, 1, 's', 'pyiboot01_bootstrap'),
+ (14726, 86, 103, 1, 's', 'pack'),
+ (14812, 47536, 87888, 1, 'b', 'VCRUNTIME140.dll'),
+ (62348, 39531, 87552, 1, 'b', '_bz2.pyd'),
+ (101879, 623839, 1443840, 1, 'b', '_hashlib.pyd'),
+ (725718, 85308, 247296, 1, 'b', '_lzma.pyd'),
+ (811026, 28848, 65536, 1, 'b', '_socket.pyd'),
+ (839874, 782920, 1737216, 1, 'b', '_ssl.pyd'),
+ (1622794, 480, 1029, 1, 'b', 'pack.exe.manifest'),
+ (1623274, 83821, 180736, 1, 'b', 'pyexpat.pyd'),
+ (1707095, 1522436, 3555840, 1, 'b', 'python36.dll'),
+ (3229531, 9124, 19968, 1, 'b', 'select.pyd'),
+ (3238655, 356822, 899072, 1, 'b', 'unicodedata.pyd'),
+ (3595477, 0, 0, 0, 'o', 'pyi-windows-manifest-filename pack.exe.manifest'),
+ (3595477, 196507, 734166, 1, 'x', 'base_library.zip'),
+ (3791984, 1150741, 1150741, 0, 'z', 'out00-PYZ.pyz')]
+</code></li>
+</ul></li>
+</ul></li>
+<li>查看可执行文件依赖动态库
+
+<ul>
+<li><code>pyi-bindepend *.exe</code></li>
+<li>示例
+
+<ul>
+<li><code>pyi-bindepend pack.exe</code>
+<code>
+pack.exe {'KERNEL32.dll', 'WS2_32.dll'}
+</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="其它">其它</h2>
+
+<ul>
+<li>暂略</li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<h2 id="官网">官网</h2>
+
+<ul>
+<li><a href="https://www.pyinstaller.org/">PyInstaller</a></li>
+<li><a href="https://pyinstaller.readthedocs.io/en/v3.3.1/">PyInstaller.Manual</a></li>
+<li><a href="http://pyinstaller.readthedocs.io/en/stable/usage.html">PyInstaller.Using</a></li>
+</ul>
+
+<h2 id="教程">教程</h2>
+
+<ul>
+<li><a href="http://legendtkl.com/2015/11/06/pyinstaller/">pyinstaller简洁教程</a></li>
+<li><a href="http://blog.csdn.net/zengxiantao1994/article/details/76578421">Python程序打包成exe可执行文件</a></li>
+</ul>
+
+<h2 id="交叉编译">交叉编译</h2>
+
+<ul>
+<li><a href="http://www.alivepea.me/prog/pyinstaller/">http://www.alivepea.me/prog/pyinstaller/</a></li>
+<li><a href="http://haishenming.xyz/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/2018/01/26/wine-python-to-exe/">基于wine的linux交叉编译python程序</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fpython.pack%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Python.Pack&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fpython.pack%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fpython.pack%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fpython.pack%2f&title=Python.Pack" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

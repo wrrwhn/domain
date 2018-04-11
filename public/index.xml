@@ -7,10 +7,39 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 04 Apr 2018 10:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 11 Apr 2018 18:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Python.Logging</title>
+      <link>http://domain.yqjdcyy.com/post/python.logging/</link>
+      <pubDate>Wed, 11 Apr 2018 18:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
+      <description>[TOC]
+组成 Logger  作用  日志对外暴露接口  创建
+ logger = logging.getLogger(logger_name)
+Handler  作用
+ 将日志内容转至相应文件  类型
+ StreamHandler  sh = logging.StreamHandler(stream=None)  FileHandler  fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False)  NullHandler
+Filter  作用
+ 将日志内容进行过滤
+Formater  作用
+ 控制日志输出格式  LogRecord.对象
+ name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.</description>
+    </item>
+    
+    <item>
+      <title>Python.Pack</title>
+      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
+      <pubDate>Mon, 09 Apr 2018 19:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
+      <description>[TOC]
+类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 指令  安装  pip[3] install pyinstaller  版本  pyinstaller --version  执行  pyinstaller [option] *.</description>
+    </item>
     
     <item>
       <title>厦门软件园公寓租赁</title>
@@ -1823,12 +1852,37 @@ Default Lifecycle validate validate the project is correct and all necessary inf
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/pyqt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/pyqt/</guid>
+      <description> [TOC]
+参考 安装  PyQt PyQt4 Download How to install PyQt4 on Windows using pip? Python3 PyQt5 pycharm 环境搭建
+文档 PyQt4
+ PyQt5
+ PyQt5学习与交流
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</guid>
       <description>+++ date = &amp;quot;2018-03-23T17:00:00+08:00&amp;quot; title = &amp;quot;庄家杜均&amp;quot; draft = false tags = [&amp;quot;阅读&amp;quot;,&amp;quot;虚拟币&amp;quot;] share = true +++  [TOC]
 【深度调查】 庄家杜均 时间点 2013.7  杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。  2013.11  火币网上线，打出了“免交易手续费”的旗号  发展壮大后，连同国内几大交易所重新开始收取手续费，甚至开始向项目收取巨额的ICO“上币费”   2014  杜均创办了区块链代币媒体“金色财经” 杜均募集了自己的基金”节点资本”  2017.9  中国的监管机构下令禁止境内的ICO（首次代币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进融资的方式）交易，并陆续屏蔽境外ICO交易平台的域名。  2017.12  代币“WAX”登录“火币Pro”交易所后，狂跌99%的惨烈景象 IOST（Internet of Service Token）的区块链项目正在筹划ICO，募资数额巨大 每个币种登录火币Pro开始交易后，开放充值和提现的间隔时间越来越长  2018.1  包括杜均在内，币圈主要人物已经被限制出境  2018.2.15  名为“三点钟无眠区块链”的微信群横空出世，在各种区块链微信群里呼风唤雨的，是薛蛮子、徐小平、蔡文胜和王峰这样的传统天使风险投资人。  2018.3.3  全国政协十三届一次会议开幕，中国进入“两会时期”。  火币网公众号更名为 “huobicom” OKEx公众号被封号   关键点 杜均  重庆开县人，1986年出生 初中期间，杜均曾靠打游戏卖装备、建站赚广告费谋生，是早年间国内互联网野蛮生长时代孕育的无数- 个人站长之一。 凭借常年混迹互联网圈积累的经验和圈子，杜均成功进入知名企业家和天使投资人戴志康创立的康盛创想，在旗下Discuz!</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/%E6%9C%BA%E6%9E%84%E5%AD%A6%E4%B9%A0/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%9C%BA%E6%9E%84%E5%AD%A6%E4%B9%A0/</guid>
+      <description>概念  机器学习  机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。 因为学习算法中涉及了大量的统计学理论，机器学习与统计推断学联系尤为密切，也被称为统计学习理论。 算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。 赋予计算机在非编程情况下的学习能力 - Artuur Samuel  深度学习 卷积神经网络  基础  计算机科学的基本知识、原理  数据结构 编程  Matlab Octave   概率  随机变量 期望 方差  线性代数  矩阵 向量 逆矩阵   要点  decision trees  决策树  naive Bayes&amp;rsquo; classifiers  朴素贝叶斯分类器  maximum entropy classifiers
+ 最大熵分类器
+学习路线   参考  入门  Best Machine Learning Resources for Getting Started  机器学习的最佳入门学习资源  tornadomeet.</description>
     </item>
     
   </channel>

@@ -45,6 +45,61 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/python.logging/" title="Python.Logging">Python.Logging</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.11">2018.04.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/python">python</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+组成 Logger  作用  日志对外暴露接口  创建
+ logger = logging.getLogger(logger_name)
+Handler  作用
+ 将日志内容转至相应文件  类型
+ StreamHandler  sh = logging.StreamHandler(stream=None)  FileHandler  fh = logging.FileHandler(filename, mode=&lsquo;a&rsquo;, encoding=None, delay=False)  NullHandler
+Filter  作用
+ 将日志内容进行过滤
+Formater  作用
+ 控制日志输出格式  LogRecord.对象
+ name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/python.logging/" title="Python.Logging"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack">Python.Pack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.09">2018.04.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/python">python</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 指令  安装  pip[3] install pyinstaller  版本  pyinstaller &ndash;version  执行  pyinstaller [option] *.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E5%8E%A6%E9%97%A8%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%85%AC%E5%AF%93%E7%A7%9F%E8%B5%81/" title="厦门软件园公寓租赁">厦门软件园公寓租赁</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.04">2018.04.04</time>
@@ -236,63 +291,12 @@ The MIT License (MIT) Copyright &copy; [year] [copyright holders] Permission is 
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/jwt/" title="JWT">JWT</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.09">2018.03.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/jwt">jwt</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-定义 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密。  实现  组成  header.playload.signature header  typ  声明类型  alg  加密算法  RSA1_5 HS256    playload  组成  Registered Claim Names  iss  Issuer 该 JWT 的签发者 可选项，大小写敏感  sub  Subject 该JWT所面向的用户，局部上下文或全局唯一 可选项，大小写敏感  aud  Audience 接收该 JWT 的一方，指定应用方 可选项，大小写敏感  exp  Expiration Time 过期时间，Unix时间戳 可选项  nbf  Not Before 起始可用时间，Unix时间戳  iat  Issued At 标记签发时间，Unix时间戳 可选项  jti  JWT ID 可选项   Public Claim Names  可添加任意信息  常用于培养出用户、业务相关信息 不建议添加敏感信息   Private Claim Names  提供者和消费者的共同声明    signature  encrypt(base64(header)+ &lsquo;.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/jwt/" title="JWT"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/" title="王垠-如何掌握所有的程序语言">王垠-如何掌握所有的程序语言</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.06">2018.03.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E7%BC%96%E7%A8%8B">编程</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%AD%A6%E4%B9%A0">学习</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-王垠-如何掌握所有的程序语言 针对处理  你是编程初学者，不知道该选择什么程序语言来入门。 你是资深的程序员或者团队领导，对新出现的种种语言感到困惑，不知道该投资哪种语言。 你的团队为使用哪种程序语言争论不休，发生各种宗教斗争。 你追逐潮流采用了某种时髦的语言，结果两个月之后发现深陷泥潭，痛苦不堪……  重视语言特性，而不是语言  任何一种“语言”，都是各种“语言特性”的组合  一个程序语言就像一台电脑。不同的语言则相对于不同的品牌。 你得看看它里面装的是什么型号的处理器，有多少个核，主频多少，有多少 L1 cache，L2 cache……，有多少内存和硬盘，显示器分辨率有多大，显卡是什么 GPU，网卡速度，等等各种“配置”。有时候你还得看各个组件之间的兼容性。   通用特点  语言特性
- 变量定义 算术运算 for 循环语句，while 循环语句 函数定义，函数调用 递归 静态类型系统 类型推导 lambda 函数 面向对象 垃圾回收 指针算术 goto 语句  掌握通用特性
- 比如变量，函数，整数和浮点数运算，这些是每个通用程序语言里面都必须有的 掌握基本的特性后，即可随时将这些知识应用到任何其它语言  学习方法
- 手头有问题 用两分钟浏览一下这语言的手册，看看这语言大概长什么样 例子代码来开始修改捣鼓，想法把这代码改成自己正想解决的问题 实现过程中自然带出问题  这个语言的“变量定义”是什么语法，需要“声明类型”吗，还是可以用“类型推导”？ 它的“类型”是什么语法？是否支持“泛型”？泛型的 “variance” 如何表达？ 这个语言的“函数”是什么语法，“函数调用”是什么语法，可否使用“缺省参数”？  补充  因为掌握了语言特性的人都知道，自己需要的特性，在任何语言里面一定有对应的表达方式。 如果没有直接的方式表达，那么一定有某种“绕过方式”。如果有直接的表达方式，那么它只是语法稍微有所不同而已。  带着问题找特性，就像查字典一样，而不是被淹没于大部头的手册里面    语言特性&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/" title="王垠-如何掌握所有的程序语言"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
     
 
-	<p class="counter"> 1  17</p>
+	<p class="counter"> 1  18</p>
 
 
 	

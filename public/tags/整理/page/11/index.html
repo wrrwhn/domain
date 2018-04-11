@@ -46,6 +46,58 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/storm/" title="Storm">Storm</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/storm">storm</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
+进程间通信协议 Connection
+ recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
+ bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
+ 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
+ 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/storm/" title="Storm"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/sublime">sublime</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
