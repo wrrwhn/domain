@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/</loc>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/csgo.%E5%9C%B0%E5%9B%BE/</loc>
     <lastmod>2018-04-15T18:00:00+08:00</lastmod>
   </url>
@@ -862,10 +867,6 @@
   </url>
   
   <url>
-    <loc>http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/</loc>
-  </url>
-  
-  <url>
     <loc>http://domain.yqjdcyy.com/post/%E6%9C%BA%E6%9E%84%E5%AD%A6%E4%B9%A0/</loc>
   </url>
   
@@ -1092,7 +1093,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-04-15T18:00:00+08:00</lastmod>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1320,7 +1321,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-04-15T18:00:00+08:00</lastmod>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1397,8 +1398,20 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E6%95%8F%E6%84%9F%E8%AF%8D/</loc>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-04-11T18:00:00+08:00</lastmod>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2018-04-18T11:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
