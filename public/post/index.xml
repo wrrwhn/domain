@@ -7,10 +7,27 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 18 Apr 2018 11:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 18 Apr 2018 18:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Exception</title>
+      <link>http://domain.yqjdcyy.com/post/java.exception/</link>
+      <pubDate>Wed, 18 Apr 2018 18:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.exception/</guid>
+      <description>[TOC]
+分类 Throwable Exception  Check Exception  ReflectiveOperationException  ClassNotFoundException NoSuchMethodException NoSuchFieldException IllegalAccessException InstantiationException  CloneNotSupportedException InterruptedException  ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException  IllegalThreadStateException NumberFormatException  SecurityException   UnCheck Exception
+ RuntimeException
+ ArithmeticException TypeNotPresentException IndexOutOfBoundsException  ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException  NegativeArraySizeException ArrayStoreException UnsupportedOperationException
+Error   VirtualMachineError
+ InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath
+ AssertionError
+ LinkageError
+ UnsatisfiedLinkError NoClassDefFoundError VerifyError IncompatibleClassChangeError  InstantiationError NoSuchFieldError NoSuchMethodError AbstractMethodError IllegalAcessError  BootstrapMethodError ExceptionInInitializerError ClassFormatError  UnsupportedClassVersionError  ClassCircularityError   明细 Throwable  简介  所有错误和异常的基类 仅该类实例可被 JVM 抛出或于声明中抛出 设计中包含 cause 的原因  底层定义异常类型，顶层描述报错位置和具体异常原因 设计上提醒开发者注意异常，并进行捕获处理，而非直接抛出   方法  Throwable(String message) getMessage()  明细消息  getLocalizedMessage()  局部描述，子类重写该方法  toString()</description>
+    </item>
     
     <item>
       <title>方案.敏感词.DFA</title>
