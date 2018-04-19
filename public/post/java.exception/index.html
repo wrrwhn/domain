@@ -71,17 +71,14 @@
 <h3 id="exception">Exception</h3>
 
 <ul>
-<li>Check Exception
-
-<ul>
 <li>ReflectiveOperationException
 
 <ul>
-<li>ClassNotFoundException</li>
 <li>NoSuchMethodException</li>
-<li>NoSuchFieldException</li>
 <li>IllegalAccessException</li>
+<li>NoSuchFieldException</li>
 <li>InstantiationException</li>
+<li>ClassNotFoundException</li>
 </ul></li>
 <li>CloneNotSupportedException</li>
 <li>InterruptedException
@@ -89,10 +86,10 @@
 <ul>
 <li>ClassCastException</li>
 <li>EnumConstantNotPresentException</li>
-<li>IllegalStateException</li>
-<li>NullPointException</li>
+<li><strong>IllegalStateException</strong></li>
+<li><strong>NullPointException</strong></li>
 <li>IllegalMonitorStateException</li>
-<li>IllegalArgumentException
+<li><strong>IllegalArgumentException</strong>
 
 <ul>
 <li>IllegalThreadStateException</li>
@@ -100,17 +97,12 @@
 </ul></li>
 <li>SecurityException</li>
 </ul></li>
-</ul></li>
-
-<li><p>UnCheck Exception</p>
-
-<ul>
-<li><p>RuntimeException</p>
+<li>RuntimeException
 
 <ul>
 <li>ArithmeticException</li>
 <li>TypeNotPresentException</li>
-<li>IndexOutOfBoundsException
+<li><strong>IndexOutOfBoundsException</strong>
 
 <ul>
 <li>ArrayIndexoutOfBoundsExxception</li>
@@ -118,11 +110,34 @@
 </ul></li>
 <li>NegativeArraySizeException</li>
 <li>ArrayStoreException</li>
+<li>UnsupportedOperationException</li>
+<li>UnCheckIOException</li>
+</ul></li>
 
-<li><p>UnsupportedOperationException</p>
+<li><p><strong>IOException</strong></p>
+
+<ul>
+<li>SyncFailedException</li>
+<li>CharConversionException</li>
+<li><strong>UnsupportedEncodingException</strong></li>
+<li>ObjectStreamException
+
+<ul>
+<li>NotSerializableException</li>
+<li>InvalidObjectException</li>
+<li>NotActiveException</li>
+<li>InvalidClassException</li>
+<li>WriteAbortedException</li>
+<li>StreamCorruptedException</li>
+<li>OptionDataException</li>
+</ul></li>
+<li>InterruptedIOException</li>
+<li>UTFDataFormatException</li>
+<li><strong>FileNotFoundException</strong></li>
+
+<li><p><strong>EOFException</strong></p>
 
 <h3 id="error">Error</h3></li>
-</ul></li>
 </ul></li>
 
 <li><p>VirtualMachineError</p>
@@ -162,6 +177,8 @@
 </ul></li>
 <li>ClassCircularityError</li>
 </ul></li>
+
+<li><p>IOError</p></li>
 </ul>
 
 <h1 id="明细">明细</h1>

@@ -1,8 +1,8 @@
 +++
 date = "2018-04-15T18:00:00+08:00"
-title = ""
+title = "CSGO.地图"
 draft = false
-tags = ["",""]
+tags = ["整理","CSGO"]
 share = true
 +++
 

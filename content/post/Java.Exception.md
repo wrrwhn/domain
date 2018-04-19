@@ -11,34 +11,49 @@ share = true
 # 分类
 ## Throwable
 ### Exception
-- Check Exception
-	- ReflectiveOperationException
-		- ClassNotFoundException
-		- NoSuchMethodException
-		- NoSuchFieldException
-		- IllegalAccessException
-		- InstantiationException
-	- CloneNotSupportedException
-	- InterruptedException
-		- ClassCastException
-		- EnumConstantNotPresentException
-		- IllegalStateException
-		- NullPointException
-		- IllegalMonitorStateException
-		- IllegalArgumentException
-			- IllegalThreadStateException
-			- NumberFormatException
-		- SecurityException
-- UnCheck Exception
-	- RuntimeException
-		- ArithmeticException
-		- TypeNotPresentException
-		- IndexOutOfBoundsException
-			- ArrayIndexoutOfBoundsExxception
-			- StringIndexoutOfBoundsException
-		- NegativeArraySizeException
-		- ArrayStoreException
-		- UnsupportedOperationException
+- ReflectiveOperationException
+	- NoSuchMethodException
+	- IllegalAccessException
+	- NoSuchFieldException
+	- InstantiationException
+	- ClassNotFoundException
+- CloneNotSupportedException
+- InterruptedException
+	- ClassCastException
+	- EnumConstantNotPresentException
+	- **IllegalStateException**
+	- **NullPointException**
+	- IllegalMonitorStateException
+	- **IllegalArgumentException**
+		- IllegalThreadStateException
+		- NumberFormatException
+	- SecurityException
+- RuntimeException
+	- ArithmeticException
+	- TypeNotPresentException
+	- **IndexOutOfBoundsException**
+		- ArrayIndexoutOfBoundsExxception
+		- StringIndexoutOfBoundsException
+	- NegativeArraySizeException
+	- ArrayStoreException
+	- UnsupportedOperationException
+	- UnCheckIOException
+- **IOException**
+	- SyncFailedException
+	- CharConversionException
+	- **UnsupportedEncodingException**
+	- ObjectStreamException
+		- NotSerializableException
+		- InvalidObjectException
+		- NotActiveException
+		- InvalidClassException
+		- WriteAbortedException
+		- StreamCorruptedException
+		- OptionDataException
+	- InterruptedIOException
+	- UTFDataFormatException
+	- **FileNotFoundException**
+	- **EOFException**
 ### Error
 - VirtualMachineError
 	- InternalError
@@ -62,6 +77,7 @@ share = true
 	- ClassFormatError
 		- UnsupportedClassVersionError
 	- ClassCircularityError
+- IOError
 
 
 # 明细

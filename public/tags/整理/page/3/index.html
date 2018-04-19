@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议">网络-七层协议</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
@@ -270,28 +292,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
  <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
   使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/powerpoint.coverexport/" title="PowerPoint.CoverExport">PowerPoint.CoverExport</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/powerpoint">powerpoint</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>文件法 实现  将 .pptx 文件后缀更新为 .zip 获取 /docProps/thumbnail.jpeg  缺点  仅适用于 .pptx  windows api + code 实现 环境要求&amp; 版本限制  v4.0.30319  缺点  与「文件法」一致，导出图片尺寸过小  PPT 操作导出 - 79KB 1024x766 api 导出 - 24KB 960x720  部分 PPT 无缩略图，导出的均为 PPT 默认图片  OpenXML + code 现服务转换方式  高清无码  环境要求&amp; 版本限制  v2.0.50727 安装有 Microsoft.PowerPoint  缺点  要求本地安装有指定以上版本 PPT&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/powerpoint.coverexport/" title="PowerPoint.CoverExport"> &raquo;</a>
 </article>
 
         
