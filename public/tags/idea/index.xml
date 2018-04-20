@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 08 Feb 2018 18:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 14:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/idea/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IDEA.Java.Version</title>
+      <link>http://domain.yqjdcyy.com/post/idea.java.version/</link>
+      <pubDate>Fri, 20 Apr 2018 14:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/idea.java.version/</guid>
+      <description>[TOC]
+Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
+ 快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&amp;gt; 1.8 Project language level-&amp;gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&amp;gt; 8 - Lambdas, type annotation etc.</description>
+    </item>
     
     <item>
       <title>IDEA.快捷键</title>

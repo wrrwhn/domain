@@ -7,10 +7,21 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 13:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 14:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>IDEA.Java.Version</title>
+      <link>http://domain.yqjdcyy.com/post/idea.java.version/</link>
+      <pubDate>Fri, 20 Apr 2018 14:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/idea.java.version/</guid>
+      <description>[TOC]
+Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
+ 快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&amp;gt; 1.8 Project language level-&amp;gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&amp;gt; 8 - Lambdas, type annotation etc.</description>
+    </item>
     
     <item>
       <title>Java.&amp;0xff</title>
@@ -19,7 +30,7 @@
       
       <guid>http://domain.yqjdcyy.com/post/java.0xff/</guid>
       <description> [TOC]
-Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp;amp; 0xFF);    Reason ԭ��  int= 32bits byte= 8bits ��ȡĩ 8 bitʱ�����ڽ���ֵλ������λ����  ʾ��  int-&amp;gt; byte  222 -&amp;gt; -34  222.����  00000000 00000000 00000000 11011110  ��ȡ  11011110  ����  11011101  ԭ��  10100010= -34   ��������  222* 0xff    Supplement Java ʹ�� ���� ������ֵ�洢  �򻯼��������㣬�÷���λҲ�������㣬ʹ������������ֻ�мӷ���û�м��� ʾ��  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] ������λ��ֵ   *��  ԭ��  ����λ+ ���ֶ����Ʊ�ʾ +7 [00000111] -7 [10000111]  ����  ����ʱͬԭ�룬����ʱ������λ���䣬����λ��ȡ�� +7 [00000111] -7 [11111000]  ����  ����ʱͬԭ�룬����ʱ��Ϊ����+1 +7 [00000111] -7 [11111001]   Reference  java��byteת��intʱΪ����0xff���������� javaԭ�롢���롢�����ܽ� ԭ��, ����, ���� ����  </description>
+Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp;amp; 0xFF);   Reason 原因  int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况  示例  int-&amp;gt; byte  222 -&amp;gt; -34  222.补码  00000000 00000000 00000000 11011110  截取  11011110  反码  11011101  原码  10100010= -34   解决方案  222* 0xff    Supplement Java 使用 补码 进行数值存储  简化计算机运算，让符号位也参与运算，使计算机设计中只有加法，没有减法 示例  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] 丢弃高位数值   *码  原码  符号位+ 数字二进制表示 +7 [00000111] -7 [10000111]  反码  正数时同原码，负数时，符号位不变，其它位数取反 +7 [00000111] -7 [11111000]  补码  正数时同原码，负数时则为反码+1 +7 [00000111] -7 [11111001]   Reference  java中byte转换int时为何与0xff进行与运算 java原码、补码、反码总结 原码, 反码, 补码 详解  </description>
     </item>
     
     <item>

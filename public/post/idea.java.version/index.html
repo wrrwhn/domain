@@ -45,7 +45,7 @@
         <article class="post">
             <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
             
-<h1><a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff">Java.&amp;0xff</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version">IDEA.Java.Version</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
 
@@ -53,7 +53,9 @@
         
         <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
         
     
 
@@ -64,125 +66,149 @@
 
 <p>[TOC]</p>
 
-<h1 id="code">Code</h1>
+<h1 id="error">Error</h1>
 
 <ul>
-<li>PipedInputStream.receive(int b)
+<li>Run
 
 <ul>
-<li><code>buffer[in++] = (byte)(b &amp; 0xFF);</code></li>
+<li><code>Error:java: Compilation failed: internal java compiler error</code></li>
+</ul></li>
+<li>Install
+
+<ul>
+<li><code>Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure:</code></li>
+<li><code>xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符</code></li>
 </ul></li>
 </ul>
 
-<h1 id="reason">Reason</h1>
+<h1 id="fix">Fix</h1>
 
-<h2 id="原因">原因</h2>
+<h2 id="idea-setting">IDEA.Setting</h2>
 
 <ul>
-<li>int=      32bits</li>
-<li>byte=     8bits</li>
-<li>截取末 8 bit时，存在将数值位当符号位情况</li>
+<li><p>Project Structure</p>
+
+<ul>
+<li>快捷键
+
+<ul>
+<li><code>Ctrl+ Alt+ Shift+ S</code></li>
+</ul></li>
+<li>设置
+
+<ul>
+<li>project Setting/ Porject
+
+<ul>
+<li>Project SDK-&gt; 1.8</li>
+<li>Project language level-&gt; 8 - Lambdas, type annotation etc.</li>
+</ul></li>
+<li>project Setting/ Modules
+
+<ul>
+<li>choice your error modules</li>
+<li>Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.</li>
+<li>Dependencies/ Module SDK-&gt; 1.8</li>
+</ul></li>
+</ul></li>
+<li>截图
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/69dbd275-b2f5-4a46-8c5a-6533f072092b.png" alt="1.1.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/1b271cf6-6892-45bd-8ebb-637d0268b1e7.png" alt="1.2.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/49c887cd-49f1-4823-9519-f92fbdce4208.png" alt="1.3.png" /></li>
+</ul></li>
+</ul></li>
+
+<li><p>Setting</p>
+
+<ul>
+<li>快捷键
+
+<ul>
+<li><code>Ctrl+ Alt+ S</code></li>
+</ul></li>
+<li>设置
+
+<ul>
+<li>Build,Execution,Deployment/ Compiler/ Java Compiler
+
+<ul>
+<li>Project bytecode version-&gt; 1.8</li>
+<li>Per-module bytecode version
+
+<ul>
+<li>choice your project
+
+<ul>
+<li>Target bytecodes version-&gt; 1.8</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>截图
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/12d5e113-12dd-47d1-95aa-7af7feda4b1f.png" alt="2.1.png" /></li>
+</ul></li>
+</ul></li>
 </ul>
 
-<h2 id="示例">示例</h2>
+<h2 id="maven-setting">Maven.Setting</h2>
 
 <ul>
-<li>int-&gt; byte
+<li><p>plugin</p>
 
-<ul>
-<li>222 -&gt; -34
+<pre><code>&lt;build&gt;
+    &lt;plugins&gt;
+        &lt;plugin&gt;
+            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+            &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+            &lt;version&gt;3.1&lt;/version&gt;
+            &lt;configuration&gt;
+                &lt;source&gt;1.8&lt;/source&gt;
+                &lt;target&gt;1.8&lt;/target&gt;
+            &lt;/configuration&gt;
+        &lt;/plugin&gt;
+    &lt;/plugins&gt;
+&lt;/build&gt;
+</code></pre></li>
 
-<ul>
-<li>222.补码
+<li><p>or properties</p>
 
-<ul>
-<li>00000000 00000000 00000000 11011110</li>
-</ul></li>
-<li>截取
-
-<ul>
-<li>11011110</li>
-</ul></li>
-<li>反码
-
-<ul>
-<li>11011101</li>
-</ul></li>
-<li>原码
-
-<ul>
-<li>10100010= -34</li>
-</ul></li>
-</ul></li>
-<li>解决方案
-
-<ul>
-<li><code>222* 0xff</code></li>
-</ul></li>
-</ul></li>
+<pre><code>&lt;properties&gt;
+    &lt;maven.compiler.source&gt;1.8&lt;/maven.compiler.source&gt;
+    &lt;maven.compiler.target&gt;1.8&lt;/maven.compiler.target&gt;
+&lt;/properties&gt;
+</code></pre></li>
 </ul>
 
-<h1 id="supplement">Supplement</h1>
-
-<h2 id="java-使用-补码-进行数值存储">Java 使用 <strong>补码</strong> 进行数值存储</h2>
+<h1 id="note">Note</h1>
 
 <ul>
-<li>简化计算机运算，让符号位也参与运算，使计算机设计中只有加法，没有减法</li>
-<li>示例
-
-<ul>
-<li>1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000]</li>
-<li>丢弃高位数值</li>
-</ul></li>
-</ul>
-
-<h2 id="码">*码</h2>
-
-<ul>
-<li>原码
-
-<ul>
-<li>符号位+ 数字二进制表示</li>
-<li>+7 [00000111]</li>
-<li>-7 [10000111]</li>
-</ul></li>
-<li>反码
-
-<ul>
-<li>正数时同原码，负数时，符号位不变，其它位数取反</li>
-<li>+7 [00000111]</li>
-<li>-7 [11111000]</li>
-</ul></li>
-<li>补码
-
-<ul>
-<li>正数时同原码，负数时则为反码+1</li>
-<li>+7 [00000111]</li>
-<li>-7 [11111001]</li>
-</ul></li>
+<li>调整完「Project Structure」和「Setting」后，重新调用「Project Structure」会发布「Settings」的配置被 <strong>重置为 1.5 版本</strong></li>
 </ul>
 
 <h1 id="reference">Reference</h1>
 
 <ul>
-<li><a href="http://www.blogjava.net/orangelizq/archive/2008/07/20/216228.html">java中byte转换int时为何与0xff进行与运算</a></li>
-<li><a href="https://blog.csdn.net/qq_30739519/article/details/50991484">java原码、补码、反码总结</a></li>
-<li><a href="http://www.cnblogs.com/zhangziqiu/archive/2011/03/30/ComputerCode.html">原码, 反码, 补码 详解</a></li>
+<li><a href="https://blog.csdn.net/gnail_oug/article/details/77507614">IntelliJ IDEA里Maven默认情况下编译版本为JDK1.5</a></li>
 </ul>
 
             <ul class="share-buttons">
     <li></li>
     <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.0xff%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fidea.java.version%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=Java.%260xff&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.0xff%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=IDEA.Java.Version&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fidea.java.version%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.0xff%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fidea.java.version%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.0xff%2f&title=Java.%260xff" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fidea.java.version%2f&title=IDEA.Java.Version" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 
