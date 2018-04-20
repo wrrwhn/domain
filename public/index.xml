@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 18 Apr 2018 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 20 Apr 2018 13:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.&amp;0xff</title>
+      <link>http://domain.yqjdcyy.com/post/java.0xff/</link>
+      <pubDate>Fri, 20 Apr 2018 13:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.0xff/</guid>
+      <description> [TOC]
+Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp;amp; 0xFF);    Reason ԭ��  int= 32bits byte= 8bits ��ȡĩ 8 bitʱ�����ڽ���ֵλ������λ����  ʾ��  int-&amp;gt; byte  222 -&amp;gt; -34  222.����  00000000 00000000 00000000 11011110  ��ȡ  11011110  ����  11011101  ԭ��  10100010= -34   ��������  222* 0xff    Supplement Java ʹ�� ���� ������ֵ�洢  �򻯼��������㣬�÷���λҲ�������㣬ʹ������������ֻ�мӷ���û�м��� ʾ��  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] ������λ��ֵ   *��  ԭ��  ����λ+ ���ֶ����Ʊ�ʾ +7 [00000111] -7 [10000111]  ����  ����ʱͬԭ�룬����ʱ������λ���䣬����λ��ȡ�� +7 [00000111] -7 [11111000]  ����  ����ʱͬԭ�룬����ʱ��Ϊ����+1 +7 [00000111] -7 [11111001]   Reference  java��byteת��intʱΪ����0xff���������� javaԭ�롢���롢�����ܽ� ԭ��, ����, ���� ����  </description>
+    </item>
     
     <item>
       <title>Java.Exception</title>
