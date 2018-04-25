@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native">Java.Native</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  <a href="http://blog.csdn.net/xw13106209/article/details/6989415">http://blog.csdn.net/xw13106209/article/details/6989415</a> <a href="http://www.iteye.com/topic/304594">http://www.iteye.com/topic/304594</a>  概念  Jni  sun 提供 支持通过与 c/c++ 交互调用系统的相关技术  Jawin  sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法  Jacob  sourceforge 提供 提供调用 microsoft 的 com 对象方法  补充        开发流程  Java 调用类 javah 生成 c/c++ 原生函数头文件 c/c++ 中实现原生函数 将项目依赖的所有*原生库和资源*加入至 java 项目的 java.library.path 生成 java 程序 发布 java 应用和 dll 库&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.%E6%B3%9B%E5%9E%8B/" title="Java.泛型">Java.泛型</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
@@ -267,29 +289,6 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 
     <p>finally  用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。  preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 正确方法  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!! //PreparedStatement效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用  注意事项  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数，便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中。 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  定义  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用”  回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/" title="Java.注意事项"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/javascript.typescript/" title="JavaScript.TypeScript">JavaScript.TypeScript</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/typescript">typescript </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-TypeScript 参考  Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols  简介  微软开发、开源的编程语言，为 JavaScript 的严格超集 添加可选的静态类型和基于类的面向对象编程 安德斯·海尔斯伯格参与设计  安装&amp;使用  安装  npm install -g typescript  创建 hello.ts  function hello(user: string){ return &quot;Hello&quot;+ user; } var user = &quot;yao&quot; document.body.innerHTML= hello(user)  编译  tsc hello.ts   扩展 基础类型  类型  number bool string Tuple  let x: [string, number]  enum  enum Color {Red, Green, Blue}  any  默认动态类型  void null undefined never  总是抛出异常或根本不会返回值的函数表达式 箭头函数表达式的返回值类型   示例  function Add(left: number, right: number): number { return left + right; }  细节  类型批注被导出到声明文件，便于 javascript 和 TypeScript 脚本中类型信息均可使用 类型断言  清楚确切的类型时，通知编译器进行类型转换，而不进行特殊数据检查和解构 写法  let len: number = (&lt;String&gt;val).&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/javascript.typescript/" title="JavaScript.TypeScript"> &raquo;</a>
 </article>
 
         

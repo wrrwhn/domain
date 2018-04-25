@@ -45,6 +45,58 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/imagemagick.basic/" title="ImageMagick">ImageMagick</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.18">2018.01.18</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/imagemagick">imagemagick</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+ImageMagick Reference  官网  Anatomy  convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]  Input FileNames FileName Globbing  Analysis  pattern match about */?  Example
+ convert *.jpg images.gif
+Explicit Image Format  Analysis
+ specified a explicit image format is better than in the case of the image donot contain a signature of identify format  Example
+ convert -size 640x480 -depth 8 rgb:image image.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/imagemagick.basic/" title="ImageMagick"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab">Linux.Crontab</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.17">2018.01.17</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Linux.Crontab 参考  每天一个linux命令（50）：crontab命令  简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
+ 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
+SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&quot;&quot; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily   用户任务调度
+ 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig &ndash;list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &lt;user&gt;  调用指定用户 &lt;user&gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/" title="约翰·帕森">约翰·帕森</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.01.16">2018.01.16</time>
@@ -230,51 +282,6 @@ UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj&hell
 
     <p>流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/" title="云开-服务端架构-20171203"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka">Kafka</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/kafka">kafka</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/ffmpeg">ffmpeg</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} &hellip; {[output_file_options] output_url} &hellip;  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | &mdash;&mdash;&mdash;&gt; | packets | &mdash;&ndash;+ |____<strong><em>| |</em></strong>___________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;&mdash;&mdash;&ndash; | encoded data | &lt;&mdash;-+ | file | muxer | packets | encoder |_____<strong><em>| |</em></strong>___________|  选项 实例 裁剪  指令  ffmpeg -i old.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记"> &raquo;</a>
 </article>
 
         

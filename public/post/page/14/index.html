@@ -46,6 +46,53 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a> rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &lsquo;root&rsquo;@&lsquo;localhost&rsquo; =password(&lsquo;root.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.mysql/" title="Linux.Mysql"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/dump.analyze/" title="Dump.Analyze">Dump.Analyze</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/dump">dump</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>使用  安装 Dump 包分析软件 安装完成后进行初始化设置  设置【File/ Symbol file path】的属性值为【D:\MyCodesSymbols;SRV*c:\symbols*<a href="http://symbols.mozilla.org/firefox">http://symbols.mozilla.org/firefox</a>; SRV*D:\MyLocalSymbols<em><a href="http://msdl.microsoft.com/download/symbols;C:Windowssymbols】">http://msdl.microsoft.com/download/symbols;C:Windowssymbols】</a>  编辑 vbs 文件，调整 windbg 执行目录 双击执行，并输入任务管理器中的指定监控软件的 PID 值 操作软件，并至崩溃状态（崩溃后会自动启动 windbg 进行 Dump 包存储） 开启 windbg x86 程序，并打开该 Dump 包（File/ Open Crash Dump） 待加载完成后输入【~</em> kp】显示异常堆栈 输入【!analyze -v -f】分析具体异常  资源  X86 Debuggers And Tools-x86_en-us.msi crashdump.vbs 命令集合.xlsx&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/dump.analyze/" title="Dump.Analyze"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/git.install/" title="Git.Install">Git.Install</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
@@ -225,52 +272,6 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
     <p>[TOC]
 Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/go.gpm/" title="Go.GPM">Go.GPM</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.23">2017.07.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.gpm/" title="Go.GPM"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
 </article>
 
         

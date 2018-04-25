@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Fri, 20 Apr 2018 14:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 25 Apr 2018 23:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Stream</title>
+      <link>http://domain.yqjdcyy.com/post/java.stream/</link>
+      <pubDate>Wed, 25 Apr 2018 23:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.stream/</guid>
+      <description>[TOC]
+分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计</description>
+    </item>
     
     <item>
       <title>IDEA.Java.Version</title>
