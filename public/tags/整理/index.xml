@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 25 Apr 2018 23:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Apr 2018 00:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Keyword</title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword/</link>
+      <pubDate>Thu, 26 Apr 2018 00:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword/</guid>
+      <description>[TOC]
+List Access  private protected public  class, method, variable  abstract class extends implements interface native  The native keyword may be applied to a method to indicate that the method is implemented in a language other then Java. 用于说明该方法为原生函数，由 C|C++ 实现并编译成 DLL 提供给 Java 进行调用  统一由操作系统实现   new static strictfp  strict float point | 精确浮点 确保数值计算均严格遵守 FP-strict 限制，并符合 IEEE-754 规范 保障不会因为不同的硬件平台导致计算结果不一致 可声明于类、接口或方法上  synchronized  The synchronized keyword may be applied to a method or statement block and provides protection for critical sections that should only be executed by one thread at a time.</description>
+    </item>
     
     <item>
       <title>Java.Stream</title>
