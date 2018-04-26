@@ -46,6 +46,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>

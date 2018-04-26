@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 26 Apr 2018 00:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 26 Apr 2018 16:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Jar</title>
+      <link>http://domain.yqjdcyy.com/post/java.jar/</link>
+      <pubDate>Thu, 26 Apr 2018 16:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jar/</guid>
+      <description>[TOC]
+Package  Create Artifacts
+ Open 「Project Structure」    Create Artifacts    Setting     Build Artifacts
+     Run  java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf  PDFBox.jar中没有主清单属性   Fix  Open MANIFEST.MF  PDFBox.jar/META-INF/MANIFEST.MF  Add Main-Class  Main-Class: com.yao.main.PDFBoxMain  Save  Reference  主要  How to Create an Executable JAR with Maven idea打包java可执行jar包  补充  A如何打包可运行jar的一个问题 JAR包中的MANIFEST.</description>
+    </item>
     
     <item>
       <title>Java.Keyword</title>
@@ -1939,6 +1951,16 @@ Default Lifecycle validate validate the project is correct and all necessary inf
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
       <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/java.container/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.container/</guid>
+      <description> [TOC]
+Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Reference  []() []() []() []() []() []()  </description>
     </item>
     
     <item>

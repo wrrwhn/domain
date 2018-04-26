@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Jar on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/jar/</link>
+    <description>Recent content in Jar on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
+    <lastBuildDate>Thu, 26 Apr 2018 16:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/jar/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java.Jar</title>
+      <link>http://domain.yqjdcyy.com/post/java.jar/</link>
+      <pubDate>Thu, 26 Apr 2018 16:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jar/</guid>
+      <description>[TOC]
+Package  Create Artifacts
+ Open 「Project Structure」    Create Artifacts    Setting     Build Artifacts
+     Run  java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf  PDFBox.jar中没有主清单属性   Fix  Open MANIFEST.MF  PDFBox.jar/META-INF/MANIFEST.MF  Add Main-Class  Main-Class: com.yao.main.PDFBoxMain  Save  Reference  主要  How to Create an Executable JAR with Maven idea打包java可执行jar包  补充  A如何打包可运行jar的一个问题 JAR包中的MANIFEST.</description>
+    </item>
+    
+  </channel>
+</rss>

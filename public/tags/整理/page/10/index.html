@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
+ 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
+ 操作返回值
+// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
+ 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/go.gosublime/" title="Go.GoSublime">Go.GoSublime</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.26">2017.04.26</time>
@@ -253,26 +280,6 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 应用界面  <a href="http://localhost:8000/app/index.html">http://localhost:8000/app/index.html</a>
 核心代码解析 &lt;!&ndash; np-app 指令，用于标记 AngularJS 脚本的作用域 &ndash;&gt; &lt;html lang=&quot;en&quot; ng-app&gt; &lt;!&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/angularjs.basic/" title="AngularJS.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术">常用技术</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>灰化 grayscale(document.body);  遮罩  //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&lsquo;IMG&rsquo;,&lsquo;SELECT&rsquo;,&lsquo;OBJECT&rsquo;,&lsquo;IFRAME&rsquo;); for(var j=0;j&lt;HideElementTemp.length;j++){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&lt;document.all.tags(strElementTagName).length; i++){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&quot;hidden&quot;; objTemp.disabled=&quot;disabled&quot; } } catch(e){} } } //隐藏特殊控件+ 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置灰 var shield = document.createElement(&quot;DIV&quot;); //产生一个背景遮罩层 shield.id = &quot;shield&quot;; shield.style.position = &quot;absolute&quot;; shield.style.left = &quot;0px&quot;; shield.style.top = &quot;0px&quot;; shield.style.width = &quot;100%&quot;; shield.style.height = ((document.documentElement.clientHeight&gt;document.documentElement.scrollHeight)?document.documentElement.clientHeight:document.documentElement.scrollHeight)+&quot;px&quot;; shield.style.background = &quot;#333&quot;; shield.style.textAlign = &quot;center&quot;; shield.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/" title="常用技术"> &raquo;</a>
 </article>
 
         
