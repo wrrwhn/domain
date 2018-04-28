@@ -46,6 +46,55 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
+The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
+Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
+  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
+ 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
+Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/redis.basic/" title="Redis.Basic">Redis.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
@@ -220,37 +269,6 @@ Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractL
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>+++ date = &quot;2018-03-23T17:00:00+08:00&quot; title = &quot;庄家杜均&quot; draft = false tags = [&quot;阅读&quot;,&quot;虚拟币&quot;] share = true +++  [TOC]
-【深度调查】 庄家杜均 时间点 2013.7  杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。  2013.11  火币网上线，打出了“免交易手续费”的旗号  发展壮大后，连同国内几大交易所重新开始收取手续费，甚至开始向项目收取巨额的ICO“上币费”   2014  杜均创办了区块链代币媒体“金色财经” 杜均募集了自己的基金”节点资本”  2017.9  中国的监管机构下令禁止境内的ICO（首次代币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进融资的方式）交易，并陆续屏蔽境外ICO交易平台的域名。  2017.12  代币“WAX”登录“火币Pro”交易所后，狂跌99%的惨烈景象 IOST（Internet of Service Token）的区块链项目正在筹划ICO，募资数额巨大 每个币种登录火币Pro开始交易后，开放充值和提现的间隔时间越来越长  2018.1  包括杜均在内，币圈主要人物已经被限制出境  2018.2.15  名为“三点钟无眠区块链”的微信群横空出世，在各种区块链微信群里呼风唤雨的，是薛蛮子、徐小平、蔡文胜和王峰这样的传统天使风险投资人。  2018.3.3  全国政协十三届一次会议开幕，中国进入“两会时期”。  火币网公众号更名为 “huobicom” OKEx公众号被封号   关键点 杜均  重庆开县人，1986年出生 初中期间，杜均曾靠打游戏卖装备、建站赚广告费谋生，是早年间国内互联网野蛮生长时代孕育的无数- 个人站长之一。 凭借常年混迹互联网圈积累的经验和圈子，杜均成功进入知名企业家和天使投资人戴志康创立的康盛创想，在旗下Discuz!&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/" title=""> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%9C%BA%E6%9E%84%E5%AD%A6%E4%B9%A0/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>概念  机器学习  机器学习算法是一类从数据中自动分析获得规律，并利用规律对未知数据进行预测的算法。 因为学习算法中涉及了大量的统计学理论，机器学习与统计推断学联系尤为密切，也被称为统计学习理论。 算法设计方面，机器学习理论关注可以实现的，行之有效的学习算法。 赋予计算机在非编程情况下的学习能力 - Artuur Samuel  深度学习 卷积神经网络  基础  计算机科学的基本知识、原理  数据结构 编程  Matlab Octave   概率  随机变量 期望 方差  线性代数  矩阵 向量 逆矩阵   要点  decision trees  决策树  naive Bayes&rsquo; classifiers  朴素贝叶斯分类器  maximum entropy classifiers
- 最大熵分类器
-学习路线   参考  入门  Best Machine Learning Resources for Getting Started  机器学习的最佳入门学习资源  tornadomeet.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%9C%BA%E6%9E%84%E5%AD%A6%E4%B9%A0/" title=""> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -258,9 +276,11 @@ Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractL
 	<a class="btn newer" href="/post/page/17/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 18  18</p>
+	<p class="counter"> 18  19</p>
 
 
+	
+	<a class="btn older" href="/post/page/19/" title=""> &raquo;</a>
 	
 
 </nav>
