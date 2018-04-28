@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sql on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/sql/</link>
+    <description>Recent content in Sql on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
+    <lastBuildDate>Fri, 27 Apr 2018 19:30:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>SQL.优化</title>
+      <link>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Fri, 27 Apr 2018 19:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</guid>
+      <description>[TOC]
+特点  SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松实现嵌套功能。  优化 TOP-N问题  table  student{sid, sname, sage}  sql sql select sid, sname, sage from ( select rownum temp_no, sid, sname, sage from( select sid, sname, sage from student order by sid ) ) where temp_no between 4 and 6;   恰当使用索引  创建  简单索引= 指定字段值 + ROWID  隐藏字表，而ROWID相当于目录当中的页码   影响  select 查找的字段有索引，加快查找速度 insert 则会减速 delete/update 则加快和减慢的可能性都存在   用case表达式替代多次查询  普通查询  select count(*) &amp;ldquo;below 25&amp;rdquo; from student where sage &amp;lt;= 25; select count(*) &amp;ldquo;between 25 and 30&amp;rdquo; from student where sage &amp;gt;25 and sage &amp;lt;30; select count(*) &amp;ldquo;above 30&amp;rdquo; from student where sage &amp;gt;=30;  case实现 sql select count(case when sage&amp;lt;=25 then 1 else null end) &amp;quot;below 25&amp;quot;, count(case when sage&amp;gt;25 and sage&amp;lt;30 then 1 else null end) &amp;quot;between 25 and 30&amp;quot;, count(case when sage&amp;gt;30 then 1 else null end) &amp;quot;above 30&amp;quot;, from student;   用where子句代替having子句 select * from table group by num having num=1; where num=1 group by num;  多表开发注意事项  正确连接方式</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -96,6 +96,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化">SQL.优化</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.27">2018.04.27</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/sql">sql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+特点  SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松实现嵌套功能。  优化 TOP-N问题  table  student{sid, sname, sage}  sql sql select sid, sname, sage from ( select rownum temp_no, sid, sname, sage from( select sid, sname, sage from student order by sid ) ) where temp_no between 4 and 6;   恰当使用索引  创建  简单索引= 指定字段值 + ROWID  隐藏字表，而ROWID相当于目录当中的页码   影响  select 查找的字段有索引，加快查找速度 insert 则会减速 delete/update 则加快和减慢的可能性都存在   用case表达式替代多次查询  普通查询  select count(<em>) &ldquo;below 25&rdquo; from student where sage &lt;= 25; select count(</em>) &ldquo;between 25 and 30&rdquo; from student where sage &gt;25 and sage &lt;30; select count(*) &ldquo;above 30&rdquo; from student where sage &gt;=30;  case实现 sql select count(case when sage&lt;=25 then 1 else null end) &quot;below 25&quot;, count(case when sage&gt;25 and sage&lt;30 then 1 else null end) &quot;between 25 and 30&quot;, count(case when sage&gt;30 then 1 else null end) &quot;above 30&quot;, from student;   用where子句代替having子句 select * from table group by num having num=1; where num=1 group by num;  多表开发注意事项  正确连接方式&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/" title="经典">经典</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.27">2018.04.27</time>
@@ -263,31 +286,6 @@ Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp; 0xFF);   Re
 Error  VirtualMachineError
  InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/" title="方案.敏感词.DFA">方案.敏感词.DFA</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.18">2018.04.18</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%96%B9%E6%A1%88">方案</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%8F%E6%84%9F%E8%AF%8D">敏感词</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Situation  String.contain | pattern DFA  Theory  词库存储结构     Enviroment  Windows 10 Intel i7-4710MQ 2.5Ghz 16G 内存  Code  algorithm.DFA  Test    Type Duration Remark     Read File 45ms 65K   Fill in map 10ms 5146   check 0ms 10/200/500  match or not   query 0ms 10/200/500  match or not   replace 0~1ms 10/200/500  match or not    Reference  网站敏感词过滤的实现 DFA算法-敏感词过滤 简易敏感词过滤算法&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/" title="方案.敏感词.DFA"> &raquo;</a>
 </article>
 
         
