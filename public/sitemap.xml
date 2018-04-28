@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/</loc>
+    <lastmod>2018-04-27T19:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/java.jar/</loc>
     <lastmod>2018-04-26T16:00:00+08:00</lastmod>
   </url>
@@ -1127,7 +1132,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-04-26T16:00:00+08:00</lastmod>
+    <lastmod>2018-04-27T19:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1355,7 +1360,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-04-26T16:00:00+08:00</lastmod>
+    <lastmod>2018-04-27T19:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1534,6 +1539,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E7%BB%8F%E5%85%B8/</loc>
+    <lastmod>2018-04-27T19:30:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/%E7%BC%93%E5%AD%98/</loc>
     <lastmod>2017-11-16T22:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -1613,7 +1624,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-03-06T15:00:00+08:00</lastmod>
+    <lastmod>2018-04-27T19:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
