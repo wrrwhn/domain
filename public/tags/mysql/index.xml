@@ -25,11 +25,11 @@
     </item>
     
     <item>
-      <title>Mysql.Error</title>
-      <link>http://domain.yqjdcyy.com/post/mysql.error/</link>
+      <title>Error.Mysql</title>
+      <link>http://domain.yqjdcyy.com/post/error.mysql/</link>
       <pubDate>Tue, 12 Sep 2017 22:07:46 +0800</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/mysql.error/</guid>
+      <guid>http://domain.yqjdcyy.com/post/error.mysql/</guid>
       <description> 1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;   </description>
     </item>
     

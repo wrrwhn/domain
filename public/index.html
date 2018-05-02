@@ -45,6 +45,59 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp">Error.CSharp</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/error">error</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/csharp">csharp</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决  Main 方法上增加 [STAThread] 标志 <code>c# Thread app = new Thread(new ParameterizedThreadStart(ShowWindow)); app.ApartmentState = ApartmentState.STA;  Thread newThread = new Thread(new ThreadStart(ThreadMethod)); newThread.SetApartmentState(ApartmentState.MTA);</code>
+解析  STA  线程创建并进入一单线程单元  MTA  线程创建并进入一多线程单元  Unknown  尚未设置 ApartmentState 属   过程  COM 类中使用的公共语言库需要在 COM interop 情况下调用 COM 对象时创建单元  其中托管进程帮忙创建时允许其进入一个线程的单线程单元（STA）或多线程单元（MTA）&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux">Hello.Linux</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+进度 Linux 基础文件  14&frasl;30
+Linux 架站文件 0/ 31
+Linux 安全 0/ 1
+Solaris 0/ 1
+  概述 系统特点  开源免费、稳定性 安全性 处理多并发性能好  系统管理事项(kernel)  系统呼叫接口 行程管理：多任务 内存管理：控制内存，虚拟内存 档案系统管理：数据I/O及NTFS档案格式硬盘 装置驱动     系统演化  Unix - 1973  IBM AIX SUM SOLARIS HP HP UNIX 伯克利分校 MINIX  LINUS LINUX - 1994  REDHAT S.U.S.E 红旗     VMWare安装 学习流程  Linux平台开发，含vi,gcc,gdb,make,jdk,tomcat,mysql和linux基本操作 加厚c语言功底（c专家编程）或java语言 学习 Unix 环境高级编程（Unix环境高级编程） Linux应用系统开发或嵌入式开发  推荐书籍  《鸟哥的Linux私房菜》 《Linux编程从入门到精通》 《Linux内核完全剖析》  常用概念 安装  yum  进行软件包管理安装，一般用于自动从中央仓库下载安装指令 yum -y install make|patch|ntp  make  主要针对tar.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/" title="跟腱炎">跟腱炎</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.28">2018.04.28</time>
@@ -236,55 +289,6 @@ List Access  private protected public  class, method, variable  abstract class e
 Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
  快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&gt; 1.8 Project language level-&gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff">Java.&amp;0xff</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp; 0xFF);   Reason 原因  int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况  示例  int-&gt; byte  222 -&gt; -34  222.补码  00000000 00000000 00000000 11011110  截取  11011110  反码  11011101  原码  10100010= -34   解决方案  222* 0xff    Supplement Java 使用 补码 进行数值存储  简化计算机运算，让符号位也参与运算，使计算机设计中只有加法，没有减法 示例  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] 丢弃高位数值   *码  原码  符号位+ 数字二进制表示 +7 [00000111] -7 [10000111]  反码  正数时同原码，负数时，符号位不变，其它位数取反 +7 [00000111] -7 [11111000]  补码  正数时同原码，负数时则为反码+1 +7 [00000111] -7 [11111001]   Reference  java中byte转换int时为何与0xff进行与运算 java原码、补码、反码总结 原码, 反码, 补码 详解&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception">Java.Exception</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.18">2018.04.18</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-分类 Throwable Exception  ReflectiveOperationException  NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException  CloneNotSupportedException InterruptedException  ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException  IllegalThreadStateException NumberFormatException  SecurityException  RuntimeException  ArithmeticException TypeNotPresentException IndexOutOfBoundsException  ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException  NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException  IOException
- SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException  NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException  InterruptedIOException UTFDataFormatException FileNotFoundException EOFException
-Error  VirtualMachineError
- InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception"> &raquo;</a>
 </article>
 
         

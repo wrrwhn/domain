@@ -1,8 +1,8 @@
 +++
 date = "2017-09-12T22:07:46+08:00"
-title = "Mysql.Error"
+title = "Error.Mysql"
 draft = false
-tags = ["整理","MYSQL"]
+tags = ["整理","Error","MYSQL"]
 share = true
 +++
 
