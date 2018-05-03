@@ -45,6 +45,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.firewalld/" title="Linux.Firewalld">Linux.Firewalld</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+firewalld 参考  CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置  指令 常见  添加端口  firewall-cmd &ndash;permanent &ndash;zone=public &ndash;add-port=3306/tcp  重启  firewall-cmd &ndash;reload  添加服务  firewall-cmd &ndash;permanent &ndash;add-service=mysql   所有  通用
+ firewall-cmd [&ndash;zone=&lt;zone&gt;] &ndash;add-port=&lt;port&gt;[-&lt;port&gt;]/&lt;protocol&gt; [&ndash;timeout=&lt;seconds&gt;]  运行
+ 查看运行状态  systemctl status firewalld.service  开关  systemctl [stop|start] firewalld firewall-cmd &ndash;reload  服务相关  firewall-cmd &ndash;list-services firewall-cmd &ndash;[add|remove]-service=mysql firewall-cmd &ndash;permanent &ndash;[add|remove]-service=mysql  端口相关  firewall-cmd &ndash;zone=public &ndash;add-port=3306/tcp &ndash;permanent firewall-cmd &ndash;zone=public &ndash;list-ports firewall-cmd &ndash;zone=public &ndash;query-port=3306/tcp   开机启动&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.firewalld/" title="Linux.Firewalld"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
@@ -251,29 +276,6 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make">Linux.Make</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.25">2017.07.25</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.make/" title="Linux.Make"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -281,7 +283,7 @@ Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 �
 	<a class="btn newer" href="/page/14/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 15  19</p>
+	<p class="counter"> 15  20</p>
 
 
 	

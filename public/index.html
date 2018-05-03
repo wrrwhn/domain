@@ -98,6 +98,31 @@ JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程�
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack">Java.Tools.JStack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTACK 作用  观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等 java 程序崩溃生成 core 文件，jstack工具可以用来获得 core 文件的java stack和native stack的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题 Java 1.8 版本中不支持  机制  生成java虚拟机当前时刻的线程快照 观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况 | 区域 | 状态 | 描述 | |&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;| | Entry Set | Waiting ThreadWaiting for monitor entry | BLOCKEDwaiting for monitor entry线程进入临界区（ synchronized 保护起来的代码区） | | The Owner | Active Thread | RUNNABLE | | Wait Set | Waiting Threadin Object.wait() | WAITING / TIMED_WAITING  in Object.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -273,37 +298,12 @@ Solaris 0/ 1
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.jar/" title="Java.Jar">Java.Jar</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.26">2018.04.26</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/jar">jar</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Package  Create Artifacts
- Open 「Project Structure」    Create Artifacts    Setting     Build Artifacts
-     Run  java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf  PDFBox.jar中没有主清单属性   Fix  Open MANIFEST.MF  PDFBox.jar/META-INF/MANIFEST.MF  Add Main-Class  Main-Class: com.yao.main.PDFBoxMain  Save  Reference  主要  How to Create an Executable JAR with Maven idea打包java可执行jar包  补充  A如何打包可运行jar的一个问题 JAR包中的MANIFEST.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.jar/" title="Java.Jar"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
     
 
-	<p class="counter"> 1  19</p>
+	<p class="counter"> 1  20</p>
 
 
 	

@@ -246,5 +246,5 @@ share = true
 
 
 # Reference
-- [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
-- [jstack](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html)
+- [Java命令学习系列（四）——jstat](http://www.hollischuang.com/archives/481)
+- [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html)

@@ -99,6 +99,31 @@ JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程�
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack">Java.Tools.JStack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTACK 作用  观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等 java 程序崩溃生成 core 文件，jstack工具可以用来获得 core 文件的java stack和native stack的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题 Java 1.8 版本中不支持  机制  生成java虚拟机当前时刻的线程快照 观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况 | 区域 | 状态 | 描述 | |&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;| | Entry Set | Waiting ThreadWaiting for monitor entry | BLOCKEDwaiting for monitor entry线程进入临界区（ synchronized 保护起来的代码区） | | The Owner | Active Thread | RUNNABLE | | Wait Set | Waiting Threadin Object.wait() | WAITING / TIMED_WAITING  in Object.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -266,28 +291,6 @@ Error  VirtualMachineError
  可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
  JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native">Java.Native</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  <a href="http://blog.csdn.net/xw13106209/article/details/6989415">http://blog.csdn.net/xw13106209/article/details/6989415</a> <a href="http://www.iteye.com/topic/304594">http://www.iteye.com/topic/304594</a>  概念  Jni  sun 提供 支持通过与 c/c++ 交互调用系统的相关技术  Jawin  sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法  Jacob  sourceforge 提供 提供调用 microsoft 的 com 对象方法  补充        开发流程  Java 调用类 javah 生成 c/c++ 原生函数头文件 c/c++ 中实现原生函数 将项目依赖的所有*原生库和资源*加入至 java 项目的 java.library.path 生成 java 程序 发布 java 应用和 dll 库&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.native/" title="Java.Native"> &raquo;</a>
 </article>
 
         
