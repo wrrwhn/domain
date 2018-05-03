@@ -22,7 +22,7 @@
 JINFO 作用  输出进程、Core 文件或远程 Debug 服务器配置信息  Java 系统参数 命令行参数  运行于64位虚拟机上时，需指定 -J-d64 Java 1.8 版本中不支持  调用  jinfo [option] &amp;lt;pid&amp;gt; 参数  -flag &amp;lt;name&amp;gt;
  to print the value of the named VM flag  -flag [+|-]&amp;lt;name&amp;gt;
  to enable or disable the named VM flag  -flag &amp;lt;name&amp;gt;=&amp;lt;value&amp;gt;  to set the named VM flag to the given value  -flags
- to print VM flags    示例 - `jinfo pid` ``` Caused by: sun.</description>
+ to print VM flags    示例  jinfo pid  Caused by: sun.</description>
     </item>
     
     <item>
@@ -32,7 +32,17 @@ JINFO 作用  输出进程、Core 文件或远程 Debug 服务器配置信息  J
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jps/</guid>
       <description>[TOC]
-JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw------- 1 appuser appuser 32768 May 2 22:17 11337 -rw------- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&amp;lt;hostid&amp;gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例 - `/usr/java/jdk1.</description>
+JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw------- 1 appuser appuser 32768 May 2 22:17 11337 -rw------- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&amp;lt;hostid&amp;gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例  /usr/java/jdk1.</description>
+    </item>
+    
+    <item>
+      <title>Java.Tools.JStat</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.jstat/</link>
+      <pubDate>Thu, 03 May 2018 23:20:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.jstat/</guid>
+      <description>[TOC]
+JSTAT 作用 - 监视vm内存内的各种**堆**和非堆的**大小**及其**内存使用**量，并可观察classloader，compiler，**gc**相关信息  调用  jstat -&amp;lt;option&amp;gt; [-t] [-h&amp;lt;lines&amp;gt;] &amp;lt;vmid&amp;gt; [&amp;lt;interval&amp;gt; [&amp;lt;count&amp;gt;]] 参数  option  选项  –class  监视类装载、卸载数量、总空间及类装载所耗费时间 | 字段 | 描述 | 数值 | |&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;| | Loaded | 装载类的数量 | 11736 | | Bytes | 装载类所占字节数 | 22293.3 | | Unloaded | 卸载类的数量 | 0 | | Bytes | 卸载类所占字节数 | 0.0 | | Time | 装载和卸载类所花的时间 | 13.24 |  –gc  监视Java堆状况，包括Eden区、2个Survivor区、老年代、永久代等的容量 | 字段 | 描述 | 数值 | |&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;-| | S0C | 年轻代中第一个survivor（幸存区）的容量 (字节) | 20480.</description>
     </item>
     
   </channel>

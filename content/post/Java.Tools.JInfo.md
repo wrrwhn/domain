@@ -29,11 +29,11 @@ share = true
         - to print VM flags
 
 ## 示例
-    - `jinfo pid`
-        ```
-        Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported versions are 24.60-b09. Target VM is 25.25-b02
-        ```
+- `jinfo pid`
+    ```
+    Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported versions are 24.60-b09. Target VM is 25.25-b02
+    ```
 
 # Reference        
-- [Java命令学习系列（六）——jinfo](http://www.hollischuang.com/archives/1094)
-- [jinfo](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jinfo.html)
+- [Java命令学习系列（四）——jstat](http://www.hollischuang.com/archives/481)
+- [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html)

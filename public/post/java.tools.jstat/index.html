@@ -1,0 +1,479 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>好久不见</title>
+        <meta name="author">
+        <meta name="description" content="好久不见">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="jstat">JSTAT</h1>
+
+<h2 id="作用">作用</h2>
+
+<pre><code>- 监视vm内存内的各种**堆**和非堆的**大小**及其**内存使用**量，并可观察classloader，compiler，**gc**相关信息
+</code></pre>
+
+<h2 id="调用">调用</h2>
+
+<ul>
+<li><code>jstat -&lt;option&gt; [-t] [-h&lt;lines&gt;] &lt;vmid&gt; [&lt;interval&gt; [&lt;count&gt;]]</code></li>
+<li>参数
+
+<ul>
+<li><code>option</code>
+
+<ul>
+<li>选项
+
+<ul>
+<li><code>–class</code>
+
+<ul>
+<li>监视<strong>类装载</strong>、<strong>卸载数量</strong>、<strong>总空间</strong>及类装载所<strong>耗费时间</strong>
+| 字段     | 描述                   | 数值    |
+|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;|
+| Loaded   | 装载类的数量           | 11736   |
+| Bytes    | 装载类所占字节数       | 22293.3 |
+| Unloaded | 卸载类的数量           | 0       |
+| Bytes    | 卸载类所占字节数       | 0.0     |
+| Time     | 装载和卸载类所花的时间 | 13.24   |</li>
+</ul></li>
+<li><code>–gc</code>
+
+<ul>
+<li>监视Java<strong>堆状况</strong>，包括Eden区、2个Survivor区、老年代、永久代等的容量
+| 字段 | 描述                                                | 数值     |
+|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|
+| S0C  | 年轻代中第一个survivor（幸存区）的容量 (字节)         | 20480.0  |
+| S1C  | 年轻代中第二个survivor（幸存区）的容量 (字节)         | 20480.0  |
+| S0U  | 年轻代中第一个survivor（幸存区）目前已使用空间 (字节) | 8.0      |
+| S1U  | 年轻代中第二个survivor（幸存区）目前已使用空间 (字节) | 0.0      |
+| EC   | 年轻代中Eden的容量 (字节)                           | 163840.0 |
+| EU   | 年轻代中Eden目前已使用空间 (字节)                   | 35825.1  |
+| OC   | Old代的容量 (字节)                                  | 409600.0 |
+| OU   | Old代目前已使用空间 (字节)                          | 132443.4 |
+| PC   | Perm(持久代)的容量 (字节)                           | �        |
+| PU   | Perm(持久代)目前已使用空间 (字节)                   | �        |
+| YGC  | 从应用程序启动到采样时年轻代中gc次数                | 172      |
+| YGCT | 从应用程序启动到采样时年轻代中gc所用时间(s)         | 2.254    |
+| FGC  | 从应用程序启动到采样时old代(全gc)gc次数             | 4        |
+| FGCT | 从应用程序启动到采样时old代(全gc)gc所用时间(s)      | 0.180    |
+| GCT  | 从应用程序启动到采样时gc用的总时间(s)               | 2.434    |<br /></li>
+</ul></li>
+<li><code>–gccapacity</code>
+
+<ul>
+<li>监视内容与<code>-gc</code>基本相同，但输出主要关注Java堆各个区域使用到的<strong>最大和最小空间</strong>
+| 字段  | 描述                                          | 数值     |
+|:&mdash;&mdash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|:&mdash;&mdash;&mdash;|
+| NGCMN | 年轻代(young)中初始化(最小)的大小(字节)       | 204800.0 |
+| NGCMX | 年轻代(young)的最大容量 (字节)                | 204800.0 |
+| NGC   | 年轻代(young)中当前的容量 (字节)              | 204800.0 |
+| S0C   | 年轻代中第一个survivor（幸存区）的容量 (字节) | 20480.0  |
+| S1C   | 年轻代中第二个survivor（幸存区）的容量 (字节) | 20480.0  |
+| EC    | 年轻代中Eden（伊甸园）的容量 (字节)           | 163840.0 |
+| OGCMN | old代中初始化(最小)的大小 (字节)              | 409600.0 |
+| OGCMX | old代的最大容量(字节)                         | 409600.0 |
+| OGC   | old代当前新生成的容量 (字节)                  | 409600.0 |
+| OC    | Old代的容量 (字节)                            | 409600.0 |
+| PGCMN | perm代中初始化(最小)的大小 (字节)             | �        |
+| PGCMX | perm代的最大容量 (字节)                       | �        |
+| PGC   | perm代当前新生成的容量 (字节)                 | �        |
+| PC    | Perm(持久代)的容量 (字节)                     | �        |
+| YGC   | 从应用程序启动到采样时年轻代中gc次数          | 173      |
+| FGC   | 从应用程序启动到采样时old代(全gc)gc次数       | 4        |</li>
+</ul></li>
+<li><code>–gcutil</code>
+
+<ul>
+<li>监视内容与<code>-gc</code>基本相同，但输出主要关注已使用空间<strong>占总空间</strong>的百分<strong>比</strong>
+| 字段 |                           描述                           |  数值 |
+|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;-|
+| S0   | 年轻代中第一个survivor（幸存区）已使用的占当前容量百分比 | 0.00  |
+| S1   | 年轻代中第二个survivor（幸存区）已使用的占当前容量百分比 | 0.04  |
+| E    | 年轻代中Eden（伊甸园）已使用的占当前容量百分比           | 6.00  |
+| O    | old代已使用的占当前容量百分比                            | 32.33 |
+| P    | perm代已使用的占当前容量百分比                           | �     |
+| YGC  | 从应用程序启动到采样时年轻代中gc次数                     | 173   |
+| YGCT | 从应用程序启动到采样时年轻代中gc所用时间(s)              | 2.258 |
+| FGC  | 从应用程序启动到采样时old代(全gc)gc次数                  | 4     |
+| FGCT | 从应用程序启动到采样时old代(全gc)gc所用时间(s)           | 0.180 |
+| GCT  | 从应用程序启动到采样时gc用的总时间(s)                    | 2.438 |<br /></li>
+</ul></li>
+<li><code>–gccause</code>
+
+<ul>
+<li>与<code>-gcutil</code>功能一样，但是会额外输出导致<strong>上一次GC产生的原因</strong></li>
+</ul></li>
+<li><code>–gcnew</code>
+
+<ul>
+<li>监视<strong>新生代GC</strong>的状况
+| 字段 |                          描述                         |    数值   |
+|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&ndash;|
+| S0C  | 年轻代中第一个survivor（幸存区）的容量 (字节)         | 20480.0   |
+| S1C  | 年轻代中第二个survivor（幸存区）的容量 (字节)         | 20480.0   |
+| S0U  | 年轻代中第一个survivor（幸存区）目前已使用空间 (字节) | 0.0       |
+| S1U  | 年轻代中第二个survivor（幸存区）目前已使用空间 (字节) | 8.0       |
+| TT   | 持有次数限制                                          | 6         |
+| MTT  | 最大持有次数限制                                      | 6 10240.0 |
+| EC   | 年轻代中Eden（伊甸园）的容量 (字节)                   | 163840.0  |
+| EU   | 年轻代中Eden（伊甸园）目前已使用空间 (字节)           | 13029.7   |
+| YGC  | 从应用程序启动到采样时年轻代中gc次数                  | 173       |
+| YGCT | 从应用程序启动到采样时年轻代中gc所用时间(s)           | 2.258     |<br /></li>
+</ul></li>
+<li><code>–gcnewcapacity</code>
+
+<ul>
+<li>监视内容与<code>-gcnew</code>基本相同，输出主要关注使用到的<strong>最大和最小空间</strong>
+|  字段 |                        描述                       |   数值   |
+|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|
+| NGCMN | 年轻代(young)中初始化(最小)的大小(字节)           | 204800.0 |
+| NGCMX | 年轻代(young)的最大容量 (字节)                    | 204800.0 |
+| NGC   | 年轻代(young)中当前的容量 (字节)                  | 204800.0 |
+| S0CMX | 年轻代中第一个survivor（幸存区）的最大容量 (字节) |  20480.0 |
+| S0C   | 年轻代中第一个survivor（幸存区）的容量 (字节)     |  20480.0 |
+| S1CMX | 年轻代中第二个survivor（幸存区）的最大容量 (字节) |  20480.0 |
+| S1C   | 年轻代中第二个survivor（幸存区）的容量 (字节)     |  20480.0 |
+| ECMX  | 年轻代中Eden（伊甸园）的最大容量 (字节)           | 163840.0 |
+| EC    | 年轻代中Eden（伊甸园）的容量 (字节)               | 163840.0 |
+| YGC   | 从应用程序启动到采样时年轻代中gc次数              |      173 |
+| FGC   | 从应用程序启动到采样时old代(全gc)gc次数           |        4 |<br /></li>
+</ul></li>
+<li><code>–gcold</code>
+
+<ul>
+<li>监视<strong>老年代GC</strong>的状况
+| 字段 |                      描述                      |   数值   |
+|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|
+| PC   | Perm(持久代)的容量 (字节)                      | �        |
+| PU   | Perm(持久代)目前已使用空间 (字节)              | �        |
+| OC   | Old代的容量 (字节)                             | 409600.0 |
+| OU   | Old代目前已使用空间 (字节)                     | 132443.4 |
+| YGC  | 从应用程序启动到采样时年轻代中gc次数           | 173      |
+| FGC  | 从应用程序启动到采样时old代(全gc)gc次数        | 4        |
+| FGCT | 从应用程序启动到采样时old代(全gc)gc所用时间(s) | 0.180    |
+| GCT  | 从应用程序启动到采样时gc用的总时间(s)          | 2.438    |<br /></li>
+</ul></li>
+<li><code>–gcoldcapacity</code>
+
+<ul>
+<li>监视内容与<code>—gcold</code>基本相同，输出主要关注使用到的<strong>最大和最小空间</strong>
+|  字段 |                      描述                      |   数值   |
+|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|
+| OGCMN | old代中初始化(最小)的大小 (字节)               | 409600.0 |
+| OGCMX | old代的最大容量(字节)                          | 409600.0 |
+| OGC   | old代当前新生成的容量 (字节)                   | 409600.0 |
+| OC    | Old代的容量 (字节)                             | 409600.0 |
+| YGC   | 从应用程序启动到采样时年轻代中gc次数           |      173 |
+| FGC   | 从应用程序启动到采样时old代(全gc)gc次数        |        4 |
+| FGCT  | 从应用程序启动到采样时old代(全gc)gc所用时间(s) |    0.180 |
+| GCT   | 从应用程序启动到采样时gc用的总时间(s)          |    2.438 |<br /></li>
+</ul></li>
+<li><code>–gcpermcapacity</code>
+
+<ul>
+<li>输出<strong>永久代</strong>使用到的<strong>最大和最小空间</strong>
+|  字段 |                      描述                      |  数值 |
+|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;-|
+| PGCMN | perm代中初始化(最小)的大小 (字节)              | �     |
+| PGCMX | perm代的最大容量 (字节)                        | �     |
+| PGC   | perm代当前新生成的容量 (字节)                  | �     |
+| PC    | Perm(持久代)的容量 (字节)                      | �     |
+| YGC   | 从应用程序启动到采样时年轻代中gc次数           | 173   |
+| FGC   | 从应用程序启动到采样时old代(全gc)gc次数        | 4     |
+| FGCT  | 从应用程序启动到采样时old代(全gc)gc所用时间(s) | 0.180 |
+| GCT   | 从应用程序启动到采样时gc用的总时间(s)          | 2.438 |<br /></li>
+</ul></li>
+<li><code>–compiler</code>
+
+<ul>
+<li>输出<strong>JIT编译</strong>器编译过的<strong>方法、耗时</strong>等信息
+| 字段         | 描述                               | 数值                                                |
+|:&mdash;&mdash;&mdash;&mdash;-|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|:&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| Compiled     | 编译任务执行数量                   | 9726                                                |
+| Failed       | 编译任务执行失败数量               | 3                                                   |
+| Invalid      | 编译任务执行失效数量               | 0                                                   |
+| Time         | 编译任务消耗时间                   | 85.85                                               |
+| FailedType   | 最后一个编译失败任务的类型         | 1                                                   |
+| FailedMethod | 最后一个编译失败任务所在的类及方法 | com/mysql/jdbc/AbandonedConnectionCleanupThread run |</li>
+</ul></li>
+<li><code>–printcompilation</code>
+
+<ul>
+<li>输出已经<strong>被JIT编译的方法</strong></li>
+<li>可由 <code>-XX:+PrintComplation</code> 设置
+|   字段   |              描述              |                              数值                             |
+|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| Compiled | 编译任务的数目                 | 9726                                                          |
+| Size     | 方法生成的字节码的大小         | 582                                                           |
+| Type     | 编译类型                       | 1                                                             |
+| Method   | 类名和方法名用来标识编译的方法 | org/springframework/data/redis/core/RedisTemplate$6 doInRedis |<br /></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>vmid</code>
+
+<ul>
+<li>VM 进程号，即当前运行 java 进程号
+
+<ul>
+<li>VMID= Vitrual Machine IDentifier</li>
+<li>LVMID= Local Vitrual Machine IDentifier</li>
+</ul></li>
+<li>情况
+
+<ul>
+<li>本地虚拟机进程
+
+<ul>
+<li>VMID= LVMID</li>
+</ul></li>
+<li>远程虚拟机进程
+= VMID= <code>[protocol:][//] lvmid [@hostname[:port]/servername]</code></li>
+</ul></li>
+</ul></li>
+<li><code>interval</code>
+
+<ul>
+<li>间隔时间，单位为秒或毫秒</li>
+</ul></li>
+<li><code>count</code>
+
+<ul>
+<li>打印次数，默认不限制</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<ul>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -class 29003</code>
+<code>
+Loaded  Bytes   Unloaded    Bytes     Time   
+11736   22293.3        0     0.0      13.24
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gc 29003</code>
+<code>
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.capacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.used substituted NaN
+S0C    S1C    S0U    S1U      EC       EU        OC         OU       PC     PU    YGC     YGCT    FGC    FGCT     GCT   
+20480.0 20480.0  8.0    0.0   163840.0 35825.1   409600.0   132443.4    �      �       172    2.254   4      0.180    2.434
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -compiler 29003</code>
+<code>
+Compiled Failed Invalid   Time   FailedType FailedMethod
+    9726      3       0    85.85          1 com/mysql/jdbc/AbandonedConnectionCleanupThread run
+[appuser@iZ94nvigjtdZ ~]$ /usr/java/jdk1.7.0_60/bin/jstat -gccapacity 29003
+Warning: Unresolved Symbol: sun.gc.generation.2.minCapacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.maxCapacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.capacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.capacity substituted NaN
+NGCMN    NGCMX     NGC     S0C   S1C       EC      OGCMN      OGCMX       OGC         OC      PGCMN    PGCMX     PGC       PC     YGC    FGC 
+204800.0 204800.0 204800.0 20480.0 20480.0 163840.0   409600.0   409600.0   409600.0   409600.0        �        �        �        �    173     4
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcnew 29003</code>
+<code>
+ S0C    S1C    S0U    S1U   TT MTT  DSS      EC       EU     YGC     YGCT  
+20480.0 20480.0    0.0    8.0  6   6 10240.0 163840.0   9772.3    173    2.258      
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcutil 29003</code>
+<code>
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.capacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.used substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.capacity substituted NaN
+S0     S1     E      O      P     YGC     YGCT    FGC    FGCT     GCT   
+0.00   0.04   6.00  32.33      �    173    2.258     4    0.180    2.438
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcnew 29003</code>
+<code>
+ S0C    S1C    S0U    S1U   TT MTT  DSS      EC       EU     YGC     YGCT  
+20480.0 20480.0    0.0    8.0  6   6 10240.0 163840.0  13029.7    173    2.258
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcnewcapacity 29003</code>
+<code>
+NGCMN      NGCMX       NGC      S0CMX     S0C     S1CMX     S1C       ECMX        EC      YGC   FGC 
+204800.0   204800.0   204800.0  20480.0  20480.0  20480.0  20480.0   163840.0   163840.0   173     4
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcold 29003</code>
+<code>
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.capacity substituted NaN
+Warning: Unresolved Symbol: sun.gc.generation.2.space.0.used substituted NaN
+PC       PU        OC          OU       YGC    FGC    FGCT     GCT   
+    �        �    409600.0    132443.4    173     4    0.180    2.438
+</code></li>
+<li><code>/usr/java/jdk1.7.0_60/bin/jstat -gcoldcapacity 29003</code>
+<code>
+OGCMN       OGCMX        OGC         OC       YGC   FGC    FGCT     GCT   
+409600.0    409600.0    409600.0    409600.0   173     4    0.180    2.438
+</code></li>
+<li><code>jstat -gcutil 12191 250 7</code>
+
+<ul>
+<li>统计 GC 时 heap 情况，间隔250毫秒，打印7次</li>
+</ul></li>
+</ul>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+<li><a href="http://www.hollischuang.com/archives/110">Java命令学习系列（二）——Jstack</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html">jstack</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jstat%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Java.Tools.JStat&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jstat%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jstat%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jstat%2f&title=Java.Tools.JStat" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

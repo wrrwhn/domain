@@ -67,7 +67,7 @@
 JINFO 作用  输出进程、Core 文件或远程 Debug 服务器配置信息  Java 系统参数 命令行参数  运行于64位虚拟机上时，需指定 -J-d64 Java 1.8 版本中不支持  调用  jinfo [option] &lt;pid&gt; 参数  -flag &lt;name&gt;
  to print the value of the named VM flag  -flag [+|-]&lt;name&gt;
  to enable or disable the named VM flag  -flag &lt;name&gt;=&lt;value&gt;  to set the named VM flag to the given value  -flags
- to print VM flags    示例 - <code>jinfo pid</code> ``` Caused by: sun.&hellip;</p>
+ to print VM flags    示例  jinfo pid  Caused by: sun.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.tools.jinfo/" title="Java.Tools.JINFO"> &raquo;</a>
 </article>
 
@@ -92,8 +92,33 @@ JINFO 作用  输出进程、Core 文件或远程 Debug 服务器配置信息  J
 </footer>
 
     <p>[TOC]
-JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11337 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&lt;hostid&gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例 - `/usr/java/jdk1.&hellip;</p>
+JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11337 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&lt;hostid&gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例  /usr/java/jdk1.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.tools.jps/" title="Java.Tools.JPS"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong>大小</strong>及其<strong>内存使用</strong>量，并可观察classloader，compiler，<strong>gc</strong>相关信息  调用  jstat -&lt;option&gt; [-t] [-h&lt;lines&gt;] &lt;vmid&gt; [&lt;interval&gt; [&lt;count&gt;]] 参数  option  选项  –class  监视类装载、卸载数量、总空间及类装载所耗费时间 | 字段 | 描述 | 数值 | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;| | Loaded | 装载类的数量 | 11736 | | Bytes | 装载类所占字节数 | 22293.3 | | Unloaded | 卸载类的数量 | 0 | | Bytes | 卸载类所占字节数 | 0.0 | | Time | 装载和卸载类所花的时间 | 13.24 |  –gc  监视Java堆状况，包括Eden区、2个Survivor区、老年代、永久代等的容量 | 字段 | 描述 | 数值 | |&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-| | S0C | 年轻代中第一个survivor（幸存区）的容量 (字节) | 20480.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat"> &raquo;</a>
 </article>
 
         
@@ -267,29 +292,6 @@ List Access  private protected public  class, method, variable  abstract class e
 Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
  快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&gt; 1.8 Project language level-&gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff">Java.&amp;0xff</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp; 0xFF);   Reason 原因  int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况  示例  int-&gt; byte  222 -&gt; -34  222.补码  00000000 00000000 00000000 11011110  截取  11011110  反码  11011101  原码  10100010= -34   解决方案  222* 0xff    Supplement Java 使用 补码 进行数值存储  简化计算机运算，让符号位也参与运算，使计算机设计中只有加法，没有减法 示例  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] 丢弃高位数值   *码  原码  符号位+ 数字二进制表示 +7 [00000111] -7 [10000111]  反码  正数时同原码，负数时，符号位不变，其它位数取反 +7 [00000111] -7 [11111000]  补码  正数时同原码，负数时则为反码+1 +7 [00000111] -7 [11111001]   Reference  java中byte转换int时为何与0xff进行与运算 java原码、补码、反码总结 原码, 反码, 补码 详解&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff"> &raquo;</a>
 </article>
 
         
