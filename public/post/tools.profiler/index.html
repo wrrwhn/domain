@@ -443,141 +443,6 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>打印出帮助文档信息</li>
 </ul></li>
 </ul></li>
-<li>状态
-
-<ul>
-<li><code>NEW</code>
-
-<ul>
-<li>未启动的不会出现在 <code>Dump</code> 中</li>
-</ul></li>
-<li><code>RUNNABLE</code>
-
-<ul>
-<li>在虚拟机内执行的</li>
-</ul></li>
-<li><code>BLOCKED</code>
-
-<ul>
-<li>受阻塞并等待监视器锁</li>
-</ul></li>
-<li><code>WATING</code>
-
-<ul>
-<li>无限期等待另一个线程执行特定操作</li>
-</ul></li>
-<li><code>TIMED_WATING</code>
-
-<ul>
-<li>有时限的等待另一个线程的特定操作</li>
-</ul></li>
-<li><code>TERMINATED</code>
-
-<ul>
-<li>已退出的</li>
-</ul></li>
-</ul></li>
-<li>修饰
-
-<ul>
-<li><code>locked &lt;地址&gt; 目标</code>
-
-<ul>
-<li>使用 <code>synchronized</code> 申请对象锁成功,监视器的拥有者。</li>
-</ul></li>
-<li><code>waiting to lock &lt;地址&gt; 目标</code>
-
-<ul>
-<li>使用 <code>synchronized</code> 申请对象锁未成功,在进入区等待。</li>
-</ul></li>
-<li><code>waiting on &lt;地址&gt; 目标</code>
-
-<ul>
-<li>使用 <code>synchronized</code> 申请对象锁成功后,释放锁幵在等待区等待。</li>
-</ul></li>
-<li><code>parking to wait for &lt;地址&gt; 目标</code></li>
-</ul></li>
-<li>动作
-
-<ul>
-<li><code>runnable</code>
-
-<ul>
-<li>状态一般为 <code>RUNNABLE</code></li>
-</ul></li>
-<li><code>in Object.wait()</code>
-
-<ul>
-<li>等待区等待,状态为 <code>WAITING</code> 或 <code>TIMED_WAITING</code></li>
-</ul></li>
-<li><code>waiting for monitor entry</code>
-
-<ul>
-<li>进入区等待,状态为 <code>BLOCKED</code></li>
-</ul></li>
-<li><code>waiting on condition</code>
-
-<ul>
-<li>等待区等待、被 <code>park</code></li>
-</ul></li>
-<li><code>sleeping</code>
-
-<ul>
-<li>休眠的线程,调用了 <code>Thread.sleep()</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
-
-<li><p>示例</p>
-
-<ul>
-<li><p><code>/usr/java/jdk1.7.0_60/bin/jstack 29003</code></p>
-
-<pre><code>&quot;http-nio-127.0.0.1-29029-ClientPoller-0&quot; #28 daemon prio=5 os_prio=0 tid=0x00007f9d8c4a5800 nid=0x71ba runnable [0x00007f9d513be000]
-java.lang.Thread.State: RUNNABLE
-
-&quot;ContainerBackgroundProcessor[StandardEngine[Catalina]]&quot; #27 daemon prio=5 os_prio=0 tid=0x00007f9d8c4a4000 nid=0x71b9 waitin on condition [0x00007f9d514bf000]
-java.lang.Thread.State: TIMED_WAITING (sleeping)
-
-&quot;Abandoned connection cleanup thread&quot; #24 daemon prio=5 os_prio=0 tid=0x00007f9d15de4000 nid=0x7188 in Object.wait() [0x00007f9d138fd000]
-java.lang.Thread.State: TIMED_WAITING (on object monitor)
-</code></pre></li>
-
-<li><p>while(true)</p>
-
-<pre><code>&quot;main&quot; #1 prio=5 os_prio=0 tid=0x0000000005422800 nid=0x20e0 runnable [0x000000000517f000]
-java.lang.Thread.State: RUNNABLE
-        at com.yao.common.thread.ThreadBlockTest.main(ThreadBlockTest.java:12)    
-</code></pre></li>
-
-<li><p>lock</p>
-
-<ul>
-<li><a href="http://otzm88f21.bkt.clouddn.com/f01c473b-eabd-4337-a0e0-3d8d3d571494.log">jstack-deadlock.log</a>
-```
-Found one Java-level deadlock:
-=============================
-&ldquo;Thread-1&rdquo;:
-waiting to lock monitor 0x0000000004b47828 (object 0x000000076b45c4d0, a java.lang.Object),
-which is held by &ldquo;Thread-0&rdquo;
-&ldquo;Thread-0&rdquo;:
-waiting to lock monitor 0x00000000209a0a68 (object 0x000000076b45c4e0, a java.lang.Object),
-which is held by &ldquo;Thread-1&rdquo;</li>
-</ul>
-
-<h1 id="java-stack-information-for-the-threads-listed-above">Java stack information for the threads listed above:</h1>
-
-<p>&ldquo;Thread-1&rdquo;:
-        at com.yao.common.thread.DeadLock.run(ThreadLockDead.java:52)
-        - waiting to lock <0x000000076b45c4d0> (a java.lang.Object)
-        - locked <0x000000076b45c4e0> (a java.lang.Object)
-        at java.lang.Thread.run(Thread.java:745)
-&ldquo;Thread-0&rdquo;:
-        at com.yao.common.thread.DeadLock.run(ThreadLockDead.java:39)
-        - waiting to lock <0x000000076b45c4e0> (a java.lang.Object)
-        - locked <0x000000076b45c4d0> (a java.lang.Object)
-        at java.lang.Thread.run(Thread.java:745)<br />
-```</p></li>
 </ul></li>
 </ul>
 
@@ -634,7 +499,13 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <li><code>-permstat</code>
 
 <ul>
-<li>打印Java堆内存的永久保存区域的类加载器的智能统计信息。对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印。此外，包含的字符串数量- 和大小也会被打印</li>
+<li>Java <strong>1.8</strong> 版本中<strong>不支持</strong></li>
+<li>打印Java堆内存的永久保存区域的类加载器的智能统计信息</li>
+<li>对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印
+
+<ul>
+<li>包含的字符串数量和大小</li>
+</ul></li>
 </ul></li>
 <li><code>-F</code>
 
@@ -652,32 +523,85 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <li>指定传递给运行jmap的JVM的参数</li>
 </ul></li>
 </ul></li>
-<li>示例
+
+<li><p>示例</p>
 
 <ul>
-<li><code>
-</code><code>
-</code>``</li>
-</ul></li>
-</ul></li>
+<li><code>jmap 24748</code>
+|      内存地址      | 内存占用 |          进程、核心文件或远程调试服务器           |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 0x0000000051560000 | 8740K    | D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll |
+| 0x0000000054130000 | 104K     | D:\server\java\jdk1.8.0_65\jre\bin\net.dll        |</li>
+<li><code>jmap -histo 24748</code>
+| 序号  | 实例数     | 所在字节数 | 类名                                                          |
+|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| num   | #instances | #bytes     | class name                                                    |
+| 14:   | 6778       | 108448     | java.lang.Object                                              |
+| 1565: | 1          | 16         | sun.util.resources.LocaleData$LocaleDataResourceBundleControl |
+| Total | 266178     | 50804480   |                                                               |</li>
+<li><code>jmap -finalizerinfo 24748</code>
+<code>
+Attaching to process ID 24748, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.65-b01
+Number of objects pending for finalization: 0
+</code></li>
+<li><code>jmap -dump:format=b,file=d:/24748-jmap.dump 24748</code>
+<code>
+Dumping heap to D:\24748-jmap.dump ...
+Heap dump file created
+</code></li>
 
-<li><p>打印出某个java进程内存内所有对象的情况</p>
+<li><p><code>jmap -heap 24748</code></p>
 
-<ul>
-<li>示例
+<pre><code>Attaching to process ID 24748, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.65-b01
 
-<ul>
-<li><code>jmap pid</code></li>
-<li><code>jmap -histo pid</code>
+using thread-local object allocation.
+Parallel GC with 8 thread(s)              // GC 方式
 
-<ul>
-<li>打印jvm heap的直方图，包括类名、对象数量及对象占用大小</li>
-</ul></li>
-<li><code>jmap -heap pid</code>
+Heap Configuration:
+MinHeapFreeRatio         = 0                       // JVM堆最小空闲比例，默认`40`，可通过 `-XX:MinHeapFreeRatio` 设置
+MaxHeapFreeRatio         = 100                     // JVM堆最大空闲比例，默认`70`，可通过 `-XX:MaxHeapFreeRatio` 设置
+MaxHeapSize              = 734003200 (700.0MB)     // JVM堆的最大大小，可通过 `-XX:MaxHeapSize` 设置
+NewSize                  = 89128960 (85.0MB)       // JVM堆的 `新生代` 的默认大小，可通过 `-XX:NewSize` 设置
+MaxNewSize               = 244318208 (233.0MB)     // JVM堆的 `新生代` 的最大大小，可通过 `-XX:MaxNewSize=` 设置
+OldSize                  = 179306496 (171.0MB)     // JVM堆的 `老生代` 的大小，可通过 `-XX:OldSize` 设置
+NewRatio                 = 2                       // `新生代` 和 `老生代` 的大小比例，可通过 `-XX:NewRatio` 设置
+SurvivorRatio            = 8                       // 年轻代中 `Eden` 与 `Survivor` 的大小比例，可通过 `-XX:SurvivorRatio` 设置
+MetaspaceSize            = 21807104 (20.796875MB)  // JVM堆的 `元数据` 的大小，默认为`20.8M`，可通过 `-XX:MetaspaceSize` 设置
+CompressedClassSpaceSize = 1073741824 (1024.0MB)   // JVM堆的 `Klass Metaspace` 的大小，默认为`1G`，可通过 `-XX:CompressedClassSpaceSize` 设置
+MaxMetaspaceSize         = 17592186044415 MB       // JVM堆的 `元数据` 的最大大小，默认为`无穷大`，可通过 `-XX:MaxMetaspaceSize` 设置
+G1HeapRegionSize         = 0 (0.0MB)               // 设置 `Garbage First` 平分java堆产生的区域的大小，默认为`2的幂`，范围为 `1M至 32M`，可通过 `-XX:G1HeapRegionSize` 设置
 
-<ul>
-<li>打印出 heap 情况</li>
-</ul></li>
+Heap Usage:             // 堆内存使用情况
+PS Young Generation
+Eden Space:             // Eden 区内存分布
+capacity = 67108864 (64.0MB)
+used     = 44377568 (42.321746826171875MB)
+free     = 22731296 (21.678253173828125MB)
+66.12772941589355% used
+From Space:             // Survivor 0 区内存分布
+capacity = 11010048 (10.5MB)
+used     = 6410528 (6.113555908203125MB)
+free     = 4599520 (4.386444091796875MB)
+58.224341982886905% used
+To Space:               // Survivor 1 区内存分布
+capacity = 11010048 (10.5MB)
+used     = 0 (0.0MB)
+free     = 11010048 (10.5MB)
+0.0% used
+PS Old Generation       // 老生代内存分布
+capacity = 179306496 (171.0MB)
+used     = 16384 (0.015625MB)
+free     = 179290112 (170.984375MB)
+0.009137426900584795% used
+
+5576 interned Strings occupying 475000 bytes.
+</code></pre></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -950,20 +874,9 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <li><a href="http://domain.yqjdcyy.com/post/java.tools.jps/">JPS</a></li>
 <li><a href="http://domain.yqjdcyy.com/post/java.tools.jinfo/">JINFO</a></li>
 <li><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/">JSTAT</a></li>
+<li><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/">JSTACK</a></li>
+<li><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/">JMAP</a></li>
 </ul></li>
-<li>用户笔记
-
-<ul>
-<li><a href="http://www.hollischuang.com/archives/303">Java命令学习系列（三）——Jmap</a></li>
-</ul></li>
-<li>官方</li>
-<li>其它
-
-<ul>
-<li><a href="http://www.importnew.com/23601.html">如何使用jstack分析线程状态</a></li>
-<li><a href="https://blog.csdn.net/neu_yousei/article/details/23827631">java死锁的例子</a></li>
-</ul></li>
-<li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>

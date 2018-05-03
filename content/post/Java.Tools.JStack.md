@@ -115,5 +115,10 @@ share = true
 
 
 # Reference
-- [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
-- [jstack](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html)    
+- 官方
+	- [jstack](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html)    
+- 整理
+	- [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
+- 补充
+    - [如何使用jstack分析线程状态](http://www.importnew.com/23601.html)
+    - [java死锁的例子](https://blog.csdn.net/neu_yousei/article/details/23827631)
