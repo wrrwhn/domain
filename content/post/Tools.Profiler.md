@@ -49,7 +49,7 @@
 
 # 工具
 ## Java.*
-### JPS
+### [JPS](http://domain.yqjdcyy.com/post/java.tools.jps/)
 - 作用
     - 显示当前用户本地 JAVA 进程及进程号
 - 机制
@@ -73,19 +73,6 @@
             - 显示启动类的进程 ID 和完整路径名
         - `-v`
             - 显示调用 **JVM** 时的相关**参数**
-    - 示例
-        - `/usr/java/jdk1.7.0_60/bin/jps -m`
-            ```
-            26324 Maven31Main /data/jenkins/tools/hudson.tasks.Maven_MavenInstallation/_usr_local_maven /var/cache/jenkins/war/WEB-INF/lib/remoting-2.53.2.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-interceptor-1.5.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 52930
-            11489 Kafka config/server.properties
-            23692 Bootstrap start
-            ```
-        - `/usr/java/jdk1.7.0_60/bin/jps -v`
-            ```
-            9107 Bootstrap -Djava.util.logging.config.file=/data/service/webapps/basic-operation-test/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Dtomcat.instance.name=basic-operation-test -Dspring.profiles.active=test -Dspring.cloud.config.uri=http://localhost:29011/config-server -Xms600m -Xmx600m -XX:+UseConcMarkSweepGC -XX:+UnlockDiagnosticVMOptions -XX:+PrintGCDetails -XX:+PrintClassHistogramBeforeFullGC -XX:+PrintClassHistogramAfterFullGC -XX:+HeapDumpOnOutOfMemoryError -Djava.endorsed.dirs=/data/service/tomcat/endorsed -Dcatalina.base=/data/service/webapps/basic-operation-test -Dcatalina.home=/data/service/tomcat -Djava.io.tmpdir=/data/service/webapps/basic-operation-test/temp
-            17888 Elasticsearch -Xms256m -Xmx2g -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Dfile.encoding=UTF-8 -Delasticsearch -Des.path.home=/data/elasticsearch-test
-            26324 Maven31Main
-            ```
 
 ### JINFO
 - 作用
@@ -472,20 +459,16 @@
         - `-heap`
             - 打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage
         - `-histo[:live]`
-            - 打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名。打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象
+            - 打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名
+            - 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象
         - `-permstat`
             - 打印Java堆内存的永久保存区域的类加载器的智能统计信息。对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印。此外，包含的字符串数量- 和大小也会被打印
         - `-F`
             - 强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项
-        - `-h`
-            - 打印帮助信息
-        - `-help`
+        - `-h|help`
             - 打印帮助信息
         - `-J<flag>`
             - 指定传递给运行jmap的JVM的参数
-
-        - ``
-            - 
     - 示例
         - ``
             ```
@@ -626,7 +609,6 @@
 
 # 参考
 - 用户笔记
-    - [Java命令学习系列（一）——Jps](http://www.hollischuang.com/archives/105)
     - [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
     - [Java命令学习系列（三）——Jmap](http://www.hollischuang.com/archives/303)
     - [Java命令学习系列（四）——jstat](http://www.hollischuang.com/archives/481)

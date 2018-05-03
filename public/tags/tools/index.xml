@@ -19,7 +19,7 @@
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jps/</guid>
       <description>[TOC]
-JPS  作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw------- 1 appuser appuser 32768 May 2 22:17 11337 -rw------- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&amp;lt;hostid&amp;gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数   示例  /usr/java/jdk1.</description>
+JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw------- 1 appuser appuser 32768 May 2 22:17 11337 -rw------- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&amp;lt;hostid&amp;gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例 - `/usr/java/jdk1.</description>
     </item>
     
   </channel>

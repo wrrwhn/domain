@@ -158,7 +158,7 @@
 
 <h2 id="java">Java.*</h2>
 
-<h3 id="jps">JPS</h3>
+<h3 id="jps-http-domain-yqjdcyy-com-post-java-tools-jps"><a href="http://domain.yqjdcyy.com/post/java.tools.jps/">JPS</a></h3>
 
 <ul>
 <li>作用
@@ -209,22 +209,6 @@ total 928
 <ul>
 <li>显示调用 <strong>JVM</strong> 时的相关<strong>参数</strong></li>
 </ul></li>
-</ul></li>
-<li>示例
-
-<ul>
-<li><code>/usr/java/jdk1.7.0_60/bin/jps -m</code>
-<code>
-26324 Maven31Main /data/jenkins/tools/hudson.tasks.Maven_MavenInstallation/_usr_local_maven /var/cache/jenkins/war/WEB-INF/lib/remoting-2.53.2.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-interceptor-1.5.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 52930
-11489 Kafka config/server.properties
-23692 Bootstrap start
-</code></li>
-<li><code>/usr/java/jdk1.7.0_60/bin/jps -v</code>
-<code>
-9107 Bootstrap -Djava.util.logging.config.file=/data/service/webapps/basic-operation-test/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Dtomcat.instance.name=basic-operation-test -Dspring.profiles.active=test -Dspring.cloud.config.uri=http://localhost:29011/config-server -Xms600m -Xmx600m -XX:+UseConcMarkSweepGC -XX:+UnlockDiagnosticVMOptions -XX:+PrintGCDetails -XX:+PrintClassHistogramBeforeFullGC -XX:+PrintClassHistogramAfterFullGC -XX:+HeapDumpOnOutOfMemoryError -Djava.endorsed.dirs=/data/service/tomcat/endorsed -Dcatalina.base=/data/service/webapps/basic-operation-test -Dcatalina.home=/data/service/tomcat -Djava.io.tmpdir=/data/service/webapps/basic-operation-test/temp
-17888 Elasticsearch -Xms256m -Xmx2g -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Dfile.encoding=UTF-8 -Delasticsearch -Des.path.home=/data/elasticsearch-test
-26324 Maven31Main
-</code></li>
 </ul></li>
 </ul></li>
 </ul>
@@ -808,8 +792,7 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 
 <ul>
 <li><code>jmap [option] &lt;pid&gt;|&lt;executable &lt;core&gt;&gt; | &lt;[server_id@]&lt;remoteServerIP | hostname&gt;&gt;</code></li>
-
-<li><p>参数</p>
+<li>参数
 
 <ul>
 <li><code>&lt;no option&gt;</code>
@@ -837,7 +820,8 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <li><code>-histo[:live]</code>
 
 <ul>
-<li>打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名。打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象</li>
+<li>打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名</li>
+<li>打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象</li>
 </ul></li>
 <li><code>-permstat</code>
 
@@ -849,31 +833,18 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <ul>
 <li>强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项</li>
 </ul></li>
-<li><code>-h</code>
+<li><code>-h|help</code>
 
 <ul>
 <li>打印帮助信息</li>
 </ul></li>
-<li><code>-help</code>
-
-<ul>
-<li>打印帮助信息</li>
-</ul></li>
-
-<li><p><code>-J&lt;flag&gt;</code></p>
+<li><code>-J&lt;flag&gt;</code>
 
 <ul>
 <li>指定传递给运行jmap的JVM的参数</li>
 </ul></li>
-
-<li><p>``</p>
-
-<ul>
-<li></li>
 </ul></li>
-</ul></li>
-
-<li><p>示例</p>
+<li>示例
 
 <ul>
 <li><code>
@@ -1168,7 +1139,6 @@ which is held by &ldquo;Thread-1&rdquo;</li>
 <li>用户笔记
 
 <ul>
-<li><a href="http://www.hollischuang.com/archives/105">Java命令学习系列（一）——Jps</a></li>
 <li><a href="http://www.hollischuang.com/archives/110">Java命令学习系列（二）——Jstack</a></li>
 <li><a href="http://www.hollischuang.com/archives/303">Java命令学习系列（三）——Jmap</a></li>
 <li><a href="http://www.hollischuang.com/archives/481">Java命令学习系列（四）——jstat</a></li>

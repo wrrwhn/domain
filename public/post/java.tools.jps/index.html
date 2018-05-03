@@ -68,13 +68,13 @@
 
 <h1 id="jps">JPS</h1>
 
-<ul>
-<li>作用
+<h2 id="作用">作用</h2>
 
 <ul>
 <li>显示当前用户本地 JAVA 进程及进程号</li>
-</ul></li>
-<li>机制
+</ul>
+
+<h2 id="机制">机制</h2>
 
 <ul>
 <li>java 程序启动后，会在 <code>java.io.tmpdir</code> 指定临时目录下，生成名称类似于 <code>hsperfdata_User</code> 的文件夹，其中个别文件的名字就是 java 进程的 <code>pid</code></li>
@@ -89,8 +89,9 @@ total 928
 -rw------- 1 appuser appuser 32768 May  2 22:17 11489
 </code></li>
 </ul></li>
-</ul></li>
-<li>调用
+</ul>
+
+<h2 id="调用">调用</h2>
 
 <ul>
 <li><code>jps [-q] [-mlvV] [&lt;hostid&gt;]</code></li>
@@ -118,24 +119,23 @@ total 928
 <li>显示调用 <strong>JVM</strong> 时的相关<strong>参数</strong></li>
 </ul></li>
 </ul></li>
-<li>示例
-
-<ul>
-<li><code>/usr/java/jdk1.7.0_60/bin/jps -m</code>
-<code>
-26324 Maven31Main /data/jenkins/tools/hudson.tasks.Maven_MavenInstallation/_usr_local_maven /var/cache/jenkins/war/WEB-INF/lib/remoting-2.53.2.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-interceptor-1.5.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 52930
-11489 Kafka config/server.properties
-23692 Bootstrap start
-</code></li>
-<li><code>/usr/java/jdk1.7.0_60/bin/jps -v</code>
-<code>
-9107 Bootstrap -Djava.util.logging.config.file=/data/service/webapps/basic-operation-test/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Dtomcat.instance.name=basic-operation-test -Dspring.profiles.active=test -Dspring.cloud.config.uri=http://localhost:29011/config-server -Xms600m -Xmx600m -XX:+UseConcMarkSweepGC -XX:+UnlockDiagnosticVMOptions -XX:+PrintGCDetails -XX:+PrintClassHistogramBeforeFullGC -XX:+PrintClassHistogramAfterFullGC -XX:+HeapDumpOnOutOfMemoryError -Djava.endorsed.dirs=/data/service/tomcat/endorsed -Dcatalina.base=/data/service/webapps/basic-operation-test -Dcatalina.home=/data/service/tomcat -Djava.io.tmpdir=/data/service/webapps/basic-operation-test/temp
-17888 Elasticsearch -Xms256m -Xmx2g -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Dfile.encoding=UTF-8 -Delasticsearch -Des.path.home=/data/elasticsearch-test
-26324 Maven31Main
-</code></li>
-</ul></li>
-</ul></li>
 </ul>
+
+<h2 id="示例">示例</h2>
+
+<pre><code>- `/usr/java/jdk1.7.0_60/bin/jps -m`
+    ```
+    26324 Maven31Main /data/jenkins/tools/hudson.tasks.Maven_MavenInstallation/_usr_local_maven /var/cache/jenkins/war/WEB-INF/lib/remoting-2.53.2.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven31-interceptor-1.5.jar /data/jenkins/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.5.jar 52930
+    11489 Kafka config/server.properties
+    23692 Bootstrap start
+    ```
+- `/usr/java/jdk1.7.0_60/bin/jps -v`
+    ```
+    9107 Bootstrap -Djava.util.logging.config.file=/data/service/webapps/basic-operation-test/conf/logging.properties -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager -Dtomcat.instance.name=basic-operation-test -Dspring.profiles.active=test -Dspring.cloud.config.uri=http://localhost:29011/config-server -Xms600m -Xmx600m -XX:+UseConcMarkSweepGC -XX:+UnlockDiagnosticVMOptions -XX:+PrintGCDetails -XX:+PrintClassHistogramBeforeFullGC -XX:+PrintClassHistogramAfterFullGC -XX:+HeapDumpOnOutOfMemoryError -Djava.endorsed.dirs=/data/service/tomcat/endorsed -Dcatalina.base=/data/service/webapps/basic-operation-test -Dcatalina.home=/data/service/tomcat -Djava.io.tmpdir=/data/service/webapps/basic-operation-test/temp
+    17888 Elasticsearch -Xms256m -Xmx2g -Djava.awt.headless=true -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -XX:+DisableExplicitGC -Dfile.encoding=UTF-8 -Delasticsearch -Des.path.home=/data/elasticsearch-test
+    26324 Maven31Main
+    ```
+</code></pre>
 
 <h1 id="reference">Reference</h1>
 
