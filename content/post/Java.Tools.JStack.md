@@ -80,13 +80,13 @@ share = true
     "Abandoned connection cleanup thread" #24 daemon prio=5 os_prio=0 tid=0x00007f9d15de4000 nid=0x7188 in Object.wait() [0x00007f9d138fd000]
     java.lang.Thread.State: TIMED_WAITING (on object monitor)
     ```
-- while(true)
+- `while(true)`
     ```
     "main" #1 prio=5 os_prio=0 tid=0x0000000005422800 nid=0x20e0 runnable [0x000000000517f000]
     java.lang.Thread.State: RUNNABLE
             at com.yao.common.thread.ThreadBlockTest.main(ThreadBlockTest.java:12)    
     ```
-- lock
+- `lock`
     - [jstack-deadlock.log](http://otzm88f21.bkt.clouddn.com/f01c473b-eabd-4337-a0e0-3d8d3d571494.log)
     ```
     Found one Java-level deadlock:
@@ -117,6 +117,7 @@ share = true
 # Reference
 - 官方
 	- [jstack](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html)    
+	- [2.16 The jstack Utility](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr016.html)
 - 整理
 	- [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
 - 补充

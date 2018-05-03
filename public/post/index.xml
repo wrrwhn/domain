@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 03 May 2018 23:20:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 May 2018 00:40:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Tools.JMap</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.jmap/</link>
+      <pubDate>Fri, 04 May 2018 00:40:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.jmap/</guid>
+      <description>[TOC]
+JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &amp;lt;pid&amp;gt;|&amp;lt;executable &amp;lt;core&amp;gt;&amp;gt; | &amp;lt;[server_id@]&amp;lt;remoteServerIP | hostname&amp;gt;&amp;gt; 参数  &amp;lt;no option&amp;gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&amp;lt;filename&amp;gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&amp;lt;flag&amp;gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748 | 内存地址 | 内存占用 | 进程、核心文件或远程调试服务器 | |&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| | 0x0000000051560000 | 8740K | D:\server\Java\jdk1.</description>
+    </item>
     
     <item>
       <title>Java.Tools.JINFO</title>

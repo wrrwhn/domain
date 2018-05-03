@@ -1,0 +1,342 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>好久不见</title>
+        <meta name="author">
+        <meta name="description" content="好久不见">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap">Java.Tools.JMap</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="jmap">JMAP</h1>
+
+<h2 id="作用">作用</h2>
+
+<ul>
+<li>为进程、核心文件或远程调试服务器打印<strong>共享对象内存</strong>映射或<strong>堆内存</strong>细节</li>
+<li>Java <strong>1.8</strong> 版本中<strong>不支持</strong>
+<br /></li>
+</ul>
+
+<h2 id="调用">调用</h2>
+
+<ul>
+<li><code>jmap [option] &lt;pid&gt;|&lt;executable &lt;core&gt;&gt; | &lt;[server_id@]&lt;remoteServerIP | hostname&gt;&gt;</code></li>
+<li>参数
+
+<ul>
+<li><code>&lt;no option&gt;</code>
+
+<ul>
+<li>如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称</li>
+</ul></li>
+<li><code>-dump:[live,]format=b,file=&lt;filename&gt;</code>
+
+<ul>
+<li>以 <code>hprof</code> <strong>二进制</strong>格式转储 <code>Java</code> <strong>堆</strong>到指定<strong>文件</strong>中。live子选项是可选的</li>
+<li>live子选项决定堆中只有活动的对象会被转储</li>
+<li>可用 <code>jhat</code> 浏览 <code>heap dump</code></li>
+</ul></li>
+<li><code>-finalizerinfo</code>
+
+<ul>
+<li>打印<strong>等待终结</strong>的<strong>对象</strong>信息</li>
+</ul></li>
+<li><code>-heap</code>
+
+<ul>
+<li>打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage</li>
+</ul></li>
+<li><code>-histo[:live]</code>
+
+<ul>
+<li>打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名</li>
+<li>打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象</li>
+</ul></li>
+<li><code>-permstat</code>
+
+<ul>
+<li>Java <strong>1.8</strong> 版本中<strong>不支持</strong></li>
+<li>打印Java堆内存的永久保存区域的类加载器的智能统计信息</li>
+<li>对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印
+
+<ul>
+<li>包含的字符串数量和大小</li>
+</ul></li>
+</ul></li>
+<li><code>-F</code>
+
+<ul>
+<li>强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项</li>
+</ul></li>
+<li><code>-h|help</code>
+
+<ul>
+<li>打印帮助信息</li>
+</ul></li>
+<li><code>-J&lt;flag&gt;</code>
+
+<ul>
+<li>指定传递给运行jmap的JVM的参数</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<ul>
+<li><code>jmap 24748</code>
+|      内存地址      | 内存占用 |          进程、核心文件或远程调试服务器           |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| 0x0000000051560000 | 8740K    | D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll |
+| 0x0000000054130000 | 104K     | D:\server\java\jdk1.8.0_65\jre\bin\net.dll        |</li>
+<li><code>jmap -histo 24748</code>
+| 序号  | 实例数     | 所在字节数 | 类名                                                          |
+|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| num   | #instances | #bytes     | class name                                                    |
+| 14:   | 6778       | 108448     | java.lang.Object                                              |
+| 1565: | 1          | 16         | sun.util.resources.LocaleData$LocaleDataResourceBundleControl |
+| Total | 266178     | 50804480   |                                                               |</li>
+<li><code>jmap -finalizerinfo 24748</code>
+<code>
+Attaching to process ID 24748, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.65-b01
+Number of objects pending for finalization: 0
+</code></li>
+<li><code>jmap -dump:format=b,file=d:/24748-jmap.dump 24748</code>
+<code>
+Dumping heap to D:\24748-jmap.dump ...
+Heap dump file created
+</code></li>
+
+<li><p><code>jmap -heap 24748</code></p>
+
+<pre><code>Attaching to process ID 24748, please wait...
+Debugger attached successfully.
+Server compiler detected.
+JVM version is 25.65-b01
+
+using thread-local object allocation.
+Parallel GC with 8 thread(s)              // GC 方式
+
+Heap Configuration:
+MinHeapFreeRatio         = 0                       // JVM堆最小空闲比例，默认`40`，可通过 `-XX:MinHeapFreeRatio` 设置
+MaxHeapFreeRatio         = 100                     // JVM堆最大空闲比例，默认`70`，可通过 `-XX:MaxHeapFreeRatio` 设置
+MaxHeapSize              = 734003200 (700.0MB)     // JVM堆的最大大小，可通过 `-XX:MaxHeapSize` 设置
+NewSize                  = 89128960 (85.0MB)       // JVM堆的 `新生代` 的默认大小，可通过 `-XX:NewSize` 设置
+MaxNewSize               = 244318208 (233.0MB)     // JVM堆的 `新生代` 的最大大小，可通过 `-XX:MaxNewSize=` 设置
+OldSize                  = 179306496 (171.0MB)     // JVM堆的 `老生代` 的大小，可通过 `-XX:OldSize` 设置
+NewRatio                 = 2                       // `新生代` 和 `老生代` 的大小比例，可通过 `-XX:NewRatio` 设置
+SurvivorRatio            = 8                       // 年轻代中 `Eden` 与 `Survivor` 的大小比例，可通过 `-XX:SurvivorRatio` 设置
+MetaspaceSize            = 21807104 (20.796875MB)  // JVM堆的 `元数据` 的大小，默认为`20.8M`，可通过 `-XX:MetaspaceSize` 设置
+CompressedClassSpaceSize = 1073741824 (1024.0MB)   // JVM堆的 `Klass Metaspace` 的大小，默认为`1G`，可通过 `-XX:CompressedClassSpaceSize` 设置
+MaxMetaspaceSize         = 17592186044415 MB       // JVM堆的 `元数据` 的最大大小，默认为`无穷大`，可通过 `-XX:MaxMetaspaceSize` 设置
+G1HeapRegionSize         = 0 (0.0MB)               // 设置 `Garbage First` 平分java堆产生的区域的大小，默认为`2的幂`，范围为 `1M至 32M`，可通过 `-XX:G1HeapRegionSize` 设置
+
+Heap Usage:             // 堆内存使用情况
+PS Young Generation
+Eden Space:             // Eden 区内存分布
+capacity = 67108864 (64.0MB)
+used     = 44377568 (42.321746826171875MB)
+free     = 22731296 (21.678253173828125MB)
+66.12772941589355% used
+From Space:             // Survivor 0 区内存分布
+capacity = 11010048 (10.5MB)
+used     = 6410528 (6.113555908203125MB)
+free     = 4599520 (4.386444091796875MB)
+58.224341982886905% used
+To Space:               // Survivor 1 区内存分布
+capacity = 11010048 (10.5MB)
+used     = 0 (0.0MB)
+free     = 11010048 (10.5MB)
+0.0% used
+PS Old Generation       // 老生代内存分布
+capacity = 179306496 (171.0MB)
+used     = 16384 (0.015625MB)
+free     = 179290112 (170.984375MB)
+0.009137426900584795% used
+
+5576 interned Strings occupying 475000 bytes.
+</code></pre></li>
+</ul>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+<li>官方
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jmap.html">jmap</a><br /></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr014.html">2.14 The jmap Utility</a></li>
+</ul></li>
+<li>整理
+
+<ul>
+<li><a href="http://www.hollischuang.com/archives/303">Java命令学习系列（三）——Jmap</a></li>
+</ul></li>
+<li>补充
+
+<ul>
+<li><a href="http://atbug.com/java8-metaspace-size-issue/">MetaspaceSize的坑</a></li>
+<li><a href="http://lovestblog.cn/blog/2016/10/29/metaspace/">JVM源码分析之Metaspace解密</a></li>
+<li><a href="http://bboniao.com/jvm/2014-03/g1garbage-first.html">G1(Garbage First)的使用</a></li>
+<li><a href="http://www.oracle.com/technetwork/cn/articles/java/g1gc-1984535-zhs.html">垃圾优先型垃圾回收器调优</a></li>
+<li><a href="https://buzheng.org/2015/g1-gc-notes.html">垃圾优先垃圾回收器(G1 GC)使用笔记</a></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jmap%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Java.Tools.JMap&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jmap%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jmap%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jmap%2f&title=Java.Tools.JMap" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

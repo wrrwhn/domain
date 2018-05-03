@@ -51,5 +51,8 @@ share = true
 
 
 # Reference
-- [Java命令学习系列（一）——Jps](http://www.hollischuang.com/archives/105)
-- [jps](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jps.html)
+- 官方
+	- [jps](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jps.html)
+	- [2.15 The jps Utility](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr015.html)
+- 整理
+	- [Java命令学习系列（一）——Jps](http://www.hollischuang.com/archives/105)

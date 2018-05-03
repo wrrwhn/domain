@@ -34,6 +34,9 @@ share = true
     Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported versions are 24.60-b09. Target VM is 25.25-b02
     ```
 
-# Reference        
-- [Java命令学习系列（四）——jstat](http://www.hollischuang.com/archives/481)
-- [jstat](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstat.html)
+# Reference
+- 官方
+    - [jinfo](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jinfo.html)
+    - [2.13 The jinfo Utility](https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr013.html)
+- 整理
+    - [Java命令学习系列（六）——jinfo](http://www.hollischuang.com/archives/1094)

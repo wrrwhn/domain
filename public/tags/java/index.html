@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap">Java.Tools.JMap</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &lt;pid&gt;|&lt;executable &lt;core&gt;&gt; | &lt;[server_id@]&lt;remoteServerIP | hostname&gt;&gt; 参数  &lt;no option&gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&lt;filename&gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&lt;flag&gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748 | 内存地址 | 内存占用 | 进程、核心文件或远程调试服务器 | |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 0x0000000051560000 | 8740K | D:\server\Java\jdk1.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jinfo/" title="Java.Tools.JINFO">Java.Tools.JINFO</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -265,32 +290,6 @@ Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp; 0xFF);   Re
 Error  VirtualMachineError
  InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature">Java.9.Feature</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>深入解读 Java 9 新特性 参考  深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力  Jigsaw  核心 -实现 Java 平台模块化系统 - JPMS (Java Platform Module System)
- 针对问题
- 易错的 classpath  应用不同部分依赖同一类库的不同版本 ClassLoading 复杂而不明确，导致 ClassNotFoundException、 NoClassDefFoundError 等异常  JDK 过于臃肿，无法按不同需求进行定制或优化  目标
- 可靠配置  明确模块边界和模块间的依赖关系  强封装性  通过封装模块内部私有细节，避免不希望发生的依赖关系   拆分 JDK 增强提议 (JEP)
- JEP 261  Module System，实现模块化系统；  JEP 200  The Modular JDK，将JDK自身进行模块化；  JEP 201  Modular Source Code，按照模块化的形式，重构源代码,因为现有代码并不是划分到一个一个的模块里的。  JEP 220  Modular Run-Time Images，重新设计JDK和JRE的结构，定义新的URI scheme操作模块，类和资源（jrt）。  JEP 260  Encapsulate Most Internal APIs，按照模块化封装性的要求，将不希望暴露的内部API封装起来，如果确实证明是广泛需要的，就作为公共API公开出来。  JEP 282  jlink: The Java Linker。新的link工具   模块图&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.9.feature/" title="Java.9.Feature"> &raquo;</a>
 </article>
 
         
