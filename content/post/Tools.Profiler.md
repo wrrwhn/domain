@@ -49,7 +49,7 @@
 
 # 工具
 ## Java.*
-### [JPS](http://domain.yqjdcyy.com/post/java.tools.jps/)
+### JPS
 - 作用
     - 显示当前用户本地 JAVA 进程及进程号
 - 机制
@@ -608,6 +608,8 @@
 
 
 # 参考
+- 整理
+    - [JPS](http://domain.yqjdcyy.com/post/java.tools.jps/)
 - 用户笔记
     - [Java命令学习系列（二）——Jstack](http://www.hollischuang.com/archives/110)
     - [Java命令学习系列（三）——Jmap](http://www.hollischuang.com/archives/303)

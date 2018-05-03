@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tools &middot; 好久不见</title>
+        <title>好久不见</title>
         <meta name="author">
         <meta name="description" content="好久不见">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,13 +39,12 @@
           </div>
         </header>
 
+
 <div class="container clearfix">
     <main role="main" class="content">
-        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-        
-        
-            <article class="post">
-    
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jinfo/" title="Java.Tools.JINFO">Java.Tools.JINFO</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -63,51 +62,113 @@
 </span>
 </footer>
 
-    <p>[TOC]
-JINFO 作用  输出进程、Core 文件或远程 Debug 服务器配置信息  Java 系统参数 命令行参数  运行于64位虚拟机上时，需指定 -J-d64 Java 1.8 版本中不支持  调用  jinfo [option] &lt;pid&gt; 参数  -flag &lt;name&gt;
- to print the value of the named VM flag  -flag [+|-]&lt;name&gt;
- to enable or disable the named VM flag  -flag &lt;name&gt;=&lt;value&gt;  to set the named VM flag to the given value  -flags
- to print VM flags    示例 - <code>jinfo pid</code> ``` Caused by: sun.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.jinfo/" title="Java.Tools.JINFO"> &raquo;</a>
-</article>
+            
 
+<p>[TOC]</p>
+
+<h1 id="jinfo">JINFO</h1>
+
+<h2 id="作用">作用</h2>
+
+<ul>
+<li>输出进程、Core 文件或远程 Debug 服务器配置信息
+
+<ul>
+<li>Java 系统参数</li>
+<li>命令行参数</li>
+</ul></li>
+<li>运行于64位虚拟机上时，需指定 <code>-J-d64</code></li>
+<li>Java <strong>1.8</strong> 版本中<strong>不支持</strong></li>
+</ul>
+
+<h2 id="调用">调用</h2>
+
+<ul>
+<li><code>jinfo [option] &lt;pid&gt;</code></li>
+<li>参数
+
+<ul>
+<li><code>-flag &lt;name&gt;</code><br />
+
+<ul>
+<li>to print the value of the named VM flag</li>
+</ul></li>
+<li><code>-flag [+|-]&lt;name&gt;</code><br />
+
+<ul>
+<li>to enable or disable the named VM flag</li>
+</ul></li>
+<li><code>-flag &lt;name&gt;=&lt;value&gt;</code>
+
+<ul>
+<li>to set the named VM flag to the given value</li>
+</ul></li>
+<li><code>-flags</code><br />
+
+<ul>
+<li>to print VM flags</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<pre><code>- `jinfo pid`
+    ```
+    Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported versions are 24.60-b09. Target VM is 25.25-b02
+    ```
+</code></pre>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+<li><a href="http://www.hollischuang.com/archives/1094">Java命令学习系列（六）——jinfo</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jinfo.html">jinfo</a></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jinfo%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Java.Tools.JINFO&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jinfo%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jinfo%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fjava.tools.jinfo%2f&title=Java.Tools.JINFO" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
         
-            <article class="post">
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
     
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jps/" title="Java.Tools.JPS">Java.Tools.JPS</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
-        
     
-
-</span>
-</footer>
-
-    <p>[TOC]
-JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11337 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&lt;hostid&gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例 - `/usr/java/jdk1.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.jps/" title="Java.Tools.JPS"> &raquo;</a>
-</article>
-
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
         
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
-</div>
-
     </main>
-
     <aside class="author">
   <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
   <p class="name"> 
@@ -140,6 +201,7 @@ JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程�
 </aside>
 
 </div>
+
 <footer class="main-footer">
   <div class="container clearfix">
         <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
