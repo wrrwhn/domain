@@ -45,6 +45,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 ">Go.并行&amp;并发 </a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/goruntime">goruntime </a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
+ 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 "> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL">GraphQL</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
@@ -256,29 +281,6 @@ Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 
     <p>[TOC]
 Linux 的目录与权限 参考  Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件  使用者与群组  文件拥有者 群组  当前拥有者所在群组其它成员权限  其它人  非当前拥有者所在群组成员的权限   文件权限 文件属性  示例  drwxr-xr-x 2 root root 4096 Aug 24 09:17 wechat-forum-dev  解析  (d)(rwx)(r-x)(r-x)  档案类型、权限 (1)  文件类型  d  目录  -  文件  l  link file  b  装置文件中可供存储的接口设备  c  装置文件中的串行端口设备，如键盘、鼠标    (2)  文件拥有者权限 三位固定代表是否可以读、写、执行 其中指定位上若无权限，则以-表示  (3)  同群组用户权限  (4)  非本群组用户权限   2  连结数 硬连接到此 inode 文件的数量  root  档案拥有者  root  档案所属群组  4096  档案大小，单位为字节  Aug 24 09:17  最后修改时间  wechat-forum-dev  档案名称    补充 inode  概念  inode  存储文件元信息  文件字节数 拥有者用户 ID 文件的组 ID 读、写、执行权限 时间戳  ctime  inode 上次变动时间  mtime  文件内容上次变动时间  atime  上次打开时间   链接数  多少个文件名指向这个 inode block 位置    Block  8* Sector  Sector  扇区 文件在硬盘中的最小存储单元 512 B   查看  stat file  查看文件的 inode 信息  ls -il  查看 inode 号码   补充  移动、重命名，更新文件名，不影响 inode  ls -i find .&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/" title="Linux 的目录与权限"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/idea.mybatiscodehelper/" title="IDEA.MyBatisCodeHelper">IDEA.MyBatisCodeHelper</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.21">2017.08.21</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，极大提升效率  描述  根据 JavaBean 生成 MyBatis 和 SQL.Create 更新方法名生成表单操作  使用  详见参考二中动态图&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/idea.mybatiscodehelper/" title="IDEA.MyBatisCodeHelper"> &raquo;</a>
 </article>
 
         
