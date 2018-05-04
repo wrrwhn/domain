@@ -406,13 +406,40 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 
 <ul>
 <li>生成java虚拟机当前时刻的线程快照</li>
-<li>观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况
-|    区域   |                     状态                     |                                            描述                                            |
-|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
-| Entry Set | Waiting Thread<br/>Waiting for monitor entry | BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区） |
-| The Owner | Active Thread                                | RUNNABLE                                                                                   |
-| Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |</li>
-<li><img src="http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp" alt="thread.bmp" /></li>
+
+<li><p>观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况</p>
+
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>状态</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Entry Set</td>
+<td>Waiting Thread<br/>Waiting for monitor entry</td>
+<td>BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区）</td>
+</tr>
+
+<tr>
+<td>The Owner</td>
+<td>Active Thread</td>
+<td>RUNNABLE</td>
+</tr>
+
+<tr>
+<td>Wait Set</td>
+<td>Waiting Thread<br/>in Object.wait()</td>
+<td>WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp" alt="thread.bmp" /></p></li>
 </ul></li>
 
 <li><p>调用</p>
@@ -527,12 +554,6 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>实时内存、线程、类和系统信息监控，并提供树型 MBean 结构进行属性、方法查询</li>
 </ul>
 
-<h3 id="visualvm">VisualVM</h3>
-
-<ul>
-<li>多线程运行情况监控，具备线程、堆内存等数据存储对比</li>
-</ul>
-
 <h2 id="business">Business.*</h2>
 
 <h3 id="tptp">TPTP</h3>
@@ -541,26 +562,39 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>开发商
 
 <ul>
-<li>eclipse 官方的 Profiling 工具插件和可扩展的开发平台框架</li>
+<li>eclipse <strong>官方</strong>的 Profiling 工具插件和可扩展的开发平台框架</li>
 </ul></li>
 <li>遥测种类
 
 <ul>
-<li>只提供了线程 Telemetry</li>
+<li>只提供了<strong>线程 Telemetry</strong></li>
 </ul></li>
 <li>集成性
 
 <ul>
-<li>仅支持 Eclipse</li>
+<li><strong>仅支持 Eclipse</strong></li>
 <li>通过 Eclipse update Manager 或者是安装包进行安装，安装成功后会在 eclipse 中增加相关操作按钮，并支持于 eclipse 中查询 profiling 结果</li>
 </ul></li>
 <li>CPU快照
 
 <ul>
 <li>包的组成关系，细化到包含的类及类中的方法</li>
-<li>方法的调用关系：以每个线程为根节点的方法调用信息，对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及该方法被调用的次数</li>
-<li>方法被调用情况：列出了直接调用某方法的其他方法，以及这些方法调用该方法的次数及相关运行时间</li>
-<li>热点列表：包含了 CPU 占用时间排列前十的方法、类或包</li>
+<li>方法的调用关系
+
+<ul>
+<li>以每个线程为根节点的方法调用信息，对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及该方法被调用的次数</li>
+</ul></li>
+<li>方法被调用情况
+
+<ul>
+<li>直接调用某方法的其他方法</li>
+<li>方法调用该方法的次数及相关运行时间</li>
+</ul></li>
+<li>热点列表
+
+<ul>
+<li>CPU 占用时间排列前十的方法、类或包</li>
+</ul></li>
 </ul></li>
 <li>内存快照
 
@@ -570,19 +604,27 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>源代码定位
 
 <ul>
-<li>只能定位到某个类，无法定位到方法或其中的成员变量。</li>
+<li>只能<strong>定位到某个类</strong>
+
+<ul>
+<li>无法定位到方法或其中的成员变量。</li>
+</ul></li>
 </ul></li>
 <li>快照操作
 
 <ul>
-<li>这些快照不会自动保存，因此当 eclipse 关闭后，这些快照数据将会消失，但是用户可以通过 export 的方式将需要的快照保存下来。</li>
+<li>这些快照不会自动保存，因此当 eclipse 关闭后，这些快照数据将会消失
+
+<ul>
+<li>通过 export 的方式将需要的快照保存下来</li>
+</ul></li>
 </ul></li>
 <li>性能健壮性
 
 <ul>
 <li>SAMPLING 模式相关不大</li>
-<li>BCI 当前 .6.2无提供</li>
-<li>健壮</li>
+<li><strong>BCI 当前 .6.2无提供</strong></li>
+<li><strong>健壮</strong></li>
 </ul></li>
 </ul>
 
@@ -592,7 +634,7 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>开发商
 
 <ul>
-<li>instantiations 公司推出的一款商用 eclipse 插件</li>
+<li>instantiations 公司推出的一款商用 <strong>eclipse 插件</strong></li>
 </ul></li>
 <li>遥测种类：
 
@@ -602,18 +644,24 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>集成性：
 
 <ul>
-<li>仅支持 Eclipse</li>
+<li><strong>仅支持 Eclipse</strong></li>
 <li>Eclipse update Manager 进行安装或者是将安装包直接解压缩后保存在 eclipse 的指定目录下</li>
 </ul></li>
 <li>CPU快照
 
 <ul>
 <li>包的组成关系，细化到包含的类及类中的方法</li>
-<li>方法的调用关系。以树结构表示，根据根节点表示的对象的不同，分为三种类型
+<li>方法的调用关系。以树结构表示
 
 <ul>
-<li>以每个线程为根节点的方法调用关系，以整个线程为根节点的方法调用关系，以及以每个方法为根节点的方法调用关系</li>
-<li>对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及由该方法 生成的对象个数和为这些对象分配的内存大小</li>
+<li>类型
+
+<ul>
+<li>以每个线程为根节点的方法调用关系</li>
+<li>以整个线程为根节点的方法调用关系</li>
+<li>以每个方法为根节点的方法调用关系</li>
+</ul></li>
+<li>对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及由该方法生成的对象个数和为这些对象分配的内存大小</li>
 </ul></li>
 <li>方法的被调用关系。该关系以树结构表示，其中根节点为某个指定的方法
 
@@ -645,15 +693,19 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>快照操作
 
 <ul>
-<li>快照会被自动保存在 Eclipse Workspace 之外的一个临时的空间，但会随 eclipse 关闭页消失</li>
+<li>快照会被自动保存在 Eclipse Workspace 之外的一个<strong>临时空间</strong>，但会<strong>随 eclipse 关闭页消失</strong></li>
 <li>提供同类型快照（同 BCI 模式等）比较</li>
 </ul></li>
 <li>性能健壮性
 
 <ul>
 <li>SAMPLING 模式相关不大</li>
-<li>BCI 进行 Profilling 时较慢（5万行代码需要5分钟）</li>
-<li>PROFILLING 较大型程序时，容易出现栈溢出情况
+<li>BCI 进行 Profilling 时较<strong>慢</strong>
+
+<ul>
+<li>5万行代码需要<strong>5分钟</strong></li>
+</ul></li>
+<li>PROFILLING 较大型程序时，容易出现<strong>栈溢出</strong>情况
 <br /></li>
 </ul></li>
 </ul>
@@ -664,7 +716,7 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>开发商
 
 <ul>
-<li>商用软件</li>
+<li><strong>商用</strong>软件</li>
 </ul></li>
 <li>遥测种类
 
@@ -674,7 +726,25 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>集成性：
 
 <ul>
-<li>支持的操作系统包括：Windows, Linux, FreeBSD, Mac OS X, Solaris 以及 HP-UX；支持的 IDE 包括：Eclipse, JBuilder, JDeveloper, NetBeans 以及 Intellij IDEA</li>
+<li>支持的操作系统包括
+
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>FreeBSD</li>
+<li>Mac OS X</li>
+<li>Solaris</li>
+<li>HP-UX</li>
+</ul></li>
+<li>支持的 IDE
+
+<ul>
+<li>Eclipse</li>
+<li>JBuilder</li>
+<li>JDeveloper</li>
+<li>NetBeans</li>
+<li>Intellij IDEA</li>
+</ul></li>
 <li>用户就可以从 Eclipse 中启动 Profiling，但是 profiling 的结果需要在 YourKit Java Profiler 中进行查询</li>
 </ul></li>
 <li>CPU快照：
@@ -722,8 +792,12 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 
 <ul>
 <li>SAMPLING 模式相关不大</li>
-<li>BCI 进行 Profilling 时一般（5万行代码需要1分钟）</li>
-<li>健壮</li>
+<li>BCI 进行 Profilling 时<strong>一般</strong>
+
+<ul>
+<li>5万行代码需要<strong>1分钟</strong></li>
+</ul></li>
+<li><strong>健壮</strong></li>
 </ul></li>
 </ul>
 
@@ -733,7 +807,7 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>开发商
 
 <ul>
-<li>ej-technologies 推出的一款商用软件</li>
+<li>ej-technologies 推出的一款<strong>商用</strong>软件</li>
 </ul></li>
 <li>遥测种类
 
@@ -743,7 +817,26 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li>集成性
 
 <ul>
-<li>支持的操作系统有：Windows, Linux, Mac OS X, FreeBSD, Solaris, AIX 以及 HP-UX；支持的 IDE 包括：Eclipse, NetBeans, Intellij IDEA, JBuiler 以及 JDeveloper</li>
+<li>支持的操作系统有
+
+<ul>
+<li>Windows</li>
+<li>Linux</li>
+<li>Mac OS X</li>
+<li>FreeBSD</li>
+<li>Solaris</li>
+<li>AIX</li>
+<li>HP-UX</li>
+</ul></li>
+<li>支持的 IDE
+
+<ul>
+<li>Eclipse</li>
+<li>NetBeans</li>
+<li>Intellij IDEA</li>
+<li>JBuiler</li>
+<li>JDeveloper</li>
+</ul></li>
 <li>用户就可以从 Eclipse 中启动 Profiling，但 profiling 的结果需要在 JProfiler 中进行查询</li>
 </ul></li>
 <li>CPU快照
@@ -774,7 +867,11 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 
 <ul>
 <li>SAMPLING 模式相关不大</li>
-<li>BCI 进行 Profilling 时较无影响（5万行代码需要半分钟）</li>
+<li>BCI 进行 Profilling 时<strong>较无影响</strong>
+
+<ul>
+<li>5万行代码需要<strong>半分钟</strong></li>
+</ul></li>
 <li>健壮</li>
 </ul></li>
 </ul>
@@ -791,9 +888,6 @@ Caused by: sun.jvm.hotspot.runtime.VMVersionMismatchException: Supported version
 <li><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/">JSTACK</a></li>
 <li><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/">JMAP</a></li>
 </ul></li>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
 </ul>
 
             <ul class="share-buttons">

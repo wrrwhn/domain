@@ -156,11 +156,13 @@
 - 机制
     - 生成java虚拟机当前时刻的线程快照
     - 观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况
+
         |    区域   |                     状态                     |                                            描述                                            |
         |-----------|----------------------------------------------|--------------------------------------------------------------------------------------------|
         | Entry Set | Waiting Thread<br/>Waiting for monitor entry | BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区） |
         | The Owner | Active Thread                                | RUNNABLE                                                                                   |
         | Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |
+        
     - ![thread.bmp](http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
 
 - 调用
@@ -212,48 +214,54 @@
 - java GUI监视工具，可以以图表化的形式显示各种数据,并可通过远程连接监视远程的服务器VM
 - 实时内存、线程、类和系统信息监控，并提供树型 MBean 结构进行属性、方法查询
 
-### VisualVM
-- 多线程运行情况监控，具备线程、堆内存等数据存储对比
-
 
 ## Business.*
 ### TPTP
 - 开发商
-    - eclipse 官方的 Profiling 工具插件和可扩展的开发平台框架
+    - eclipse **官方**的 Profiling 工具插件和可扩展的开发平台框架
 - 遥测种类
-    - 只提供了线程 Telemetry
+    - 只提供了**线程 Telemetry**
 - 集成性
-    - 仅支持 Eclipse
+    - **仅支持 Eclipse**
     - 通过 Eclipse update Manager 或者是安装包进行安装，安装成功后会在 eclipse 中增加相关操作按钮，并支持于 eclipse 中查询 profiling 结果
 - CPU快照
     - 包的组成关系，细化到包含的类及类中的方法
-    - 方法的调用关系：以每个线程为根节点的方法调用信息，对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及该方法被调用的次数
-    - 方法被调用情况：列出了直接调用某方法的其他方法，以及这些方法调用该方法的次数及相关运行时间
-    - 热点列表：包含了 CPU 占用时间排列前十的方法、类或包
+    - 方法的调用关系
+        - 以每个线程为根节点的方法调用信息，对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及该方法被调用的次数
+    - 方法被调用情况
+        - 直接调用某方法的其他方法
+        - 方法调用该方法的次数及相关运行时间
+    - 热点列表
+        - CPU 占用时间排列前十的方法、类或包
 - 内存快照
     - 包含了类实例的内存分配情况，包括实例化的对象个数，以及这些对象的本身占用内存的大小。
 - 源代码定位
-    - 只能定位到某个类，无法定位到方法或其中的成员变量。
+    - 只能**定位到某个类**
+        - 无法定位到方法或其中的成员变量。
 - 快照操作
-    - 这些快照不会自动保存，因此当 eclipse 关闭后，这些快照数据将会消失，但是用户可以通过 export 的方式将需要的快照保存下来。
+    - 这些快照不会自动保存，因此当 eclipse 关闭后，这些快照数据将会消失
+        - 通过 export 的方式将需要的快照保存下来
 - 性能健壮性
     - SAMPLING 模式相关不大
-    - BCI 当前 .6.2无提供
-    - 健壮
+    - **BCI 当前 .6.2无提供**
+    - **健壮**
 
 ### CodePro Profiler
 - 开发商
-    - instantiations 公司推出的一款商用 eclipse 插件
+    - instantiations 公司推出的一款商用 **eclipse 插件**
 - 遥测种类：
     - CPU, 内存, 线程, 载入的类以及垃圾收集
 - 集成性：
-    - 仅支持 Eclipse
+    - **仅支持 Eclipse**
     - Eclipse update Manager 进行安装或者是将安装包直接解压缩后保存在 eclipse 的指定目录下
 - CPU快照
     - 包的组成关系，细化到包含的类及类中的方法
-    - 方法的调用关系。以树结构表示，根据根节点表示的对象的不同，分为三种类型
-        - 以每个线程为根节点的方法调用关系，以整个线程为根节点的方法调用关系，以及以每个方法为根节点的方法调用关系
-        - 对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及由该方法 生成的对象个数和为这些对象分配的内存大小
+    - 方法的调用关系。以树结构表示
+        - 类型
+            - 以每个线程为根节点的方法调用关系
+            - 以整个线程为根节点的方法调用关系
+            - 以每个方法为根节点的方法调用关系
+        - 对于树中出现的代表方法的每个节点，列出了该方法的运行时间或运行时间百分比，以及由该方法生成的对象个数和为这些对象分配的内存大小
     - 方法的被调用关系。该关系以树结构表示，其中根节点为某个指定的方法
         - 每个节点的子节点为父节点的调用者
     - 热点列表
@@ -266,20 +274,33 @@
 - 源代码定位
     - 拥有该功能，但是只能定位到类及成员变量，无法定位到方法
 - 快照操作
-    - 快照会被自动保存在 Eclipse Workspace 之外的一个临时的空间，但会随 eclipse 关闭页消失
+    - 快照会被自动保存在 Eclipse Workspace 之外的一个**临时空间**，但会**随 eclipse 关闭页消失**
     - 提供同类型快照（同 BCI 模式等）比较
 - 性能健壮性
     - SAMPLING 模式相关不大
-    - BCI 进行 Profilling 时较慢（5万行代码需要5分钟）
-    - PROFILLING 较大型程序时，容易出现栈溢出情况
+    - BCI 进行 Profilling 时较**慢**
+        - 5万行代码需要**5分钟**
+    - PROFILLING 较大型程序时，容易出现**栈溢出**情况
             
 ### YourKit Java Profiler
 - 开发商
-    - 商用软件
+    - **商用**软件
 - 遥测种类
     - CPU, 内存, 线程以及垃圾收集
 - 集成性：
-    - 支持的操作系统包括：Windows, Linux, FreeBSD, Mac OS X, Solaris 以及 HP-UX；支持的 IDE 包括：Eclipse, JBuilder, JDeveloper, NetBeans 以及 Intellij IDEA
+    - 支持的操作系统包括
+        - Windows
+        - Linux
+        - FreeBSD
+        - Mac OS X
+        - Solaris
+        - HP-UX
+    - 支持的 IDE 
+        - Eclipse
+        - JBuilder
+        - JDeveloper
+        - NetBeans
+        - Intellij IDEA
     - 用户就可以从 Eclipse 中启动 Profiling，但是 profiling 的结果需要在 YourKit Java Profiler 中进行查询
 - CPU快照：
     - 包的组成关系
@@ -300,16 +321,30 @@
     - 针对内存快照提供了自动获取快照的功能，被自动保存到一个临时的文件夹
 - 性能健壮性
     - SAMPLING 模式相关不大
-    - BCI 进行 Profilling 时一般（5万行代码需要1分钟）
-    - 健壮
+    - BCI 进行 Profilling 时**一般**
+        - 5万行代码需要**1分钟**
+    - **健壮**
 
 ### JProfiler
 - 开发商
-    - ej-technologies 推出的一款商用软件
+    - ej-technologies 推出的一款**商用**软件
 - 遥测种类
     - CPU, 内存 , 线程 , 载入的类以及垃圾收集
 - 集成性
-    - 支持的操作系统有：Windows, Linux, Mac OS X, FreeBSD, Solaris, AIX 以及 HP-UX；支持的 IDE 包括：Eclipse, NetBeans, Intellij IDEA, JBuiler 以及 JDeveloper
+    - 支持的操作系统有
+        - Windows
+        - Linux
+        - Mac OS X
+        - FreeBSD
+        - Solaris
+        - AIX
+        - HP-UX
+    - 支持的 IDE 
+        - Eclipse
+        - NetBeans
+        - Intellij IDEA
+        - JBuiler
+        - JDeveloper
     - 用户就可以从 Eclipse 中启动 Profiling，但 profiling 的结果需要在 JProfiler 中进行查询
 - CPU快照
     - 包的组成关系，细化到包含的类及类中的方法
@@ -325,7 +360,8 @@
     - 指定一个目录来保存该 snapshot
 - 性能健壮性
     - SAMPLING 模式相关不大
-    - BCI 进行 Profilling 时较无影响（5万行代码需要半分钟）
+    - BCI 进行 Profilling 时**较无影响**
+        - 5万行代码需要**半分钟**
     - 健壮
 
 
@@ -337,6 +373,3 @@
     - [JSTAT](http://domain.yqjdcyy.com/post/java.tools.jstat/)
     - [JSTACK](http://domain.yqjdcyy.com/post/java.tools.jstack/)
     - [JMAP](http://domain.yqjdcyy.com/post/java.tools.jmap/)
-- []()
-- []()
-- []()
