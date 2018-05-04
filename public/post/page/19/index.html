@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/oracle">oracle</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>系统构造 The System Global Area (SGA)  组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一次写入 Large Pool 服务进程的大数据量I/O请求之用 Java Pool 用于Java虚拟机的特定会话的代码和数据 Streams Pool Oracle流产品专用
+The Program Global Area (PGA) 系统启动后应客户端请求建立的服务进程专用的，主要用于实现SQL和保存登陆等相关会话信息
+Oracle Background Processes 初始时创建的用于维护内存结构、进行异步数据I/O读写及日常的维护任务，从而更好地实现增加并行操作的可靠性
+  数据库管理 Control Files 物理组成元件，可复制即实现复用  Tablespaces  逻辑结构  包含一个或多个Datafiles或Tempfiles.  默认表空间  EXAMPLE：Oracle测试、示例空间 SYSAUX：SYSTEM辅助空间 SYSTEM：含数据字典等控制数据库信息的表和索引 TEMP：执行SQL用作系统的临时操作空间 UNDOTBS1：专用存储撤消操作信息 USERS：存储永久用户对象和数据  表空间类型
+ 永久：用于存储用户或程序数据 撤消：用于避免读一致和启用数据回滚，不用时会被自动删除，多个情况下同时也只- 一个会被启用 临时：用于执行SQL排序等操作时的辅助库
+Temporary Tablespace Groups Datafiles  保存数据库数据的操作系统文件，但用数据库方式写入，无法为其它程序识别。&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/redis.basic/" title="Redis.Basic">Redis.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
@@ -217,21 +244,6 @@ Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractL
  PyQt5
  PyQt5学习与交流&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/pyqt/" title=""> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/tools.profiler/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>[TOC]
-监控 目的  通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率  方式  事件方法  对于 Java，可以采用 JVMTI（JVM Tools Interface）API 来捕捉诸如方法调用、类载入、类卸载、进入/离开线程等事件，然后基于这些事件进行程序行为的分析。  统计抽样方法（sampling）  该方法每隔一段时间调用系统中断，然后收集当前的调用栈（call stack）信息，记录调用栈中出现的函数及这些函数的调用结构,基于这些信息得到函数的调用关系图及每个函数的 CPU 使用信息。 由于调用栈的信息是每隔一段时间来获取的，因此不是非常精确的，但由于该方法对目标程序的干涉比较少，目标程序的运行速度几乎不受影响。  植入附加指令方法（BCI）  该方法在目标程序中插入指令代码，这些指令代码将记录 profiling 所需的信息，包括运行时间、计数器的值等，从而给出一个较为精确的内存使用情况、函数调用关系及函数的 CPU 使用信息。 该方法对程序执行速度会有一定的影响，因此给出的程序执行时间有可能不准确。但是该方法在统计程序的运行轨迹方面有一定的优势。   常用功能  遥测（Telemetry）  遥测是一种用来查看应用程序运行行为的最简单的方法。 通常会有多个视图（View）分别实时地显示 CPU 使用情况、内存使用情况、线程状态以及其他一些有用的信息，以便用户能很快地发现问题的关键所在 CPU Telemetry 视图一般用于显示整个应用程序的 CPU 使用情况，有些工具还能显示应用程序中每个线程的 CPU 使用情况 Memory Telemetry 视图一般用于显示堆内存和非堆内存的分配和使用情况 Garbage Collection Telemetry 视图显示了 JVM 中垃圾收集器的详细信息 Threads Telemetry 视图一般用于显示当前运行线程的个数、守护进程的个数等信息 Classes Telemetry 视图一般用于显示已经载入和还没有载入的类的数量  快照（snapshot）  应用程序启动后，profiler 工具开始收集各种执行数据，其中一些数据直接显示在遥测视图中，而另外大部分数据被保存在内部，直到用户要求获取快照，基于这些保存的数据的统计信息才被 显示出来。 快照包含了应用程序在一段时间内的执行信息  CPU 快照  主要包含了应用程序中函数的调用关系及运行时间。  内存快照  主要包含了内存的分配和使用情况、载入的所有类、存在的对象信息及对象间的引用关系。    CPU Profiling  CPU Profiling 的主要目的是统计函数的调用情况及执行时间，或者更简单的情况就是统计应用程序的 CPU 使用情况。 方式  CPU 遥测 CPU 快照   内存 Profiling  主要通过统计内存使用情况检测可能存在的内存泄露问题及确定优化内存使用的方向。 方式  内存遥测 内存快照   线程 Profiling  线程 Profiling 主要用于在多线程应用程序中确定内存的问题所在  某个线程的状态变化情况 死锁情况 某个线程在线程生命期内状态的分布情况    工具 Java.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/tools.profiler/" title=""> &raquo;</a>
 </article>
 
         

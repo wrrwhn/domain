@@ -1,3 +1,12 @@
++++
+date = "2018-05-04T10:30:00+08:00"
+title = "Tools.Profiler"
+draft = false
+tags = ["整理","Java","Profiler"]
+share = true
++++
+
+
 [TOC]
 
 # 监控
@@ -162,7 +171,7 @@
         | Entry Set | Waiting Thread<br/>Waiting for monitor entry | BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区） |
         | The Owner | Active Thread                                | RUNNABLE                                                                                   |
         | Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |
-        
+
     - ![thread.bmp](http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
 
 - 调用
