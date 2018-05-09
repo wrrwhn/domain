@@ -56,8 +56,76 @@
 
 # Tidy
 
+## Iterable
+- methods
+    - iterator()
+    - forEach(Consumer<? super T> action)
+
+## Collection
+- methods
+	- check
+	    - contains(Object o)
+	    - retainAll(Collection<?> c)
+    - stream
+	    - **iterator()**
+	    - **Object[] toArray()**
+    - operate
+	    - add(E e)
+	    - remove(Object o)
+	    - addAll(Collection<? extends E> c)
+	    - removeAll(Collection<?> c)
+	    - clear()
 
 
+## List
+- description
+	- extends Collection
+	- **排序**数据，允许**重复**或**空**
+- methods
+	- operate
+	    - get(int index)
+	    - set(int index, E element)
+	    - add(int index, E element)
+	    - remove(int index)
+	    - **indexOf(Object o)**
+	    - lastIndexOf(Object o)
+	    - containsAll(Collection<?> c)
+	    - addAll(int index, Collection<? extends E> c)
+	    - **default void replaceAll(UnaryOperator<E> operator)**
+	    - **sort(Comparator<? super E> c)**
+	- stream
+	    - **subList(int fromIndex, int toIndex)**
+
+
+## AbstractCollection
+- description
+    - 最小接口框架
+- methods
+    - abstract Iterator<E> iterator()
+    - abstract int size()
+    - add(E e) {throw new UnsupportedOperationException();}
+
+## AbstractList
+- description
+    - 随机存取的最小框架
+    - 不强制要求提供 `iterator` 实现
+- methods
+    - subList(int fromIndex, int toIndex)
+    - removeRange(int fromIndex, int toIndex)
+
+
+## Vector
+- description
+    - 
+- params
+    - 
+- methods
+    - 
+    - 
+    - 
+
+
+    
 # Reference
 - []()
 - []()

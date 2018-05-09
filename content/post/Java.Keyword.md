@@ -51,6 +51,10 @@ share = true
 - case
 - continue
 - default
+	- switch 的默认处理环节
+	- 默认方法，用于添加新的功能至现有库的接口中，以兼容历史版本
+		- **java 1.8 新增**
+		- 如 `list.forEach`
 - do
 - else
 - for
@@ -108,3 +112,4 @@ share = true
 	- [ava中的strictfp关键字](http://neil-yang.iteye.com/blog/341476)
 	- [Java transient关键字使用小记](http://www.cnblogs.com/lanxuezaipiao/p/3369962.html)
 	- [**Java并发编程：volatile关键字解析**](https://www.cnblogs.com/dolphin0520/p/3920373.html)
+	- [Java 8 默认方法（Default Methods）](http://ebnbin.com/2015/12/20/java-8-default-methods/)

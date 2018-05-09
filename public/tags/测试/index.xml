@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>测试 on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/%E6%B5%8B%E8%AF%95/</link>
+    <description>Recent content in 测试 on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0800</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%B5%8B%E8%AF%95/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hello.性能测试</title>
+      <link>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
+      <description>[TOC]
+Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩  调整 Averages not work 噪点影响平均值  统计数据  [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s]  平均值  100ms  实际作法  去除噪点后计算平均值 或将数据排序后，取中间数据的平均值   百分比分页  统计数据  [10ms, 1s, 200ms, 100ms]  报告
+ TP= Top Percentile = 当前数值的最高可能性 TP50&amp;lt;= 100ms TP90&amp;lt;= 1s
+推荐格式  99.9%的请求必须小于 1ms，所有的平均时间必须小于1ms
+  Latency &amp;amp; Thoughput 关联  随着并发量（吞吐量）的上升，系统愈发不稳定，响应时间延长   推荐格式  TP99小于100ms的时候，系统可以承载的最大并发数是1000qps  #Thoughput &amp;amp; Success.</description>
+    </item>
+    
+  </channel>
+</rss>

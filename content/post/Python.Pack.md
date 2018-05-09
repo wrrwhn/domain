@@ -1,5 +1,5 @@
 +++
-date = "2018-04-09T19:00:00+08:00"
+date = "2018-05-04T12:00:00+08:00"
 title = "Python.Pack"
 draft = false
 tags = ["整理","Python"]
@@ -32,6 +32,13 @@ share = true
 
 # 详解
 ## pyInstaller
+
+### 注意事项
+- **依赖于打包环境**，无法于 x64 环境打 x86 的包
+>
+Pyinstaller produces a binary depending from the python you used to build it. 
+So if you use python 2.7 64 bit it is not possible, as far as I know, to produce a 32 bit executable.
+
 ### 指令
 - 安装
 	- `pip[3] install pyinstaller`
@@ -105,3 +112,11 @@ share = true
 ## 交叉编译
 - [http://www.alivepea.me/prog/pyinstaller/](http://www.alivepea.me/prog/pyinstaller/)
 - [基于wine的linux交叉编译python程序](http://haishenming.xyz/%E4%BB%A3%E7%A0%81%E7%9B%B8%E5%85%B3/2018/01/26/wine-python-to-exe/)
+
+## 补充
+- [Can I control the architecture (32bit vs 64bit) when building a pyinstaller executable?](https://stackoverflow.com/questions/7155866/can-i-control-the-architecture-32bit-vs-64bit-when-building-a-pyinstaller-exec)
+- [使用PyInstaller打包Python程序](http://ju.outofmemory.cn/entry/137370)
+- []()
+- []()
+- []()
+- []()

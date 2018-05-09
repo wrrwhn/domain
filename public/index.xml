@@ -7,10 +7,33 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Fri, 04 May 2018 10:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.性能测试</title>
+      <link>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
+      <description>[TOC]
+Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩  调整 Averages not work 噪点影响平均值  统计数据  [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s]  平均值  100ms  实际作法  去除噪点后计算平均值 或将数据排序后，取中间数据的平均值   百分比分页  统计数据  [10ms, 1s, 200ms, 100ms]  报告
+ TP= Top Percentile = 当前数值的最高可能性 TP50&amp;lt;= 100ms TP90&amp;lt;= 1s
+推荐格式  99.9%的请求必须小于 1ms，所有的平均时间必须小于1ms
+  Latency &amp;amp; Thoughput 关联  随着并发量（吞吐量）的上升，系统愈发不稳定，响应时间延长   推荐格式  TP99小于100ms的时候，系统可以承载的最大并发数是1000qps  #Thoughput &amp;amp; Success.</description>
+    </item>
+    
+    <item>
+      <title>Python.Pack</title>
+      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
+      <pubDate>Fri, 04 May 2018 12:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
+      <description>[TOC]
+类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 注意事项  依赖于打包环境，无法于 x64 环境打 x86 的包 &amp;gt; Pyinstaller produces a binary depending from the python you used to build it.</description>
+    </item>
     
     <item>
       <title>Tools.Profiler</title>
@@ -269,16 +292,6 @@ Filter  作用
 Formater  作用
  控制日志输出格式  LogRecord.对象
  name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.</description>
-    </item>
-    
-    <item>
-      <title>Python.Pack</title>
-      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
-      <pubDate>Mon, 09 Apr 2018 19:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
-      <description>[TOC]
-类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 指令  安装  pip[3] install pyinstaller  版本  pyinstaller --version  执行  pyinstaller [option] *.</description>
     </item>
     
     <item>
@@ -2092,12 +2105,26 @@ Default Lifecycle validate validate the project is correct and all necessary inf
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
+      <description>概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
+ 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
+ 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
+ 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
+ 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
+ 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/java.container/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.container/</guid>
-      <description> [TOC]
-Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Reference  []() []() []() []() []() []()  </description>
+      <description>[TOC]
+Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;?</description>
     </item>
     
     <item>

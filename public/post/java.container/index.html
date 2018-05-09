@@ -172,6 +172,140 @@
 
 <h1 id="tidy">Tidy</h1>
 
+<h2 id="iterable-1">Iterable</h2>
+
+<ul>
+<li>methods
+
+<ul>
+<li>iterator()</li>
+<li>forEach(Consumer&lt;? super T&gt; action)</li>
+</ul></li>
+</ul>
+
+<h2 id="collection">Collection</h2>
+
+<ul>
+<li>methods
+
+<ul>
+<li>check
+
+<ul>
+<li>contains(Object o)</li>
+<li>retainAll(Collection&lt;?&gt; c)</li>
+</ul></li>
+<li>stream
+
+<ul>
+<li><strong>iterator()</strong></li>
+<li><strong>Object[] toArray()</strong></li>
+</ul></li>
+<li>operate
+
+<ul>
+<li>add(E e)</li>
+<li>remove(Object o)</li>
+<li>addAll(Collection&lt;? extends E&gt; c)</li>
+<li>removeAll(Collection&lt;?&gt; c)</li>
+<li>clear()</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="list">List</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li>extends Collection</li>
+<li><strong>排序</strong>数据，允许<strong>重复</strong>或<strong>空</strong></li>
+</ul></li>
+<li>methods
+
+<ul>
+<li>operate
+
+<ul>
+<li>get(int index)</li>
+<li>set(int index, E element)</li>
+<li>add(int index, E element)</li>
+<li>remove(int index)</li>
+<li><strong>indexOf(Object o)</strong></li>
+<li>lastIndexOf(Object o)</li>
+<li>containsAll(Collection&lt;?&gt; c)</li>
+<li>addAll(int index, Collection&lt;? extends E&gt; c)</li>
+<li><strong>default void replaceAll(UnaryOperator<E> operator)</strong></li>
+<li><strong>sort(Comparator&lt;? super E&gt; c)</strong></li>
+</ul></li>
+<li>stream
+
+<ul>
+<li><strong>subList(int fromIndex, int toIndex)</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="abstractcollection">AbstractCollection</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li>最小接口框架</li>
+</ul></li>
+<li>methods
+
+<ul>
+<li>abstract Iterator<E> iterator()</li>
+<li>abstract int size()</li>
+<li>add(E e) {throw new UnsupportedOperationException();}</li>
+</ul></li>
+</ul>
+
+<h2 id="abstractlist">AbstractList</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li>随机存取的最小框架</li>
+<li>不强制要求提供 <code>iterator</code> 实现</li>
+</ul></li>
+<li>methods
+
+<ul>
+<li>subList(int fromIndex, int toIndex)</li>
+<li>removeRange(int fromIndex, int toIndex)</li>
+</ul></li>
+</ul>
+
+<h2 id="vector">Vector</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li></li>
+</ul></li>
+<li>params
+
+<ul>
+<li></li>
+</ul></li>
+<li>methods
+
+<ul>
+<li></li>
+<li></li>
+<li>
+
+
+<br /></li>
+</ul></li>
+</ul>
+
 <h1 id="reference">Reference</h1>
 
 <ul>

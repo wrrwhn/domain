@@ -1,0 +1,593 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>好久不见</title>
+        <meta name="author">
+        <meta name="description" content="好久不见">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title=""></a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+            
+
+<h1 id="概念">概念</h1>
+
+<h2 id="rpc">RPC</h2>
+
+<h3 id="定义">定义</h3>
+
+<ul>
+<li><strong>远程过程调用</strong>
+
+<ul>
+<li>「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法</li>
+<li>由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据</li>
+</ul></li>
+</ul>
+
+<h3 id="框架前缀">框架前缀</h3>
+
+<h4 id="要点">要点</h4>
+
+<ul>
+<li><p>通讯</p>
+
+<ul>
+<li>主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据
+
+<ul>
+<li><strong>按需连接</strong>，调用结束后就断掉</li>
+<li><strong>长连接</strong>，多个远程过程调用共享同一个连接</li>
+</ul></li>
+</ul></li>
+
+<li><p>寻址</p>
+
+<ul>
+<li>「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法
+
+<ul>
+<li>基于<code>Web</code>服务协议栈的<code>RPC</code>，就要提供一个<code>endpoint URI</code>，或者是从<code>UDDI</code>服务上查找</li>
+<li><code>RMI</code>调用的话，还需要一个<code>RMI Registry</code>来注册服务的地址</li>
+</ul></li>
+</ul></li>
+
+<li><p>序列化</p>
+
+<ul>
+<li>网络协议是<strong>基于二进制</strong>，内存中的参数的值要序列化成二进制的形式</li>
+</ul></li>
+
+<li><p>反序列化</p>
+
+<ul>
+<li>对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。</li>
+</ul></li>
+
+<li><p>处理</p>
+
+<ul>
+<li>将反馈数据根据业务进行处理</li>
+</ul></li>
+</ul>
+
+<h4 id="图解">图解</h4>
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/62787ef2-3fd7-47ea-a09b-7c874ed6a9bd.jpg" alt="RPC流程.jpg" /></li>
+</ul>
+
+<h3 id="协议">协议</h3>
+
+<ul>
+<li>CORBA
+
+<ul>
+<li>Common Object Request Broker Architecture</li>
+<li>通用对象请求代理架构标准</li>
+</ul></li>
+<li>Java RMI
+
+<ul>
+<li>Remote Method Invocation</li>
+<li>远程方法调用</li>
+</ul></li>
+<li>Web Service
+
+<ul>
+<li><strong>服务导向</strong>架构</li>
+</ul></li>
+<li>Thrift
+
+<ul>
+<li>接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务</li>
+<li>远程过程调用框架</li>
+</ul></li>
+<li>Rest API
+
+<ul>
+<li>Representational State Transfer</li>
+<li>表现层状态转化
+
+<ul>
+<li>Representational
+
+<ul>
+<li>表现层即资源</li>
+</ul></li>
+<li>State Transfer
+
+<ul>
+<li>GET| POST| PUT| DELETE</li>
+</ul></li>
+</ul></li>
+<li><strong>网站即软件</strong></li>
+</ul></li>
+</ul>
+
+<h2 id="netty">Netty</h2>
+
+<h3 id="定义-1">定义</h3>
+
+<ul>
+<li><code>Netty</code> 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式</li>
+</ul>
+
+<h3 id="组成">组成</h3>
+
+<ul>
+<li>网络协议
+
+<ul>
+<li>传输层协议</li>
+<li>编码解码</li>
+<li>压缩解压</li>
+<li>身份认证</li>
+<li>加密解密</li>
+<li>请求的处理逻辑</li>
+</ul></li>
+
+<li><p>责任链</p>
+
+<ul>
+<li>Upstream
+
+<ul>
+<li>从传输层，经过一系列步骤，如身份认证，解密，日志，流控，最后到达业务层</li>
+</ul></li>
+
+<li><p>DownStream</p>
+
+<ul>
+<li><p>业务层返回后，又经过一系列步骤，如加密等，又回到传输层</p>
+
+<h3 id="图解-1">图解</h3></li>
+</ul></li>
+</ul></li>
+
+<li><p><img src="http://otzm88f21.bkt.clouddn.com/790d3b4a-9024-4bb6-a675-ef6eb8b24130.jpg" alt="Netty.Stream.jpg" /></p></li>
+</ul>
+
+<h1 id="构架">构架</h1>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">Dubbo</th>
+<th align="left">Montan</th>
+<th align="left">rpcx</th>
+<th align="left">gRPC</th>
+<th align="left">Thrift</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">开发语言</td>
+<td align="left">Java</td>
+<td align="left">Java</td>
+<td align="left">Go</td>
+<td align="left">跨语言</td>
+<td align="left">跨语言</td>
+</tr>
+
+<tr>
+<td align="left">分布式(服务治理)</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">×</td>
+<td align="left">×</td>
+</tr>
+
+<tr>
+<td align="left">多序列化框架支持</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">×</td>
+<td align="left">×</td>
+</tr>
+
+<tr>
+<td align="left">多种注册中心</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">×</td>
+<td align="left">×</td>
+</tr>
+
+<tr>
+<td align="left">管理中心</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">√</td>
+<td align="left">×</td>
+<td align="left">×</td>
+</tr>
+
+<tr>
+<td align="left">跨编程语言</td>
+<td align="left">×</td>
+<td align="left">×</td>
+<td align="left">×</td>
+<td align="left">√</td>
+<td align="left">√</td>
+</tr>
+</tbody>
+</table>
+
+<blockquote>
+<p>为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
+基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。
+GRPC
+支持服务治理，主要的精力放在服务发现、路由、容错处理等方面，主要围绕一个语言开发
+DUBBO
+框架特性、性能、成熟度、技术支持、社区活跃度</p>
+</blockquote>
+
+<h2 id="grpc">GRPC</h2>
+
+<h3 id="特点">特点</h3>
+
+<ul>
+<li>主要面向移动应用开发并基于HTTP/2协议标准而设计，基于ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言</li>
+</ul>
+
+<h3 id="性能">性能</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="thirft">thirft</h2>
+
+<h3 id="特点-1">特点</h3>
+
+<ul>
+<li>跨语言的高性能的服务框架
+广泛的应用</li>
+</ul>
+
+<h3 id="性能-1">性能</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="dubbo">dubbo</h2>
+
+<h3 id="特点-2">特点</h3>
+
+<ul>
+<li>Java高性能优秀的服务框架
+可以和 Spring框架无缝集成</li>
+</ul>
+
+<h3 id="性能-2">性能</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<h2 id="motan">Motan</h2>
+
+<h3 id="特点-3">特点</h3>
+
+<ul>
+<li>新浪微博开源的一个Java 框架
+起于2013年，2016年5月开源</li>
+</ul>
+
+<h3 id="性能-3">性能</h3>
+
+<ul>
+<li>100,000,000,000+ 次/ 100+服务/ 天</li>
+</ul>
+
+<h2 id="rpcx">RPCX</h2>
+
+<h3 id="特点-4">特点</h3>
+
+<ul>
+<li>Go语言生态圈的Dubbo
+比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法</li>
+</ul>
+
+<h3 id="性能-4">性能</h3>
+
+<ul>
+<li></li>
+</ul>
+
+<pre><code>protobuf
+</code></pre>
+
+<h2 id="场景">场景</h2>
+
+<ul>
+<li>0ms
+
+<ul>
+<li>简单业务，将请求值修改后返回</li>
+<li>测试框架流转中的数据传输、序列化和调度</li>
+</ul></li>
+<li>10ms
+
+<ul>
+<li>普通业务请求，如请求数据库等</li>
+<li>测试并发时框架的调度、处理能力</li>
+</ul></li>
+<li>30ms
+
+<ul>
+<li>复杂业务，如请求第三方服务</li>
+<li>测试并发时框架的调度、处理能力</li>
+</ul></li>
+</ul>
+
+<h2 id="工具">工具</h2>
+
+<ul>
+<li>Apache bench|</li>
+</ul>
+
+<h2 id="指标">指标</h2>
+
+<ul>
+<li>吞吐率</li>
+<li>并发连接数</li>
+<li>延迟</li>
+<li>延迟-P99</li>
+</ul>
+
+<p>99.9%的请求必须小于1ms，所有的平均时间必须小于1ms。两个条件的限制。</p>
+
+<p>吞吐量的值必需有响应时间来卡
+TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。</p>
+
+<h1 id="reference">Reference</h1>
+
+<ul>
+<li><p>RPC</p>
+
+<ul>
+<li><a href="https://www.zhihu.com/question/25536695">谁能用通俗的语言解释一下什么是 RPC 框架？</a></li>
+<li><a href="https://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E5%8D%8F%E8%AE%AE/6893245?fromtitle=RPC&amp;fromid=609861">远程过程调用协议</a></li>
+<li><a href="https://www.cnblogs.com/LBSer/p/4853234.html">你应该知道的RPC原理</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+
+<li><p>GRPC</p>
+
+<ul>
+<li><a href="https://grpc.io/">官网</a></li>
+<li><a href="https://yami.io/grpc/">API 文件就是你的伺服器，REST 的另一個選擇：gRPC</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+
+<li><p>Netty</p>
+
+<ul>
+<li><a href="https://docs.jboss.org/netty/3.2/api/">The Netty Project API Reference (3.2.6.Final)</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+
+<li><p>Apache.AB</p>
+
+<ul>
+<li>官方
+
+<ul>
+<li><a href="http://httpd.apache.org/">Apache AB</a></li>
+<li><a href="http://httpd.apache.org/docs/2.4/">Apache HTTP 服务器 2.4 文档</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+<li>其它
+
+<ul>
+<li><a href="https://www.jianshu.com/p/43d04d8baaf7">超实用压力测试工具－ab工具</a></li>
+<li><a href="http://www.cnblogs.com/jackei/archive/2006/07/18/454144.html">开源性能测试工具 - Apache ab 介绍</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+</ul></li>
+
+<li><p>Other</p>
+
+<ul>
+<li>RPC 框架
+
+<ul>
+<li><a href="http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/">流行的rpc框架benchmark</a></li>
+<li><a href="http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/">分布式RPC框架性能大比拼</a></li>
+<li><a href="https://blog.csdn.net/zhaowen25/article/details/45443951">JAVA中几种常用的RPC框架介绍</a></li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+<li>补充
+
+<ul>
+<li><a href="https://coolshell.cn/articles/17381.html">性能测试应该怎么做？</a></li>
+<li><a href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/">Why Averages Suck and Percentiles are Great</a></li>
+<li><a href="http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A">Dubbo-性能测试报告 - 404</a></li>
+<li><a href="http://baozi.leanote.com/post/dubbo-api%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A">dubbo-api性能测试报告</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
+</ul></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.rpc%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.rpc%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.rpc%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.rpc%2f&title=" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+

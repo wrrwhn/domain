@@ -45,6 +45,28 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" title="Oracle - 基础">Oracle - 基础</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
@@ -215,6 +237,25 @@ Default Lifecycle validate validate the project is correct and all necessary inf
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title=""></a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+
+</span>
+</footer>
+
+    <p>概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
+ 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
+ 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
+ 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
+ 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
+ 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hello.rpc/" title=""> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.container/" title=""></a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
@@ -223,41 +264,8 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 </footer>
 
     <p>[TOC]
-Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Reference  []() []() []() []() []() []()&hellip;</p>
+Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&lt;?&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.container/" title=""> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/pyqt/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考 安装  PyQt PyQt4 Download How to install PyQt4 on Windows using pip? Python3 PyQt5 pycharm 环境搭建
-文档 PyQt4
- PyQt5
- PyQt5学习与交流&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/pyqt/" title=""> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>+++ date = &quot;2018-03-23T17:00:00+08:00&quot; title = &quot;庄家杜均&quot; draft = false tags = [&quot;阅读&quot;,&quot;虚拟币&quot;] share = true +++  [TOC]
-【深度调查】 庄家杜均 时间点 2013.7  杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。  2013.11  火币网上线，打出了“免交易手续费”的旗号  发展壮大后，连同国内几大交易所重新开始收取手续费，甚至开始向项目收取巨额的ICO“上币费”   2014  杜均创办了区块链代币媒体“金色财经” 杜均募集了自己的基金”节点资本”  2017.9  中国的监管机构下令禁止境内的ICO（首次代币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进融资的方式）交易，并陆续屏蔽境外ICO交易平台的域名。  2017.12  代币“WAX”登录“火币Pro”交易所后，狂跌99%的惨烈景象 IOST（Internet of Service Token）的区块链项目正在筹划ICO，募资数额巨大 每个币种登录火币Pro开始交易后，开放充值和提现的间隔时间越来越长  2018.1  包括杜均在内，币圈主要人物已经被限制出境  2018.2.15  名为“三点钟无眠区块链”的微信群横空出世，在各种区块链微信群里呼风唤雨的，是薛蛮子、徐小平、蔡文胜和王峰这样的传统天使风险投资人。  2018.3.3  全国政协十三届一次会议开幕，中国进入“两会时期”。  火币网公众号更名为 “huobicom” OKEx公众号被封号   关键点 杜均  重庆开县人，1986年出生 初中期间，杜均曾靠打游戏卖装备、建站赚广告费谋生，是早年间国内互联网野蛮生长时代孕育的无数- 个人站长之一。 凭借常年混迹互联网圈积累的经验和圈子，杜均成功进入知名企业家和天使投资人戴志康创立的康盛创想，在旗下Discuz!&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/" title=""> &raquo;</a>
 </article>
 
         
