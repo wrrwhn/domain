@@ -214,6 +214,31 @@
 
 <h1 id="构架">构架</h1>
 
+<h2 id="选型">选型</h2>
+
+<h3 id="考量">考量</h3>
+
+<ul>
+<li>GRPC
+
+<ul>
+<li>支持服务治理</li>
+<li>主要的精力放在服务发现、路由、容错处理等方面</li>
+<li>主要围绕一个语言开发</li>
+</ul></li>
+<li>DUBBO
+
+<ul>
+<li>框架特性</li>
+<li>性能</li>
+<li>成熟度</li>
+<li>技术支持</li>
+<li>社区活跃度</li>
+</ul></li>
+</ul>
+
+<h3 id="整体对比">整体对比</h3>
+
 <table>
 <thead>
 <tr>
@@ -283,14 +308,75 @@
 </tbody>
 </table>
 
-<blockquote>
-<p>为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
-基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。
-GRPC
-支持服务治理，主要的精力放在服务发现、路由、容错处理等方面，主要围绕一个语言开发
-DUBBO
-框架特性、性能、成熟度、技术支持、社区活跃度</p>
-</blockquote>
+<h3 id="压测">压测</h3>
+
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="left">gRPC</th>
+<th align="left">Dubbo</th>
+<th align="left">rpcx</th>
+<th align="left">thrift</th>
+<th align="left">go stdrpc</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="left">0ms</td>
+<td align="left">3rd<br/>140,000</td>
+<td align="left">last-3st<br/>65,00</td>
+<td align="left">1st<br/>200,000</td>
+<td align="left">70,000</td>
+<td align="left">1st<br/>295,000</td>
+</tr>
+
+<tr>
+<td align="left">10ms</td>
+<td align="left">4th<br/>140,000</td>
+<td align="left">last-3st<br/>65,00</td>
+<td align="left">2nd<br/>200,000<br/>download</td>
+<td align="left">70,000</td>
+<td align="left">1st<br/>295,000</td>
+</tr>
+
+<tr>
+<td align="left">30ms</td>
+<td align="left">4th<br/>140,000</td>
+<td align="left">last-3st<br/>65,00<br/>download</td>
+<td align="left">2nd <br/>200,000<br/>download</td>
+<td align="left">70,000</td>
+<td align="left">1st<br/>295,000</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="补充">补充</h3>
+
+<ul>
+<li>0ms
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/a8c6767b-9645-470e-8877-0168ebe7e203.png" alt="0-p0-throughput.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/24315836-b4cf-4f8e-8339-fc07445d60e2.png" alt="0-p0-latency.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/baa5f5e9-efe8-4c7a-8d43-12f7c083648a.png" alt="0-p0-p99.png" /></li>
+</ul></li>
+<li>10ms
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/c9f77e2c-7598-4ce2-911b-f7237f5cc9ae.png" alt="10-p0-throughput.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/62aa6f0c-b6c4-4c76-a17a-392414d83f18.png" alt="10-p0-latency.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/14a74e3f-40fc-4030-b291-dc4d468da57a.png" alt="10-p0-p99.png" /></li>
+</ul></li>
+<li>30ms
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/9eb99138-b063-4d6e-8d7e-29077be18575.png" alt="30-p0-throughput.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/36160e2d-c524-4517-945a-0e14a4969860.png" alt="30-p0-p99.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/597a2850-b813-4e94-8e37-80d03b14bfd4.png" alt="30-p0-latency.png" /></li>
+</ul></li>
+</ul>
 
 <h2 id="grpc">GRPC</h2>
 
@@ -298,6 +384,8 @@ DUBBO
 
 <ul>
 <li>主要面向移动应用开发并基于HTTP/2协议标准而设计，基于ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言</li>
+<li>为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。</li>
+<li>基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。</li>
 </ul>
 
 <h3 id="性能">性能</h3>
@@ -311,8 +399,8 @@ DUBBO
 <h3 id="特点-1">特点</h3>
 
 <ul>
-<li>跨语言的高性能的服务框架
-广泛的应用</li>
+<li>跨语言的高性能的服务框架</li>
+<li>广泛的应用</li>
 </ul>
 
 <h3 id="性能-1">性能</h3>
@@ -326,8 +414,8 @@ DUBBO
 <h3 id="特点-2">特点</h3>
 
 <ul>
-<li>Java高性能优秀的服务框架
-可以和 Spring框架无缝集成</li>
+<li>Java高性能优秀的服务框架</li>
+<li>可以和 Spring框架无缝集成</li>
 </ul>
 
 <h3 id="性能-2">性能</h3>
@@ -341,14 +429,14 @@ DUBBO
 <h3 id="特点-3">特点</h3>
 
 <ul>
-<li>新浪微博开源的一个Java 框架
-起于2013年，2016年5月开源</li>
+<li>新浪微博开源的一个Java 框架</li>
+<li>起于2013年，2016年5月开源</li>
 </ul>
 
 <h3 id="性能-3">性能</h3>
 
 <ul>
-<li>100,000,000,000+ 次/ 100+服务/ 天</li>
+<li><code>100,000,000,000+ 次/ 100+服务/ 天</code></li>
 </ul>
 
 <h2 id="rpcx">RPCX</h2>
@@ -356,8 +444,8 @@ DUBBO
 <h3 id="特点-4">特点</h3>
 
 <ul>
-<li>Go语言生态圈的Dubbo
-比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法</li>
+<li>Go语言生态圈的 <code>Dubbo</code></li>
+<li>比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法</li>
 </ul>
 
 <h3 id="性能-4">性能</h3>
@@ -366,51 +454,7 @@ DUBBO
 <li></li>
 </ul>
 
-<pre><code>protobuf
-</code></pre>
-
-<h2 id="场景">场景</h2>
-
-<ul>
-<li>0ms
-
-<ul>
-<li>简单业务，将请求值修改后返回</li>
-<li>测试框架流转中的数据传输、序列化和调度</li>
-</ul></li>
-<li>10ms
-
-<ul>
-<li>普通业务请求，如请求数据库等</li>
-<li>测试并发时框架的调度、处理能力</li>
-</ul></li>
-<li>30ms
-
-<ul>
-<li>复杂业务，如请求第三方服务</li>
-<li>测试并发时框架的调度、处理能力</li>
-</ul></li>
-</ul>
-
-<h2 id="工具">工具</h2>
-
-<ul>
-<li>Apache bench|</li>
-</ul>
-
-<h2 id="指标">指标</h2>
-
-<ul>
-<li>吞吐率</li>
-<li>并发连接数</li>
-<li>延迟</li>
-<li>延迟-P99</li>
-</ul>
-
-<p>99.9%的请求必须小于1ms，所有的平均时间必须小于1ms。两个条件的限制。</p>
-
-<p>吞吐量的值必需有响应时间来卡
-TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。</p>
+<h2 id="protobuf">protobuf</h2>
 
 <h1 id="reference">Reference</h1>
 
@@ -432,7 +476,7 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。</p>
 <ul>
 <li><a href="https://grpc.io/">官网</a></li>
 <li><a href="https://yami.io/grpc/">API 文件就是你的伺服器，REST 的另一個選擇：gRPC</a></li>
-<li>[]()</li>
+<li><a href="https://grpc.io/docs/quickstart/go.html">Go Quick Start</a></li>
 <li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
@@ -476,8 +520,8 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。</p>
 <li>RPC 框架
 
 <ul>
-<li><a href="http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/">流行的rpc框架benchmark</a></li>
-<li><a href="http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/">分布式RPC框架性能大比拼</a></li>
+<li><a href="http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/">流行的rpc框架benchmark-2018.1</a></li>
+<li><a href="http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/">分布式RPC框架性能大比拼-2016.9</a></li>
 <li><a href="https://blog.csdn.net/zhaowen25/article/details/45443951">JAVA中几种常用的RPC框架介绍</a></li>
 <li>[]()</li>
 <li>[]()</li>
@@ -489,7 +533,7 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。</p>
 <li><a href="https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/">Why Averages Suck and Percentiles are Great</a></li>
 <li><a href="http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A">Dubbo-性能测试报告 - 404</a></li>
 <li><a href="http://baozi.leanote.com/post/dubbo-api%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A">dubbo-api性能测试报告</a></li>
-<li>[]()</li>
+<li><a href="https://dubbo.incubator.apache.org/books/dubbo-user-book/perf-test.html">性能测试报告</a></li>
 <li>[]()</li>
 <li>[]()</li>
 </ul></li>

@@ -77,8 +77,20 @@
 
 
 # 构架
+## 选型
+### 考量
+- GRPC
+	- 支持服务治理
+	- 主要的精力放在服务发现、路由、容错处理等方面
+	- 主要围绕一个语言开发
+- DUBBO
+	- 框架特性
+	- 性能
+	- 成熟度
+	- 技术支持
+	- 社区活跃度
 
-
+### 整体对比
 |                  | Dubbo | Montan | rpcx | gRPC   | Thrift |
 |:-----------------|:------|:-------|:-----|:-------|:-------|
 | 开发语言         | Java  | Java   | Go   | 跨语言 | 跨语言 |
@@ -88,31 +100,41 @@
 | 管理中心         | √     | √      | √    | ×      | ×      |
 | 跨编程语言       | ×     | ×      | ×    | √      | √      |
 
->
-为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
-基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。
-GRPC
-支持服务治理，主要的精力放在服务发现、路由、容错处理等方面，主要围绕一个语言开发
-DUBBO
-框架特性、性能、成熟度、技术支持、社区活跃度
+### 压测
+|      | gRPC            | Dubbo                           | rpcx                          | thrift | go stdrpc       |
+|:-----|:----------------|:--------------------------------|:------------------------------|:-------|:----------------|
+| 0ms  | 3rd<br/>140,000 | last-3st<br/>65,00              | 1st<br/>200,000               | 70,000 | 1st<br/>295,000 |
+| 10ms | 4th<br/>140,000 | last-3st<br/>65,00              | 2nd<br/>200,000<br/>download  | 70,000 | 1st<br/>295,000 |
+| 30ms | 4th<br/>140,000 | last-3st<br/>65,00<br/>download | 2nd <br/>200,000<br/>download | 70,000 | 1st<br/>295,000 |
 
-
-
+### 补充
+- 0ms
+	- ![0-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/a8c6767b-9645-470e-8877-0168ebe7e203.png)
+	- ![0-p0-latency.png](http://otzm88f21.bkt.clouddn.com/24315836-b4cf-4f8e-8339-fc07445d60e2.png)
+	- ![0-p0-p99.png](http://otzm88f21.bkt.clouddn.com/baa5f5e9-efe8-4c7a-8d43-12f7c083648a.png)
+- 10ms
+	- ![10-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/c9f77e2c-7598-4ce2-911b-f7237f5cc9ae.png)
+	- ![10-p0-latency.png](http://otzm88f21.bkt.clouddn.com/62aa6f0c-b6c4-4c76-a17a-392414d83f18.png)
+	- ![10-p0-p99.png](http://otzm88f21.bkt.clouddn.com/14a74e3f-40fc-4030-b291-dc4d468da57a.png)
+- 30ms
+	- ![30-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/9eb99138-b063-4d6e-8d7e-29077be18575.png)
+	- ![30-p0-p99.png](http://otzm88f21.bkt.clouddn.com/36160e2d-c524-4517-945a-0e14a4969860.png)
+	- ![30-p0-latency.png](http://otzm88f21.bkt.clouddn.com/597a2850-b813-4e94-8e37-80d03b14bfd4.png)
 
 
 ## GRPC
 ### 特点
 - 主要面向移动应用开发并基于HTTP/2协议标准而设计，基于ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言
+- 为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
+- 基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。
 
 ### 性能
 - 
 
-
-
 ## thirft
 ### 特点
 - 跨语言的高性能的服务框架
-广泛的应用
+- 广泛的应用
 
 ### 性能
 - 
@@ -121,8 +143,7 @@ DUBBO
 ## dubbo
 ### 特点
 - Java高性能优秀的服务框架
-可以和 Spring框架无缝集成
-
+- 可以和 Spring框架无缝集成
 
 ### 性能
 - 
@@ -131,50 +152,22 @@ DUBBO
 ## Motan
 ### 特点
 - 新浪微博开源的一个Java 框架
-起于2013年，2016年5月开源
+- 起于2013年，2016年5月开源
 
 ### 性能
-- 100,000,000,000+ 次/ 100+服务/ 天
+- `100,000,000,000+ 次/ 100+服务/ 天`
 
 
 ## RPCX
 ### 特点
-- Go语言生态圈的Dubbo
-比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法
+- Go语言生态圈的 `Dubbo`
+- 比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法
 
 ### 性能
 - 
 
-## 
-	protobuf
+## protobuf
 	
-
-# 
-## 场景
-- 0ms
-	- 简单业务，将请求值修改后返回
-	- 测试框架流转中的数据传输、序列化和调度
-- 10ms
-	- 普通业务请求，如请求数据库等
-	- 测试并发时框架的调度、处理能力
-- 30ms
-	- 复杂业务，如请求第三方服务
-	- 测试并发时框架的调度、处理能力
-
-## 工具
-- Apache bench|
-
-## 指标
-- 吞吐率
-- 并发连接数
-- 延迟
-- 延迟-P99
-
-## 
-99.9%的请求必须小于1ms，所有的平均时间必须小于1ms。两个条件的限制。
-
-吞吐量的值必需有响应时间来卡
-TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。
 
 
 # Reference
@@ -190,7 +183,7 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。
 - GRPC
 	- [官网](https://grpc.io/)
 	- [API 文件就是你的伺服器，REST 的另一個選擇：gRPC](https://yami.io/grpc/)
-	- []()
+	- [Go Quick Start](https://grpc.io/docs/quickstart/go.html)
 	- []()
 	- []()
 	- []()
@@ -217,8 +210,8 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。
 
 - Other
 	- RPC 框架
-		- [流行的rpc框架benchmark](http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/)
-		- [分布式RPC框架性能大比拼](http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/)
+		- [流行的rpc框架benchmark-2018.1](http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/)
+		- [分布式RPC框架性能大比拼-2016.9](http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/)
 		- [JAVA中几种常用的RPC框架介绍](https://blog.csdn.net/zhaowen25/article/details/45443951)
 		- []()
 		- []()
@@ -227,7 +220,7 @@ TP99小于100ms的时候，系统可以承载的最大并发数是1000qps。
 		- [Why Averages Suck and Percentiles are Great](https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/)
 		- [Dubbo-性能测试报告 - 404](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
 		- [dubbo-api性能测试报告](http://baozi.leanote.com/post/dubbo-api%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
-		- []()
+		- [性能测试报告](https://dubbo.incubator.apache.org/books/dubbo-user-book/perf-test.html)
 		- []()
 		- []()
 
