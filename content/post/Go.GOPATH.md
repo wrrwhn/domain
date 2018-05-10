@@ -1,3 +1,10 @@
++++
+date = "2018-05-10T19:00:00+08:00"
+title = "Go.GOPATH"
+draft = false
+tags = ["整理","Go"]
+share = true
++++
 
 [TOC]
 
