@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin">Sublime.Plugin</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/sublime">sublime</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/plugin">plugin</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&gt; new plugin&hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&lsquo;example&rsquo;) -&gt; 即可看到当前文章头部插入 &lsquo;Hello, World!&rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/sublime.plugin/" title="Sublime.Plugin"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
@@ -233,25 +258,6 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 
     <p>参考链接  <a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a>  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;]) @CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/spring.cache/" title="Spring.Cache"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title=""></a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
-
-</span>
-</footer>
-
-    <p>概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
- 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
- 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
- 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
- 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
- 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.rpc/" title=""> &raquo;</a>
 </article>
 
         

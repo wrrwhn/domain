@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/ffmpeg">ffmpeg</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} &hellip; {[output_file_options] output_url} &hellip;  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | &mdash;&mdash;&mdash;&gt; | packets | &mdash;&ndash;+ |____<strong><em>| |</em></strong>___________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;&mdash;&mdash;&ndash; | encoded data | &lt;&mdash;-+ | file | muxer | packets | encoder |_____<strong><em>| |</em></strong>___________|  选项 实例 裁剪  指令  ffmpeg -i old.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/git.subtree/" title="Git.Subtree">Git.Subtree</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
@@ -270,28 +293,6 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
 
     <p>Hugo 建站 参考  使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点 github Pages和Jekyll入门 3.5. 建立主页  安装  下载  gohugoio/hugo  安装  tar xvf hugo_0.15_linux_amd64.tar.gz -C /data/soft/hugo   生成  /data/soft/hugo/hugo new site /data/service/domain  archetypes config.toml  整体配置  content  文章  data layouts static themes  主题    安装主题  仅需将主题下载至 themes 文件下，并更 config.toml 中的 theme 为主题名称  下载  git clone <a href="https://github">https://github</a>.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j">Java.Log4j</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j"> &raquo;</a>
 </article>
 
         

@@ -45,6 +45,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH">Go.GOPATH</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+作用  于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句
+ Unix  使用 : 分割  Windows  使用 ; 分割  Plan
+ 使用列表记录
+默认   未设置时，默认为用户主目录下的 go 文件夹
+ Unix  $HOME/go  Windows  %USERPROFILE%\go    补充  设置可参考 Reference.SettingGOPATH 可使用 go env GOPATH 查看当前配置 新 包 被 下载 时，将 默认 下载至 列表目录中的首项 目录地址中  目录结构 要求  配置的目录，需包含规定的结构  类型  src 目录拥有 源代码，而 src 下目录决定了引用路径和可执行文件名 pkg 目录拥有已安装的 包对象  在 Go 的树型结构中，各目标 操作系统和体系 架构均有对应的 pkg 子目录  bin 目录拥有已编译的 命令  DIR/src/foo/quux 将被安装至 DIR/bin/quux 而当 GOBIN 被设置时，会 指定生成至其配置目录中  GOBIN 必须为一个 绝对目录   internal 目录及其下级代码，仅可被 internal 的父目录下各目录代码引用 vendor  Go 1.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="Hello.性能测试">Hello.性能测试</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
@@ -270,33 +297,6 @@ JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong
 异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决  Main 方法上增加 [STAThread] 标志 <code>c# Thread app = new Thread(new ParameterizedThreadStart(ShowWindow)); app.ApartmentState = ApartmentState.STA;  Thread newThread = new Thread(new ThreadStart(ThreadMethod)); newThread.SetApartmentState(ApartmentState.MTA);</code>
 解析  STA  线程创建并进入一单线程单元  MTA  线程创建并进入一多线程单元  Unknown  尚未设置 ApartmentState 属   过程  COM 类中使用的公共语言库需要在 COM interop 情况下调用 COM 对象时创建单元  其中托管进程帮忙创建时允许其进入一个线程的单线程单元（STA）或多线程单元（MTA）&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux">Hello.Linux</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-进度 Linux 基础文件  14&frasl;30
-Linux 架站文件 0/ 31
-Linux 安全 0/ 1
-Solaris 0/ 1
-  概述 系统特点  开源免费、稳定性 安全性 处理多并发性能好  系统管理事项(kernel)  系统呼叫接口 行程管理：多任务 内存管理：控制内存，虚拟内存 档案系统管理：数据I/O及NTFS档案格式硬盘 装置驱动     系统演化  Unix - 1973  IBM AIX SUM SOLARIS HP HP UNIX 伯克利分校 MINIX  LINUS LINUX - 1994  REDHAT S.U.S.E 红旗     VMWare安装 学习流程  Linux平台开发，含vi,gcc,gdb,make,jdk,tomcat,mysql和linux基本操作 加厚c语言功底（c专家编程）或java语言 学习 Unix 环境高级编程（Unix环境高级编程） Linux应用系统开发或嵌入式开发  推荐书籍  《鸟哥的Linux私房菜》 《Linux编程从入门到精通》 《Linux内核完全剖析》  常用概念 安装  yum  进行软件包管理安装，一般用于自动从中央仓库下载安装指令 yum -y install make|patch|ntp  make  主要针对tar.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux"> &raquo;</a>
 </article>
 
         

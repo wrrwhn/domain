@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH">Go.GOPATH</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+作用  于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句
+ Unix  使用 : 分割  Windows  使用 ; 分割  Plan
+ 使用列表记录
+默认   未设置时，默认为用户主目录下的 go 文件夹
+ Unix  $HOME/go  Windows  %USERPROFILE%\go    补充  设置可参考 Reference.SettingGOPATH 可使用 go env GOPATH 查看当前配置 新 包 被 下载 时，将 默认 下载至 列表目录中的首项 目录地址中  目录结构 要求  配置的目录，需包含规定的结构  类型  src 目录拥有 源代码，而 src 下目录决定了引用路径和可执行文件名 pkg 目录拥有已安装的 包对象  在 Go 的树型结构中，各目标 操作系统和体系 架构均有对应的 pkg 子目录  bin 目录拥有已编译的 命令  DIR/src/foo/quux 将被安装至 DIR/bin/quux 而当 GOBIN 被设置时，会 指定生成至其配置目录中  GOBIN 必须为一个 绝对目录   internal 目录及其下级代码，仅可被 internal 的父目录下各目录代码引用 vendor  Go 1.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong">Go.Wukong</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -262,29 +289,6 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
     <p>[TOC]
 参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget <a href="https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm">https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm</a> &ndash;no-check-certificate &amp;&amp; chmod +x gpm &amp;&amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/go.gpm/" title="Go.GPM"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
 </article>
 
         

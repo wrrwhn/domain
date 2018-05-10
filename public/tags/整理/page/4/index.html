@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.02">2018.02.02</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F">设计模式</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+设计模式 参考  《HEAD_FIRST 设计模式》 图说设计模式 design pattern 包教不包会  设计原则  找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变化的代码混在一起  系统中某部分改变不会影响其它部份  针对接口编程，而不是针对实现编程  变量声明为抽象或接口，执行时动态赋值  多用组合，少用继承 为了交互对象之间的松耦合设计而努力 类应该对扩展开放，对修改关闭  根据业务和重要性，来取舍是否  依赖倒置原则  要依赖抽象，不要依赖具体类  变量不可以持有具体类的引用  工厂  不要让类派生自具体类  派生至接口或抽象类  不要覆盖基类中已实现的方法  避免破坏基类中被继承的抽象    最少知识原则  减少对象之间的交互  好莱坞原则  别调用（打电话给）我们，我们会调用（打电话给）你 避免高、低层组件的相互依赖，导致依赖腐败 低层组件挂靠在高层组件，高层组件决定调用时机和方式  单一责任原则  一个类应该只有一个引起变化的原因 高内聚  一个模块或一个类，被设计仅支持一组相关功能时    设计模式 策略模式  定义  定义算法族；分别封装后，让它们之间相互替换 行为被封装进一组类中，并于需要时动态改变  UML     观察者模式  定义  定义对象之间的一对多依赖；当一个对象状态改变时，所有依赖者都会收到通知并自动更新  Java.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A/" title="第二届创始人代表大会">第二届创始人代表大会</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.01.22">2018.01.22</time>
@@ -257,29 +280,6 @@ UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj&hell
 
     <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/ffmpeg">ffmpeg</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-简介  FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts  概要  ffmpeg [global_options] {[input_file_options] -i input_url} &hellip; {[output_file_options] output_url} &hellip;  流程  _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | &mdash;&mdash;&mdash;&gt; | packets | &mdash;&ndash;+ |____<strong><em>| |</em></strong>___________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &lt;&mdash;&mdash;&ndash; | encoded data | &lt;&mdash;-+ | file | muxer | packets | encoder |_____<strong><em>| |</em></strong>___________|  选项 实例 裁剪  指令  ffmpeg -i old.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记"> &raquo;</a>
 </article>
 
         

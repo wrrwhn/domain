@@ -1,4 +1,12 @@
++++
+date = "2018-05-10T19:10:00+08:00"
+title = "Hello.RPC"
+draft = false
+tags = ["整理","RPC"]
+share = true
++++
 
+[TOC]
 
 # 概念
 ## RPC
@@ -90,7 +98,7 @@
 	- 技术支持
 	- 社区活跃度
 
-### 整体对比
+### **对比**
 |                  | Dubbo | Montan | rpcx | gRPC   | Thrift |
 |:-----------------|:------|:-------|:-----|:-------|:-------|
 | 开发语言         | Java  | Java   | Go   | 跨语言 | 跨语言 |
@@ -100,7 +108,7 @@
 | 管理中心         | √     | √      | √    | ×      | ×      |
 | 跨编程语言       | ×     | ×      | ×    | √      | √      |
 
-### 压测
+### **压测**
 |      | gRPC            | Dubbo                           | rpcx                          | thrift | go stdrpc       |
 |:-----|:----------------|:--------------------------------|:------------------------------|:-------|:----------------|
 | 0ms  | 3rd<br/>140,000 | last-3st<br/>65,00              | 1st<br/>200,000               | 70,000 | 1st<br/>295,000 |
@@ -124,34 +132,26 @@
 
 ## GRPC
 ### 特点
-- 主要面向移动应用开发并基于HTTP/2协议标准而设计，基于ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言
-- 为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
-- 基于同一个IDL，可以生成不同语言的代码，并且语言的支持也非常的多。
+- 主要面向移动应用开发并基于 **HTTP/2**协议标准而设计，基于 **ProtoBuf**(Protocol Buffers)序列化协议开发，且支持众多开发语言
+	- 为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。
+	- 基于同一个IDL（Interface description language），可以生成不同语言的代码，并且语言的支持也非常的多。
 
-### 性能
-- 
 
 ## thirft
 ### 特点
-- 跨语言的高性能的服务框架
-- 广泛的应用
-
-### 性能
-- 
+- **跨语言**的 **高性能**的服务框架
+- **广泛**的应用
 
 
 ## dubbo
 ### 特点
-- Java高性能优秀的服务框架
-- 可以和 Spring框架无缝集成
-
-### 性能
-- 
+- **Java** 高性能优秀的服务框架
+- 可以和 **Spring框架** 无缝集成
 
 
 ## Motan
 ### 特点
-- 新浪微博开源的一个Java 框架
+- **新浪微博**开源的一个 **Java框架**
 - 起于2013年，2016年5月开源
 
 ### 性能
@@ -161,13 +161,7 @@
 ## RPCX
 ### 特点
 - Go语言生态圈的 `Dubbo`
-- 比Dubbo更轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法
-
-### 性能
-- 
-
-## protobuf
-	
+- 比Dubbo更 **轻量**，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法
 
 
 # Reference
@@ -175,52 +169,32 @@
 	- [谁能用通俗的语言解释一下什么是 RPC 框架？](https://www.zhihu.com/question/25536695)
 	- [远程过程调用协议](https://baike.baidu.com/item/%E8%BF%9C%E7%A8%8B%E8%BF%87%E7%A8%8B%E8%B0%83%E7%94%A8%E5%8D%8F%E8%AE%AE/6893245?fromtitle=RPC&fromid=609861)
 	- [你应该知道的RPC原理](https://www.cnblogs.com/LBSer/p/4853234.html)
-	- []()
-	- []()
-	- []()
-	- []()
 
 - GRPC
 	- [官网](https://grpc.io/)
 	- [API 文件就是你的伺服器，REST 的另一個選擇：gRPC](https://yami.io/grpc/)
 	- [Go Quick Start](https://grpc.io/docs/quickstart/go.html)
-	- []()
-	- []()
-	- []()
 
 - Netty
 	- [The Netty Project API Reference (3.2.6.Final)](https://docs.jboss.org/netty/3.2/api/)
-	- []()
-	- []()
-	- []()
 
 - Apache.AB
 	- 官方
 		- [Apache AB](http://httpd.apache.org/)
 		- [Apache HTTP 服务器 2.4 文档](http://httpd.apache.org/docs/2.4/)
-		- []()
-		- []()
-		- []()
 	- 其它
 		- [超实用压力测试工具－ab工具](https://www.jianshu.com/p/43d04d8baaf7)
 		- [开源性能测试工具 - Apache ab 介绍](http://www.cnblogs.com/jackei/archive/2006/07/18/454144.html)
-		- []()
-		- []()
-		- []()
 
 - Other
 	- RPC 框架
 		- [流行的rpc框架benchmark-2018.1](http://colobu.com/2018/01/31/benchmark-2018-spring-of-popular-rpc-frameworks/)
 		- [分布式RPC框架性能大比拼-2016.9](http://colobu.com/2016/09/05/benchmarks-of-popular-rpc-frameworks/)
 		- [JAVA中几种常用的RPC框架介绍](https://blog.csdn.net/zhaowen25/article/details/45443951)
-		- []()
-		- []()
 	- 补充
 		- [性能测试应该怎么做？](https://coolshell.cn/articles/17381.html)
 		- [Why Averages Suck and Percentiles are Great](https://www.dynatrace.com/news/blog/why-averages-suck-and-percentiles-are-great/)
 		- [Dubbo-性能测试报告 - 404](http://dubbo.io/User+Guide-zh.htm#UserGuide-zh-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
 		- [dubbo-api性能测试报告](http://baozi.leanote.com/post/dubbo-api%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A)
 		- [性能测试报告](https://dubbo.incubator.apache.org/books/dubbo-user-book/perf-test.html)
-		- []()
-		- []()
 
