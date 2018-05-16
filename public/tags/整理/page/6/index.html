@@ -46,6 +46,32 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong">Go.Wukong</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9F%A2">柢</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
+searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &quot;./dict/dictionary.txt&quot;, StopTokenFile: &quot;./dict/stop_tokens.txt&quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站">Hugo 建站</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -266,34 +292,6 @@ The Path Coordinate System (0,0) in the upper left of the shape&hellip;</p>
 
     <p>ORA-12541:TNS:无监听程序  监听失败，自己遇到的情况是主机设置错误 -进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora  (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.101)(PORT = 1521))  更新HOST为本地即 HOST= 127.0.0.1 重启监听服务  ORA-01045 :user system lacks create session privilege; logon denied  由于新建的用户缺少机关的权限信息 用sys登入Oracle DB后,下grant create session to yqj;  ORA-12514问题，即TNS 监听程序不能识别给定的SID  指定的数据库未加入监听 进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora 指定位置添加相关文字  SID_LIST_LISTENER = (SID_LIST = (SID_DESC = (SID_NAME = PLSExtProc) (ORACLE_HOME = C:\oracle\product\10.2.0\db_1) (PROGRAM = extproc) ) /**NEW (SID_DESC = (GLOBAL_DBANAME = testDB) (ORACLE_HOME = C:\oracle\product\10.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/" title="Oracle.常见问题"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用">Redis.使用</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/redis">redis</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
-参考 官网
- 文档
- 命令
- Linux下安装
- Jedis使用示例
-  安装-WINDOWS  下载 <a href="http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317">http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317</a> 解压至 D:\redis-2.0.2，并更新替换redis.conf cmd执行 D:\redis-2.0.2&gt;redis-server.exe redis.conf 运行服务器 cmd执行 D:\redis-2.0.2&gt;redis-cli.exe -h 192.168.10.59 -p 6379 运行客户端 客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值  安装-LINUX VI环境下输入  下载程序  wget <a href="http://download.redis.io/releases/redis-2.8.3.tar.gz">http://download.redis.io/releases/redis-2.8.3.tar.gz</a>  解压  tar xzf redis-2.8.3.tar.gz  跳转至解压目录  cd redis-2.8.3  安装Redis  make  若提示make指定未安装，执行yum -y install gcc automake autoconf libtool make 进行安装   拷贝执行相关  src路径下的redis-server、redis-benchmark、redis-cli，redis-2.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用"> &raquo;</a>
 </article>
 
         

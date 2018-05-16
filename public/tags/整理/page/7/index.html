@@ -46,6 +46,34 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用">Redis.使用</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/redis">redis</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>简介 介绍  支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
+参考 官网
+ 文档
+ 命令
+ Linux下安装
+ Jedis使用示例
+  安装-WINDOWS  下载 <a href="http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317">http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;s=a2b84b5fc8f9fa297831deba85c07317</a> 解压至 D:\redis-2.0.2，并更新替换redis.conf cmd执行 D:\redis-2.0.2&gt;redis-server.exe redis.conf 运行服务器 cmd执行 D:\redis-2.0.2&gt;redis-cli.exe -h 192.168.10.59 -p 6379 运行客户端 客户端执行 set name yao设置name=yao，后执行get name获取redis中name的值  安装-LINUX VI环境下输入  下载程序  wget <a href="http://download.redis.io/releases/redis-2.8.3.tar.gz">http://download.redis.io/releases/redis-2.8.3.tar.gz</a>  解压  tar xzf redis-2.8.3.tar.gz  跳转至解压目录  cd redis-2.8.3  安装Redis  make  若提示make指定未安装，执行yum -y install gcc automake autoconf libtool make 进行安装   拷贝执行相关  src路径下的redis-server、redis-benchmark、redis-cli，redis-2.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/" title="Redis.使用"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/" title="项目发布总结">项目发布总结</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
@@ -258,31 +286,6 @@ Grep 参考  grep命令 每天一个linux命令（39）：grep 命令 linux grep
     <p>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
  并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &lt; 10; i++ { fmt.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/" title="Go.并行&amp;并发 "> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL">GraphQL</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/graphql">graphql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
-query { hero { name } droid(id: &quot;2000&quot;) { name } }  Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
-  { &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;, &ldquo;review&rdquo;: { &ldquo;stars&rdquo;: 5, &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/graphql/" title="GraphQL"> &raquo;</a>
 </article>
 
         
