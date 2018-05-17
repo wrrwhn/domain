@@ -28,8 +28,6 @@ share = true
         - 负载均衡
         - 缓冲
 
-### Nginx
-
 
 ## 安装
 - `yum install nginx`
@@ -452,3 +450,9 @@ proxy_http_version      1.1;
 proxy_request_buffering off;
 proxy_ignore_client_abort on;
 ```
+
+### 进程被杀，无法正常启动
+- Error
+    - `nginx: [alert] kill(189, 1) failed (3: No such process) `
+- Solution
+    - `/usr/sbin/nginx -c /etc/nginx/nginx.conf`

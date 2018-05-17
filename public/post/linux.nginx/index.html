@@ -100,8 +100,6 @@
 </ul></li>
 </ul>
 
-<h3 id="nginx">Nginx</h3>
-
 <h2 id="安装">安装</h2>
 
 <ul>
@@ -784,6 +782,21 @@ location ~ ^/wechat-forum-dev/upload/(.*)\.(jpg|jpeg|png|gif)$ {
 proxy_request_buffering off;
 proxy_ignore_client_abort on;
 </code></pre>
+
+<h3 id="进程被杀-无法正常启动">进程被杀，无法正常启动</h3>
+
+<ul>
+<li>Error
+
+<ul>
+<li><code>nginx: [alert] kill(189, 1) failed (3: No such process)</code></li>
+</ul></li>
+<li>Solution
+
+<ul>
+<li><code>/usr/sbin/nginx -c /etc/nginx/nginx.conf</code></li>
+</ul></li>
+</ul>
 
             <ul class="share-buttons">
     <li></li>
