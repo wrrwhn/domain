@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题">彻底终结MySQL同步延迟问题</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.07">2018.02.07</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>彻底终结MySQL同步延迟问题 参考  彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication  版本  MySQL.Version  5.7  Storage.Engine  TokuDB   影响因素 网络  主机或者从机的带宽打满 主从之间网络延迟很大  机器性能  从机使用了烂机器
+ 比如主机使用SSD而从机还是使用的SATA  从机高负载
+ 很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
+ 检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/" title="阿里为什么不去清华招人？">阿里为什么不去清华招人？</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.06">2018.02.06</time>
@@ -257,29 +282,6 @@ Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会
 站在 雇主/客户/产品 的角度   说“不” 拒绝说“试一试”  在上级眼里意味着你可以 另一方面，如果能完成，意味着之前有所保留，并未全然尽力
 描述清楚实现的难度 认真理解说“是”的成本  说“是” 承诺用语  为自己的承诺负责 理解对方言语承诺的成分 坚守原则，避免放松代码追求  承诺无效 关键词  需要|应当  我们要把这个活干完 有人应当负责去推动这件事  希望|但愿  希望明天我能完成这件事 但愿我有时间做这件事  让我们&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/" title="代码整洁之道.程序员的职业素养"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" title="技术人员的发展之路">技术人员的发展之路</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%8F%91%E5%B1%95">发展</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-技术人员的发展之路 阶段和标志 20-30岁  提升学习和解决难题的能力 提升领导力  高效学习能力  基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独立思考  解决问题能力  见过许多场景 犯过、处理过很多错误 防火   帮人解决问题 被人所信赖  发展方向 职场打拼  去顶尖公司 去真正的创业公司  小心了解创始人和业务情况、想法、理念 排除创业时的.侥幸和驱利心理  职业生涯发展  关心并处理复杂人事关系 学会使用政治手段  在下属和领导，员工和公司之间周旋 审时站队，迎合、妥协和交换 厚黑与真诚    经历有意义、价值的事  到技术创新的发源地去经历创新 去经历下一个热点技术的发展  追求一种自由的生活  工作自由  能力出众，不愁找不到工作  技能自由  自由职业者  自动化 App 上做软件个体户 开源软件，社区捐款   物质自由  投资&amp; 风险 关注未来和长远的成长&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" title="技术人员的发展之路"> &raquo;</a>
 </article>
 
         
