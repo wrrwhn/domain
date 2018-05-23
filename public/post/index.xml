@@ -2203,6 +2203,18 @@ Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractL
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/java.importstatic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.importstatic/</guid>
+      <description> DESCRIBE 发布  JDK 1.5 新特性
+对比 import
+ 从包中引入类，允许不添加类前缀的方式进行调用  imports classes from packages, allowing them to be used without package qualification   static import
+ 声明从类中引入静态成员，以允许它们在该类中直接使用，而不需要添加类前缀  declaration imports static members from classes, allowing them to be used without class qualification.    使用  import class.[*|method]  示例 Origin double r = Math.cos(Math.PI * theta);  Static Import import static java.lang.Math.*; double r = cos(PI * theta);  时机 态度  保守地使用 仅当需频繁的访问一两个类中的静态成员  缺点  增加可读复杂度 增加维护成本  REFERENCE 官方  Static Import  对比  import static和import的区别 java中import static和import的区别  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/pyqt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
