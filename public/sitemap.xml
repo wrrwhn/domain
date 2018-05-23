@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</loc>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://domain.yqjdcyy.com/post/spring.transactional/</loc>
+    <lastmod>2018-05-22T16:40:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%81%8A%E5%A4%A9/</loc>
     <lastmod>2018-05-21T01:00:00+08:00</lastmod>
   </url>
@@ -1155,6 +1165,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/tags/jpa/</loc>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/jwt/</loc>
     <lastmod>2018-03-09T16:00:00+08:00</lastmod>
     <priority>0</priority>
@@ -1234,7 +1250,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-05-21T01:00:00+08:00</lastmod>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1300,7 +1316,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/spring/</loc>
-    <lastmod>2016-12-11T22:07:46+08:00</lastmod>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1355,6 +1371,12 @@
   <url>
     <loc>http://domain.yqjdcyy.com/tags/tools/</loc>
     <lastmod>2018-05-04T00:40:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://domain.yqjdcyy.com/tags/transaction/</loc>
+    <lastmod>2018-05-22T16:40:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1498,7 +1520,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-05-21T01:00:00+08:00</lastmod>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1588,7 +1610,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-05-21T01:00:00+08:00</lastmod>
+    <lastmod>2018-05-23T14:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

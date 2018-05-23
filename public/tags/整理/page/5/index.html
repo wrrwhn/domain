@@ -46,6 +46,52 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议">网络-七层协议</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E7%BD%91%E7%BB%9C">网络</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/osi">osi</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>参考  深入浅出－网络七层模型&amp;&amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-七层协议"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/" title="网络-四层协议">网络-四层协议</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.12.08">2017.12.08</time>
@@ -246,50 +292,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
  <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
   使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/powerpoint.coverexport/" title="PowerPoint.CoverExport">PowerPoint.CoverExport</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/powerpoint">powerpoint</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>文件法 实现  将 .pptx 文件后缀更新为 .zip 获取 /docProps/thumbnail.jpeg  缺点  仅适用于 .pptx  windows api + code 实现 环境要求&amp; 版本限制  v4.0.30319  缺点  与「文件法」一致，导出图片尺寸过小  PPT 操作导出 - 79KB 1024x766 api 导出 - 24KB 960x720  部分 PPT 无缩略图，导出的均为 PPT 默认图片  OpenXML + code 现服务转换方式  高清无码  环境要求&amp; 版本限制  v2.0.50727 安装有 Microsoft.PowerPoint  缺点  要求本地安装有指定以上版本 PPT&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/powerpoint.coverexport/" title="PowerPoint.CoverExport"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/activemq/" title="ActiveMq">ActiveMq</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/activemq">activemq </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>地址  入门：<a href="http://www.cnblogs.com/xwdreamer/archive/2012/02/21/2360818.html">http://www.cnblogs.com/xwdreamer/archive/2012/02/21/2360818.html</a> 下载：<a href="http://activemq.apache.org/download-archives.html">http://activemq.apache.org/download-archives.html</a>  运行  解压至 D:\server\activemq\apache-activemq-5.9.1  注：D:\Program Files 等路径上存在空格等的不适合当其路径，会影响项目正常启动  点击 /bin/activemq.bat 启动 ActiveMQ 程序 进入 <a href="http://localhost:8161/admin/">http://localhost:8161/admin/</a> ，并输入账号/密码 admin/admin 创建一个名为 FirstQueue 的 Queue 运行代码（如下）  代码 依赖 &lt;dependency&gt; &lt;groupId&gt;org.apache.activemq&lt;/groupId&gt; &lt;artifactId&gt;activemq-core&lt;/artifactId&gt; &lt;version&gt;5.5.0&lt;/version&gt; &lt;/dependency&gt;  模式 - Queue 发送 public class Sender { private static final int SEND_NUMBER = 5; public static void main(String[] args) { ConnectionFactory connectionFactory; Connection connection = null; Session session; Destination destination; MessageProducer producer; connectionFactory = new ActiveMQConnectionFactory( ActiveMQConnection.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/activemq/" title="ActiveMq"> &raquo;</a>
 </article>
 
         

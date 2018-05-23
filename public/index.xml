@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 21 May 2018 01:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 23 May 2018 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring.JPA.Fetch</title>
+      <link>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</link>
+      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</guid>
+      <description>[TOC]
+Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToMany Lazy    OneToOne Eager    ManyToOne Eager   Hibernate      * Lazy    Docs Hibernate  By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations.</description>
+    </item>
+    
+    <item>
+      <title>Spring.@Transactional</title>
+      <link>http://domain.yqjdcyy.com/post/spring.transactional/</link>
+      <pubDate>Tue, 22 May 2018 16:40:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.transactional/</guid>
+      <description>[TOC]
+使用方式  将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上  该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性   属性 属性列表    属性名 是否必输 默认值 说明     name Yes  关联指定名称的事务管理器 可用通配符(*)来匹配多个事务管理器，如 get*, on*Event   propagation No REQUIRED 事务传播行为   isolation No DEFAULT 事务隔离等级   timeout No -1 事务超时时长，单位为秒  如果超过该时长限制而事务未完成，则自动回滚   read-only No false 事务是否只读   rollback-for No  指定能触发事务回滚的异常类型使用逗号(,)分隔，如 com.</description>
+    </item>
     
     <item>
       <title>如何聊天</title>

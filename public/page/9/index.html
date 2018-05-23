@@ -45,6 +45,60 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tcp">tcp</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
+ r 刷新界面
+ yy 复制当前界面 URL
+ p 在当前标签页打开剪贴板中的 URL
+ gu 跳转至当前 URL 的上一层
+ <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/article/15/1231/">http://www.phperz.com/article/15/1231/</a>  gU 跳转至当前 URL 的最高层
+ <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
+  使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/powerpoint.coverexport/" title="PowerPoint.CoverExport">PowerPoint.CoverExport</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
@@ -246,52 +300,6 @@
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" title="技术人员的发展之路">技术人员的发展之路</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%8F%91%E5%B1%95">发展</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-技术人员的发展之路 阶段和标志 20-30岁  提升学习和解决难题的能力 提升领导力  高效学习能力  基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独立思考  解决问题能力  见过许多场景 犯过、处理过很多错误 防火   帮人解决问题 被人所信赖  发展方向 职场打拼  去顶尖公司 去真正的创业公司  小心了解创始人和业务情况、想法、理念 排除创业时的.侥幸和驱利心理  职业生涯发展  关心并处理复杂人事关系 学会使用政治手段  在下属和领导，员工和公司之间周旋 审时站队，迎合、妥协和交换 厚黑与真诚    经历有意义、价值的事  到技术创新的发源地去经历创新 去经历下一个热点技术的发展  追求一种自由的生活  工作自由  能力出众，不愁找不到工作  技能自由  自由职业者  自动化 App 上做软件个体户 开源软件，社区捐款   物质自由  投资&amp; 风险 关注未来和长远的成长&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/" title="技术人员的发展之路"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/" title="歌川广重">歌川广重</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%89%BA%E6%9C%AF">艺术</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%B5%AE%E4%B8%96%E7%BB%98">浮世绘 </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-歌川广重 简介  1811年他在江户成为浮世绘大师歌川丰广的学生 于1833～1834年间的55幅风景画系列《东海道五十三次》确立了他作为有史以来最受欢迎的浮世绘画家之一的地位 风格较为亲民、清丽，而有小品风范  风格  寓人手法  绘图主题是风景，但他会在画面上加入小人物的日常生活描绘，增添画面的生动感  四季情景的描绘  利用明暗、阴暗等技巧的呈现，可以在他的作品中感受到季节转换的感觉   作品  东海道五十三次 六十余州名所図会 江戸名所百景  赏析&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/" title="歌川广重"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -299,7 +307,7 @@
 	<a class="btn newer" href="/page/8/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 9  20</p>
+	<p class="counter"> 9  21</p>
 
 
 	
