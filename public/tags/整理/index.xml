@@ -13,6 +13,19 @@
     
     
     <item>
+      <title>Java.ImportStatic</title>
+      <link>http://domain.yqjdcyy.com/post/java.importstatic/</link>
+      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.importstatic/</guid>
+      <description> [TOC]
+DESCRIBE 发布  JDK 1.5 新特性
+对比 import
+ 从包中引入类，允许不添加类前缀的方式进行调用  imports classes from packages, allowing them to be used without package qualification   static import
+ 声明从类中引入静态成员，以允许它们在该类中直接使用，而不需要添加类前缀  declaration imports static members from classes, allowing them to be used without class qualification.    使用  import class.[*|method]  示例 Origin double r = Math.cos(Math.PI * theta);  Static Import import static java.lang.Math.*; double r = cos(PI * theta);  时机 态度  保守地使用 仅当需频繁的访问一两个类中的静态成员  缺点  增加可读复杂度 增加维护成本  REFERENCE 官方  Static Import  对比  import static和import的区别 java中import static和import的区别  </description>
+    </item>
+    
+    <item>
       <title>Spring.JPA.Fetch</title>
       <link>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</link>
       <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
@@ -20,6 +33,17 @@
       <guid>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</guid>
       <description>[TOC]
 Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToMany Lazy    OneToOne Eager    ManyToOne Eager   Hibernate      * Lazy    Docs Hibernate  By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations.</description>
+    </item>
+    
+    <item>
+      <title>信用报告</title>
+      <link>http://domain.yqjdcyy.com/post/%E4%BF%A1%E7%94%A8%E6%8A%A5%E5%91%8A/</link>
+      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E4%BF%A1%E7%94%A8%E6%8A%A5%E5%91%8A/</guid>
+      <description>[TOC]
+信用报告 作用  个人信用报告影响到贷款和出行（乘坐飞机、动车和签证等）  法院判决  若未如期履行生效判决内容，将可能被列入失信黑名单，被限制出境、高消费等。    机构  征信中心  职属  中国人民银行旗下 目前唯一有资格发布信用报告的征信机构  我国暂未对其他机构发放个人征信牌照   时间点  2004年初步建立个人征信系统 2008 年于上海挂牌成立  负责  汇收集企业和个人的信息——主要以银行信贷信息 为相关机构和个人出具信用报告    明细  资产处置信息 保证人代偿信息 信用卡 住房贷款 其他贷款 为他人担保信息 欠税记录 民事判决记录 强制执行记录 行政处罚记录 电信欠费信息  有效时长  根据人行的规定，信报上只显示最近 5 年的记录  查询 渠道  参见「参考」中的「渠道」模块  流程  线上
+ 先到「个人信用中心」注册账号 登录 查询申请  24小时后，通过手机短信通知 「查询码」仍可用于下次查询  查看  于信用报告中输入「查询码」   线下</description>
     </item>
     
     <item>
