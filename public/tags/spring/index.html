@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" title="Spring.Boot.Publish">Spring.Boot.Publish</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.31">2018.05.31</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Init  project.init business.finish  Package packaging.war  pom.xml  &lt;packaging&gt;war&lt;/packaging&gt;   tomcat.remove  pom.xml  &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;!&ndash; 移除嵌入式tomcat插件 &ndash;&gt; &lt;exclusions&gt; &lt;exclusion&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt; &lt;/exclusion&gt; &lt;/exclusions&gt; &lt;/dependency&gt;   servlet-api.add  pom.xml  javax.servlet-api  &lt;dependency&gt; &lt;groupId&gt;javax.servlet&lt;/groupId&gt; &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt;  OR tomcat-servlet-api  &lt;dependency&gt; &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt; &lt;artifactId&gt;tomcat-servlet-api&lt;/artifactId&gt; &lt;version&gt;8.0.36&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt;    runner.update  与 Application 同级  public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return builder.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" title="Spring.Boot.Publish"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/spring.jpa.fetch/" title="Spring.JPA.Fetch">Spring.JPA.Fetch</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>

@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong>大小</strong>及其<strong>内存使用</strong>量，并可观察classloader，compiler，<strong>gc</strong>相关信息  调用  jstat -&lt;option&gt; [-t] [-h&lt;lines&gt;] &lt;vmid&gt; [&lt;interval&gt; [&lt;count&gt;]] 参数  option  选项  –class  监视类装载、卸载数量、总空间及类装载所耗费时间 | 字段 | 描述 | 数值 | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;| | Loaded | 装载类的数量 | 11736 | | Bytes | 装载类所占字节数 | 22293.3 | | Unloaded | 卸载类的数量 | 0 | | Bytes | 卸载类所占字节数 | 0.0 | | Time | 装载和卸载类所花的时间 | 13.24 |  –gc  监视Java堆状况，包括Eden区、2个Survivor区、老年代、永久代等的容量 | 字段 | 描述 | 数值 | |&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-| | S0C | 年轻代中第一个survivor（幸存区）的容量 (字节) | 20480.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp">Error.CSharp</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
@@ -264,32 +289,6 @@ List Access  private protected public  class, method, variable  abstract class e
     <p>[TOC]
 分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version">IDEA.Java.Version</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
- 快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&gt; 1.8 Project language level-&gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version"> &raquo;</a>
 </article>
 
         

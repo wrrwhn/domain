@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Tue, 29 May 2018 15:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 31 May 2018 12:10:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring.Boot.Publish</title>
+      <link>http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/</link>
+      <pubDate>Thu, 31 May 2018 12:10:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/</guid>
+      <description>[TOC]
+Init  project.init business.finish  Package packaging.war  pom.xml  &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;   tomcat.remove  pom.xml  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 移除嵌入式tomcat插件 --&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-tomcat&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt;   servlet-api.add  pom.xml  javax.servlet-api  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  OR tomcat-servlet-api  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat-servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.36&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;    runner.update  与 Application 同级  public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return builder.</description>
+    </item>
     
     <item>
       <title>我们的孩子</title>
