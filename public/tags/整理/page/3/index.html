@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化">SQL.优化</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.27">2018.04.27</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/sql">sql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+特点  SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松实现嵌套功能。  优化 TOP-N问题  table  student{sid, sname, sage}  sql sql select sid, sname, sage from ( select rownum temp_no, sid, sname, sage from( select sid, sname, sage from student order by sid ) ) where temp_no between 4 and 6;   恰当使用索引  创建  简单索引= 指定字段值 + ROWID  隐藏字表，而ROWID相当于目录当中的页码   影响  select 查找的字段有索引，加快查找速度 insert 则会减速 delete/update 则加快和减慢的可能性都存在   用case表达式替代多次查询  普通查询  select count(<em>) &ldquo;below 25&rdquo; from student where sage &lt;= 25; select count(</em>) &ldquo;between 25 and 30&rdquo; from student where sage &gt;25 and sage &lt;30; select count(*) &ldquo;above 30&rdquo; from student where sage &gt;=30;  case实现 sql select count(case when sage&lt;=25 then 1 else null end) &quot;below 25&quot;, count(case when sage&gt;25 and sage&lt;30 then 1 else null end) &quot;between 25 and 30&quot;, count(case when sage&gt;30 then 1 else null end) &quot;above 30&quot;, from student;   用where子句代替having子句 select * from table group by num having num=1; where num=1 group by num;  多表开发注意事项  正确连接方式&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.jar/" title="Java.Jar">Java.Jar</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.26">2018.04.26</time>
@@ -284,31 +307,6 @@ Formater  作用
  控制日志输出格式  LogRecord.对象
  name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/python.logging/" title="Python.Logging"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/license.choose/" title="License.Choose">License.Choose</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.30">2018.03.30</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/license">license</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明确允许，用户可以免费地使用、修改、共享版权软件。 版权法默认禁止共享，也就是说，没有许可证的软件，就等同于保留版权，虽然开源了，用户只能看看源码，不能用，一用就会侵犯版权。所以软件开源的话，必须明确地授予用户开源许可证。
-简诉    类型 MIT  历史  名源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称「X许可协议」（X License）或「X11许可协议」(X11 License）  声明
-The MIT License (MIT) Copyright &copy; [year] [copyright holders] Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/license.choose/" title="License.Choose"> &raquo;</a>
 </article>
 
         

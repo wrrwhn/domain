@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Sat, 03 Mar 2018 18:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 01 Jun 2018 12:10:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FFmpeg.2Gif.Ass</title>
+      <link>http://domain.yqjdcyy.com/post/ffmpeg.2gif.ass/</link>
+      <pubDate>Fri, 01 Jun 2018 12:10:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/ffmpeg.2gif.ass/</guid>
+      <description> [TOC]
+字幕文件 安装 aegisub  aegisub.官网  打开视频  注意选择合适大小  编辑  /视频/打开视频 试听 &amp;amp; 添加行记录 &amp;amp; 更新时间点、字幕内容和样式     指令 模板  ffmpeg -i {video_path} -r 8 -vf ass={ass_path},scale=300:-1 -y {gif_path}  示例  cd path ffmpeg -i ‪template.mp4 -r 8 -vf ass=‪template.ass,scale=300:-1 -y template.gif  代码参考  sorry.python - render.py  Reference Project  East196/sorrypy xtyxtyx/sorry  Software  aegisub 【教程】手把手教你用aegisub写字幕（基础向）  </description>
+    </item>
     
     <item>
       <title>小丸压缩视频转M3U8异常</title>
