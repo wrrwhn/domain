@@ -45,9 +45,19 @@
         <article class="post">
             <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
             
-<h1><a href="http://domain.yqjdcyy.com/post/spring.security/" title=""></a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security">Spring.Security</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.04">2018.06.04</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/security">security</a>
+        
+    
 
 </span>
 </footer>
@@ -56,28 +66,231 @@
 
 <p>[TOC]</p>
 
+<h1 id="前后端分离">前后端分离</h1>
+
+<h2 id="思路">思路</h2>
+
+<ul>
+<li>登录成功后，于 Session 添加相应属性值</li>
+<li>接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截</li>
+</ul>
+
+<h2 id="选型">选型</h2>
+
+<ul>
+<li>Spring.Security
+
+<ul>
+<li>展示型项目，简单区分前后端即可</li>
+</ul></li>
+<li>Vue+ Bootstrap</li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<h3 id="引用">引用</h3>
+
+<pre><code>&lt;parent&gt;
+    &lt;version&gt;1.3.8.RELEASE&lt;/version&gt;
+&lt;/parent&gt;
+
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-security-core&lt;/artifactId&gt;
+    &lt;/dependency&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.security&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt;
+        &lt;version&gt;4.0.4.RELEASE&lt;/version&gt;
+        &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+</code></pre>
+
+<h3 id="登录">登录</h3>
+
+<ul>
+<li><p>Controller</p>
+
+<pre><code>@RequestMapping(value = &quot;/login&quot;, method = RequestMethod.POST)
+public void login(@RequestBody UserVo userVo, HttpServletRequest request) {
+    securityService.login(userVo.getName(), userVo.getPwd(), request);
+}
+</code></pre></li>
+
+<li><p>Service</p>
+
+<pre><code>public void login(String username, String password, HttpServletRequest request) {
+
+    User user = userService.findByName(username);
+    if (null == user || StringUtils.isEmpty(user.getPwd()) || !passwordEncoder.matches(password, user.getPwd()))
+        throw new IllegalStateException(&quot;用户名|密码 错误&quot;);
+
+    logger.info(&quot;User[{}] login.success&quot;, username);
+
+    HttpSession session = request.getSession();
+    // TODO 优化为 JWT 等其它可验证的方式
+    session.setAttribute(AuthConfig.authSessionKey, user.getId());
+}
+</code></pre></li>
+</ul>
+
+<h3 id="鉴权">鉴权</h3>
+
+<ul>
+<li><p>Application</p>
+
+<pre><code>@SpringBootApplication(exclude = {SecurityAutoConfiguration.class})
+@EnableTransactionManagement(proxyTargetClass = true)
+@EnableJpaRepositories(basePackages = &quot;com.yao&quot;)
+@ComponentScan(basePackages = &quot;com.yao&quot;)
+@EnableAsync
+public class Application {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Application.class, args);
+    }
+
+    @Bean
+    public CommandLineRunner commandLineRunner(ApplicationContext ctx) {
+        return args -&gt; {
+            System.out.println(&quot;Let's inspect the beans provided by Spring Boot:&quot;);
+            String[] beanNames = ctx.getBeanDefinitionNames();
+            Arrays.sort(beanNames);
+            for (String beanName : beanNames) {
+                System.out.println(beanName);
+            }
+        };
+    }
+}
+</code></pre></li>
+
+<li><p>Config</p>
+
+<pre><code>@Configuration
+public class WebAppConfig extends WebMvcConfigurerAdapter {
+
+    @Autowired
+    AuthenticationInterceptor authenticationInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry
+                // 添加拦截器
+                .addInterceptor(authenticationInterceptor)
+                .addPathPatterns(&quot;/**&quot;)
+                // 添加不需要校验的路径
+                .excludePathPatterns(&quot;/resource/**&quot;, &quot;/order&quot;, &quot;/user/**&quot;);
+    }
+}
+</code></pre></li>
+
+<li><p>Interceptor</p>
+
+<pre><code>@Component
+public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
+
+    final Logger logger = LoggerFactory.getLogger(AuthenticationInterceptor.class);
+
+    @Override
+    public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+        HttpSession session = request.getSession();
+        Long authUserId = (Long) session.getAttribute(AuthConfig.authSessionKey);
+
+        // TODO 补充权限校验、用户 Session 校验等
+        if (null != authUserId) {
+            request.setAttribute(AuthConfig.authSessionKey, authUserId);
+            return true;
+        } else {
+            logger.warn(&quot;UNAUTHORIZED session:{}&quot;, session.getId());
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED, &quot;UNAUTHORIZED&quot;);
+            return false;
+        }
+    }
+}
+</code></pre></li>
+</ul>
+
+<h1 id="其它方案">其它方案</h1>
+
+<h2 id="spring-security">Spring.Security</h2>
+
+<ul>
+<li><code>2.0.2.RELEASE</code>
+
+<ul>
+<li>实践
+
+<ul>
+<li>着重参考「Reference.Example」中的「Registration and Login Example with Spring Boot, Spring Security, Spring Data JPA, and HSQL」</li>
+</ul></li>
+<li>尝试未果
+
+<ul>
+<li>权限配置未果
+
+<ul>
+<li>使用 RESTFul 方式</li>
+<li>打算针对 <code>/{interface}</code> 放开，而限制 <code>/{interface}/{method}</code> 进行权限校验</li>
+<li>配置如下
+<code>
+http.authorizeRequests()
+    .antMatchers(&quot;/resources/**&quot;, &quot;/car&quot;, &quot;/casus&quot;, &quot;/msg&quot;, &quot;/news&quot;, &quot;/order&quot;, &quot;/share&quot;, &quot;/user&quot;, &quot;/user/login&quot;).permitAll()
+    .anyRequest().authenticated()
+</code></li>
+<li>如若有知道配置哪边写错的，烦请留言告知</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="apache-shiro">Apache.Shiro</h3>
+
+<ul>
+<li>阶段功能已满足，未尝试</li>
+</ul>
+
 <h1 id="reference">Reference</h1>
 
 <h2 id="office">Office</h2>
 
 <ul>
+<li>Spring.Security
+
+<ul>
 <li><a href="https://docs.spring.io/spring-security/site/docs/5.0.3.RELEASE/reference/htmlsingle/">Spring Security Reference</a></li>
 <li><a href="https://docs.spring.io/spring-security/site/docs/current/reference/html/jc.html">Java Configuration</a></li>
-<li>[]()</li>
+<li><a href="https://github.com/spring-projects/spring-security">spring-projects/spring-security</a></li>
+</ul></li>
+<li>Apache.Shiro
+
+<ul>
+<li><a href="https://shiro.apache.org/">Apache.Shiro</a></li>
+</ul></li>
 </ul>
 
 <h2 id="example">Example</h2>
 
 <ul>
 <li><a href="https://hellokoding.com/registration-and-login-example-with-spring-security-spring-boot-spring-data-jpa-hsql-jsp/">Registration and Login Example with Spring Boot, Spring Security, Spring Data JPA, and HSQL</a></li>
-<li>[]()</li>
+<li><a href="https://blog.csdn.net/jimo_lonely/article/details/78782262">前后端分离之Springboot后端</a></li>
+<li><a href="http://www.importnew.com/21589.html">从 MVC 到前后端分离</a></li>
+<li><a href="https://blog.csdn.net/u013142781/article/details/50629708">Shiro安全框架入门篇</a></li>
+<li><a href="http://wiki.jikexueyuan.com/project/shiro/">跟我学 Shiro</a></li>
 </ul>
 
 <h2 id="other">Other</h2>
 
 <ul>
-<li>[]()</li>
-<li>[]()</li>
+<li><a href="https://cloud.tencent.com/developer/article/1034750">Spring Security (三) 核心配置解读</a></li>
+<li><a href="https://emacoo.cn/backend/spring-boot-security/">关于Boot应用中集成Spring Security你必须了解的那些事</a></li>
+<li><a href="http://domain.yqjdcyy.com/post/jwt/">JWT</a></li>
 </ul>
 
             <ul class="share-buttons">
@@ -86,13 +299,13 @@
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Spring.Security&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
         <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f&title=" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspring.security%2f&title=Spring.Security" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 

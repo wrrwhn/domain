@@ -46,6 +46,34 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC">Hello.RPC</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/rpc">rpc</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
+ 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
+ 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
+ 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
+ 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
+ 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH">Go.GOPATH</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
@@ -270,33 +298,6 @@ JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong
 异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决  Main 方法上增加 [STAThread] 标志 <code>c# Thread app = new Thread(new ParameterizedThreadStart(ShowWindow)); app.ApartmentState = ApartmentState.STA;  Thread newThread = new Thread(new ThreadStart(ThreadMethod)); newThread.SetApartmentState(ApartmentState.MTA);</code>
 解析  STA  线程创建并进入一单线程单元  MTA  线程创建并进入一多线程单元  Unknown  尚未设置 ApartmentState 属   过程  COM 类中使用的公共语言库需要在 COM interop 情况下调用 COM 对象时创建单元  其中托管进程帮忙创建时允许其进入一个线程的单线程单元（STA）或多线程单元（MTA）&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux">Hello.Linux</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-进度 Linux 基础文件  14&frasl;30
-Linux 架站文件 0/ 31
-Linux 安全 0/ 1
-Solaris 0/ 1
-  概述 系统特点  开源免费、稳定性 安全性 处理多并发性能好  系统管理事项(kernel)  系统呼叫接口 行程管理：多任务 内存管理：控制内存，虚拟内存 档案系统管理：数据I/O及NTFS档案格式硬盘 装置驱动     系统演化  Unix - 1973  IBM AIX SUM SOLARIS HP HP UNIX 伯克利分校 MINIX  LINUS LINUX - 1994  REDHAT S.U.S.E 红旗     VMWare安装 学习流程  Linux平台开发，含vi,gcc,gdb,make,jdk,tomcat,mysql和linux基本操作 加厚c语言功底（c专家编程）或java语言 学习 Unix 环境高级编程（Unix环境高级编程） Linux应用系统开发或嵌入式开发  推荐书籍  《鸟哥的Linux私房菜》 《Linux编程从入门到精通》 《Linux内核完全剖析》  常用概念 安装  yum  进行软件包管理安装，一般用于自动从中央仓库下载安装指令 yum -y install make|patch|ntp  make  主要针对tar.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux"> &raquo;</a>
 </article>
 
         

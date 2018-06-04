@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security">Spring.Security</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.04">2018.06.04</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/security">security</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+前后端分离 思路  登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截  选型  Spring.Security  展示型项目，简单区分前后端即可  Vue+ Bootstrap  代码 引用 &lt;parent&gt; &lt;version&gt;1.3.8.RELEASE&lt;/version&gt; &lt;/parent&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.security&lt;/groupId&gt; &lt;artifactId&gt;spring-security-core&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.security&lt;/groupId&gt; &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt; &lt;version&gt;4.0.4.RELEASE&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt;  登录  Controller
+@RequestMapping(value = &quot;/login&quot;, method = RequestMethod.POST) public void login(@RequestBody UserVo userVo, HttpServletRequest request) { securityService.login(userVo.getName(), userVo.getPwd(), request); }  Service
+public void login(String username, String password, HttpServletRequest request) { User user = userService.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" title="Spring.Boot.Publish">Spring.Boot.Publish</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.31">2018.05.31</time>

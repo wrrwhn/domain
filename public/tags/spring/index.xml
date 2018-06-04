@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Thu, 31 May 2018 12:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 04 Jun 2018 14:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Spring.Security</title>
+      <link>http://domain.yqjdcyy.com/post/spring.security/</link>
+      <pubDate>Mon, 04 Jun 2018 14:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.security/</guid>
+      <description>[TOC]
+前后端分离 思路  登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截  选型  Spring.Security  展示型项目，简单区分前后端即可  Vue+ Bootstrap  代码 引用 &amp;lt;parent&amp;gt; &amp;lt;version&amp;gt;1.3.8.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-core&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-test&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.4.RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;  登录  Controller
+@RequestMapping(value = &amp;quot;/login&amp;quot;, method = RequestMethod.POST) public void login(@RequestBody UserVo userVo, HttpServletRequest request) { securityService.login(userVo.getName(), userVo.getPwd(), request); }  Service
+public void login(String username, String password, HttpServletRequest request) { User user = userService.</description>
+    </item>
     
     <item>
       <title>Spring.Boot.Publish</title>
