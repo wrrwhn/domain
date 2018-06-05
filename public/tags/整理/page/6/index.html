@@ -46,28 +46,6 @@
         
             <article class="post">
     
-<h1><a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka">Kafka</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/kafka">kafka</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
 <h1><a href="http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/" title="FFmpeg.阅读笔记">FFmpeg.阅读笔记</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.23">2017.11.23</time>
@@ -291,6 +269,30 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
 悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
 searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &quot;./dict/dictionary.txt&quot;, StopTokenFile: &quot;./dict/stop_tokens.txt&quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/go.wukong/" title="Go.Wukong"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站">Hugo 建站</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/hugo">hugo</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Hugo 建站 参考  使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点 github Pages和Jekyll入门 3.5. 建立主页  安装  下载  gohugoio/hugo  安装  tar xvf hugo_0.15_linux_amd64.tar.gz -C /data/soft/hugo   生成  /data/soft/hugo/hugo new site /data/service/domain  archetypes config.toml  整体配置  content  文章  data layouts static themes  主题    安装主题  仅需将主题下载至 themes 文件下，并更 config.toml 中的 theme 为主题名称  下载  git clone <a href="https://github">https://github</a>.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/" title="Hugo 建站"> &raquo;</a>
 </article>
 
         

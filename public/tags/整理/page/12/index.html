@@ -46,29 +46,6 @@
         
             <article class="post">
     
-<h1><a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置">Go.安装配置</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/" title="Go.安装配置"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
 <h1><a href="http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/" title="Go.异常处理">Go.异常处理</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.05.23">2017.05.23</time>
@@ -274,6 +251,35 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 
     <p>统计方面 合并  Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&hellip;)  按照COLX的降序层次逐层汇总合并  CUBE(COL1, COL2&hellip;)  排序  Rank() Over ([Partition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，但下一记录会空出其中的排名  Dense_rank() Over ([Patition by ] [Order by ] [Nulls First/Last])  相同数据排名一致，之后数据接上一次序继续  Row_number() Over ([Partitionby ] [Order by ] [Nulls First/Last])  碰到相同数据时不做处理依照记录顺序依次递增  Ntile( ) Over ([Partition by ] [Order by ])  最值  [Min|Max]() Keep (Dense_rank First/Last [Partition by ] [Order by ])  MIN 用于确保返回唯一记录 KEEP 用于告知Oracle保留符合KEEP条件的记录 Dense_rank 固定写法，不可更改  Ratio_to_report(value)  Ratio_to_report(value)= value/ sum(value)   首/末记录  [First_value|Last_value|(Sum() Over ([Patition by ] [Order by ] Rows Between Preceding And Following ))  相邻记录比较  LAG(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LAG(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])  LEAD(其它行表达式, &lt;偏移行数，缺省为1&gt;, &lt;偏移行数超出分组范围时的返回值&gt;)  LEAD(SUM( ), 1) OVER([PATITION BY] [ORDER BY ])   家族树  START WITH COL1= &lsquo;XXX&rsquo; CONNECT BY COL1= PRIOR COL2  语法  1&gt;语句顺序：SELECT&gt; FROM&gt; WHERE&gt; START WITH&gt; CONNECT BY&gt; ORDER BY 2&gt;PRIOR位置：在前（CONNECT BY PRIOR COL1=COL2），强制由根到叶自顶向上，置于后面则相反由叶到根 3&gt;WHERE可以排除树中个体，但无法排除其子孙或祖先 4&gt;CONNECT BY条件则可以排除个体及其后代信息 5&gt;CONNECT BY不以和WHERE子句中表连接使用  例子  SELECT LEVEL, NVL(B.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/" title="Oracle.分析函数"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/angularjs.basic/" title="AngularJS.Basic">AngularJS.Basic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.14">2016.12.14</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/angularjs">angularjs</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>导言和准备  地址 源码 图解Git  引导程序 参考 - 详细：<a href="http://angularjs.cn/A003">http://angularjs.cn/A003</a> - 源码：<a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a> - 环境：<a href="https://github.com/nodejs/node-gyp">https://github.com/nodejs/node-gyp</a> - 安装异常：<a href="http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm">http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm</a> - 安装异常：<a href="http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html">http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html</a>  启动服务  npm install npm start
+ 需要行先安装 python，仅目前只支持 2.<em>.，不支持 3..</em> 并将 git 设置为环境变量，即将 D:\Program Files (x86)\Git\bin\;D:\Program Files (x86)\Git\libexec\git-core; 加入环境变量中
+ 注：有时需要重启才能生效 更多注意事项请看 <a href="https://github.com/nodejs/node-gyp">https://github.com/nodejs/node-gyp</a>
+测试服务   npm test
+切换服务 git checkout -f step-0
+ 其中各阶段主要重点均在 <a href="https://github.com/angular/angular-phonecat">https://github.com/angular/angular-phonecat</a>
+应用界面  <a href="http://localhost:8000/app/index.html">http://localhost:8000/app/index.html</a>
+核心代码解析 &lt;!&ndash; np-app 指令，用于标记 AngularJS 脚本的作用域 &ndash;&gt; &lt;html lang=&quot;en&quot; ng-app&gt; &lt;!&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/angularjs.basic/" title="AngularJS.Basic"> &raquo;</a>
 </article>
 
         

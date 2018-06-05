@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Tue, 05 Jun 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 16:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java开发必须掌握的线上问题排查命令</title>
+      <link>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 05 Jun 2018 16:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</guid>
+      <description> [TOC]
+Java开发必须掌握的线上问题排查命令 常用命令 JPS  功能  显示进程的 PID  示例  jps jps -v pid  显示指定 PID 对应程序的虚拟机参数  jps -m pid  显示程序启动参数  jps -l pid  显示主类的绝对路径    JSTAT  功能  显示进程中类装载/ 内存/ 垃圾回收及 JIT 编译等数据  示例  jstat -gc [PID] [milliseconds] [times]  查询指定[PID]进程的垃圾回收情况, 每[milliseconds]毫秒一次,共[times]次  jstat -gccause  显示上次 GC 的原因  jstat -calss  显示类装载、类卸载、总空间以及所消耗的时间     JMAP  功能  生成堆栈快照  示例  jmap -heap [PID]  查看 java 堆的使用情况  jmap -histo [PID]  查看堆内存中的对象数量及大小  jmap -histo:live [PID]  JVM会先触发 gc，然后再统计信息  jmap -dump:format=b,file=[file] [PID]  将内存使用的详细情况输出到文件 [file] 中    JHAT  功能  配合 JMAP 使用,分析堆栈文件  示例  jhat heapDump  解析Java堆转储文件,并启动一个 web server    JSTACK  功能  生成当前的线程快照  示例  `jstack [PID]  查看线程情况  `jstack -F [PID]  正常输出不被响应时，使用该指令  `jstack -l [PID]  除堆栈外，显示关于锁的附件信息    问题定位 频繁 GC 或内存溢出  使用 jps 查看线程ID 使用 jstat -gc [PID] [MS] [TIME] 查看gc情况，一般比较关注 PERM区 的情况，查看 GC的 增长情况 使用 jstat -gccause 额外输出上次GC原因 使用 jmap -dump:format=b,file=heapDump [PID] 以*生成堆转储文件** 使用 jhat 或者可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）分析堆情况 结合代码解决内存溢出或泄露问题  死锁  使用jps查看线程ID 使用jstack [PID] 以查看线程情况  </description>
+    </item>
     
     <item>
       <title>Java.Filter-Lisenter-Inteceptor-AOP</title>
@@ -125,16 +135,6 @@ Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToM
  追求表达的极致效果，恨不得每句话都一语惊人直捣芳心。 对真诚的错误理解，认为真诚就是把自己做的和想的毫无保留地告诉对方。  所谓真诚的原则为“不说假话”即可，至于真话说多少应该随着交往循序渐进  自恋  方式
  主动说自己的状态  先只“下切一级”，然后根据对方的反应再决定是否下切到二级或者三级  用 比你觉得安全的程度再轻一些去表达   随意评价  重要性
  四大常见错误里最严重的一项，可惜很多人都意识不到  表现</description>
-    </item>
-    
-    <item>
-      <title>汽车.学车</title>
-      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
-      <pubDate>Sun, 20 May 2018 23:50:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
-      <description>[TOC]
-参考条件  身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考  科目一 挂学时 刷题目 考试  自行前往车管所 到时先行录指纹 等叫到号时进入 完成考试后领取成绩单  科目二 注意事项  注意调整座椅、后视镜等  后视镜上沿可见后侧门把手 车身占后视镜 1&amp;frasl;4 左右   启动三保险  离合踩满 刹车踩满 挂空档  打满= 90度= 打三把  一把= 单手半圈   流程  注意事项  考试过程中，身体任意部位不能伸出车窗 考试不及格，需从专门车道返回重考 有一次重考机会 场地     入场  穿反光马甲 识别身份证，按指纹  启动  调整座位、后视镜 绑定安全带，挂空档，踩刹车、离合，启动 拉手刹、挂一档、打左车向灯前进  侧方停车  出库时打左转向灯 不及格  入库停止后，车身出线  扣10分  行驶中轮胎压线   定点与半坡起步  前保险框停于实线处 起步前手刹拉起三秒，打左转向灯 起步熄火时，立马踩刹车重新启动 不及格  前保险框停于虚线外 后溜超过30公分 未于30s内启动  扣10分  前保险框位于虚线内实线外 后溜30公分   直角转弯  不及格  行驶中车轮压线 中途停车   曲线  不及格  行驶中车轮压线 中途停车   倒车入库  不及格  不按规定路线、顺序行驶 车身出线 中途停车 时长超过4min    实际体验  申请  第一次预约  286&amp;frasl;300 提前几天通知预约失败 与教练确认是由于预约顺序与科目一考试的时间有关 提前几天，短信通知到预约失败  第二次预约  顺利   集合  6:55 训练场集合  入场  7:30 到达考场，后直接刷身份证进去  排队  安排的9:30的场 分排「8:00-9:30」与「9:30-12:00」的场    8点的场进去后便可进入  刷身份证+ 脱眼镜拍照   考试  进考场  坐在大厅等待提示 提示自己「6」号车后，对照了解需进第三号考场    去了一下洗手间，手机静音  考试  紧张等待「6」号车返回 听大妈讲刚考过，紧张到脚抖至走不动的故事 上车，检查座椅、左右后视镜  左右后视镜无法再调整，幸好还有辅助镜子  使用身份证签到，对摄像头拍照 重新启动出发  安全员搭话，忘记启动打左转向，囧  侧方 半坡  位置停不准  直角 S弯 倒库  80分及格   难点 倒车入库 左倒车  前进至车身挡住对面车道线，方向盘向左打满 直视前方，快对直时拉直（右打满） 继续前进至左侧远端黄线与手肘对齐 踩满离合、刹车后，挂倒档 倒至左侧后视镜杆挡住远端黄线时左转打满（左打三把） 观察左侧后视镜中，车身离左侧库角70厘米左右，回（右）1.</description>
     </item>
     
     <item>

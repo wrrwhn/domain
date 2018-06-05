@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" title="Java开发必须掌握的线上问题排查命令">Java开发必须掌握的线上问题排查命令</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Java开发必须掌握的线上问题排查命令 常用命令 JPS  功能  显示进程的 PID  示例  jps jps -v pid  显示指定 PID 对应程序的虚拟机参数  jps -m pid  显示程序启动参数  jps -l pid  显示主类的绝对路径    JSTAT  功能  显示进程中类装载/ 内存/ 垃圾回收及 JIT 编译等数据  示例  jstat -gc [PID] [milliseconds] [times]  查询指定[PID]进程的垃圾回收情况, 每[milliseconds]毫秒一次,共[times]次  jstat -gccause  显示上次 GC 的原因  jstat -calss  显示类装载、类卸载、总空间以及所消耗的时间     JMAP  功能  生成堆栈快照  示例  jmap -heap [PID]  查看 java 堆的使用情况  jmap -histo [PID]  查看堆内存中的对象数量及大小  jmap -histo:live [PID]  JVM会先触发 gc，然后再统计信息  jmap -dump:format=b,file=[file] [PID]  将内存使用的详细情况输出到文件 [file] 中    JHAT  功能  配合 JMAP 使用,分析堆栈文件  示例  jhat heapDump  解析Java堆转储文件,并启动一个 web server    JSTACK  功能  生成当前的线程快照  示例  <code>jstack [PID]  查看线程情况</code>jstack -F [PID]  正常输出不被响应时，使用该指令  `jstack -l [PID]  除堆栈外，显示关于锁的附件信息    问题定位 频繁 GC 或内存溢出  使用 jps 查看线程ID 使用 jstat -gc [PID] [MS] [TIME] 查看gc情况，一般比较关注 PERM区 的情况，查看 GC的 增长情况 使用 jstat -gccause 额外输出上次GC原因 使用 jmap -dump:format=b,file=heapDump [PID] 以*生成堆转储文件** 使用 jhat 或者可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）分析堆情况 结合代码解决内存溢出或泄露问题  死锁  使用jps查看线程ID 使用jstack [PID] 以查看线程情况&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" title="Java开发必须掌握的线上问题排查命令"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP">Java.Filter-Lisenter-Inteceptor-AOP</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
@@ -266,29 +289,6 @@ JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong
     <p>[TOC]
 List Access  private protected public  class, method, variable  abstract class extends implements interface native  The native keyword may be applied to a method to indicate that the method is implemented in a language other then Java. 用于说明该方法为原生函数，由 C|C++ 实现并编译成 DLL 提供给 Java 进行调用  统一由操作系统实现   new static strictfp  strict float point | 精确浮点 确保数值计算均严格遵守 FP-strict 限制，并符合 IEEE-754 规范 保障不会因为不同的硬件平台导致计算结果不一致 可声明于类、接口或方法上  synchronized  The synchronized keyword may be applied to a method or statement block and provides protection for critical sections that should only be executed by one thread at a time.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.keyword/" title="Java.Keyword"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream">Java.Stream</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.25">2018.04.25</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream"> &raquo;</a>
 </article>
 
         

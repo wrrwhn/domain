@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream">Java.Stream</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.25">2018.04.25</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version">IDEA.Java.Version</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
@@ -267,29 +290,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
     <p>[TOC]
 参考  使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁  功能 获取路径 分类  绝对路径  主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 例  C:xyz est.txt  代表了test.txt文件的绝对路径    相对路径  相对与某个基准目录（一般对照WEB）的路径。 示例  &quot;/&quot;代表Web应用的跟目录 &quot;./&quot; 代表当前目录 &quot;../&quot;代表上级目录   注  JSP/SERVLET中的比较特殊，服务器端的地址服务器端的相对地址指的是相对于你的web应用的地址，因为该地址是由服务器端解析聘的   获取方法 JSP路径/系统全路径  使用环境  SERVLET/JSP  使用语句  request.getRealPath(&quot;？&quot;) &ndash;&gt; ？为/ . 空格 web.xml request.getRealPath(request.getRequestURI()); getServletContext().getRealPath(&quot;&amp;quot;) //站点绝对路径 application.getRealPath(&quot;&quot;) //JSP界面使用 ServletContext().getRealPath(&quot;&quot;)  返回字串  C:\Apache\Tomcat\webapps\local+ （\ .&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.basic/" title="Java.Basic"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.command/" title="Java.Command">Java.Command</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.command/" title="Java.Command"> &raquo;</a>
 </article>
 
         

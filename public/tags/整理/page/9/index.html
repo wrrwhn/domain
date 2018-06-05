@@ -46,30 +46,6 @@
         
             <article class="post">
     
-<h1><a href="http://domain.yqjdcyy.com/post/wechat.export/" title="Wechat.Export">Wechat.Export</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.13">2017.09.13</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/wechat">wechat</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder
-流程  将语音收藏 在手机完整收听 使用目录管理搜索提取  ./sdcard/tecent/MicroMsg/ 搜索 .silk 文件  拷贝至电脑 使用 silk2mp3 工具将音频*转换*为 mp3 格式文件  注意  SILK v3  为 skype 向第三方开发人员或硬件制造商提供的免版税谁的 Silk 宽音频编码器 文件更为精简  xxx.silk 18KB xxx.mp3 189KB&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/wechat.export/" title="Wechat.Export"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
 <h1><a href="http://domain.yqjdcyy.com/post/error.mysql/" title="Error.Mysql">Error.Mysql</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.09.12">2017.09.12</time>
@@ -278,6 +254,29 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
     <p>[TOC]
 参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽    EXAMPLE  ``   useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/linux.jenkins/" title="Linux.Jenkins">Linux.Jenkins</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.17">2017.08.17</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification failed [WARNING] Failed to create parent directories for tracking file  流程 war  DOWNLOAD  wget <a href="http://mirrors.jenkins-ci.org/war/latest/jenkins.war">http://mirrors.jenkins-ci.org/war/latest/jenkins.war</a>  COPY  cp jenkins.war /data/service/webapps/jenkins/webapps/ROOT.war  CONFIG.JENKINS.TOMCAT  CATALINA_OPTS=&quot;-server -DJENKINS_HOME=/root/.jenkins -Xms528m -Xmx528m -XX:PermSize=256m -XX:MaxPermSize=358m&quot; export CATALINA_OPTS   yum  YUM.CONFIG  wget -O /etc/yum.repos.d/jenkins.repo <a href="http://jenkins-ci.org/redhat/jenkins.repo">http://jenkins-ci.org/redhat/jenkins.repo</a> rpm &ndash;import <a href="http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key">http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key</a>  YUM  yum install jenkins  JENKINS.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.jenkins/" title="Linux.Jenkins"> &raquo;</a>
 </article>
 
         

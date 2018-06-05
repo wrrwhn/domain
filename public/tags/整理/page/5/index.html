@@ -46,32 +46,6 @@
         
             <article class="post">
     
-<h1><a href="http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="IDEA.快捷键">IDEA.快捷键</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.08">2018.02.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE">快捷键</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  <a href="http://www.cnblogs.com/tonycody/p/3257601.html">http://www.cnblogs.com/tonycody/p/3257601.html</a> <a href="http://www.importnew.com/15462.html">http://www.importnew.com/15462.html</a>  快捷键 包、结构或视图  Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查找代码所在位置 Alt+1 快速打开或隐藏工程面板 Ctrl+Alt+ left/right 返回至上次浏览的位置 Alt+ left/right 切换代码视图  文件操作和视图  Ctrl+N 查找类 Ctrl+Shift+N 查找文件 Ctrl+Shift+Alt+N 查找类中的方法或变量 Ctrl+F12 显示当前类结构 ctr+G 定位某一行 Alt+ Up/Down 在方法间快速移动定位
- Alt+F1 查找代码所在位置 Ctrl+O，显示可重载方法 Ctrl+Q，查看方法定义；而Ctrl+P 查看参数定义  代码相关  Ctrl+Alt+L 格式化代码 Ctrl+Alt+Space 类名或接口名提示 Alt+Insert 生成代码(如get,set方法,构造函数等) Ctrl+Shift+Space 自动补全代码 Ctrl+空格 代码提示 Ctrl+/ 或 Ctrl+Shift+/ 注释（ 或者/&hellip;/ ） Ctrl+ Alt+ T，用指定方法体围绕代码行 Ctrl+Shift+Up/Down 代码向上/下移动。 F2 或Shift+F2 高亮错误或警告快速定位 Ctrl+Shift+先上键 将该功能代码上移 Ctrl+X 删除行 Ctrl+D 复制行 Ctrl+J Live Templates列表 选中变量后按 Alt+F7，可以查看该变量的所有应用场景 Ctrl+B，跳转至对应类 Ctrl+Alt+B，显示接口相应的实现类 Ctrl+Shift+ Alt+ U，显示类关系图 Ctrl-Shift-Backspace，可切换回之前修改的代码处  文字类型相关  Shift+F6 重构-重命名 ctr+shift+U大小写转化 代码标签输入完成后，按Tab，生成代码。 选中文本，按Ctrl+Shift+F7 ，高亮显示所有该文本，按Esc高亮消失。 选中文本，按Alt+F3 ，逐个往下查找相同文本，并高亮显示。 Ctrl+Up/Down 光标跳转到第一行或最后一行下 Ctrl+W 向上层级代码选中 Ctrl+Shift+J，自动缩进合并多行代码  Debug 相关  alt+f8 debug时选中查看值 f8相当于eclipse的f6跳到下一步 shift+f8相当于eclipse的f8跳到下一个断点，也相当于eclipse的f7跳出函数 f7相当于eclipse的f5就是进入到代码 alt+shift+f7这个是强制进入代码 ctrl+shift+f9 debug运行java类 ctrl+shift+f10正常运行java类 command+f2停止运行&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/" title="IDEA.快捷键"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
 <h1><a href="http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" title="设计模式">设计模式</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.02">2018.02.02</time>
@@ -284,6 +258,28 @@ UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj&hell
 
     <p>流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/" title="云开-服务端架构-20171203"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka">Kafka</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/kafka">kafka</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
 </article>
 
         

@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Tue, 29 May 2018 15:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 16:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java开发必须掌握的线上问题排查命令</title>
+      <link>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</link>
+      <pubDate>Tue, 05 Jun 2018 16:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</guid>
+      <description> [TOC]
+Java开发必须掌握的线上问题排查命令 常用命令 JPS  功能  显示进程的 PID  示例  jps jps -v pid  显示指定 PID 对应程序的虚拟机参数  jps -m pid  显示程序启动参数  jps -l pid  显示主类的绝对路径    JSTAT  功能  显示进程中类装载/ 内存/ 垃圾回收及 JIT 编译等数据  示例  jstat -gc [PID] [milliseconds] [times]  查询指定[PID]进程的垃圾回收情况, 每[milliseconds]毫秒一次,共[times]次  jstat -gccause  显示上次 GC 的原因  jstat -calss  显示类装载、类卸载、总空间以及所消耗的时间     JMAP  功能  生成堆栈快照  示例  jmap -heap [PID]  查看 java 堆的使用情况  jmap -histo [PID]  查看堆内存中的对象数量及大小  jmap -histo:live [PID]  JVM会先触发 gc，然后再统计信息  jmap -dump:format=b,file=[file] [PID]  将内存使用的详细情况输出到文件 [file] 中    JHAT  功能  配合 JMAP 使用,分析堆栈文件  示例  jhat heapDump  解析Java堆转储文件,并启动一个 web server    JSTACK  功能  生成当前的线程快照  示例  `jstack [PID]  查看线程情况  `jstack -F [PID]  正常输出不被响应时，使用该指令  `jstack -l [PID]  除堆栈外，显示关于锁的附件信息    问题定位 频繁 GC 或内存溢出  使用 jps 查看线程ID 使用 jstat -gc [PID] [MS] [TIME] 查看gc情况，一般比较关注 PERM区 的情况，查看 GC的 增长情况 使用 jstat -gccause 额外输出上次GC原因 使用 jmap -dump:format=b,file=heapDump [PID] 以*生成堆转储文件** 使用 jhat 或者可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）分析堆情况 结合代码解决内存溢出或泄露问题  死锁  使用jps查看线程ID 使用jstack [PID] 以查看线程情况  </description>
+    </item>
     
     <item>
       <title>我们的孩子</title>
