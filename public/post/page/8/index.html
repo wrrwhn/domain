@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/imagemagick.basic/" title="ImageMagick">ImageMagick</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.18">2018.01.18</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/imagemagick">imagemagick</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+ImageMagick Reference  官网  Anatomy  convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]  Input FileNames FileName Globbing  Analysis  pattern match about */?  Example
+ convert *.jpg images.gif
+Explicit Image Format  Analysis
+ specified a explicit image format is better than in the case of the image donot contain a signature of identify format  Example
+ convert -size 640x480 -depth 8 rgb:image image.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/imagemagick.basic/" title="ImageMagick"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab">Linux.Crontab</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.01.17">2018.01.17</time>
@@ -256,28 +283,6 @@ UML 参考  看懂UML类图和时序图  大纲    使用  StarUML  UML.mdj&hell
 
     <p>流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/" title="云开-服务端架构-20171203"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka">Kafka</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/kafka">kafka</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka"> &raquo;</a>
 </article>
 
         

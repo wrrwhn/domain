@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/spring.transactional/" title="Spring.@Transactional">Spring.@Transactional</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.22">2018.05.22</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/transaction">transaction</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+使用方式  将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上  该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性   属性 属性列表    属性名 是否必输 默认值 说明     name Yes  关联指定名称的事务管理器 可用通配符(<em>)来匹配多个事务管理器，如 get</em>, on*Event   propagation No REQUIRED 事务传播行为   isolation No DEFAULT 事务隔离等级   timeout No -1 事务超时时长，单位为秒  如果超过该时长限制而事务未完成，则自动回滚   read-only No false 事务是否只读   rollback-for No  指定能触发事务回滚的异常类型使用逗号(,)分隔，如 com.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring.transactional/" title="Spring.@Transactional"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%81%8A%E5%A4%A9/" title="如何聊天">如何聊天</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.21">2018.05.21</time>
@@ -252,7 +277,7 @@ Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂�
         
             <article class="post">
     
-<h1><a href="http://domain.yqjdcyy.com/post/tools.profiler/" title="Tools.Profiler">Tools.Profiler</a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.profiler/" title="Java.Tools.Profiler">Java.Tools.Profiler</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
 
@@ -271,32 +296,7 @@ Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂�
 
     <p>[TOC]
 监控 目的  通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率  方式  事件方法  对于 Java，可以采用 JVMTI（JVM Tools Interface）API 来捕捉诸如方法调用、类载入、类卸载、进入/离开线程等事件，然后基于这些事件进行程序行为的分析。  统计抽样方法（sampling）  该方法每隔一段时间调用系统中断，然后收集当前的调用栈（call stack）信息，记录调用栈中出现的函数及这些函数的调用结构,基于这些信息得到函数的调用关系图及每个函数的 CPU 使用信息。 由于调用栈的信息是每隔一段时间来获取的，因此不是非常精确的，但由于该方法对目标程序的干涉比较少，目标程序的运行速度几乎不受影响。  植入附加指令方法（BCI）  该方法在目标程序中插入指令代码，这些指令代码将记录 profiling 所需的信息，包括运行时间、计数器的值等，从而给出一个较为精确的内存使用情况、函数调用关系及函数的 CPU 使用信息。 该方法对程序执行速度会有一定的影响，因此给出的程序执行时间有可能不准确。但是该方法在统计程序的运行轨迹方面有一定的优势。   常用功能  遥测（Telemetry）  遥测是一种用来查看应用程序运行行为的最简单的方法。 通常会有多个视图（View）分别实时地显示 CPU 使用情况、内存使用情况、线程状态以及其他一些有用的信息，以便用户能很快地发现问题的关键所在 CPU Telemetry 视图一般用于显示整个应用程序的 CPU 使用情况，有些工具还能显示应用程序中每个线程的 CPU 使用情况 Memory Telemetry 视图一般用于显示堆内存和非堆内存的分配和使用情况 Garbage Collection Telemetry 视图显示了 JVM 中垃圾收集器的详细信息 Threads Telemetry 视图一般用于显示当前运行线程的个数、守护进程的个数等信息 Classes Telemetry 视图一般用于显示已经载入和还没有载入的类的数量  快照（snapshot）  应用程序启动后，profiler 工具开始收集各种执行数据，其中一些数据直接显示在遥测视图中，而另外大部分数据被保存在内部，直到用户要求获取快照，基于这些保存的数据的统计信息才被 显示出来。 快照包含了应用程序在一段时间内的执行信息  CPU 快照  主要包含了应用程序中函数的调用关系及运行时间。  内存快照  主要包含了内存的分配和使用情况、载入的所有类、存在的对象信息及对象间的引用关系。    CPU Profiling  CPU Profiling 的主要目的是统计函数的调用情况及执行时间，或者更简单的情况就是统计应用程序的 CPU 使用情况。 方式  CPU 遥测 CPU 快照   内存 Profiling  主要通过统计内存使用情况检测可能存在的内存泄露问题及确定优化内存使用的方向。 方式  内存遥测 内存快照   线程 Profiling  线程 Profiling 主要用于在多线程应用程序中确定内存的问题所在  某个线程的状态变化情况 死锁情况 某个线程在线程生命期内状态的分布情况    工具 Java.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/tools.profiler/" title="Tools.Profiler"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap">Java.Tools.JMap</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &lt;pid&gt;|&lt;executable &lt;core&gt;&gt; | &lt;[server_id@]&lt;remoteServerIP | hostname&gt;&gt; 参数  &lt;no option&gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&lt;filename&gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&lt;flag&gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748 | 内存地址 | 内存占用 | 进程、核心文件或远程调试服务器 | |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 0x0000000051560000 | 8740K | D:\server\Java\jdk1.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap"> &raquo;</a>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.profiler/" title="Java.Tools.Profiler"> &raquo;</a>
 </article>
 
         

@@ -1,6 +1,6 @@
 +++
 date = "2018-05-04T10:30:00+08:00"
-title = "Tools.Profiler"
+title = "Java.Tools.Profiler"
 draft = false
 tags = ["整理","Java","Profiler"]
 share = true

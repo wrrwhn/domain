@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Tue, 05 Jun 2018 15:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 16:50:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>汽车.学车</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
+      <pubDate>Tue, 05 Jun 2018 16:50:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
+      <description>[TOC]
+参考条件  身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考  报名  2018.1.19  驾校报名，交付一半的订金  2018.1.20  由驾校工作人员载着去进行体检   科目一 挂学时 刷题目 考试  自行前往车管所 到时先行录指纹 等叫到号时进入 完成考试后领取成绩单  科目二 注意事项  注意调整座椅、后视镜等  后视镜上沿可见后侧门把手 车身占后视镜 1&amp;frasl;4 左右   启动三保险  离合踩满 刹车踩满 挂空档  打满= 90度= 打三把  一把= 单手半圈   流程  注意事项  考试过程中，身体任意部位不能伸出车窗 考试不及格，需从专门车道返回重考 有一次重考机会 场地     入场  穿反光马甲 识别身份证，按指纹  启动  调整座位、后视镜 绑定安全带，挂空档，踩刹车、离合，启动 拉手刹、挂一档、打左车向灯前进  侧方停车  出库时打左转向灯 不及格  入库停止后，车身出线  扣10分  行驶中轮胎压线   定点与半坡起步  前保险框停于实线处 起步前手刹拉起三秒，打左转向灯 起步熄火时，立马踩刹车重新启动 不及格  前保险框停于虚线外 后溜超过30公分 未于30s内启动  扣10分  前保险框位于虚线内实线外 后溜30公分   直角转弯  不及格  行驶中车轮压线 中途停车   曲线  不及格  行驶中车轮压线 中途停车   倒车入库  不及格  不按规定路线、顺序行驶 车身出线 中途停车 时长超过4min    实际体验  申请  第一次预约  286&amp;frasl;300 提前几天通知预约失败 与教练确认是由于预约顺序与科目一考试的时间有关 提前几天，短信通知到预约失败  第二次预约  顺利   集合  6:55 训练场集合  入场  7:30 到达考场，后直接刷身份证进去  排队  安排的9:30的场 分排「8:00-9:30」与「9:30-12:00」的场    8点的场进去后便可进入  刷身份证+ 脱眼镜拍照   考试  进考场  坐在大厅等待提示 提示自己「6」号车后，对照了解需进第三号考场    去了一下洗手间，手机静音  考试  紧张等待「6」号车返回 听大妈讲刚考过，紧张到脚抖至走不动的故事 上车，检查座椅、左右后视镜  左右后视镜无法再调整，幸好还有辅助镜子  使用身份证签到，对摄像头拍照 重新启动出发  安全员搭话，忘记启动打左转向，囧  侧方 半坡  位置停不准  直角 S弯 倒库  80分及格   难点 倒车入库 左倒车  前进至车身挡住对面车道线，方向盘向左打满 直视前方，快对直时拉直（右打满） 继续前进至左侧远端黄线与手肘对齐 踩满离合、刹车后，挂倒档 倒至左侧后视镜杆挡住远端黄线时左转打满（左打三把） 观察左侧后视镜中，车身离左侧库角70厘米左右，回（右）1.</description>
+    </item>
     
     <item>
       <title>Java.Filter-Lisenter-Inteceptor-AOP</title>
@@ -164,11 +174,11 @@ Info  看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便�
     </item>
     
     <item>
-      <title>Tools.Profiler</title>
-      <link>http://domain.yqjdcyy.com/post/tools.profiler/</link>
+      <title>Java.Tools.Profiler</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.profiler/</link>
       <pubDate>Fri, 04 May 2018 10:30:00 +0800</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/tools.profiler/</guid>
+      <guid>http://domain.yqjdcyy.com/post/java.tools.profiler/</guid>
       <description>[TOC]
 监控 目的  通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率  方式  事件方法  对于 Java，可以采用 JVMTI（JVM Tools Interface）API 来捕捉诸如方法调用、类载入、类卸载、进入/离开线程等事件，然后基于这些事件进行程序行为的分析。  统计抽样方法（sampling）  该方法每隔一段时间调用系统中断，然后收集当前的调用栈（call stack）信息，记录调用栈中出现的函数及这些函数的调用结构,基于这些信息得到函数的调用关系图及每个函数的 CPU 使用信息。 由于调用栈的信息是每隔一段时间来获取的，因此不是非常精确的，但由于该方法对目标程序的干涉比较少，目标程序的运行速度几乎不受影响。  植入附加指令方法（BCI）  该方法在目标程序中插入指令代码，这些指令代码将记录 profiling 所需的信息，包括运行时间、计数器的值等，从而给出一个较为精确的内存使用情况、函数调用关系及函数的 CPU 使用信息。 该方法对程序执行速度会有一定的影响，因此给出的程序执行时间有可能不准确。但是该方法在统计程序的运行轨迹方面有一定的优势。   常用功能  遥测（Telemetry）  遥测是一种用来查看应用程序运行行为的最简单的方法。 通常会有多个视图（View）分别实时地显示 CPU 使用情况、内存使用情况、线程状态以及其他一些有用的信息，以便用户能很快地发现问题的关键所在 CPU Telemetry 视图一般用于显示整个应用程序的 CPU 使用情况，有些工具还能显示应用程序中每个线程的 CPU 使用情况 Memory Telemetry 视图一般用于显示堆内存和非堆内存的分配和使用情况 Garbage Collection Telemetry 视图显示了 JVM 中垃圾收集器的详细信息 Threads Telemetry 视图一般用于显示当前运行线程的个数、守护进程的个数等信息 Classes Telemetry 视图一般用于显示已经载入和还没有载入的类的数量  快照（snapshot）  应用程序启动后，profiler 工具开始收集各种执行数据，其中一些数据直接显示在遥测视图中，而另外大部分数据被保存在内部，直到用户要求获取快照，基于这些保存的数据的统计信息才被 显示出来。 快照包含了应用程序在一段时间内的执行信息  CPU 快照  主要包含了应用程序中函数的调用关系及运行时间。  内存快照  主要包含了内存的分配和使用情况、载入的所有类、存在的对象信息及对象间的引用关系。    CPU Profiling  CPU Profiling 的主要目的是统计函数的调用情况及执行时间，或者更简单的情况就是统计应用程序的 CPU 使用情况。 方式  CPU 遥测 CPU 快照   内存 Profiling  主要通过统计内存使用情况检测可能存在的内存泄露问题及确定优化内存使用的方向。 方式  内存遥测 内存快照   线程 Profiling  线程 Profiling 主要用于在多线程应用程序中确定内存的问题所在  某个线程的状态变化情况 死锁情况 某个线程在线程生命期内状态的分布情况    工具 Java.</description>
     </item>
