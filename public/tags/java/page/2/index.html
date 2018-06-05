@@ -46,6 +46,32 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version">IDEA.Java.Version</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
+ 快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&gt; 1.8 Project language level-&gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff">Java.&amp;0xff</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
@@ -264,29 +290,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
     <p>[TOC]
 Javac  作用  将 *.java 源代码转换为 *.class 格式文件  参考  Javac编译原理  事例  目录  D:\workspace\Knowledge_Structure\jni\JNIProxy.java  执行语句  D:\workspace\Knowledge_Structure\jni&gt; javac JNIProxy.java    Javah  作用  生成类中所需的 JNI 头文件  参考  用javah 导出类的头文件， 常见的错误及正确的使用方法  事例  目录  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java\ com\yao\study\java\jni\JNIProxy.java  类定义  package com.yao.study.java.jni; public class JNIProxy{&hellip;}  执行语句  D:\workspace\work4Git\Knowledge_Structure\00.语言\Java\代码\java-study\src\main\java&gt; javah -o jni_msg.h com.yao.study.java.jni.JNIProxy&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.command/" title="Java.Command"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.detail/" title="Java.Detail">Java.Detail</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.09">2017.08.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-finally  用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放  若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉   preparedStatement  预编译语句，继承自Statement，用于处理大业务量的数据库操作 效率高，但代价是建立在创建对象时付出较大的成本，但是创建后可以通过传入不同的参数重复高效的使用 示例  PreparedStatement ps = con.prepareStatement(&quot;select * from student where stuNo=?&quot;); //!! for(int i=0; i&lt; 1000; i++){ ps.setString(1, &quot;1000&quot;); ResultSet rs = ps.executeQuery(); rs.close(); } ps.close(); //!!  注  在高频率反复执行同一类业务量的数据处理任务时使用   连接池  为服务器配置连接池，而在配置文件中指定所要连接的数据库和连接个数 便于服务器启动时，首先连接目标数据库创建指定个数的活动连接，并将其放到连接池中 优点  不同的访问者共享有限的连接，免去了数据库连结的漫长创建过程  类似使用  在线程管理中，为避免线程资源的浪费和提高效率，也可以采用线程池来进行线程的管理   内存管理 引用类型 弱引用  当被弱引用指向的对象除该弱引用之外不再有其他的引用指向这个对象，这个对象即为“弱引用” 回收标准  检查到该弱引用指向的对象，就会将其回收  支持对象  WeakRefrence：弱引用对象 WeakHashMap：专用于管理弱引用集合，消除由于HashMap不释放导致对象数据长期残留于内存的情况&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.detail/" title="Java.Detail"> &raquo;</a>
 </article>
 
         

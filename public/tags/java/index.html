@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP">Java.Filter-Lisenter-Inteceptor-AOP</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Compare     名称 机制 适用范围 生命周期 对象调用权限 优点/场景     Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤敏感词、URL权限   Listener 监听器 事件回调 Servlet/ Application/ Swing 初始化时调用 与事件相关 不依赖框架，便于移植统计在线人数、清理过期 Session   Interceptor 拦截器 反射机制 Servlet 于 Service.execute 前后 多次调用 Request/ Response/ HandlerMethod 不依赖框架，便于移植效率检测、日志输出、安全检测、用户拦截   AOP 面向切面 反射机制 Servlet/ Application/ Swing可深入至方法、异常抛出的前后，推荐 多次调用 Method.Name 框架支持，灵活实现    Other Order  Filter.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.importstatic/" title="Java.ImportStatic">Java.ImportStatic</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
@@ -266,32 +289,6 @@ List Access  private protected public  class, method, variable  abstract class e
     <p>[TOC]
 分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version">IDEA.Java.Version</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/idea">idea</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Error  Run  Error:java: Compilation failed: internal java compiler error  Install  Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符   Fix IDEA.Setting  Project Structure
- 快捷键  Ctrl+ Alt+ Shift+ S  设置  project Setting/ Porject  Project SDK-&gt; 1.8 Project language level-&gt; 8 - Lambdas, type annotation etc.  project Setting/ Modules  choice your error modules Sources/ Language level-&gt; 8 - Lambdas, type annotation etc.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/idea.java.version/" title="IDEA.Java.Version"> &raquo;</a>
 </article>
 
         

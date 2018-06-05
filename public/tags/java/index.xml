@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 23 May 2018 14:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 05 Jun 2018 15:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Filter-Lisenter-Inteceptor-AOP</title>
+      <link>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</link>
+      <pubDate>Tue, 05 Jun 2018 15:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</guid>
+      <description>[TOC]
+Compare     名称 机制 适用范围 生命周期 对象调用权限 优点/场景     Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤敏感词、URL权限   Listener 监听器 事件回调 Servlet/ Application/ Swing 初始化时调用 与事件相关 不依赖框架，便于移植统计在线人数、清理过期 Session   Interceptor 拦截器 反射机制 Servlet 于 Service.execute 前后 多次调用 Request/ Response/ HandlerMethod 不依赖框架，便于移植效率检测、日志输出、安全检测、用户拦截   AOP 面向切面 反射机制 Servlet/ Application/ Swing可深入至方法、异常抛出的前后，推荐 多次调用 Method.Name 框架支持，灵活实现    Other Order  Filter.</description>
+    </item>
     
     <item>
       <title>Java.ImportStatic</title>
