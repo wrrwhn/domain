@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Fri, 04 May 2018 00:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Jun 2018 00:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/tools/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Tools.Javap</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.javap/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.javap/</guid>
+      <description>[TOC]
+JAVAP 作用  对 class 文件进行反编译 查看 java 编译器生成的字节码  调用  javap [options] classfile 参数  -help| --help| -?  打印 JAVAP 命令的帮助文档  -version  打印发布版本信息  -l  打印类中变量和方法及其参数列表  -public  仅显示公有类型的类和成员  -protected  仅显示保护或公有类型的类和成员  -private| -p  显示所有的类和成员  -Joption  显示 JVM 相关的特定参数  -s  显示内部类型签名  -sysinfo  显示该类执行时的相关系统信息，如路径、大小、日期和 MD5 签名值  -constants  显示最终的静态常量  -c  为每个方法打印组成的 Java 字节码指令  -verbose  打印堆大小、局部变量的数量、方法的参数    示例  javap CourseVo.</description>
+    </item>
     
     <item>
       <title>Java.Tools.JMap</title>

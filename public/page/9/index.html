@@ -45,6 +45,30 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/" title="云开-服务端架构-20171203">云开-服务端架构-20171203</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.03">2017.12.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%9E%B6%E6%9E%84">架构</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E4%BC%9A%E8%AE%AE%E7%BA%AA%E8%A6%81">会议纪要</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>流程  华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化  系统架构  客户端  微信 NW 老师端 PC 学习端  连接方式  HTTP TCP/IP  微服务  用户中心 直播相关 业务服务相关 推荐相关  模块  用户 直播  FFMpeg Nginx rtmp  NFS IM 转换  PPT  Gateway NSQ PPT.Command  音视频   底层服务  日志 持久化  Mysql，主从  缓存  Redis，仅主从无集群  文件数据   讨论  实现目标  两万人并发 目前900 QPS  确认瓶颈  缓存  解决方案  Twemproxy  参考  twitter/twemproxy Redis 存储分片之代理服务Twemproxy 测试 存储分片和Twemproxy核心解读  性能  性能损耗，最差低于 20%  优点  统一对外节点，多服务池 长连接，pipelinling 处理请求和响应，大大减少连接数 哈希分片，请求分配均匀  缺点  无法平滑地扩容或缩容 运维管理困难，无操作界面   Codis  参考  Redis集群技术及Codis实践 常见的redis集群方案有哪些优缺点？ []()  性能  最初比Twemproxy慢20%，现在比Twemproxy快近100%    优点  有图形化界面，扩容及运维方便 开发简单，对应用透明 不负责主从同步，轻量伦 提供 Jodis，支持 Java 程序的 HA  缺点  修改过 Redis 代码，无法与官方版本同步，新特性跟进缓慢 Value 字段大小小于 888B 字节时，性能较优秀 第三方组件较多     相关工作  AV-Server  可能存在问题？  CPU 使用率  GO 中使用  如何快速扩容  Kafka，多服务连接    Talk.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/" title="云开-服务端架构-20171203"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/kafka/" title="Kafka">Kafka</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.11.29">2017.11.29</time>
@@ -265,35 +289,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
     <p>[TOC]
 Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
- r 刷新界面
- yy 复制当前界面 URL
- p 在当前标签页打开剪贴板中的 URL
- gu 跳转至当前 URL 的上一层
- <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/article/15/1231/">http://www.phperz.com/article/15/1231/</a>  gU 跳转至当前 URL 的最高层
- <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
-  使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
 </article>
 
         
