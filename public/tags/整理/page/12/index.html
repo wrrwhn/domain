@@ -46,6 +46,52 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect">Go.Reflect</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Go.Reflect 参考  Package reflect [](<a href="http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017">http://www.golang.ltd/forum.php?mod=viewthread&amp;tid=6017</a>)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader&reg; r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.reflect/" title="Go.Reflect"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service">Windows.Service</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.07.20">2017.07.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/windows">windows</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Windows 程序服务化 参考  SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053  SC - Service Controller 语法  sc [ServerName] [command] [Optionname= Optionvalues]  常用参数  config  更新服务配置 sc config nsqd start= auto  control  发送控制指令 sc [&lt;ServerName&gt;] control [&lt;ServiceName&gt;] [{paramchange | netbindadd | netbindremove | netbindenable | netbinddisable | &lt;UserDefinedControlB&gt;}]  create | delete  创建|删除服务 sc create nsqd binPath= .\nsqd.exe start= auto  start | stop  启动|停止服务 sc start nsqd   示例 @echo off sc create nsqd binPath= .&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/windows.service/" title="Windows.Service"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/chrome.plugin/" title="Chrome.Plugin ">Chrome.Plugin </a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.06.28">2017.06.28</time>
@@ -236,52 +282,6 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令">常用CMD指令</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.23">2017.02.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/cmd">cmd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-强制关闭占用指定端口服务  查询指定窗口是否被占用： netstat -aon|findstr &ldquo;9050&rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &ldquo;2748&rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：taskkill /f /t /im java.exe  硬盘检测及修复  检测指定盘符： chkdsk C: 若有异常时进行修复： chkdsk c: /f 注：若正在使用，可选择【Y】，待下次启动时检测  强制登录  发现超出并发人数的情况下，输入如下指令：mstsc /v:192.168.16.99:3389 /admin。 其中192.168.16.99:3389为连接的网址和端口，admin表示管理员登陆。 注：此例在win7远程win2003校验通过。  转换成系统隐藏文件  转换 attrib +s +h [fileName|folderaName] 进入 cd **/[fileName|folderaName] 恢复 attrib -s -h [fileName|folderaName]  临时更改环境变量  set GOPATH=%GOPATH%;xxxxxx  显示目录下文件  tree /f  查看 Linux 系统版本  lsb_release -a&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/" title="常用CMD指令"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/xsd/" title="XSD">XSD</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.16">2016.12.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/xsd">xsd</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>简介  全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。  参考  教程：<a href="http://www.w3school.com.cn/schema/">http://www.w3school.com.cn/schema/</a> 手册：<a href="http://www.w3school.com.cn/schema/schema_elements_ref.asp">http://www.w3school.com.cn/schema/schema_elements_ref.asp</a> 验证：<a href="http://www.ltg.ed.ac.uk/~ht/xsv-status.html">http://www.ltg.ed.ac.uk/~ht/xsv-status.html</a> 实例：<a href="http://www.w3school.com.cn/schema/schema_example.asp">http://www.w3school.com.cn/schema/schema_example.asp</a>
-使用 XML结构 &lt;?xml version=&quot;1.0&quot;?&gt; &lt;note&gt; &lt;to&gt;George&lt;/to&gt; &lt;from&gt;John&lt;/from&gt; &lt;heading&gt;Reminder&lt;/heading&gt; &lt;body&gt;Don&rsquo;t forget the meeting!&lt;/body&gt; &lt;/note&gt;   定义 - note.xsd &lt;?xml version=&quot;1.0&quot;?&gt; &lt;xs:schema xmlns:xs=&quot;<a href="http://www.w3.org/2001/XMLSchema&quot;">http://www.w3.org/2001/XMLSchema&quot;</a> // 指定该 Schema 中的元素和数据类型的命名空间来源， 同时指定当前命名空间的元素和类型都应需补充前缀 xs: targetNamespace=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 显示定义元素(node /to /from /heading /body)的来源命名空间 xmlns=&quot;<a href="http://www.w3school.com.cn&quot;">http://www.w3school.com.cn&quot;</a> // 指定默认命名空间 elementFormDefault=&quot;qualified&quot; &gt; &lt;xs:element name=&quot;note&quot;&gt; &lt;xs:complexType&gt; &lt;xs:sequence&gt; &lt;xs:element name=&quot;to&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;from&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;heading&quot; type=&quot;xs:string&quot;/&gt; &lt;xs:element name=&quot;body&quot; type=&quot;xs:string&quot;/&gt; &lt;/xs:sequence&gt; &lt;/xs:complexType&gt; &lt;/xs:element&gt; &lt;/xs:schema&gt;  引用 &lt;?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/xsd/" title="XSD"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -289,7 +289,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
 	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/11/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 12  14</p>
+	<p class="counter"> 12  15</p>
 
 
 	

@@ -46,6 +46,55 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff">Java.&amp;0xff</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.20">2018.04.20</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Code  PipedInputStream.receive(int b)  buffer[in++] = (byte)(b &amp; 0xFF);   Reason 原因  int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况  示例  int-&gt; byte  222 -&gt; -34  222.补码  00000000 00000000 00000000 11011110  截取  11011110  反码  11011101  原码  10100010= -34   解决方案  222* 0xff    Supplement Java 使用 补码 进行数值存储  简化计算机运算，让符号位也参与运算，使计算机设计中只有加法，没有减法 示例  1[00000001] + -1[11111111] = 0[1 00000000]= 0[00000000] 丢弃高位数值   *码  原码  符号位+ 数字二进制表示 +7 [00000111] -7 [10000111]  反码  正数时同原码，负数时，符号位不变，其它位数取反 +7 [00000111] -7 [11111000]  补码  正数时同原码，负数时则为反码+1 +7 [00000111] -7 [11111001]   Reference  java中byte转换int时为何与0xff进行与运算 java原码、补码、反码总结 原码, 反码, 补码 详解&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.0xff/" title="Java.&amp;0xff"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception">Java.Exception</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.18">2018.04.18</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+分类 Throwable Exception  ReflectiveOperationException  NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException  CloneNotSupportedException InterruptedException  ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException  IllegalThreadStateException NumberFormatException  SecurityException  RuntimeException  ArithmeticException TypeNotPresentException IndexOutOfBoundsException  ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException  NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException  IOException
+ SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException  NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException  InterruptedIOException UTFDataFormatException FileNotFoundException EOFException
+Error  VirtualMachineError
+ InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.exception/" title="Java.Exception"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/" title="方案.敏感词.DFA">方案.敏感词.DFA</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.04.18">2018.04.18</time>
@@ -266,54 +315,6 @@ The MIT License (MIT) Copyright &copy; [year] [copyright holders] Permission is 
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/jwt/" title="JWT">JWT</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.09">2018.03.09</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/jwt">jwt</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-定义 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适用于分布式站点的单点登录（SSO）场景。JWT的声明一般被用来在身份提供者和服务提供者间传递被认证的用户身份信息，以便于从资源服务器获取资源，也可以增加一些额外的其它业务逻辑所必须的声明信息，该token也可直接被用于认证，也可被加密。  实现  组成  header.playload.signature header  typ  声明类型  alg  加密算法  RSA1_5 HS256    playload  组成  Registered Claim Names  iss  Issuer 该 JWT 的签发者 可选项，大小写敏感  sub  Subject 该JWT所面向的用户，局部上下文或全局唯一 可选项，大小写敏感  aud  Audience 接收该 JWT 的一方，指定应用方 可选项，大小写敏感  exp  Expiration Time 过期时间，Unix时间戳 可选项  nbf  Not Before 起始可用时间，Unix时间戳  iat  Issued At 标记签发时间，Unix时间戳 可选项  jti  JWT ID 可选项   Public Claim Names  可添加任意信息  常用于培养出用户、业务相关信息 不建议添加敏感信息   Private Claim Names  提供者和消费者的共同声明    signature  encrypt(base64(header)+ &lsquo;.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/jwt/" title="JWT"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/" title="PDF部分页面转图片异常">PDF部分页面转图片异常</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.04">2018.03.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">异常处理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/pdfbox">pdfbox</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Error java.lang.IllegalArgumentException: Numbers of source Raster bands and source color space components do not match at java.awt.image.ColorConvertOp.filter(ColorConvertOp.java:482) at com.sun.imageio.plugins.jpeg.JPEGImageReader.acceptPixels(JPEGImageReader.java:1268) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImage(Native Method) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1236) at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039) at javax.imageio.ImageReader.read(ImageReader.java:939) at org.apache.pdfbox.filter.DCTFilter.decode(DCTFilter.java:85) at org.apache.pdfbox.cos.COSInputStream.create(COSInputStream.java:69) at org.apache.pdfbox.cos.COSStream.createInputStream(COSStream.java:162) at org.apache.pdfbox.pdmodel.common.PDStream.createInputStream(PDStream.java:235) at org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.&lt;init&gt;(PDImageXObject.java:125) at org.apache.pdfbox.pdmodel.graphics.PDXObject.createXObject(PDXObject.java:70) at org.apache.pdfbox.pdmodel.PDResources.getXObject(PDResources.java:409) at org.apache.pdfbox.contentstream.operator.graphics.DrawObject.process(DrawObject.java:53) at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:838) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:495) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:469) at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:150) at org.apache.pdfbox.rendering.PageDrawer.drawPage(PageDrawer.java:206) at org.apache.pdfbox.rendering.PDFRenderer.renderImage(PDFRenderer.java:145) at org.apache.pdfbox.rendering.PDFRenderer.renderImageWithDPI(PDFRenderer.java:94) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:72) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:88) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:93) at com.yunkai.component.resource.service.impl.ConvertServiceImpl.pdf2Image(ConvertServiceImpl.java:171) at com.yunkai.training.commons.resource.service.impl.LogicConvertServiceImpl.handlerPDF(LogicConvertServiceImpl.java:319) at com.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/" title="PDF部分页面转图片异常"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -321,7 +322,7 @@ Error java.lang.IllegalArgumentException: Numbers of source Raster bands and sou
 	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/3/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 4  14</p>
+	<p class="counter"> 4  15</p>
 
 
 	

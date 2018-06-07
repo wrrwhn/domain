@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 06 Jun 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Tools.JHat</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.jhat/</link>
+      <pubDate>Thu, 07 Jun 2018 11:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.jhat/</guid>
+      <description>[TOC]
+JHat 作用  打印出进程内存中，所有对象的情况  调用  jhat [ options ] heap-dump-file  示例  jmap -dump:format=b,file=d:/block-jmap.dump 15240 jhat d:/block-jmap.dump  Reading from d:/block-jmap.dump... Dump file created Wed Jun 06 08:34:24 CST 2018 Snapshot read, resolving... Resolving 851039 objects... Chasing references, expect 170 dots......... Eliminating duplicate references............ Snapshot resolved. Started HTTP server on port 7000 Server is ready.   Dump查看界面 OQL执行界面   Reference  官方  jmap</description>
+    </item>
     
     <item>
       <title>Java.Tools.Javap</title>

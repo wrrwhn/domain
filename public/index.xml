@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 06 Jun 2018 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 07 Jun 2018 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Tools.JHat</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.jhat/</link>
+      <pubDate>Thu, 07 Jun 2018 11:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.jhat/</guid>
+      <description>[TOC]
+JHat 作用  打印出进程内存中，所有对象的情况  调用  jhat [ options ] heap-dump-file  示例  jmap -dump:format=b,file=d:/block-jmap.dump 15240 jhat d:/block-jmap.dump  Reading from d:/block-jmap.dump... Dump file created Wed Jun 06 08:34:24 CST 2018 Snapshot read, resolving... Resolving 851039 objects... Chasing references, expect 170 dots......... Eliminating duplicate references............ Snapshot resolved. Started HTTP server on port 7000 Server is ready.   Dump查看界面 OQL执行界面   Reference  官方  jmap</description>
+    </item>
     
     <item>
       <title>Java.Tools.Javap</title>
@@ -20,6 +30,19 @@
       <guid>http://domain.yqjdcyy.com/post/java.tools.javap/</guid>
       <description>[TOC]
 JAVAP 作用  对 class 文件进行反编译 查看 java 编译器生成的字节码  调用  javap [options] classfile 参数  -help| --help| -?  打印 JAVAP 命令的帮助文档  -version  打印发布版本信息  -l  打印类中变量和方法及其参数列表  -public  仅显示公有类型的类和成员  -protected  仅显示保护或公有类型的类和成员  -private| -p  显示所有的类和成员  -Joption  显示 JVM 相关的特定参数  -s  显示内部类型签名  -sysinfo  显示该类执行时的相关系统信息，如路径、大小、日期和 MD5 签名值  -constants  显示最终的静态常量  -c  为每个方法打印组成的 Java 字节码指令  -verbose  打印堆大小、局部变量的数量、方法的参数    示例  javap CourseVo.</description>
+    </item>
+    
+    <item>
+      <title>降噪耳机</title>
+      <link>http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/</link>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/</guid>
+      <description>[TOC]
+原理 可识别声音类型  交谈 音乐 可听见声音  降噪即消除此区域声音   衰减  扩散衰减  单位面积上的声波能量随着声源距离的平方而递减  吸收衰减  在固体介质中传播时，部分声能转化为热能  散射衰减  介质颗粒导致衰减   技术 主动降噪  使用 「极低延迟的DNC（Digital Noise Cancelling ）电路」对 「1~3 kHz」噪声实现主动降噪  被动降噪  吸声材料  硅胶耳塞 厚实服帖的耳罩   注意事项 佩戴感  熟悉自己的佩戴形式  入耳式 耳罩式 压耳式  耳压
+ 飞机起降时的耳朵不适感 长期佩戴主动降噪类型耳机时会出现  续航
+ 保修
+  音质  测试  Eminent Technology&amp;rsquo;s Multimedia Speaker Test   推荐  Bose QC 20</description>
     </item>
     
     <item>

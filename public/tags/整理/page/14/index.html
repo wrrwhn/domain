@@ -46,6 +46,51 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC] 文章来源 Spring Data JPA - Reference Documentation
+学习整理 Basic Example Entity @Entity @Table(name = &quot;user&quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &quot;user_name&quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&lt;User, Long&gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&lt;User&gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &quot;com.yunkai&quot;) @EntityScan(basePackages = &quot;com.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/springboot.jpa/" title="SpringBoot.JPA"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门">SpringBoot.入门</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/springboot">springboot</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt; &lt;project xmlns=&quot;<a href="http://maven.apache.org/POM/4.0.0&quot;">http://maven.apache.org/POM/4.0.0&quot;</a> xmlns:xsi=&quot;<a href="http://www.w3.org/2001/XMLSchema-instance&quot;">http://www.w3.org/2001/XMLSchema-instance&quot;</a> xsi:schemaLocation=&quot;<a href="http://maven.apache.org/POM/4.0.0">http://maven.apache.org/POM/4.0.0</a> <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;">http://maven.apache.org/xsd/maven-4.0.0.xsd&quot;&gt;</a> &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt; &lt;groupId&gt;com.midgetontoes&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-simple&lt;/artifactId&gt; &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt; &lt;properties&gt; &lt;spring.boot.version&gt;1.1.4.RELEASE&lt;/spring.boot.version&gt; &lt;/properties&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;/dependency&gt; &lt;/dependencies&gt; &lt;build&gt; &lt;plugins&gt; &lt;plugin&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-maven-plugin&lt;/artifactId&gt; &lt;version&gt;${spring.boot.version}&lt;/version&gt; &lt;executions&gt; &lt;execution&gt; &lt;goals&gt; &lt;goal&gt;repackage&lt;/goal&gt; &lt;/goals&gt; &lt;/execution&gt; &lt;/executions&gt; &lt;/plugin&gt; &lt;/plugins&gt; &lt;/build&gt; &lt;/project&gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&quot;/&quot;) String home() { return &quot;Hello World!&quot;; } public static void main(String[] args) throws Exception { SpringApplication.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" title="SpringBoot.入门"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/storm/" title="Storm">Storm</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
@@ -242,52 +287,6 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/regex/" title="Regex">Regex</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/regex">regex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 + 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?).){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/regex/" title="Regex"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/spring.cache/" title="Spring.Cache">Spring.Cache</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.08">2016.12.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/cache">cache</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考链接  <a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a>  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;]) @CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/spring.cache/" title="Spring.Cache"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -295,9 +294,11 @@ Default Lifecycle validate validate the project is correct and all necessary inf
 	<a class="btn newer" href="/tags/%E6%95%B4%E7%90%86/page/13/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 14  14</p>
+	<p class="counter"> 14  15</p>
 
 
+	
+	<a class="btn older" href="/tags/%E6%95%B4%E7%90%86/page/15/" title=""> &raquo;</a>
 	
 
 </nav>

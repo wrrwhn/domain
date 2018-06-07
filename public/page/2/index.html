@@ -45,6 +45,57 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.importstatic/" title="Java.ImportStatic">Java.ImportStatic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+DESCRIBE 发布  JDK 1.5 新特性
+对比 import
+ 从包中引入类，允许不添加类前缀的方式进行调用  imports classes from packages, allowing them to be used without package qualification   static import
+ 声明从类中引入静态成员，以允许它们在该类中直接使用，而不需要添加类前缀  declaration imports static members from classes, allowing them to be used without class qualification.    使用  import class.[*|method]  示例 Origin double r = Math.cos(Math.PI * theta);  Static Import import static java.lang.Math.*; double r = cos(PI * theta);  时机 态度  保守地使用 仅当需频繁的访问一两个类中的静态成员  缺点  增加可读复杂度 增加维护成本  REFERENCE 官方  Static Import  对比  import static和import的区别 java中import static和import的区别&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.importstatic/" title="Java.ImportStatic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/spring.jpa.fetch/" title="Spring.JPA.Fetch">Spring.JPA.Fetch</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/jpa">jpa</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToMany Lazy    OneToOne Eager    ManyToOne Eager   Hibernate      * Lazy    Docs Hibernate  By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring.jpa.fetch/" title="Spring.JPA.Fetch"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E4%BF%A1%E7%94%A8%E6%8A%A5%E5%91%8A/" title="信用报告">信用报告</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
@@ -247,57 +298,6 @@ Info  看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便�
 </article>
 
         
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="Hello.性能测试">Hello.性能测试</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%B5%8B%E8%AF%95">测试</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%80%A7%E8%83%BD">性能</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩  调整 Averages not work 噪点影响平均值  统计数据  [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s]  平均值  100ms  实际作法  去除噪点后计算平均值 或将数据排序后，取中间数据的平均值   百分比分页  统计数据  [10ms, 1s, 200ms, 100ms]  报告
- TP= Top Percentile = 当前数值的最高可能性 TP50&lt;= 100ms TP90&lt;= 1s
-推荐格式  99.9%的请求必须小于 1ms，所有的平均时间必须小于1ms
-  Latency &amp; Thoughput 关联  随着并发量（吞吐量）的上升，系统愈发不稳定，响应时间延长   推荐格式  TP99小于100ms的时候，系统可以承载的最大并发数是1000qps  #Thoughput &amp; Success.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="Hello.性能测试"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack">Python.Pack</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/python">python</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 注意事项  依赖于打包环境，无法于 x64 环境打 x86 的包 &gt; Pyinstaller produces a binary depending from the python you used to build it.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack"> &raquo;</a>
-</article>
-
-        
         <div class="pagination">
 <nav>
 
@@ -305,7 +305,7 @@ Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂�
 	<a class="btn newer" href="/" title="">&laquo; </a>
 	
 
-	<p class="counter"> 2  21</p>
+	<p class="counter"> 2  22</p>
 
 
 	
