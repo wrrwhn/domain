@@ -45,6 +45,34 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC">Hello.RPC</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/rpc">rpc</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
+ 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
+ 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
+ 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
+ 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
+ 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH">Go.GOPATH</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
@@ -271,32 +299,6 @@ JSTACK 作用  观察当前java虚拟机内每一条线程正在执行的方法�
     <p>[TOC]
 JSTAT 作用 - 监视vm内存内的各种<strong>堆</strong>和非堆的<strong>大小</strong>及其<strong>内存使用</strong>量，并可观察classloader，compiler，<strong>gc</strong>相关信息  调用  jstat -&lt;option&gt; [-t] [-h&lt;lines&gt;] &lt;vmid&gt; [&lt;interval&gt; [&lt;count&gt;]] 参数  option  选项  –class  监视类装载、卸载数量、总空间及类装载所耗费时间 | 字段 | 描述 | 数值 | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;| | Loaded | 装载类的数量 | 11736 | | Bytes | 装载类所占字节数 | 22293.3 | | Unloaded | 卸载类的数量 | 0 | | Bytes | 卸载类所占字节数 | 0.0 | | Time | 装载和卸载类所花的时间 | 13.24 |  –gc  监视Java堆状况，包括Eden区、2个Survivor区、老年代、永久代等的容量 | 字段 | 描述 | 数值 | |&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-| | S0C | 年轻代中第一个survivor（幸存区）的容量 (字节) | 20480.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp">Error.CSharp</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/error">error</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/csharp">csharp</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决  Main 方法上增加 [STAThread] 标志 <code>c# Thread app = new Thread(new ParameterizedThreadStart(ShowWindow)); app.ApartmentState = ApartmentState.STA;  Thread newThread = new Thread(new ThreadStart(ThreadMethod)); newThread.SetApartmentState(ApartmentState.MTA);</code>
-解析  STA  线程创建并进入一单线程单元  MTA  线程创建并进入一多线程单元  Unknown  尚未设置 ApartmentState 属   过程  COM 类中使用的公共语言库需要在 COM interop 情况下调用 COM 对象时创建单元  其中托管进程帮忙创建时允许其进入一个线程的单线程单元（STA）或多线程单元（MTA）&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/error.csharp/" title="Error.CSharp"> &raquo;</a>
 </article>
 
         
