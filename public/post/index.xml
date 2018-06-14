@@ -7,10 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Mon, 11 Jun 2018 15:40:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 14 Jun 2018 15:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Docker</title>
+      <link>http://domain.yqjdcyy.com/post/hello.docker/</link>
+      <pubDate>Thu, 14 Jun 2018 15:00:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.docker/</guid>
+      <description>[TOC]
+现状  环境配置困难  操作系统 库与组件的安装   简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口  用途  提供一次性的环境 提供弹性的云服务 组建微服务架构  版本  社区版 / Community Edition / CE 企业版 / Enterprise Edition / EE  关键字  镜像  image root 文件系统  提供容器运行时所需的程序、库、资源、配置文件和运行时的相关参数（匿名卷、环境变量与用户等）  分层存储  逐层构建， 上层构建完成后将不再发生变更  某层删除文件，最终容器运行时虽查看不到该文件，但实际文件仍跟随镜像 利于镜像的利用、定制    容器
+ 实质是 进程，运行于属于自己的独立命名空间  仓库
+ 集中存储、分发镜像的服务 [/][:]  version  默认为 lastest     对比    服务 原理 启动速度 资源占用 补充     虚拟机 在一种操作系统里面运行另一种操作系统 慢</description>
+    </item>
     
     <item>
       <title>跳出码农职业的生命周期</title>
@@ -2343,6 +2355,15 @@ Default Lifecycle validate validate the project is correct and all necessary inf
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
       <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</guid>
+      <description></description>
     </item>
     
     <item>
