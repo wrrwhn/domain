@@ -1,0 +1,928 @@
+<!doctype html>
+<html class="no-js">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>好久不见</title>
+        <meta name="author">
+        <meta name="description" content="好久不见">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="generator" content="Hugo 0.30.2" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
+        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
+        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
+        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
+        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
+        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
+        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
+        
+        <style>
+        .site-header h2 .logo {
+        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
+        }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          .site-header h2 .logo {
+            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
+        }}
+       .site-header {
+         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
+         z-index: -1;
+        }
+        </style>
+    </head>
+    <body>
+        
+        <header class="site-header">
+          <div class="transparent-layer">
+              <h2></h2>
+          </div>
+        </header>
+
+
+<div class="container clearfix">
+    <main role="main" class="content">
+        <article class="post">
+            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
+            
+<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.command/" title="Hello.Docker.Command">Hello.Docker.Command</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.14">2018.06.14</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
+        
+    
+
+</span>
+</footer>
+
+            
+
+<p>[TOC]</p>
+
+<h1 id="docker">Docker.*</h1>
+
+<h2 id="outline">Outline</h2>
+
+<table>
+<thead>
+<tr>
+<th>指令</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>docker attach</td>
+<td>将本地输入、输出和异常流附加到运行状态中的容器</td>
+</tr>
+
+<tr>
+<td>docker build</td>
+<td>使用 Dockerfile 构建镜像</td>
+</tr>
+
+<tr>
+<td>docker checkpoint</td>
+<td>管理检查点</td>
+</tr>
+
+<tr>
+<td>docker commit</td>
+<td>将容器的变更构建为新镜像</td>
+</tr>
+
+<tr>
+<td>docker config</td>
+<td>管理 Docker 配置</td>
+</tr>
+
+<tr>
+<td>docker container</td>
+<td>管理 Docker 容器</td>
+</tr>
+
+<tr>
+<td>docker cp</td>
+<td>进行容器和本地文件系统间的文件/文件夹的拷贝</td>
+</tr>
+
+<tr>
+<td>docker create</td>
+<td>创建新容器</td>
+</tr>
+
+<tr>
+<td>docker deploy</td>
+<td>发布新堆或更新已存在的堆</td>
+</tr>
+
+<tr>
+<td>docker diff</td>
+<td>检查容器的文件系统中，文件或文件夹的变更情况</td>
+</tr>
+
+<tr>
+<td>docker events</td>
+<td>获取服务的实时事件</td>
+</tr>
+
+<tr>
+<td>docker exec</td>
+<td>在运行的容器中执行指令</td>
+</tr>
+
+<tr>
+<td>docker export</td>
+<td>将容器的文件系统打包至 tar 文件</td>
+</tr>
+
+<tr>
+<td>docker history</td>
+<td>显示指定镜像的历史</td>
+</tr>
+
+<tr>
+<td>docker image</td>
+<td>管理镜像</td>
+</tr>
+
+<tr>
+<td>docker images</td>
+<td>列表展示镜像</td>
+</tr>
+
+<tr>
+<td>docker import</td>
+<td>由 原始码(tarball) 中引入内容以创建新的文件系统镜像</td>
+</tr>
+
+<tr>
+<td>docker info</td>
+<td>展示系统纬度信息</td>
+</tr>
+
+<tr>
+<td>docker inspect</td>
+<td>展示 Docker 的低等级信息</td>
+</tr>
+
+<tr>
+<td>docker kill</td>
+<td>摧毁容器</td>
+</tr>
+
+<tr>
+<td>docker load</td>
+<td>将 <code>tar</code>/<code>STDIN</code> 中加载镜像</td>
+</tr>
+
+<tr>
+<td>docker login</td>
+<td>登录</td>
+</tr>
+
+<tr>
+<td>docker logout</td>
+<td>登出</td>
+</tr>
+
+<tr>
+<td>docker logs</td>
+<td>抓取容器日志</td>
+</tr>
+
+<tr>
+<td>docker manifest</td>
+<td>管理镜像的 manifest 列表</td>
+</tr>
+
+<tr>
+<td>docker network</td>
+<td>管理网络</td>
+</tr>
+
+<tr>
+<td>docker node</td>
+<td>管理集群节点</td>
+</tr>
+
+<tr>
+<td>docker pause</td>
+<td>暂停指定容器中的所有进程</td>
+</tr>
+
+<tr>
+<td>docker plugin</td>
+<td>管理插件</td>
+</tr>
+
+<tr>
+<td>docker port</td>
+<td>列表展示端口映射或指定容器的映射情况</td>
+</tr>
+
+<tr>
+<td>docker ps</td>
+<td>展示所有进程</td>
+</tr>
+
+<tr>
+<td>docker pull</td>
+<td>拉取注册镜像</td>
+</tr>
+
+<tr>
+<td>docker push</td>
+<td>推送镜像注册</td>
+</tr>
+
+<tr>
+<td>docker rename</td>
+<td>为容器重命名</td>
+</tr>
+
+<tr>
+<td>docker restart</td>
+<td>重启容器</td>
+</tr>
+
+<tr>
+<td>docker rm</td>
+<td>移除容器</td>
+</tr>
+
+<tr>
+<td>docker rmi</td>
+<td>移除镜像</td>
+</tr>
+
+<tr>
+<td>docker run</td>
+<td>在新容器中执行命令行操作</td>
+</tr>
+
+<tr>
+<td>docker save</td>
+<td>将镜像通过 <code>STDOUT</code>（默认）打包至 <code>tar</code>文件中</td>
+</tr>
+
+<tr>
+<td>docker search</td>
+<td>于 <code>Docker Hub</code>中搜索镜像</td>
+</tr>
+
+<tr>
+<td>docker secret</td>
+<td>管理 Docker 密钥</td>
+</tr>
+
+<tr>
+<td>docker service</td>
+<td>管理服务</td>
+</tr>
+
+<tr>
+<td>docker stack</td>
+<td>管理 Docker 堆</td>
+</tr>
+
+<tr>
+<td>docker start</td>
+<td>将关闭的容器重新开启</td>
+</tr>
+
+<tr>
+<td>docker stats</td>
+<td>通过容器的实时流进行统计</td>
+</tr>
+
+<tr>
+<td>docker stop</td>
+<td>关闭运行中的容器</td>
+</tr>
+
+<tr>
+<td>docker swarm</td>
+<td>管理集群</td>
+</tr>
+
+<tr>
+<td>docker system</td>
+<td>管理 Docker</td>
+</tr>
+
+<tr>
+<td>docker tag</td>
+<td>创建标签以指向源镜像</td>
+</tr>
+
+<tr>
+<td>docker top</td>
+<td>展示容器内部运行状态的进程</td>
+</tr>
+
+<tr>
+<td>docker trust</td>
+<td>管理镜像的信用记录</td>
+</tr>
+
+<tr>
+<td>docker unpause</td>
+<td>取消容器中进程的暂停状态</td>
+</tr>
+
+<tr>
+<td>docker update</td>
+<td>更新容器的配置信息</td>
+</tr>
+
+<tr>
+<td>docker version</td>
+<td>显示 Docker 的版本信息</td>
+</tr>
+
+<tr>
+<td>docker volume</td>
+<td>管理 volumes</td>
+</tr>
+
+<tr>
+<td>docker wait</td>
+<td>阻塞至镜像停止，并输出其退出状态</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="docker-run">Docker.Run</h2>
+
+<h3 id="docker-run-options-image-tag-digest-command-arg"><code>docker run [OPTIONS] IMAGE[:TAG|@DIGEST] [COMMAND] [ARG...]</code></h3>
+
+<ul>
+<li>OPTIONS
+
+<ul>
+<li>运行设置
+
+<ul>
+<li><code>-d</code>
+
+<ul>
+<li>以分离模式，在后台运行</li>
+<li>默认为 <code>-f</code>，在前台运行，并可将其附加至控制台</li>
+</ul></li>
+<li><code>--rm</code>
+
+<ul>
+<li>指定容器关闭时，自动清除容器，并移除文件系统；一般用于测试的前台运行程序</li>
+<li>默认持久化容器，保存所有的用户数据</li>
+</ul></li>
+<li><code>--name</code>
+
+<ul>
+<li>用于定位容器，可作用于容器名、UUID 短标识和 UUID 长标识</li>
+</ul></li>
+<li><code>--pid</code>
+
+<ul>
+<li>为容器设置进程命名模式，将容器并入其它容器进程（PID）的命名空间</li>
+<li><code>host</code>
+
+<ul>
+<li>在容器内使用 <code>host</code>的 PID 命名空间</li>
+</ul></li>
+</ul></li>
+<li><code>--uts</code>
+
+<ul>
+<li>为容器设置 UTS 命名空间模式</li>
+<li><code>host</code>
+
+<ul>
+<li>在容器内使用 <code>host</code>的 UTS 命名空间</li>
+</ul></li>
+</ul></li>
+<li><code>--ipc</code>
+
+<ul>
+<li>为容器设置 IPC 模式</li>
+<li>模式类型
+|         Value          |                    Description                    |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| `<code>| 使用实例的默认配置                                |
+|</code>none<code>| 个人私有的 IPC 命名空间, 在</code>/dev/shm<code>未安装情况 |
+|</code>private<code>| 个人私有的 IPC 命名空间                           |
+|</code>shareable<code>| 个人私有的 IPC 命名空间, 可与其它容器一起使用     |
+|</code>container: <name/ID><code>| 加入其它容器的 IPC 命名空间                       |
+|</code>host`                 | 使用当前系统的 IPC 命名空间                       |</li>
+</ul></li>
+<li><code>--restart</code>
+
+<ul>
+<li>指定容器的重启策略</li>
+<li>策略模式
+|           策略           |                           结果                           |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| no                       | 退出时不自动重启；默认配置                               |
+| on-failure[:max-retries] | 仅当退出时异常，并设置相应的重启次数                     |
+| always                   | 无关退出状态，无限重启                                   |
+| unless-stopped           | 无关退出状态，重复重启；仅在容器收到停止指令于实例停止前 |<br /></li>
+</ul></li>
+<li><code>--log-driver</code>
+
+<ul>
+<li>配置日志驱动</li>
+<li>驱动类型
+|    驱动   |                                   描述                                   |
+|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| none      | 禁用容器日志                                                             |
+| json-file | JSON 格式文件形式；默认日志驱动                                          |
+| syslog    | 日志格式输出至 syslog（网络传输日志消息的标准格式）                      |
+| journald  | 日志输出至 journald（Linux的全新系统日志格式）                           |
+| gelf      | 日志输出至 Graylog 或Logstash 的 GELF（Graylog Extended Log Format）节点 |
+| fluentd   | 日志以追加形式输出至 Fluentd 软件                                        |
+| awslogs   | 日志输出至 Amazon CloudWatch Logs                                        |</li>
+</ul></li>
+</ul></li>
+<li>网络设置
+
+<ul>
+<li><code>--dns=[]</code></li>
+<li><code>--network-alias=[]</code>
+
+<ul>
+<li>设置网络作用哉别名</li>
+<li>便于通过别名找到该容器</li>
+</ul></li>
+<li><code>--mac-address</code>
+
+<ul>
+<li>不校验 <code>MAC</code> 是否唯一</li>
+</ul></li>
+<li><code>--ip</code></li>
+<li><code>--ip6</code></li>
+<li><code>-p &lt;ip:hostPort:containerPort | ip::containerPort | hostPort:containerPort | containerPort&gt;</code>
+
+<ul>
+<li>将容器暴露的端口转到系统的指定端口</li>
+</ul></li>
+</ul></li>
+<li>配置设置
+
+<ul>
+<li><code>--memory=&lt;number&gt;[b|k|m|g]</code>
+
+<ul>
+<li>分配内存值；默认最小值为 4M</li>
+</ul></li>
+<li><code>--memory-swap=&lt;number&gt;[b|k|m|g]</code>
+
+<ul>
+<li>分配 <strong>内存+ 交换区</strong>大小；默认交换区大小同内存</li>
+</ul></li>
+<li><code>--memory-reservation=&lt;number&gt;[b|k|m|g]</code>
+
+<ul>
+<li>交换内存的 <strong>非强制设置</strong>，仅确保不会长时间占用值超过该值</li>
+</ul></li>
+<li><code>--kernel-memory=&lt;number&gt;[b|k|m|g]</code>
+
+<ul>
+<li>分配内核内存大小</li>
+</ul></li>
+<li><code>-c, --cpu-shares=[0-1]</code>
+
+<ul>
+<li>相对 CPU 比例</li>
+</ul></li>
+<li><code>--cpus=&lt;number&gt;</code>
+
+<ul>
+<li>分配可用 CPU 个数</li>
+<li>number为分数，其中值为 <code>0.000</code> 表示不限制</li>
+</ul></li>
+<li><code>--cpu-period=0</code>
+
+<ul>
+<li>设置 CPU CFS（Completely Fair Scheduler 完全公平调度） <strong>周期限制</strong></li>
+</ul></li>
+<li><code>--cpu-quota=0</code>
+
+<ul>
+<li>设置 CPU CFS（Completely Fair Scheduler 完全公平调度） <strong>周期内，最大调度比例</strong></li>
+<li>示例
+
+<ul>
+<li><code>--cpu-quota=200,000</code>
+
+<ul>
+<li>表示最多可使用 200% 的 CPU 资源</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>--cpuset-cpus=&quot;indexes&quot;</code>
+
+<ul>
+<li>允许使用的 CPU 集合</li>
+<li>示例
+
+<ul>
+<li><code>--cpuset-cpus=&quot;1-3&quot;</code></li>
+</ul></li>
+</ul></li>
+<li><code>--cpuset-mems=”indexes“</code>
+
+<ul>
+<li>允许使用的内存节点集合</li>
+<li>针对于 NUMA 框架的 CPU</li>
+</ul></li>
+<li>其它暂略</li>
+<li>用户内存限制
+|             设置            |                    效果                   |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+|                             | memory=inf, memory-swap=inf<br><code>默认配置</code> |
+| memory=L, memory-swap= <code>-1</code> | memory=L&lt;inf, memory-swap=<code>inf</code>           |
+| memory=L                    | memory=L&lt;inf, memory-swap=<code>2*L</code>           |
+| memory=L&lt;, memory-swap=S    | memory=L&lt;inf, memory-swap=S&lt;inf, L&lt;=S     |</li>
+</ul></li>
+</ul></li>
+<li>TAG
+
+<ul>
+<li>版本号</li>
+</ul></li>
+<li>ARG
+
+<ul>
+<li><code>; echo $?</code>
+
+<ul>
+<li>打印进程结束时的状态码</li>
+<li><code>docker run busybox /bin/sh -c 'exit 3'; echo $?</code>
+
+<ul>
+<li><code>3</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="image">Image.*</h2>
+
+<h3 id="outline-1">Outline</h3>
+
+<table>
+<thead>
+<tr>
+<th>命令行</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>docker image build</td>
+<td>根据 <code>Dockerfile</code> 来构建镜像</td>
+</tr>
+
+<tr>
+<td>docker image history</td>
+<td>显示指定镜像的历史</td>
+</tr>
+
+<tr>
+<td>docker image import</td>
+<td>引入 <code>tarball</code> 的内容来创建文件系统镜像</td>
+</tr>
+
+<tr>
+<td>docker image inspect</td>
+<td>显示镜像的详细信息</td>
+</tr>
+
+<tr>
+<td>docker image load</td>
+<td>由 <code>tar</code> 或 <code>STDIN</code> 来加载镜像</td>
+</tr>
+
+<tr>
+<td>docker image ls</td>
+<td>展示镜像列表</td>
+</tr>
+
+<tr>
+<td>docker image prune</td>
+<td>移除未使用的镜像</td>
+</tr>
+
+<tr>
+<td>docker image pull</td>
+<td>拉取镜像</td>
+</tr>
+
+<tr>
+<td>docker image push</td>
+<td>推送镜像</td>
+</tr>
+
+<tr>
+<td>docker image rm</td>
+<td>移除镜像</td>
+</tr>
+
+<tr>
+<td>docker image save</td>
+<td>将镜像通过 <code>STDOUT</code>（默认）打包至 <code>tar</code>文件中</td>
+</tr>
+
+<tr>
+<td>docker image tag</td>
+<td>创建标签以指向源镜像</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="docker-image-build-options-path-url">docker image build [OPTIONS] [PATH | URL | -]</h3>
+
+<ul>
+<li>OPTIONS
+|          名称，缩写          |                    默认描述                    |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| &ndash;compress                   | 使用 <code>gzip</code> 压缩构建内容                       |
+| &ndash;disable-content-trust   true | 跳过镜像校验                                   |
+| &ndash;file , -f                  | 指定 Dockerfile 路径；默认为 <code>PATH/Dockerfile</code> |
+| &ndash;no-cache                   | 构建时不使用缓存                               |
+| &ndash;quiet , -q                 | 构建成功时，不打印镜像 ID                      |
+| &ndash;rm  true                    | 构建成功后，移除移除中间状态容器               |
+| &ndash;tag , -t                   | 以 <name>[:<tag>] 形式命名                     |
+| &ndash;target                     | 设置构建的目标层次                             |</li>
+</ul>
+
+<h2 id="images">Images.*</h2>
+
+<h3 id="docker-images-options-repository-tag"><code>docker images [OPTIONS] [REPOSITORY[:TAG]]</code></h3>
+
+<ul>
+<li><p>OPTIONS</p>
+
+<ul>
+<li><p>Outline
+|   名称,缩写   |                   描述                   |
+|&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
+| &ndash;all , -a    | 展示所有镜像<br>默认隐藏暂停或停止的镜像 |
+| &ndash;digests     | 显示摘要信息                             |
+| &ndash;filter , -f | 根据条件进行输出过滤                     |
+| &ndash;format      | 使用 Go 模板进行图像形式打印             |
+| &ndash;no-trunc    | 不进行输出流截取                         |
+| &ndash;quiet , -q  | 仅显示数值型 ID                          |</p></li>
+
+<li><p><code>--format</code>
+|    占位符     |        描述        |
+|&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
+| .ID           | 镜像 ID            |
+| .Repository   | 镜像仓库           |
+| .Tag          | 镜像标签           |
+| .Digest       | 镜像摘要           |
+| .CreatedSince | 镜像的创建历史时间 |
+| .CreatedAt    | 镜像的创建时间     |
+| .Size         | 镜像所占硬盘大小   |</p></li>
+</ul></li>
+</ul>
+
+<h3 id="示例">示例</h3>
+
+<ul>
+<li>获取未打标签的镜像，并进行删除操作
+
+<ul>
+<li><code>docker images --filter &quot;dangling=true&quot;</code>
+
+<ul>
+<li>展示所有未打标签的镜像（REPOSITORY:TAG= <none>:<none>）
+<code>
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+&lt;none&gt;              &lt;none&gt;              8abc22fbb042        4 weeks ago         0 B
+&lt;none&gt;              &lt;none&gt;              48e5f45168b9        4 weeks ago         2.489 MB
+&lt;none&gt;              &lt;none&gt;              bf747efa0e2f        4 weeks ago         0 B
+&lt;none&gt;              &lt;none&gt;              980fe10e5736        12 weeks ago        101.4 MB
+&lt;none&gt;              &lt;none&gt;              dea752e4e117        12 weeks ago        101.4 MB
+&lt;none&gt;              &lt;none&gt;              511136ea3c5a        8 months ago        0 B
+</code></li>
+</ul></li>
+<li><code>docker rmi $(docker images -f &quot;dangling=true&quot; -q)</code>
+<code>
+8abc22fbb042
+48e5f45168b9
+bf747efa0e2f
+980fe10e5736
+dea752e4e117
+511136ea3c5a
+</code></li>
+</ul></li>
+
+<li><p>过滤显示创建于镜像 <code>image1</code> 之前的镜像信息</p>
+
+<ul>
+<li><code>docker images --filter &quot;before=image1&quot;</code>
+<code>
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+image1              latest              eeae25ada2aa        4 minutes ago        188.3 MB
+image2              latest              dea752e4e117        9 minutes ago        188.3 MB    
+</code></li>
+</ul></li>
+
+<li><p>获取过滤符合 <code>image*:*est</code> 规则的镜像信息</p>
+
+<ul>
+<li><code>docker images --filter=reference='image*:*est'</code>
+<code>
+REPOSITORY          TAG                 IMAGE ID            CREATED              SIZE
+image1              latest              eeae25ada2aa        4 minutes ago        188.3 MB
+image2              latest              dea752e4e117        9 minutes ago        188.3 MB
+image3              latest              511136ea3c5a        25 minutes ago       188.3 MB     
+</code><br /></li>
+</ul></li>
+
+<li><p>指定格式展示镜像信息</p>
+
+<ul>
+<li><p><code>docker images --format &quot;table {{.ID}}\t{{.Repository}}\t{{.Tag}}&quot;</code></p>
+
+<pre><code>IMAGE ID            REPOSITORY                TAG
+77af4d6b9913        &lt;none&gt;                    &lt;none&gt;
+b6fa739cedf5        committ                   latest
+30557a29d5ab        docker                    latest
+</code></pre></li>
+
+<li><p>docker image ls</p></li>
+
+<li><p>docker image rm <image.name></p></li>
+
+<li><p>docker image pull [<image.group>/]<image.name></p>
+
+<ul>
+<li>offical.image.group= library</li>
+<li>default.group= library</li>
+</ul></li>
+
+<li><p>docker image build -t <image.name>[:<image.version>] <path></p></li>
+</ul></li>
+
+<li><p>container.*</p>
+
+<ul>
+<li>docker container ls [&ndash;all]</li>
+<li>docker container [run|exec|rm|start|stop|kill|logs] <container.id>
+
+<ul>
+<li>run
+
+<ul>
+<li>新建容器</li>
+<li>未找到指定 image 文件时，自动调用 <code>docker image pull</code> 从仓库抓取</li>
+</ul></li>
+<li>exec
+
+<ul>
+<li>进入一个正在运行的容器</li>
+</ul></li>
+<li>rm
+
+<ul>
+<li>终止运行的容器仍会占据硬盘空间</li>
+</ul></li>
+</ul></li>
+<li>docker container cp <container.id>:</path>
+
+<ul>
+<li>将正在运行的容器中的文件，拷贝到本机</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li>官方
+
+<ul>
+<li>指令
+
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/run/">Docker run reference</a><br /></li>
+</ul></li>
+</ul></li>
+<li>补充<br />
+
+<ul>
+<li><a href="https://blog.csdn.net/CSDN_duomaomao/article/details/78567859">Docker 运行时资源限制-内存memory、交换机分区Swap、CPU</a></li>
+<li><a href="https://www.cnblogs.com/sparkdev/p/8052522.html">Docker: 限制容器可用的 CPU</a></li>
+<li><a href="https://blog.opskumu.com/docker-cpu-limit.html">Docker 资源限制之 CPU</a></li>
+<li><a href="http://cenalulu.github.io/linux/numa/">NUMA简介</a></li>
+<li><a href="https://www.centos.bz/2017/01/docker-run-runtime-constraints-on-resources/">Docker run参考(10) – 资源使用限制</a></li>
+<li><a href="http://dockone.io/article/1102">Docker容器对CPU资源隔离的几种方式</a></li>
+<li><a href="http://os.51cto.com/art/201405/440886.htm">Linux服务器管理员Journald初级指南</a></li>
+<li><a href="https://wizardforcel.gitbooks.io/vbird-linux-basic-4e/content/160.html">systemd-journald.service 简介</a></li>
+</ul></li>
+</ul>
+
+            <ul class="share-buttons">
+    <li></li>
+    <li>
+        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.command%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Hello.Docker.Command&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.command%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.command%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
+    </li>
+    <li>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.command%2f&title=Hello.Docker.Command" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+    </li>
+</ul>
+
+        </article>
+        
+        <div class="comments">
+            <h3></h3>
+            <div id="disqus_thread"></div>
+<script>
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        
+    </main>
+    <aside class="author">
+  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
+  <p class="name"> 
+  <strong>姚清居</strong></p>
+  <p class="address">Earth</p>
+  <p class="link"></p>
+  <ul class="social">
+    
+
+
+
+
+
+
+
+
+
+
+
+
+<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
+
+
+
+
+<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
+
+  </ul>
+  <br><br>
+</aside>
+
+</div>
+
+<footer class="main-footer">
+  <div class="container clearfix">
+        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
+        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+  </div>
+</footer>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
+<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+
+
+
+
+</body>
+</html>
+
