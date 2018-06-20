@@ -46,6 +46,33 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH">Go.GOPATH</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/go">go</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+作用  于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句
+ Unix  使用 : 分割  Windows  使用 ; 分割  Plan
+ 使用列表记录
+默认   未设置时，默认为用户主目录下的 go 文件夹
+ Unix  $HOME/go  Windows  %USERPROFILE%\go    补充  设置可参考 Reference.SettingGOPATH 可使用 go env GOPATH 查看当前配置 新 包 被 下载 时，将 默认 下载至 列表目录中的首项 目录地址中  目录结构 要求  配置的目录，需包含规定的结构  类型  src 目录拥有 源代码，而 src 下目录决定了引用路径和可执行文件名 pkg 目录拥有已安装的 包对象  在 Go 的树型结构中，各目标 操作系统和体系 架构均有对应的 pkg 子目录  bin 目录拥有已编译的 命令  DIR/src/foo/quux 将被安装至 DIR/bin/quux 而当 GOBIN 被设置时，会 指定生成至其配置目录中  GOBIN 必须为一个 绝对目录   internal 目录及其下级代码，仅可被 internal 的父目录下各目录代码引用 vendor  Go 1.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/go.gopath/" title="Go.GOPATH"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack">Python.Pack</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
@@ -270,29 +297,6 @@ Linux 安全 0/ 1
 Solaris 0/ 1
   概述 系统特点  开源免费、稳定性 安全性 处理多并发性能好  系统管理事项(kernel)  系统呼叫接口 行程管理：多任务 内存管理：控制内存，虚拟内存 档案系统管理：数据I/O及NTFS档案格式硬盘 装置驱动     系统演化  Unix - 1973  IBM AIX SUM SOLARIS HP HP UNIX 伯克利分校 MINIX  LINUS LINUX - 1994  REDHAT S.U.S.E 红旗     VMWare安装 学习流程  Linux平台开发，含vi,gcc,gdb,make,jdk,tomcat,mysql和linux基本操作 加厚c语言功底（c专家编程）或java语言 学习 Unix 环境高级编程（Unix环境高级编程） Linux应用系统开发或嵌入式开发  推荐书籍  《鸟哥的Linux私房菜》 《Linux编程从入门到精通》 《Linux内核完全剖析》  常用概念 安装  yum  进行软件包管理安装，一般用于自动从中央仓库下载安装指令 yum -y install make|patch|ntp  make  主要针对tar.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化">SQL.优化</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.27">2018.04.27</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/sql">sql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-特点  SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松实现嵌套功能。  优化 TOP-N问题  table  student{sid, sname, sage}  sql sql select sid, sname, sage from ( select rownum temp_no, sid, sname, sage from( select sid, sname, sage from student order by sid ) ) where temp_no between 4 and 6;   恰当使用索引  创建  简单索引= 指定字段值 + ROWID  隐藏字表，而ROWID相当于目录当中的页码   影响  select 查找的字段有索引，加快查找速度 insert 则会减速 delete/update 则加快和减慢的可能性都存在   用case表达式替代多次查询  普通查询  select count(<em>) &ldquo;below 25&rdquo; from student where sage &lt;= 25; select count(</em>) &ldquo;between 25 and 30&rdquo; from student where sage &gt;25 and sage &lt;30; select count(*) &ldquo;above 30&rdquo; from student where sage &gt;=30;  case实现 sql select count(case when sage&lt;=25 then 1 else null end) &quot;below 25&quot;, count(case when sage&gt;25 and sage&lt;30 then 1 else null end) &quot;between 25 and 30&quot;, count(case when sage&gt;30 then 1 else null end) &quot;above 30&quot;, from student;   用where子句代替having子句 select * from table group by num having num=1; where num=1 group by num;  多表开发注意事项  正确连接方式&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/" title="SQL.优化"> &raquo;</a>
 </article>
 
         

@@ -47,13 +47,13 @@
             
 <h1><a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User">Linux.User</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.18">2017.08.18</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.21">2018.06.21</time>
 
     &middot; 
         
         <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux </a>
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
         
     
 
@@ -71,6 +71,10 @@
 <li><a href="http://zebralinux.blog.51cto.com/8627088/1369301">Linux系统中切换用户身份su与sudo的用法与实例</a></li>
 <li><a href="http://man.linuxde.net/useradd">useradd命令</a></li>
 <li><a href="http://www.runoob.com/linux/linux-user-manage.html">Linux 用户和用户组管理</a></li>
+<li><a href="http://blog.51cto.com/linuxzr/737340">更改Linux用户的登录shell环境</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
 </ul>
 
 <h2 id="指令">指令</h2>
@@ -127,11 +131,6 @@
 <li>如果不想检查，可以将 <code>/etc/adduser.conf</code> 中相关选项屏蔽</li>
 </ul></li>
 </ul></li>
-</ul></li>
-<li>EXAMPLE
-
-<ul>
-<li>``</li>
 </ul></li>
 </ul>
 
@@ -230,6 +229,19 @@
 
 <ul>
 <li>参数同 <code>useradd</code></li>
+<li>EXAMPLE
+
+<ul>
+<li><code>usermod -s /bin/sh tmpuser</code>
+
+<ul>
+<li><code>cat /etc/shells</code>
+
+<ul>
+<li>查看本机支持的 shell 版本</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h3 id="userdel">userdel</h3>
@@ -360,7 +372,14 @@
 
 <ul>
 <li>允许其它用户以管理员权限执行指令</li>
-<li>需要 Root 使用 <code>visudo</code> 编辑 <code>/etc/sudoers</code> 才可以授权其它用户</li>
+<li>需要 Root 使用 <code>visudo</code> 编辑 <code>/etc/sudoers</code> 才可以授权其它用户
+
+<ul>
+<li><code>whereis sudoers</code></li>
+<li><code>chmod u+w /etc/sudoers</code></li>
+<li><code>vim /etc/sudoers</code></li>
+<li><code>chmod u-w /etc/sudoers</code></li>
+</ul></li>
 </ul></li>
 <li>FORMAT
 
@@ -425,11 +444,6 @@
 <ul>
 <li>从标准输入流替代终端来获取密码</li>
 </ul></li>
-</ul></li>
-<li>EXAMPLE
-
-<ul>
-<li>``</li>
 </ul></li>
 </ul>
 

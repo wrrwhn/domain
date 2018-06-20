@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User">Linux.User</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.21">2018.06.21</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录shell环境 []() []() []()  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽     useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java">Linux.Java</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.06.20">2018.06.20</time>
@@ -259,33 +282,6 @@ JAVAP 作用  对 class 文件进行反编译 查看 java 编译器生成的字�
     <p>[TOC]
 Compare     名称 机制 适用范围 生命周期 对象调用权限 优点/场景     Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤敏感词、URL权限   Listener 监听器 事件回调 Servlet/ Application/ Swing 初始化时调用 与事件相关 不依赖框架，便于移植统计在线人数、清理过期 Session   Interceptor 拦截器 反射机制 Servlet 于 Service.execute 前后 多次调用 Request/ Response/ HandlerMethod 不依赖框架，便于移植效率检测、日志输出、安全检测、用户拦截   AOP 面向切面 反射机制 Servlet/ Application/ Swing可深入至方法、异常抛出的前后，推荐 多次调用 Method.Name 框架支持，灵活实现    Other Order  Filter.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security">Spring.Security</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.04">2018.06.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/security">security</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-前后端分离 思路  登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截  选型  Spring.Security  展示型项目，简单区分前后端即可  Vue+ Bootstrap  代码 引用 &lt;parent&gt; &lt;version&gt;1.3.8.RELEASE&lt;/version&gt; &lt;/parent&gt; &lt;dependencies&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-security&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.security&lt;/groupId&gt; &lt;artifactId&gt;spring-security-core&lt;/artifactId&gt; &lt;/dependency&gt; &lt;dependency&gt; &lt;groupId&gt;org.springframework.security&lt;/groupId&gt; &lt;artifactId&gt;spring-security-test&lt;/artifactId&gt; &lt;version&gt;4.0.4.RELEASE&lt;/version&gt; &lt;scope&gt;test&lt;/scope&gt; &lt;/dependency&gt; &lt;/dependencies&gt;  登录  Controller
-@RequestMapping(value = &quot;/login&quot;, method = RequestMethod.POST) public void login(@RequestBody UserVo userVo, HttpServletRequest request) { securityService.login(userVo.getName(), userVo.getPwd(), request); }  Service
-public void login(String username, String password, HttpServletRequest request) { User user = userService.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security"> &raquo;</a>
 </article>
 
         

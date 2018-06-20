@@ -1,8 +1,8 @@
 +++
-date = "2017-08-18T22:07:46+08:00"
+date = "2018-06-21T00:10:00+08:00"
 title = "Linux.User"
 draft = false
-tags = ["整理","Linux "]
+tags = ["整理","Linux"]
 share = true
 +++
 
@@ -14,6 +14,11 @@ share = true
 - [Linux系统中切换用户身份su与sudo的用法与实例](http://zebralinux.blog.51cto.com/8627088/1369301)
 - [useradd命令](http://man.linuxde.net/useradd)
 - [Linux 用户和用户组管理](http://www.runoob.com/linux/linux-user-manage.html)
+- [更改Linux用户的登录shell环境](http://blog.51cto.com/linuxzr/737340)
+- []()
+- []()
+- []()
+
 
 
 ## 指令
@@ -38,8 +43,6 @@ share = true
         - 默认在创建用户时会进行 `/etc/adduser.conf` 中的正则表达式检查用户名是否合法
             - 如果想使用弱检查，则使用这个选项
             - 如果不想检查，可以将 `/etc/adduser.conf` 中相关选项屏蔽
-- EXAMPLE
-    - ``
 
 ### useradd
 - DESCRIBE
@@ -81,6 +84,10 @@ share = true
 
 ### usermod
 - 参数同 `useradd`
+- EXAMPLE
+    - `usermod -s /bin/sh tmpuser`
+        - `cat /etc/shells`
+            - 查看本机支持的 shell 版本
 
 
 ### userdel
@@ -134,6 +141,10 @@ share = true
 - DESCRIBE
     - 允许其它用户以管理员权限执行指令
     - 需要 Root 使用 `visudo` 编辑 `/etc/sudoers` 才可以授权其它用户
+        - `whereis sudoers`
+        - `chmod u+w /etc/sudoers`
+        - `vim /etc/sudoers`
+        - `chmod u-w /etc/sudoers`
 - FORMAT
     - sudo [-bhHpV] [-s] [-u <user>] [command]
 - OPTIONS
@@ -159,6 +170,3 @@ share = true
         - 显示版本信息。
     - `-S`
         - 从标准输入流替代终端来获取密码
-- EXAMPLE
-    - ``
-

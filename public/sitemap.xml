@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/linux.user/</loc>
+    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/linux.java/</loc>
     <lastmod>2018-06-20T17:30:00+08:00</lastmod>
   </url>
@@ -818,11 +823,6 @@
   </url>
   
   <url>
-    <loc>http://domain.yqjdcyy.com/post/linux.user/</loc>
-    <lastmod>2017-08-18T22:07:46+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>http://domain.yqjdcyy.com/post/linux.jenkins/</loc>
     <lastmod>2017-08-17T22:07:46+08:00</lastmod>
   </url>
@@ -1288,7 +1288,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/linux/</loc>
-    <lastmod>2018-06-20T17:30:00+08:00</lastmod>
+    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1342,7 +1342,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-06-20T17:30:00+08:00</lastmod>
+    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1624,7 +1624,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-06-20T17:30:00+08:00</lastmod>
+    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1720,7 +1720,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-06-20T17:30:00+08:00</lastmod>
+    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
