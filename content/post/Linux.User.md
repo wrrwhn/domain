@@ -15,9 +15,6 @@ share = true
 - [useradd命令](http://man.linuxde.net/useradd)
 - [Linux 用户和用户组管理](http://www.runoob.com/linux/linux-user-manage.html)
 - [更改Linux用户的登录shell环境](http://blog.51cto.com/linuxzr/737340)
-- []()
-- []()
-- []()
 
 
 
