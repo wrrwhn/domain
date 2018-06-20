@@ -46,6 +46,56 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jps/" title="Java.Tools.JPS">Java.Tools.JPS</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JPS 作用  显示当前用户本地 JAVA 进程及进程号  机制  java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例  appuser 用户 ll /tmp/hsperfdata_appuser/  total 928 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11337 -rw&mdash;&mdash;- 1 appuser appuser 32768 May 2 22:17 11489    调用  jps [-q] [-mlvV] [&lt;hostid&gt;] 参数  -q  仅显示 pid 值  -m  显示调用时 main 函数收到的启动参数  -l  显示启动类的进程 ID 和完整路径名  -v  显示调用 JVM 时的相关参数    示例  /usr/java/jdk1.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jps/" title="Java.Tools.JPS"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack">Java.Tools.JStack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTACK 作用  观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等 java 程序崩溃生成 core 文件，jstack工具可以用来获得 core 文件的java stack和native stack的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题 Java 1.8 版本中不支持  机制  生成java虚拟机当前时刻的线程快照 观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况 | 区域 | 状态 | 描述 | |&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;| | Entry Set | Waiting ThreadWaiting for monitor entry | BLOCKEDwaiting for monitor entry线程进入临界区（ synchronized 保护起来的代码区） | | The Owner | Active Thread | RUNNABLE | | Wait Set | Waiting Threadin Object.wait() | WAITING / TIMED_WAITING  in Object.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -243,52 +293,6 @@ Package  Create Artifacts
  Open 「Project Structure」    Create Artifacts    Setting     Build Artifacts
      Run  java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf  PDFBox.jar中没有主清单属性   Fix  Open MANIFEST.MF  PDFBox.jar/META-INF/MANIFEST.MF  Add Main-Class  Main-Class: com.yao.main.PDFBoxMain  Save  Reference  主要  How to Create an Executable JAR with Maven idea打包java可执行jar包  补充  A如何打包可运行jar的一个问题 JAR包中的MANIFEST.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.jar/" title="Java.Jar"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.keyword/" title="Java.Keyword">Java.Keyword</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.26">2018.04.26</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-List Access  private protected public  class, method, variable  abstract class extends implements interface native  The native keyword may be applied to a method to indicate that the method is implemented in a language other then Java. 用于说明该方法为原生函数，由 C|C++ 实现并编译成 DLL 提供给 Java 进行调用  统一由操作系统实现   new static strictfp  strict float point | 精确浮点 确保数值计算均严格遵守 FP-strict 限制，并符合 IEEE-754 规范 保障不会因为不同的硬件平台导致计算结果不一致 可声明于类、接口或方法上  synchronized  The synchronized keyword may be applied to a method or statement block and provides protection for critical sections that should only be executed by one thread at a time.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.keyword/" title="Java.Keyword"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream">Java.Stream</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.25">2018.04.25</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-分类 InputStream  PipedInputStream ObjectInputStream FilterInputStream  DataInputStream PushbackInputstream BufferedInputStream  FileInputStream SequenceInputStream ByteArrayInputStream  OutputStream  PipedOutputStream ObjectOutputStream FilterOutputStream  DataOutputStream BufferedOutputStream PrintStream  FileOutputStream ByteArrayOutputStream  Reader  StringReader PipedReader CharArrayReader InputStreamReader  FileReader  FilterReader  PushbackReader  BufferedReader  LineNumberReader   Writer  StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter  FileWriter  BufferedWriter PrintWriter  明细 Interface OutputStream  methods  write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close()   InputStream  methods  read() read(byte b[]) read(byte b[], int off, int len) skip(long n) available() close() synchronized void mark(int readlimit) synchronized void reset()   Reader  params  Object lock  methods  read([char buf[], [int off, int len]]) skip(long n) ready() mark(int readAheadLimit) reset() close()   Writer  params  char[] writeBuffer Object lock  methods  write(int|char[]|string) Writer append(CharSequence csq[, int start, int end]) flush() close()   Stream Piped*Stream  用法  多线程时通过管道进行线程间的通讯  设计  PipedOutputStream  methods  connect(PipedInputStream snk) write(int b) write(byte b[], int off, int len)   PipedInputStream  params  DEFAULT_PIPE_SIZE = 1024 Thread readSide, writeSide;  methods  connect(PipedOutputStream src) receive(int b) receive(byte b[], int off, int len) read() read(byte b[], int off, int len)     Object*Stream  用法  通过文件永久地存储住对象（需支持 Serializable 接口）  设计  ObjectOutputStream  params  BlockDataOutputStream bout HandleTable handles ReplaceTable subs  methods  ObjectOutputStream(OutputStream out) write[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]   ObjectInputStream  params  BlockDataInputStream bin HandleTable handles  methods  ObjectInputStream(InputStream in) read[Object|Boolean|Short|Char|Int|Long|Double|Bytes|Chars]     Filter*Stream  用法  包含其它流，并作为基础的数据源  设计&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.stream/" title="Java.Stream"> &raquo;</a>
 </article>
 
         

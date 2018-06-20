@@ -46,6 +46,55 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" title="Spring.Boot.Publish">Spring.Boot.Publish</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.31">2018.05.31</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/spring">spring</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Init  project.init business.finish  Package packaging.war  pom.xml  &lt;packaging&gt;war&lt;/packaging&gt;   tomcat.remove  pom.xml  &lt;dependency&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt; &lt;!&ndash; 移除嵌入式tomcat插件 &ndash;&gt; &lt;exclusions&gt; &lt;exclusion&gt; &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt; &lt;artifactId&gt;spring-boot-starter-tomcat&lt;/artifactId&gt; &lt;/exclusion&gt; &lt;/exclusions&gt; &lt;/dependency&gt;   servlet-api.add  pom.xml  javax.servlet-api  &lt;dependency&gt; &lt;groupId&gt;javax.servlet&lt;/groupId&gt; &lt;artifactId&gt;javax.servlet-api&lt;/artifactId&gt; &lt;version&gt;3.1.0&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt;  OR tomcat-servlet-api  &lt;dependency&gt; &lt;groupId&gt;org.apache.tomcat&lt;/groupId&gt; &lt;artifactId&gt;tomcat-servlet-api&lt;/artifactId&gt; &lt;version&gt;8.0.36&lt;/version&gt; &lt;scope&gt;provided&lt;/scope&gt; &lt;/dependency&gt;    runner.update  与 Application 同级  public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return builder.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" title="Spring.Boot.Publish"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/java.importstatic/" title="Java.ImportStatic">Java.ImportStatic</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+DESCRIBE 发布  JDK 1.5 新特性
+对比 import
+ 从包中引入类，允许不添加类前缀的方式进行调用  imports classes from packages, allowing them to be used without package qualification   static import
+ 声明从类中引入静态成员，以允许它们在该类中直接使用，而不需要添加类前缀  declaration imports static members from classes, allowing them to be used without class qualification.    使用  import class.[*|method]  示例 Origin double r = Math.cos(Math.PI * theta);  Static Import import static java.lang.Math.*; double r = cos(PI * theta);  时机 态度  保守地使用 仅当需频繁的访问一两个类中的静态成员  缺点  增加可读复杂度 增加维护成本  REFERENCE 官方  Static Import  对比  import static和import的区别 java中import static和import的区别&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.importstatic/" title="Java.ImportStatic"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/spring.jpa.fetch/" title="Spring.JPA.Fetch">Spring.JPA.Fetch</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.23">2018.05.23</time>
@@ -245,56 +294,6 @@ Info  看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便�
     <p>[TOC]
 类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 注意事项  依赖于打包环境，无法于 x64 环境打 x86 的包 &gt; Pyinstaller produces a binary depending from the python you used to build it.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/python.pack/" title="Python.Pack"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.profiler/" title="Java.Tools.Profiler">Java.Tools.Profiler</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/profiler">profiler</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-监控 目的  通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率  方式  事件方法  对于 Java，可以采用 JVMTI（JVM Tools Interface）API 来捕捉诸如方法调用、类载入、类卸载、进入/离开线程等事件，然后基于这些事件进行程序行为的分析。  统计抽样方法（sampling）  该方法每隔一段时间调用系统中断，然后收集当前的调用栈（call stack）信息，记录调用栈中出现的函数及这些函数的调用结构,基于这些信息得到函数的调用关系图及每个函数的 CPU 使用信息。 由于调用栈的信息是每隔一段时间来获取的，因此不是非常精确的，但由于该方法对目标程序的干涉比较少，目标程序的运行速度几乎不受影响。  植入附加指令方法（BCI）  该方法在目标程序中插入指令代码，这些指令代码将记录 profiling 所需的信息，包括运行时间、计数器的值等，从而给出一个较为精确的内存使用情况、函数调用关系及函数的 CPU 使用信息。 该方法对程序执行速度会有一定的影响，因此给出的程序执行时间有可能不准确。但是该方法在统计程序的运行轨迹方面有一定的优势。   常用功能  遥测（Telemetry）  遥测是一种用来查看应用程序运行行为的最简单的方法。 通常会有多个视图（View）分别实时地显示 CPU 使用情况、内存使用情况、线程状态以及其他一些有用的信息，以便用户能很快地发现问题的关键所在 CPU Telemetry 视图一般用于显示整个应用程序的 CPU 使用情况，有些工具还能显示应用程序中每个线程的 CPU 使用情况 Memory Telemetry 视图一般用于显示堆内存和非堆内存的分配和使用情况 Garbage Collection Telemetry 视图显示了 JVM 中垃圾收集器的详细信息 Threads Telemetry 视图一般用于显示当前运行线程的个数、守护进程的个数等信息 Classes Telemetry 视图一般用于显示已经载入和还没有载入的类的数量  快照（snapshot）  应用程序启动后，profiler 工具开始收集各种执行数据，其中一些数据直接显示在遥测视图中，而另外大部分数据被保存在内部，直到用户要求获取快照，基于这些保存的数据的统计信息才被 显示出来。 快照包含了应用程序在一段时间内的执行信息  CPU 快照  主要包含了应用程序中函数的调用关系及运行时间。  内存快照  主要包含了内存的分配和使用情况、载入的所有类、存在的对象信息及对象间的引用关系。    CPU Profiling  CPU Profiling 的主要目的是统计函数的调用情况及执行时间，或者更简单的情况就是统计应用程序的 CPU 使用情况。 方式  CPU 遥测 CPU 快照   内存 Profiling  主要通过统计内存使用情况检测可能存在的内存泄露问题及确定优化内存使用的方向。 方式  内存遥测 内存快照   线程 Profiling  线程 Profiling 主要用于在多线程应用程序中确定内存的问题所在  某个线程的状态变化情况 死锁情况 某个线程在线程生命期内状态的分布情况    工具 Java.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.profiler/" title="Java.Tools.Profiler"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap">Java.Tools.JMap</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.04">2018.05.04</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &lt;pid&gt;|&lt;executable &lt;core&gt;&gt; | &lt;[server_id@]&lt;remoteServerIP | hostname&gt;&gt; 参数  &lt;no option&gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&lt;filename&gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&lt;flag&gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748 | 内存地址 | 内存占用 | 进程、核心文件或远程调试服务器 | |&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 0x0000000051560000 | 8740K | D:\server\Java\jdk1.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.jmap/" title="Java.Tools.JMap"> &raquo;</a>
 </article>
 
         

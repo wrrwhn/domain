@@ -45,6 +45,54 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/" title="小丸压缩视频转M3U8异常">小丸压缩视频转M3U8异常</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.03">2018.03.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86">异常处理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/ffmpeg">ffmpeg</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+异常反馈  2 frames left in the queue on closing  Command  原始转换请求转换语句 &gt; /usr/local/ffmpeg/bin/ffmpeg -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 -vcodec libx264 -r 24 -vf scale=640:360,pad=640:360:0:0:black -acodec aac -ar 22050 -ab 24k -map 0 -f ssegment -segment_format mpegts -segment_list /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/index.m3u8 -segment_time 10 /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/%04d.ts  Info  /usr/local/ffmpeg/bin/ffprobe -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 客户使用「小丸」进行视频压缩，添加末帧图片作为视频流，导致转 M3U8 时缓存不足引起转换失败  理解为 FFMPEG 进行转码时，对各通道流进行同步缓存 而图片流中图片仅存在于末帧，导致需要缓存的数据过多引发如上异常 仅为与同事探讨的可能，如有知情，请烦请知会 &gt; Stream #0:0(und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709/unknown/unknown), 1920x1080, 340 kb/s, 25 fps, 25 tbr, 25 tbn, 50 tbc (default) Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 129 kb/s Stream #0:2: Video: png, rgba(pc), 1920x1080, 90k tbr, 90k tbn, 90k tbc   Ask  ffmpeg -max_muxing_queue_size [bug][regression] Too many packets buffered for output stream Conversion failed!&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/" title="小丸压缩视频转M3U8异常"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
+<h1><a href="http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/" title="调酒">调酒</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.03">2018.03.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E4%B9%90%E8%B6%A3">乐趣</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E8%B0%83%E9%85%92">调酒</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Mojito 莫吉托 材料  白郎姆酒 40ml 青柠檬汁 30ml  可用屈臣氏青柠汁替换  薄荷叶 6片 白糖 2茶匙 苏打水  可用屈臣氏苏打水替换  冰块  杯子  海波杯  做法  薄荷叶+ 白糖+ 青柠（檬）汁混合捣碎 加苏打水后，加冰块填满本子 加入郎姆酒后添苏打水至满杯 以薄荷叶或柠檬片装饰&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/" title="调酒"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" title="富爸爸穷爸爸">富爸爸穷爸爸</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.02.22">2018.02.22</time>
@@ -231,56 +279,6 @@
  很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
  检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/" title="美国-夏威夷">美国-夏威夷</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.06">2018.02.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%B8%B8%E7%8E%A9">游玩</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E7%BE%8E%E5%9B%BD">美国</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%A4%8F%E5%A8%81%E5%A4%B7">夏威夷</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>夏威夷 参考  ALOHA! 夏威夷之旅  路线  夏威夷大岛（Islandof Hawaii） 茂宜岛（Maui） 欧湖岛（Oahu）檀香山  夏威夷大岛 - 火山  由两座活火山组成，分别为基拉韦厄（ Kilauea）和冒那罗亚（Mauna Loa） 路线
- 火山国家公园  火山口链路  雨林 海岸  越野十英里 岩浆活跃区   赏析
-                 茂宜岛  路线
- Kahului市 海纳之路 山顶牧场 哈雷阿卡拉死火山口 观鲸  赏析
-                   欧湖岛  赏析&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/" title="美国-夏威夷"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/" title="阿里为什么不去清华招人？">阿里为什么不去清华招人？</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.06">2018.02.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E4%BC%81%E4%B8%9A">企业</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>阿里为什么不去清华招人？ 参考  阿里为什么不去清华招人？｜草铺半生  整理 卫哲  29岁，成为普华永道史上最年轻的合伙人之一 32岁，担任百安居中国区总裁，也是最年轻的世界500强中国区总裁 36岁，执掌阿里巴巴 嘉御基金的创始人，管理着10亿美金的资产  示例   微软.Steve Ballmer  我们和苹果竞争，和索尼竞争，和 Cisco 竞争，和 Oracle 竞争，我们是如何跟他们斗争的，又如何消灭他们的。 Steve Ballmer 下台，第二天股票涨了7%。微软的 7% 是多少？相当于300亿美金。  谷歌.Larry Page  NASA（美国宇航局）、Obama administration（奥巴马政府）  阿里巴巴  2005年,工程师和销售的离职率 10%/ 月。    招聘建议 不轻易下放招聘权  阿里巴巴刚创建的时候，大概在公司 400-500 人的时候，任何人加入公司，马云都要见，亲自面试。任何人，包括我们的前台接待，包括我们公司的保安。 因为你没有招对人，你没有把时间放在招聘上，形成了恶性循环。因为招的人不行，你要替他们去干，他们本来该干的事。 很多跨国公司，至少坚持跨两级招人，阿里巴巴一度恢复到跨四级招人。  重视专业技能以外的考核  业务技能很简单，很好判断。 因为人的分类没有对错。错的是什么呢？  是不同类的人，天天要坐在一起，天天要在一起共事。可想而知，心情不愉快，工作效率低。 &gt; 同学，你能不能跟我描述一下，你这辈子吃的最大的苦是什么？ 同学，你能不能跟我讲讲，你这辈子吃过的最大的亏是什么？   跨一两级选拔人才  平凡的人做非凡的事情，我们不追求精英文化 你要招一个月薪大约1万的人，我们通常就在 8000-10000 里面去挑。结果来了以后，这些人的流失率很高，因为他们会认为，我原来挣 8000 ，跳槽后挣 10000 很正常。 你要在三四千块里面，挑出来一个你愿意付1万块的人，你大概要看三四十个人，但一定会有的，我相信一定会有的。 阿里很多最优秀的工程师，都是武汉邮电、华中科技这些大学招聘过来的  别总讲规模，多谈谈效率  互联网最大的作用就是提升效率。 商业的本质，除了增长以外还有效率。    晚餐补助，通过领导审批通过后领取饭票。一顿晚饭公司出15块钱。但  问题一：谁也没有规定工作到几点以后是加班。 问题二：我们从来没有去想，每天五、六千个人，提加班申请，主管批准，发一张券，这个动作，花了多少时间，花了多少钱。  取消报批制  一年下来，大概前一年加班餐费在1400万左右，年末多了大概100万，变成1500万了。而流程中节省人员时间等消耗，远超过100万。     提高个人效率，除了自我激励以外，不要有太多级约束。  人不是成本，人应该是投资   苹果公司这么一个技术公司，把奢侈品牌巴宝莉（Burberry） 的 CEO 找来做实体零售业的负责人 苹果店的存在，就是体验。所以苹果本身就是一种新零售 一定要对原有的零售门店加以再利用。  第一，房租成本，租金不能降低； 第二，人工成本，没法降低。     人均产出大幅度上升，每平米产出（坪效）大幅度上升。  如何让我们的公司变得好玩？  硅谷创业公司也好，大公司也好，见面第一句话，不是互相问“你们这的期权多少？”； 见面第一句话都是“你们那午饭怎么样？”“你们那的中餐水平怎么样？”&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/" title="阿里为什么不去清华招人？"> &raquo;</a>
 </article>
 
         
