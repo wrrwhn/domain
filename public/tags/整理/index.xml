@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 20 Jun 2018 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 17:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Java</title>
+      <link>http://domain.yqjdcyy.com/post/linux.java/</link>
+      <pubDate>Wed, 20 Jun 2018 17:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
+      <description> [TOC]
+参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script  安装  查询  Java SE Downloads 使用 Oracle 账号登录  下载  获取下载链接  jdk-8u171-linux-x64.rpm  F12 获取 Cookie 「gpw_e24」「oraclelicense」 拼链接调用  wget --no-cookies --no-check-certificate --header &amp;quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie&amp;quot; &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&amp;quot;   安装  sudo yum localinstall jdk-8u171-linux-x64.rpm -y  检查  java -version   </description>
+    </item>
     
     <item>
       <title>Hello.Docker.Compose</title>
@@ -1111,16 +1121,6 @@ IDEA.MyBatisCodeHelper 参考  MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，
       <guid>http://domain.yqjdcyy.com/post/linux.maven/</guid>
       <description> [TOC]
 参考  Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz  流程 Java.config  check $JAVA_HOME  Maven.config  UNZIP  /data/soft/apache-maven-3.5.0  EXPORT.ADD  /etc/profile  export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2}   EXPORT.SAVE  source /etc/profile  CHECK  mvn -v  MAVEN.CONFIG  /data/soft/apache-maven-3.5.0/conf/settings.xml  &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt;    常用指令  clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X  显示 Debbug 信息   </description>
-    </item>
-    
-    <item>
-      <title>Linux.Java</title>
-      <link>http://domain.yqjdcyy.com/post/linux.java/</link>
-      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
-      <description> [TOC]
-参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script  安装  download  wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm?AuthParam=1502793850_1a99b9b8c46b13fbf1ea41f955c5bd54  install  yum localinstall jdk-8u144-linux-x64.rpm -y  check  java -version find / -name java  /usr/java/jdk1.8.0_144    </description>
     </item>
     
     <item>

@@ -46,6 +46,31 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack">Java.Tools.JStack</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+JSTACK 作用  观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等 java 程序崩溃生成 core 文件，jstack工具可以用来获得 core 文件的java stack和native stack的信息，从而可以轻松地知道 java 程序是如何崩溃和在程序何处发生问题 Java 1.8 版本中不支持  机制  生成java虚拟机当前时刻的线程快照 观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况 | 区域 | 状态 | 描述 | |&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;| | Entry Set | Waiting ThreadWaiting for monitor entry | BLOCKEDwaiting for monitor entry线程进入临界区（ synchronized 保护起来的代码区） | | The Owner | Active Thread | RUNNABLE | | Wait Set | Waiting Threadin Object.wait() | WAITING / TIMED_WAITING  in Object.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.tools.jstack/" title="Java.Tools.JStack"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" title="Java.Tools.JStat">Java.Tools.JStat</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.05.03">2018.05.03</time>
@@ -271,28 +296,6 @@ public &lt;T&gt; void printClass(T t) { System.out.println(t.getClass().getName(
  List&lt;T&gt; -&gt; List &lt;T&gt; -&gt; Object  使用擦除实现，唯一知道是在使用一个对象
  List&lt;String&gt;= List&lt;Object&gt;= List List&lt;Integer&gt;= List&lt;Object&gt;= List  与 C++ 对比&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/java.%E6%B3%9B%E5%9E%8B/" title="Java.泛型"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j">Java.Log4j</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java </a>
-        
-    
-
-</span>
-</footer>
-
-    <p>文件格式 配置根Logger  log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , …  配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN  配置日志信息的格式（布局） log4j.appender.appenderName.layout = fully.qualified.name.of.layout.class log4j.appender.appenderName.layout.ConversionPattern = value1 … log4j.appender.appenderName.layout.optionN = valueN  参数 [ level ] - 日志输出级别  FATAL[0] ERROR[3] WARN[4] INFO[6] DEBUG[7]  Appender - 日志输出目的地  org.apache.log4j.ConsoleAppender（控制台） org.apache.log4j.FileAppender（文件） org.apache.log4j.DailyRollingFileAppender（每天产生一个日志文件） org.apache.log4j.RollingFileAppender（文件大小到达指定尺寸的时候产生一个新的文件） org.apache.log4j.WriterAppender（将日志信息以流格式发送到任意指定的地方）  Layout - 日志输出格式  org.apache.log4j.HTMLLayout（以HTML表格形式布局） org.apache.log4j.PatternLayout（可以灵活地指定布局模式） org.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.log4j/" title="Java.Log4j"> &raquo;</a>
 </article>
 
         

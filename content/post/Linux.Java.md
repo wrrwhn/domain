@@ -1,8 +1,8 @@
 +++
-date = "2017-08-16T22:07:46+08:00"
+date = "2018-06-20T17:30:00+08:00"
 title = "Linux.Java"
 draft = false
-tags = ["整理","Linux.Java" ,"Linux.Java"]
+tags = ["整理","Linux" ,"Java"]
 share = true
 +++
 
@@ -17,11 +17,16 @@ share = true
 
 
 ## 安装
-- download
-    - `wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm?AuthParam=1502793850_1a99b9b8c46b13fbf1ea41f955c5bd54`
-- install
-    - `yum localinstall jdk-8u144-linux-x64.rpm -y`
-- check
+- 查询
+	- [Java SE Downloads](http://www.oracle.com/technetwork/java/javase/downloads/index.html)
+	- 使用 Oracle 账号登录
+- 下载
+	- 获取下载链接
+		- [jdk-8u171-linux-x64.rpm](http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm)
+	- F12 获取 Cookie 「gpw_e24」「oraclelicense」
+	- 拼链接调用
+		- `wget --no-cookies --no-check-certificate --header "Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie" "http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm"`
+- 安装
+    - `sudo yum localinstall jdk-8u171-linux-x64.rpm -y`
+- 检查
     - `java -version`
-    - `find / -name java`
-        - /usr/java/jdk1.8.0_144

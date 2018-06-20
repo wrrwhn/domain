@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 02 May 2018 16:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Jun 2018 17:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Java</title>
+      <link>http://domain.yqjdcyy.com/post/linux.java/</link>
+      <pubDate>Wed, 20 Jun 2018 17:30:00 +0800</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
+      <description> [TOC]
+参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script  安装  查询  Java SE Downloads 使用 Oracle 账号登录  下载  获取下载链接  jdk-8u171-linux-x64.rpm  F12 获取 Cookie 「gpw_e24」「oraclelicense」 拼链接调用  wget --no-cookies --no-check-certificate --header &amp;quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie&amp;quot; &amp;quot;http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&amp;quot;   安装  sudo yum localinstall jdk-8u171-linux-x64.rpm -y  检查  java -version   </description>
+    </item>
     
     <item>
       <title>Hello.Linux</title>

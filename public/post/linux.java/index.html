@@ -47,15 +47,15 @@
             
 <h1><a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java">Linux.Java</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.16">2017.08.16</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.20">2018.06.20</time>
 
     &middot; 
         
         <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
         
-        <a href="http://domain.yqjdcyy.com/tags/linux.java">linux.java</a>, 
+        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
         
-        <a href="http://domain.yqjdcyy.com/tags/linux.java">linux.java</a>
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
         
     
 
@@ -77,25 +77,36 @@
 <h2 id="安装">安装</h2>
 
 <ul>
-<li>download
+<li>查询
 
 <ul>
-<li><code>wget http://download.oracle.com/otn-pub/java/jdk/8u144-b01/090f390dda5b47b9b721c7dfaa008135/jdk-8u144-linux-x64.rpm?AuthParam=1502793850_1a99b9b8c46b13fbf1ea41f955c5bd54</code></li>
+<li><a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Java SE Downloads</a></li>
+<li>使用 Oracle 账号登录</li>
 </ul></li>
-<li>install
+<li>下载
 
 <ul>
-<li><code>yum localinstall jdk-8u144-linux-x64.rpm -y</code></li>
+<li>获取下载链接
+
+<ul>
+<li><a href="http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm">jdk-8u171-linux-x64.rpm</a></li>
 </ul></li>
-<li>check
+<li>F12 获取 Cookie 「gpw_e24」「oraclelicense」</li>
+<li>拼链接调用
+
+<ul>
+<li><code>wget --no-cookies --no-check-certificate --header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie&quot; &quot;http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&quot;</code></li>
+</ul></li>
+</ul></li>
+<li>安装
+
+<ul>
+<li><code>sudo yum localinstall jdk-8u171-linux-x64.rpm -y</code></li>
+</ul></li>
+<li>检查
 
 <ul>
 <li><code>java -version</code></li>
-<li><code>find / -name java</code>
-
-<ul>
-<li>/usr/java/jdk1.8.0_144</li>
-</ul></li>
 </ul></li>
 </ul>
 
