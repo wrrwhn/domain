@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/</loc>
+    <lastmod>2018-06-27T20:30:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</loc>
+    <lastmod>2018-06-27T18:00:00+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/post/linux.user/</loc>
     <lastmod>2018-06-21T00:10:00+08:00</lastmod>
   </url>
@@ -1170,7 +1180,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/docker/</loc>
-    <lastmod>2018-06-20T12:00:00+08:00</lastmod>
+    <lastmod>2018-06-27T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1338,7 +1348,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/post/</loc>
-    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
+    <lastmod>2018-06-27T20:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1620,7 +1630,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/</loc>
-    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
+    <lastmod>2018-06-27T20:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1716,7 +1726,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/</loc>
-    <lastmod>2018-06-21T00:10:00+08:00</lastmod>
+    <lastmod>2018-06-27T18:00:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -1919,6 +1929,12 @@
   </url>
   
   <url>
+    <loc>http://domain.yqjdcyy.com/tags/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/</loc>
+    <lastmod>2018-06-27T20:30:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>http://domain.yqjdcyy.com/tags/%E9%85%92/</loc>
     <lastmod>2018-01-19T17:07:46+08:00</lastmod>
     <priority>0</priority>
@@ -1932,7 +1948,7 @@
   
   <url>
     <loc>http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/</loc>
-    <lastmod>2018-06-11T15:40:00+08:00</lastmod>
+    <lastmod>2018-06-27T20:30:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   

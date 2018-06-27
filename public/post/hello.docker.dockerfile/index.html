@@ -45,24 +45,684 @@
         <article class="post">
             <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
             
-<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/" title=""></a></h1>
+<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/" title="Hello.Docker.Dockerfile">Hello.Docker.Dockerfile</a></h1>
 
-<footer class="post-info"> <span class="post-meta"><time datetime="0001.01.01">0001.01.01</time>
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.27">2018.06.27</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
+        
+    
 
 </span>
 </footer>
 
             
 
+<p>[TOC]</p>
+
+<h1 id="work">Work</h1>
+
+<ul>
+<li><code>Docker</code> 镜像是由只读的层一层层封装而成的，而其中的层均代码着 <code>Dockerfile</code> 指令</li>
+</ul>
+
+<h1 id="guidlines">Guidlines</h1>
+
+<ul>
+<li>保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置</li>
+<li>不管实际执行的 <code>Dockerfile</code> 在哪，当前目录下的文件和目录都将发送至 <code>Docker</code> 守护进程中作为构建上下文中
+
+<ul>
+<li>执行 <code>docker build</code> 的当前所在目录，称为构建上下文</li>
+<li>默认 <code>Dockerfile</code> 文件存放于构建上下文中，但也可通过 <code>-f</code> 指令指定</li>
+</ul></li>
+</ul>
+
+<h1 id="command">Command</h1>
+
+<h2 id="parser-directives">Parser directives</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>用于指定 <code>Dockerfile</code> 中的转义字符或换行
+
+<ul>
+<li>默认为 <code>\</code></li>
+<li>重新定义转义字符为 <code>`</code>，主要用于支持 Windows PowerShell脚本，为 <code>c:\\</code> 情况</li>
+<li>编译时不添加至 <code>Docker</code> 层，也不显示作为编译的其中一个步骤</li>
+<li>位置应该置于文件顶部，不然当处理完注释、空行或构建指令后, <code>Docker</code> 将不再寻找解析器指令</li>
+</ul></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code># directive=value</code>
+
+<ul>
+<li>仅可使用一次</li>
+<li>非大小写敏感，允许空格等非断行型空白</li>
+<li>无效情况
+
+<ul>
+<li><code>\</code>(续行符)</li>
+<li>重复多次</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code># escape=[\|`]</code></li>
+</ul></li>
+</ul>
+
+<h2 id="env">ENV</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>变量定义</li>
+</ul></li>
+<li>定义
+
+<ul>
+<li><code>ENV variable.name variable.value</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code>${variable}= $variable</code></li>
+<li><code>${variable:-default}</code>
+
+<ul>
+<li>= nul!= <code>$variable</code> ? <code>$variable</code> : <code>default</code></li>
+</ul></li>
+<li><code>${variable:+default}</code>
+
+<ul>
+<li>= nul!= <code>$variable</code> ? <code>default</code> : <code>&quot;&quot;</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="from">FROM</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>指定的构建基础，来源可由任意公共存储库的有效镜像
+
+<ul>
+<li><code>Dockerfile</code> 必须以 <code>FROM</code> 开始</li>
+</ul></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>FROM &lt;image&gt;[:&lt;tag&gt;|@&lt;digest&gt;] [AS &lt;name&gt;]</code>
+
+<ul>
+<li><code>AS &lt;name&gt;</code>
+
+<ul>
+<li>可选项，设置当前引用在新构建阶段的名称
+
+<ul>
+<li>可于后续的 <code>FROM</code> 和 <code>COPY</code></li>
+<li>FROM=<name|index></li>
+</ul></li>
+</ul></li>
+<li><code>:&lt;tag&gt;|@&lt;digest&gt;</code>
+
+<ul>
+<li>可选项，用于指定对应的版本
+
+<ul>
+<li>默认为 <code>lastest</code></li>
+<li>当构建器找不到指定版本时，返回异常</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="run">RUN</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>于 <code>Docker</code> 新层中中执行脚本
+
+<ul>
+<li><code>RUN</code> 的缓存不会在下一步构建操作中自动失效
+
+<ul>
+<li><code>RUN apt-get dist-upgrade -y</code> 可于下一步构建中重用</li>
+<li><code>docker build --no-cache</code> 构建中使用 <code>--no-cache</code> 排除 <code>RUN</code> 构建中的缓存影响</li>
+</ul></li>
+</ul></li>
+<li>执行命令并 <strong>创建新镜像层</strong>，经常用于 <strong>安装软件包</strong></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>RUN [[&lt;shell&gt;] &lt;command&gt;|[[&lt;shell&gt;,]&quot;&lt;command&gt;&quot;, &quot;&lt;args...&gt;&quot;]]</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code>RUN /bin/bash -c 'source $HOME/.bashrc; echo $HOME'</code></li>
+<li><code>RUN [&quot;c:\\windows\\system32\\tasklist.exe&quot;]</code></li>
+<li><code>RUN [&quot;echo&quot;, &quot;$HOME&quot;]</code>
+
+<ul>
+<li>相较下例，不会将 <code>$HOME</code>变量 <strong>替换为实际值</strong></li>
+</ul></li>
+<li><code>RUN [&quot;/bin/bash&quot;, &quot;-c&quot;, &quot;echo $HOME&quot;]</code></li>
+</ul></li>
+</ul>
+
+<h2 id="cmd">CMD</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>执行版本，目的于提供运行容器的默认启动语句或入口点
+
+<ul>
+<li><code>Dockerfile</code> 仅执行一次 <code>CMD</code> 语句
+
+<ul>
+<li>存在多条指令的情况， <strong>执行最后一条</strong></li>
+</ul></li>
+<li>支持 <code>ENTRYPOINT</code> 情况下，需指定 <code>JSON</code> 数组格式</li>
+</ul></li>
+<li>设置容器启动后，默认执行的命令及参数
+
+<ul>
+<li>可被 <code>docker run</code> 语句后的命令行参数 <strong>替换</strong></li>
+</ul></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>CMD [[&lt;shell&gt;] &lt;command&gt;|[[&lt;shell&gt;,]&quot;&lt;command&gt;&quot;, &quot;&lt;args...&gt;&quot;]]</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code>CMD [&quot;executable&quot;,&quot;param1&quot;,&quot;param2&quot;]</code>
+
+<ul>
+<li>执行模式，推荐
+
+<ul>
+<li>执行不调用命令解析器，导致正常脚本执行无法正常运行
+
+<ul>
+<li><code>CMD [ &quot;echo&quot;, &quot;$HOME&quot; ]</code> 中 <code>$HOME</code> 将不会被替换</li>
+<li>可使用 <code>脚本模式</code> 或 <code>CMD [ &quot;sh&quot;, &quot;-c&quot;, &quot;echo $HOME&quot; ]</code> 方式实现</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><code>CMD [&quot;param1&quot;,&quot;param2&quot;]</code>
+
+<ul>
+<li><code>ENTRYPOINT</code> 使用情况</li>
+</ul></li>
+<li><code>CMD command param1 param2</code>
+
+<ul>
+<li>脚本模式</li>
+<li>linux 默认使用 <code>/bin/sh -c</code>，windows 默认使用 <code>cmd /S /C</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="label">LABEL</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>为镜像添加标签信息</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>LABEL ( &lt;key&gt;=&lt;value&gt;)+</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li>添加标签
+<code>Docker
+LABEL version=&quot;1.0&quot;
+LABEL description=&quot;This text illustrates \
+        that label-values can span multiple lines.&quot;
+</code></li>
+<li>查看标签
+
+<ul>
+<li><code>docker inspect &lt;image.name&gt;</code>
+<code>Docker
+&quot;Labels&quot;: {
+    &quot;version&quot;: &quot;1.0&quot;,
+    &quot;description&quot;: &quot;This text illustrates that label-values can span multiple lines.&quot;,
+},    
+</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="maintainer"><del>MAINTAINER</del></h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>为镜像添加作者信息</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>MAINTAINER &lt;name&gt;</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li>建议使用 <code>LABEL</code> 代替
+
+<ul>
+<li><code>LABEL maintainer=&quot;docker@gmail.com&quot;</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="expose">EXPOSE</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li><strong>声明</strong> 容器服务监听的特定网络 <strong>端口</strong></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>EXPOSE &lt;port&gt; [&lt;port&gt;/&lt;protocol&gt;...]</code>
+
+<ul>
+<li>协义支持 <code>TCP</code> 和 <code>UCP</code>
+
+<ul>
+<li>默认为 <code>TCP</code></li>
+</ul></li>
+<li>仅声明占用端口，实际开放请参考 <code>docker run</code> 的 <code>-p</code> 标签</li>
+</ul></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code>EXPOSE 80/tcp</code></li>
+</ul></li>
+</ul>
+
+<h2 id="add">ADD</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>将指定的文件、目录或 <strong>远程文件</strong> 拷贝至镜像文件系统中的相对位置</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>ADD [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code>
+
+<ul>
+<li><code>[--chown=&lt;user&gt;:&lt;group&gt;]</code> 仅于 Linux 操作系统中有效
+
+<ul>
+<li>将该文件或文件夹指定给指定的用户名、级名或 UID/GID 组合
+
+<ul>
+<li>默认指定给 UID= GID= 0</li>
+<li>通过 <code>/etc/passwd</code> 和 <code>/etc/group</code> 将用户名、级名转换为 <code>UID</code> 和 <code>GID</code></li>
+</ul></li>
+</ul></li>
+<li>仅能 <strong>拷贝构建上下文中</strong> 的数据，且针对目录只 <strong>拷贝目录内内容</strong> 而不包括文件夹本身</li>
+</ul></li>
+</ul></li>
+<li>使用
+<code>Docker
+ADD hom* /dest/                 # 将以 `hom` 开头的文件都拷贝至 `/dest/`
+ADD --chown=bin files* /dest/   # 将以 `files` 开头的文件均垧上至 `/dest/`，并授权给 `bin:bin` 用户
+ADD test dest/                  # 将 `test` 文件拷贝至 `WORKDIR`/dest/
+ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
+</code></li>
+</ul>
+
+<h2 id="copy">COPY</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>将指定的文件、目录拷贝至镜像文件系统中的相对位置</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>COPY [--chown=&lt;user&gt;:&lt;group&gt;] &lt;src&gt;... &lt;dest&gt;</code>
+
+<ul>
+<li>与 <code>ADD</code> 基本相同
+
+<ul>
+<li>较之不支持 <strong>远程文件</strong></li>
+<li>较之支持将可识别的压缩格式（tar/ gzip/ bzip2/ etc）源文件， <strong>自动解压</strong> 至指定目录</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li>参照 <code>ADD</code></li>
+</ul></li>
+</ul>
+
+<h2 id="entrypoint">ENTRYPOINT</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>配置容器启动时运行的命令</li>
+<li>容器启动需 <code>CMD</code> 和 <code>ENTRYPOINT</code> 中任意一个</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>ENTRYPOINT [&quot;executable&quot;, &quot;param1&quot;, &quot;param2&quot;]</code>
+
+<ul>
+<li>执行模式</li>
+<li><code>docker run</code> 的参数将于 <code>ENTRYPOINT</code> 后追加，并覆盖元素</li>
+</ul></li>
+<li><code>ENTRYPOINT command param1 param2</code>
+
+<ul>
+<li>脚本模式</li>
+<li>阻止 <code>CMD</code> 和 <code>RUN</code> 中的命令行参数被使用</li>
+<li>默认以 <code>/bin/sh -c</code> 形式运行，导致无法正常地接收 <code>docker stop</code> 的信号</li>
+</ul></li>
+</ul></li>
+<li>使用
+|                   |        NULL       | ENTRYPOINT entry v1 | ENTRYPOINT [&ldquo;entry&rdquo;, &ldquo;v1&rdquo;] |
+|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
+| NULL              | ERROR             | /bin/sh -c entry v1 | entry v1                   |
+| CMD [&ldquo;cmd&rdquo;, &ldquo;c1&rdquo;] | cmd c1            | /bin/sh -c entry v1 | entry v1 cmd c1            |
+| CMD [&ldquo;c1&rdquo;, &ldquo;c2&rdquo;]  | c1 c2             | /bin/sh -c entry v1 | entry v1 c1 c2             |
+| CMD cmd c1        | /bin/sh -c cmd c1 | /bin/sh -c entry v1 | entry v1 /bin/sh -c cmd c1 |</li>
+</ul>
+
+<h2 id="volume">VOLUME</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>指定挂载的主机目录</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>VOLUME [&quot;/data&quot;]</code>
+
+<ul>
+<li>Windows 情况下，需指定 <strong>C盘外</strong> 的 <strong>不存在或空</strong> 的文件夹</li>
+<li>目录数据改变的操作需 <strong>于声明之前</strong></li>
+<li>无法指定主机上的对应目录，由 <strong>系统自动生成</strong></li>
+</ul></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><code>VOLUME [&quot;/var/log&quot;, &quot;/var/db&quot;]</code>
+
+<ul>
+<li>JSON 形式，以「&rdquo;」包围，以「,」分隔</li>
+</ul></li>
+<li><code>VOLUME /var/log /var/db</code>
+
+<ul>
+<li>Plain String 形式，以「空格」分隔</li>
+</ul></li>
+</ul></li>
+<li>对比
+
+<ul>
+<li><code>docker run -v /data:/app</code></li>
+<li><code>docker run --volumes-from &lt;image.id&gt;</code>
+<br /></li>
+</ul></li>
+</ul>
+
+<h2 id="user">USER</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>用于指定镜像运行或 <code>RUN/ CMD/ ENTRYPOINT</code> 的用户[群组]</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>USER &lt;user|UID&gt;[:&lt;group|GID&gt;]</code>
+
+<ul>
+<li>当用户未配置组的情况下，默认以 <code>root</code> 群组名义</li>
+<li>Windows 环境下，用户需先行创建</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="workdir">WORKDIR</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>为 <code>RUN/ CMD/ ENTRYPOINT/ COPY/ ADD</code> 等指令指定工作目录</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>WORKDIR &lt;/path/to/workdir&gt;</code>
+
+<ul>
+<li>多次使用情况下，均以上一命令结果作为 <strong>相对目录</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="arg">ARG</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>运行时传入参数
+
+<ul>
+<li>构建时以 <code>--build-arg &lt;varname&gt;=&lt;value&gt;</code> 形式传入</li>
+</ul></li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>ARG &lt;name&gt;[=&lt;default value&gt;]</code></li>
+</ul></li>
+<li>使用
+
+<ul>
+<li><p>定义</p>
+
+<pre><code class="language-docker">FROM busybox
+USER ${user:-some_user}
+ARG user
+# ARG.user.defaultValue= some_user, realValue= what_user
+USER $user        
+</code></pre></li>
+
+<li><p>构建</p>
+
+<pre><code class="language-docker">docker build --build-arg user=what_user .
+</code></pre></li>
+</ul></li>
+</ul>
+
+<h2 id="shell">SHELL</h2>
+
+<ul>
+<li>作用
+
+<ul>
+<li>指定默认执行的脚本编译器</li>
+</ul></li>
+<li>指令
+
+<ul>
+<li><code>SHELL [&quot;powershell&quot;, &quot;-command&quot;]</code></li>
+<li><code>SHELL [&quot;cmd&quot;, &quot;/S&quot;, &quot;/C&quot;]</code></li>
+</ul></li>
+</ul>
+
+<h1 id="dockerignore">Dockerignore</h1>
+
+<table>
+<thead>
+<tr>
+<th>规则</th>
+<th>行为</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>#comment</td>
+<td>注释</td>
+</tr>
+
+<tr>
+<td><em>/temp</em></td>
+<td>根目录下任何以 <code>temp</code> 开头的文件或目录都将被排除<br>例如 <code>/somedir/temporary.txt</code> 文件和 <code>/somedir/temp</code> 文件夹都将被过滤</td>
+</tr>
+
+<tr>
+<td><em>/</em>/temp*</td>
+<td>根目录下第三层任意以 <code>temp</code> 开头的文件或目录都将被排除<br>例如 <code>/somedir/subdir/temporary.txt</code></td>
+</tr>
+
+<tr>
+<td>temp?</td>
+<td>根目录下任意以 <code>temp</code> 开头，相差以一个字符的文件或目录都将被排除<br>例如 <code>/tempa and</code> 和 <code>/tempb</code></td>
+</tr>
+
+<tr>
+<td>!README.md</td>
+<td>排除例外情况</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="example">Example</h1>
+
+<h2 id="basic">Basic</h2>
+
+<pre><code class="language-docker"># 以镜像 `ubuntu:15.04` 为基础进行封装
+FROM ubuntu:15.04
+# 将当前目录文件拷贝至 `Docker` 客户端文件夹中
+COPY . /app
+# 执行命令，编译文件
+RUN make /app
+# 指定在容器内运行，启动服务
+CMD python /app/app.py
+</code></pre>
+
+<h2 id="basic-windows">Basic.Windows</h2>
+
+<pre><code class="language-docker"># 将转义字符设置为 `，便于在路径描述中正常使用 \ 
+# escape=`
+
+FROM microsoft/nanoserver
+COPY testfile.txt c:\
+RUN dir c:\
+</code></pre>
+
+<h2 id="variable">Variable</h2>
+
+<pre><code class="language-Docker">FROM busybox
+ENV foo /bar
+ENV abc=hello           # abc= hello
+ENV abc=bye def=$abc    # abc= bye; def= hello
+ENV ghi=$abc            # ghi= hello
+
+WORKDIR ${foo}          # WORKDIR /bar
+ADD . $foo              # ADD . /bar
+COPY \$foo /quux        # COPY $foo /quux
+</code></pre>
+
+<h2 id="build-multiple">Build.Multiple</h2>
+
+<pre><code class="language-Docker">ARG  CODE_VERSION=latest        # 唯一可以列于 FROM 之前的结构
+FROM base:${CODE_VERSION}
+CMD  /code/run-app
+
+FROM extras:${CODE_VERSION}
+CMD  /code/run-extras    
+</code></pre>
+
+<h2 id="basic-run">Basic.Run</h2>
+
+<pre><code class="language-Docker">WORKDIR /a
+WORKDIR b
+WORKDIR c
+RUN pwd          # ./a/b/c/pwd
+</code></pre>
+
 <h1 id="reference">Reference</h1>
 
-<p>-
-- []()
-- []()
-- []()
-- []()
-- []()
-- []()</p>
+<h2 id="官方">官方</h2>
+
+<ul>
+<li><a href="https://docs.docker.com/engine/reference/builder/">Dockerfile reference</a></li>
+<li><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/">Best practices for writing Dockerfiles</a></li>
+<li><a href="https://docs.docker.com/engine/reference/builder/#dockerignore-file">.dockerignore file</a></li>
+</ul>
+
+<h2 id="整理">整理</h2>
+
+<ul>
+<li><a href="https://itbilu.com/linux/docker/VyhM5wPuz.html">Docker镜像构建文件Dockerfile及相关命令介绍</a></li>
+<li><a href="http://dockone.io/article/103">Docker入门教程（三）Dockerfile</a></li>
+<li><a href="https://www.toutiao.com/i6313838452630618626/">Dockerfile: ADD vs COPY</a></li>
+<li><a href="https://www.ibm.com/developerworks/community/blogs/132cfa78-44b0-4376-85d0-d3096cd30d3f/entry/RUN_vs_CMD_vs_ENTRYPOINT_%E6%AF%8F%E5%A4%A95%E5%88%86%E9%92%9F%E7%8E%A9%E8%BD%AC_Docker_%E5%AE%B9%E5%99%A8%E6%8A%80%E6%9C%AF_17?lang=en">每天5分钟玩转 OpenStack</a></li>
+<li><a href="https://www.cnblogs.com/51kata/p/5266626.html">docker学习笔记18：Dockerfile 指令 VOLUME 介绍</a></li>
+</ul>
 
             <ul class="share-buttons">
     <li></li>
@@ -70,13 +730,13 @@
         <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
+        <a class="icon-twitter" href="https://twitter.com/share?text=Hello.Docker.Dockerfile&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
     </li>
     <li>
         <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
     </li>
     <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f&title=" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
+        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fhello.docker.dockerfile%2f&title=Hello.Docker.Dockerfile" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
     </li>
 </ul>
 

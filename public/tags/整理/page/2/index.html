@@ -46,6 +46,29 @@
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP">Java.Filter-Lisenter-Inteceptor-AOP</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+Compare     名称 机制 适用范围 生命周期 对象调用权限 优点/场景     Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤敏感词、URL权限   Listener 监听器 事件回调 Servlet/ Application/ Swing 初始化时调用 与事件相关 不依赖框架，便于移植统计在线人数、清理过期 Session   Interceptor 拦截器 反射机制 Servlet 于 Service.execute 前后 多次调用 Request/ Response/ HandlerMethod 不依赖框架，便于移植效率检测、日志输出、安全检测、用户拦截   AOP 面向切面 反射机制 Servlet/ Application/ Swing可深入至方法、异常抛出的前后，推荐 多次调用 Method.Name 框架支持，灵活实现    Other Order  Filter.&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" title="Java.Filter-Lisenter-Inteceptor-AOP"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/spring.security/" title="Spring.Security">Spring.Security</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2018.06.04">2018.06.04</time>
@@ -266,34 +289,6 @@ Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToM
     <p>[TOC]
 Info  看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便异常 询问了解是 Twitter 的 Lists 功能  Use Work  构建不同类型消息流,而不需要关注用户  关注用户于着重关注(显示于消息流中)/ 进行交流    Tools  windows  TweetDeck Twhirl hootsuite  IPhone  Twitter  Android  Twidroid   Reference  How to use Twitter Lists 有效组织：如何创建并使用 Twitter 列表 如何使用Twitter hootsuite&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/twitter.lists/" title="Twitter.Lists"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC">Hello.RPC</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/rpc">rpc</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
- 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
- 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
- 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
- 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
- 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.rpc/" title="Hello.RPC"> &raquo;</a>
 </article>
 
         
