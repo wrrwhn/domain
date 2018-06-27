@@ -116,7 +116,3 @@ So if you use python 2.7 64 bit it is not possible, as far as I know, to produce
 ## 补充
 - [Can I control the architecture (32bit vs 64bit) when building a pyinstaller executable?](https://stackoverflow.com/questions/7155866/can-i-control-the-architecture-32bit-vs-64bit-when-building-a-pyinstaller-exec)
 - [使用PyInstaller打包Python程序](http://ju.outofmemory.cn/entry/137370)
-- []()
-- []()
-- []()
-- []()
