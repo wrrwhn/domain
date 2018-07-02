@@ -6,7 +6,6 @@
     <description>Recent content in Dwr on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 08 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/dwr/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/dwr/</guid>
-      <description>[TOC]
-参考  在 Spring Web MVC 环境下使用 DWR  作用  Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象  配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt;  springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt; &amp;lt;!-- 打开dwr的控制器 --&amp;gt; &amp;lt;dwr:controller id=&amp;quot;dwrController&amp;quot; debug=&amp;quot;true&amp;quot; &amp;gt; &amp;lt;dwr:config-param name=&amp;quot;allowScriptTagRemoting&amp;quot; value=&amp;quot;true&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;crossDomainSessionSecurity&amp;quot; value=&amp;quot;false&amp;quot; /&amp;gt; &amp;lt;dwr:config-param name=&amp;quot;activeReverseAjaxEnabled&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;/dwr:controller&amp;gt; &amp;lt;dwr:url-mapping/&amp;gt; &amp;lt;bean class=&amp;quot;org.springframework.web.servlet.handler.SimpleUrlHandlerMapping&amp;quot;&amp;gt; &amp;lt;property name=&amp;quot;alwaysUseFullPath&amp;quot; value=&amp;quot;true&amp;quot;/&amp;gt; &amp;lt;property name=&amp;quot;mappings&amp;quot;&amp;gt; &amp;lt;props&amp;gt; &amp;lt;prop key=&amp;quot;/dwr/**/*&amp;quot;&amp;gt;dwrController&amp;lt;/prop&amp;gt; &amp;lt;/props&amp;gt; &amp;lt;/property&amp;gt; &amp;lt;/bean&amp;gt; &amp;lt;!</description>
+      <description>[TOC] 参考 在 Spring Web MVC 环境下使用 DWR 作用 Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象 配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt; springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt;</description>
     </item>
     
   </channel>

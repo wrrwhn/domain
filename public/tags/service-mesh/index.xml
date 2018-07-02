@@ -6,7 +6,6 @@
     <description>Recent content in Service Mesh on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/service-mesh/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/servicemesh/</guid>
-      <description> 参考  Java未来也许不再是电商的首选开发语言 从零开始k8s  明细 首选语言  优点  JVM 运行时强大 工具链成熟 Spring 庞大的生态  dubbo Spring Cloud   缺点  开发繁琐 包体积大 运行时开销大   框架 Service Mesh  定义  基础设施层，处理服务间通讯 轻量网络代理，负责复杂服务拓扑的请求的可靠传递 对应用程序透明 利于多语言应用共存  优点  聚焦于业务逻辑 不再于开发层面关注负载均衡、路由、熔断、限流、服务注册  工具  Kubernetes   </description>
+      <description>参考 Java未来也许不再是电商的首选开发语言 从零开始k8s 明细 首选语言 优点 JVM 运行时强大 工具链成熟 Spring 庞大的生态 dubbo Spring Cloud 缺点 开发繁琐 包体积大 运行时</description>
     </item>
     
   </channel>

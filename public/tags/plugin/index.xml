@@ -6,7 +6,6 @@
     <description>Recent content in Plugin on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 28 Jun 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/plugin/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +17,7 @@
       <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/chrome.plugin/</guid>
-      <description>[TOC]
-参考  Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions  示例解析  目录结构
-html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js // 弹出界面所引用 js 文件，__要求 js 和 html 分开存放__ manifest.json // 插件配置文件  manifest.json
-{ &amp;quot;manifest_version&amp;quot;: 2, // 配置文件版本 &amp;quot;name&amp;quot;: &amp;quot;插件名称&amp;quot;, &amp;quot;description&amp;quot;: &amp;quot;插件功能描述&amp;quot;, &amp;quot;version&amp;quot;: &amp;quot;0.1&amp;quot;, // 插件当前开发版本 // 通用型 &amp;quot;browser_action&amp;quot;: { // 浏览器级动作 &amp;quot;default_icon&amp;quot;: &amp;quot;/images/icon.</description>
+      <description>[TOC] 参考 Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions 示例解析 目录结构 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js</description>
     </item>
     
     <item>
@@ -30,8 +26,7 @@ html setting.html // 弹出界面 images icon.png // banner 上小图标，推�
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/sublime.plugin/</guid>
-      <description>[TOC]
-参考  sublime插件开发  结构  Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式  流程  Tools-&amp;gt; new plugin&amp;hellip; mkdir Packages/ hello_world/ hello_world.py： 同名 ctrl+ ` 并输入 view.run_command(&amp;lsquo;example&amp;rsquo;) -&amp;gt; 即可看到当前文章头部插入 &amp;lsquo;Hello, World!&amp;rsquo;  sublime插件开发手记 Sublime插件开发API手册  API Sublime error/ message clipboard.setter&amp;amp; getter run_command(string, ) log_commands/input(flag) version/ platform/ arch View - 缓冲区视图 run_command(string, ) insert/ erase/ replace/ find sel()/ rowcol show/ fold/ unfold run_command RegionSet Region Edit Window new_file([file_name, ]) flag sublime.</description>
+      <description>[TOC] 参考 sublime插件开发 结构 Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式 流</description>
     </item>
     
   </channel>

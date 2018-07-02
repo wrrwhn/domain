@@ -6,7 +6,6 @@
     <description>Recent content in Openxml on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/openxml/index.xml" rel="self" type="application/rss+xml" />
@@ -18,12 +17,7 @@
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/openxml.shapedefinition/</guid>
-      <description>[TOC]
-Shape Definitions And Attributes The Coordinate Systems The Document Coordinate System  (0,0) in the upper left of the document x++, move right y++, move downwards Unit EMUs 1 pixel= 9525 EMUs 1 cm= 360000 EMUs 1 inch = 914400 EMUs
-The Shape Coordinate System When get the width and height
- (0,0) in the upper left of the shape
- Unit: EMUs
-The Path Coordinate System (0,0) in the upper left of the shape</description>
+      <description>[TOC] Shape Definitions And Attributes The Coordinate Systems The Document Coordinate System (0,0) in the upper left of the document x++, move right y++, move downwards Unit EMUs 1 pixel= 9525 EMUs 1 cm= 360000 EMUs 1 inch = 914400 EMUs The Shape Coordinate System When get the width and height (0,0) in the upper left of the shape Unit: EMUs The Path Coordinate System (0,0) in the upper left</description>
     </item>
     
   </channel>

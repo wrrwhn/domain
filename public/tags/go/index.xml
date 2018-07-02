@@ -6,7 +6,6 @@
     <description>Recent content in Go on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 10 May 2018 19:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/go/index.xml" rel="self" type="application/rss+xml" />
@@ -18,12 +17,7 @@
       <pubDate>Thu, 10 May 2018 19:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gopath/</guid>
-      <description>[TOC]
-作用  于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句
- Unix  使用 : 分割  Windows  使用 ; 分割  Plan
- 使用列表记录
-默认   未设置时，默认为用户主目录下的 go 文件夹
- Unix  $HOME/go  Windows  %USERPROFILE%\go    补充  设置可参考 Reference.SettingGOPATH 可使用 go env GOPATH 查看当前配置 新 包 被 下载 时，将 默认 下载至 列表目录中的首项 目录地址中  目录结构 要求  配置的目录，需包含规定的结构  类型  src 目录拥有 源代码，而 src 下目录决定了引用路径和可执行文件名 pkg 目录拥有已安装的 包对象  在 Go 的树型结构中，各目标 操作系统和体系 架构均有对应的 pkg 子目录  bin 目录拥有已编译的 命令  DIR/src/foo/quux 将被安装至 DIR/bin/quux 而当 GOBIN 被设置时，会 指定生成至其配置目录中  GOBIN 必须为一个 绝对目录   internal 目录及其下级代码，仅可被 internal 的父目录下各目录代码引用 vendor  Go 1.</description>
+      <description>[TOC] 作用 于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句 Unix 使用 : 分割 Windows 使用 ; 分割 Plan 使用列表记录 默认 未设置时，默认为用户主目录下的 go 文件夹 Unix</description>
     </item>
     
     <item>
@@ -32,9 +26,7 @@
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.wukong/</guid>
-      <description>[TOC]
-悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
-searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &amp;quot;./dict/dictionary.txt&amp;quot;, StopTokenFile: &amp;quot;./dict/stop_tokens.txt&amp;quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.</description>
+      <description>[TOC] 悟空引擎使用 参考 使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur 介绍 内部结构 主协程，用于收发用户请求 分词器（seg</description>
     </item>
     
     <item>
@@ -43,7 +35,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/</guid>
-      <description>Hugo 建站 参考  使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点 github Pages和Jekyll入门 3.5. 建立主页  安装  下载  gohugoio/hugo  安装  tar xvf hugo_0.15_linux_amd64.tar.gz -C /data/soft/hugo   生成  /data/soft/hugo/hugo new site /data/service/domain  archetypes config.toml  整体配置  content  文章  data layouts static themes  主题    安装主题  仅需将主题下载至 themes 文件下，并更 config.toml 中的 theme 为主题名称  下载  git clone https://github.</description>
+      <description>Hugo 建站 参考 使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点</description>
     </item>
     
     <item>
@@ -52,8 +44,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.goruntime/</guid>
-      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
- 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+      <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
     </item>
     
     <item>
@@ -62,8 +53,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
-      <description>参考  Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题  概念 默认设置  所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则不会让出 CPU 时间给其它同线程的 goruutime 当 goruutime 阻塞时， Go 将自动将此线程的其它 goruutime 转换到其它运行中的系统线程  并行&amp;amp; 并发   并行  多套环境 配套任务队列和消息处理  并发  一套环境 多任务队列和单一消息处理   重点  显式多核  runtime.GOMAXPROCS  手动显式调用  runtime.Gosched   示例  单线程多任务串行
- 并发，逐一执行 ``` var quit chan int = make(chan int)  func loop() { for i := 0; i &amp;lt; 10; i++ { fmt.</description>
+      <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
     </item>
     
     <item>
@@ -72,12 +62,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <pubDate>Thu, 07 Sep 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.upload.qiniu/</guid>
-      <description>[TOC]
-描述  将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板  参考  Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard  需求  将链接中的图片等本地保存后，再重新上传生成链接 命令行可全局快速调用，考虑结合 wox 等工具 快速选择多个文件等 文件夹仅操作当层  测试  单文件 ``` go run main.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg  ![76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg][http://otzm88f21.bkt.clouddn.com/04cf05bd-ba52-4dee-8fa9-095555f5c7ec.jpg]
- - 文件夹  go run main.go -path=D:\data\soft\OneDrive\Documents\Write\work\云开
-[人员列表.xls][http://otzm88f21.bkt.clouddn.com/a.xls] [六步搞定实地辅导-20170822.md][http://otzm88f21.bkt.clouddn.com/b.md] [人员列表.txt][http://otzm88f21.bkt.clouddn.com/c.txt]
- - Exe 方式调用[**异常**]  go run upload.go -path=C:\Users\Yao\Desktop\76aaa869ly1fi6n1duxn5j21dw0kak5a.jpg
-[新建 Microsoft PowerPoint 演示文稿.pptx][http://otzm88f21.bkt.clouddn.com/19118280-cacb-43f3-98b6-32600ef459b9.pptx] uplaod.exe%!(EXTRA string=http://otzm88f21.bkt.clouddn.com/a932af7f-837a-4df6-92dd-e80b29c25ab6.exe) ```</description>
+      <description>[TOC] 描述 将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板 参考 Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard 需求 将链</description>
     </item>
     
     <item>
@@ -86,8 +71,7 @@ searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOpt
       <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>[TOC]
-Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译  作用  Go作为编译型语言，在不同平台上需要编译生成不同格式的二进制包  参数  GOOS  程序构建目标环境的操作系统  GOARCH  程序构建目标环境的计算机架构  CGO_ENABLED  当值为 0 时表示设置 CGO 不可用   示例 Linux 64bit  GOOS=linux GOARCH=amd64 go build -o app.linux  -o 用于指定二进制文件名   Linux 32bit  GOOS=linux GOARCH=386 go build  windows 64bit  GOOS=windows GOARCH=amd64 go build  windows 32bit  GOOS=windows GOARCH=386 go build  Mac OS 64bit  GOOS=darwin GOARCH=amd64 go build  备注  CGO  GO 语言自带工具，用于支持调用 C 语言代码的 GO 语言源码文件  1.</description>
+      <description>[TOC] Go.交叉编译 参考 交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译 作用 Go作为编译型语言，在不同平台上需要编译生成</description>
     </item>
     
     <item>
@@ -96,8 +80,7 @@ Go.交叉编译 参考  交叉编译 Golang 交叉编译 go tool cgo Golang 在 
       <pubDate>Mon, 31 Jul 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.vscode/</guid>
-      <description> [TOC]
-VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows  安装  安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukehoban - Go」 版本  调试  切换到「调试」界面，并点击「打开 launch.json」打开配置 调整指定配置项  &amp;lt;!-- 当前项目于 GOPATH 中的路径 --&amp;gt; &amp;quot;program&amp;quot;: &amp;quot;${workspaceRoot}\\Utils_Go\\src\\md5&amp;quot;, &amp;lt;!--设置当前环境变量 --&amp;gt; &amp;quot;env&amp;quot;: { &amp;quot;GOPATH&amp;quot;: &amp;quot;D:\\server\\go\\lib;D:\\work\\git\\yao\\go\\Hello_Go;D:\\work\\git\\yk\\go\\pptconverter-gateway\\code;${workspaceRoot}\\Utils_Go&amp;quot; }, &amp;lt;!--设置启动参数 --&amp;gt; &amp;quot;args&amp;quot;: [ &amp;quot;-c=1&amp;quot;, &amp;quot;-p=D:\\work\\git\\yao\\go\\Utils_Go\\template\\dest.mp4&amp;quot; ],  设置断点、进行调试  注  安装「lukehoban - Go」时，部分「go get」部分来源需要翻墙 调试相关快捷键同 visual stuio  </description>
+      <description>[TOC] VS-Code Go 开发 参考 VS Code 搭建 Go 开发IDE Running VS Code on Windows 安装 安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukeh</description>
     </item>
     
     <item>
@@ -106,8 +89,7 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
       <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.nsq/</guid>
-      <description>[TOC]
-[NSQ] 参考  An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南  介绍 NSQ  实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化  可通过设置 --mem-queue-size 参数为 0 变更  接收到的消息无序  组成  nsqlookupd  作用  管理拓扑结构信息的守护进程 客户端查询以发现 nsqd 生产者的指定 topic nsqd节点广播 topic 和 channel 信息 接口提供  TCP：供 nsqd广播操作 HTTP：供客户端发现、管理性动作   参数  -broadcast-address  lookupd 节点地址 默认为 PROSNAKES.local  -config  config 文件路径  -tcp-address  TCP 客户端请求地址、端口 默认为 0.</description>
+      <description>[TOC] [NSQ] 参考 An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南 介绍 NSQ 实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化 可通过设置 --mem-queue-size 参数为 0 变更 接收到的消息</description>
     </item>
     
     <item>
@@ -116,8 +98,7 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
       <pubDate>Sun, 23 Jul 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gpm/</guid>
-      <description>[TOC]
-参考  gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token  介绍 GPM  通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根目录  使用 安装  wget https://raw.githubusercontent.com/pote/gpm/v1.4.0/bin/gpm &amp;ndash;no-check-certificate &amp;amp;&amp;amp; chmod +x gpm &amp;amp;&amp;amp; sudo mv gpm /usr/local/bin  设置  更新到指定版本  github.com/nu7hatch/gotrail v0.0.2  注释  #右侧的均被注释掉  扩展  #[gpm-track] xxxx  总是更新为最新版本  GPM 核心忽略行，但会影响插件行为  私有资源库访问  创建 github 访问 token 添加下行至 ~/.</description>
+      <description>[TOC] 参考 gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token 介绍 GPM 通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根</description>
     </item>
     
     <item>
@@ -126,8 +107,7 @@ VS-Code Go 开发 参考  VS Code 搭建 Go 开发IDE Running VS Code on Windows
       <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.reflect/</guid>
-      <description>[TOC]
-Go.Reflect 参考  Package reflect [](http://www.golang.ltd/forum.php?mod=viewthread&amp;amp;tid=6017)  类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader(r) r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader  interface{}  任何具体值均有 0+个方法，因此 interface{} 变量能存储任何值 Interface 变量存储值，赋给该变量的值 &amp;amp; 值类型的描述符  定律  反射可以将“接口类型变量”转换为“反射类型对象” 反射可以将“反射类型对象”转换为“接口类型变量” 如果要修改“反射类型对象”，其值必须是“可写的”（settable）  方法  reflect.Type  Kind() NumMethod() | Method(int) NumField() | Field(i int) | Elem()  返回类型的元素类型 非[Array| Chan| Map| Ptr| Slice]时 panic   reflect.</description>
+      <description>[TOC] Go.Reflect 参考 Package reflect [](http://www.golang.ltd/forum.php?mod=viewthread&amp;amp;tid=6017) 类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader(r) r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader interface{} 任</description>
     </item>
     
     <item>
@@ -136,8 +116,7 @@ Go.Reflect 参考  Package reflect [](http://www.golang.ltd/forum.php?mod=viewth
       <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
-      <description> [TOC]
-配置  GOROOT  配置 GO 的可执行文件路径 D:\server\go\1.8  PATH  将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin  GOPATH  目录列表，类似于maven中的repository目录，引用库 其中第一个地址将作为 go get 的下载目录 D:\server\go\lib D:\work\git\yao\go\Hello_Go   </description>
+      <description>[TOC] 配置 GOROOT 配置 GO 的可执行文件路径 D:\server\go\1.8 PATH 将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin GOPATH 目录列表，类似于maven中的repository目录，引用库 其中第</description>
     </item>
     
     <item>
@@ -146,12 +125,7 @@ Go.Reflect 参考  Package reflect [](http://www.golang.ltd/forum.php?mod=viewth
       <pubDate>Tue, 23 May 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
-      <description>[TOC]
-Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer, panic, recover  使用 defer  作用  用于在当前方法结束时，执行相关方法  特点
- 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先出的顺序执行 可读取、操作命名的方法返回参数对象
- 操作返回值
-// return 2 func c() (i int) { defer func() { i++ }() return 1 }  panic   特点
- 内置方法 立即中断当前程序 方法内原defer定义方法仍可正常进行 向上抛出该程序崩溃处指针   recover  特点  内置方法 仅可用于defer方法中 用于捕获panic抛出的异常信息   实例 func main(){ // 必须要先声明defer，否则不能捕获到panic异常 defer func(){ fmt.</description>
+      <description>[TOC] Defer, Panic, Recover 参考 Defer, Panic, and Recover Go的异常处理 defer, panic, recover 使用 defer 作用 用于在当前方法结束时，执行相关方法 特点 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进</description>
     </item>
     
     <item>
@@ -160,8 +134,7 @@ Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer,
       <pubDate>Wed, 26 Apr 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gosublime/</guid>
-      <description>[TOC]
-注解  Path  分隔符  Windows - ; Linux| OS X - :    设置  路径  Packages/User/GoSublime.sublime-settings  推荐更新覆盖  Packages/GoSublime/GoSublime.sublime-settings  默认配置，不建议更新   代码补全  配置 Preferences/Package Settings/GoSublime/Settings - User  { &amp;quot;autocomplete_builtins&amp;quot;: true, &amp;quot;autocomplete_closures&amp;quot;: true }  快捷键  Code Complete  Ctrl+ [Space]  package import  Ctrl+[.], Ctrl+ P  jump  F12 Crl+ [.], Ctrl+ i     项目定制化配置  project.</description>
+      <description>[TOC] 注解 Path 分隔符 Windows - ; Linux| OS X - : 设置 路径 Packages/User/GoSublime.sublime-settings 推荐更新覆盖 Packages/GoSublime/GoSublime.sublime-settings 默认配置，不建议更新 代码补全 配置 Preferences/Package Settings/GoSublime/Settings - User { &amp;quot;autocomplete_builtins&amp;quot;: true, &amp;quot;autocomplete_closures&amp;quot;: true } 快捷键 Code Complete Ctrl+ [Space] package import Ctrl+[.], Ctrl+ P jump F12 Crl+ [.], Ctrl+</description>
     </item>
     
     <item>
@@ -170,8 +143,7 @@ Defer, Panic, Recover 参考  Defer, Panic, and Recover Go的异常处理 defer,
       <pubDate>Mon, 24 Apr 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.flag/</guid>
-      <description>[TOC]
-Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令行参数的功能接口  常用  flag.Xxx[String| Bool| Int](name string, default-value Xxx, usage-info string)  返回相应指针  flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info)  将 flag 绑定到变量  flag.Var(&amp;amp;custom-type, name, usage-info)  custom-type 需要实现 Value 接口  flag.Parse()  直接使用国指针，绑定参数则为实际值 flag.Args() flag.Arg(i)  flag.PrintDefaults  define  flag.String(&amp;quot;I&amp;quot;, &amp;quot;&amp;quot;, &amp;quot;searchdirectoryfor include files&amp;quot;)  output  -I directory search directory for include files.</description>
+      <description>[TOC] Flag 参考 Package flag Golang flag包使用详解 作用 用于解析命令行参数的功能接口 常用 flag.Xxx[String| Bool| Int](name string, default-value Xxx, usage-info string) 返回相应指针 flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info) 将 flag 绑定到变量 flag.Var(&amp;amp;custom-type, name, usage-info) custom-type 需要实现 Value 接</description>
     </item>
     
   </channel>

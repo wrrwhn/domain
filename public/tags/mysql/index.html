@@ -1,303 +1,417 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Mysql &middot; 好久不见</title>
-        <meta name="author">
-        <meta name="description" content="好久不见">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
-        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
-        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
-        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
-        
-        <style>
-        .site-header h2 .logo {
-        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
-        }
-        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          .site-header h2 .logo {
-            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
-        }}
-       .site-header {
-         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
-         z-index: -1;
-        }
-        </style>
-    </head>
-    <body>
-        
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2></h2>
-          </div>
-        </header>
-
-<div class="container clearfix">
-    <main role="main" class="content">
-        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-        
-        
-            <article class="post">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Mysql - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题">彻底终结MySQL同步延迟问题</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.07">2018.02.07</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
+    <meta property="og:title" content="Mysql">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Mysql - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    <link rel="alternate" href="http://domain.yqjdcyy.com/tags/mysql/index.xml" title="好久不见" type="application/rss+xml" />
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
     
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: false, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left   ">
+    <div class="headband"></div>
 
-</span>
-</footer>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
 
-    <p>彻底终结MySQL同步延迟问题 参考  彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication  版本  MySQL.Version  5.7  Storage.Engine  TokuDB   影响因素 网络  主机或者从机的带宽打满 主从之间网络延迟很大  机器性能  从机使用了烂机器
- 比如主机使用SSD而从机还是使用的SATA  从机高负载
- 很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
- 检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/" title="彻底终结MySQL同步延迟问题"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/error.mysql/" title="Error.Mysql">Error.Mysql</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.09.12">2017.09.12</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/error">error</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/error.mysql/" title="Error.Mysql"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/mysql.select-into/" title="Mysql.SELECT-INTO">Mysql.SELECT-INTO</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.15">2017.08.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  SELECT &hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE  命令  SELECT &hellip; INTO
- VAR_LIST  将栏目值存储至变量 栏目值需与变量名数据一致 仅返回一条记录  无数据返回，则报 Error（1329） 多行记录返回，则报 Error（1172） 建议使用 LIMIT 1   OUTFILE  将选择栏目值存储至文件 存储于服务器，需持有文件权限 文件路径不能为已存在文件  客户端执行 mysql -e &quot;SELECT &hellip;&quot; &gt; file_name 导出文件  文件格式使用情况  .txt  数据会以 TAB 间隔  csv  csv格式，但数据均存储至同一单元格内    DUMPFILE  将单行数据以任意形式文件导出   OUTPUT FORMAT&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/mysql.select-into/" title="Mysql.SELECT-INTO"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.mysql/" title="Linux.Mysql">Linux.Mysql</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.08.14">2017.08.14</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget <a href="http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm">http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm</a> rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &lsquo;root&rsquo;@&lsquo;localhost&rsquo; =password(&lsquo;root.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.mysql/" title="Linux.Mysql"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/mysql.lock-waits/" title="MYSQL.LOCK-WAITS">MYSQL.LOCK-WAITS</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.23">2017.04.23</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-MySQL 5.5 InnoDB 锁等待 锁相关表    表名 作用     innodb_trx 当前正在执行事务的信息   innodb_locks 各已被请求但未被提交的事务锁   innodb_lock_waits 各阻塞事务的一至多行记录信息    字段 innodb_trx    字段 注释     trx_id 事务ID。   trx_state 事务状态，有以下几种状态:RUNNING、LOCK WAIT、ROLLING BACK 和 COMMITTING。   trx_started 事务开始时间。   trx_requested_lock_id 事务当前正在等待锁的标识，可以和 INNODB_LOCKS 表 JOIN 以得到更多详细信息。   trx_wait_started 事务开始等待的时间。   trx_weight 事务的权重。   trx_mysql_thread_id 事务线程 ID，可以和 PROCESSLIST 表 JOIN。   trx_query 事务正在执行的 SQL 语句。   trx_operation_state 事务当前操作状态。   trx_tables_in_use 当前事务执行的 SQL 中使用的表的个数。   trx_tables_locked 当前执行 SQL 的行锁数量。   trx_lock_structs 事务保留的锁数量。   trx_lock_memory_bytes 事务锁住的内存大小，单位为 BYTES。   trx_rows_locked 事务锁住的记录数。包含标记为 DELETED，并且已经保存到磁盘但对事务不可见的行。   trx_rows_modified 事务更改的行数。   trx_concurrency_tickets 事务并发票数。   trx_isolation_level 当前事务的隔离级别。   trx_unique_checks 是否打开唯一性检查的标识。   trx_foreign_key_checks 是否打开外键检查的标识。   trx_last_foreign_key_error 最后一次的外键错误信息。   trx_adaptive_hash_latched 自适应散列索引是否被当前事务锁住的标识。   trx_adaptive_hash_timeout 是否立刻放弃为自适应散列索引搜索 LATCH 的标识。    innodb_locks    字段 注释     lock_id 锁 ID。   lock_trx_id 拥有锁的事务 ID。可以和 INNODB_TRX 表 JOIN 得到事务的详细信息。   lock_mode 锁的模式。有如下锁类型: 行级锁包括 S、X、IS、IX，分别代表共享锁、排它锁、意向共享锁、意向排它锁。表级锁包括 S_GAP、X_GAP、IS_GAP、IX_GAP 和 AUTO_INC，分别代表共享间隙锁、排它间隙锁、意向共享间隙锁、意向排它间隙锁和自动递增锁。   lock_type 锁的类型。RECORD 代表行级锁，TABLE 代表表级锁。   lock_table 被锁定的或者包含锁定记录的表的名称。   lock_index 当 LOCK_TYPE=’RECORD’ 时，表示索引的名称；否则为 NULL。   lock_space 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的表空间 ID；否则为 NULL。   lock_page 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的页号；否则为 NULL。   lock_rec 当 LOCK_TYPE=’RECORD’ 时，表示一堆页面中锁定行的数量，亦即被锁定的记录号；否则为 NULL。   lock_data 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的主键；否则为NULL。    innodb_lock_waits | 字段 | 注释 | | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; &mdash;&mdash; | | requesting_trx_id | 请求事务的 ID。 | | requested_lock_id | 事务所等待的锁定的 ID。可以和 INNODB_LOCKS 表 JOIN。 | | blocking_trx_id | 阻塞事务的 ID。 | | blocking_lock_id | 某一事务的锁的 ID，该事务阻塞了另一事务的运行。可以和 INNODB_LOCKS 表 JOIN。 |&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/mysql.lock-waits/" title="MYSQL.LOCK-WAITS"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/mysql.information_schema/" title="MYSQL.Information_schema">MYSQL.Information_schema</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.02.26">2017.02.26</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/mysql.information_schema/" title="MYSQL.Information_schema"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范">MYSQL.开发规范</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
-例 CREATE DATABASE test CHARACTER SET &lsquo;utf8&rsquo; COLLATE &lsquo;utf8_general_ci&rsquo;;
-  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
-列 列名称命名采用英文单词或缩写，关联具体业务
- 尽量不允许为 Null，用默认值代替
-例 FetionUser.FU<em>TableName.ColName
-  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]</em>[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &gt; 9520 ORDER BY id ASC LIMIT 20;  !&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" title="MYSQL.开发规范"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic">Mysql.Basic</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.10">2016.12.10</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &lt;left_table&gt; &lt;join_type&gt; JOIN &lt;right_table&gt; ON &lt;on_predicate&gt; | (1-A) &lt;left_table&gt; &lt;apply_type&gt; APPLY &lt;right_table_expression&gt; AS &lt;alias&gt; | (1-P) &lt;left_table&gt; PIVOT(&lt;pivot_specification&gt;) AS &lt;alias&gt; | (1-U) &lt;left_table&gt; UNPIVOT(&lt;unpivot_specification&gt;) AS &lt;alias&gt; （2）WHERE &lt;where_predicate&gt; （3）GROUP BY &lt;group_by_specification&gt; （4）HAVING &lt;having_predicate&gt; （6）ORDER BY &lt;order_id_list&gt;  操作相关 更改密码 mysql -u root -p &gt; Enter password user mysql; update user set password=passworD(&quot;new pass&quot;) where user=&lsquo;root&rsquo;; flush privileges; exit;  允许指定 IP 访问 &gt; mysql -uroot -p; &gt; Yk1qazxsw2 // root &gt; use mysql; &gt; show grants for yunkai_user@110.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/mysql.basic/" title="Mysql.Basic"> &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-	<p class="counter"> 1  1</p>
-
-
-</nav>
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
 </div>
 
-    </main>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-    <aside class="author">
-  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
-  <p class="name"> 
-  <strong>姚清居</strong></p>
-  <p class="address">Earth</p>
-  <p class="link"></p>
-  <ul class="social">
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >Mysql
+    <small>标签</small>
+    </h2>
+</div>
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e5%bd%bb%e5%ba%95%e7%bb%88%e7%bb%93mysql%e5%90%8c%e6%ad%a5%e5%bb%b6%e8%bf%9f%e9%97%ae%e9%a2%98/" itemprop="url">
+            <span itemprop="name">彻底终结MySQL同步延迟问题</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-07"
+              content="02-07" >
+          02-07
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/error.mysql/" itemprop="url">
+            <span itemprop="name">Error.Mysql</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-12"
+              content="09-12" >
+          09-12
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/mysql.select-into/" itemprop="url">
+            <span itemprop="name">Mysql.SELECT-INTO</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-15"
+              content="08-15" >
+          08-15
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.mysql/" itemprop="url">
+            <span itemprop="name">Linux.Mysql</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-14"
+              content="08-14" >
+          08-14
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/mysql.lock-waits/" itemprop="url">
+            <span itemprop="name">MYSQL.LOCK-WAITS</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-04-23"
+              content="04-23" >
+          04-23
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/mysql.information_schema/" itemprop="url">
+            <span itemprop="name">MYSQL.Information_schema</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-02-26"
+              content="02-26" >
+          02-26
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/mysql.%e5%bc%80%e5%8f%91%e8%a7%84%e8%8c%83/" itemprop="url">
+            <span itemprop="name">MYSQL.开发规范</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-12-11"
+              content="12-11" >
+          12-11
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/mysql.basic/" itemprop="url">
+            <span itemprop="name">Mysql.Basic</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-12-10"
+              content="12-10" >
+          12-10
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+<nav class="pagination">
     
+    
+        
+        
+          <span class="page-number current">1</span>
+        
+        
+    
+    
+</nav>
 
 
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
 
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
 
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/tags/mysql/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
 
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
 
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
 
-
-
-
-
-
-<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
-
-
-
-
-<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
-
-  </ul>
-  <br><br>
+    </section>
+    
+  </div>
 </aside>
 
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>
-<footer class="main-footer">
-  <div class="container clearfix">
-        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
   </div>
-</footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+  
 
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
 
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>
 </html>
-

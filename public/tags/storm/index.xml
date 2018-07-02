@@ -6,7 +6,6 @@
     <description>Recent content in Storm on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/storm/index.xml" rel="self" type="application/rss+xml" />
@@ -18,12 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/storm/</guid>
-      <description>通信机制 选型  进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟
-进程间通信协议 Connection
- recv-with-flags[conn flags] - flags 表示是否为阻塞方式 send[conn task message] close[conn]  Context
- bind[context storm-id port] - 绑定端口号并返回 Socket 对象，主要用于接收信息 connect[context storm-id host port] - 链接到指定商品号，负责发消息 teim[context] - 关闭连接  LocalCluster 模式实现
- 采用一个进程模拟集群环境，Nimbus/ Supervisor/ Worker 均为该进程中的线程 Connection  用 LinkedBlockingQueue 和 queue 等队列模拟消息的发送接收  Context
- 用 quenes-map 和 LinkedBlockingQueue 模拟绑定和消失发送</description>
+      <description>通信机制 选型 进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟 进程间通</description>
     </item>
     
   </channel>

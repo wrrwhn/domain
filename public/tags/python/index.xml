@@ -6,7 +6,6 @@
     <description>Recent content in Python on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 04 May 2018 12:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Fri, 04 May 2018 12:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
-      <description>[TOC]
-类型  .py  项目源码 需要安装 Python 及依赖库  .pyc  Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库  .exe  不同平台的可执行文件   工具比较    Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources support     bbFreeze yes yes yes no no yes yes yes   py2exe yes no no yes yes yes no no   pyInstaller yes yes yes no yes no yes no   cx_Freeze yes yes yes yes no yes yes no   py2app no no yes yes no yes yes yes    详解 pyInstaller 注意事项  依赖于打包环境，无法于 x64 环境打 x86 的包 &amp;gt; Pyinstaller produces a binary depending from the python you used to build it.</description>
+      <description>[TOC] 类型 .py 项目源码 需要安装 Python 及依赖库 .pyc Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库 .exe 不同平台的可执行文件 工具比较 Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs</description>
     </item>
     
     <item>
@@ -28,17 +26,7 @@
       <pubDate>Wed, 11 Apr 2018 18:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
-      <description>[TOC]
-组成 Logger  作用  日志对外暴露接口  创建
- logger = logging.getLogger(logger_name)
-Handler  作用
- 将日志内容转至相应文件  类型
- StreamHandler  sh = logging.StreamHandler(stream=None)  FileHandler  fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False)  NullHandler
-Filter  作用
- 将日志内容进行过滤
-Formater  作用
- 控制日志输出格式  LogRecord.对象
- name  日志记录器名称 不会因 Handler 将其转到其它 Logger 而改变  level  日志级别名称 如INFO、ERROR  pathname  源文件的完整路径名称  lineno  调用处在源文件中行号  msg  日志消息体  args  参数+ 日志消息体  exc_info  当前异常信息  func  调用处所在的方法体名称   LogRecord.</description>
+      <description>[TOC] 组成 Logger 作用 日志对外暴露接口 创建 logger = logging.getLogger(logger_name) Handler 作用 将日志内容转至相应文件 类型 StreamHandler sh = logging.StreamHandler(stream=None) FileHandler fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False) NullHandler Filter 作用 将日志内容进行过滤 Formater 作用 控制日志输出格式</description>
     </item>
     
     <item>
@@ -47,8 +35,7 @@ Formater  作用
       <pubDate>Mon, 26 Mar 2018 15:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.conda/</guid>
-      <description>[TOC]
-作用  用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题  分类  conda  工具 提供包管理和环境管理 将所有工具、第三方包、python 和 conda自身均当成 package 对待  Anaconda  打包集合  预装 conda 特地版本 python 众多 apckages 科学计算工具   Miniconda  基础版本  仅包含 python 与 conda    安装  参考  Installation—Conda documentation Installing on Windows  确认      指令 环境管理  新增  conda create -n &amp;lt;env_name&amp;gt; &amp;lt;package_names|python[=version]&amp;gt;  删除  conda env remove -n &amp;lt;env_name&amp;gt;  列表  conda env list  进入  Windows  activate &amp;lt;env_name&amp;gt;  OSX | Linux  source activate &amp;lt;env_name&amp;gt;   退出  Windows  deactivate  OSX | Linux  source deactivate   导出配置  conda env export &amp;gt; &amp;lt;/path/environment.</description>
+      <description>[TOC] 作用 用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题 分类 conda 工具 提</description>
     </item>
     
     <item>
@@ -57,8 +44,7 @@ Formater  作用
       <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
-      <description> [TOC]
-参考  Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解?  作用  保障模块既可以被导入，也可作为脚本来执行  直接运行时，模块名为 main，因为对应代码块可被运行 导入时，代码块不执行   </description>
+      <description>[TOC] 参考 Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解? 作用 保障模块既可以被导入，也可作为脚本来执行 直接运行时，模块名为 main，因为对应代码块可被运行</description>
     </item>
     
   </channel>

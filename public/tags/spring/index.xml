@@ -6,7 +6,6 @@
     <description>Recent content in Spring on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Mon, 04 Jun 2018 14:30:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +17,7 @@
       <pubDate>Mon, 04 Jun 2018 14:30:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.security/</guid>
-      <description>[TOC]
-前后端分离 思路  登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截  选型  Spring.Security  展示型项目，简单区分前后端即可  Vue+ Bootstrap  代码 引用 &amp;lt;parent&amp;gt; &amp;lt;version&amp;gt;1.3.8.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-security&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-core&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-test&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0.4.RELEASE&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt;  登录  Controller
-@RequestMapping(value = &amp;quot;/login&amp;quot;, method = RequestMethod.POST) public void login(@RequestBody UserVo userVo, HttpServletRequest request) { securityService.login(userVo.getName(), userVo.getPwd(), request); }  Service
-public void login(String username, String password, HttpServletRequest request) { User user = userService.</description>
+      <description>[TOC] 前后端分离 思路 登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截 选型 Spring.Security 展示型项目，简单区分前后</description>
     </item>
     
     <item>
@@ -30,8 +26,7 @@ public void login(String username, String password, HttpServletRequest request) 
       <pubDate>Thu, 31 May 2018 12:10:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/</guid>
-      <description>[TOC]
-Init  project.init business.finish  Package packaging.war  pom.xml  &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt;   tomcat.remove  pom.xml  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 移除嵌入式tomcat插件 --&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-tomcat&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt;   servlet-api.add  pom.xml  javax.servlet-api  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;  OR tomcat-servlet-api  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat-servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.36&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt;    runner.update  与 Application 同级  public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return builder.</description>
+      <description>[TOC] Init project.init business.finish Package packaging.war pom.xml &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; tomcat.remove pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 移除嵌入式tomcat插件 --&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-tomcat&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; servlet-api.add pom.xml javax.servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; OR tomcat-servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat-servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.36&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; runner.update 与 Application 同级 public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return</description>
     </item>
     
     <item>
@@ -40,8 +35,7 @@ Init  project.init business.finish  Package packaging.war  pom.xml  &amp;lt;pack
       <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</guid>
-      <description>[TOC]
-Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToMany Lazy    OneToOne Eager    ManyToOne Eager   Hibernate      * Lazy    Docs Hibernate  By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations.</description>
+      <description>[TOC] Setting Default Type Setting JPA 2.0 spec OneToMany Lazy ManyToMany Lazy OneToOne Eager ManyToOne Eager Hibernate * Lazy Docs Hibernate By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations. These defaults make sense for most associations in the majority of applications. Jpa Spec JPA Spec assumes that in general most of the applications will require the singleton relations by default be eager,</description>
     </item>
     
     <item>
@@ -50,8 +44,7 @@ Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToM
       <pubDate>Tue, 22 May 2018 16:40:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.transactional/</guid>
-      <description>[TOC]
-使用方式  将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上  该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性   属性 属性列表    属性名 是否必输 默认值 说明     name Yes  关联指定名称的事务管理器 可用通配符(*)来匹配多个事务管理器，如 get*, on*Event   propagation No REQUIRED 事务传播行为   isolation No DEFAULT 事务隔离等级   timeout No -1 事务超时时长，单位为秒  如果超过该时长限制而事务未完成，则自动回滚   read-only No false 事务是否只读   rollback-for No  指定能触发事务回滚的异常类型使用逗号(,)分隔，如 com.</description>
+      <description>[TOC] 使用方式 将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上 该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性 属性 属性</description>
     </item>
     
     <item>
@@ -60,10 +53,7 @@ Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToM
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.basic/</guid>
-      <description>[TOC]
-AOP 介绍  Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入）  代理 代码写死  interface
-public interface Greeting { void sayHello(String name); }  implement
-public class GreetingImpl implements Greeting { @Override public void sayHello(String name) { before(); System.out.println(&amp;quot;Hello! &amp;quot; + name); after(); } private void before() { System.out.println(&amp;quot;Before&amp;quot;); } private void after() { System.out.println(&amp;quot;After&amp;quot;); } }   静态代理  resolution 单独为 GeetingImpl 创建代理类 proxy</description>
+      <description>[TOC] AOP 介绍 Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入） 代理 代码写死 interface public interface Greeting { void sayHello(String name); } implement public class GreetingImpl implements Greeting { @Override public void sayHello(String</description>
     </item>
     
     <item>
@@ -72,7 +62,7 @@ public class GreetingImpl implements Greeting { @Override public void sayHello(S
       <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
-      <description> 参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </description>
+      <description>参考链接 http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/ 特点 通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓</description>
     </item>
     
   </channel>

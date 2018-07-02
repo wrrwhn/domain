@@ -6,7 +6,6 @@
     <description>Recent content in Http on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/</guid>
-      <description>[TOC]
-参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1  Header 头文件  Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  -----------------------------7e016f3be0a4a Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;B2283659A4B9302BE09FE2EC97690382.</description>
+      <description>[TOC] 参考 Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary Http.detail Message Body 消息体 Request 请求头 POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1 Header 头文件 Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length:</description>
     </item>
     
   </channel>

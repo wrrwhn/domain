@@ -6,7 +6,6 @@
     <description>Recent content in Markdown on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
@@ -18,16 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/markdown/</guid>
-      <description> 目录 [TOC]
-标题 二级标题 ####### 最大支持六级标题
-注：序号和*号，与内容之间均需要一个空格
- 列表1 列表2 列表3   无序列表 无序列表  无序列表缩进  无序列表  字体支持很多样式，比如加粗、*斜体*、删除线等特别样式
-当然也可以引用名人名言 &amp;gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦
-百度
-代码格式表示
- for(var i= 0; i&amp;lt; count; i++)  表格 |为知| md| |-|-| |WizNote|Markdown|
-公式啊！！！ $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$
-st=&amp;gt;start: Start:&amp;gt;http://www.google.com[blank] e=&amp;gt;end:&amp;gt;http://www.google.com op1=&amp;gt;operation: My Operation sub1=&amp;gt;subroutine: My Subroutine cond=&amp;gt;condition: Yes or No?:&amp;gt;http://www.google.com io=&amp;gt;inputoutput: catch something... st-&amp;gt;op1-&amp;gt;cond cond(yes)-&amp;gt;io-&amp;gt;e cond(no)-&amp;gt;sub1(right)-&amp;gt;op1  Title: [教程可以看](http://bramp.github.io/js-sequence-diagrams/) A-&amp;gt;B: 【备注演示】 Note left of A: 此轮回应前\nA 左侧备注 Note over A: 此轮 A 线上的备注 Note right of A: 此轮回应前A 右侧备注 Note over A,B:此轮回应前横跨 AB 两线的备注 A-&amp;gt;B: 【线型演示】 A-&amp;gt;B: 实线三角标 B--&amp;gt;A: 虚线三角标 A-&amp;gt;&amp;gt;B: 实线角标 B--&amp;gt;&amp;gt;A: 虚线角标  </description>
+      <description>目录 [TOC] 标题 二级标题 ####### 最大支持六级标题 注：序号和*号，与内容之间均需要一个空格 列表1 列表2 列表3 无序列表 无序列表 无序列表缩进 无序列表 字体支持很</description>
     </item>
     
   </channel>

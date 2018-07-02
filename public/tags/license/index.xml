@@ -6,7 +6,6 @@
     <description>Recent content in License on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 30 Mar 2018 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/license/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +17,7 @@
       <pubDate>Fri, 30 Mar 2018 11:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/license.choose/</guid>
-      <description>[TOC]
-作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明确允许，用户可以免费地使用、修改、共享版权软件。 版权法默认禁止共享，也就是说，没有许可证的软件，就等同于保留版权，虽然开源了，用户只能看看源码，不能用，一用就会侵犯版权。所以软件开源的话，必须明确地授予用户开源许可证。
-简诉    类型 MIT  历史  名源自麻省理工学院（Massachusetts Institute of Technology, MIT），又称「X许可协议」（X License）或「X11许可协议」(X11 License）  声明
-The MIT License (MIT) Copyright (c) [year] [copyright holders] Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</description>
+      <description>[TOC] 作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明</description>
     </item>
     
   </channel>

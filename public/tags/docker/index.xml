@@ -6,11 +6,19 @@
     <description>Recent content in Docker on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
-    <lastBuildDate>Wed, 27 Jun 2018 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Docker.Network</title>
+      <link>http://domain.yqjdcyy.com/post/hello.docker.network/</link>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.docker.network/</guid>
+      <description>[TOC] Driver Bridge 描述 软件形式的网络桥接，允许同一网桥内的容器互相通信，并隔离未连接网桥的容器 通过驱动在主机自动安装规则实现 启动 Docker 时默认创建，并将新启动</description>
+    </item>
     
     <item>
       <title>Hello.Docker.Dockerfile</title>
@@ -18,8 +26,7 @@
       <pubDate>Wed, 27 Jun 2018 18:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</guid>
-      <description>[TOC]
-Work  Docker 镜像是由只读的层一层层封装而成的，而其中的层均代码着 Dockerfile 指令  Guidlines  保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置 不管实际执行的 Dockerfile 在哪，当前目录下的文件和目录都将发送至 Docker 守护进程中作为构建上下文中  执行 docker build 的当前所在目录，称为构建上下文 默认 Dockerfile 文件存放于构建上下文中，但也可通过 -f 指令指定   Command Parser directives  作用  用于指定 Dockerfile 中的转义字符或换行  默认为 \ 重新定义转义字符为 `，主要用于支持 Windows PowerShell脚本，为 c:\\ 情况 编译时不添加至 Docker 层，也不显示作为编译的其中一个步骤 位置应该置于文件顶部，不然当处理完注释、空行或构建指令后, Docker 将不再寻找解析器指令   指令  # directive=value  仅可使用一次 非大小写敏感，允许空格等非断行型空白 无效情况  \(续行符) 重复多次    使用  # escape=[\|`]   ENV  作用  变量定义  定义  ENV variable.</description>
+      <description>[TOC] Work Docker 镜像是由只读的层一层层封装而成的，而其中的层均代码着 Dockerfile 指令 Guidlines 保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置 不管实际执行的 Dockerfile</description>
     </item>
     
     <item>
@@ -28,10 +35,7 @@ Work  Docker 镜像是由只读的层一层层封装而成的，而其中的层�
       <pubDate>Wed, 20 Jun 2018 12:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker.compose/</guid>
-      <description>[TOC]
-简介  Compose  定义和运行多个 Docker 容器的应用  Service  应用容器，包括若干运行相同镜像的容器实例  Project  一组关联的应用容器组成的完整业务单元 于 docker-compose.yml 文件中定义   安装  pip install -U docker-compose
-Successfully installed backports.ssl-match-hostname-3.5.0.1 cached-property-1.4.3 certifi-2018.4.16 docker-3.3.0 docker-compose-1.21.2 docker-pycreds-0.3.0 dockerpty-0.4.1 docopt-0.6.2 enum34-1.1.6 functools32-3.2.3.post2 idna-2.6 ipaddress-1.0.22 jsonschema-2.6.0 requests-2.18.4 six-1.11.0 texttable-0.9.1 urllib3-1.22 websocket-client-0.48.0  docker-compose version
-/usr/lib/python2.7/site-packages/requests/__init__.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn&#39;t match a supported version! RequestsDependencyWarning) docker-compose version 1.21.2, build a133471 docker-py version: 3.</description>
+      <description>[TOC] 简介 Compose 定义和运行多个 Docker 容器的应用 Service 应用容器，包括若干运行相同镜像的容器实例 Project 一组关联的应用容器组成的完整业务单元 于 docker-compose.yml 文件中定义 安装 pip install -U docker-compose</description>
     </item>
     
     <item>
@@ -40,8 +44,7 @@ Successfully installed backports.ssl-match-hostname-3.5.0.1 cached-property-1.4.
       <pubDate>Thu, 14 Jun 2018 17:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker.command/</guid>
-      <description>[TOC]
-Docker.* Outline    指令 描述     docker attach 将本地输入、输出和异常流附加到运行状态中的容器   docker build 使用 Dockerfile 构建镜像   docker checkpoint 管理检查点   docker commit 将容器的变更构建为新镜像   docker config 管理 Docker 配置   docker container 管理 Docker 容器   docker cp 进行容器和本地文件系统间的文件/文件夹的拷贝   docker create 创建新容器   docker deploy 发布新堆或更新已存在的堆   docker diff 检查容器的文件系统中，文件或文件夹的变更情况   docker events 获取服务的实时事件   docker exec 在运行的容器中执行指令   docker export 将容器的文件系统打包至 tar 文件   docker history 显示指定镜像的历史   docker image 管理镜像   docker images 列表展示镜像   docker import 由 原始码(tarball) 中引入内容以创建新的文件系统镜像   docker info 展示系统纬度信息   docker inspect 展示 Docker 的低等级信息   docker kill 摧毁容器   docker load 将 tar/STDIN 中加载镜像   docker login 登录   docker logout 登出   docker logs 抓取容器日志   docker manifest 管理镜像的 manifest 列表   docker network 管理网络   docker node 管理集群节点   docker pause 暂停指定容器中的所有进程   docker plugin 管理插件   docker port 列表展示端口映射或指定容器的映射情况   docker ps 展示所有进程   docker pull 拉取注册镜像   docker push 推送镜像注册   docker rename 为容器重命名   docker restart 重启容器   docker rm 移除容器   docker rmi 移除镜像   docker run 在新容器中执行命令行操作   docker save 将镜像通过 STDOUT（默认）打包至 tar文件中   docker search 于 Docker Hub中搜索镜像   docker secret 管理 Docker 密钥   docker service 管理服务   docker stack 管理 Docker 堆   docker start 将关闭的容器重新开启   docker stats 通过容器的实时流进行统计   docker stop 关闭运行中的容器   docker swarm 管理集群   docker system 管理 Docker   docker tag 创建标签以指向源镜像   docker top 展示容器内部运行状态的进程   docker trust 管理镜像的信用记录   docker unpause 取消容器中进程的暂停状态   docker update 更新容器的配置信息   docker version 显示 Docker 的版本信息   docker volume 管理 volumes   docker wait 阻塞至镜像停止，并输出其退出状态    Docker.</description>
+      <description>[TOC] Docker.* Outline 指令 描述 docker attach 将本地输入、输出和异常流附加到运行状态中的容器 docker build 使用 Dockerfile 构建镜像 docker checkpoint 管理检查点 docker commit 将容器的变更构建为新镜像 docker config 管理 Docker 配置 docker</description>
     </item>
     
     <item>
@@ -50,10 +53,7 @@ Docker.* Outline    指令 描述     docker attach 将本地输入、输出和�
       <pubDate>Thu, 14 Jun 2018 15:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker/</guid>
-      <description>[TOC]
-现状  环境配置困难  操作系统 库与组件的安装   简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口  用途  提供一次性的环境 提供弹性的云服务 组建微服务架构  版本  社区版 / Community Edition / CE 企业版 / Enterprise Edition / EE  关键字  镜像  image root 文件系统  提供容器运行时所需的程序、库、资源、配置文件和运行时的相关参数（匿名卷、环境变量与用户等）  分层存储  逐层构建， 上层构建完成后将不再发生变更  某层删除文件，最终容器运行时虽查看不到该文件，但实际文件仍跟随镜像 利于镜像的利用、定制    容器
- 实质是 进程，运行于属于自己的独立命名空间  仓库
- 集中存储、分发镜像的服务 [/][:]  version  默认为 lastest     对比    服务 原理 启动速度 资源占用 补充     虚拟机 在一种操作系统里面运行另一种操作系统 慢</description>
+      <description>[TOC] 现状 环境配置困难 操作系统 库与组件的安装 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口 用途 提供一次性的环境 提供弹性的云服务 组建微服务</description>
     </item>
     
   </channel>

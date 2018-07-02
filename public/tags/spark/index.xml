@@ -6,7 +6,6 @@
     <description>Recent content in Spark on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Fri, 20 Oct 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/spark/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spark/</guid>
-      <description>[TOC]
-Spark 启动  Spark  method  setUp  threadPool ipAddress port secure  start  init stop webSocket  other  (String path, Route route)  get post put patch delete head trace connect options before after  (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler)   class  SingletonHolder  static final SparkInstance INSTANCE = new SparkInstance();  SparkInstance  parameter  port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch  method  init()  this.</description>
+      <description>[TOC] Spark 启动 Spark method setUp threadPool ipAddress port secure start init stop webSocket other (String path, Route route) get post put patch delete head trace connect options before after (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler) class SingletonHolder static final SparkInstance INSTANCE = new SparkInstance(); SparkInstance parameter port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch method init() this.routeMatcher = RouteMatcherFactory.get(); (new Thread(run&amp;lt;invokedynamic&amp;gt;(this))).start(); getter/ setter webSocket(String</description>
     </item>
     
   </channel>

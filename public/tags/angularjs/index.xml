@@ -6,7 +6,6 @@
     <description>Recent content in Angularjs on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 14 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/angularjs/index.xml" rel="self" type="application/rss+xml" />
@@ -18,14 +17,7 @@
       <pubDate>Wed, 14 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/angularjs.basic/</guid>
-      <description>导言和准备  地址 源码 图解Git  引导程序 参考 - 详细：http://angularjs.cn/A003 - 源码：https://github.com/angular/angular-phonecat - 环境：https://github.com/nodejs/node-gyp - 安装异常：http://stackoverflow.com/questions/21365714/nodejs-error-installing-with-npm - 安装异常：http://blog.sina.com.cn/s/blog_9b624c5d0102vgwl.html  启动服务  npm install npm start
- 需要行先安装 python，仅目前只支持 2.*.，不支持 3..* 并将 git 设置为环境变量，即将 D:\Program Files (x86)\Git\bin\;D:\Program Files (x86)\Git\libexec\git-core; 加入环境变量中
- 注：有时需要重启才能生效 更多注意事项请看 https://github.com/nodejs/node-gyp
-测试服务   npm test
-切换服务 git checkout -f step-0
- 其中各阶段主要重点均在 https://github.com/angular/angular-phonecat
-应用界面  http://localhost:8000/app/index.html
-核心代码解析 &amp;lt;!-- np-app 指令，用于标记 AngularJS 脚本的作用域 --&amp;gt; &amp;lt;html lang=&amp;quot;en&amp;quot; ng-app&amp;gt; &amp;lt;!</description>
+      <description>导言和准备 地址 源码 图解Git 引导程序 参考 - 详细：http://angularjs.cn/A003 - 源码：https://github.com</description>
     </item>
     
   </channel>

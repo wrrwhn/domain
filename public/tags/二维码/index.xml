@@ -6,7 +6,6 @@
     <description>Recent content in 二维码 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Sat, 10 Feb 2018 16:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E4%BA%8C%E7%BB%B4%E7%A0%81/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Sat, 10 Feb 2018 16:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5wifi/</guid>
-      <description> 扫描二维码自动连接WIFI 参考  想更优雅地分享 Wi-Fi 密码，只需一枚二维码 Wifi Network config  场景  手机扫描二维码，自动弹出「连接 WI-FI」建议  连接指令  WIFI:T:【加密类型】;S:【Wi-Fi 名称】;P:【你的密码】;;  例  WIFI:T:WPA2;S:Z905;P:nd123456;;   指定协议支持，可参考 PC 端的 mailto: 指令  推荐 IOS  使用 EFQRCode 创建二维码  支持 GIF 等形式   注意事项  需要支持 zxing 提出的「Wifi Network config (Android)」编码形式  支持该类编码的设备，捕获到如上指令时则自动弹出「加入 WI-FI」的建议  需要在 WI-FI 覆盖范围内  </description>
+      <description>扫描二维码自动连接WIFI 参考 想更优雅地分享 Wi-Fi 密码，只需一枚二维码 Wifi Network config 场景 手机扫描二维码，自动弹出「连接 WI-FI」建议 连接指令 WIFI:</description>
     </item>
     
   </channel>

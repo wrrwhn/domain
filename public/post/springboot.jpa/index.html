@@ -1,66 +1,118 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>好久不见</title>
-        <meta name="author">
-        <meta name="description" content="好久不见">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
-        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
-        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
-        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
-        
-        <style>
-        .site-header h2 .logo {
-        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
-        }
-        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          .site-header h2 .logo {
-            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
-        }}
-       .site-header {
-         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
-         z-index: -1;
-        }
-        </style>
-    </head>
-    <body>
-        
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2></h2>
-          </div>
-        </header>
-
-
-<div class="container clearfix">
-    <main role="main" class="content">
-        <article class="post">
-            <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-            
-<h1><a href="http://domain.yqjdcyy.com/post/springboot.jpa/" title="SpringBoot.JPA">SpringBoot.JPA</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2016.12.11">2016.12.11</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/springboot">springboot</a>
-        
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>SpringBoot.JPA - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
+    <meta property="og:title" content="SpringBoot.JPA">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="SpringBoot.JPA - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
 
-</span>
-</footer>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
 
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
             
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/springboot.jpa/" itemprop="url">
+        SpringBoot.JPA
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2016-12-11">
+    2016-12-11
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">1246 字 ~3分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
 
 <h2 id="toc">[TOC]</h2>
 
@@ -71,16 +123,15 @@
 <h1 id="学习整理">学习整理</h1>
 
 <h2 id="basic-example">Basic Example</h2>
-
-<pre><code>Entity
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Entity
 @Entity
-@Table(name = &quot;user&quot;)
+@Table(name = &#34;user&#34;)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = &quot;user_name&quot;)
+    @Column(name = &#34;user_name&#34;)
     private long userName;
 }
 
@@ -98,9 +149,9 @@ Repository
 
 Config
 @Configuration
-@EnableJpaRepositories(basePackages = &quot;com.yunkai&quot;) // 指定 Repository 位置
-@ComponentScan(basePackages = &quot;com.yunkai&quot;)
-@EntityScan(basePackages = &quot;com.yunkai&quot;) // 指定 Entity 对象位置
+@EnableJpaRepositories(basePackages = &#34;com.yunkai&#34;) // 指定 Repository 位置
+@ComponentScan(basePackages = &#34;com.yunkai&#34;)
+@EntityScan(basePackages = &#34;com.yunkai&#34;) // 指定 Entity 对象位置
 class ApplicationConfiguration {
   @Bean
   public EntityManagerFactory entityManagerFactory() {
@@ -112,21 +163,14 @@ Using
 @Autowired
 private UserRepository repository;
 
-Page&lt;User&gt; users = repository.findAll(new PageRequest(1, 20));
-
-</code></pre>
-
+Page&lt;User&gt; users = repository.findAll(new PageRequest(1, 20));</pre></div>
 <h2 id="cunstom-tuning">Cunstom-tuning</h2>
-
-<pre><code>@NoRepositoryBean // 自定义基础库时使用，保证能被运行时创建
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">@NoRepositoryBean // 自定义基础库时使用，保证能被运行时创建
 interface MyBaseRepository&lt;T, ID extends Serializable&gt; extends Repository&lt;T, ID&gt; {
   T save(T entity);
-}
-</code></pre>
-
+}</pre></div>
 <h2 id="defining-query-methods">Defining query methods</h2>
-
-<pre><code>Query lookup strategies
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Query lookup strategies
 CREATE 
 USE_DECLARED_QUERY 
 CREATE_IF_NOT_FOUND = CREATE+ USE_DECLARED_QUERY
@@ -181,14 +225,11 @@ Page&lt;User&gt;|Slice&lt;User&gt;|List&lt;User&gt; findByLastname(String lastna
 User find[First|Top]ByOrderByLastnameAsc();
 Page&lt;User&gt; query[First10|Top3]ByLastname(String lastname, Pageable pageable);
 // 
-@Query(&quot;select u from User u&quot;)
+@Query(&#34;select u from User u&#34;)
 Stream&lt;User&gt; findAllByCustomQueryAndStream();
-Stream&lt;User&gt; readAllByFirstnameNotNull();
-</code></pre>
-
+Stream&lt;User&gt; readAllByFirstnameNotNull();</pre></div>
 <h2 id="data-extensions">Data extensions</h2>
-
-<pre><code>Web support
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Web support
 java config
 @Configuration
 @EnableWebMvc
@@ -196,17 +237,17 @@ java config
 class WebConfiguration { }
 
 Xml config
-&lt;bean class=&quot;org.springframework.data.web.config.SpringDataWebConfiguration&quot; /&gt;
-&lt;!-- If you're using Spring HATEOAS as well register this one *instead* of the former --&gt;
-&lt;bean class=&quot;org.springframework.data.web.config.HateoasAwareSpringDataWebConfiguration&quot; /&gt;
+&lt;bean class=&#34;org.springframework.data.web.config.SpringDataWebConfiguration&#34; /&gt;
+&lt;!-- If you&#39;re using Spring HATEOAS as well register this one *instead* of the former --&gt;
+&lt;bean class=&#34;org.springframework.data.web.config.HateoasAwareSpringDataWebConfiguration&#34; /&gt;
 
 config support
 DomainClassConverter
 Define
 convert reuqest parameters or path variables to domain class
 Example
-@RequestMapping(&quot;/{id}&quot;)
-   public String showUserForm(@PathVariable(&quot;id&quot;) User user, Model model) {} // id-&gt; user，domain call findOne automatic
+@RequestMapping(&#34;/{id}&#34;)
+   public String showUserForm(@PathVariable(&#34;id&#34;) User user, Model model) {} // id-&gt; user，domain call findOne automatic
 HandlerMethodArgumentResolver
 Define
 resovle Pageable/ Sort instances from request parameters
@@ -215,15 +256,15 @@ Example
    public String showUsers(Model model, 
    Pageable pageable) {}
    public String showUsers(Model model,
-        @Qualifier(&quot;foo&quot;) Pageable first,
-          @Qualifier(&quot;bar&quot;) Pageable second) { … }
+        @Qualifier(&#34;foo&#34;) Pageable first,
+          @Qualifier(&#34;bar&#34;) Pageable second) { … }
     Url request
      page=1&amp;size=10&amp;sort=firstname&amp;sort=lastname,asc
     Attention
      @PageableDefaults on controller.method
 Auto create next and prev link
 method
-@RequestMapping(value = &quot;/persons&quot;, method = RequestMethod.GET)
+@RequestMapping(value = &#34;/persons&#34;, method = RequestMethod.GET)
 HttpEntity&lt;PagedResources&lt;Person&gt;&gt; persons(Pageable pageable,
 PagedResourcesAssembler assembler) {
 Page&lt;Person&gt; persons = repository.findAll(pageable);
@@ -231,33 +272,29 @@ return new ResponseEntity&lt;&gt;(assembler.toResources(persons), HttpStatus.OK)
 }
 response
 { 
-&quot;links&quot; : [ { &quot;rel&quot; : &quot;next&quot;, &quot;href&quot; : &quot;http://localhost:8080/persons?page=1&amp;size=20 }],
-&quot;content&quot; : [… // 20 Person instances rendered here],
-&quot;pageMetadata&quot; : {
-&quot;size&quot; : 20,
-&quot;totalElements&quot; : 30,
-&quot;totalPages&quot; : 2,
-&quot;number&quot; : 0
+&#34;links&#34; : [ { &#34;rel&#34; : &#34;next&#34;, &#34;href&#34; : &#34;http://localhost:8080/persons?page=1&amp;size=20 }],
+&#34;content&#34; : [… // 20 Person instances rendered here],
+&#34;pageMetadata&#34; : {
+&#34;size&#34; : 20,
+&#34;totalElements&#34; : 30,
+&#34;totalPages&#34; : 2,
+&#34;number&#34; : 0
 }
 }
 
 Repository populators
 Json file
-[ { &quot;_class&quot; : &quot;com.acme.Person&quot;,
- &quot;firstname&quot; : &quot;Dave&quot;,
-  &quot;lastname&quot; : &quot;Matthews&quot; },
-  { &quot;_class&quot; : &quot;com.acme.Person&quot;,
- &quot;firstname&quot; : &quot;Carter&quot;,
-  &quot;lastname&quot; : &quot;Beauford&quot; } ]
+[ { &#34;_class&#34; : &#34;com.acme.Person&#34;,
+ &#34;firstname&#34; : &#34;Dave&#34;,
+  &#34;lastname&#34; : &#34;Matthews&#34; },
+  { &#34;_class&#34; : &#34;com.acme.Person&#34;,
+ &#34;firstname&#34; : &#34;Carter&#34;,
+  &#34;lastname&#34; : &#34;Beauford&#34; } ]
 XML config
-&lt;repository:jackson-populator locations=&quot;classpath:data.json&quot; /&gt;
-&lt;oxm:jaxb2-marshaller contextPath=&quot;com.acme&quot; /&gt;
-
-</code></pre>
-
+&lt;repository:jackson-populator locations=&#34;classpath:data.json&#34; /&gt;
+&lt;oxm:jaxb2-marshaller contextPath=&#34;com.acme&#34; /&gt;</pre></div>
 <h2 id="query-methods">Query methods</h2>
-
-<pre><code>Query creation
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Query creation
 **Keyword** **Sample** **JPQL snippet**
 And  findByLastnameAndFirstname … where x.lastname = ?1 and x.firstname = ?2
 Or  findByLastnameOrFirstname  … where x.lastname = ?1 or x.firstname = ?2
@@ -287,13 +324,13 @@ IgnoreCase  findByFirstnameIgnoreCase  … where UPPER(x.firstame) = UPPER(?1)
 Name Query
 XML
 /META-INF/orm.xml
-&lt;named-query name=&quot;User.findByLastname&quot;&gt;
+&lt;named-query name=&#34;User.findByLastname&#34;&gt;
   &lt;query&gt;select u from User u where u.lastname = ?1&lt;/query&gt;
 &lt;/named-query&gt;
 Annotation
 @Entity
-@NamedQuery(name = &quot;User.findByEmailAddress&quot;,
-  query = &quot;select u from User u where u.emailAddress = ?1&quot;)
+@NamedQuery(name = &#34;User.findByEmailAddress&#34;,
+  query = &#34;select u from User u where u.emailAddress = ?1&#34;)
 public class User {}
 Repository
 public interface UserRepository extends JpaRepository&lt;User, Long&gt; {
@@ -304,46 +341,43 @@ Query
 take precedence over name query
 Annotation
 JPQL query 
-@Query(&quot;select u from User u where u.firstname like %?1&quot;)
+@Query(&#34;select u from User u where u.firstname like %?1&#34;)
 List&lt;User&gt; findByFirstnameEndsWith(String firstname);
 Native Query
-@Query(value = &quot;SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?0&quot;, nativeQuery = true)
+@Query(value = &#34;SELECT * FROM USERS WHERE EMAIL_ADDRESS = ?0&#34;, nativeQuery = true)
 User findByEmailAddress(String emailAddress);
-@Query(&quot;select u from #{#entityName} u where u.lastname = ?1&quot;)
+@Query(&#34;select u from #{#entityName} u where u.lastname = ?1&#34;)
 List&lt;User&gt; findByLastname(String lastname);
 Native Query with named parameters
-@Query(&quot;select u from User u where u.firstname = :firstname or u.lastname = :lastname&quot;)
-User findByLastnameOrFirstname(@Param(&quot;lastname&quot;) String lastname, @Param(&quot;firstname&quot;) String firstname);
+@Query(&#34;select u from User u where u.firstname = :firstname or u.lastname = :lastname&#34;)
+User findByLastnameOrFirstname(@Param(&#34;lastname&#34;) String lastname, @Param(&#34;firstname&#34;) String firstname);
 
 Modifying Query
 Annotation
 @Modifying
-@Query(&quot;update User u set u.firstname = ?1 where u.lastname = ?2&quot;)
+@Query(&#34;update User u set u.firstname = ?1 where u.lastname = ?2&#34;)
 int setFixedFirstnameFor(String firstname, String lastname);
 注： @Modifying(clearAutomatically = true) 可促使 EntityManager 立即抛弃缓存的数据并重新读取
 
 Query Hints
 user for cache data
 Annotation
-@QueryHints({ @QueryHint(name = &quot;org.hibernate.cacheable&quot;, value =&quot;true&quot;) })
+@QueryHints({ @QueryHint(name = &#34;org.hibernate.cacheable&#34;, value =&#34;true&#34;) })
 public User findById(long id);
 
 Load Graphs
 Annotation
 @Entity
-@NamedEntityGraph(name = &quot;GroupInfo.detail&quot;, attributeNodes = @NamedAttributeNode(&quot;members&quot;))
+@NamedEntityGraph(name = &#34;GroupInfo.detail&#34;, attributeNodes = @NamedAttributeNode(&#34;members&#34;))
 public class GroupInfo {}
 
 @Repository
 public interface GroupRepository extends CrudRepository&lt;GroupInfo, String&gt; {
-   @EntityGraph(value = &quot;GroupInfo.detail&quot;, type = EntityGraphType.LOAD)
+   @EntityGraph(value = &#34;GroupInfo.detail&#34;, type = EntityGraphType.LOAD)
    GroupInfo getByGroupName(String name);
-}
-</code></pre>
-
+}</pre></div>
 <h2 id="stored-procedures">Stored Procedures</h2>
-
-<pre><code>HSQL DB Definition
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">HSQL DB Definition
 /;
 DROP procedure IF EXISTS plus1inout
 /;
@@ -354,18 +388,15 @@ END
 /;
 Entity Definition
 @Entity
-@NamedStoredProcedureQuery(name = &quot;User.plus1&quot;, procedureName = &quot;plus1inout&quot;, parameters = {
-@StoredProcedureParameter(mode = ParameterMode.IN, name = &quot;arg&quot;, type = Integer.class),
-@StoredProcedureParameter(mode = ParameterMode.OUT, name = &quot;res&quot;, type = Integer.class) })
+@NamedStoredProcedureQuery(name = &#34;User.plus1&#34;, procedureName = &#34;plus1inout&#34;, parameters = {
+@StoredProcedureParameter(mode = ParameterMode.IN, name = &#34;arg&#34;, type = Integer.class),
+@StoredProcedureParameter(mode = ParameterMode.OUT, name = &#34;res&#34;, type = Integer.class) })
 public class User {}
 Mapped In Database
-@Procedure(&quot;plus1inout&quot;)
-Integer explicitlyNamedPlus1inout(Integer arg);
-</code></pre>
-
+@Procedure(&#34;plus1inout&#34;)
+Integer explicitlyNamedPlus1inout(Integer arg);</pre></div>
 <h2 id="specifications">Specifications</h2>
-
-<pre><code>Interface
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Interface
 public interface Specification&lt;T&gt; {
   Predicate toPredicate(Root&lt;T&gt; root, CriteriaQuery&lt;?&gt; query, CriteriaBuilder builder);
 }
@@ -386,13 +417,9 @@ public class CustomerSpecs {
   }
 }
 Using
-List&lt;Customer&gt; customers = customerRepository.findAll(where(isLongTermCustomer()).or(hasSalesOfMoreThan(amount)));
-
-</code></pre>
-
+List&lt;Customer&gt; customers = customerRepository.findAll(where(isLongTermCustomer()).or(hasSalesOfMoreThan(amount)));</pre></div>
 <h2 id="transaction">Transaction</h2>
-
-<pre><code>Retrieve
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Retrieve
 Benefit
 rollback after setted timeout
 improve the 
@@ -408,116 +435,201 @@ Example
 public void addRoleToAllUsers(String roleName)
 @Modifying
 @Transactional
-@Query(&quot;delete from User u where u.active = false&quot;)
-void deleteInactiveUsers();
-</code></pre>
-
+@Query(&#34;delete from User u where u.active = false&#34;)
+void deleteInactiveUsers();</pre></div>
 <h2 id="locking">Locking</h2>
-
-<pre><code>@Lock(LockModeType.READ)
-List&lt;User&gt; findByLastname(String lastname);
-</code></pre>
-
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">@Lock(LockModeType.READ)
+List&lt;User&gt; findByLastname(String lastname);</pre></div>
 <h2 id="auditing">Auditing</h2>
-
-<pre><code>Base Metadata Annotation
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Base Metadata Annotation
 @CreateBy | @LastModifiedBy | @CreateDate | @LastModifiedDate
--&gt; 实体调整时自动赋值
-
-</code></pre>
-
-            <ul class="share-buttons">
-    <li></li>
-    <li>
-        <a class="icon-facebook-squared" href="https://www.facebook.com/sharer/sharer.php?u=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspringboot.jpa%2f" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-twitter" href="https://twitter.com/share?text=SpringBoot.JPA&amp;url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspringboot.jpa%2f" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-gplus" href="https://plus.google.com/share?url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspringboot.jpa%2f" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title=""></a>
-    </li>
-    <li>
-        <a class="icon-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&url=http%3a%2f%2fdomain.yqjdcyy.com%2fpost%2fspringboot.jpa%2f&title=SpringBoot.JPA" onclick="window.open(this.href, 'linkedin-share', 'width=600,height=494');return false;" title=""></a>
-    </li>
-</ul>
-
-        </article>
-        
-        <div class="comments">
-            <h3></h3>
-            <div id="disqus_thread"></div>
-<script>
-    var disqus_config = function () {
+-&gt; 实体调整时自动赋值</pre></div>
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
     
+    <a href="http://domain.yqjdcyy.com/tags/springboot" rel="tag" title="SpringBoot">#SpringBoot#</a>
     
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "yqjdcyy-com" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-        </div>
-        
-    </main>
-    <aside class="author">
-  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
-  <p class="name"> 
-  <strong>姚清居</strong></p>
-  <p class="address">Earth</p>
-  <p class="link"></p>
-  <ul class="social">
-    
-
-
-
-
-
-
-
-
-
-
-
-
-<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
-
-
-
-
-<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
-
-  </ul>
-  <br><br>
-</aside>
-
 </div>
 
-<footer class="main-footer">
-  <div class="container clearfix">
-        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/" rel="next" title="SpringBoot.入门">
+        <i class="fa fa-chevron-left"></i> SpringBoot.入门
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/spring.basic/" rel="prev" title="Spring.Basic">
+        Spring.Basic <i class="fa fa-chevron-right"></i>
+        </a>
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+<div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+    <div style="float:left;margin-top:0px;">
+    <img src="http://domain.yqjdcyy.com/images/qrcode/qrcode_8cm.jpg" width="129px" height="129px"/>
+    <div style="text-align:center;">微信扫一扫交流</div>
+    </div>
+    <div>
+        <p style="margin-top:0px;">
+            标题：SpringBoot.JPA
+        <br />作者：<a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+        <br />关注：lanlingthink（蘭陵N散記）
+        <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+        </p>
+    </div>
+</div>
+<div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
   </div>
-</footer>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
+
+    </section>
+    
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
 
 
+      </div>
+    </footer>
 
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
 
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>
 </html>
-

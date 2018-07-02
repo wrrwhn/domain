@@ -1,355 +1,582 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>整理 &middot; 好久不见</title>
-        <meta name="author">
-        <meta name="description" content="好久不见">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
-        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
-        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
-        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
-        
-        <style>
-        .site-header h2 .logo {
-        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
-        }
-        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          .site-header h2 .logo {
-            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
-        }}
-       .site-header {
-         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
-         z-index: -1;
-        }
-        </style>
-    </head>
-    <body>
-        
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2></h2>
-          </div>
-        </header>
-
-<div class="container clearfix">
-    <main role="main" class="content">
-        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-        
-        
-            <article class="post">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>整理 - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/" title="Hello.Docker.Dockerfile">Hello.Docker.Dockerfile</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.27">2018.06.27</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
-        
+    <meta property="og:title" content="整理">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="整理 - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    <link rel="alternate" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/index.xml" title="好久不见" type="application/rss+xml" />
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
     
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: false, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left   ">
+    <div class="headband"></div>
 
-</span>
-</footer>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
 
-    <p>[TOC]
-Work  Docker 镜像是由只读的层一层层封装而成的，而其中的层均代码着 Dockerfile 指令  Guidlines  保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置 不管实际执行的 Dockerfile 在哪，当前目录下的文件和目录都将发送至 Docker 守护进程中作为构建上下文中  执行 docker build 的当前所在目录，称为构建上下文 默认 Dockerfile 文件存放于构建上下文中，但也可通过 -f 指令指定   Command Parser directives  作用  用于指定 Dockerfile 中的转义字符或换行  默认为 \ 重新定义转义字符为 <code>，主要用于支持 Windows PowerShell脚本，为 c:\\ 情况 编译时不添加至 Docker 层，也不显示作为编译的其中一个步骤 位置应该置于文件顶部，不然当处理完注释、空行或构建指令后, Docker 将不再寻找解析器指令   指令  # directive=value  仅可使用一次 非大小写敏感，允许空格等非断行型空白 无效情况  \(续行符) 重复多次    使用  # escape=[\|</code>]   ENV  作用  变量定义  定义  ENV variable.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/" title="Hello.Docker.Dockerfile"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User">Linux.User</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.21">2018.06.21</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录shell环境  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽     useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java">Linux.Java</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.20">2018.06.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp; JDK using a script  安装  查询  Java SE Downloads 使用 Oracle 账号登录  下载  获取下载链接  jdk-8u171-linux-x64.rpm  F12 获取 Cookie 「gpw_e24」「oraclelicense」 拼链接调用  wget &ndash;no-cookies &ndash;no-check-certificate &ndash;header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie&quot; &quot;<a href="http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&quot;">http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&quot;</a>   安装  sudo yum localinstall jdk-8u171-linux-x64.rpm -y  检查  java -version&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.compose/" title="Hello.Docker.Compose">Hello.Docker.Compose</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.20">2018.06.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-简介  Compose  定义和运行多个 Docker 容器的应用  Service  应用容器，包括若干运行相同镜像的容器实例  Project  一组关联的应用容器组成的完整业务单元 于 docker-compose.yml 文件中定义   安装  pip install -U docker-compose
-Successfully installed backports.ssl-match-hostname-3.5.0.1 cached-property-1.4.3 certifi-2018.4.16 docker-3.3.0 docker-compose-1.21.2 docker-pycreds-0.3.0 dockerpty-0.4.1 docopt-0.6.2 enum34-1.1.6 functools32-3.2.3.post2 idna-2.6 ipaddress-1.0.22 jsonschema-2.6.0 requests-2.18.4 six-1.11.0 texttable-0.9.1 urllib3-1.22 websocket-client-0.48.0  docker-compose version
-/usr/lib/python2.7/site-packages/requests/<strong>init</strong>.py:80: RequestsDependencyWarning: urllib3 (1.22) or chardet (2.2.1) doesn&rsquo;t match a supported version! RequestsDependencyWarning) docker-compose version 1.21.2, build a133471 docker-py version: 3.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.docker.compose/" title="Hello.Docker.Compose"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.docker.command/" title="Hello.Docker.Command">Hello.Docker.Command</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.14">2018.06.14</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Docker.* Outline    指令 描述     docker attach 将本地输入、输出和异常流附加到运行状态中的容器   docker build 使用 Dockerfile 构建镜像   docker checkpoint 管理检查点   docker commit 将容器的变更构建为新镜像   docker config 管理 Docker 配置   docker container 管理 Docker 容器   docker cp 进行容器和本地文件系统间的文件/文件夹的拷贝   docker create 创建新容器   docker deploy 发布新堆或更新已存在的堆   docker diff 检查容器的文件系统中，文件或文件夹的变更情况   docker events 获取服务的实时事件   docker exec 在运行的容器中执行指令   docker export 将容器的文件系统打包至 tar 文件   docker history 显示指定镜像的历史   docker image 管理镜像   docker images 列表展示镜像   docker import 由 原始码(tarball) 中引入内容以创建新的文件系统镜像   docker info 展示系统纬度信息   docker inspect 展示 Docker 的低等级信息   docker kill 摧毁容器   docker load 将 tar/STDIN 中加载镜像   docker login 登录   docker logout 登出   docker logs 抓取容器日志   docker manifest 管理镜像的 manifest 列表   docker network 管理网络   docker node 管理集群节点   docker pause 暂停指定容器中的所有进程   docker plugin 管理插件   docker port 列表展示端口映射或指定容器的映射情况   docker ps 展示所有进程   docker pull 拉取注册镜像   docker push 推送镜像注册   docker rename 为容器重命名   docker restart 重启容器   docker rm 移除容器   docker rmi 移除镜像   docker run 在新容器中执行命令行操作   docker save 将镜像通过 STDOUT（默认）打包至 tar文件中   docker search 于 Docker Hub中搜索镜像   docker secret 管理 Docker 密钥   docker service 管理服务   docker stack 管理 Docker 堆   docker start 将关闭的容器重新开启   docker stats 通过容器的实时流进行统计   docker stop 关闭运行中的容器   docker swarm 管理集群   docker system 管理 Docker   docker tag 创建标签以指向源镜像   docker top 展示容器内部运行状态的进程   docker trust 管理镜像的信用记录   docker unpause 取消容器中进程的暂停状态   docker update 更新容器的配置信息   docker version 显示 Docker 的版本信息   docker volume 管理 volumes   docker wait 阻塞至镜像停止，并输出其退出状态    Docker.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.docker.command/" title="Hello.Docker.Command"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.docker/" title="Hello.Docker">Hello.Docker</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.14">2018.06.14</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/docker">docker</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-现状  环境配置困难  操作系统 库与组件的安装   简介  Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口  用途  提供一次性的环境 提供弹性的云服务 组建微服务架构  版本  社区版 / Community Edition / CE 企业版 / Enterprise Edition / EE  关键字  镜像  image root 文件系统  提供容器运行时所需的程序、库、资源、配置文件和运行时的相关参数（匿名卷、环境变量与用户等）  分层存储  逐层构建， 上层构建完成后将不再发生变更  某层删除文件，最终容器运行时虽查看不到该文件，但实际文件仍跟随镜像 利于镜像的利用、定制    容器
- 实质是 进程，运行于属于自己的独立命名空间  仓库
- 集中存储、分发镜像的服务 [/][:]  version  默认为 lastest     对比    服务 原理 启动速度 资源占用 补充     虚拟机 在一种操作系统里面运行另一种操作系统 慢&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.docker/" title="Hello.Docker"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.jhat/" title="Java.Tools.JHat">Java.Tools.JHat</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.07">2018.06.07</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-JHat 作用  打印出进程内存中，所有对象的情况  调用  jhat [ options ] heap-dump-file  示例  jmap -dump:format=b,file=d:/block-jmap.dump 15240 jhat d:/block-jmap.dump  Reading from d:/block-jmap.dump&hellip; Dump file created Wed Jun 06 08:34:24 CST 2018 Snapshot read, resolving&hellip; Resolving 851039 objects&hellip; Chasing references, expect 170 dots&hellip;&hellip;&hellip; Eliminating duplicate references&hellip;&hellip;&hellip;&hellip; Snapshot resolved. Started HTTP server on port 7000 Server is ready.   Dump查看界面 OQL执行界面   Reference  官方  jmap&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.jhat/" title="Java.Tools.JHat"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java.tools.javap/" title="Java.Tools.Javap">Java.Tools.Javap</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.06">2018.06.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tools">tools</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-JAVAP 作用  对 class 文件进行反编译 查看 java 编译器生成的字节码  调用  javap [options] classfile 参数  -help| &ndash;help| -?  打印 JAVAP 命令的帮助文档  -version  打印发布版本信息  -l  打印类中变量和方法及其参数列表  -public  仅显示公有类型的类和成员  -protected  仅显示保护或公有类型的类和成员  -private| -p  显示所有的类和成员  -Joption  显示 JVM 相关的特定参数  -s  显示内部类型签名  -sysinfo  显示该类执行时的相关系统信息，如路径、大小、日期和 MD5 签名值  -constants  显示最终的静态常量  -c  为每个方法打印组成的 Java 字节码指令  -verbose  打印堆大小、局部变量的数量、方法的参数    示例  javap CourseVo.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java.tools.javap/" title="Java.Tools.Javap"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/" title="降噪耳机">降噪耳机</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.06">2018.06.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%80%B3%E6%9C%BA">耳机</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-原理 可识别声音类型  交谈 音乐 可听见声音  降噪即消除此区域声音   衰减  扩散衰减  单位面积上的声波能量随着声源距离的平方而递减  吸收衰减  在固体介质中传播时，部分声能转化为热能  散射衰减  介质颗粒导致衰减   技术 主动降噪  使用 「极低延迟的DNC（Digital Noise Cancelling ）电路」对 「1~3 kHz」噪声实现主动降噪  被动降噪  吸声材料  硅胶耳塞 厚实服帖的耳罩   注意事项 佩戴感  熟悉自己的佩戴形式  入耳式 耳罩式 压耳式  耳压
- 飞机起降时的耳朵不适感 长期佩戴主动降噪类型耳机时会出现  续航
- 保修
-  音质  测试  Eminent Technology&rsquo;s Multimedia Speaker Test   推荐  Bose QC 20&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/" title="降噪耳机"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/" title="汽车.学车">汽车.学车</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%AD%A6%E8%BD%A6">学车</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考条件  身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考  报名  2018.1.19  驾校报名，交付一半的订金  2018.1.20  由驾校工作人员载着去进行体检   科目一 挂学时 刷题目 考试  自行前往车管所 到时先行录指纹 等叫到号时进入 完成考试后领取成绩单  科目二 注意事项  注意调整座椅、后视镜等  后视镜上沿可见后侧门把手 车身占后视镜 1&frasl;4 左右   启动三保险  离合踩满 刹车踩满 挂空档  打满= 90度= 打三把  一把= 单手半圈   流程  注意事项  考试过程中，身体任意部位不能伸出车窗 考试不及格，需从专门车道返回重考 有一次重考机会 场地     入场  穿反光马甲 识别身份证，按指纹  启动  调整座位、后视镜 绑定安全带，挂空档，踩刹车、离合，启动 拉手刹、挂一档、打左车向灯前进  侧方停车  出库时打左转向灯 不及格  入库停止后，车身出线  扣10分  行驶中轮胎压线   定点与半坡起步  前保险框停于实线处 起步前手刹拉起三秒，打左转向灯 起步熄火时，立马踩刹车重新启动 不及格  前保险框停于虚线外 后溜超过30公分 未于30s内启动  扣10分  前保险框位于虚线内实线外 后溜30公分   直角转弯  不及格  行驶中车轮压线 中途停车   曲线  不及格  行驶中车轮压线 中途停车   倒车入库  不及格  不按规定路线、顺序行驶 车身出线 中途停车 时长超过4min    实际体验  申请  第一次预约  286&frasl;300 提前几天通知预约失败 与教练确认是由于预约顺序与科目一考试的时间有关 提前几天，短信通知到预约失败  第二次预约  顺利   集合  6:55 训练场集合  入场  7:30 到达考场，后直接刷身份证进去  排队  安排的9:30的场 分排「8:00-9:30」与「9:30-12:00」的场    8点的场进去后便可进入  刷身份证+ 脱眼镜拍照   考试  进考场  坐在大厅等待提示 提示自己「6」号车后，对照了解需进第三号考场    去了一下洗手间，手机静音  考试  紧张等待「6」号车返回 听大妈讲刚考过，紧张到脚抖至走不动的故事 上车，检查座椅、左右后视镜  左右后视镜无法再调整，幸好还有辅助镜子  使用身份证签到，对摄像头拍照 重新启动出发  安全员搭话，忘记启动打左转向，囧  侧方 半坡  位置停不准  直角 S弯 倒库  80分及格   难点 倒车入库 左倒车  前进至车身挡住对面车道线，方向盘向左打满 直视前方，快对直时拉直（右打满） 继续前进至左侧远端黄线与手肘对齐 踩满离合、刹车后，挂倒档 倒至左侧后视镜杆挡住远端黄线时左转打满（左打三把） 观察左侧后视镜中，车身离左侧库角70厘米左右，回（右）1.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/" title="汽车.学车"> &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-
-	<p class="counter"> 1  15</p>
-
-
-	
-	<a class="btn older" href="/tags/%E6%95%B4%E7%90%86/page/2/" title=""> &raquo;</a>
-	
-
-</nav>
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
 </div>
 
-    </main>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-    <aside class="author">
-  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
-  <p class="name"> 
-  <strong>姚清居</strong></p>
-  <p class="address">Earth</p>
-  <p class="link"></p>
-  <ul class="social">
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >整理
+    <small>标签</small>
+    </h2>
+</div>
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/" itemprop="url">
+            <span itemprop="name">Hello.Docker.Dockerfile</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-27"
+              content="06-27" >
+          06-27
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.user/" itemprop="url">
+            <span itemprop="name">Linux.User</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-21"
+              content="06-21" >
+          06-21
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.java/" itemprop="url">
+            <span itemprop="name">Linux.Java</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-20"
+              content="06-20" >
+          06-20
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.docker.compose/" itemprop="url">
+            <span itemprop="name">Hello.Docker.Compose</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-20"
+              content="06-20" >
+          06-20
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.docker.command/" itemprop="url">
+            <span itemprop="name">Hello.Docker.Command</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-14"
+              content="06-14" >
+          06-14
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.docker/" itemprop="url">
+            <span itemprop="name">Hello.Docker</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-14"
+              content="06-14" >
+          06-14
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.tools.jhat/" itemprop="url">
+            <span itemprop="name">Java.Tools.JHat</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-07"
+              content="06-07" >
+          06-07
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e9%99%8d%e5%99%aa%e8%80%b3%e6%9c%ba/" itemprop="url">
+            <span itemprop="name">降噪耳机</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-06"
+              content="06-06" >
+          06-06
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.tools.javap/" itemprop="url">
+            <span itemprop="name">Java.Tools.Javap</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-06"
+              content="06-06" >
+          06-06
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e6%b1%bd%e8%bd%a6.%e5%ad%a6%e8%bd%a6/" itemprop="url">
+            <span itemprop="name">汽车.学车</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-05"
+              content="06-05" >
+          06-05
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/" itemprop="url">
+            <span itemprop="name">Java.Filter-Lisenter-Inteceptor-AOP</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-05"
+              content="06-05" >
+          06-05
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/spring.security/" itemprop="url">
+            <span itemprop="name">Spring.Security</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-04"
+              content="06-04" >
+          06-04
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/ffmpeg.2gif.ass/" itemprop="url">
+            <span itemprop="name">FFmpeg.2Gif.Ass</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-01"
+              content="06-01" >
+          06-01
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/" itemprop="url">
+            <span itemprop="name">Spring.Boot.Publish</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-31"
+              content="05-31" >
+          05-31
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e4%bf%a1%e7%94%a8%e6%8a%a5%e5%91%8a/" itemprop="url">
+            <span itemprop="name">信用报告</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-23"
+              content="05-23" >
+          05-23
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+  
+  
+
+
+
+<nav class="pagination">
     
+    
+        
+        
+          <span class="page-number current">1</span>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/2/">2</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/3/">3</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/4/">4</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/5/">5</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/6/">6</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/7/">7</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/8/">8</a>
+        
+        
+    
+        
+    
+        
+    
+    <a class="extend next" rel="next" href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/p/2/"><i class="fa fa-angle-right"></i></a>
+</nav>
 
 
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
 
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
 
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
 
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
 
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
 
-
-
-
-
-
-<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
-
-
-
-
-<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
-
-  </ul>
-  <br><br>
+    </section>
+    
+  </div>
 </aside>
 
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>
-<footer class="main-footer">
-  <div class="container clearfix">
-        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
   </div>
-</footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+  
 
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
 
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>
 </html>
-

@@ -6,7 +6,6 @@
     <description>Recent content in Git on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 23 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +17,7 @@
       <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.subtree/</guid>
-      <description>参考  Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册  描述  简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是透明的，所有的开发人员看到的就是一个普通的目录，原来怎么做现在依旧那么做，只需要维护这个 Subtree 的人在合适的时候去做同步代码的操作。
- 适用情况
- 使用 github 的 page 功能实现项目主页功能，结合 hugo 生成 public 文件夹后同步到 gh-pages 分支，作为分支完整内容 项目 A 和项目 B 存在公用模块，A 中的修改、新增等操作，均同步至项目 B  可用方案
- Git Submodule  Git 官方早期推荐方案 允许其它仓库指定 commit 嵌入仓库子目录  但需要 init 和 update  产生 .gitmodule 文件记录 submodule 版本信息 删除较费劲  Git Subtree  Git 1.</description>
+      <description>参考 Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册 描述 简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是</description>
     </item>
     
     <item>
@@ -30,8 +26,7 @@
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
-      <description> [TOC]
-参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen    </description>
+      <description>[TOC] 参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
     </item>
     
     <item>
@@ -40,8 +35,7 @@
       <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.install/</guid>
-      <description>[TOC]
-Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Windows  git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen  创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，不要有空格！！！  ssh-keygen -C &amp;quot;yqjdcyy@gmail.com&amp;quot; -f ~/.ssh/yqjdcyy  创建gotgithub公私钥对   Linux  yum install git git-svn git-email git-gui gitk git --version git config --global user.name &amp;quot;wrrwhn&amp;quot; git config --global user.email yaoqingju@gmail.com cat ~/.</description>
+      <description>[TOC] Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意</description>
     </item>
     
     <item>
@@ -50,16 +44,7 @@ Git 安装 参考  GotGitHub git - 简易指南 GitHub Help Git教程  安装 Wi
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
-      <description>[TOC]
-查看 分支状态  git status git branch
- 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到当前分支
-日志  git log
- &amp;ndash;pretty=oneline：单行显示 &amp;ndash;graph：图形分支
-标签  git tag
- &amp;lt;&amp;gt;：查看当前分支标签 -l &amp;lsquo;v1.4*&amp;lsquo;：查看所有匹配该正则的标签信息
-文件提交明细  git blame &amp;lt;fileName&amp;gt;：查看文件每行的提交 hash / author/ time
-  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &amp;lt;branch&amp;gt; ###新增提交 git add -A git commit -m &amp;ldquo;commit content&amp;rdquo; git push origin &amp;lt;branch&amp;gt;
-修改提交 git commit -a -m &amp;ldquo;commit content&amp;rdquo;</description>
+      <description>[TOC] 查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并</description>
     </item>
     
   </channel>

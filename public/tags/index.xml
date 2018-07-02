@@ -6,7 +6,6 @@
     <description>Recent content in Tags on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Mon, 26 Mar 2018 11:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -114,7 +113,7 @@
     <item>
       <title>Docker</title>
       <link>http://domain.yqjdcyy.com/tags/docker/</link>
-      <pubDate>Wed, 27 Jun 2018 18:00:00 +0800</pubDate>
+      <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/tags/docker/</guid>
       <description></description>

@@ -6,7 +6,6 @@
     <description>Recent content in Mysql on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 07 Feb 2018 18:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
@@ -18,10 +17,7 @@
       <pubDate>Wed, 07 Feb 2018 18:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</guid>
-      <description>彻底终结MySQL同步延迟问题 参考  彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication  版本  MySQL.Version  5.7  Storage.Engine  TokuDB   影响因素 网络  主机或者从机的带宽打满 主从之间网络延迟很大  机器性能  从机使用了烂机器
- 比如主机使用SSD而从机还是使用的SATA  从机高负载
- 很多业务会在从机上做统计，把从机服务器搞成高负载 使用 top 查看使用情况  从机磁盘有问题
- 检查磁盘、raid卡、调度策略  raid卡电池充放电的时候，在没有设置强行write back的情况下得会将write back模式修改为write through。  使用 iostat 命令查看 DB 数据盘的 IO 情况，是否是单个 IO 的执行时间很长，块大小和磁盘队列情况等，   大事务  检查是否经常有大事务  在RBR模式下，执行带有大量的delete操作 在MBR模式下删除的时候添加了不确定语句（类似limit）， 一个表的alter操作等  通过查看 processlist 相关信息 使用 mysqlbinlog 查看 binlog 中的 SQL 就能快速进行确认  锁  检查锁冲突  从机上有一些 select .</description>
+      <description>彻底终结MySQL同步延迟问题 参考 彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication 版本 MySQL.Version 5.7 Storage.Engine TokuDB 影响因素 网络 主机或者从机的带宽打满 主从之</description>
     </item>
     
     <item>
@@ -39,9 +35,7 @@
       <pubDate>Tue, 15 Aug 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.select-into/</guid>
-      <description>[TOC]
-参考  SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE  命令  SELECT ... INTO
- VAR_LIST  将栏目值存储至变量 栏目值需与变量名数据一致 仅返回一条记录  无数据返回，则报 Error（1329） 多行记录返回，则报 Error（1172） 建议使用 LIMIT 1   OUTFILE  将选择栏目值存储至文件 存储于服务器，需持有文件权限 文件路径不能为已存在文件  客户端执行 mysql -e &amp;quot;SELECT ...&amp;quot; &amp;gt; file_name 导出文件  文件格式使用情况  .txt  数据会以 TAB 间隔  csv  csv格式，但数据均存储至同一单元格内    DUMPFILE  将单行数据以任意形式文件导出   OUTPUT FORMAT</description>
+      <description>[TOC] 参考 SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE 命令 SELECT ... INTO VAR_LIST</description>
     </item>
     
     <item>
@@ -50,8 +44,7 @@
       <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.mysql/</guid>
-      <description>[TOC]
-参考  centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置  环境  Linux  LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core   安装 默认  yum install mysql yum install mysql-server yum install mysql-devel ### wget http://dev.mysql.com/get/mysql-community-release-el7-5.noarch.rpm rpm -ivh mysql-community-release-el7-5.noarch.rpm yum install mysql-community-server mysql_upgrade  初始化 Mysql 初始化  mysql_secure_installation  直接设置密码  set password for &#39;root&#39;@&#39;localhost&#39; =password(&#39;root.</description>
+      <description>[TOC] 参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装</description>
     </item>
     
     <item>
@@ -60,8 +53,7 @@
       <pubDate>Sun, 23 Apr 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.lock-waits/</guid>
-      <description>[TOC]
-MySQL 5.5 InnoDB 锁等待 锁相关表    表名 作用     innodb_trx 当前正在执行事务的信息   innodb_locks 各已被请求但未被提交的事务锁   innodb_lock_waits 各阻塞事务的一至多行记录信息    字段 innodb_trx    字段 注释     trx_id 事务ID。   trx_state 事务状态，有以下几种状态:RUNNING、LOCK WAIT、ROLLING BACK 和 COMMITTING。   trx_started 事务开始时间。   trx_requested_lock_id 事务当前正在等待锁的标识，可以和 INNODB_LOCKS 表 JOIN 以得到更多详细信息。   trx_wait_started 事务开始等待的时间。   trx_weight 事务的权重。   trx_mysql_thread_id 事务线程 ID，可以和 PROCESSLIST 表 JOIN。   trx_query 事务正在执行的 SQL 语句。   trx_operation_state 事务当前操作状态。   trx_tables_in_use 当前事务执行的 SQL 中使用的表的个数。   trx_tables_locked 当前执行 SQL 的行锁数量。   trx_lock_structs 事务保留的锁数量。   trx_lock_memory_bytes 事务锁住的内存大小，单位为 BYTES。   trx_rows_locked 事务锁住的记录数。包含标记为 DELETED，并且已经保存到磁盘但对事务不可见的行。   trx_rows_modified 事务更改的行数。   trx_concurrency_tickets 事务并发票数。   trx_isolation_level 当前事务的隔离级别。   trx_unique_checks 是否打开唯一性检查的标识。   trx_foreign_key_checks 是否打开外键检查的标识。   trx_last_foreign_key_error 最后一次的外键错误信息。   trx_adaptive_hash_latched 自适应散列索引是否被当前事务锁住的标识。   trx_adaptive_hash_timeout 是否立刻放弃为自适应散列索引搜索 LATCH 的标识。    innodb_locks    字段 注释     lock_id 锁 ID。   lock_trx_id 拥有锁的事务 ID。可以和 INNODB_TRX 表 JOIN 得到事务的详细信息。   lock_mode 锁的模式。有如下锁类型: 行级锁包括 S、X、IS、IX，分别代表共享锁、排它锁、意向共享锁、意向排它锁。表级锁包括 S_GAP、X_GAP、IS_GAP、IX_GAP 和 AUTO_INC，分别代表共享间隙锁、排它间隙锁、意向共享间隙锁、意向排它间隙锁和自动递增锁。   lock_type 锁的类型。RECORD 代表行级锁，TABLE 代表表级锁。   lock_table 被锁定的或者包含锁定记录的表的名称。   lock_index 当 LOCK_TYPE=’RECORD’ 时，表示索引的名称；否则为 NULL。   lock_space 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的表空间 ID；否则为 NULL。   lock_page 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的页号；否则为 NULL。   lock_rec 当 LOCK_TYPE=’RECORD’ 时，表示一堆页面中锁定行的数量，亦即被锁定的记录号；否则为 NULL。   lock_data 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的主键；否则为NULL。    innodb_lock_waits | 字段 | 注释 | | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;- | &amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash; &amp;mdash;&amp;mdash; | | requesting_trx_id | 请求事务的 ID。 | | requested_lock_id | 事务所等待的锁定的 ID。可以和 INNODB_LOCKS 表 JOIN。 | | blocking_trx_id | 阻塞事务的 ID。 | | blocking_lock_id | 某一事务的锁的 ID，该事务阻塞了另一事务的运行。可以和 INNODB_LOCKS 表 JOIN。 |</description>
+      <description>[TOC] MySQL 5.5 InnoDB 锁等待 锁相关表 表名 作用 innodb_trx 当前正在执行事务的信息 innodb_locks 各已被请求但未被提交的事务锁 innodb_lock_waits 各阻塞事务的一至多行记录信息 字段 innodb_trx 字段 注释 trx_id 事务ID。</description>
     </item>
     
     <item>
@@ -70,8 +62,7 @@ MySQL 5.5 InnoDB 锁等待 锁相关表    表名 作用     innodb_trx 当前�
       <pubDate>Sun, 26 Feb 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.information_schema/</guid>
-      <description>[TOC]
-MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于MySQL服务器所维护的所有其他数据库的信息。如数据库名，数据库的表，表栏的数据类型与访问权限等。  库表  SCHEMATA  提供了当前mysql实例中所有数据库的信息。是show databases的结果取之此表。  TABLES  提供了关于数据库中的表的信息（包括视图）。详细表述了某个表属于哪个schema，表类型，表引擎，创建时间等信息。是show tables from schemaname的结果取之此表。  COLUMNS  提供了表中的列信息。详细表述了某张表的所有列以及每个列的信息。是show columns from schemaname.tablename的结果取之此表。  STATISTICS  提供了关于表索引的信息。是show index from schemaname.tablename的结果取之此表。  USER_PRIVILEGES（用户权限）  给出了关于全程权限的信息。该信息源自mysql.user授权表。是非标准表。  SCHEMA_PRIVILEGES（方案权限）  给出了关于方案（数据库）权限的信息。该信息来自mysql.db授权表。是非标准表。  TABLE_PRIVILEGES（表权限）  给出了关于表权限的信息。该信息源自mysql.tables_priv授权表。是非标准表。  COLUMN_PRIVILEGES（列权限）  给出了关于列权限的信息。该信息源自mysql.columns_priv授权表。是非标准表。  CHARACTER_SETS（字符集）  提供了mysql实例可用字符集的信息。是SHOW CHARACTER SET结果集取之此表。  COLLATIONS  提供了关于各字符集的对照信息。  COLLATION_CHARACTER_SET_APPLICABILITY  指明了可用于校对的字符集。这些列等效于SHOW COLLATION的前两个显示字段。  TABLE_CONSTRAINTS  描述了存在约束的表。以及表的约束类型。  KEY_COLUMN_USAGE  描述了具有约束的键列。  ROUTINES  提供了关于存储子程序（存储程序和函数）的信息。此时，ROUTINES表不包含自定义函数（UDF）。名为“mysql.</description>
+      <description>[TOC] MYSQL.INFORMATION_SCHEMA 简介 MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于M</description>
     </item>
     
     <item>
@@ -80,14 +71,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
-      <description>[TOC]
-[数据库开发规范简版] 数据库创建 命名规范  Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称]
-例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;;
-  表创建 命名规范 表  以组件或子系统名称为前缀 添加表和字段注释，明确各值可选值含义
-列 列名称命名采用英文单词或缩写，关联具体业务
- 尽量不允许为 Null，用默认值代替
-例 FetionUser.FU_TableName.ColName
-  类型选择 整型  tinyint 2^8 -128到127或0到255 smallint 2^16 -32768到32767或0到65535 int 2^32 -2147483648到2147483647或0到4294967295 bigint 2^64 -9223372036854775808到9223372036854775807或0到18446744073709551615 例 tinyint(3) 明确指定宽度 确认无符号时，需要添加 unsigned 限制  文本  CHAR(1) VARCHAR(2- 20000) TEXT 单表维护！  时间  timestamp datetime  索引创建 命名规范  IX[TableName][Column1]_[Column2] 字段与索引顺序一致  主键设计  InnoDB 必须有自增主键，建议为 int 且与业务无关 唯一索引  复合索引  MYSQL 搜索顺序同索引字段顺序  建议  索引个数控制于 3 个以内，不超过 5 个  SQL 编程 SELECT  SELECT COLUMN_NAME, NOT SELECT *  多表关联  为各表使用别名  DISTINCT  唯一索引不需要 可考虑程序去重  OR  多个 OR 或 AND 常会导致表扫描 可用 UNION代替 OR，或 FORCE INDEX 强制使用主索引  COUNT  Use COUNT(*) in one table and no WHERE  LIMIT  建议 尽量使用 LIMIT M，避免 LIMIT M,N 通过条件和 LIMIT M 来代替 LIMIT M,N 例 SELECT * FROM message WHERE id &amp;gt; 9520 ORDER BY id ASC LIMIT 20;  !</description>
+      <description>[TOC] [数据库开发规范简版] 数据库创建 命名规范 Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称] 例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;; 表创建 命名规</description>
     </item>
     
     <item>
@@ -96,7 +80,7 @@ MYSQL.INFORMATION_SCHEMA 简介  MySQL自带的，它提供了访问数据库元
       <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.basic/</guid>
-      <description>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-Tree 结构存储，16KB，大小不能调整，Mysql 最小逻辑单位 |- …… |- 页* 64 |- 行1： 数据行存在数据行中，每页最多7992行 |- …… |- 行* 7992 |- 索引段 |- 回滚段 |- 页 注：InnoDB按每张表的主键构造一 B+ 树  索引 聚集索引 是否支持聚集引擎，取决于采用的存储引擎，其中InnoDB会建立。 概念：实际数据行和相关的键值保存在一起。 原理：把索引和数据都保存于一 B+ 树数据结构，并同时将索引列与相关数据行保存在一起。则访问同一数据页不同记录，数值数据于内存中已存在。 注：一表仅可包含一个聚集索引，仅于按索引顺序过滤查询有效。 非聚集索引 概念&amp;amp; 原理：参考聚集索引，同样按索引值进行 B+ 树存储，但区别于树中只存放索引和相应数值的指针，而不与数据一同存储。 联合索引 概念：两个或两个以上列索引 注意：建立时考虑列顺序，索引越少越好（更新数据时需维护索引值） 注：避免file sort（索引不到情况下使用临时文件排序查找）、临时表（建立在系统临时文件夹中的表）和表扫描（操作中数据库引擎必须读取表中的所有页以查找符合查询条件的行）。  执行顺序 （5）SELECT DISTINCT TOP() （1）FROM (1-J) &amp;lt;left_table&amp;gt; &amp;lt;join_type&amp;gt; JOIN &amp;lt;right_table&amp;gt; ON &amp;lt;on_predicate&amp;gt; | (1-A) &amp;lt;left_table&amp;gt; &amp;lt;apply_type&amp;gt; APPLY &amp;lt;right_table_expression&amp;gt; AS &amp;lt;alias&amp;gt; | (1-P) &amp;lt;left_table&amp;gt; PIVOT(&amp;lt;pivot_specification&amp;gt;) AS &amp;lt;alias&amp;gt; | (1-U) &amp;lt;left_table&amp;gt; UNPIVOT(&amp;lt;unpivot_specification&amp;gt;) AS &amp;lt;alias&amp;gt; （2）WHERE &amp;lt;where_predicate&amp;gt; （3）GROUP BY &amp;lt;group_by_specification&amp;gt; （4）HAVING &amp;lt;having_predicate&amp;gt; （6）ORDER BY &amp;lt;order_id_list&amp;gt;  操作相关 更改密码 mysql -u root -p &amp;gt; Enter password user mysql; update user set password=passworD(&amp;quot;new pass&amp;quot;) where user=&#39;root&#39;; flush privileges; exit;  允许指定 IP 访问 &amp;gt; mysql -uroot -p; &amp;gt; Yk1qazxsw2 // root &amp;gt; use mysql; &amp;gt; show grants for yunkai_user@110.</description>
+      <description>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-</description>
     </item>
     
   </channel>

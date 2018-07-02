@@ -6,7 +6,6 @@
     <description>Recent content in Springboot on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/springboot/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/springboot.jpa/</guid>
-      <description>[TOC] 文章来源 Spring Data JPA - Reference Documentation
-学习整理 Basic Example Entity @Entity @Table(name = &amp;quot;user&amp;quot;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &amp;quot;user_name&amp;quot;) private long userName; } Repository public interface UserRepository extends CrudRepository&amp;lt;User, Long&amp;gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&amp;lt;User&amp;gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &amp;quot;com.yunkai&amp;quot;) // 指定 Repository 位置 @ComponentScan(basePackages = &amp;quot;com.yunkai&amp;quot;) @EntityScan(basePackages = &amp;quot;com.</description>
+      <description>[TOC] 文章来源 Spring Data JPA - Reference Documentation 学习整理 Basic Example Entity @Entity @Table(name = &amp;#34;user&amp;#34;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &amp;#34;user_name&amp;#34;) private long userName; } Repository public interface UserRepository extends CrudRepository&amp;lt;User, Long&amp;gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&amp;lt;User&amp;gt; findByLastname(String lastname); } Common-Repository</description>
     </item>
     
     <item>
@@ -28,7 +26,7 @@
       <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/</guid>
-      <description>作用 创建和启动新的 Spring 框架项目  特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查  POM 配置 &amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt; &amp;lt;project xmlns=&amp;quot;http://maven.apache.org/POM/4.0.0&amp;quot; xmlns:xsi=&amp;quot;http://www.w3.org/2001/XMLSchema-instance&amp;quot; xsi:schemaLocation=&amp;quot;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;quot;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.midgetontoes&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-simple&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;spring.boot.version&amp;gt;1.1.4.RELEASE&amp;lt;/spring.boot.version&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring.boot.version}&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;build&amp;gt; &amp;lt;plugins&amp;gt; &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-maven-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${spring.boot.version}&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;repackage&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt; &amp;lt;/plugins&amp;gt; &amp;lt;/build&amp;gt; &amp;lt;/project&amp;gt;  启动程序 @RestController @EnableAutoConfiguration public class Application { @RequestMapping(&amp;quot;/&amp;quot;) String home() { return &amp;quot;Hello World!&amp;quot;; } public static void main(String[] args) throws Exception { SpringApplication.</description>
+      <description>作用 创建和启动新的 Spring 框架项目 特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查 POM 配置 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.midgetontoes&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-simple&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;spring.boot.version&amp;gt;1.1.4.RELEASE&amp;lt;/spring.boot.version&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;</description>
     </item>
     
   </channel>

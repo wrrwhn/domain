@@ -6,7 +6,6 @@
     <description>Recent content in Imagemagick on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Thu, 18 Jan 2018 15:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/imagemagick/index.xml" rel="self" type="application/rss+xml" />
@@ -18,12 +17,7 @@
       <pubDate>Thu, 18 Jan 2018 15:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/imagemagick.basic/</guid>
-      <description>[TOC]
-ImageMagick Reference  官网  Anatomy  convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames]  Input FileNames FileName Globbing  Analysis  pattern match about */?  Example
- convert *.jpg images.gif
-Explicit Image Format  Analysis
- specified a explicit image format is better than in the case of the image donot contain a signature of identify format  Example
- convert -size 640x480 -depth 8 rgb:image image.</description>
+      <description>[TOC] ImageMagick Reference 官网 Anatomy convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames] Input FileNames FileName Globbing Analysis pattern match about */? Example convert *.jpg images.gif Explicit Image Format Analysis specified a explicit image format is better than in the case of the image donot contain a signature of identify format Example convert -size 640x480 -depth 8 rgb:image image.png Built-in Image and Pattern Analysis</description>
     </item>
     
   </channel>

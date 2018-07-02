@@ -1,39 +1,78 @@
-baseurl = "http://domain.yqjdcyy.com/"
-title = "好久不见"
-author = "姚清居"
-languageCode = "zh-CN"
+# baseurl = "http://domain.yqjdcyy.com/"
+# title = "好久不见"
+# author = "姚清居"
+# languageCode = "zh-CN"
+# 
+# theme = "hugo-minimalist-theme"
+# 
+# paginate = 10
+# disqusShortname = "yqjdcyy"
+# googleAnalytics = ""
+# 
+# [params]
+#     site_author = "姚清居"
+#     site_description = "好久不见"
+#     location = "Earth"
+#     avatar = "img/profile-image.png"
+#     header_background = "img/desk.jpg"
+#     header_title = ""
+#     copyright = "Powered by [姚清居](http://www.domain.yqjdcyy.com)."
+#     custom_css = []
+#     custom_js  = []
+# 
+#     # Enable gogle analytics by entering your tracking code
+#     google_analytics = ""
+# 
+#     disqusShortname = "yqjdcyy-com"
+# 
+# [social]
+#     # Add your social network accounts to the profile section on the left
+#     # by entering your username. The links to your account will be
+#     # create automatically.
+#     twitter   = ""
+#     facebook  = ""
+#     linkedin  = ""
+#     behance   = ""
+#     dribbble  = ""
+#     instagram = ""
+#     github    = "yqjdcyy"
+#     gplus     = ""
 
-theme = "hugo-minimalist-theme"
 
-paginate = 10
-disqusShortname = "yqjdcyy"
-googleAnalytics = ""
+Title =  "好久不见"
+LanguageCode = "zh-CN"
+BaseUrl = "http://domain.yqjdcyy.com/"
+Theme =  "hugo-theme-next"
+MetaDataFormat =  "yaml"
+CanonifyUrls =  true
+BuildDrafts =  false
+PaginatePath =  "p"
+Paginate = 8
+DisablePathToLower =  false
+HasCJKLanguage = true
+PreserveTaxonomyNames = false
+UglyUrls = false
+PygmentsStyle = "monokai"
+pygmentsCodefences = true
+pygmentsCodefencesGuessSyntax = true
+DefaultContentLanguage = "zh"
 
-[params]
-    site_author = "姚清居"
-    site_description = "好久不见"
-    location = "Earth"
-    avatar = "img/profile-image.png"
-    header_background = "img/desk.jpg"
-    header_title = ""
-    copyright = "Powered by [姚清居](http://www.domain.yqjdcyy.com)."
-    custom_css = []
-    custom_js  = []
+[Params]
+  Introduce = "Programmer & Architect"
+  Description = "好久不见 | 博客 | 软件 | 架构 | Java | Golang"
+  Keywords =  "好久不见,博客,程序,思考,笔记,分享"
+  Subtitle = "生之所向"
+  Imglogo = "/img/logo.png"
+  AuthorImg = "/img/author.jpg"
+  DateFormat = "2006-01-02"
+  YearFormat = "2006年"
+  MonthFormat = "01-02"
+  Fancybox = true
 
-    # Enable gogle analytics by entering your tracking code
-    google_analytics = ""
+[Author]
+  Name = "好久不见"
 
-    disqusShortname = "yqjdcyy-com"
-
-[social]
-    # Add your social network accounts to the profile section on the left
-    # by entering your username. The links to your account will be
-    # create automatically.
-    twitter   = ""
-    facebook  = ""
-    linkedin  = ""
-    behance   = ""
-    dribbble  = ""
-    instagram = ""
-    github    = "yqjdcyy"
-    gplus     = ""
+[[Params.Socials]]
+  Name = "GitHub"
+  Icon = "github"
+  URL = "https://github.com/yqjdcyy"

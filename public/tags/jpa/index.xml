@@ -6,7 +6,6 @@
     <description>Recent content in Jpa on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 23 May 2018 14:00:00 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/jpa/index.xml" rel="self" type="application/rss+xml" />
@@ -18,8 +17,7 @@
       <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</guid>
-      <description>[TOC]
-Setting Default     Type Setting     JPA 2.0 spec      OneToMany Lazy    ManyToMany Lazy    OneToOne Eager    ManyToOne Eager   Hibernate      * Lazy    Docs Hibernate  By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations.</description>
+      <description>[TOC] Setting Default Type Setting JPA 2.0 spec OneToMany Lazy ManyToMany Lazy OneToOne Eager ManyToOne Eager Hibernate * Lazy Docs Hibernate By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations. These defaults make sense for most associations in the majority of applications. Jpa Spec JPA Spec assumes that in general most of the applications will require the singleton relations by default be eager,</description>
     </item>
     
   </channel>

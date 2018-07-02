@@ -1,0 +1,635 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+	<meta name="generator" content="Hugo 0.30.2" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>好久不见 - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="好久不见">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="好久不见 - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    <link rel="alternate" href="http://domain.yqjdcyy.com/index.xml" title="好久不见" type="application/rss+xml" />
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: false, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+    
+ <section id="posts" class="posts-expand">
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/" itemprop="url">
+        PDF部分页面转图片异常
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-03-04">
+    2018-03-04
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">137 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    [TOC] Error java.lang.IllegalArgumentException: Numbers of source Raster bands and source color space components do not match at java.awt.image.ColorConvertOp.filter(ColorConvertOp.java:482) at com.sun.imageio.plugins.jpeg.JPEGImageReader.acceptPixels(JPEGImageReader.java:1268) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImage(Native Method) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1236) at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039) at javax.imageio.ImageReader.read(ImageReader.java:939) at org.apache.pdfbox.filter.DCTFilter.decode(DCTFilter.java:85) at org.apache.pdfbox.cos.COSInputStream.create(COSInputStream.java:69) at org.apache.pdfbox.cos.COSStream.createInputStream(COSStream.java:162) at org.apache.pdfbox.pdmodel.common.PDStream.createInputStream(PDStream.java:235) at org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.&lt;init&gt;(PDImageXObject.java:125) at org.apache.pdfbox.pdmodel.graphics.PDXObject.createXObject(PDXObject.java:70) at org.apache.pdfbox.pdmodel.PDResources.getXObject(PDResources.java:409) at org.apache.pdfbox.contentstream.operator.graphics.DrawObject.process(DrawObject.java:53) at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:838) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:495) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:469) at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:150) at org.apache.pdfbox.rendering.PageDrawer.drawPage(PageDrawer.java:206) at org.apache.pdfbox.rendering.PDFRenderer.renderImage(PDFRenderer.java:145) at org.apache.pdfbox.rendering.PDFRenderer.renderImageWithDPI(PDFRenderer.java:94) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:72) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:88) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:93) at com.yunkai.component.resource.service.impl.ConvertServiceImpl.pdf2Image(ConvertServiceImpl.java:171) at com.yunkai.training.commons.resource.service.impl.LogicConvertServiceImpl.handlerPDF(LogicConvertServiceImpl.java:319) at
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/" itemprop="url">
+        小丸压缩视频转M3U8异常
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-03-03">
+    2018-03-03
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">341 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    [TOC] 异常反馈 2 frames left in the queue on closing Command 原始转换请求转换语句 &gt; /usr/local/ffmpeg/bin/ffmpeg -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 -vcodec libx264 -r 24 -vf scale=640:360,pad=640:360:0:0:black -acodec aac -ar 22050 -ab 24k -map 0 -f ssegment -segment_format mpegts -segment_list /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/index.m3u8 -segment_time 10 /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/%04d.ts Info /usr/local/ffmpeg/bin/ffprobe -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 客户使用「小丸」进行视频压缩，
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/" itemprop="url">
+        调酒
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-03-03">
+    2018-03-03
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">106 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    [TOC] Mojito 莫吉托 材料 白郎姆酒 40ml 青柠檬汁 30ml 可用屈臣氏青柠汁替换 薄荷叶 6片 白糖 2茶匙 苏打水 可用屈臣氏苏打水替换 冰块 杯子 海波杯 做法 薄荷叶+ 白糖+ 青柠（檬
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" itemprop="url">
+        富爸爸穷爸爸
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-22">
+    2018-02-22
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">2137 字 ~5分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    富爸爸穷爸爸 课程 富爸爸，穷爸爸 我怎样才能付得起？ 贫穷和破产的区别是：破产是暂时的，而贫穷是永久的。 富人不为钱工作 如果你不能下定决心，就永远也
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E7%8E%8B%E5%AD%90/" itemprop="url">
+        小王子
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-22">
+    2018-02-22
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">292 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    小王子(65周年纪念版) 旅伴 玫瑰 国王 地理学家 商人 酒鬼 自高自大的人 玫瑰 标注 如果有一个人爱上在这亿万颗星星中仅有的一朵花，这人望着星空的时候，就
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E7%8E%8B%E5%AD%90/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/" itemprop="url">
+        阅读清单-2018
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-12">
+    2018-02-12
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">142 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    技术 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 Java7&amp; 8 深入Java虚拟机 算法 思考 凯文·凯利 失控 沈君山 浮生三记 浮生再记 丁文江 少数人的责任 黄仁宇 万历十
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/" itemprop="url">
+        知乎架构变迁史
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-12">
+    2018-02-12
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">783 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    知乎架构变迁史 引言 You jump off a cliff and you assemble an aeroplane on the way down. - Reid Hoffman 阶段 上线 选型 Python.Tornado Python 简单强大、快速上手、开发效率高、社区活跃 Tornado 支持异步、适合实时Comet应
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E6%B5%B7%E5%A7%86%E7%AB%8B%E5%85%8B%E6%80%A5%E6%95%91%E6%B3%95/" itemprop="url">
+        海姆立克急救法
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-11">
+    2018-02-11
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">641 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    海姆立克急救法 参考 海姆立克急救法 简介 海姆立克急救法（Heimlich Maneuver），又名“海氏急救法” 美国医师亨利·海姆力克（Henry
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/%E6%B5%B7%E5%A7%86%E7%AB%8B%E5%85%8B%E6%80%A5%E6%95%91%E6%B3%95/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+<nav class="pagination">
+    <a class="extend prev" rel="prev" href="http://domain.yqjdcyy.com/p/8/"><i class="fa fa-angle-left"></i></a>
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+    <a class="extend next" rel="next" href="http://domain.yqjdcyy.com/p/10/"><i class="fa fa-angle-right"></i></a>
+</nav>
+
+
+
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
+
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
+
+    </section>
+    
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>

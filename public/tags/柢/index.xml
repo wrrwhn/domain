@@ -6,7 +6,6 @@
     <description>Recent content in 柢 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%9F%A2/index.xml" rel="self" type="application/rss+xml" />
@@ -18,9 +17,7 @@
       <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.wukong/</guid>
-      <description>[TOC]
-悟空引擎使用 参考  使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur  介绍 内部结构  主协程，用于收发用户请求 分词器（segmenter）协程，负责分词 索引器（indexer）协程，负责建立和查找索引表 排序器（ranker）协程，负责对文档评分排序  流程 索引  文档加入索引请求 主协程通过 channel 将分要分词的文本发送给分词协程 该协程将文本分词后通过另一信道发送给索引器协程 索引器协程建立从搜索键到文档的反向索引，并保存在内存中  搜索  主协程获取用户搜索请求，将搜索词分词后通过信道传递给索引器 索引器查找每个搜索键对应文档，并进行逻辑归并求交集后，得到精简文档列表，并通过信道传递给排序器 排序器对文档进行评分、筛选和排序，并通过指定信道返回主协程以返回给用户  结构  core data docs engine example storate testdata types utils  使用  基本
-searcher = engine.Engine{} searcher.Init(types.EngineInitOptions{ IndexerInitOptions: &amp;amp;types.IndexerInitOptions{ IndexType: types.DocIdsIndex, }, SegmenterDictionaries: &amp;quot;./dict/dictionary.txt&amp;quot;, StopTokenFile: &amp;quot;./dict/stop_tokens.txt&amp;quot;, }) defer searcher.Close() searcher.IndexDocument(docId, types.DocumentIndexData{Content: text1}, false) searcher.</description>
+      <description>[TOC] 悟空引擎使用 参考 使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur 介绍 内部结构 主协程，用于收发用户请求 分词器（seg</description>
     </item>
     
   </channel>

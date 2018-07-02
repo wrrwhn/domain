@@ -6,7 +6,6 @@
     <description>Recent content in Kafka on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <copyright>Powered by [姚清居](http://www.domain.yqjdcyy.com).</copyright>
     <lastBuildDate>Wed, 29 Nov 2017 22:07:46 +0800</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
@@ -18,7 +17,7 @@
       <pubDate>Wed, 29 Nov 2017 22:07:46 +0800</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/kafka/</guid>
-      <description>Kafka 参考  Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer that throws SerializationException can lead to infinite loop How to find the kafka version in linux  简介  Linkedin 开发，Scala编写 特点  解耦 水平扩展 高吞吐率  缓冲 异步通信  可恢复性  冗余，确保安全保存至使用完毕后 处理消息进程宕机，仍可于启动后重新接收处理  顺序保证   架构 名词解析  Broker  集群中的服务器名称 支持水平扩展的节点  Topic  集群消息中类别  Partition  Topic 下包含一至多个 Partition  Producer  生产者 将消息发布至 Kafka broker  Consumer  消费者 向 Kafka broker 读消息的客户端  Consumer Group  各 Consumer 属于特定 Group 不指定时，则属于默认 Group   结构拓扑  整体拓扑    分析  kafka 通过 Zoopkeeper 管理集群配置  选举 Leader Consumer Group 变更时的 ReBalance  物理上 Topic 对应一至多个 Partition  每个 Partition 在物理上对应一个文件夹  消息 索引  结构  root 4k topic1-1 - 日志文件 root 4k topic1-2 .</description>
+      <description>Kafka 参考 Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer</description>
     </item>
     
   </channel>

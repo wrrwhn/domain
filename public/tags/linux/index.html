@@ -1,375 +1,544 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Linux &middot; 好久不见</title>
-        <meta name="author">
-        <meta name="description" content="好久不见">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
-        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
-        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
-        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
-        
-        <style>
-        .site-header h2 .logo {
-        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
-        }
-        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          .site-header h2 .logo {
-            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
-        }}
-       .site-header {
-         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
-         z-index: -1;
-        }
-        </style>
-    </head>
-    <body>
-        
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2></h2>
-          </div>
-        </header>
-
-<div class="container clearfix">
-    <main role="main" class="content">
-        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-        
-        
-            <article class="post">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Linux - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-<h1><a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User">Linux.User</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.21">2018.06.21</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
+    <meta property="og:title" content="Linux">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Linux - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    <link rel="alternate" href="http://domain.yqjdcyy.com/tags/linux/index.xml" title="好久不见" type="application/rss+xml" />
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
     
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: false, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left   ">
+    <div class="headband"></div>
 
-</span>
-</footer>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
 
-    <p>[TOC]
-参考  创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录shell环境  指令 adduser  DESCRIBE  为创建的用户指定主目录、系统 shell 版本，并要求输入密码  主动调用 /etc/adduser.conf 默认创建 /home/user.name目录   FORMAT  adduser &lt;user.name&gt;  OPTIONS  &ndash;home  指定创建主目录的路径，默认是在 /home 目录下创建用户名同名的目录，这里可以指定； 如果主目录同名目录存在，则不再创建，仅在登录时进入主目录。  &ndash;quiet  即只打印警告和错误信息，忽略其他信息。  &ndash;debug  定位错误信息。  &ndash;conf  在创建用户时使用指定的 configuration 文件。  &ndash;force-badname  默认在创建用户时会进行 /etc/adduser.conf 中的正则表达式检查用户名是否合法  如果想使用弱检查，则使用这个选项 如果不想检查，可以将 /etc/adduser.conf 中相关选项屏蔽     useradd  DESCRIBE  默认无密码、目录和指定 shell 版本  FORMAT  useradd [option]   OPTIONS  c &lt;备注&gt;  加上备注文字。备注文字会保存在 passwd 的备注栏位中；  d &lt;登入目录&gt;  指定用户登入时的启始目录；  D  变更预设值；  e &lt;有效期限&gt;  指定帐号的有效期限；  f &lt;缓冲天数&gt;  指定在密码过期后多少天即关闭该帐号；  g &lt;群组&gt;  指定用户所属的群组；  G &lt;群组&gt;  指定用户所属的附加群组；  m  自动建立用户的登入目录；  M  不要自动建立用户的登入目录；  n  取消建立以用户名称为名的群组；  r  建立系统帐号；  s&lt;shell&gt;  指定用户登入后所使用的shell；  u&lt;uid&gt;  指定用户id。 ID 值尽量 &gt; 500，以避免冲突   EXAMPLE  useradd tmpuser -c &lsquo;useradd.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.user/" title="Linux.User"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java">Linux.Java</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.20">2018.06.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp; JDK using a script  安装  查询  Java SE Downloads 使用 Oracle 账号登录  下载  获取下载链接  jdk-8u171-linux-x64.rpm  F12 获取 Cookie 「gpw_e24」「oraclelicense」 拼链接调用  wget &ndash;no-cookies &ndash;no-check-certificate &ndash;header &quot;Cookie: gpw_e24=http%3A%2F%2Fwww.oracle.com%2Ftechnetwork%2Fjava%2Fjavase%2Fdownloads%2Fjdk8-downloads-2133151.html;oraclelicense=accept-securebackup-cookie&quot; &quot;<a href="http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&quot;">http://download.oracle.com/otn-pub/java/jdk/8u171-b11/512cd62ec5174c3487ac17c61aaa89e8/jdk-8u171-linux-x64.rpm&quot;</a>   安装  sudo yum localinstall jdk-8u171-linux-x64.rpm -y  检查  java -version&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.java/" title="Linux.Java"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux">Hello.Linux</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.02">2018.05.02</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-进度 Linux 基础文件  14&frasl;30
-Linux 架站文件 0/ 31
-Linux 安全 0/ 1
-Solaris 0/ 1
-  概述 系统特点  开源免费、稳定性 安全性 处理多并发性能好  系统管理事项(kernel)  系统呼叫接口 行程管理：多任务 内存管理：控制内存，虚拟内存 档案系统管理：数据I/O及NTFS档案格式硬盘 装置驱动     系统演化  Unix - 1973  IBM AIX SUM SOLARIS HP HP UNIX 伯克利分校 MINIX  LINUS LINUX - 1994  REDHAT S.U.S.E 红旗     VMWare安装 学习流程  Linux平台开发，含vi,gcc,gdb,make,jdk,tomcat,mysql和linux基本操作 加厚c语言功底（c专家编程）或java语言 学习 Unix 环境高级编程（Unix环境高级编程） Linux应用系统开发或嵌入式开发  推荐书籍  《鸟哥的Linux私房菜》 《Linux编程从入门到精通》 《Linux内核完全剖析》  常用概念 安装  yum  进行软件包管理安装，一般用于自动从中央仓库下载安装指令 yum -y install make|patch|ntp  make  主要针对tar.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.linux/" title="Hello.Linux"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab">Linux.Crontab</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.01.17">2018.01.17</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Linux.Crontab 参考  每天一个linux命令（50）：crontab命令  简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
- 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
-SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&quot;&quot; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily   用户任务调度
- 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig &ndash;list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &lt;user&gt;  调用指定用户 &lt;user&gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.crond/" title="Linux.Crontab"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof">Linux.Lsof</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.12.11">2017.12.11</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &lt;进程名&gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &lt;文件号&gt;  列出占用该文件号的进程  +d &lt;目录&gt;  列出目录下被打开的文件  +D &lt;目录&gt;  递归列出目录下被打开的文件  -n &lt;目录&gt;  列出使用NFS的文件  -i &lt;条件&gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &lt;进程号&gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.lsof/" title="Linux.Lsof"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存">Linux 单TCP连接占用最少内存</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/tcp">tcp</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Linux 单 TCP 连接占用最少内存 结构  错  TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control block）的 2KB，一共是 10KB。  测试  &gt;= 2944 B 没有数据时，接收、发送缓冲区是没有数据的   TCP 解析 TCP  三次握手  struct socket_alloc  包含 struct socket/ struct inode 作用于连接 VFS 和 tcp_sock  VFS | virtual File System 让open()、read()、write()等系统调用不用关心底层的存储介质和文件系统类型就可以工作的粘合层    socket 文件缓冲  struct dentry  struct file *  理解对应缓冲时的文件    进程调用  struct socket_wq  wait queue，主要用于阻塞 IO 时挂起当前线程    实测 - Least  基本消耗 | struct | size | slab cache name | | &mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash; | | file | 256 | &ldquo;filp&rdquo; | | dentry | 192 | &ldquo;dentry&rdquo; | | socket_alloc | 640 | &ldquo;sock_inode_cache&rdquo; | | tcp_sock | 1792 | &ldquo;TCP&rdquo; | | socket_wq | 64 | &ldquo;kmalloc-64&rdquo; | | inet_bind_bucket | 64 | &ldquo;tcp_bind_bucket&rdquo; | | epitem | 128 | &ldquo;eventpoll_epi&rdquo; | | tcp_request_sock | 256 | &ldquo;request_sock_TCP&rdquo; |&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/" title="Linux 单TCP连接占用最少内存"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium">Linux.Vimium</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.16">2017.11.16</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>Vimium 快捷键指南 页面导航  j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部
- r 刷新界面
- yy 复制当前界面 URL
- p 在当前标签页打开剪贴板中的 URL
- gu 跳转至当前 URL 的上一层
- <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/article/15/1231/">http://www.phperz.com/article/15/1231/</a>  gU 跳转至当前 URL 的最高层
- <a href="http://www.phperz.com/article/15/1231/179223.html">http://www.phperz.com/article/15/1231/179223.html</a> <a href="http://www.phperz.com/">http://www.phperz.com/</a>  f 在当前标签页打开此标签页中的一个链接
-  使用 Vomnibar  o 搜索书签和历史记录 T 搜索已打开标签页 b 搜索书签  使用查询  / 进入查询模式 n 切换至下一个匹配值处  标签操作  gt 移动至下一标签页 g[\d] 跳转至指定标签页 yt 复制当前标签页 x 关闭当前标签页 X 恢复已关闭的标签页  其它  ?&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.vimium/" title="Linux.Vimium"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.chown/" title="Linux.Chown">Linux.Chown</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-chown 格式  chown [option]* [user[:[group]<em>]] [file|group]</em>
-必要参数 -c
- 显示更改的部分的信息  -f
- 忽略错误信息  -h
- 修复符号链接  -R
- 处理指定目录以及其子目录下的所有文件  -v
- 显示详细的处理信息  -deference
- 作用于符号链接的指向，而不是链接文件本身
-选择参数  &ndash;reference=&lt;目录或文件&gt;
- 把指定的目录/文件作为参考，把操作的文件/目录设置成参考文件/目录相同拥有者和群组  &ndash;from=&lt;当前用户：当前群组&gt;
- 只有当前用户和群组跟指定的用户和群组相同时才进行改变  &ndash;help
- 显示帮助信息  &ndash;version
- 显示版本信息
-实例  chown -R appuser:appuser yao
- 将 root 权限下文件夹分配给 appuser 用户&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.chown/" title="Linux.Chown"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.git/" title="Linux.Git">Linux.Git</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/git">git</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  安装 Git 生成 SSH 公钥  流程  INSTALL  yum install git-core  SSH  CHECK  less cd ~/.ssh  CREATE  ssh-keygen&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.git/" title="Linux.Git"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/linux.scp/" title="Linux.Scp">Linux.Scp</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.11.15">2017.11.15</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/linux">linux</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-参考  <a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html</a>  特点  scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷  rsync 快一点，但小文件多时会导致硬盘 I/O 非常高   格式  scp [参数] [原路径] [目标路径]  参数  -1  强制scp命令使用协议ssh1  -2  强制scp命令使用协议ssh2  -4  强制scp命令只使用IPv4寻址  -6  强制scp命令只使用IPv6寻址  -B  使用批处理模式（传输过程中不询问传输口令或短语）  -C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  -p  留原文件的修改时间，访问时间和访问权限。  -q  不显示传输进度条。  -r  递归复制整个目录。  -v  详细方式显示输出。 scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。  -c  cipher 以cipher将数据传输进行加密，这个选项将直接传递给ssh。  -F  ssh_config 指定一个替代的ssh配置文件，此参数直接传递给ssh。  -i  identity_file 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。  -l  limit 限定用户所能使用的带宽，以Kbit/s为单位。  -o  ssh_option 如果习惯于使用ssh_config(5)中的参数传递方式，  -P  port 注意是大写的P, port是指定数据传输用到的端口号  -S  program 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。   事例  scp -r root@10.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/linux.scp/" title="Linux.Scp"> &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-
-	<p class="counter"> 1  3</p>
-
-
-	
-	<a class="btn older" href="/tags/linux/page/2/" title=""> &raquo;</a>
-	
-
-</nav>
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
 </div>
 
-    </main>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-    <aside class="author">
-  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
-  <p class="name"> 
-  <strong>姚清居</strong></p>
-  <p class="address">Earth</p>
-  <p class="link"></p>
-  <ul class="social">
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >Linux
+    <small>标签</small>
+    </h2>
+</div>
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.user/" itemprop="url">
+            <span itemprop="name">Linux.User</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-21"
+              content="06-21" >
+          06-21
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.java/" itemprop="url">
+            <span itemprop="name">Linux.Java</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-20"
+              content="06-20" >
+          06-20
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.linux/" itemprop="url">
+            <span itemprop="name">Hello.Linux</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-02"
+              content="05-02" >
+          05-02
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.crond/" itemprop="url">
+            <span itemprop="name">Linux.Crontab</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-01-17"
+              content="01-17" >
+          01-17
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2017">2017</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.lsof/" itemprop="url">
+            <span itemprop="name">Linux.Lsof</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-12-11"
+              content="12-11" >
+          12-11
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.vimium/" itemprop="url">
+            <span itemprop="name">Linux.Vimium</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-16"
+              content="11-16" >
+          11-16
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux-%e5%8d%95tcp%e8%bf%9e%e6%8e%a5%e5%8d%a0%e7%94%a8%e6%9c%80%e5%b0%91%e5%86%85%e5%ad%98/" itemprop="url">
+            <span itemprop="name">Linux 单TCP连接占用最少内存</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-16"
+              content="11-16" >
+          11-16
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.scp/" itemprop="url">
+            <span itemprop="name">Linux.Scp</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-15"
+              content="11-15" >
+          11-15
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.git/" itemprop="url">
+            <span itemprop="name">Linux.Git</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-15"
+              content="11-15" >
+          11-15
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.chown/" itemprop="url">
+            <span itemprop="name">Linux.Chown</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-11-15"
+              content="11-15" >
+          11-15
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.xargs/" itemprop="url">
+            <span itemprop="name">Linux.XArgs</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-16"
+              content="10-16" >
+          10-16
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.nginx/" itemprop="url">
+            <span itemprop="name">Linux.Nginx </span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-10-04"
+              content="10-04" >
+          10-04
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.grep/" itemprop="url">
+            <span itemprop="name">Linux.Grep</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-09-20"
+              content="09-20" >
+          09-20
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.run/" itemprop="url">
+            <span itemprop="name">Linux.Run</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-28"
+              content="08-28" >
+          08-28
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux%e7%9a%84%e7%9b%ae%e5%bd%95%e4%b8%8e%e6%9d%83%e9%99%90/" itemprop="url">
+            <span itemprop="name">Linux 的目录与权限</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2017-08-25"
+              content="08-25" >
+          08-25
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+<nav class="pagination">
     
+    
+        
+        
+          <span class="page-number current">1</span>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/linux/p/2/">2</a>
+        
+        
+    
+    <a class="extend next" rel="next" href="http://domain.yqjdcyy.com/tags/linux/p/2/"><i class="fa fa-angle-right"></i></a>
+</nav>
 
 
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
 
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
 
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
 
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
 
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
 
-
-
-
-
-
-<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
-
-
-
-
-<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
-
-  </ul>
-  <br><br>
+    </section>
+    
+  </div>
 </aside>
 
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>
-<footer class="main-footer">
-  <div class="container clearfix">
-        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
   </div>
-</footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+  
 
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
 
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>
 </html>
-

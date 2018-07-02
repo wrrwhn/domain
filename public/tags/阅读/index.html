@@ -1,382 +1,545 @@
-<!doctype html>
-<html class="no-js">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>阅读 &middot; 好久不见</title>
-        <meta name="author">
-        <meta name="description" content="好久不见">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="generator" content="Hugo 0.30.2" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="alternate" type="application/rss+xml" title="好久不见" />
-        <link href="http://domain.yqjdcyy.com/post/index.xml" rel="feed" type="application/rss+xml" title="好久不见" />
-        <link href='//fonts.googleapis.com/css?family=Roboto:400,300,700|Noto+Serif:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/styles.css">
-        <link rel="icon" href="http://domain.yqjdcyy.com/favicon.ico">
-        <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/apple-touch-icon.png" />
-        <link rel="stylesheet" href="http://domain.yqjdcyy.com/css/highlightjs/monokai.css">
-        <script src="http://domain.yqjdcyy.com/js/vendor/modernizr-2.8.0.min.js"></script>
-        
-        <style>
-        .site-header h2 .logo {
-        background: url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat 0 0;
-        }
-        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-          .site-header h2 .logo {
-            background-image: url(http://domain.yqjdcyy.com/img/desk.jpg);
-        }}
-       .site-header {
-         background: #2a373d url(http://domain.yqjdcyy.com/img/desk.jpg) no-repeat center center;
-         z-index: -1;
-        }
-        </style>
-    </head>
-    <body>
-        
-        <header class="site-header">
-          <div class="transparent-layer">
-              <h2></h2>
-          </div>
-        </header>
-
-<div class="container clearfix">
-    <main role="main" class="content">
-        <a class="btn home" href="http://domain.yqjdcyy.com/" title="">&laquo; </a>
-        
-        
-            <article class="post">
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>阅读 - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-<h1><a href="http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/" title="追诉时效">追诉时效</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.27">2018.06.27</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88">追诉时效</a>
-        
+    <meta property="og:title" content="阅读">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="阅读 - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
+    <link rel="alternate" href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/index.xml" title="好久不见" type="application/rss+xml" />
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
     
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: false, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left   ">
+    <div class="headband"></div>
 
-</span>
-</footer>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
 
-    <p>[TOC]
-追诉时效 民事时效  民事案件是有诉讼时效的，在诉讼 时效之内未起诉，超过时效之后再起诉，就会 丧失胜诉权 &gt; 法院会给你立案，法官会开庭审理 &gt;&gt; 在对方不主张原告超过诉讼时效的情况下，法官不会主动适用时效规定判决原告败诉。
-但如果被告主张原告超过诉讼时效的，不管原告的主张多么合情合理，证据多么充分，都不会胜诉的。
- 法律不保护躺在权利上睡觉的人
-  刑事时效 设置  《规范刑法学》 &gt; 刑法上的时效，是指刑事法律规定的国家对犯罪人行使刑事追诉权和刑罚执行权有效期限的制度。
-在有效期内，国家如果不行使刑事追诉权和刑罚执行权，超过期限刑事追诉权和刑罚执行权即归于消灭。对犯罪人就不能再追诉或者执行刑罚。
-  刑事司法中，超过追诉时效的，追诉权、求刑权、审判权及行刑权 一并消灭，不 能 再 对犯罪人启动刑事 诉讼 程序  原则 稳定  刑罚的 目的来说，刑罚是改造犯罪人，令其弃恶从善、回归社会  如果一个人在犯罪之后，很多年都不再有任何违法犯罪行为，时间已经证明了这个人已经弃恶从善，不会再对社会有任何危害，将其投入监狱恐怕没有好处只有坏处了  刑罚有一般预防和特殊预防两个 作用
- 特殊预防是指将犯罪人本人关起来，使他不得继续犯罪 一般预防是指通过惩罚犯罪的人对社会公众进行警告  犯罪侵害的社会秩序，多年修复后已然平复、稳定
- 翻旧案容易引发新的社会矛盾，不利于社会稳定   省钱  在证据搜集、人员抓捕等等事宜上需花费更加巨大的人力物力 成本，占用更多的司法资源  这样的情况下还 容易产生冤假错案，得不偿失   期限  【追诉时效期限】犯罪经过下列期限不再追诉： &gt; (一)法定最高刑为不满五年有期徒刑的，经过五年;
-&gt; (二)法定最高刑为五年以上不满十年有期徒刑的，经过十年;
-&gt; (三)法定最高刑为十年以上有期徒刑的，经过十五年;&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/" title="追诉时效"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E8%B7%B3%E5%87%BA%E7%A0%81%E5%86%9C%E8%81%8C%E4%B8%9A%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="跳出码农职业的生命周期">跳出码农职业的生命周期</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.11">2018.06.11</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E8%81%8C%E4%B8%9A%E8%A7%84%E5%88%92">职业规划</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-跳出码农职业的“生命周期” 参考  The one essential skill that will set you apart from other developers - Isabel Nyo   目标  培养像CEO一样思考和行动的能力  只有专业技能在职场中是走不远的   细节 了解公司衡量商业成功的标准  处于不同发展阶段的公司会有不同的标准衡量商业成功与否  初创公司成立早期，成功的衡量指标就是订阅客户数 上市公司的指标则会是它们的股价 有些公司把员工跳槽率看作指标   有效利用数据  用数据支持你的发现和解决方案 示例  CEO 角度  公司不偿还科技债务，它对企业有什么影响  员工角度  通过数据分析，让 CEO 意识到这会影响企业关键服务的可用性和数据点的可移植性，团队就会把清偿科技债务看作重要事项    学会委派工作  交给其他人完成的琐碎任务上，他还能把多余的时间精力投放在公司规划和发展策略研究上 学会适当地“放手”，和同事们多交流，分担工作中的困难，共享经验，你将很快突破工作上的瓶颈  着眼于长远发展  无论对风险的偏好如何，都必须做得比以前更优秀  成为正能量源  尤其在企业面对难关时，充分利用每个人的才干，为工作环境提供积极向上的氛围&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E8%B7%B3%E5%87%BA%E7%A0%81%E5%86%9C%E8%81%8C%E4%B8%9A%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" title="跳出码农职业的生命周期"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%88%AB%E7%8B%AC%E8%87%AA%E7%94%A8%E9%A4%90/" title="别独自用餐">别独自用餐</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.08">2018.06.08</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E7%A4%BE%E4%BA%A4">社交</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-别独自用餐 《别独自用餐》  85%的成功来自高效的社交能力 表面在讲机巧的人脉运用术，实际上说的却是朴实的为人处世之道。  社交的本质  标签
- 热衷见名人、见大佬，喜欢在饭局上晒合影、讲内幕。他们常把牛逼的兄弟挂在嘴边，听起来气势十足。
- 无意于结交人脉，一心只在埋头奋斗。他们心里想的是，“我不必费心勾搭谁，等我强了，自然会有大把的人脉资源
-  思考
- 上例标签都偏离了社交的本质。 社交源自交换，互相关心 富人最强大的力量来自他们的社交圈  而穷人，不仅穷在没钱，还穷在没办法接触到那些可以帮助他们成功的人。   示例 &gt; 在俱乐部里，我是波兰特太太的球童。我事无巨细，努力让波兰特太太赢得每一场比赛。每场比赛的当天早上，我都会走遍整座球场，找到每一处果岭，测试球在草地上滚动的速度和方向。她于是战无不胜，也开始在她的朋友面前夸我。 我在球场上帮她，她在生活上帮我
- 本质
- 首先你要关心他人  多数人在人际交往中都是在关心自己。 关心他人的人，是凤毛麟角。但往往也是这些人，更能成功。    如何关心  示例 &gt;一朋友跟法拉奇聊天，说自己正考虑在洛杉矶买房。
-法拉奇听完第一反应就是“我有没有朋友可以帮忙？”，然后顺手就拨通洛杉矶一位中介的电话，当场介绍他俩认识。
- 一家小型背包公司产品销不出去，公司的CEO去找法拉奇寻求建议（此前两人并不相熟）。法拉奇本可以提些建议了事，可他却先后找来了锐步公司的营销主管、《快公司》的编辑，一起商量营销策略，最终盘活了公司。十年后，这家小公司被收购时，价值1.1亿美元。
- 辩证
- 从不吝啬分享自己的人脉。  “不要等着别人请你帮忙。直接帮吧。”  人际交往并不是随机的，而是与人生目标紧密相连。  行动
- 计划
- 列出你三年后的目标，并拆分成年度目标、季度目标； 列出完成目标所需的人、事物、地点； 找到一个最佳方案，接近那些有助于达成目标的人。  示例  比如三年后，你想当一名老板，那么，也许三个月后，你就要确定从事的领域了。依照这个短期目标， 你就要找到身边的老板、相关行业的从业者，来了解相应情况。    如何结交  机会&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%88%AB%E7%8B%AC%E8%87%AA%E7%94%A8%E9%A4%90/" title="别独自用餐"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" title="Java开发必须掌握的线上问题排查命令">Java开发必须掌握的线上问题排查命令</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.06.05">2018.06.05</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/java">java</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Java开发必须掌握的线上问题排查命令 常用命令 JPS  功能  显示进程的 PID  示例  jps jps -v pid  显示指定 PID 对应程序的虚拟机参数  jps -m pid  显示程序启动参数  jps -l pid  显示主类的绝对路径    JSTAT  功能  显示进程中类装载/ 内存/ 垃圾回收及 JIT 编译等数据  示例  jstat -gc [PID] [milliseconds] [times]  查询指定[PID]进程的垃圾回收情况, 每[milliseconds]毫秒一次,共[times]次  jstat -gccause  显示上次 GC 的原因  jstat -calss  显示类装载、类卸载、总空间以及所消耗的时间     JMAP  功能  生成堆栈快照  示例  jmap -heap [PID]  查看 java 堆的使用情况  jmap -histo [PID]  查看堆内存中的对象数量及大小  jmap -histo:live [PID]  JVM会先触发 gc，然后再统计信息  jmap -dump:format=b,file=[file] [PID]  将内存使用的详细情况输出到文件 [file] 中    JHAT  功能  配合 JMAP 使用,分析堆栈文件  示例  jhat heapDump  解析Java堆转储文件,并启动一个 web server    JSTACK  功能  生成当前的线程快照  示例  <code>jstack [PID]  查看线程情况</code>jstack -F [PID]  正常输出不被响应时，使用该指令  `jstack -l [PID]  除堆栈外，显示关于锁的附件信息    问题定位 频繁 GC 或内存溢出  使用 jps 查看线程ID 使用 jstat -gc [PID] [MS] [TIME] 查看gc情况，一般比较关注 PERM区 的情况，查看 GC的 增长情况 使用 jstat -gccause 额外输出上次GC原因 使用 jmap -dump:format=b,file=heapDump [PID] 以*生成堆转储文件** 使用 jhat 或者可视化工具（Eclipse Memory Analyzer 、IBM HeapAnalyzer）分析堆情况 结合代码解决内存溢出或泄露问题  死锁  使用jps查看线程ID 使用jstack [PID] 以查看线程情况&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/" title="Java开发必须掌握的线上问题排查命令"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A9%E5%AD%90/" title="我们的孩子">我们的孩子</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.29">2018.05.29</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%99%E8%82%B2">教育</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-阅读 《我们的孩子》  哈佛大学教授罗伯特·帕特南通过大量的采访和数据例证，生动展现了美国的教育现状，以及美国社会半个世纪来日益拉大的阶级鸿沟。  参考  如果说中美存在几十年的发展时间差，那么帕特南笔下的美国现状，有可能就是我们和我们的孩子即将面对的明天。  思考  在一个发展成熟的社会里，真的寒门难再出贵子吗？ 未来我们的孩子，将要面临怎样的阶层状况？ 如果真的有所谓的阶层固化，我们现在该怎么教育孩子？留给我们的时间还有多少？  寒门难出贵子 经济制约  教育花费  美国宿舍一个月税前1400刀（dollar） 宿舍自助餐早餐11刀 午餐15刀 晚餐18刀 最便宜的二手课本要80刀 贵的是200以上 每年学费6万刀，折合超过40万人民币  美国人平均年薪  5万  极为有限的经济水平制约着个人的发展，而更为可怕的是，穷人之所以难以通过教育改命，还在于他们身上背负的无形负担。  阶级隔离  示例
- 美国  学校距离不远，政府投入相当，学生经费差不多，师资水平也难分上下 A校的美国高考SAT成绩常年位于全国前列，B校却常年垫底  中国  北京五道口学区房单价破10万元 有些家长希望孩子“快乐就好”的同时，清华附小的学生已开始试着用大数据研究苏轼 甚至中产内部都出现了教育鄙视链：绝不让娃和没英文名、看喜羊羊的孩子做朋友 不允许学费五万的幼儿园招收学费三万的学生   原因
- 学校档次不同，源于家长的阶层不同  阶级隔离
- 恶性循环  收入的不平等造成  居住隔离（住不一样的社区） 教育隔离（上不一样的学校）， 交友和婚姻上（只在本阶层内交友、寻找伴侣）  孩子出生后就在和父辈一样的环境中成长 上同样层次的学校    教育再也不是穷人改变命运的阶梯，而成了富人维护现有秩序的工具   出路 参考  富人爸爸厄尔&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A9%E5%AD%90/" title="我们的孩子"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%A4%8D%E5%88%BB%E4%BA%BF%E4%B8%87%E4%B8%AD%E9%82%A3%E4%B8%80%E5%B9%95%E8%AE%A9%E4%BA%BA%E5%9E%82%E6%B6%8E%E6%AC%B2%E6%BB%B4%E7%9A%84%E9%A5%AD%E5%B1%80/" title="复刻亿万中那一幕让人垂涎欲滴的饭局">复刻亿万中那一幕让人垂涎欲滴的饭局</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.17">2018.05.17</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%9B%85%E6%96%87%E9%82%91">雅文邑</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-复刻美剧《亿万》中那一幕让人垂涎欲滴的饭局 剧情  《亿万》 SE03-06
- 三个大老爷们的饭局，却是坐在黑暗的房间里，点着蜡烛，还要把脑袋蒙住，就为了吞吃一只小小鸟儿  蒙头仪式
- 食客头顶餐巾 食用时放下蒙面，不用餐具而整只下口 除了不让人看见不雅的进食方式之外，更能笼住香气，甚至制造一种独食的小天地，放大感官享受   介绍  雅文邑浸圃鹀（pǔ wú）  评价  独特之处首先在于其肥厚油脂的香气 经过催肥而活生生在雅文邑中浸泡而死的圃鹀，肉质细嫩肥美之余，带有雅文邑特有的醇香；不取内脏、一口吞的吃法更能完整保有肉汁的香浓口感。 肥油、内脏、血骨和嫩肉在口腔中的热滚冲击。那种古早时期的香气，带有无花果、雅文邑和野味交织的醇香甜美，而我的口腔挤碎鸟骨而微微出血，混合了一丝丝咸腥的口感，逼近高潮。  Anthony Bourdin.&lt;&gt;   作法  需要在阻挡光线的暗笼中饲养圃鹀21天，阻止叫声 并喂食以白粟米催肥至原有三倍的体积 最终活着投入雅文邑中，浸泡至死并吸取香气 去毛轻烤，整只食用  补充  圃鹀又称嵩雀（ortolan） 圃鹀与催肥填鸭并称为法兰西美食酷刑的代表 因为制法残忍和物种濒危，1999年法国明令禁止捕猎圃鹀    引申  雅文邑（Armagnac）  描述  雅文邑本身就是法国最古老的白兰地 最早关于雅文邑这种白兰地的拉丁语文献，记载于1310年，供教宗和主教们享用。 雅文邑的产区比波尔多和干邑更南，温润的气候，葡萄种类的选择，以及更加古朴的蒸馏（采取柱式蒸馏器仅蒸馏1次）和陈年方式（干邑只有3档，而雅文邑有6档）的独特性，使雅文邑的口感与干邑相比起来更加甜润，甘香，酒精度也相对更低。  产量  450万瓶/年  补充  产量 干邑 1.8亿瓶/年 苏格兰威士忌 15亿瓶/年     推荐 口碑最高的达豪思酒庄（DARROZE）  评价&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%A4%8D%E5%88%BB%E4%BA%BF%E4%B8%87%E4%B8%AD%E9%82%A3%E4%B8%80%E5%B9%95%E8%AE%A9%E4%BA%BA%E5%9E%82%E6%B6%8E%E6%AC%B2%E6%BB%B4%E7%9A%84%E9%A5%AD%E5%B1%80/" title="复刻亿万中那一幕让人垂涎欲滴的饭局"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="Hello.性能测试">Hello.性能测试</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.05.10">2018.05.10</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%B5%8B%E8%AF%95">测试</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%80%A7%E8%83%BD">性能</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-Mistake  用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩  调整 Averages not work 噪点影响平均值  统计数据  [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s]  平均值  100ms  实际作法  去除噪点后计算平均值 或将数据排序后，取中间数据的平均值   百分比分页  统计数据  [10ms, 1s, 200ms, 100ms]  报告
- TP= Top Percentile = 当前数值的最高可能性 TP50&lt;= 100ms TP90&lt;= 1s
-推荐格式  99.9%的请求必须小于 1ms，所有的平均时间必须小于1ms
-  Latency &amp; Thoughput 关联  随着并发量（吞吐量）的上升，系统愈发不稳定，响应时间延长   推荐格式  TP99小于100ms的时候，系统可以承载的最大并发数是1000qps  #Thoughput &amp; Success.&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="Hello.性能测试"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/" title="经典">经典</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.04.27">2018.04.27</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E7%BB%8F%E5%85%B8">经典</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-故事 梁思成&amp; 林徽因  婚前，梁思成问林徽因：“有一句话，我只问这一次，以后都不会再问，为什么是我？” 林徽因答：“答案很长，我得用一生去回答你，准备好听我说了吗？
- 落水  女生问：我和你妈掉水里了，你先救谁，只能救一个。男生应该这样答：救我妈，她给了我生命。然后和你一起死，因为没有你，生命对我没有意义”。
- 52赫兹鲸鱼 | 52-hertz whale  一条在太平洋出没，发出不寻常52赫兹声音的鲸鱼。 由于它叫声的频率比起任何已知品种的鲸鱼都高很多（蓝鲸的频率为10-39赫兹；长须鲸为20赫兹），因此科学家认为它的叫声一直无法被其他鲸鱼接收得到，所以亦称它为“世界上最寂寞的鲸鱼”（The world&rsquo;s loneliest whale）。
- 她语  王菲  爱是天时地利的迷信。  冯唐  一个女人的美丽，一分姿色，二分打扮、三分聪明，四分淫荡。  张枣  《镜中》  望着窗外,只要想起一生中后悔的事 梅花便落满了南山   北岛  你没有如期归来，而这也正是离别的意义。  几米  《希望井》  我在最深的绝望里，遇见最美丽的惊喜。—   李敖  她不需要做爱，但是可以做；他需要做爱，但是可以不做——这是美人与英雄的分野。  《麦田里的守望者》  说来好笑。你千万别跟任何人谈任何事情。你只要一谈起，就会想念起每一个人。  王朔  《过把瘾就死》  吵到最后，我们什么都骂出来了，就像一对不共戴天的仇敌。我们互相太熟悉了，因而我们刺向对方的刀刃格外锋利，弹无虚发，沉重打击了对方。   《两小无猜》  好的爱情是你通过一个人看到整个世界，坏的爱情是你为了一个人舍弃世界。  独木舟《深海里的星星Ⅱ》  年轻吗 不要紧 听过几首歌 爱过几个人 就老了  尼采  我感到难过，不是因为你欺骗了我，而是因为我再也不能相信你了。  三毛  我来不及认真地年轻，待明白过来时，只能选择认真地老去。 人性本凉薄，又何介 谁比谁更多。心，若没有栖息的地方，到哪里都是流浪&hellip; 如果你给我的，和你给别人的是一样的，那我就不要了。  莎士比亚&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/" title="经典"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/" title="王垠-如何掌握所有的程序语言">王垠-如何掌握所有的程序语言</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.03.06">2018.03.06</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E7%BC%96%E7%A8%8B">编程</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E5%AD%A6%E4%B9%A0">学习</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-王垠-如何掌握所有的程序语言 针对处理  你是编程初学者，不知道该选择什么程序语言来入门。 你是资深的程序员或者团队领导，对新出现的种种语言感到困惑，不知道该投资哪种语言。 你的团队为使用哪种程序语言争论不休，发生各种宗教斗争。 你追逐潮流采用了某种时髦的语言，结果两个月之后发现深陷泥潭，痛苦不堪……  重视语言特性，而不是语言  任何一种“语言”，都是各种“语言特性”的组合  一个程序语言就像一台电脑。不同的语言则相对于不同的品牌。 你得看看它里面装的是什么型号的处理器，有多少个核，主频多少，有多少 L1 cache，L2 cache……，有多少内存和硬盘，显示器分辨率有多大，显卡是什么 GPU，网卡速度，等等各种“配置”。有时候你还得看各个组件之间的兼容性。   通用特点  语言特性
- 变量定义 算术运算 for 循环语句，while 循环语句 函数定义，函数调用 递归 静态类型系统 类型推导 lambda 函数 面向对象 垃圾回收 指针算术 goto 语句  掌握通用特性
- 比如变量，函数，整数和浮点数运算，这些是每个通用程序语言里面都必须有的 掌握基本的特性后，即可随时将这些知识应用到任何其它语言  学习方法
- 手头有问题 用两分钟浏览一下这语言的手册，看看这语言大概长什么样 例子代码来开始修改捣鼓，想法把这代码改成自己正想解决的问题 实现过程中自然带出问题  这个语言的“变量定义”是什么语法，需要“声明类型”吗，还是可以用“类型推导”？ 它的“类型”是什么语法？是否支持“泛型”？泛型的 “variance” 如何表达？ 这个语言的“函数”是什么语法，“函数调用”是什么语法，可否使用“缺省参数”？  补充  因为掌握了语言特性的人都知道，自己需要的特性，在任何语言里面一定有对应的表达方式。 如果没有直接的方式表达，那么一定有某种“绕过方式”。如果有直接的表达方式，那么它只是语法稍微有所不同而已。  带着问题找特性，就像查字典一样，而不是被淹没于大部头的手册里面    语言特性&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/" title="王垠-如何掌握所有的程序语言"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" title="富爸爸穷爸爸">富爸爸穷爸爸</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2018.02.22">2018.02.22</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB">阅读</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%8A%95%E8%B5%84">投资</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>富爸爸穷爸爸 课程 富爸爸，穷爸爸  我怎样才能付得起？ 贫穷和破产的区别是：破产是暂时的，而贫穷是永久的。  富人不为钱工作  如果你不能下定决心，就永远也学不会如何赚钱。 在生活推着他转的同时，抓住生活赐予的每个机会； 如果你认为是我的问题，你就会想改变我；如果你认为问题在你那儿，你就会改变自己，学习一些东西让自己变得更聪明。大多数人认为世界上除了自己外，其他人都应该改变。让我告诉你吧，改变自己比改变他人更容易。 老鼠赛跑  学习为钱工作很容易，特别是当你一谈到钱就觉得恐惧时，学习为钱工作就更容易了。 没钱的恐惧会促使他们努力工作，得到报酬后，贪婪或欲望又让他们想拥有所有用钱能买到的好东西。  控制欲望，控制自己  你无需告诉别人你的感觉，只有你自己知道。 人生实际上是在无知和觉醒之间的一场斗争。 忠实于你的感情，以你喜欢的方式运用你的头脑和感情，不要让它们控制你。 你有两种感情——恐惧和欲望，如果你让它们来控制你的思想，你就会落入一生中最大的陷阱。   为什么要教授财务知识  只有知识才能解决问题并创造财富，那些不是靠财务知识挣来的钱也不会长久。 从长远来看，重要的不是你挣了多少钱，而是你能留下多少钱，以及能够留住多久。 聪明人总是雇用比他更聪明的人。 你为别人工作。就像为工资而工作的大多数人一样，你的工作只会使雇主或股东更加富有，你的努力和成功将使雇主更加成功并得以提早退休。 财富就是支撑一个人生存多长时间的能力，或者说，如果我今天停止工作，我还能活多久？ 财富是将资产项产生的现金与支出项流出的现金进行比较而定的。  关注自己的事业  从事你所学的专业的可怕后果在于，它会让你忘记关注自己的事业。人们耗尽一生去关注别人的事业并使他人致富。 只有你把额外的收入用来购买可产生收入的资产，你才能获得真正的财务安全。  不需到场就可以正常运作的业务 股票 债券 能够产生收入的房地产 版税，如音乐、手稿、专利   富人的投资  我们都拥有巨大的潜能——这是上天赏赐的礼物。然而，我们都或多或少地存在着某种自我怀疑的心理，从而阻碍前进的步伐。这种障碍很少是缺乏某种技术性的东西，更多的是缺乏自信。有些人更容易受到外界的影响。 财务知识 投资策略 市场、供给与需求 法律规章 如何寻找其他人都忽视的机会 怎样把精明的人组织起来  学会不为钱工作  财商是会计、投资、市场和法律等各方面知识和能力的综合。  “工作（job）一词就是‘比破产强一点’（just over broke）。” “工人付出最大努力以免于被解雇，而雇主提供最低工资以防止工人辞职。” 在很多情况下，他们贫穷、财务困难或者只能挣到低于他们应得的薪水，不是因为他们已知的东西而是因为他们未知的东西。  这些聪明的年轻人并不去专项钻研某一个部门的业务，而是从一个部门跳到另一个部门，从而学到整个企业各个系统的知识。  能对如何经营一家企业有一个整体的认识，并可以了解不同部门的相互关系。 必需的管理技能  对现金流的管理 对系统（包括你本人、时间及家庭）的管理 对人员的管理。   你在处理人际关系、商务谈判和被拒绝时的恐惧心理等方面做得越好，生活就会越轻松。  开端 克服困难  困难  恐惧心理 愤世嫉俗 懒惰 不良习惯 自负  关键&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" title="富爸爸穷爸爸"> &raquo;</a>
-</article>
-
-        
-        <div class="pagination">
-<nav>
-
-    
-
-	<p class="counter"> 1  4</p>
-
-
-	
-	<a class="btn older" href="/tags/%E9%98%85%E8%AF%BB/page/2/" title=""> &raquo;</a>
-	
-
-</nav>
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
 </div>
 
-    </main>
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-    <aside class="author">
-  <img class="profile-image" src="http://domain.yqjdcyy.com/img/profile-image.png" alt="姚清居" />
-  <p class="name"> 
-  <strong>姚清居</strong></p>
-  <p class="address">Earth</p>
-  <p class="link"></p>
-  <ul class="social">
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >阅读
+    <small>标签</small>
+    </h2>
+</div>
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2018">2018</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e8%bf%bd%e8%af%89%e6%97%b6%e6%95%88/" itemprop="url">
+            <span itemprop="name">追诉时效</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-27"
+              content="06-27" >
+          06-27
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e8%b7%b3%e5%87%ba%e7%a0%81%e5%86%9c%e8%81%8c%e4%b8%9a%e7%9a%84%e7%94%9f%e5%91%bd%e5%91%a8%e6%9c%9f/" itemprop="url">
+            <span itemprop="name">跳出码农职业的生命周期</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-11"
+              content="06-11" >
+          06-11
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e5%88%ab%e7%8b%ac%e8%87%aa%e7%94%a8%e9%a4%90/" itemprop="url">
+            <span itemprop="name">别独自用餐</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-08"
+              content="06-08" >
+          06-08
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java%e5%bc%80%e5%8f%91%e5%bf%85%e9%a1%bb%e6%8e%8c%e6%8f%a1%e7%9a%84%e7%ba%bf%e4%b8%8a%e9%97%ae%e9%a2%98%e6%8e%92%e6%9f%a5%e5%91%bd%e4%bb%a4/" itemprop="url">
+            <span itemprop="name">Java开发必须掌握的线上问题排查命令</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-06-05"
+              content="06-05" >
+          06-05
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e6%88%91%e4%bb%ac%e7%9a%84%e5%ad%a9%e5%ad%90/" itemprop="url">
+            <span itemprop="name">我们的孩子</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-29"
+              content="05-29" >
+          05-29
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e5%a4%8d%e5%88%bb%e4%ba%bf%e4%b8%87%e4%b8%ad%e9%82%a3%e4%b8%80%e5%b9%95%e8%ae%a9%e4%ba%ba%e5%9e%82%e6%b6%8e%e6%ac%b2%e6%bb%b4%e7%9a%84%e9%a5%ad%e5%b1%80/" itemprop="url">
+            <span itemprop="name">复刻亿万中那一幕让人垂涎欲滴的饭局</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-17"
+              content="05-17" >
+          05-17
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.%e6%80%a7%e8%83%bd%e6%b5%8b%e8%af%95/" itemprop="url">
+            <span itemprop="name">Hello.性能测试</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-05-10"
+              content="05-10" >
+          05-10
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e7%bb%8f%e5%85%b8/" itemprop="url">
+            <span itemprop="name">经典</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-04-27"
+              content="04-27" >
+          04-27
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e7%8e%8b%e5%9e%a0-%e5%a6%82%e4%bd%95%e6%8e%8c%e6%8f%a1%e6%89%80%e6%9c%89%e7%9a%84%e7%a8%8b%e5%ba%8f%e8%af%ad%e8%a8%80/" itemprop="url">
+            <span itemprop="name">王垠-如何掌握所有的程序语言</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-03-06"
+              content="03-06" >
+          03-06
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e5%af%8c%e7%88%b8%e7%88%b8%e7%a9%b7%e7%88%b8%e7%88%b8/" itemprop="url">
+            <span itemprop="name">富爸爸穷爸爸</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-22"
+              content="02-22" >
+          02-22
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e5%b0%8f%e7%8e%8b%e5%ad%90/" itemprop="url">
+            <span itemprop="name">小王子</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-22"
+              content="02-22" >
+          02-22
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e9%98%85%e8%af%bb%e6%b8%85%e5%8d%95-2018/" itemprop="url">
+            <span itemprop="name">阅读清单-2018</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-12"
+              content="02-12" >
+          02-12
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e7%9f%a5%e4%b9%8e%e6%9e%b6%e6%9e%84%e5%8f%98%e8%bf%81%e5%8f%b2/" itemprop="url">
+            <span itemprop="name">知乎架构变迁史</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-12"
+              content="02-12" >
+          02-12
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e6%b5%b7%e5%a7%86%e7%ab%8b%e5%85%8b%e6%80%a5%e6%95%91%e6%b3%95/" itemprop="url">
+            <span itemprop="name">海姆立克急救法</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-11"
+              content="02-11" >
+          02-11
+        </time>
+      </div>
+    </header>
+  </article>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e6%89%ab%e6%8f%8f%e4%ba%8c%e7%bb%b4%e7%a0%81%e8%87%aa%e5%8a%a8%e8%bf%9e%e6%8e%a5wifi/" itemprop="url">
+            <span itemprop="name">扫描二维码自动连接WIFI</span>
+        </a>
+      </h1>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2018-02-10"
+              content="02-10" >
+          02-10
+        </time>
+      </div>
+    </header>
+  </article>
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+<nav class="pagination">
     
+    
+        
+        
+          <span class="page-number current">1</span>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/p/2/">2</a>
+        
+        
+    
+        
+        
+          <a class="page-number" href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/p/3/">3</a>
+        
+        
+    
+    <a class="extend next" rel="next" href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/p/2/"><i class="fa fa-angle-right"></i></a>
+</nav>
 
 
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
 
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/author.jpg"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Programmer &amp; Architect</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">1</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
 
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">142</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/tags/%E9%98%85%E8%AF%BB/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
 
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
 
+      
+      <div class="links-of-blogroll motion-element inline">
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/8.js?i=5b4f2ucxar6&amp;m=0&amp;s=220&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=33&amp;bv=35" async="async"></script>
+</div>
 
-
-
-
-
-
-<li><a href="//github.com/yqjdcyy" class="icon-github" target="_blank" title="Github"></a></li>
-
-
-
-
-<li><a href="http://domain.yqjdcyy.com/post/index.xml" class="icon-rss" target="_blank" title="RSS"></a></li>
-
-  </ul>
-  <br><br>
+    </section>
+    
+  </div>
 </aside>
 
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>
-<footer class="main-footer">
-  <div class="container clearfix">
-        <a class="icon-rss" href="http://domain.yqjdcyy.com/post/index.xml" title="RSS"></a>
-        <p>&copy; 2018 &middot; Powered by <a href="http://www.domain.yqjdcyy.com">姚清居</a>.</p>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
   </div>
-</footer>
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-<script>window.jQuery || document.write('<script src="http:\/\/domain.yqjdcyy.com\/js\/vendor\/jquery-1.11.0.min.js"><\/script>')</script>
-<script src="http://domain.yqjdcyy.com/js/plugins.js"></script>
+  
 
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
 
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>
 </html>
-
