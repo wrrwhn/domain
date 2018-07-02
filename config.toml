@@ -63,7 +63,7 @@ DefaultContentLanguage = "zh"
   Keywords =  "好久不见,博客,程序,思考,笔记,分享"
   Subtitle = "生之所向"
   Imglogo = "/img/logo.png"
-  AuthorImg = "/img/author.jpg"
+  AuthorImg = "/img/logo.jpg"
   DateFormat = "2006-01-02"
   YearFormat = "2006年"
   MonthFormat = "01-02"
@@ -71,6 +71,32 @@ DefaultContentLanguage = "zh"
 
 [Author]
   Name = "好久不见"
+
+[[Menu.Main]]
+  Name = "首页"
+  Pre = "home"
+  URL = "/"
+  Weight = 1
+[[Menu.Main]]
+  Name = "整理"
+  Pre = "code"
+  URL = "/categories/整理/"
+  Weight = 2
+[[Menu.Main]]
+  Name = "阅读"
+  Pre = "tint"
+  URL = "/categories/阅读/"
+  Weight = 3
+[[Menu.Main]]
+  Name = "归档"
+  Pre = "archive"
+  URL = "/post/"
+  Weight = 6
+[[Menu.Main]]
+  Name = "关于"
+  Pre = "user"
+  URL = "/about/"
+  Weight = 7
 
 [[Params.Socials]]
   Name = "GitHub"
