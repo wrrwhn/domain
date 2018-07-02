@@ -88,6 +88,11 @@ DefaultContentLanguage = "zh"
   URL = "/categories/阅读/"
   Weight = 3
 [[Menu.Main]]
+  Name = "乐趣"
+  Pre = "tint"
+  URL = "/categories/乐趣/"
+  Weight = 4
+[[Menu.Main]]
   Name = "归档"
   Pre = "archive"
   URL = "/post/"
