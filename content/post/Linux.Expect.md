@@ -1,10 +1,13 @@
-+++
-date = "2018-01-16T16:07:46+08:00"
-title = "Linux.Expect"
-draft = false
-tags = ["乐趣","饮食"]
-share = true
-+++
+---
+title: "Linux.Expect"
+date: "2018-01-16"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
+
 
 # Linux.Expect
 

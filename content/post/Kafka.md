@@ -1,10 +1,13 @@
-+++
-date = "2017-11-29T22:07:46+08:00"
-title = "Kafka"
-draft = false
-tags = ["整理","Kafka"]
-share = true
-+++
+---
+title: "Kafka"
+date: "2017-11-29"
+categories:
+ - "整理"
+tags:
+ - "Kafka"
+toc: true
+---
+
 
 # Kafka
 

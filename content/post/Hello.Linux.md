@@ -1,12 +1,13 @@
-+++
-date = "2018-05-02T16:30:00+08:00"
-title = "Hello.Linux"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Hello.Linux"
+date: "2018-05-02"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-[TOC]
 
 # 进度
 ## Linux 基础文件

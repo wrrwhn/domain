@@ -1,13 +1,14 @@
-+++
-date = "2017-09-07T22:07:46+08:00"
-title = "Go.Upload.Qiniu"
-draft = false
-tags = ["整理","Go","Qiniu"]
-share = true
-+++
+---
+title: "Go.Upload.Qiniu"
+date: "2017-09-07"
+categories:
+ - "整理"
+tags:
+ - "Go"
+ - "Product"
+toc: true
+---
 
-
-[TOC]
 
 ## 描述
 - 将指定 [文件|文件夹|当前文件夹] 的内容上传至 `七牛云`

@@ -1,12 +1,13 @@
-+++
-date = "2018-04-11T18:00:00+08:00"
-title = "Python.Logging"
-draft = false
-tags = ["整理","Python"]
-share = true
-+++
+---
+title: "Python.Logging"
+date: "2018-04-11"
+categories:
+ - "整理"
+tags:
+ - "Python"
+toc: true
+---
 
-[TOC]
 
 # 组成
 ## Logger

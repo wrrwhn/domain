@@ -1,13 +1,12 @@
-+++
-date = "2017-04-23T22:07:46+08:00"
-title = "MYSQL.LOCK-WAITS"
-draft = false
-tags = ["整理","MYSQL"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Mysql.LOCK-WAITS"
+date: "2017-04-23"
+categories:
+ - "整理"
+tags:
+ - "Mysql"
+toc: true
+---
 
 
 # [MySQL 5.5 InnoDB 锁等待](https://dbarobin.com/2015/01/27/innodb-lock-wait-under-mysql-5.5/)

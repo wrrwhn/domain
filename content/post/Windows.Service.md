@@ -1,12 +1,14 @@
-+++
-date = "2017-07-20T22:07:46+08:00"
-title = "Windows.Service"
-draft = false
-tags = ["整理","Windows"]
-share = true
-+++
+---
+title: "Windows.Service"
+date: "2017-07-20"
+categories:
+ - "整理"
+tags:
+ - "Windows"
+ - "Service"
+toc: true
+---
 
-[TOC]
 
 # Windows 程序服务化
 ## 参考

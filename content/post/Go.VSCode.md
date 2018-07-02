@@ -1,12 +1,13 @@
-+++
-date = "2017-07-31T22:07:46+08:00"
-title = "Go.VSCode"
-draft = false
-tags = ["整理","Go "]
-share = true
-+++
+---
+title: "Go.VSCode"
+date: "2017-07-31"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 # VS-Code Go 开发
 ## 参考

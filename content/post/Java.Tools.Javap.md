@@ -1,12 +1,14 @@
-+++
-date = "2018-06-06T00:00:00+08:00"
-title = "Java.Tools.Javap"
-draft = false
-tags = ["整理","Java","tools"]
-share = true
-+++
+---
+title: "Java.Tools.Javap"
+date: "2018-06-06"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "tools"
+toc: true
+---
 
-[TOC]
 
 # JAVAP
 ## 作用

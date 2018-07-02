@@ -1,12 +1,14 @@
-+++
-date = "2017-08-17T22:07:46+08:00"
-title = "Linux.Jenkins"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Jenkins"
+date: "2018-06-17"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Jenkins"
+toc: true
+---
 
-[TOC]
 
 ## 参考
 - [Centos yum install jenkins](https://segmentfault.com/a/1190000006751968)

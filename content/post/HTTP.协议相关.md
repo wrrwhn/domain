@@ -1,12 +1,13 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "HTTP.协议相关"
-draft = false
-tags = ["整理","HTTP"]
-share = true
-+++
+---
+title: "HTTP.协议相关"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "HTTP"
+toc: true
+---
 
-[TOC]
 
 ## 参考
 - [Http 协议详解](http://kb.cnblogs.com/page/130970/)

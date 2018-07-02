@@ -1,10 +1,14 @@
-+++
-date = "2017-10-04T22:07:46+08:00"
-title = "Linux.Nginx "
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Nginx"
+date: "2017-10-04"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Nginx"
+toc: true
+---
+
 
 # Linux.Nginx
 

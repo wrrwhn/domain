@@ -1,13 +1,13 @@
-+++
-date = "2017-08-15T22:07:46+08:00"
-title = "Mysql.SELECT-INTO"
-draft = false
-tags = ["整理","MYSQL"]
-share = true
-+++
+---
+title: "Mysql.SELECT-INTO"
+date: "2017-08-15"
+categories:
+ - "整理"
+tags:
+ - "Mysql"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [SELECT ... INTO Syntax](https://dev.mysql.com/doc/refman/5.7/en/select-into.html)

@@ -1,10 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Java.注意事项"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.注意事项"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
+
 
 ## finally
 - 用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉）。

@@ -1,13 +1,13 @@
+---
+title: "Linux.目录与权限"
+date: "2017-08-25"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-+++
-date = "2017-08-25T22:07:46+08:00"
-title = "Linux 的目录与权限"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
-
-[TOC]
 
 # Linux 的目录与权限
 

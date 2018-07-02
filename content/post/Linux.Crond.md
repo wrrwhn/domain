@@ -1,10 +1,12 @@
-+++
-date = "2018-01-17T22:07:46+08:00"
-title = "Linux.Crontab"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Crontab"
+date: "2018-01-17"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
 
 # Linux.Crontab

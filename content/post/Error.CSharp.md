@@ -1,12 +1,13 @@
-+++
-date = "2018-05-02T16:45:00+08:00"
-title = "Error.CSharp"
-draft = false
-tags = ["整理","Error","CSharp"]
-share = true
-+++
-
-[TOC]
+---
+title: "Error.CSharp"
+date: "2018-05-02"
+categories:
+ - "整理"
+tags:
+ - "Error"
+ - "CSharp"
+toc: true
+---
 
 
 # 异常

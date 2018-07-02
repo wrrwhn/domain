@@ -1,13 +1,13 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "Sublime.Plugin"
-draft = false
-tags = ["整理","Sublime","Plugin"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Sublime.Plugin"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Sublime"
+ - "Plugin"
+toc: true
+---
 
 
 # 参考

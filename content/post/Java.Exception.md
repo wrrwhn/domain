@@ -1,12 +1,13 @@
-+++
-date = "2018-04-18T18:00:00+08:00"
-title = "Java.Exception"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.Exception"
+date: "2017-04-18"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-[TOC]
 
 # 分类
 ## Throwable

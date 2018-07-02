@@ -1,13 +1,13 @@
-+++
-date = "2017-08-09T22:07:46+08:00"
-title = "Java.Detail"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.Detail"
+date: "2017-08-09"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-
-[TOC]
 
 ## finally
 - 用于及时释放资源以不影响系统性能

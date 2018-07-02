@@ -1,12 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Go.Wukong"
-draft = false
-tags = ["整理","Go","柢"]
-share = true
-+++
+---
+title: "Go.Wukong"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 # 悟空引擎使用
 

@@ -1,13 +1,13 @@
-+++
-date = "2017-07-25T22:07:46+08:00"
-title = "Linux.Make"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Make"
+date: "2017-07-25"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 # Make
 ## 参考

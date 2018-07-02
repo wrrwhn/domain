@@ -1,10 +1,12 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Redis.使用"
-draft = false
-tags = ["整理","Redis"]
-share = true
-+++
+---
+title: "Redis.使用"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Redis"
+toc: true
+---
 
 
 ## 简介

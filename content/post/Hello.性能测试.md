@@ -1,12 +1,14 @@
-+++
-date = "2018-05-10T00:00:00+08:00"
-title = "Hello.性能测试"
-draft = false
-tags = ["阅读","测试","性能"]
-share = true
-+++
+---
+title: "Hello.性能测试"
+date: "2018-05-10"
+categories:
+ - "整理"
+tags:
+ - "测试"
+ - "性能"
+toc: true
+---
 
-[TOC]
 
 # Mistake
 - 用的全是 **平均** 值

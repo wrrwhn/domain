@@ -1,13 +1,14 @@
-+++
-date = "2018-05-04T10:30:00+08:00"
-title = "Java.Tools.Profiler"
-draft = false
-tags = ["整理","Java","Profiler"]
-share = true
-+++
+---
+title: "Java.Tools.Profiler"
+date: "2018-05-04"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "tools"
+toc: true
+---
 
-
-[TOC]
 
 # 监控
 ## 目的

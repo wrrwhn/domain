@@ -1,12 +1,14 @@
-+++
-date = "2017-08-17T22:07:46+08:00"
-title = "Linux.Maven"
-draft = false
-tags = ["整理","Linux","Maven"]
-share = true
-+++
+---
+title: "Linux.Maven"
+date: "2017-08-17"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Maven"
+toc: true
+---
 
-[TOC]
 
 ## 参考
 - [Installing Apache Maven](https://maven.apache.org/install.html)

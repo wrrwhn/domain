@@ -1,13 +1,14 @@
-+++
-date = "2017-08-14T22:07:46+08:00"
-title = "Linux.Mysql"
-draft = false
-tags = ["整理","Linux" ,"Mysql" ]
-share = true
-+++
+---
+title: "Linux.Mysql"
+date: "2017-08-14"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Mysql"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [centos7 mysql数据库安装和配置](https://www.cnblogs.com/starof/p/4680083.html)

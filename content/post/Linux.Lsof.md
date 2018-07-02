@@ -1,10 +1,13 @@
-+++
-date = "2017-12-11T22:07:46+08:00"
-title = "Linux.Lsof"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Lsof"
+date: "2017-12-11"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
+
 
 ## 参考
 - [lsof 一切皆文件](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/lsof.html)

@@ -1,13 +1,13 @@
-+++
-date = "2017-08-08T22:07:46+08:00"
-title = "Linux.Vim"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Vim"
+date: "2017-08-08"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 # [简明 VIM 练级攻略](http://coolshell.cn/articles/5426.html)
 

@@ -1,10 +1,12 @@
-+++
-date = "2017-07-20T22:07:46+08:00"
-title = "Go.Reflect"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.Reflect"
+date: "2017-07-20"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
 
 [TOC]

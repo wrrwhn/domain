@@ -1,13 +1,13 @@
-+++
-date = "2017-04-26T22:07:46+08:00"
-title = "Go.GoSublime"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.GoSublime"
+date: "2017-04-26"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-
-[TOC]
 
 ## 注解
 - Path

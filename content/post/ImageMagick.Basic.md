@@ -1,13 +1,12 @@
-+++
-date = "2018-01-18T15:07:46+08:00"
-title = "ImageMagick"
-draft = false
-tags = ["整理","ImageMagick"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "ImageMagick"
+date: "2018-01-18"
+categories:
+ - "整理"
+tags:
+ - "ImageMagick"
+toc: true
+---
 
 
 # ImageMagick

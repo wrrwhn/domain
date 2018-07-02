@@ -1,10 +1,13 @@
-+++
-date = "2017-09-13T22:07:46+08:00"
-title = "Go.并行&并发 "
-draft = false
-tags = ["整理", "Go", "GoRuntime "]
-share = true
-+++
+---
+title: "Go.并行&并发"
+date: "2017-09-13"
+categories:
+ - "整理"
+tags:
+ - "Go"
+ - "GoRuntime"
+toc: true
+---
 
 ## 参考
 - [Go语言并发与并行学习笔记](http://www.golang.ltd/forum.php?mod=viewthread&tid=6159)

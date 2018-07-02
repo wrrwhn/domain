@@ -1,14 +1,12 @@
-
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "Spring.Basic"
-draft = false
-tags = ["整理","Spring"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Spring.Basic"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+toc: true
+---
 
 
 ## [AOP](http://my.oschina.net/huangyong/blog/161338)

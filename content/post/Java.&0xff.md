@@ -1,13 +1,13 @@
-﻿+++
-date = "2018-04-20T13:30:00+08:00"
-title = "Java.&0xff"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+﻿---
+title: "Java.&0xff"
+date: "2018-04-20"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-
-[TOC]
 
 # Code
 - PipedInputStream.receive(int b)

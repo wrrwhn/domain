@@ -1,13 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Linux.Chown"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Chown"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 ## chown
 ### 格式

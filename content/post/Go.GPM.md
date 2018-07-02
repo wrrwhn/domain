@@ -1,11 +1,12 @@
-+++
-date = "2017-07-23T22:07:46+08:00"
-title = "Go.GPM"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
-
+---
+title: "Go.GPM"
+date: "2017-07-23"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
 [TOC]
 

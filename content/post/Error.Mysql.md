@@ -1,10 +1,13 @@
-+++
-date = "2017-09-12T22:07:46+08:00"
-title = "Error.Mysql"
-draft = false
-tags = ["整理","Error","MYSQL"]
-share = true
-+++
+---
+title: "Error.MYSQL"
+date: "2017-09-12"
+categories:
+ - "整理"
+tags:
+ - "Error"
+ - "MYSQL"
+toc: true
+---
 
 
 ## 1175

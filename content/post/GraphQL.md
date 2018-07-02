@@ -1,12 +1,13 @@
-+++
-date = "2017-09-13T22:07:46+08:00"
-title = "GraphQL"
-draft = false
-tags = ["整理","GraphQL"]
-share = true
-+++
+---
+title: "GraphQL"
+date: "2017-09-13"
+categories:
+ - "整理"
+tags:
+ - "GraphQL"
+toc: true
+---
 
-[TOC]
 
 # GraphQL
 

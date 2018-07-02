@@ -1,10 +1,13 @@
-+++
-date = "2016-12-08T22:07:46+08:00"
-title = "Spring.Cache"
-draft = false
-tags = ["整理","Spring" ,"Cache" ]
-share = true
-+++
+---
+title: "Spring.Cache"
+date: "2016-12-08"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+ - "Cache"
+toc: true
+---
 
 
 ## 参考链接

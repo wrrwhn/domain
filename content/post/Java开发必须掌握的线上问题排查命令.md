@@ -1,11 +1,12 @@
-+++
-date = "2018-06-05T16:30:00+08:00"
-title = "Java开发必须掌握的线上问题排查命令"
-draft = false
-tags = ["阅读","Java"]
-share = true
-+++
-
+---
+title: "Java开发必须掌握的线上问题排查命令"
+date: "2018-06-05"
+categories:
+ - "阅读"
+tags:
+ - "Java"
+toc: true
+---
 [TOC]
 
 # [Java开发必须掌握的线上问题排查命令](http://www.hollischuang.com/archives/1561)

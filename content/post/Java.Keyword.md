@@ -1,12 +1,13 @@
-+++
-date = "2018-04-26T00:30:00+08:00"
-title = "Java.Keyword"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.Keyword"
+date: "2018-04-26"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-[TOC]
 
 # List
 ## Access

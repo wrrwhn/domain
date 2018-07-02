@@ -1,10 +1,12 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "SpringBoot.入门"
-draft = false
-tags = ["整理","SpringBoot"]
-share = true
-+++
+---
+title: "Hello.SpringBoot"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+toc: true
+---
 
 
 # 作用

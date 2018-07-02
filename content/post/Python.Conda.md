@@ -1,12 +1,14 @@
-+++
-date = "2018-03-26T15:00:00+08:00"
-title = "Python.Conda"
-draft = false
-tags = ["整理","Python","Conda"]
-share = true
-+++
+---
+title: "Python.Conda"
+date: "2018-03-26"
+categories:
+ - "整理"
+tags:
+ - "Python"
+ - "Conda"
+toc: true
+---
 
-[TOC]
 
 # 作用
 - 用于科学计算的Python发行版

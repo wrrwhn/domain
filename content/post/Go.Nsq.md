@@ -1,12 +1,13 @@
-+++
-date = "2017-07-25T22:07:46+08:00"
-title = "Go.Nsq"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.Nsq"
+date: "2017-07-25"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 # [NSQ]
 ## 参考

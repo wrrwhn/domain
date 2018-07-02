@@ -1,12 +1,13 @@
-+++
-date = "2018-05-10T19:10:00+08:00"
-title = "Hello.RPC"
-draft = false
-tags = ["整理","RPC"]
-share = true
-+++
+---
+title: "Hello.RPC"
+date: "2018-05-10"
+categories:
+ - "整理"
+tags:
+ - "RPC"
+toc: true
+---
 
-[TOC]
 
 # 概念
 ## RPC

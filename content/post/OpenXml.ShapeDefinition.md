@@ -1,12 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "OpenXml.ShapeDefinition"
-draft = false
-tags = ["整理","OpenXml "]
-share = true
-+++
+---
+title: "OpenXml.ShapeDefinition"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "OpenXml"
+toc: true
+---
 
-[TOC]
 
 ## [Shape Definitions And Attributes](Ecma Office Open XML Part 1-L.4.9  Shape Definitions and Attributes/ 4880)
 ### The Coordinate Systems

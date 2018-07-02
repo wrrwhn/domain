@@ -1,11 +1,13 @@
-
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Hugo 建站"
-draft = false
-tags = ["整理","Go","Hugo"]
-share = true
-+++
+---
+title: "Hugo 建站"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Go"
+ - "Hugo"
+toc: true
+---
 
 
 # Hugo 建站

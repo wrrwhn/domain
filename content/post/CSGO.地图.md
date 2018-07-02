@@ -1,10 +1,13 @@
-+++
-date = "2018-04-15T18:00:00+08:00"
-title = "CSGO.地图"
-draft = false
-tags = ["整理","CSGO"]
-share = true
-+++
+---
+title: "CSGO.地图"
+date: "2018-04-15"
+categories:
+ - "整理"
+tags:
+ - "游戏"
+ - "CSGO"
+toc: true
+---
 
 [TOC]
 

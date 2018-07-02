@@ -1,12 +1,14 @@
-+++
-date = "2017-02-23T22:07:46+08:00"
-title = "常用CMD指令"
-draft = false
-tags = ["整理","CMD"]
-share = true
-+++
+---
+title: "Windows.Shell.Commons"
+date: "2017-02-23"
+categories:
+ - "整理"
+tags:
+ - "Windows"
+ - "Shell"
+toc: true
+---
 
-[TOC]
 
 ### 强制关闭占用指定端口服务
 - 查询指定窗口是否被占用： netstat -aon|findstr "9050"

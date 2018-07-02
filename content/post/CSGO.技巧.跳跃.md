@@ -1,10 +1,14 @@
-+++
-date = "2018-03-15T15:00:00+08:00"
-title = "CSGO.技巧.跳跃"
-draft = false
-tags = ["整理","游戏","CSGO","技巧"]
-share = true
-+++
+---
+title: "CSGO.技巧.跳跃"
+date: "2018-04-15"
+categories:
+ - "整理"
+tags:
+ - "游戏"
+ - "CSGO"
+ - "技巧"
+toc: true
+---
 
 
 # 连跳

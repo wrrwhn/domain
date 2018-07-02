@@ -1,12 +1,14 @@
-+++
-date = "2016-12-08T22:07:46+08:00"
-title = "DWR"
-draft = false
-tags = ["整理","Java","DWR"]
-share = true
-+++
+---
+title: "DWR"
+date: "2016-12-08"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "DWR"
+toc: true
+---
 
-[TOC]
 
 ## 参考
 - [在 Spring Web MVC 环境下使用 DWR](https://www.ibm.com/developerworks/cn/java/j-lo-springdwr/)

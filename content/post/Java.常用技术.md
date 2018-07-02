@@ -1,10 +1,12 @@
-+++
-date = "2016-12-09T22:07:46+08:00"
-title = "Java.常用技术"
-draft = false
-tags = ["整理","Java "]
-share = true
-+++
+---
+title: "Java.常用技术"
+date: "2016-12-09"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
 
 ## 参考

@@ -1,12 +1,13 @@
-+++
-date = "2018-05-04T12:00:00+08:00"
-title = "Python.Pack"
-draft = false
-tags = ["整理","Python"]
-share = true
-+++
+---
+title: "Python.Pack"
+date: "2018-05-04"
+categories:
+ - "整理"
+tags:
+ - "Python"
+toc: true
+---
 
-[TOC]
 
 # 类型
 - .py

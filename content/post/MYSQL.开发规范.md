@@ -1,12 +1,13 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "MYSQL.开发规范"
-draft = false
-tags = ["整理","MYSQL"]
-share = true
-+++
+---
+title: "Mysql.开发规范"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Mysql"
+toc: true
+---
 
-[TOC]
 
 # [数据库开发规范简版]
 ## 数据库创建

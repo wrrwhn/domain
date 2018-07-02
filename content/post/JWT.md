@@ -1,12 +1,13 @@
-+++
-date = "2018-03-09T16:00:00+08:00"
-title = "JWT"
-draft = false
-tags = ["整理","JWT"]
-share = true
-+++
+---
+title: "JWT"
+date: "2018-03-09"
+categories:
+ - "整理"
+tags:
+ - "JWT"
+toc: true
+---
 
-[TOC]
 
 # 定义
 ```

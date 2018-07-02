@@ -1,10 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Oracle.常见问题"
-draft = false
-tags = ["整理","Oracle"]
-share = true
-+++
+---
+title: "Oracle.常见问题"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Oracle"
+toc: true
+---
+
 
 ## ORA-12541:TNS:无监听程序
 - 监听失败，自己遇到的情况是主机设置错误

@@ -1,12 +1,13 @@
-+++
-date = "2017-10-21T22:07:46+08:00"
-title = "Tomcat. AccessLog "
-draft = false
-tags = ["整理","Tomcat"]
-share = true
-+++
+---
+title: "Tomcat.AccessLog"
+date: "2017-10-21"
+categories:
+ - "整理"
+tags:
+ - "Tomcat"
+toc: true
+---
 
-[TOC]
 
 # Tomcat. AccessLog
 

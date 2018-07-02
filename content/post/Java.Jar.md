@@ -1,12 +1,13 @@
-+++
-date = "2018-04-26T16:00:00+08:00"
-title = "Java.Jar"
-draft = false
-tags = ["整理","Jar"]
-share = true
-+++
+---
+title: "Java.Jar"
+date: "2018-04-26"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-[TOC]
 
 # Package
 - Create Artifacts

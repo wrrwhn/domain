@@ -1,17 +1,13 @@
-+++
-date = "2018-02-08T18:07:46+08:00"
-title = "IDEA.快捷键"
-draft = false
-tags = ["整理","快捷键","IDEA"]
-share = true
-+++
-
-
-[TOC]
-
-## 参考
-- http://www.cnblogs.com/tonycody/p/3257601.html
-- http://www.importnew.com/15462.html
+---
+title: "IDEA.快捷键"
+date: "2018-02-08"
+categories:
+ - "整理"
+tags:
+ - "IDEA"
+ - "快捷键"
+toc: true
+---
 
 
 ## 快捷键
@@ -77,3 +73,10 @@ share = true
 - ctrl+shift+f9 debug运行java类
 - ctrl+shift+f10正常运行java类
 - command+f2停止运行
+
+
+
+
+## 参考
+- [Intellij IDEA 快捷键整理（TonyCody）](http://www.cnblogs.com/tonycody/p/3257601.html)
+- [IntelliJ IDEA导航特性Top20](http://www.importnew.com/15462.html)

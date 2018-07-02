@@ -1,12 +1,14 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Linux.Git"
-draft = false
-tags = ["整理","Linux","Git"]
-share = true
-+++
+---
+title: "Linux.Git"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Git"
+toc: true
+---
 
-[TOC]
 
 ## 参考
 - [安装 Git](https://git-scm.com/book/zh/v1/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git)

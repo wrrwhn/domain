@@ -1,12 +1,13 @@
-+++
-date = "2017-11-23T22:07:46+08:00"
-title = "FFmpeg.阅读笔记"
-draft = false
-tags = ["整理","FFmpeg"]
-share = true
-+++
+---
+title: "FFmpeg.阅读笔记"
+date: "2017-11-23"
+categories:
+ - "整理"
+tags:
+ - "FFmpeg"
+toc: true
+---
 
-[TOC]
 
 ## 简介
 - [FFmpeg](https://ffmpeg.org/)

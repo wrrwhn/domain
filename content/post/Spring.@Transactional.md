@@ -1,13 +1,12 @@
-+++
-date = "2018-05-22T16:40:00+08:00"
-title = "Spring.@Transactional"
-draft = false
-tags = ["整理","Spring","Transaction"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Spring.@Transactional"
+date: "2018-05-22"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+toc: true
+---
 
 
 # 使用方式

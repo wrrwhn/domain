@@ -1,12 +1,14 @@
-+++
-date = "2018-05-23T14:00:00+08:00"
-title = "Spring.JPA.Fetch"
-draft = false
-tags = ["整理","Spring", "JPA"]
-share = true
-+++
+---
+title: "Spring.JPA.Fetch"
+date: "2018-05-23"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+ - "JPA"
+toc: true
+---
 
-[TOC]
 
 # Setting
 ## **Default**

@@ -1,12 +1,13 @@
-+++
-date = "2016-12-09T22:07:46+08:00"
-title = "Maven"
-draft = false
-tags = ["整理","Maven"]
-share = true
-+++
+---
+title: "Maven"
+date: "2016-12-09"
+categories:
+ - "整理"
+tags:
+ - "Maven"
+toc: true
+---
 
-[TOC]
 
 ## 部署安装
 ### 下载地址

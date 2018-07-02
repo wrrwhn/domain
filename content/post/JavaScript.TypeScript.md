@@ -1,12 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "JavaScript.TypeScript"
-draft = false
-tags = ["整理","TypeScript "]
-share = true
-+++
+---
+title: "JavaScript.TypeScript"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "TypeScript"
+toc: true
+---
 
-[TOC]
 
 # TypeScript
 

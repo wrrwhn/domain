@@ -1,10 +1,12 @@
-+++
-date = "2016-12-16T22:07:46+08:00"
-title = "XSD"
-draft = false
-tags = ["整理","XSD"]
-share = true
-+++
+---
+title: "XSD"
+date: "2016-12-16"
+categories:
+ - "整理"
+tags:
+ - "XSD"
+toc: true
+---
 
 
 ## 简介

@@ -1,11 +1,12 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Java.Log4j"
-draft = false
-tags = ["整理","Java "]
-share = true
-+++
-
+---
+title: "Java.Log4j"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
 ## 文件格式
 ### 配置根Logger

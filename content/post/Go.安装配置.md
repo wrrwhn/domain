@@ -1,12 +1,13 @@
-+++
-date = "2017-06-28T22:07:46+08:00"
-title = "Go.安装配置"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.安装配置"
+date: "2017-06-28"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 ## 配置
 - GOROOT

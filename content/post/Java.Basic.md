@@ -1,13 +1,13 @@
-+++
-date = "2017-08-09T22:07:46+08:00"
-title = "Java.Basic"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.Basic"
+date: "2017-08-09"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-
-[TOC]
 
 # 参考
 - [使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie](http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/)

@@ -1,10 +1,14 @@
-+++
-date = "2017-09-08T22:07:46+08:00"
-title = "右键菜单绑定"
-draft = false
-tags = ["整理","注册表"]
-share = true
-+++
+---
+title: "Windows.右键菜单绑定"
+date: "2017-09-08"
+categories:
+ - "整理"
+tags:
+ - "Windows"
+ - "Register"
+toc: true
+---
+
 
 # 右键菜单绑定
 

@@ -1,13 +1,14 @@
-+++
-date = "2017-08-21T22:07:46+08:00"
-title = "IDEA.MyBatisCodeHelper"
-draft = false
-tags = ["整理","IDEA"]
-share = true
-+++
+---
+title: "IDEA.MyBatisCodeHelper"
+date: "2017-08-21"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "IDEA"
+toc: true
+---
 
-
-[TOC]
 
 # IDEA.MyBatisCodeHelper
 

@@ -1,13 +1,13 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "Git.命令小结"
-draft = false
-tags = ["整理","Git"]
-share = true
-+++
+---
+title: "Git.命令小结"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Git"
+toc: true
+---
 
-
-[TOC]
 
 ## 查看
 ### 分支状态

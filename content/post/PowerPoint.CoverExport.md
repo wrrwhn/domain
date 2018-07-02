@@ -1,11 +1,13 @@
+---
+title: "PowerPoint.CoverExport"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "PowerPoint"
+toc: true
+---
 
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "PowerPoint.CoverExport"
-draft = false
-tags = ["整理","PowerPoint"]
-share = true
-+++
 
 ## 文件法
 ### 实现

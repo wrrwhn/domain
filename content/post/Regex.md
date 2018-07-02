@@ -1,10 +1,13 @@
-+++
-date = "2016-12-08T22:07:46+08:00"
-title = "Regex"
-draft = false
-tags = ["整理","Regex"]
-share = true
-+++
+---
+title: "Regex"
+date: "2016-12-08"
+categories:
+ - "整理"
+tags:
+ - "Regex"
+toc: true
+---
+
 
 ## 元字符
 - `.`    匹配除换行符以外的任意字符

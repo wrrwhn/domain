@@ -1,12 +1,13 @@
-+++
-date = "2018-06-27T18:00:00+08:00"
-title = "Hello.Docker.Dockerfile"
-draft = false
-tags = ["整理","Docker"]
-share = true
-+++
+---
+title: "Hello.Docker.Dockerfile"
+date: "2018-06-20"
+categories:
+ - "整理"
+tags:
+ - "Docker"
+toc: true
+---
 
-[TOC]
 
 # Work
 - `Docker` 镜像是由只读的层一层层封装而成的，而其中的层均代码着 `Dockerfile` 指令

@@ -1,12 +1,13 @@
-+++
-date = "2017-08-14T22:07:46+08:00"
-title = "Linux.Firewalld"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Firewalld"
+date: "2017-08-14"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-[TOC]
 
 # firewalld
 

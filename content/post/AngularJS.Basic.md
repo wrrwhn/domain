@@ -1,10 +1,12 @@
-+++
-date = "2016-12-14T22:07:46+08:00"
-title = "AngularJS.Basic"
-draft = false
-tags = ["整理","AngularJS"]
-share = true
-+++
+---
+title: "AngularJS.Basic"
+date: "2016-12-14"
+categories:
+ - "整理"
+tags:
+ - "AngularJS"
+toc: true
+---
 
 ## 导言和准备
 - [地址](http://www.angularjs.cn/A00g)

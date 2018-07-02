@@ -1,13 +1,12 @@
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "Apache.Beam的前世今生"
-draft = false
-tags = ["阅读","Beam"]
-share = true
-+++
-
-
-{TOC}
+---
+title: "Apache.Beam的前世今生"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "Beam"
+toc: true
+---
 
 ## [Apache Beam的前世今生](https://mp.weixin.qq.com/s?__biz=MjM5MDE0Mjc4MA==&mid=2650995344&idx=1&sn=a3cfe5a7b300364aa63ade1672d360c2)
 

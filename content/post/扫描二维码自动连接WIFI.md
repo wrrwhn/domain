@@ -1,10 +1,14 @@
-+++
-date = "2018-02-10T16:07:46+08:00"
-title = "扫描二维码自动连接WIFI"
-draft = false
-tags = ["阅读","二维码","WIFI"]
-share = true
-+++
+---
+title: "扫描二维码自动连接WIFI"
+date: "2018-02-10"
+categories:
+ - "阅读"
+tags:
+ - "二维码"
+ - "WIFI"
+toc: true
+---
+
 
 # 扫描二维码自动连接WIFI
 

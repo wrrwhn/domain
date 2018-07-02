@@ -1,12 +1,13 @@
-+++
-date = "2018-05-31T12:10:00+08:00"
-title = "Spring.Boot.Publish"
-draft = false
-tags = ["整理","Spring"]
-share = true
-+++
+---
+title: "Spring.Boot.Publish"
+date: "2018-05-31"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+toc: true
+---
 
-[TOC]
 
 # Init
 - project.init

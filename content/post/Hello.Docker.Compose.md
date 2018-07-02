@@ -1,12 +1,13 @@
-+++
-date = "2018-06-20T12:00:00+08:00"
-title = "Hello.Docker.Compose"
-draft = false
-tags = ["整理","Docker"]
-share = true
-+++
+---
+title: "Hello.Docker.Compose"
+date: "2018-06-20"
+categories:
+ - "整理"
+tags:
+ - "Docker"
+toc: true
+---
 
-[TOC]
 
 # 简介
 - Compose

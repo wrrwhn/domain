@@ -1,13 +1,14 @@
-+++
-date = "2017-08-16T22:07:46+08:00"
-title = "Linux.Tomcat"
-draft = false
-tags = ["整理","Linux","Tomcat"]
-share = true
-+++
+---
+title: "Linux.Tomcat"
+date: "2017-08-16"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Tomcat"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [tomcat中server.xml配置详解](http://blog.csdn.net/zcyhappy1314/article/details/10356909)

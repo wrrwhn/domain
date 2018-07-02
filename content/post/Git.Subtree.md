@@ -1,10 +1,13 @@
-+++
-date = "2017-11-23T22:07:46+08:00"
-title = "Git.Subtree"
-draft = false
-tags = ["整理","Git"]
-share = true
-+++
+---
+title: "Git.Subtree"
+date: "2017-11-23"
+categories:
+ - "整理"
+tags:
+ - "Git"
+toc: true
+---
+
 
 ## 参考
 - [Git Subtree的使用](http://www.jianshu.com/p/3096069e9b72)

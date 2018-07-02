@@ -1,12 +1,14 @@
-+++
-date = "2018-05-03T23:20:00+08:00"
-title = "Java.Tools.JPS"
-draft = false
-tags = ["整理","Java","Tools"]
-share = true
-+++
+---
+title: "Java.Tools.JPS"
+date: "2018-05-03"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "tools"
+toc: true
+---
 
-[TOC]
 
 # JPS
 ## 作用

@@ -1,12 +1,13 @@
-+++
-date = "2017-09-20T22:07:46+08:00"
-title = "Linux.Grep"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Grep"
+date: "2017-09-20"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-[TOC]
 
 # Grep
 ## 参考

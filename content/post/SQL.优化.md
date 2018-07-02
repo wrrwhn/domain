@@ -1,13 +1,13 @@
-+++
-date = "2018-04-27T19:30:00+08:00"
-title = "SQL.优化"
-draft = false
-tags = ["整理","SQL"]
-share = true
-+++
+---
+title: "SQL.优化"
+date: "2018-04-27"
+categories:
+ - "整理"
+tags:
+ - "SQL"
+toc: true
+---
 
-
-[TOC]
 
 # 特点
 - SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。

@@ -1,13 +1,14 @@
-+++
-date = "2018-04-20T14:30:00+08:00"
-title = "IDEA.Java.Version"
-draft = false
-tags = ["整理","Java","IDEA"]
-share = true
-+++
+---
+title: "IDEA.Java.Version"
+date: "2018-04-20"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "IDEA"
+toc: true
+---
 
-
-[TOC]
 
 # Error
 - Run

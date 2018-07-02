@@ -1,13 +1,14 @@
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "Linux 单TCP连接占用最少内存"
-draft = false
-tags = ["阅读","Linux","TCP"]
-share = true
-+++
+---
+title: "Linux 单TCP连接占用最少内存"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "TCP"
+toc: true
+---
 
-
-[TOC]
 
 # [Linux 单 TCP 连接占用最少内存](https://zhuanlan.zhihu.com/p/25241630)
 

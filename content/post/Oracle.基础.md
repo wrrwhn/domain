@@ -1,10 +1,12 @@
-+++
-date = "2016-12-10T22:07:46+08:00"
-title = "Oracle - 基础"
-draft = false
-tags = ["整理","Oracle"]
-share = true
-+++
+---
+title: "Oracle.基础"
+date: "2016-12-10"
+categories:
+ - "整理"
+tags:
+ - "Oracle"
+toc: true
+---
 
 
 ## 系统构造

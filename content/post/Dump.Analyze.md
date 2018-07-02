@@ -1,10 +1,13 @@
-+++
-date = "2017-08-09T22:07:46+08:00"
-title = "Dump.Analyze"
-draft = false
-tags = ["整理","Dump"]
-share = true
-+++
+---
+title: "Dump.Analyze"
+date: "2017-08-09"
+categories:
+ - "整理"
+tags:
+ - "Dump"
+toc: true
+---
+
 
 ## 使用
 - 安装 Dump 包分析软件

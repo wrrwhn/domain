@@ -1,13 +1,14 @@
-+++
-date = "2018-06-20T17:30:00+08:00"
-title = "Linux.Java"
-draft = false
-tags = ["整理","Linux" ,"Java"]
-share = true
-+++
+---
+title: "Linux.Java"
+date: "2018-06-20"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+ - "Java"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 

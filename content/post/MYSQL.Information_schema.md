@@ -1,13 +1,12 @@
-+++
-date = "2017-02-26T22:07:46+08:00"
-title = "MYSQL.Information_schema"
-draft = false
-tags = ["整理","MYSQL"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Mysql.Information_schema"
+date: "2017-02-26"
+categories:
+ - "整理"
+tags:
+ - "Mysql"
+toc: true
+---
 
 
 # MYSQL.INFORMATION_SCHEMA

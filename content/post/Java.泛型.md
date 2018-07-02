@@ -1,14 +1,13 @@
+---
+title: "Java.泛型"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "Java.泛型"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
-
-[TOC]
 
 # 泛型
 ## 与 C++ 的比较

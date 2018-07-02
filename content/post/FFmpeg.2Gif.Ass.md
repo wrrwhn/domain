@@ -1,10 +1,13 @@
-+++
-date = "2018-06-01T12:10:00+08:00"
-title = "FFmpeg.2Gif.Ass"
-draft = false
-tags = ["整理","FFmpeg"]
-share = true
-+++
+---
+title: "FFmpeg.2Gif.Ass"
+date: "2018-06-01"
+categories:
+ - "整理"
+tags:
+ - "FFmpeg"
+toc: true
+---
+
 
 
 [TOC]

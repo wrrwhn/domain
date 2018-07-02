@@ -1,18 +1,16 @@
-+++
-date = "2016-12-11T22:07:46+08:00"
-title = "SpringBoot.JPA"
-draft = false
-tags = ["整理","SpringBoot"]
-share = true
-+++
+---
+title: "Hello.Spring.JPA"
+date: "2016-12-11"
+categories:
+ - "整理"
+tags:
+ - "Spring"
+ - "JPA"
+toc: true
+---
 
-[TOC]
-------
 
-# 文章来源
-[Spring Data JPA - Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/1.8.0.RELEASE/reference/html/)
-
-# 学习整理
+# 示例
 ## Basic Example
 ```
 Entity
@@ -374,3 +372,8 @@ Base Metadata Annotation
 -> 实体调整时自动赋值
 
 ```
+
+
+
+# 参考
+[Spring Data JPA - Reference Documentation](http://docs.spring.io/spring-data/jpa/docs/1.8.0.RELEASE/reference/html/)

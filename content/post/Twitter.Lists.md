@@ -1,12 +1,13 @@
-+++
-date = "2018-05-16T19:14:40+08:00"
-title = "Twitter.Lists"
-draft = false
-tags = ["整理","Twitter"]
-share = true
-+++
+---
+title: "Twitter.Lists"
+date: "2018-05-16"
+categories:
+ - "整理"
+tags:
+ - "Twitter"
+toc: true
+---
 
-[TOC]
 
 # Info
 - 看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便异常

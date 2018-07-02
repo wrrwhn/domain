@@ -1,13 +1,13 @@
-+++
-date = "2018-06-21T00:10:00+08:00"
-title = "Linux.User"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.User"
+date: "2018-06-21"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [创建、删除用户](http://blog.csdn.net/beitiandijun/article/details/41678251)

@@ -1,13 +1,13 @@
+---
+title: "Hello.UML"
+date: "2017-12-18"
+categories:
+ - "整理"
+tags:
+ - "UML"
+toc: true
+---
 
-+++
-date = "2017-12-18T22:07:46+08:00"
-title = "UML"
-draft = false
-tags = ["整理","UML"]
-share = true
-+++
-
-[TOC]
 
 # UML
 

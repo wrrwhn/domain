@@ -1,12 +1,12 @@
-+++
-date = "2017-08-09T22:07:46+08:00"
-title = "Java.Command"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
-
-[TOC]
+---
+title: "Java.Command"
+date: "2017-08-09"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
 ## Javac
 - 作用

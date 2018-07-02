@@ -1,12 +1,13 @@
-+++
-date = "2018-03-30T11:00:00+08:00"
-title = "License.Choose"
-draft = false
-tags = ["整理","License"]
-share = true
-+++
+---
+title: "License.Choose"
+date: ""2018-03-30"
+categories:
+ - "整理"
+tags:
+ - "License"
+toc: true
+---
 
-[TOC]
 
 # 作用
 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下

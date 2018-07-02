@@ -1,13 +1,13 @@
-+++
-date = "2017-11-09T22:07:46+08:00"
-title = "Tomcat.Service"
-draft = false
-tags = ["整理","Tomcat"]
-share = true
-+++
+---
+title: "Tomcat.Service"
+date: "2017-11-09"
+categories:
+ - "整理"
+tags:
+ - "Tomcat"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [tomcat中server.xml配置详解](http://blog.csdn.net/zcyhappy1314/article/details/10356909)

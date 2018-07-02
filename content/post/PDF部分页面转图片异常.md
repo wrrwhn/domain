@@ -1,12 +1,14 @@
-+++
-date = "2018-03-04T10:07:46+08:00"
-title = "PDF部分页面转图片异常"
-draft = false
-tags = ["整理","异常处理","PDFBOX"]
-share = true
-+++
+---
+title: "PDF部分页面转图片异常"
+date: "2018-03-04"
+categories:
+ - "整理"
+tags:
+ - "异常"
+ - "PDFBOX"
+toc: true
+---
 
-[TOC]
 
 # Error
 ```

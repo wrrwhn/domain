@@ -1,10 +1,13 @@
-+++
-date = "2017-10-16T22:07:46+08:00"
-title = "Linux.XArgs"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.XArgs"
+date: "2017-10-16"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
+
 
 # 参考
 - [Linux 系統 xargs 指令範例與教學](https://blog.gtwang.org/linux/xargs-command-examples-in-linux-unix/)

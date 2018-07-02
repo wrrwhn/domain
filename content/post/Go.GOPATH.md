@@ -1,12 +1,13 @@
-+++
-date = "2018-05-10T19:00:00+08:00"
-title = "Go.GOPATH"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.GOPATH"
+date: "2018-05-10"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 # 作用
 - 于 `go/build` 中引入，罗列本机 Go 代码的位置，可用于解析导入语句

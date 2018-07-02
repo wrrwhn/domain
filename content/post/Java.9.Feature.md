@@ -1,10 +1,13 @@
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "Java.9.Feature"
-draft = false
-tags = ["阅读","Java"]
-share = true
-+++
+---
+title: "Java.9.Feature"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
+
 
 # 深入解读 Java 9 新特性
 

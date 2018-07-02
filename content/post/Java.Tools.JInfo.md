@@ -1,12 +1,14 @@
-+++
-date = "2018-05-03T23:20:00+08:00"
-title = "Java.Tools.JINFO"
-draft = false
-tags = ["整理","Java","Tools"]
-share = true
-+++
+---
+title: "Java.Tools.JInfo"
+date: "2018-05-03"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "tools"
+toc: true
+---
 
-[TOC]
 
 # JINFO
 ## 作用

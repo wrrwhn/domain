@@ -1,12 +1,13 @@
-+++
-date = "2018-05-23T14:00:00+08:00"
-title = "Java.ImportStatic"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.ImportStatic"
+date: "2018-05-23"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-[TOC]
 
 # DESCRIBE
 ## 发布

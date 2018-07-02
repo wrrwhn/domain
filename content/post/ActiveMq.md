@@ -1,10 +1,12 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "ActiveMq"
-draft = false
-tags = ["整理","ActiveMq "]
-share = true
-+++
+---
+title: "ActiveMq"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "ActiveMq"
+toc: true
+---
 
 
 ## 地址

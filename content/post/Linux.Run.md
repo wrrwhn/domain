@@ -1,13 +1,13 @@
-+++
-date = "2017-08-28T22:07:46+08:00"
-title = "Linux.Run"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Run"
+date: "2017-08-28"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 # 命令后台运行
 

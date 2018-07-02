@@ -1,11 +1,12 @@
-+++
-date = "2018-02-07T18:07:46+08:00"
-title = "彻底终结MySQL同步延迟问题"
-draft = false
-tags = ["阅读","MYSQL"]
-share = true
-+++
-
+---
+title: "彻底终结MySQL同步延迟问题"
+date: "2018-02-07"
+categories:
+ - "阅读"
+tags:
+ - "MYSQL"
+toc: true
+---
 
 
 # 彻底终结MySQL同步延迟问题

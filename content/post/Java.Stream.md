@@ -1,12 +1,13 @@
-+++
-date = "2018-04-25T23:30:00+08:00"
-title = "Java.Stream"
-draft = false
-tags = ["整理","Java"]
-share = true
-+++
+---
+title: "Java.Stream"
+date: "2018-04-25"
+categories:
+ - "整理"
+tags:
+ - "Java"
+toc: true
+---
 
-[TOC]
 
 # 分类
 ## InputStream

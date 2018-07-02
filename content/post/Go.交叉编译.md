@@ -1,12 +1,13 @@
-+++
-date = "2017-08-28T22:07:46+08:00"
-title = "Go.交叉编译"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.交叉编译"
+date: "2017-08-28"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 # Go.交叉编译
 

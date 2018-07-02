@@ -1,13 +1,13 @@
-+++
-date = "2017-04-01T22:07:46+08:00"
-title = "Linux.Curl"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Curl"
+date: "2017-04-01"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - [curl网站开发指南](http://www.ruanyifeng.com/blog/2011/09/curl.html)

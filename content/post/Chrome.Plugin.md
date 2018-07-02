@@ -1,13 +1,13 @@
-+++
-date = "2017-06-28T22:07:46+08:00"
-title = "Chrome.Plugin "
-draft = false
-tags = ["整理","Chrome","Plugin"]
-share = true
-+++
-
-
-[TOC]
+---
+title: "Chrome.Plugin"
+date: "2017-06-28"
+categories:
+ - "整理"
+tags:
+ - "Chrome"
+ - "Plugin"
+toc: true
+---
 
 # 参考
 - [Getting Started: Building a Chrome Extension](https://developer.chrome.com/extensions/getstarted)

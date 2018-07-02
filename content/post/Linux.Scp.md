@@ -1,13 +1,13 @@
-+++
-date = "2017-11-15T22:07:46+08:00"
-title = "Linux.Scp"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Scp"
+date: "2017-11-15"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
-
-[TOC]
 
 ## 参考
 - http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html

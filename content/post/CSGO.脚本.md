@@ -1,10 +1,14 @@
-+++
-date = "2018-03-15T14:00:00+08:00"
-title = "CSGO.脚本"
-draft = false
-tags = ["整理","游戏","CSGO","脚本"]
-share = true
-+++
+---
+title: "CSGO.脚本"
+date: "2018-03-15"
+categories:
+ - "整理"
+tags:
+ - "游戏"
+ - "CSGO"
+ - "脚本"
+toc: true
+---
 
 
 # 设置项

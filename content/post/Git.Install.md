@@ -1,12 +1,13 @@
-+++
-date = "2017-08-09T22:07:46+08:00"
-title = "Git.Install"
-draft = false
-tags = ["整理","Git"]
-share = true
-+++
+---
+title: "Git.Install"
+date: "2017-08-09"
+categories:
+ - "整理"
+tags:
+ - "Git"
+toc: true
+---
 
-[TOC]
 
 # Git 安装
 ## 参考

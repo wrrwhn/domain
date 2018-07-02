@@ -1,10 +1,12 @@
-+++
-date = "2017-11-16T22:07:46+08:00"
-title = "Linux.Vimium"
-draft = false
-tags = ["整理","Linux"]
-share = true
-+++
+---
+title: "Linux.Vimium"
+date: "2017-11-16"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
 
 ## [Vimium 快捷键指南](http://www.phperz.com/article/15/1231/179223.html)

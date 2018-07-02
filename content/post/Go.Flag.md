@@ -1,12 +1,13 @@
-+++
-date = "2017-04-24T22:07:46+08:00"
-title = "Go.Flag"
-draft = false
-tags = ["整理","Go"]
-share = true
-+++
+---
+title: "Go.Flag"
+date: "2017-04-24"
+categories:
+ - "整理"
+tags:
+ - "Go"
+toc: true
+---
 
-[TOC]
 
 ## Flag
 
