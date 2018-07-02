@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -961,8 +979,6 @@ http://www.w3school.com.cn children.xsd&#34;
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/xsd" rel="tag" title="XSD">#XSD#</a>
     
 </div>
@@ -1027,7 +1043,16 @@ http://www.w3school.com.cn children.xsd&#34;
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -1039,14 +1064,14 @@ http://www.w3school.com.cn children.xsd&#34;
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -1056,7 +1081,7 @@ http://www.w3school.com.cn children.xsd&#34;
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -1082,6 +1107,58 @@ http://www.w3school.com.cn children.xsd&#34;
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#简介">简介</a></li>
+<li><a href="#参考">参考</a></li>
+<li><a href="#使用">使用</a>
+<ul>
+<li><a href="#xml结构">XML结构</a></li>
+<li><a href="#定义-note-xsd">定义 - note.xsd</a></li>
+<li><a href="#引用">引用</a></li>
+</ul></li>
+<li><a href="#类型">类型</a>
+<ul>
+<li><a href="#简单类型">简单类型</a>
+<ul>
+<li><a href="#元素">元素</a></li>
+<li><a href="#属性">属性</a></li>
+<li><a href="#限定">限定</a></li>
+<li><a href="#扩展-数据类型限定">扩展(数据类型限定)</a></li>
+</ul></li>
+<li><a href="#复合类型">复合类型</a>
+<ul>
+<li><a href="#空元素">空元素</a></li>
+<li><a href="#复合元素">复合元素</a></li>
+<li><a href="#仅包含文本的复合元素">仅包含文本的复合元素</a></li>
+<li><a href="#包含元素和文本的元素">包含元素和文本的元素</a></li>
+<li><a href="#写法">写法</a></li>
+<li><a href="#指示器">指示器</a></li>
+<li><a href="#扩展">扩展</a></li>
+<li><a href="#元素替换">元素替换</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#解析实例">解析实例</a>
+<ul>
+<li><a href="#xml-数据">XML 数据</a></li>
+<li><a href="#xsd-格式">XSD 格式</a></li>
+</ul></li>
+<li><a href="#数据类型">数据类型</a>
+<ul>
+<li><a href="#字符串">字符串</a></li>
+<li><a href="#日期">日期</a></li>
+<li><a href="#杂项">杂项</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

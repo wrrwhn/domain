@@ -6,7 +6,7 @@
     <description>Recent content in Dwr on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Dec 2016 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/dwr/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>DWR</title>
       <link>http://domain.yqjdcyy.com/post/dwr/</link>
-      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/dwr/</guid>
-      <description>[TOC] 参考 在 Spring Web MVC 环境下使用 DWR 作用 Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象 配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt; springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt;</description>
+      <description>参考 在 Spring Web MVC 环境下使用 DWR 作用 Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象 配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt; springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt; &amp;lt;!--</description>
     </item>
     
   </channel>

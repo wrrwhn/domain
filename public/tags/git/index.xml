@@ -6,7 +6,7 @@
     <description>Recent content in Git on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 23 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 23 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Git.Subtree</title>
       <link>http://domain.yqjdcyy.com/post/git.subtree/</link>
-      <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.subtree/</guid>
       <description>参考 Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册 描述 简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是</description>
@@ -23,28 +23,28 @@
     <item>
       <title>Linux.Git</title>
       <link>http://domain.yqjdcyy.com/post/linux.git/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
-      <description>[TOC] 参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
+      <description>参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
     </item>
     
     <item>
       <title>Git.Install</title>
       <link>http://domain.yqjdcyy.com/post/git.install/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.install/</guid>
-      <description>[TOC] Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意</description>
+      <description>Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，</description>
     </item>
     
     <item>
       <title>Git.命令小结</title>
       <link>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
-      <description>[TOC] 查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并</description>
+      <description>查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到</description>
     </item>
     
   </channel>

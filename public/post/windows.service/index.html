@@ -131,20 +131,36 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">316 字 ~1分钟</span>
+<span class="leancloud-visitors-count">315 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="windows-程序服务化">Windows 程序服务化</h1>
 
@@ -248,9 +264,9 @@ pause</pre></div>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/windows" rel="tag" title="Windows">#Windows#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/service" rel="tag" title="Service">#Service#</a>
     
 </div>
 
@@ -259,8 +275,8 @@ pause</pre></div>
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/chrome.plugin/" rel="next" title="Chrome.Plugin ">
-        <i class="fa fa-chevron-left"></i> Chrome.Plugin 
+        <a href="http://domain.yqjdcyy.com/post/chrome.plugin/" rel="next" title="Chrome.Plugin">
+        <i class="fa fa-chevron-left"></i> Chrome.Plugin
         </a>
     
     </div>
@@ -314,7 +330,16 @@ pause</pre></div>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -326,14 +351,14 @@ pause</pre></div>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -343,7 +368,7 @@ pause</pre></div>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -369,6 +394,32 @@ pause</pre></div>
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#windows-程序服务化">Windows 程序服务化</a>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#sc-service-controller">SC - Service Controller</a>
+<ul>
+<li><a href="#语法">语法</a></li>
+<li><a href="#常用参数">常用参数</a></li>
+<li><a href="#示例">示例</a></li>
+<li><a href="#注意事项">注意事项</a></li>
+<li><a href="#异常">异常</a></li>
+</ul></li>
+<li><a href="#nssm-the-non-sucking-service-manager">NSSM - the Non-Sucking Service Manager</a>
+<ul>
+<li><a href="#常用语法">常用语法</a></li>
+<li><a href="#缺点">缺点</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

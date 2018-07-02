@@ -6,7 +6,7 @@
     <description>Recent content in Sublime on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 11 Dec 2016 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 11 Dec 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/sublime/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Sublime.Plugin</title>
       <link>http://domain.yqjdcyy.com/post/sublime.plugin/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/sublime.plugin/</guid>
-      <description>[TOC] 参考 sublime插件开发 结构 Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式 流</description>
+      <description>参考 sublime插件开发 结构 Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式 流程</description>
     </item>
     
   </channel>

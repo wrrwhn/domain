@@ -131,20 +131,36 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">405 字 ~1分钟</span>
+<span class="leancloud-visitors-count">404 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="imagemagick">ImageMagick</h1>
 
@@ -404,8 +420,6 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/imagemagick" rel="tag" title="ImageMagick">#ImageMagick#</a>
     
 </div>
@@ -415,16 +429,16 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/linux.crond/" rel="next" title="Linux.Crontab">
-        <i class="fa fa-chevron-left"></i> Linux.Crontab
+        <a href="http://domain.yqjdcyy.com/post/%E8%AE%B8%E5%BC%8F%E4%BC%9F/" rel="next" title="许式伟">
+        <i class="fa fa-chevron-left"></i> 许式伟
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E8%AE%B8%E5%BC%8F%E4%BC%9F/" rel="prev" title="许式伟">
-        许式伟 <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/%E4%BC%8F%E7%89%B9%E5%8A%A0/" rel="prev" title="伏特加">
+        伏特加 <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -470,7 +484,16 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -482,14 +505,14 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -499,7 +522,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -525,6 +548,47 @@
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#imagemagick">ImageMagick</a>
+<ul>
+<li><a href="#reference">Reference</a></li>
+<li><a href="#anatomy">Anatomy</a>
+<ul>
+<li><a href="#input-filenames">Input FileNames</a>
+<ul>
+<li><a href="#filename-globbing">FileName Globbing</a></li>
+<li><a href="#explicit-image-format">Explicit Image Format</a></li>
+<li><a href="#built-in-image-and-pattern">Built-in Image and Pattern</a></li>
+<li><a href="#stdin-stdout-file-descriptors">STDIN·STDOUT·File Descriptors</a></li>
+<li><a href="#selecting-frames">Selecting Frames</a></li>
+<li><a href="#selecting-an-image-region">Selecting an Image Region</a></li>
+<li><a href="#inline-image-resize">Inline Image Resize</a></li>
+<li><a href="#inline-image-crop">Inline Image Crop</a></li>
+<li><a href="#filename-references">Filename References</a></li>
+<li><a href="#stream-buffering">Stream Buffering</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#analysis">Analysis</a>
+<ul>
+<li><a href="#command-line-options">Command-line Options</a>
+<ul>
+<li><a href="#imagesetting">ImageSetting</a></li>
+<li><a href="#image-operator">Image Operator</a></li>
+<li><a href="#image-sequence-operator">Image Sequence Operator</a></li>
+<li><a href="#image-geometry">Image Geometry</a></li>
+<li><a href="#image-stack">Image Stack</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#example">Example</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

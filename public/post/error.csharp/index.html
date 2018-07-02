@@ -131,20 +131,36 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">208 字 ~1分钟</span>
+<span class="leancloud-visitors-count">207 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="异常">异常</h1>
 
@@ -199,8 +215,6 @@ newThread.SetApartmentState(ApartmentState.MTA);
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/error" rel="tag" title="Error">#Error#</a>
     
     <a href="http://domain.yqjdcyy.com/tags/csharp" rel="tag" title="CSharp">#CSharp#</a>
@@ -267,7 +281,16 @@ newThread.SetApartmentState(ApartmentState.MTA);
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -279,14 +302,14 @@ newThread.SetApartmentState(ApartmentState.MTA);
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -296,7 +319,7 @@ newThread.SetApartmentState(ApartmentState.MTA);
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -322,6 +345,24 @@ newThread.SetApartmentState(ApartmentState.MTA);
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#异常">异常</a>
+<ul>
+<li><a href="#在可以调用-ole-之前-必须将当前线程设置为单线程单元-sta-模式-请确保您的main函数带有stathreadattribute标记">在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记</a>
+<ul>
+<li><a href="#解决">解决</a></li>
+<li><a href="#解析">解析</a></li>
+<li><a href="#过程">过程</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

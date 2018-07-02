@@ -6,7 +6,7 @@
     <description>Recent content in Linux on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 21 Jun 2018 00:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 21 Jun 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,43 +14,61 @@
     <item>
       <title>Linux.User</title>
       <link>http://domain.yqjdcyy.com/post/linux.user/</link>
-      <pubDate>Thu, 21 Jun 2018 00:10:00 +0800</pubDate>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.user/</guid>
-      <description>[TOC] 参考 创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录she</description>
+      <description>参考 创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录shel</description>
     </item>
     
     <item>
       <title>Linux.Java</title>
       <link>http://domain.yqjdcyy.com/post/linux.java/</link>
-      <pubDate>Wed, 20 Jun 2018 17:30:00 +0800</pubDate>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
-      <description>[TOC] 参考 Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script 安装 查询 Java SE Downloads 使用 Oracle 账号登录 下载 获取下载链接 jdk-8u171-linux-x64.rpm F12 获取 Cookie 「gpw_e24」「oracleli</description>
+      <description>参考 Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script 安装 查询 Java SE Downloads 使用 Oracle 账号登录 下载 获取下载链接 jdk-8u171-linux-x64.rpm F12 获取 Cookie 「gpw_e24」「oraclelic</description>
+    </item>
+    
+    <item>
+      <title>Linux.Jenkins</title>
+      <link>http://domain.yqjdcyy.com/post/linux.jenkins/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.jenkins/</guid>
+      <description>参考 Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification</description>
     </item>
     
     <item>
       <title>Hello.Linux</title>
       <link>http://domain.yqjdcyy.com/post/hello.linux/</link>
-      <pubDate>Wed, 02 May 2018 16:30:00 +0800</pubDate>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.linux/</guid>
-      <description>[TOC] 进度 Linux 基础文件 14&amp;frasl;30 Linux 架站文件 0/ 31 Linux 安全 0/ 1 Solaris 0/ 1 概述 系统特点 开源免费、稳定性 安全性 处理多并发性能好 系统管理事项(kernel) 系统呼叫接口 行</description>
+      <description>进度 Linux 基础文件 14&amp;frasl;30 Linux 架站文件 0/ 31 Linux 安全 0/ 1 Solaris 0/ 1 概述 系统特点 开源免费、稳定性 安全性 处理多并发性能好 系统管理事项(kernel) 系统呼叫接口 行程</description>
     </item>
     
     <item>
       <title>Linux.Crontab</title>
       <link>http://domain.yqjdcyy.com/post/linux.crond/</link>
-      <pubDate>Wed, 17 Jan 2018 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.crond/</guid>
       <description>Linux.Crontab 参考 每天一个linux命令（50）：crontab命令 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所</description>
     </item>
     
     <item>
+      <title>Linux.Expect</title>
+      <link>http://domain.yqjdcyy.com/post/linux.expect/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.expect/</guid>
+      <description>Linux.Expect 参考 expect spawn、linux expect 用法 expect spawn、linux expect 用法小记 作用 代替实现与终端的交换，根据系统的输出运行相应的命令 需要 Tcl 编程语言的</description>
+    </item>
+    
+    <item>
       <title>Linux.Lsof</title>
       <link>http://domain.yqjdcyy.com/post/linux.lsof/</link>
-      <pubDate>Mon, 11 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.lsof/</guid>
       <description>参考 lsof 一切皆文件 功能 查看当前系统文件的工具 支持文件类型 普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（</description>
@@ -59,16 +77,16 @@
     <item>
       <title>Linux 单TCP连接占用最少内存</title>
       <link>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
-      <description>[TOC] Linux 单 TCP 连接占用最少内存 结构 错 TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control</description>
+      <description>Linux 单 TCP 连接占用最少内存 结构 错 TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control b</description>
     </item>
     
     <item>
       <title>Linux.Vimium</title>
       <link>http://domain.yqjdcyy.com/post/linux.vimium/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.vimium/</guid>
       <description>Vimium 快捷键指南 页面导航 j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部 r 刷新界面 yy 复制当前界面 URL p 在当前标签页打开剪贴板中的 URL</description>
@@ -77,43 +95,43 @@
     <item>
       <title>Linux.Chown</title>
       <link>http://domain.yqjdcyy.com/post/linux.chown/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.chown/</guid>
-      <description>[TOC] chown 格式 chown [option]* [user[:[group]*]] [file|group]* 必要参数 -c 显示更改的部分的信息 -f 忽略错误信息 -h 修复符号链接 -R 处理指定目录以及其子目录下的所有文件 -v 显示详细的处理信息 -deference 作用于</description>
+      <description>chown 格式 chown [option]* [user[:[group]*]] [file|group]* 必要参数 -c 显示更改的部分的信息 -f 忽略错误信息 -h 修复符号链接 -R 处理指定目录以及其子目录下的所有文件 -v 显示详细的处理信息 -deference 作用于符</description>
     </item>
     
     <item>
       <title>Linux.Git</title>
       <link>http://domain.yqjdcyy.com/post/linux.git/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
-      <description>[TOC] 参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
+      <description>参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
     </item>
     
     <item>
       <title>Linux.Scp</title>
       <link>http://domain.yqjdcyy.com/post/linux.scp/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.scp/</guid>
-      <description>[TOC] 参考 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1</description>
+      <description>参考 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1 强</description>
     </item>
     
     <item>
       <title>Linux.XArgs</title>
       <link>http://domain.yqjdcyy.com/post/linux.xargs/</link>
-      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.xargs/</guid>
       <description>参考 Linux 系統 xargs 指令範例與教學 Wiki-xargs 作用 将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串</description>
     </item>
     
     <item>
-      <title>Linux.Nginx </title>
+      <title>Linux.Nginx</title>
       <link>http://domain.yqjdcyy.com/post/linux.nginx/</link>
-      <pubDate>Wed, 04 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.nginx/</guid>
       <description>Linux.Nginx 参考 反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置</description>
@@ -122,100 +140,91 @@
     <item>
       <title>Linux.Grep</title>
       <link>http://domain.yqjdcyy.com/post/linux.grep/</link>
-      <pubDate>Wed, 20 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.grep/</guid>
-      <description>[TOC] Grep 参考 grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep 格式 grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...] 参数 匹配器选择 -E, --extended-regexp 扩展正则表达式</description>
+      <description>Grep 参考 grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep 格式 grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...] 参数 匹配器选择 -E, --extended-regexp 扩展正则表达式 由</description>
     </item>
     
     <item>
       <title>Linux.Run</title>
       <link>http://domain.yqjdcyy.com/post/linux.run/</link>
-      <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.run/</guid>
-      <description>[TOC] 命令后台运行 参考 Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令 类型 后台运行，终端关闭时停止 后台运行，终</description>
+      <description>命令后台运行 参考 Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令 类型 后台运行，终端关闭时停止 后台运行，终端</description>
     </item>
     
     <item>
-      <title>Linux 的目录与权限</title>
+      <title>Linux.目录与权限</title>
       <link>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</link>
-      <pubDate>Fri, 25 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</guid>
-      <description>[TOC] Linux 的目录与权限 参考 Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件 使用者与群组 文件拥有者 群组 当前拥有者所在群组</description>
-    </item>
-    
-    <item>
-      <title>Linux.Jenkins</title>
-      <link>http://domain.yqjdcyy.com/post/linux.jenkins/</link>
-      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/linux.jenkins/</guid>
-      <description>[TOC] 参考 Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key</description>
+      <description>Linux 的目录与权限 参考 Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件 使用者与群组 文件拥有者 群组 当前拥有者所在群组其</description>
     </item>
     
     <item>
       <title>Linux.Maven</title>
       <link>http://domain.yqjdcyy.com/post/linux.maven/</link>
-      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.maven/</guid>
-      <description>[TOC] 参考 Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz 流程 Java.config check $JAVA_HOME Maven.config UNZIP /data/soft/apache-maven-3.5.0 EXPORT.ADD /etc/profile export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2} EXPORT.SAVE source /etc/profile CHECK mvn -v MAVEN.CONFIG /data/soft/apache-maven-3.5.0/conf/settings.xml &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt; 常用指令 clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X 显示 Debbug 信息</description>
+      <description>参考 Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz 流程 Java.config check $JAVA_HOME Maven.config UNZIP /data/soft/apache-maven-3.5.0 EXPORT.ADD /etc/profile export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2} EXPORT.SAVE source /etc/profile CHECK mvn -v MAVEN.CONFIG /data/soft/apache-maven-3.5.0/conf/settings.xml &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt; 常用指令 clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X 显示 Debbug 信息</description>
     </item>
     
     <item>
       <title>Linux.Tomcat</title>
       <link>http://domain.yqjdcyy.com/post/linux.tomcat/</link>
-      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.tomcat/</guid>
-      <description>[TOC] 参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log</description>
+      <description>参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log run</description>
     </item>
     
     <item>
       <title>Linux.Firewalld</title>
       <link>http://domain.yqjdcyy.com/post/linux.firewalld/</link>
-      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.firewalld/</guid>
-      <description>[TOC] firewalld 参考 CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置 指令 常见 添加端口 firewall-cmd --permanent --zone=public --add-port=3306/tcp 重启 firewall-cmd --reload 添</description>
+      <description>firewalld 参考 CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置 指令 常见 添加端口 firewall-cmd --permanent --zone=public --add-port=3306/tcp 重启 firewall-cmd --reload 添加</description>
     </item>
     
     <item>
       <title>Linux.Mysql</title>
       <link>http://domain.yqjdcyy.com/post/linux.mysql/</link>
-      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.mysql/</guid>
-      <description>[TOC] 参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装</description>
+      <description>参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装 默</description>
     </item>
     
     <item>
       <title>Linux.Vim</title>
       <link>http://domain.yqjdcyy.com/post/linux.vim/</link>
-      <pubDate>Tue, 08 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.vim/</guid>
-      <description>[TOC] 简明 VIM 练级攻略 阶段 存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力 存活 i Insert 模式 ESC 返回 Normal 模式 x 删除当前光标所有的一个字符 dd 剪切当前行 p 粘贴</description>
+      <description>简明 VIM 练级攻略 阶段 存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力 存活 i Insert 模式 ESC 返回 Normal 模式 x 删除当前光标所有的一个字符 dd 剪切当前行 p 粘贴 hjkl</description>
     </item>
     
     <item>
       <title>Linux.Make</title>
       <link>http://domain.yqjdcyy.com/post/linux.make/</link>
-      <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.make/</guid>
-      <description>[TOC] Make 参考 例解 Linux 下 Make 命令 作用 编译和安装开源工具 管理大型复杂项目的编译 原理 配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建</description>
+      <description>Make 参考 例解 Linux 下 Make 命令 作用 编译和安装开源工具 管理大型复杂项目的编译 原理 配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立</description>
     </item>
     
     <item>
       <title>Linux.Curl</title>
       <link>http://domain.yqjdcyy.com/post/linux.curl/</link>
-      <pubDate>Sat, 01 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.curl/</guid>
-      <description>[TOC] 参考 curl网站开发指南 curl 官网 everything-curl.pdf 指令 -O | -o path 下载 -i 显示 http response 头信息 -v 显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程 -X [DELETE| POST| PUT| ...] 支持其它类型参数</description>
+      <description>参考 curl网站开发指南 curl 官网 everything-curl.pdf 指令 -O | -o path 下载 -i 显示 http response 头信息 -v 显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程 -X [DELETE| POST| PUT| ...] 支持其它类型参数 --data</description>
     </item>
     
   </channel>

@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -1031,9 +1049,7 @@ public class SafeStringValidator implements ConstraintValidator<SafeString, Stri
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
-    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java ">#Java #</a>
+    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java">#Java#</a>
     
 </div>
 
@@ -1097,7 +1113,16 @@ public class SafeStringValidator implements ConstraintValidator<SafeString, Stri
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -1109,14 +1134,14 @@ public class SafeStringValidator implements ConstraintValidator<SafeString, Stri
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -1126,7 +1151,7 @@ public class SafeStringValidator implements ConstraintValidator<SafeString, Stri
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -1152,6 +1177,48 @@ public class SafeStringValidator implements ConstraintValidator<SafeString, Stri
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#获取路径">获取路径</a>
+<ul>
+<li><a href="#获取方法">获取方法</a></li>
+<li><a href="#jsp路径-系统全路径">JSP路径/系统全路径</a></li>
+<li><a href="#工程classes下路径-src-class">工程Classes下路径（SRC/CLASS）</a></li>
+<li><a href="#系统路径">系统路径</a></li>
+<li><a href="#web根上下文环境-即相对路径">WEB根上下文环境（即相对路径）</a></li>
+<li><a href="#站点虚拟路径">站点虚拟路径</a></li>
+<li><a href="#类加载器路径">类加载器路径</a></li>
+</ul></li>
+<li><a href="#泛型">泛型</a></li>
+<li><a href="#jmx">JMX</a>
+<ul>
+<li><a href="#推荐">推荐</a></li>
+<li><a href="#组成">组成</a></li>
+<li><a href="#监控管理">监控管理</a>
+<ul>
+<li><a href="#平台mxbeans和平台mbean-server">平台MXBeans和平台MBean Server</a></li>
+<li><a href="#jconsole">JConsole</a></li>
+</ul></li>
+<li><a href="#mbeans介绍">MBeans介绍</a></li>
+<li><a href="#远程管理">远程管理</a></li>
+<li><a href="#jvm运行情况-jmx">JVM运行情况 - JMX</a>
+<ul>
+<li><a href="#监控双方于同一jvm">监控双方于同一JVM</a></li>
+<li><a href="#监控双方位于不同jvm">监控双方位于不同JVM</a></li>
+<li><a href="#监控双方位于不同jvm-但处于同一物理主机-java-instrutment-attach-api">监控双方位于不同JVM，但处于同一物理主机(Java Instrutment&amp; Attach API)</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

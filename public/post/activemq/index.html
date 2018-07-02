@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -498,9 +516,7 @@ producer.send(message);</pre></div>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
-    <a href="http://domain.yqjdcyy.com/tags/activemq" rel="tag" title="ActiveMq ">#ActiveMq #</a>
+    <a href="http://domain.yqjdcyy.com/tags/activemq" rel="tag" title="ActiveMq">#ActiveMq#</a>
     
 </div>
 
@@ -564,7 +580,16 @@ producer.send(message);</pre></div>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -576,14 +601,14 @@ producer.send(message);</pre></div>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -593,7 +618,7 @@ producer.send(message);</pre></div>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -619,6 +644,90 @@ producer.send(message);</pre></div>
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#地址">地址</a></li>
+<li><a href="#运行">运行</a></li>
+<li><a href="#代码">代码</a>
+<ul>
+<li><a href="#依赖">依赖</a></li>
+<li><a href="#模式-queue">模式 - Queue</a>
+<ul>
+<li><a href="#发送">发送</a></li>
+<li><a href="#接收">接收</a></li>
+</ul></li>
+<li><a href="#模式-topic">模式 - Topic</a>
+<ul>
+<li><a href="#发送-1">发送</a></li>
+<li><a href="#接收-1">接收</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#处理机制对比">处理机制对比</a>
+<ul>
+<li><a href="#queue">Queue</a></li>
+<li><a href="#topic">Topic</a></li>
+</ul></li>
+<li><a href="#常用模式">常用模式</a>
+<ul>
+<li><a href="#同时发送多处">同时发送多处</a>
+<ul>
+<li><a href="#发送-2">发送</a></li>
+<li><a href="#接收-2">接收</a></li>
+</ul></li>
+<li><a href="#指定处理指定数量数据">指定处理指定数量数据</a>
+<ul>
+<li><a href="#接收-3">接收</a></li>
+</ul></li>
+<li><a href="#独占消费">独占消费</a>
+<ul>
+<li><a href="#接收-4">接收</a></li>
+<li><a href="#特点">特点</a></li>
+</ul></li>
+<li><a href="#消息查看">消息查看</a>
+<ul>
+<li><a href="#接收-5">接收</a></li>
+<li><a href="#特点-1">特点</a></li>
+</ul></li>
+<li><a href="#消息过滤">消息过滤</a>
+<ul>
+<li><a href="#发送-3">发送</a></li>
+<li><a href="#接收-6">接收</a></li>
+</ul></li>
+<li><a href="#消息事务处理">消息事务处理</a>
+<ul>
+<li><a href="#发送-4">发送</a></li>
+</ul></li>
+<li><a href="#通配符接收">通配符接收</a>
+<ul>
+<li><a href="#接收-7">接收</a></li>
+<li><a href="#注">注</a></li>
+</ul></li>
+<li><a href="#临时通道">临时通道</a>
+<ul>
+<li><a href="#接收-8">接收</a></li>
+<li><a href="#发送-5">发送</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#基础概念">基础概念</a>
+<ul>
+<li><a href="#工作类">工作类</a></li>
+<li><a href="#消息格式">消息格式</a></li>
+<li><a href="#消息确认模式">消息确认模式</a>
+<ul>
+<li><a href="#非事务性会话中-应用程序创建的会话有5-种确认模式-而在事务性会话中-确认模式被忽略">非事务性会话中，应用程序创建的会话有5 种确认模式,而在事务性会话中，确认模式被忽略。</a></li>
+<li><a href="#确认模式">确认模式:</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

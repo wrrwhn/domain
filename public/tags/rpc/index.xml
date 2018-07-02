@@ -6,7 +6,7 @@
     <description>Recent content in Rpc on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 10 May 2018 19:10:00 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 10 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/rpc/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Hello.RPC</title>
       <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
-      <pubDate>Thu, 10 May 2018 19:10:00 +0800</pubDate>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
-      <description>[TOC] 概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间</description>
+      <description>概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，</description>
     </item>
     
   </channel>

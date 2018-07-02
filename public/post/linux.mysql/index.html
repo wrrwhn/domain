@@ -131,20 +131,36 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">363 字 ~1分钟</span>
+<span class="leancloud-visitors-count">361 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h2 id="参考">参考</h2>
 
@@ -332,8 +348,6 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/linux" rel="tag" title="Linux">#Linux#</a>
     
     <a href="http://domain.yqjdcyy.com/tags/mysql" rel="tag" title="Mysql">#Mysql#</a>
@@ -400,7 +414,16 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -412,14 +435,14 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -429,7 +452,7 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -455,6 +478,50 @@ tcp6       0      0 :::3306                 :::*                    LISTEN      
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#环境">环境</a></li>
+<li><a href="#安装">安装</a>
+<ul>
+<li><a href="#默认">默认</a></li>
+</ul></li>
+<li><a href="#初始化">初始化</a>
+<ul>
+<li><a href="#mysql-初始化">Mysql 初始化</a></li>
+<li><a href="#直接设置密码">直接设置密码</a></li>
+</ul></li>
+<li><a href="#启动">启动</a>
+<ul>
+<li><a href="#服务启动">服务启动</a></li>
+<li><a href="#开机启动">开机启动</a></li>
+<li><a href="#防火墙">防火墙</a></li>
+</ul></li>
+<li><a href="#环境准备">环境准备</a>
+<ul>
+<li><a href="#创建数据库">创建数据库</a></li>
+<li><a href="#创建账号-分配权限">创建账号&amp; 分配权限</a></li>
+</ul></li>
+<li><a href="#异常排查">异常排查</a>
+<ul>
+<li><a href="#set-password-失败">set password 失败</a></li>
+<li><a href="#3306-无法对外开放">3306 无法对外开放</a></li>
+</ul></li>
+<li><a href="#备注">备注</a>
+<ul>
+<li><a href="#查看-linux-版本">查看 Linux 版本</a></li>
+<li><a href="#查看-mysql-版本">查看 Mysql 版本</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

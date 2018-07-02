@@ -6,7 +6,7 @@
     <description>Recent content in Typescript on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 15 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/typescript/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>JavaScript.TypeScript</title>
       <link>http://domain.yqjdcyy.com/post/javascript.typescript/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/javascript.typescript/</guid>
-      <description>[TOC] TypeScript 参考 Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols 简介 微软开发、开源的编程语</description>
+      <description>TypeScript 参考 Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols 简介 微软开发、开源的编程语言</description>
     </item>
     
   </channel>

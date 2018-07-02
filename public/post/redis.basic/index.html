@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -827,8 +845,6 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/redis" rel="tag" title="Redis">#Redis#</a>
     
 </div>
@@ -846,8 +862,8 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" rel="prev" title="Oracle - 基础">
-        Oracle - 基础 <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/" rel="prev" title="Oracle.基础">
+        Oracle.基础 <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -893,7 +909,16 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -905,14 +930,14 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -922,7 +947,7 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -948,6 +973,86 @@ vm-max-threads 4 #用于执行value对象换入换出的工作线程数量。0�
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#数据类型">数据类型</a>
+<ul>
+<li><a href="#keys">Keys</a></li>
+<li><a href="#string">String</a>
+<ul>
+<li><a href="#特点">特点</a></li>
+<li><a href="#常用方法">常用方法</a></li>
+</ul></li>
+<li><a href="#list">List</a>
+<ul>
+<li><a href="#特点-1">特点</a></li>
+<li><a href="#常用方法-1">常用方法</a></li>
+</ul></li>
+<li><a href="#set">Set</a>
+<ul>
+<li><a href="#特点-2">特点</a></li>
+<li><a href="#常用方法-2">常用方法</a></li>
+</ul></li>
+<li><a href="#sorted-set">Sorted Set</a>
+<ul>
+<li><a href="#特点-3">特点</a></li>
+<li><a href="#常用方法-3">常用方法</a></li>
+</ul></li>
+<li><a href="#hash">Hash</a>
+<ul>
+<li><a href="#特点-4">特点</a></li>
+<li><a href="#常用方法-4">常用方法</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#排序">排序</a>
+<ul>
+<li><a href="#特点-5">特点</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#详解">详解</a></li>
+</ul></li>
+<li><a href="#事务">事务</a>
+<ul>
+<li><a href="#特点-6">特点</a></li>
+<li><a href="#缺陷">缺陷</a></li>
+<li><a href="#常用指令">常用指令</a></li>
+</ul></li>
+<li><a href="#pipeline">pipeline</a>
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#注意事项">注意事项</a></li>
+<li><a href="#代码">代码</a></li>
+</ul></li>
+<li><a href="#持久化">持久化</a>
+<ul>
+<li><a href="#特点-7">特点</a></li>
+<li><a href="#类型">类型</a>
+<ul>
+<li><a href="#snapshooting-快照">Snapshooting（快照）</a></li>
+<li><a href="#append-only-fill-aof">Append-only fill（aof）</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#主从复制">主从复制</a>
+<ul>
+<li><a href="#特点-8">特点</a></li>
+<li><a href="#过程">过程</a></li>
+<li><a href="#配置">配置</a></li>
+</ul></li>
+<li><a href="#虚拟内存">虚拟内存</a>
+<ul>
+<li><a href="#特点-9">特点</a></li>
+<li><a href="#配置-1">配置</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

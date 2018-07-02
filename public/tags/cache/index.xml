@@ -6,15 +6,24 @@
     <description>Recent content in Cache on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Dec 2016 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/cache/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>浏览器缓存知识小结及应用</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
+      <description>浏览器缓存知识小结及应用 分类 强缓存 判断命中，则直接从浏览器缓存中读取资源，不发请求至服务器（200） 协商缓存 发请求至服务器，协商缓存命中，则</description>
+    </item>
+    
+    <item>
       <title>Spring.Cache</title>
       <link>http://domain.yqjdcyy.com/post/spring.cache/</link>
-      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
       <description>参考链接 http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/ 特点 通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓</description>

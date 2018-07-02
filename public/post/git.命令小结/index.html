@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -143,8 +161,6 @@
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h2 id="查看">查看</h2>
 
@@ -502,8 +518,6 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/git" rel="tag" title="Git">#Git#</a>
     
 </div>
@@ -568,7 +582,16 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -580,14 +603,14 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -597,7 +620,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -623,6 +646,79 @@
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#查看">查看</a>
+<ul>
+<li><a href="#分支状态">分支状态</a></li>
+<li><a href="#日志">日志</a></li>
+<li><a href="#标签">标签</a></li>
+<li><a href="#文件提交明细">文件提交明细</a></li>
+</ul></li>
+<li><a href="#提交">提交</a>
+<ul>
+<li><a href="#首次提交">首次提交</a></li>
+<li><a href="#修改提交">修改提交</a></li>
+<li><a href="#强制提交">强制提交</a></li>
+<li><a href="#标签-1">标签</a></li>
+</ul></li>
+<li><a href="#创建">创建</a>
+<ul>
+<li><a href="#分支">分支</a></li>
+<li><a href="#标签-2">标签</a></li>
+</ul></li>
+<li><a href="#切换">切换</a>
+<ul>
+<li><a href="#分支-1">分支</a></li>
+<li><a href="#标签-3">标签</a></li>
+</ul></li>
+<li><a href="#关联">关联</a>
+<ul>
+<li><a href="#关联远程分支">关联远程分支</a></li>
+<li><a href="#取消关联">取消关联</a></li>
+</ul></li>
+<li><a href="#更新">更新</a>
+<ul>
+<li><a href="#仓库">仓库</a></li>
+<li><a href="#所有">所有</a></li>
+<li><a href="#指定分支">指定分支</a></li>
+</ul></li>
+<li><a href="#合并">合并</a>
+<ul>
+<li><a href="#分支-2">分支</a></li>
+<li><a href="#提交-1">提交</a></li>
+</ul></li>
+<li><a href="#回滚">回滚</a>
+<ul>
+<li><a href="#按版本">按版本</a></li>
+<li><a href="#按文件">按文件</a></li>
+<li><a href="#按提交">按提交</a></li>
+</ul></li>
+<li><a href="#删除">删除</a>
+<ul>
+<li><a href="#文件">文件</a></li>
+<li><a href="#分支-3">分支</a></li>
+</ul></li>
+<li><a href="#暂存">暂存</a></li>
+<li><a href="#维护">维护</a>
+<ul>
+<li><a href="#性能">性能</a></li>
+<li><a href="#可靠性">可靠性</a></li>
+</ul></li>
+<li><a href="#报错">报错</a>
+<ul>
+<li><a href="#push时遇到unpack-failed-error-missing-tree错误">push时遇到unpack failed: error Missing tree错误</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

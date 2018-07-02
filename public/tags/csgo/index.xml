@@ -6,7 +6,7 @@
     <description>Recent content in Csgo on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 15 Apr 2018 18:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/csgo/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>CSGO.地图</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Sun, 15 Apr 2018 18:00:00 +0800</pubDate>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E5%9C%B0%E5%9B%BE/</guid>
       <description>[TOC] 项目 改准心 地图 Crosshair Generator V2 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=308490450&amp;amp;searchtext=Crosshair+Generator+V2 投掷物训练 地图 Training maps (smoke,Molotov,Flash) 资源 Dolnma *RankSea.com Yesber 预瞄点与投掷物热身训练 地图 Warmup and Training 资源 Yesber 瞄准训练 地图 training_aim_csgo2 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=213240871&amp;amp;searchtext=training_aim_csgo2 跳跃训练 地图 Jumps Training 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=314892291&amp;amp;searchtext=Jumps+Training 瞄</description>
@@ -23,7 +23,7 @@
     <item>
       <title>CSGO.技巧.跳跃</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</link>
-      <pubDate>Thu, 15 Mar 2018 15:00:00 +0800</pubDate>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</guid>
       <description>连跳 W Space+ A+ 鼠标左摆 落地时+ Space+ D 跳箱子 正对箱子，Ctrl+ Space Ctrl+ W 跳远 W Space A+ 鼠标左摆 D+ 鼠标右摆 参考 CSGO跳跃技巧及操作方法心得详解</description>
@@ -32,7 +32,7 @@
     <item>
       <title>CSGO.脚本</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</link>
-      <pubDate>Thu, 15 Mar 2018 14:00:00 +0800</pubDate>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</guid>
       <description>设置项 CSGO详细参数.md 脚本 示例 单人模式 single.cfg sv_cheats 1 bot_kick sv_infinite_ammo 1 noclip bind &amp;quot;H&amp;quot; &amp;quot;noclip&amp;quot; mp_startmoney &amp;quot;16000&amp;quot; sv_grenade_trajectory &amp;quot;1&amp;quot; sv_grenade_trajectory_time &amp;quot;20&amp;quot; sv_grenade_trajectory_dash &amp;quot;0&amp;quot; sv_grenade_trajectory_thickness &amp;quot;1&amp;quot; sv_grenade_trajectory_time_spectator &amp;quot;1&amp;quot; sv_showimpacts 1 sv_showimpacts_time 25 mp_roundtime 99 mp_timelimit &amp;quot;999&amp;quot; mp_freezetime &amp;quot;0&amp;quot; mp_buy_anywhere &amp;quot;1&amp;quot; mp_buytime 9999 bind &amp;quot;k&amp;quot; &amp;quot;bot_add_ct&amp;quot; bind &amp;quot;l&amp;quot; &amp;quot;bot_add_t&amp;quot; bot_zombie &amp;quot;0&amp;quot; 备注 目前</description>

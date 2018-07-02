@@ -126,25 +126,41 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-06-27">
-    2018-06-27
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-06-20">
+    2018-06-20
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">2212 字 ~5分钟</span>
+<span class="leancloud-visitors-count">2193 字 ~5分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="work">Work</h1>
 
@@ -793,8 +809,6 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/docker" rel="tag" title="Docker">#Docker#</a>
     
 </div>
@@ -804,16 +818,16 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/linux.user/" rel="next" title="Linux.User">
-        <i class="fa fa-chevron-left"></i> Linux.User
+        <a href="http://domain.yqjdcyy.com/post/linux.java/" rel="next" title="Linux.Java">
+        <i class="fa fa-chevron-left"></i> Linux.Java
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/" rel="prev" title="追诉时效">
-        追诉时效 <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/hello.docker.compose/" rel="prev" title="Hello.Docker.Compose">
+        Hello.Docker.Compose <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -859,7 +873,16 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -871,14 +894,14 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -888,7 +911,7 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -914,6 +937,50 @@ ADD test /dest/                 # 将 `test` 文件拷贝至 `/dest/ `
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#work">Work</a></li>
+<li><a href="#guidlines">Guidlines</a></li>
+<li><a href="#command">Command</a>
+<ul>
+<li><a href="#parser-directives">Parser directives</a></li>
+<li><a href="#env">ENV</a></li>
+<li><a href="#from">FROM</a></li>
+<li><a href="#run">RUN</a></li>
+<li><a href="#cmd">CMD</a></li>
+<li><a href="#label">LABEL</a></li>
+<li><a href="#maintainer"><del>MAINTAINER</del></a></li>
+<li><a href="#expose">EXPOSE</a></li>
+<li><a href="#add">ADD</a></li>
+<li><a href="#copy">COPY</a></li>
+<li><a href="#entrypoint">ENTRYPOINT</a></li>
+<li><a href="#volume">VOLUME</a></li>
+<li><a href="#user">USER</a></li>
+<li><a href="#workdir">WORKDIR</a></li>
+<li><a href="#arg">ARG</a></li>
+<li><a href="#shell">SHELL</a></li>
+</ul></li>
+<li><a href="#dockerignore">Dockerignore</a></li>
+<li><a href="#example">Example</a>
+<ul>
+<li><a href="#basic">Basic</a></li>
+<li><a href="#basic-windows">Basic.Windows</a></li>
+<li><a href="#variable">Variable</a></li>
+<li><a href="#build-multiple">Build.Multiple</a></li>
+<li><a href="#basic-run">Basic.Run</a></li>
+</ul></li>
+<li><a href="#reference">Reference</a>
+<ul>
+<li><a href="#官方">官方</a></li>
+<li><a href="#整理">整理</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

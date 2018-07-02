@@ -6,7 +6,7 @@
     <description>Recent content in 设计模式 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 02 Feb 2018 17:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 02 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>设计模式</title>
       <link>http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Fri, 02 Feb 2018 17:07:46 +0800</pubDate>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description>[TOC] 设计模式 参考 《HEAD_FIRST 设计模式》 图说设计模式 design pattern 包教不包会 设计原则 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要</description>
+      <description>设计模式 参考 《HEAD_FIRST 设计模式》 图说设计模式 design pattern 包教不包会 设计原则 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变</description>
     </item>
     
   </channel>

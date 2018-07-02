@@ -6,7 +6,7 @@
     <description>Recent content in Error on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 02 May 2018 16:45:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 02 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/error/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,16 @@
     <item>
       <title>Error.CSharp</title>
       <link>http://domain.yqjdcyy.com/post/error.csharp/</link>
-      <pubDate>Wed, 02 May 2018 16:45:00 +0800</pubDate>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/error.csharp/</guid>
-      <description>[TOC] 异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决</description>
+      <description>异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决 Main</description>
     </item>
     
     <item>
-      <title>Error.Mysql</title>
+      <title>Error.MYSQL</title>
       <link>http://domain.yqjdcyy.com/post/error.mysql/</link>
-      <pubDate>Tue, 12 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/error.mysql/</guid>
       <description> 1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;   </description>

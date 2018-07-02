@@ -6,7 +6,7 @@
     <description>Recent content in 快捷键 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 08 Feb 2018 18:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 08 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>IDEA.快捷键</title>
       <link>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
-      <pubDate>Thu, 08 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>[TOC] 参考 http://www.cnblogs.com/tonycody/p/3257601.html http://www.importnew.com/15462.html 快捷键 包、结构或视图 Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查</description>
+      <description>快捷键 包、结构或视图 Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查找代码所在</description>
     </item>
     
   </channel>

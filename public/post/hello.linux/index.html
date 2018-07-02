@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -143,8 +161,6 @@
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="进度">进度</h1>
 
@@ -3689,8 +3705,6 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/linux" rel="tag" title="Linux">#Linux#</a>
     
 </div>
@@ -3700,8 +3714,8 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/" rel="next" title="跟腱炎">
-        <i class="fa fa-chevron-left"></i> 跟腱炎
+        <a href="http://domain.yqjdcyy.com/post/%E8%A1%A8%E6%83%85.%E7%AC%A6%E5%8F%B7/" rel="next" title="表情.符号">
+        <i class="fa fa-chevron-left"></i> 表情.符号
         </a>
     
     </div>
@@ -3755,7 +3769,16 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -3767,14 +3790,14 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -3784,7 +3807,7 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -3810,6 +3833,136 @@ isig icanon iexten echo echoe echok -echonl -noflsh -xcase -tostop -echoprt echo
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#进度">进度</a>
+<ul>
+<li><a href="#linux-基础文件">Linux 基础文件</a></li>
+<li><a href="#linux-架站文件">Linux 架站文件</a></li>
+<li><a href="#linux-安全">Linux 安全</a></li>
+<li><a href="#solaris">Solaris</a></li>
+</ul></li>
+<li><a href="#概述">概述</a>
+<ul>
+<li><a href="#系统特点">系统特点</a></li>
+<li><a href="#系统管理事项-kernel">系统管理事项(kernel)</a></li>
+<li><a href="#系统演化">系统演化</a></li>
+<li><a href="#vmware安装">VMWare安装</a></li>
+<li><a href="#学习流程">学习流程</a></li>
+<li><a href="#推荐书籍"><strong>推荐书籍</strong></a></li>
+</ul></li>
+<li><a href="#常用概念">常用概念</a>
+<ul>
+<li><a href="#安装">安装</a></li>
+<li><a href="#软件地址">软件地址</a></li>
+<li><a href="#系统指令">系统指令</a>
+<ul>
+<li><a href="#指令格式">指令格式</a></li>
+<li><a href="#常用指令">常用指令</a>
+<ul>
+<li><a href="#系统登录">系统登录</a></li>
+<li><a href="#系统信息">系统信息</a></li>
+<li><a href="#快捷操作">快捷操作</a></li>
+<li><a href="#帮助">帮助</a></li>
+</ul></li>
+<li><a href="#指令详解">指令详解</a>
+<ul>
+<li><a href="#档案与目录管理">档案与目录管理</a></li>
+<li><a href="#档案与目录管理-1">档案与目录管理</a></li>
+<li><a href="#档案内容查阅">档案内容查阅</a></li>
+<li><a href="#档案与目录的预设权限与隐藏权限">档案与目录的预设权限与隐藏权限</a></li>
+<li><a href="#档案压缩和打包">档案压缩和打包</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#vi文字处理器">vi文字处理器</a>
+<ul>
+<li><a href="#功能介绍">功能介绍</a></li>
+<li><a href="#vi使用">vi使用</a>
+<ul>
+<li><a href="#模式分类">模式分类</a></li>
+<li><a href="#补充操作">补充操作</a></li>
+<li><a href="#一般模式">一般模式</a>
+<ul>
+<li><a href="#移动光标">移动光标</a></li>
+<li><a href="#搜寻与取代">搜寻与取代</a></li>
+<li><a href="#删除-复制与贴上">删除、复制与贴上</a></li>
+<li><a href="#指令列命令模式">指令列命令模式</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#vim额外功能">vim额外功能</a>
+<ul>
+<li><a href="#区块选择-多选">区块选择- 多选</a>
+<ul>
+<li><a href="#常用指令-1">常用指令</a></li>
+</ul></li>
+<li><a href="#多档案编辑">多档案编辑</a>
+<ul>
+<li><a href="#操作指令">操作指令</a></li>
+</ul></li>
+<li><a href="#多窗口编辑">多窗口编辑</a>
+<ul>
+<li><a href="#操作指令-1">操作指令</a></li>
+</ul></li>
+<li><a href="#vim环境设定">vim环境设定</a></li>
+</ul></li>
+<li><a href="#断行区别">断行区别</a>
+<ul>
+<li><a href="#区别">区别</a></li>
+<li><a href="#查看">查看</a></li>
+<li><a href="#转换">转换</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#bash-shell">BASH SHELL</a>
+<ul>
+<li><a href="#功能介绍-1">功能介绍</a>
+<ul>
+<li><a href="#概念">概念</a></li>
+<li><a href="#bash功能">BASH功能</a></li>
+<li><a href="#内建指令">内建指令</a></li>
+<li><a href="#变量功能">变量功能</a></li>
+<li><a href="#变量用途">变量用途</a>
+<ul>
+<li><a href="#应用场景">应用场景</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#环境变量">环境变量</a>
+<ul>
+<li><a href="#额外功能">额外功能</a>
+<ul>
+<li><a href="#变量有效范围">变量有效范围</a></li>
+<li><a href="#信息读取">信息读取</a></li>
+<li><a href="#变量设定">变量设定</a></li>
+<li><a href="#环境设定档">环境设定档</a></li>
+<li><a href="#终端机的环境设定">终端机的环境设定</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#异常及处理">异常及处理</a>
+<ul>
+<li><a href="#bash-make-command-not-found"><code>-bash: make: command not found</code></a></li>
+</ul></li>
+<li><a href="#应用实例">应用实例</a>
+<ul>
+<li><a href="#服务重启">服务重启</a>
+<ul>
+<li><a href="#tomcat部署war">Tomcat部署WAR</a></li>
+<li><a href="#mule服务重启">Mule服务重启</a></li>
+<li><a href="#关机步骤">关机步骤</a></li>
+<li><a href="#vi操作">VI操作</a>
+<ul>
+<li><a href="#以开发java程序为例">以开发Java程序为例</a></li>
+<li><a href="#开发c-程序为例">开发C++程序为例</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

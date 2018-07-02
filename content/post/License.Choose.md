@@ -1,6 +1,6 @@
 ---
 title: "License.Choose"
-date: ""2018-03-30"
+date: "2018-03-30"
 categories:
  - "整理"
 tags:

@@ -6,7 +6,7 @@
     <description>Recent content in Tomcat on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 09 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/tomcat/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,28 +14,28 @@
     <item>
       <title>Tomcat.Service</title>
       <link>http://domain.yqjdcyy.com/post/tomcat.service/</link>
-      <pubDate>Thu, 09 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/tomcat.service/</guid>
-      <description>[TOC] 参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log</description>
+      <description>参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log run</description>
     </item>
     
     <item>
-      <title>Tomcat. AccessLog </title>
+      <title>Tomcat.AccessLog</title>
       <link>http://domain.yqjdcyy.com/post/tomcat.-accesslog/</link>
-      <pubDate>Sat, 21 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/tomcat.-accesslog/</guid>
-      <description>[TOC] Tomcat. AccessLog 参考 Tomcat Access Log配置 Class AccessLogValve 作用 设置请求日志中的日志输出格式 详解 位置 conf.server.xml value.className= *.AccessLogValve 参数 className 执行类 org.apache.catalina.valves.AccessLogValve 默认 org.apache.catalina.valves.FastCommonAccessLogValve 仅支持 common 和 combined patterns directory 产生文件所存放目录的[绝对|相</description>
+      <description>Tomcat. AccessLog 参考 Tomcat Access Log配置 Class AccessLogValve 作用 设置请求日志中的日志输出格式 详解 位置 conf.server.xml value.className= *.AccessLogValve 参数 className 执行类 org.apache.catalina.valves.AccessLogValve 默认 org.apache.catalina.valves.FastCommonAccessLogValve 仅支持 common 和 combined patterns directory 产生文件所存放目录的[绝对|相对</description>
     </item>
     
     <item>
       <title>Linux.Tomcat</title>
       <link>http://domain.yqjdcyy.com/post/linux.tomcat/</link>
-      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.tomcat/</guid>
-      <description>[TOC] 参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log</description>
+      <description>参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log run</description>
     </item>
     
   </channel>

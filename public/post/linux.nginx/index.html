@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Linux.Nginx  - 好久不见</title>
+    <title>Linux.Nginx - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Linux.Nginx ">
+    <meta property="og:title" content="Linux.Nginx">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Linux.Nginx  - 好久不见" />
+    <meta name="title" content="Linux.Nginx - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 软件 | 架构 | Java | Golang"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.nginx/" itemprop="url">
-        Linux.Nginx 
+        Linux.Nginx
         </a>
       </h1>
       <div class="post-meta">
@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -861,9 +879,9 @@ proxy_ignore_client_abort on;</pre></div>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/linux" rel="tag" title="Linux">#Linux#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/nginx" rel="tag" title="Nginx">#Nginx#</a>
     
 </div>
 
@@ -895,7 +913,7 @@ proxy_ignore_client_abort on;</pre></div>
     </div>
     <div>
         <p style="margin-top:0px;">
-            标题：Linux.Nginx 
+            标题：Linux.Nginx
         <br />作者：<a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
         <br />关注：好久不见
         <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
@@ -927,7 +945,16 @@ proxy_ignore_client_abort on;</pre></div>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -939,14 +966,14 @@ proxy_ignore_client_abort on;</pre></div>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -956,7 +983,7 @@ proxy_ignore_client_abort on;</pre></div>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -982,6 +1009,54 @@ proxy_ignore_client_abort on;</pre></div>
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#linux-nginx">Linux.Nginx</a>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#反向代理">反向代理</a></li>
+</ul></li>
+<li><a href="#安装">安装</a></li>
+<li><a href="#指令">指令</a></li>
+<li><a href="#基本配置">基本配置</a></li>
+<li><a href="#明细配置项">明细配置项</a>
+<ul>
+<li><a href="#main">main</a>
+<ul>
+<li><a href="#common">Common</a>
+<ul>
+<li><a href="#http">Http</a></li>
+</ul></li>
+<li><a href="#http-proxy">Http-Proxy</a></li>
+<li><a href="#http-gzip">Http-GZip</a></li>
+</ul></li>
+<li><a href="#server">Server</a></li>
+<li><a href="#global-args">Global-Args</a></li>
+<li><a href="#upstream">Upstream</a></li>
+<li><a href="#location">Location</a></li>
+<li><a href="#alias-root">Alias &amp; Root</a></li>
+</ul></li>
+<li><a href="#示例">示例</a>
+<ul>
+<li><a href="#默认配置">默认配置</a></li>
+<li><a href="#匹配任何以-images-开始的请求-并停止匹配-其它location">匹配任何以 /images/ 开始的请求，并停止匹配 其它location</a></li>
+<li><a href="#负载均衡">负载均衡</a></li>
+<li><a href="#域名跳转">域名跳转</a></li>
+<li><a href="#停止后重启-找不到nginx-pid">停止后重启，找不到nginx.pid</a></li>
+<li><a href="#资源转跳">资源转跳</a></li>
+<li><a href="#ffmpeg-推流报-499">FFMPEG 推流报 499</a></li>
+<li><a href="#进程被杀-无法正常启动">进程被杀，无法正常启动</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

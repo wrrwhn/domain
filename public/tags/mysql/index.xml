@@ -6,7 +6,7 @@
     <description>Recent content in Mysql on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Feb 2018 18:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 07 Feb 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/mysql/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,16 +14,16 @@
     <item>
       <title>彻底终结MySQL同步延迟问题</title>
       <link>http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 07 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</guid>
       <description>彻底终结MySQL同步延迟问题 参考 彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication 版本 MySQL.Version 5.7 Storage.Engine TokuDB 影响因素 网络 主机或者从机的带宽打满 主从之</description>
     </item>
     
     <item>
-      <title>Error.Mysql</title>
+      <title>Error.MYSQL</title>
       <link>http://domain.yqjdcyy.com/post/error.mysql/</link>
-      <pubDate>Tue, 12 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/error.mysql/</guid>
       <description> 1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;   </description>
@@ -32,55 +32,55 @@
     <item>
       <title>Mysql.SELECT-INTO</title>
       <link>http://domain.yqjdcyy.com/post/mysql.select-into/</link>
-      <pubDate>Tue, 15 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.select-into/</guid>
-      <description>[TOC] 参考 SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE 命令 SELECT ... INTO VAR_LIST</description>
+      <description>参考 SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE 命令 SELECT ... INTO VAR_LIST 将</description>
     </item>
     
     <item>
       <title>Linux.Mysql</title>
       <link>http://domain.yqjdcyy.com/post/linux.mysql/</link>
-      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.mysql/</guid>
-      <description>[TOC] 参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装</description>
+      <description>参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装 默</description>
     </item>
     
     <item>
-      <title>MYSQL.LOCK-WAITS</title>
+      <title>Mysql.LOCK-WAITS</title>
       <link>http://domain.yqjdcyy.com/post/mysql.lock-waits/</link>
-      <pubDate>Sun, 23 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.lock-waits/</guid>
-      <description>[TOC] MySQL 5.5 InnoDB 锁等待 锁相关表 表名 作用 innodb_trx 当前正在执行事务的信息 innodb_locks 各已被请求但未被提交的事务锁 innodb_lock_waits 各阻塞事务的一至多行记录信息 字段 innodb_trx 字段 注释 trx_id 事务ID。</description>
+      <description>MySQL 5.5 InnoDB 锁等待 锁相关表 表名 作用 innodb_trx 当前正在执行事务的信息 innodb_locks 各已被请求但未被提交的事务锁 innodb_lock_waits 各阻塞事务的一至多行记录信息 字段 innodb_trx 字段 注释 trx_id 事务ID。 trx_state</description>
     </item>
     
     <item>
-      <title>MYSQL.Information_schema</title>
+      <title>Mysql.Information_schema</title>
       <link>http://domain.yqjdcyy.com/post/mysql.information_schema/</link>
-      <pubDate>Sun, 26 Feb 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.information_schema/</guid>
-      <description>[TOC] MYSQL.INFORMATION_SCHEMA 简介 MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于M</description>
+      <description>MYSQL.INFORMATION_SCHEMA 简介 MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于My</description>
     </item>
     
     <item>
-      <title>MYSQL.开发规范</title>
+      <title>Mysql.开发规范</title>
       <link>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
-      <description>[TOC] [数据库开发规范简版] 数据库创建 命名规范 Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称] 例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;; 表创建 命名规</description>
+      <description>[数据库开发规范简版] 数据库创建 命名规范 Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称] 例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;; 表创建 命名规范</description>
     </item>
     
     <item>
       <title>Mysql.Basic</title>
       <link>http://domain.yqjdcyy.com/post/mysql.basic/</link>
-      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.basic/</guid>
-      <description>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-</description>
+      <description>基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-T</description>
     </item>
     
   </channel>

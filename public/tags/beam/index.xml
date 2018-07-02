@@ -6,7 +6,7 @@
     <description>Recent content in Beam on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 16 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 16 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/beam/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>Apache.Beam的前世今生</title>
       <link>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
-      <description>{TOC} Apache Beam的前世今生 开源原因 意识到开源软件的巨大价值 足够多模型才能促使项目成功 简介 基础 Cloud Dataflow 介绍 构建、管理和优化复杂数据流水线的方法 用于构建</description>
+      <description>Apache Beam的前世今生 开源原因 意识到开源软件的巨大价值 足够多模型才能促使项目成功 简介 基础 Cloud Dataflow 介绍 构建、管理和优化复杂数据流水线的方法 用于构建移</description>
     </item>
     
   </channel>

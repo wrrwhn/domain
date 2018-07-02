@@ -126,25 +126,41 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2017-08-17">
-    2017-08-17
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-06-17">
+    2018-06-17
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">263 字 ~1分钟</span>
+<span class="leancloud-visitors-count">262 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h2 id="参考">参考</h2>
 
@@ -316,9 +332,9 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/linux" rel="tag" title="Linux">#Linux#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/jenkins" rel="tag" title="Jenkins">#Jenkins#</a>
     
 </div>
 
@@ -327,16 +343,16 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/linux.maven/" rel="next" title="Linux.Maven">
-        <i class="fa fa-chevron-left"></i> Linux.Maven
+        <a href="http://domain.yqjdcyy.com/post/hello.docker/" rel="next" title="Hello.Docker">
+        <i class="fa fa-chevron-left"></i> Hello.Docker
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/idea.mybatiscodehelper/" rel="prev" title="IDEA.MyBatisCodeHelper">
-        IDEA.MyBatisCodeHelper <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/linux.java/" rel="prev" title="Linux.Java">
+        Linux.Java <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -382,7 +398,16 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -394,14 +419,14 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -411,7 +436,7 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -437,6 +462,30 @@ chown -R appuser:appuser /var/lib/jenkins /var/log/jenkins</pre></div></li>
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#参考">参考</a></li>
+<li><a href="#流程">流程</a>
+<ul>
+<li><a href="#war">war</a></li>
+<li><a href="#yum">yum</a></li>
+<li><a href="#user">user</a></li>
+</ul></li>
+<li><a href="#异常">异常</a>
+<ul>
+<li><a href="#could-not-read-from-remote-repository">Could not read from remote repository.</a></li>
+<li><a href="#failed-to-create-parent-directories-for-tracking-file">Failed to create parent directories for tracking file</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

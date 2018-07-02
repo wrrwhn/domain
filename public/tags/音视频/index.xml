@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>音视频 on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/</link>
+    <description>Recent content in 音视频 on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Wed, 08 Feb 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/%E9%9F%B3%E8%A7%86%E9%A2%91/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>音视频的相关名词</title>
+      <link>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
+      <description>参考 码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清 解析 码率 解析 Data Rate，又名码流、码流率 视频文件在单位时间内使用的数据流量，单位为 Kb/s 或 Mb/s 通指视频</description>
+    </item>
+    
+  </channel>
+</rss>

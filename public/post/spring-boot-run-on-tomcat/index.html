@@ -131,20 +131,36 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">222 字 ~1分钟</span>
+<span class="leancloud-visitors-count">221 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="init">Init</h1>
 
@@ -293,8 +309,6 @@ public class SpringBootStartApplication extends SpringBootServletInitializer {
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/spring" rel="tag" title="Spring">#Spring#</a>
     
 </div>
@@ -359,7 +373,16 @@ public class SpringBootStartApplication extends SpringBootServletInitializer {
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -371,14 +394,14 @@ public class SpringBootStartApplication extends SpringBootServletInitializer {
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -388,7 +411,7 @@ public class SpringBootStartApplication extends SpringBootServletInitializer {
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -414,6 +437,38 @@ public class SpringBootStartApplication extends SpringBootServletInitializer {
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#init">Init</a></li>
+<li><a href="#package">Package</a>
+<ul>
+<li><a href="#packaging-war">packaging.war</a></li>
+<li><a href="#tomcat-remove">tomcat.remove</a></li>
+<li><a href="#servlet-api-add">servlet-api.add</a></li>
+<li><a href="#runner-update">runner.update</a></li>
+<li><a href="#pack">pack</a></li>
+</ul></li>
+<li><a href="#publish">Publish</a>
+<ul>
+<li><a href="#conf-update">conf.update</a></li>
+<li><a href="#aliyun-update">aliyun.update</a></li>
+<li><a href="#webapp-upload">webapp.upload</a></li>
+<li><a href="#tomcat-run">tomcat.run</a></li>
+</ul></li>
+<li><a href="#notice">Notice</a></li>
+<li><a href="#reference">Reference</a>
+<ul>
+<li><a href="#spring-boot">Spring Boot</a></li>
+<li><a href="#package-1">Package</a></li>
+<li><a href="#firewalld">Firewalld</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

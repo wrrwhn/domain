@@ -6,7 +6,7 @@
     <description>Recent content in Python on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 04 May 2018 12:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 04 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,37 +14,37 @@
     <item>
       <title>Python.Pack</title>
       <link>http://domain.yqjdcyy.com/post/python.pack/</link>
-      <pubDate>Fri, 04 May 2018 12:00:00 +0800</pubDate>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
-      <description>[TOC] 类型 .py 项目源码 需要安装 Python 及依赖库 .pyc Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库 .exe 不同平台的可执行文件 工具比较 Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs</description>
+      <description>类型 .py 项目源码 需要安装 Python 及依赖库 .pyc Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库 .exe 不同平台的可执行文件 工具比较 Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources</description>
     </item>
     
     <item>
       <title>Python.Logging</title>
       <link>http://domain.yqjdcyy.com/post/python.logging/</link>
-      <pubDate>Wed, 11 Apr 2018 18:00:00 +0800</pubDate>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
-      <description>[TOC] 组成 Logger 作用 日志对外暴露接口 创建 logger = logging.getLogger(logger_name) Handler 作用 将日志内容转至相应文件 类型 StreamHandler sh = logging.StreamHandler(stream=None) FileHandler fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False) NullHandler Filter 作用 将日志内容进行过滤 Formater 作用 控制日志输出格式</description>
+      <description>组成 Logger 作用 日志对外暴露接口 创建 logger = logging.getLogger(logger_name) Handler 作用 将日志内容转至相应文件 类型 StreamHandler sh = logging.StreamHandler(stream=None) FileHandler fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False) NullHandler Filter 作用 将日志内容进行过滤 Formater 作用 控制日志输出格式 L</description>
     </item>
     
     <item>
       <title>Python.Conda</title>
       <link>http://domain.yqjdcyy.com/post/python.conda/</link>
-      <pubDate>Mon, 26 Mar 2018 15:00:00 +0800</pubDate>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.conda/</guid>
-      <description>[TOC] 作用 用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题 分类 conda 工具 提</description>
+      <description>作用 用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题 分类 conda 工具 提供</description>
     </item>
     
     <item>
       <title>Python.__main__</title>
       <link>http://domain.yqjdcyy.com/post/python.__mian__/</link>
-      <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
-      <description>[TOC] 参考 Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解? 作用 保障模块既可以被导入，也可作为脚本来执行 直接运行时，模块名为 main，因为对应代码块可被运行</description>
+      <description>参考 Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解? 作用 保障模块既可以被导入，也可作为脚本来执行 直接运行时，模块名为 main，因为对应代码块可被运行 导</description>
     </item>
     
   </channel>

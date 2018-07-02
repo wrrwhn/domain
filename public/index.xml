@@ -17,157 +17,157 @@
       <pubDate>Mon, 02 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker.network/</guid>
-      <description>[TOC] Driver Bridge 描述 软件形式的网络桥接，允许同一网桥内的容器互相通信，并隔离未连接网桥的容器 通过驱动在主机自动安装规则实现 启动 Docker 时默认创建，并将新启动</description>
+      <description>Driver Bridge 描述 软件形式的网络桥接，允许同一网桥内的容器互相通信，并隔离未连接网桥的容器 通过驱动在主机自动安装规则实现 启动 Docker 时默认创建，并将新启动的</description>
     </item>
     
     <item>
       <title>追诉时效</title>
       <link>http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/</link>
-      <pubDate>Wed, 27 Jun 2018 20:30:00 +0800</pubDate>
+      <pubDate>Wed, 27 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%BF%BD%E8%AF%89%E6%97%B6%E6%95%88/</guid>
-      <description>[TOC] 追诉时效 民事时效 民事案件是有诉讼时效的，在诉讼 时效之内未起诉，超过时效之后再起诉，就会 丧失胜诉权 &amp;gt; 法院会给你立案，法官会开庭审理 &amp;gt;&amp;gt; 在对方不</description>
-    </item>
-    
-    <item>
-      <title>Hello.Docker.Dockerfile</title>
-      <link>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</link>
-      <pubDate>Wed, 27 Jun 2018 18:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</guid>
-      <description>[TOC] Work Docker 镜像是由只读的层一层层封装而成的，而其中的层均代码着 Dockerfile 指令 Guidlines 保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置 不管实际执行的 Dockerfile</description>
+      <description>追诉时效 民事时效 民事案件是有诉讼时效的，在诉讼 时效之内未起诉，超过时效之后再起诉，就会 丧失胜诉权 &amp;gt; 法院会给你立案，法官会开庭审理 &amp;gt;&amp;gt; 在对方不主</description>
     </item>
     
     <item>
       <title>Linux.User</title>
       <link>http://domain.yqjdcyy.com/post/linux.user/</link>
-      <pubDate>Thu, 21 Jun 2018 00:10:00 +0800</pubDate>
+      <pubDate>Thu, 21 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.user/</guid>
-      <description>[TOC] 参考 创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录she</description>
-    </item>
-    
-    <item>
-      <title>Linux.Java</title>
-      <link>http://domain.yqjdcyy.com/post/linux.java/</link>
-      <pubDate>Wed, 20 Jun 2018 17:30:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
-      <description>[TOC] 参考 Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script 安装 查询 Java SE Downloads 使用 Oracle 账号登录 下载 获取下载链接 jdk-8u171-linux-x64.rpm F12 获取 Cookie 「gpw_e24」「oracleli</description>
+      <description>参考 创建、删除用户 Linux系统中切换用户身份su与sudo的用法与实例 useradd命令 Linux 用户和用户组管理 更改Linux用户的登录shel</description>
     </item>
     
     <item>
       <title>Hello.Docker.Compose</title>
       <link>http://domain.yqjdcyy.com/post/hello.docker.compose/</link>
-      <pubDate>Wed, 20 Jun 2018 12:00:00 +0800</pubDate>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker.compose/</guid>
-      <description>[TOC] 简介 Compose 定义和运行多个 Docker 容器的应用 Service 应用容器，包括若干运行相同镜像的容器实例 Project 一组关联的应用容器组成的完整业务单元 于 docker-compose.yml 文件中定义 安装 pip install -U docker-compose</description>
+      <description>简介 Compose 定义和运行多个 Docker 容器的应用 Service 应用容器，包括若干运行相同镜像的容器实例 Project 一组关联的应用容器组成的完整业务单元 于 docker-compose.yml 文件中定义 安装 pip install -U docker-compose Successfully</description>
     </item>
     
     <item>
-      <title>Hello.Docker.Command</title>
-      <link>http://domain.yqjdcyy.com/post/hello.docker.command/</link>
-      <pubDate>Thu, 14 Jun 2018 17:00:00 +0800</pubDate>
+      <title>Hello.Docker.Dockerfile</title>
+      <link>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/hello.docker.command/</guid>
-      <description>[TOC] Docker.* Outline 指令 描述 docker attach 将本地输入、输出和异常流附加到运行状态中的容器 docker build 使用 Dockerfile 构建镜像 docker checkpoint 管理检查点 docker commit 将容器的变更构建为新镜像 docker config 管理 Docker 配置 docker</description>
+      <guid>http://domain.yqjdcyy.com/post/hello.docker.dockerfile/</guid>
+      <description>Work Docker 镜像是由只读的层一层层封装而成的，而其中的层均代码着 Dockerfile 指令 Guidlines 保持支持容器可补停止、摧毁，然后重新构建并替换的最小化配置 不管实际执行的 Dockerfile 在</description>
+    </item>
+    
+    <item>
+      <title>Linux.Java</title>
+      <link>http://domain.yqjdcyy.com/post/linux.java/</link>
+      <pubDate>Wed, 20 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.java/</guid>
+      <description>参考 Java SE CentOS 7 下安装jdk1.8 Download Oracle Java JRE &amp;amp; JDK using a script 安装 查询 Java SE Downloads 使用 Oracle 账号登录 下载 获取下载链接 jdk-8u171-linux-x64.rpm F12 获取 Cookie 「gpw_e24」「oraclelic</description>
+    </item>
+    
+    <item>
+      <title>Linux.Jenkins</title>
+      <link>http://domain.yqjdcyy.com/post/linux.jenkins/</link>
+      <pubDate>Sun, 17 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.jenkins/</guid>
+      <description>参考 Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key verification</description>
     </item>
     
     <item>
       <title>Hello.Docker</title>
       <link>http://domain.yqjdcyy.com/post/hello.docker/</link>
-      <pubDate>Thu, 14 Jun 2018 15:00:00 +0800</pubDate>
+      <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.docker/</guid>
-      <description>[TOC] 现状 环境配置困难 操作系统 库与组件的安装 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口 用途 提供一次性的环境 提供弹性的云服务 组建微服务</description>
+      <description>现状 环境配置困难 操作系统 库与组件的安装 简介 Docker 属于 Linux 容器的一种封装，提供简单易用的容器使用接口 用途 提供一次性的环境 提供弹性的云服务 组建微服务架</description>
+    </item>
+    
+    <item>
+      <title>Hello.Docker.Command</title>
+      <link>http://domain.yqjdcyy.com/post/hello.docker.command/</link>
+      <pubDate>Thu, 14 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.docker.command/</guid>
+      <description>Docker.* Outline 指令 描述 docker attach 将本地输入、输出和异常流附加到运行状态中的容器 docker build 使用 Dockerfile 构建镜像 docker checkpoint 管理检查点 docker commit 将容器的变更构建为新镜像 docker config 管理 Docker 配置 docker container</description>
     </item>
     
     <item>
       <title>跳出码农职业的生命周期</title>
       <link>http://domain.yqjdcyy.com/post/%E8%B7%B3%E5%87%BA%E7%A0%81%E5%86%9C%E8%81%8C%E4%B8%9A%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link>
-      <pubDate>Mon, 11 Jun 2018 15:40:00 +0800</pubDate>
+      <pubDate>Mon, 11 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%B7%B3%E5%87%BA%E7%A0%81%E5%86%9C%E8%81%8C%E4%B8%9A%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid>
-      <description>[TOC] 跳出码农职业的“生命周期” 参考 The one essential skill that will set you apart from other developers - Isabel Nyo 目标 培养像CEO一样思考和行动的能力 只有专业技能在职场中是走不远的 细节 了解公司</description>
+      <description>跳出码农职业的“生命周期” 参考 The one essential skill that will set you apart from other developers - Isabel Nyo 目标 培养像CEO一样思考和行动的能力 只有专业技能在职场中是走不远的 细节 了解公司衡</description>
     </item>
     
     <item>
       <title>别独自用餐</title>
       <link>http://domain.yqjdcyy.com/post/%E5%88%AB%E7%8B%AC%E8%87%AA%E7%94%A8%E9%A4%90/</link>
-      <pubDate>Fri, 08 Jun 2018 16:00:00 +0800</pubDate>
+      <pubDate>Fri, 08 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%88%AB%E7%8B%AC%E8%87%AA%E7%94%A8%E9%A4%90/</guid>
-      <description>[TOC] 别独自用餐 《别独自用餐》 85%的成功来自高效的社交能力 表面在讲机巧的人脉运用术，实际上说的却是朴实的为人处世之道。 社交的本质 标签 热衷见名人</description>
+      <description>别独自用餐 《别独自用餐》 85%的成功来自高效的社交能力 表面在讲机巧的人脉运用术，实际上说的却是朴实的为人处世之道。 社交的本质 标签 热衷见名人、</description>
     </item>
     
     <item>
       <title>Java.Tools.JHat</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jhat/</link>
-      <pubDate>Thu, 07 Jun 2018 11:00:00 +0800</pubDate>
+      <pubDate>Thu, 07 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jhat/</guid>
-      <description>[TOC] JHat 作用 打印出进程内存中，所有对象的情况 调用 jhat [ options ] heap-dump-file 示例 jmap -dump:format=b,file=d:/block-jmap.dump 15240 jhat d:/block-jmap.dump Reading from d:/block-jmap.dump... Dump file created Wed Jun 06 08:34:24 CST 2018 Snapshot read, resolving... Resolving 851039 objects... Chasing references, expect 170 dots......... Eliminating duplicate references............ Snapshot resolved. Started HTTP server on port 7000 Server is</description>
+      <description>JHat 作用 打印出进程内存中，所有对象的情况 调用 jhat [ options ] heap-dump-file 示例 jmap -dump:format=b,file=d:/block-jmap.dump 15240 jhat d:/block-jmap.dump Reading from d:/block-jmap.dump... Dump file created Wed Jun 06 08:34:24 CST 2018 Snapshot read, resolving... Resolving 851039 objects... Chasing references, expect 170 dots......... Eliminating duplicate references............ Snapshot resolved. Started HTTP server on port 7000 Server is ready.</description>
     </item>
     
     <item>
       <title>Java.Tools.Javap</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.javap/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.javap/</guid>
-      <description>[TOC] JAVAP 作用 对 class 文件进行反编译 查看 java 编译器生成的字节码 调用 javap [options] classfile 参数 -help| --help| -? 打印 JAVAP 命令的帮助文档 -version 打印发布版本信息 -l 打印类中变量和方法及其参数列表</description>
+      <description>JAVAP 作用 对 class 文件进行反编译 查看 java 编译器生成的字节码 调用 javap [options] classfile 参数 -help| --help| -? 打印 JAVAP 命令的帮助文档 -version 打印发布版本信息 -l 打印类中变量和方法及其参数列表 -public</description>
     </item>
     
     <item>
       <title>降噪耳机</title>
       <link>http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/</link>
-      <pubDate>Wed, 06 Jun 2018 00:00:00 +0800</pubDate>
+      <pubDate>Wed, 06 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%99%8D%E5%99%AA%E8%80%B3%E6%9C%BA/</guid>
-      <description>[TOC] 原理 可识别声音类型 交谈 音乐 可听见声音 降噪即消除此区域声音 衰减 扩散衰减 单位面积上的声波能量随着声源距离的平方而递减 吸收衰减 在固体介质中传播时</description>
-    </item>
-    
-    <item>
-      <title>汽车.学车</title>
-      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
-      <pubDate>Tue, 05 Jun 2018 16:50:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
-      <description>[TOC] 参考条件 身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考 报名 2018.1.19 驾校报名，交付一半的订金 2018.1.20 由驾校工作人员载着去进行体检 科目一 挂学时 刷题目</description>
+      <description>原理 可识别声音类型 交谈 音乐 可听见声音 降噪即消除此区域声音 衰减 扩散衰减 单位面积上的声波能量随着声源距离的平方而递减 吸收衰减 在固体介质中传播时，</description>
     </item>
     
     <item>
       <title>Java开发必须掌握的线上问题排查命令</title>
       <link>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</link>
-      <pubDate>Tue, 05 Jun 2018 16:30:00 +0800</pubDate>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java%E5%BC%80%E5%8F%91%E5%BF%85%E9%A1%BB%E6%8E%8C%E6%8F%A1%E7%9A%84%E7%BA%BF%E4%B8%8A%E9%97%AE%E9%A2%98%E6%8E%92%E6%9F%A5%E5%91%BD%E4%BB%A4/</guid>
       <description>[TOC] Java开发必须掌握的线上问题排查命令 常用命令 JPS 功能 显示进程的 PID 示例 jps jps -v pid 显示指定 PID 对应程序的虚拟机参数 jps -m pid 显示程序启动参数 jps -l pid 显示</description>
     </item>
     
     <item>
-      <title>Java.Filter-Lisenter-Inteceptor-AOP</title>
-      <link>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</link>
-      <pubDate>Tue, 05 Jun 2018 15:00:00 +0800</pubDate>
+      <title>学车</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</link>
+      <pubDate>Tue, 05 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</guid>
-      <description>[TOC] Compare 名称 机制 适用范围 生命周期 对象调用权限 优点/场景 Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤</description>
+      <guid>http://domain.yqjdcyy.com/post/%E6%B1%BD%E8%BD%A6.%E5%AD%A6%E8%BD%A6/</guid>
+      <description>参考条件 身高 180 练习时教练传授的相关口诀和体会、尝试，仅供参考 报名 2018.1.19 驾校报名，交付一半的订金 2018.1.20 由驾校工作人员载着去进行体检 科目一 挂学时 刷题目 考</description>
     </item>
     
     <item>
       <title>Spring.Security</title>
       <link>http://domain.yqjdcyy.com/post/spring.security/</link>
-      <pubDate>Mon, 04 Jun 2018 14:30:00 +0800</pubDate>
+      <pubDate>Mon, 04 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.security/</guid>
-      <description>[TOC] 前后端分离 思路 登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截 选型 Spring.Security 展示型项目，简单区分前后</description>
+      <description>前后端分离 思路 登录成功后，于 Session 添加相应属性值 接口请求时，判断过滤接口和 Session 属性值是否过期、有效，以判断是否拦截 选型 Spring.Security 展示型项目，简单区分前后端</description>
     </item>
     
     <item>
       <title>FFmpeg.2Gif.Ass</title>
       <link>http://domain.yqjdcyy.com/post/ffmpeg.2gif.ass/</link>
-      <pubDate>Fri, 01 Jun 2018 12:10:00 +0800</pubDate>
+      <pubDate>Fri, 01 Jun 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/ffmpeg.2gif.ass/</guid>
       <description>[TOC] 字幕文件 安装 aegisub aegisub.官网 打开视频 注意选择合适大小 编辑 /视频/打开视频 试听 &amp;amp; 添加行记录 &amp;amp; 更新时间点、字幕内容和样式 指令 模板 ffmpeg -i {video_path} -r</description>
@@ -176,376 +176,376 @@
     <item>
       <title>Spring.Boot.Publish</title>
       <link>http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/</link>
-      <pubDate>Thu, 31 May 2018 12:10:00 +0800</pubDate>
+      <pubDate>Thu, 31 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring-boot-run-on-tomcat/</guid>
-      <description>[TOC] Init project.init business.finish Package packaging.war pom.xml &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; tomcat.remove pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 移除嵌入式tomcat插件 --&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-tomcat&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; servlet-api.add pom.xml javax.servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; OR tomcat-servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat-servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.36&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; runner.update 与 Application 同级 public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return</description>
+      <description>Init project.init business.finish Package packaging.war pom.xml &amp;lt;packaging&amp;gt;war&amp;lt;/packaging&amp;gt; tomcat.remove pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;!-- 移除嵌入式tomcat插件 --&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-tomcat&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; servlet-api.add pom.xml javax.servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;javax.servlet&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;javax.servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;3.1.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; OR tomcat-servlet-api &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.apache.tomcat&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;tomcat-servlet-api&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;8.0.36&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;provided&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; runner.update 与 Application 同级 public class SpringBootStartApplication extends SpringBootServletInitializer { @Override protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) { return builder.sources(Application.class);</description>
     </item>
     
     <item>
       <title>我们的孩子</title>
       <link>http://domain.yqjdcyy.com/post/%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A9%E5%AD%90/</link>
-      <pubDate>Tue, 29 May 2018 15:30:00 +0800</pubDate>
+      <pubDate>Tue, 29 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A9%E5%AD%90/</guid>
-      <description>[TOC] 阅读 《我们的孩子》 哈佛大学教授罗伯特·帕特南通过大量的采访和数据例证，生动展现了美国的教育现状，以及美国社会半个世纪来日益拉大的阶级鸿沟。</description>
+      <description>阅读 《我们的孩子》 哈佛大学教授罗伯特·帕特南通过大量的采访和数据例证，生动展现了美国的教育现状，以及美国社会半个世纪来日益拉大的阶级鸿沟。 参</description>
     </item>
     
     <item>
       <title>Java.ImportStatic</title>
       <link>http://domain.yqjdcyy.com/post/java.importstatic/</link>
-      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.importstatic/</guid>
-      <description>[TOC] DESCRIBE 发布 JDK 1.5 新特性 对比 import 从包中引入类，允许不添加类前缀的方式进行调用 imports classes from packages, allowing them to be used without package qualification static import 声明从类中引入静态成员，以允许它们在该类中直</description>
+      <description>DESCRIBE 发布 JDK 1.5 新特性 对比 import 从包中引入类，允许不添加类前缀的方式进行调用 imports classes from packages, allowing them to be used without package qualification static import 声明从类中引入静态成员，以允许它们在该类中直接</description>
     </item>
     
     <item>
       <title>Spring.JPA.Fetch</title>
       <link>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</link>
-      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.jpa.fetch/</guid>
-      <description>[TOC] Setting Default Type Setting JPA 2.0 spec OneToMany Lazy ManyToMany Lazy OneToOne Eager ManyToOne Eager Hibernate * Lazy Docs Hibernate By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations. These defaults make sense for most associations in the majority of applications. Jpa Spec JPA Spec assumes that in general most of the applications will require the singleton relations by default be eager,</description>
+      <description>Setting Default Type Setting JPA 2.0 spec OneToMany Lazy ManyToMany Lazy OneToOne Eager ManyToOne Eager Hibernate * Lazy Docs Hibernate By default, Hibernate uses lazy select fetching for collections and lazy proxy fetching for single-valued associations. These defaults make sense for most associations in the majority of applications. Jpa Spec JPA Spec assumes that in general most of the applications will require the singleton relations by default be eager, whereas</description>
     </item>
     
     <item>
       <title>信用报告</title>
       <link>http://domain.yqjdcyy.com/post/%E4%BF%A1%E7%94%A8%E6%8A%A5%E5%91%8A/</link>
-      <pubDate>Wed, 23 May 2018 14:00:00 +0800</pubDate>
+      <pubDate>Wed, 23 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%BF%A1%E7%94%A8%E6%8A%A5%E5%91%8A/</guid>
-      <description>[TOC] 信用报告 作用 个人信用报告影响到贷款和出行（乘坐飞机、动车和签证等） 法院判决 若未如期履行生效判决内容，将可能被列入失信黑名单，被限制出境、高</description>
+      <description>信用报告 作用 个人信用报告影响到贷款和出行（乘坐飞机、动车和签证等） 法院判决 若未如期履行生效判决内容，将可能被列入失信黑名单，被限制出境、高消</description>
     </item>
     
     <item>
       <title>Spring.@Transactional</title>
       <link>http://domain.yqjdcyy.com/post/spring.transactional/</link>
-      <pubDate>Tue, 22 May 2018 16:40:00 +0800</pubDate>
+      <pubDate>Tue, 22 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.transactional/</guid>
-      <description>[TOC] 使用方式 将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上 该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性 属性 属性</description>
+      <description>使用方式 将 @Transactional 注解添加至 方法 上 将 @Transactional 注解添加至 类 上 该类中所有 public 类型方法均会被配置以相同的事务属性 方法级别的事务属性 覆盖 类级别的事务属性 属性 属性列</description>
     </item>
     
     <item>
       <title>如何聊天</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%81%8A%E5%A4%A9/</link>
-      <pubDate>Mon, 21 May 2018 01:00:00 +0800</pubDate>
+      <pubDate>Mon, 21 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%81%8A%E5%A4%A9/</guid>
-      <description>[TOC] 整理 常见错误 连续提问 心态 猎人发现了猎物马上就收集猎捕信息 试图用提问来逃避无话可说 缺点 连续提问是在透支社交的耐心和礼貌 方式 在每次对方回答了你</description>
+      <description>整理 常见错误 连续提问 心态 猎人发现了猎物马上就收集猎捕信息 试图用提问来逃避无话可说 缺点 连续提问是在透支社交的耐心和礼貌 方式 在每次对方回答了你的</description>
     </item>
     
     <item>
       <title>复刻亿万中那一幕让人垂涎欲滴的饭局</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A4%8D%E5%88%BB%E4%BA%BF%E4%B8%87%E4%B8%AD%E9%82%A3%E4%B8%80%E5%B9%95%E8%AE%A9%E4%BA%BA%E5%9E%82%E6%B6%8E%E6%AC%B2%E6%BB%B4%E7%9A%84%E9%A5%AD%E5%B1%80/</link>
-      <pubDate>Thu, 17 May 2018 16:00:00 +0800</pubDate>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A4%8D%E5%88%BB%E4%BA%BF%E4%B8%87%E4%B8%AD%E9%82%A3%E4%B8%80%E5%B9%95%E8%AE%A9%E4%BA%BA%E5%9E%82%E6%B6%8E%E6%AC%B2%E6%BB%B4%E7%9A%84%E9%A5%AD%E5%B1%80/</guid>
-      <description>[TOC] 复刻美剧《亿万》中那一幕让人垂涎欲滴的饭局 剧情 《亿万》 SE03-06 三个大老爷们的饭局，却是坐在黑暗的房间里，点着蜡烛，还要把脑袋蒙住，就为了吞吃一只</description>
-    </item>
-    
-    <item>
-      <title>艾美</title>
-      <link>http://domain.yqjdcyy.com/post/%E8%89%BE%E7%BE%8E/</link>
-      <pubDate>Wed, 16 May 2018 21:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E8%89%BE%E7%BE%8E/</guid>
-      <description>[TOC] 品牌 简介 始于1961年，位于苏黎世的Desco Von Schulthess AG公司收购了侏罗省Saignelégier镇内一间钟表零件厂，生产独家品牌供应国内和海</description>
+      <description>复刻美剧《亿万》中那一幕让人垂涎欲滴的饭局 剧情 《亿万》 SE03-06 三个大老爷们的饭局，却是坐在黑暗的房间里，点着蜡烛，还要把脑袋蒙住，就为了吞吃一只小</description>
     </item>
     
     <item>
       <title>Twitter.Lists</title>
       <link>http://domain.yqjdcyy.com/post/twitter.lists/</link>
-      <pubDate>Wed, 16 May 2018 19:14:40 +0800</pubDate>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/twitter.lists/</guid>
-      <description>[TOC] Info 看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便异常 询问了解是 Twitter 的 Lists 功能 Use Work 构建不同类型消息流,而不需要关注用户 关注用户于着重关注</description>
+      <description>Info 看到同事使用非 Twitter 网站在看 Twitter,且分类查看方便异常 询问了解是 Twitter 的 Lists 功能 Use Work 构建不同类型消息流,而不需要关注用户 关注用户于着重关注(</description>
     </item>
     
     <item>
-      <title>Hello.RPC</title>
-      <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
-      <pubDate>Thu, 10 May 2018 19:10:00 +0800</pubDate>
+      <title>艾美</title>
+      <link>http://domain.yqjdcyy.com/post/%E8%89%BE%E7%BE%8E/</link>
+      <pubDate>Wed, 16 May 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
-      <description>[TOC] 概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间</description>
+      <guid>http://domain.yqjdcyy.com/post/%E8%89%BE%E7%BE%8E/</guid>
+      <description>品牌 简介 始于1961年，位于苏黎世的Desco Von Schulthess AG公司收购了侏罗省Saignelégier镇内一间钟表零件厂，生产独家品牌供应国内和海外</description>
     </item>
     
     <item>
       <title>Go.GOPATH</title>
       <link>http://domain.yqjdcyy.com/post/go.gopath/</link>
-      <pubDate>Thu, 10 May 2018 19:00:00 +0800</pubDate>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gopath/</guid>
-      <description>[TOC] 作用 于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句 Unix 使用 : 分割 Windows 使用 ; 分割 Plan 使用列表记录 默认 未设置时，默认为用户主目录下的 go 文件夹 Unix</description>
+      <description>作用 于 go/build 中引入，罗列本机 Go 代码的位置，可用于解析导入语句 Unix 使用 : 分割 Windows 使用 ; 分割 Plan 使用列表记录 默认 未设置时，默认为用户主目录下的 go 文件夹 Unix $HOME/go</description>
+    </item>
+    
+    <item>
+      <title>Hello.RPC</title>
+      <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
+      <description>概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，</description>
     </item>
     
     <item>
       <title>Hello.性能测试</title>
       <link>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0800</pubDate>
+      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</guid>
-      <description>[TOC] Mistake 用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩 调整 Averages not work 噪点影响平均值 统计数据 [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s] 平均值 100ms 实际作法 去除噪点后</description>
-    </item>
-    
-    <item>
-      <title>Python.Pack</title>
-      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
-      <pubDate>Fri, 04 May 2018 12:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
-      <description>[TOC] 类型 .py 项目源码 需要安装 Python 及依赖库 .pyc Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库 .exe 不同平台的可执行文件 工具比较 Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs</description>
-    </item>
-    
-    <item>
-      <title>Java.Tools.Profiler</title>
-      <link>http://domain.yqjdcyy.com/post/java.tools.profiler/</link>
-      <pubDate>Fri, 04 May 2018 10:30:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.tools.profiler/</guid>
-      <description>[TOC] 监控 目的 通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率 方</description>
+      <description>Mistake 用的全是 平均 值 响应时间 没有和**吞吐量 TPS/QPS 挂钩 响应时间和吞吐量 没有和 成功率 挂钩 调整 Averages not work 噪点影响平均值 统计数据 [1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1ms,1s] 平均值 100ms 实际作法 去除噪点后计</description>
     </item>
     
     <item>
       <title>Java.Tools.JMap</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jmap/</link>
-      <pubDate>Fri, 04 May 2018 00:40:00 +0800</pubDate>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jmap/</guid>
-      <description>[TOC] JMAP 作用 为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持 调用 jmap [option] &amp;lt;pid&amp;gt;|&amp;lt;executable &amp;lt;core&amp;gt;&amp;gt; | &amp;lt;[server_id@]&amp;lt;remoteServerIP | hostname&amp;gt;&amp;gt; 参数 &amp;lt;no option&amp;gt; 如果使用不带选项参数的j</description>
+      <description>JMAP 作用 为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持 调用 jmap [option] &amp;lt;pid&amp;gt;|&amp;lt;executable &amp;lt;core&amp;gt;&amp;gt; | &amp;lt;[server_id@]&amp;lt;remoteServerIP | hostname&amp;gt;&amp;gt; 参数 &amp;lt;no option&amp;gt; 如果使用不带选项参数的jm</description>
     </item>
     
     <item>
-      <title>Java.Tools.JINFO</title>
+      <title>Java.Tools.Profiler</title>
+      <link>http://domain.yqjdcyy.com/post/java.tools.profiler/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.tools.profiler/</guid>
+      <description>监控 目的 通过收集程序运行时的信息来研究程序行为的动态分析方法。其目的在于定位程序需要被优化的部分，从而提高程序的运行速度或是内存使用效率 方式</description>
+    </item>
+    
+    <item>
+      <title>Python.Pack</title>
+      <link>http://domain.yqjdcyy.com/post/python.pack/</link>
+      <pubDate>Fri, 04 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.pack/</guid>
+      <description>类型 .py 项目源码 需要安装 Python 及依赖库 .pyc Python 解释器可识别的二进制码 跨平台 需要安装 Python 及依赖库 .exe 不同平台的可执行文件 工具比较 Solution Windows Linux OS X Python 3 One file mode Zipfile import Eggs pkg_resources</description>
+    </item>
+    
+    <item>
+      <title>Java.Tools.JInfo</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jinfo/</link>
-      <pubDate>Thu, 03 May 2018 23:20:00 +0800</pubDate>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jinfo/</guid>
-      <description>[TOC] JINFO 作用 输出进程、Core 文件或远程 Debug 服务器配置信息 Java 系统参数 命令行参数 运行于64位虚拟机上时，需指定 -J-d64 Java 1.8 版本中不支持 调用 jinfo [option] &amp;lt;pid&amp;gt; 参数 -flag &amp;lt;name&amp;gt; to</description>
+      <description>JINFO 作用 输出进程、Core 文件或远程 Debug 服务器配置信息 Java 系统参数 命令行参数 运行于64位虚拟机上时，需指定 -J-d64 Java 1.8 版本中不支持 调用 jinfo [option] &amp;lt;pid&amp;gt; 参数 -flag &amp;lt;name&amp;gt; to print</description>
     </item>
     
     <item>
       <title>Java.Tools.JPS</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jps/</link>
-      <pubDate>Thu, 03 May 2018 23:20:00 +0800</pubDate>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jps/</guid>
-      <description>[TOC] JPS 作用 显示当前用户本地 JAVA 进程及进程号 机制 java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例</description>
+      <description>JPS 作用 显示当前用户本地 JAVA 进程及进程号 机制 java 程序启动后，会在 java.io.tmpdir 指定临时目录下，生成名称类似于 hsperfdata_User 的文件夹，其中个别文件的名字就是 java 进程的 pid 示例 appuser</description>
     </item>
     
     <item>
       <title>Java.Tools.JStack</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jstack/</link>
-      <pubDate>Thu, 03 May 2018 23:20:00 +0800</pubDate>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jstack/</guid>
-      <description>[TOC] JSTACK 作用 观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的</description>
+      <description>JSTACK 作用 观察当前java虚拟机内每一条线程正在执行的方法堆栈的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长</description>
     </item>
     
     <item>
       <title>Java.Tools.JStat</title>
       <link>http://domain.yqjdcyy.com/post/java.tools.jstat/</link>
-      <pubDate>Thu, 03 May 2018 23:20:00 +0800</pubDate>
+      <pubDate>Thu, 03 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.tools.jstat/</guid>
-      <description>[TOC] JSTAT 作用 - 监视vm内存内的各种**堆**和非堆的**大小**及其**内存使用**量，并可观察classloader，compiler，**g</description>
+      <description>JSTAT 作用 - 监视vm内存内的各种**堆**和非堆的**大小**及其**内存使用**量，并可观察classloader，compiler，**gc</description>
     </item>
     
     <item>
       <title>Error.CSharp</title>
       <link>http://domain.yqjdcyy.com/post/error.csharp/</link>
-      <pubDate>Wed, 02 May 2018 16:45:00 +0800</pubDate>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/error.csharp/</guid>
-      <description>[TOC] 异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决</description>
+      <description>异常 在可以调用 OLE 之前，必须将当前线程设置为单线程单元(STA)模式，请确保您的Main函数带有STAThreadAttribute标记 解决 Main</description>
     </item>
     
     <item>
       <title>Hello.Linux</title>
       <link>http://domain.yqjdcyy.com/post/hello.linux/</link>
-      <pubDate>Wed, 02 May 2018 16:30:00 +0800</pubDate>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hello.linux/</guid>
-      <description>[TOC] 进度 Linux 基础文件 14&amp;frasl;30 Linux 架站文件 0/ 31 Linux 安全 0/ 1 Solaris 0/ 1 概述 系统特点 开源免费、稳定性 安全性 处理多并发性能好 系统管理事项(kernel) 系统呼叫接口 行</description>
-    </item>
-    
-    <item>
-      <title>跟腱炎</title>
-      <link>http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/</link>
-      <pubDate>Sat, 28 Apr 2018 14:50:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/</guid>
-      <description>[TOC] 跟腱炎 概况 跟腱位于小腿下段，平均有15cm 长，是人体最大最粗壮的肌腱。跑步过程中脚踝的缓冲和扒地动作。 原因 类型 过度使用操作（常规原因） 勾脚</description>
+      <description>进度 Linux 基础文件 14&amp;frasl;30 Linux 架站文件 0/ 31 Linux 安全 0/ 1 Solaris 0/ 1 概述 系统特点 开源免费、稳定性 安全性 处理多并发性能好 系统管理事项(kernel) 系统呼叫接口 行程</description>
     </item>
     
     <item>
       <title>表情.符号</title>
       <link>http://domain.yqjdcyy.com/post/%E8%A1%A8%E6%83%85.%E7%AC%A6%E5%8F%B7/</link>
-      <pubDate>Sat, 28 Apr 2018 12:30:00 +0800</pubDate>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%A1%A8%E6%83%85.%E7%AC%A6%E5%8F%B7/</guid>
       <description>╮(￣▽￣&amp;rdquo;)╭ (~￣▽￣)~ =￣ω￣= →_→ ←_← (✧≖‿≖) ╮（￣▽￣）╭ ╮（￣﹏￣）╭ ╮(￣▽￣)╭ (=^ω^=) 狐狸 ヽ(</description>
     </item>
     
     <item>
-      <title>SQL.优化</title>
-      <link>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Fri, 27 Apr 2018 19:30:00 +0800</pubDate>
+      <title>跟腱炎</title>
+      <link>http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/</link>
+      <pubDate>Sat, 28 Apr 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</guid>
-      <description>[TOC] 特点 SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻</description>
+      <guid>http://domain.yqjdcyy.com/post/%E8%B7%9F%E8%85%B1%E7%82%8E/</guid>
+      <description>跟腱炎 概况 跟腱位于小腿下段，平均有15cm 长，是人体最大最粗壮的肌腱。跑步过程中脚踝的缓冲和扒地动作。 原因 类型 过度使用操作（常规原因） 勾脚尖</description>
     </item>
     
     <item>
-      <title>经典</title>
+      <title>SQL.优化</title>
+      <link>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</link>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</guid>
+      <description>特点 SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松</description>
+    </item>
+    
+    <item>
+      <title>经典语录</title>
       <link>http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/</link>
-      <pubDate>Fri, 27 Apr 2018 19:30:00 +0800</pubDate>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%BB%8F%E5%85%B8/</guid>
-      <description>[TOC] 故事 梁思成&amp;amp; 林徽因 婚前，梁思成问林徽因：“有一句话，我只问这一次，以后都不会再问，为什么是我？” 林徽因答：“答案很长，我得用一生去</description>
+      <description>故事 梁思成&amp;amp; 林徽因 婚前，梁思成问林徽因：“有一句话，我只问这一次，以后都不会再问，为什么是我？” 林徽因答：“答案很长，我得用一生去回</description>
     </item>
     
     <item>
       <title>Java.Jar</title>
       <link>http://domain.yqjdcyy.com/post/java.jar/</link>
-      <pubDate>Thu, 26 Apr 2018 16:00:00 +0800</pubDate>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.jar/</guid>
-      <description>[TOC] Package Create Artifacts Open 「Project Structure」 Create Artifacts Setting Build Artifacts Run java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf PDFBox.jar中没有主清单属性 Fix Open MANIFEST.MF PDFBox.jar/META-INF/MANIFEST.MF Add Main-Class Main-Class: com.yao.main.PDFBoxMain Save Reference 主要 How to Create an Executable JAR with</description>
+      <description>Package Create Artifacts Open 「Project Structure」 Create Artifacts Setting Build Artifacts Run java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf PDFBox.jar中没有主清单属性 Fix Open MANIFEST.MF PDFBox.jar/META-INF/MANIFEST.MF Add Main-Class Main-Class: com.yao.main.PDFBoxMain Save Reference 主要 How to Create an Executable JAR with Maven</description>
     </item>
     
     <item>
       <title>Java.Keyword</title>
       <link>http://domain.yqjdcyy.com/post/java.keyword/</link>
-      <pubDate>Thu, 26 Apr 2018 00:30:00 +0800</pubDate>
+      <pubDate>Thu, 26 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.keyword/</guid>
-      <description>[TOC] List Access private protected public class, method, variable abstract class extends implements interface native The native keyword may be applied to a method to indicate that the method is implemented in a language other then Java. 用于说明该方法为原生函数，由 C|C++ 实现并编译成 DLL 提供给 Java 进行调用 统一由</description>
+      <description>List Access private protected public class, method, variable abstract class extends implements interface native The native keyword may be applied to a method to indicate that the method is implemented in a language other then Java. 用于说明该方法为原生函数，由 C|C++ 实现并编译成 DLL 提供给 Java 进行调用 统一由操</description>
     </item>
     
     <item>
       <title>Java.Stream</title>
       <link>http://domain.yqjdcyy.com/post/java.stream/</link>
-      <pubDate>Wed, 25 Apr 2018 23:30:00 +0800</pubDate>
+      <pubDate>Wed, 25 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.stream/</guid>
-      <description>[TOC] 分类 InputStream PipedInputStream ObjectInputStream FilterInputStream DataInputStream PushbackInputstream BufferedInputStream FileInputStream SequenceInputStream ByteArrayInputStream OutputStream PipedOutputStream ObjectOutputStream FilterOutputStream DataOutputStream BufferedOutputStream PrintStream FileOutputStream ByteArrayOutputStream Reader StringReader PipedReader CharArrayReader InputStreamReader FileReader FilterReader PushbackReader BufferedReader LineNumberReader Writer StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter FileWriter BufferedWriter PrintWriter 明细 Interface OutputStream methods write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close() InputStream methods read() read(byte b[]) read(byte b[], int off, int len) skip(long</description>
+      <description>分类 InputStream PipedInputStream ObjectInputStream FilterInputStream DataInputStream PushbackInputstream BufferedInputStream FileInputStream SequenceInputStream ByteArrayInputStream OutputStream PipedOutputStream ObjectOutputStream FilterOutputStream DataOutputStream BufferedOutputStream PrintStream FileOutputStream ByteArrayOutputStream Reader StringReader PipedReader CharArrayReader InputStreamReader FileReader FilterReader PushbackReader BufferedReader LineNumberReader Writer StringWriter PipedWriter ChatArrayWriter FilterWriter OutputStreamWriter FileWriter BufferedWriter PrintWriter 明细 Interface OutputStream methods write(int b) write(byte b[]) write(byte b[], int off, int len) flush() close() InputStream methods read() read(byte b[]) read(byte b[], int off, int len) skip(long n)</description>
     </item>
     
     <item>
       <title>IDEA.Java.Version</title>
       <link>http://domain.yqjdcyy.com/post/idea.java.version/</link>
-      <pubDate>Fri, 20 Apr 2018 14:30:00 +0800</pubDate>
+      <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/idea.java.version/</guid>
-      <description>[TOC] Error Run Error:java: Compilation failed: internal java compiler error Install Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符 Fix IDEA.Setting Project Structure 快捷键 Ctrl+ Alt+ Shift+ S 设置 project Setting/ Porject Project SDK-&amp;gt; 1.8 Project language level-&amp;gt; 8 - Lambdas, type annotation etc. project Setting/ Modules choice your error modules</description>
+      <description>Error Run Error:java: Compilation failed: internal java compiler error Install Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.1:compile (default-compile) on project thinking-in-java: Compilation failure: Compilation failure: xxxx.java:[26,56] -source 1.5 中不支持 diamond 运算符 Fix IDEA.Setting Project Structure 快捷键 Ctrl+ Alt+ Shift+ S 设置 project Setting/ Porject Project SDK-&amp;gt; 1.8 Project language level-&amp;gt; 8 - Lambdas, type annotation etc. project Setting/ Modules choice your error modules Sources/</description>
     </item>
     
     <item>
       <title>Java.&amp;0xff</title>
       <link>http://domain.yqjdcyy.com/post/java.0xff/</link>
-      <pubDate>Fri, 20 Apr 2018 13:30:00 +0800</pubDate>
+      <pubDate>Fri, 20 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.0xff/</guid>
-      <description>[TOC] Code PipedInputStream.receive(int b) buffer[in++] = (byte)(b &amp;amp; 0xFF); Reason 原因 int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况 示例 int-&amp;gt; byte 222 -&amp;gt; -34 222.补码 00000000 00000000 00000000 11011110 截取 11011110 反码 11011101 原码 10100010= -34 解决方案 222* 0xff</description>
-    </item>
-    
-    <item>
-      <title>Java.Exception</title>
-      <link>http://domain.yqjdcyy.com/post/java.exception/</link>
-      <pubDate>Wed, 18 Apr 2018 18:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.exception/</guid>
-      <description>[TOC] 分类 Throwable Exception ReflectiveOperationException NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException CloneNotSupportedException InterruptedException ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException IllegalThreadStateException NumberFormatException SecurityException RuntimeException ArithmeticException TypeNotPresentException IndexOutOfBoundsException ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException IOException SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException InterruptedIOException UTFDataFormatException FileNotFoundException EOFException Error VirtualMachineError InternalError StackOverflowError UnknownError OutOfMemoryError ThreadDeath AssertionError LinkageError UnsatisfiedLinkError NoClassDefFoundError VerifyError IncompatibleClassChangeError InstantiationError NoSuchFieldError NoSuchMethodError AbstractMethodError IllegalAcessError BootstrapMethodError ExceptionInInitializerError ClassFormatError UnsupportedClassVersionError</description>
+      <description>Code PipedInputStream.receive(int b) buffer[in++] = (byte)(b &amp;amp; 0xFF); Reason 原因 int= 32bits byte= 8bits 截取末 8 bit时，存在将数值位当符号位情况 示例 int-&amp;gt; byte 222 -&amp;gt; -34 222.补码 00000000 00000000 00000000 11011110 截取 11011110 反码 11011101 原码 10100010= -34 解决方案 222* 0xff Supplement</description>
     </item>
     
     <item>
       <title>方案.敏感词.DFA</title>
       <link>http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/</link>
-      <pubDate>Wed, 18 Apr 2018 11:00:00 +0800</pubDate>
+      <pubDate>Wed, 18 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%96%B9%E6%A1%88.%E6%95%8F%E6%84%9F%E8%AF%8D.dfa/</guid>
-      <description>[TOC] Situation String.contain | pattern DFA Theory 词库存储结构 Enviroment Windows 10 Intel i7-4710MQ 2.5Ghz 16G 内存 Code algorithm.DFA Test Type Duration Remark Read File 45ms 65K Fill in map 10ms 5146 check 0ms 10/200/500 match or not query 0ms 10/200/500 match or not replace 0~1ms 10/200/500 match or not Reference 网站敏感词过滤的实现 DFA算</description>
+      <description>Situation String.contain | pattern DFA Theory 词库存储结构 Enviroment Windows 10 Intel i7-4710MQ 2.5Ghz 16G 内存 Code algorithm.DFA Test Type Duration Remark Read File 45ms 65K Fill in map 10ms 5146 check 0ms 10/200/500 match or not query 0ms 10/200/500 match or not replace 0~1ms 10/200/500 match or not Reference 网站敏感词过滤的实现 DFA算法</description>
     </item>
     
     <item>
       <title>CSGO.地图</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E5%9C%B0%E5%9B%BE/</link>
-      <pubDate>Sun, 15 Apr 2018 18:00:00 +0800</pubDate>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E5%9C%B0%E5%9B%BE/</guid>
       <description>[TOC] 项目 改准心 地图 Crosshair Generator V2 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=308490450&amp;amp;searchtext=Crosshair+Generator+V2 投掷物训练 地图 Training maps (smoke,Molotov,Flash) 资源 Dolnma *RankSea.com Yesber 预瞄点与投掷物热身训练 地图 Warmup and Training 资源 Yesber 瞄准训练 地图 training_aim_csgo2 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=213240871&amp;amp;searchtext=training_aim_csgo2 跳跃训练 地图 Jumps Training 资源 https://steamcommunity.com/sharedfiles/filedetails/?id=314892291&amp;amp;searchtext=Jumps+Training 瞄</description>
     </item>
     
     <item>
-      <title>Python.Logging</title>
-      <link>http://domain.yqjdcyy.com/post/python.logging/</link>
-      <pubDate>Wed, 11 Apr 2018 18:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
-      <description>[TOC] 组成 Logger 作用 日志对外暴露接口 创建 logger = logging.getLogger(logger_name) Handler 作用 将日志内容转至相应文件 类型 StreamHandler sh = logging.StreamHandler(stream=None) FileHandler fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False) NullHandler Filter 作用 将日志内容进行过滤 Formater 作用 控制日志输出格式</description>
-    </item>
-    
-    <item>
-      <title>厦门软件园公寓租赁</title>
-      <link>http://domain.yqjdcyy.com/post/%E5%8E%A6%E9%97%A8%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%85%AC%E5%AF%93%E7%A7%9F%E8%B5%81/</link>
-      <pubDate>Wed, 04 Apr 2018 10:30:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E5%8E%A6%E9%97%A8%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%85%AC%E5%AF%93%E7%A7%9F%E8%B5%81/</guid>
-      <description>[TOC] 背景 要换房子，时值出差至北京「朋友A」所申请的一室一厅正好刚要被通过 考虑到大学舍友，关系好，在一起也便于互相照应 而政策允许最多有两个同住人</description>
-    </item>
-    
-    <item>
-      <title>License.Choose</title>
-      <link>http://domain.yqjdcyy.com/post/license.choose/</link>
-      <pubDate>Fri, 30 Mar 2018 11:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/license.choose/</guid>
-      <description>[TOC] 作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明</description>
-    </item>
-    
-    <item>
-      <title>Python.Conda</title>
-      <link>http://domain.yqjdcyy.com/post/python.conda/</link>
-      <pubDate>Mon, 26 Mar 2018 15:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/python.conda/</guid>
-      <description>[TOC] 作用 用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题 分类 conda 工具 提</description>
-    </item>
-    
-    <item>
-      <title>Python.__main__</title>
-      <link>http://domain.yqjdcyy.com/post/python.__mian__/</link>
-      <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
-      <description>[TOC] 参考 Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解? 作用 保障模块既可以被导入，也可作为脚本来执行 直接运行时，模块名为 main，因为对应代码块可被运行</description>
-    </item>
-    
-    <item>
-      <title>竞标-厦大海洋学院</title>
-      <link>http://domain.yqjdcyy.com/post/%E7%AB%9E%E6%A0%87-%E5%8E%A6%E5%A4%A7%E6%B5%B7%E6%B4%8B%E5%AD%A6%E9%99%A2/</link>
-      <pubDate>Mon, 26 Mar 2018 11:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E7%AB%9E%E6%A0%87-%E5%8E%A6%E5%A4%A7%E6%B5%B7%E6%B4%8B%E5%AD%A6%E9%99%A2/</guid>
-      <description>动态效果 http://pubg.qq.com/ 整屏滚动 js swiper 丰富防具 CSS 丰富的天气和地形 天气和地形切换 js+ css 鼠标移动，着重显示对应明细 css 瞬息万变 策略为王 呼吸状白圈+号 css3 鼠标移动至白+</description>
-    </item>
-    
-    <item>
       <title>CSGO.技巧.跳跃</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</link>
-      <pubDate>Thu, 15 Mar 2018 15:00:00 +0800</pubDate>
+      <pubDate>Sun, 15 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E6%8A%80%E5%B7%A7.%E8%B7%B3%E8%B7%83/</guid>
       <description>连跳 W Space+ A+ 鼠标左摆 落地时+ Space+ D 跳箱子 正对箱子，Ctrl+ Space Ctrl+ W 跳远 W Space A+ 鼠标左摆 D+ 鼠标右摆 参考 CSGO跳跃技巧及操作方法心得详解</description>
     </item>
     
     <item>
+      <title>Python.Logging</title>
+      <link>http://domain.yqjdcyy.com/post/python.logging/</link>
+      <pubDate>Wed, 11 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.logging/</guid>
+      <description>组成 Logger 作用 日志对外暴露接口 创建 logger = logging.getLogger(logger_name) Handler 作用 将日志内容转至相应文件 类型 StreamHandler sh = logging.StreamHandler(stream=None) FileHandler fh = logging.FileHandler(filename, mode=&#39;a&#39;, encoding=None, delay=False) NullHandler Filter 作用 将日志内容进行过滤 Formater 作用 控制日志输出格式 L</description>
+    </item>
+    
+    <item>
+      <title>厦门软件园公寓租赁</title>
+      <link>http://domain.yqjdcyy.com/post/%E5%8E%A6%E9%97%A8%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%85%AC%E5%AF%93%E7%A7%9F%E8%B5%81/</link>
+      <pubDate>Wed, 04 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%8E%A6%E9%97%A8%E8%BD%AF%E4%BB%B6%E5%9B%AD%E5%85%AC%E5%AF%93%E7%A7%9F%E8%B5%81/</guid>
+      <description>背景 要换房子，时值出差至北京「朋友A」所申请的一室一厅正好刚要被通过 考虑到大学舍友，关系好，在一起也便于互相照应 而政策允许最多有两个同住人 后</description>
+    </item>
+    
+    <item>
+      <title>License.Choose</title>
+      <link>http://domain.yqjdcyy.com/post/license.choose/</link>
+      <pubDate>Fri, 30 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/license.choose/</guid>
+      <description>作用 计算机软件的版权许可协议，其使源代码可用在允许修改和重分发而不要向原始创建者付费的条件下 开源许可证是一种法律许可。通过它，版权拥有人明确</description>
+    </item>
+    
+    <item>
+      <title>Python.Conda</title>
+      <link>http://domain.yqjdcyy.com/post/python.conda/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.conda/</guid>
+      <description>作用 用于科学计算的Python发行版 提供了包管理与环境管理的功能 方便地解决多版本python并存、切换以及各种第三方包安装问题 分类 conda 工具 提供</description>
+    </item>
+    
+    <item>
+      <title>Python.__main__</title>
+      <link>http://domain.yqjdcyy.com/post/python.__mian__/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/python.__mian__/</guid>
+      <description>参考 Python 中 name == &amp;lsquo;main&amp;rsquo; 的作用 if name == &amp;lsquo;main&amp;rsquo; 如何正确理解? 作用 保障模块既可以被导入，也可作为脚本来执行 直接运行时，模块名为 main，因为对应代码块可被运行 导</description>
+    </item>
+    
+    <item>
+      <title>竞标-厦大海洋学院</title>
+      <link>http://domain.yqjdcyy.com/post/%E7%AB%9E%E6%A0%87-%E5%8E%A6%E5%A4%A7%E6%B5%B7%E6%B4%8B%E5%AD%A6%E9%99%A2/</link>
+      <pubDate>Mon, 26 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E7%AB%9E%E6%A0%87-%E5%8E%A6%E5%A4%A7%E6%B5%B7%E6%B4%8B%E5%AD%A6%E9%99%A2/</guid>
+      <description>动态效果 http://pubg.qq.com/ 整屏滚动 js swiper 丰富防具 CSS 丰富的天气和地形 天气和地形切换 js+ css 鼠标移动，着重显示对应明细 css 瞬息万变 策略为王 呼吸状白圈+号 css3 鼠标移动至白+</description>
+    </item>
+    
+    <item>
+      <title>庄家杜均</title>
+      <link>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</link>
+      <pubDate>Fri, 23 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</guid>
+      <description>【深度调查】 庄家杜均 时间点 2013.7 杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。 2013.11 火币网上</description>
+    </item>
+    
+    <item>
       <title>CSGO.脚本</title>
       <link>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</link>
-      <pubDate>Thu, 15 Mar 2018 14:00:00 +0800</pubDate>
+      <pubDate>Thu, 15 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/csgo.%E8%84%9A%E6%9C%AC/</guid>
       <description>设置项 CSGO详细参数.md 脚本 示例 单人模式 single.cfg sv_cheats 1 bot_kick sv_infinite_ammo 1 noclip bind &amp;quot;H&amp;quot; &amp;quot;noclip&amp;quot; mp_startmoney &amp;quot;16000&amp;quot; sv_grenade_trajectory &amp;quot;1&amp;quot; sv_grenade_trajectory_time &amp;quot;20&amp;quot; sv_grenade_trajectory_dash &amp;quot;0&amp;quot; sv_grenade_trajectory_thickness &amp;quot;1&amp;quot; sv_grenade_trajectory_time_spectator &amp;quot;1&amp;quot; sv_showimpacts 1 sv_showimpacts_time 25 mp_roundtime 99 mp_timelimit &amp;quot;999&amp;quot; mp_freezetime &amp;quot;0&amp;quot; mp_buy_anywhere &amp;quot;1&amp;quot; mp_buytime 9999 bind &amp;quot;k&amp;quot; &amp;quot;bot_add_ct&amp;quot; bind &amp;quot;l&amp;quot; &amp;quot;bot_add_t&amp;quot; bot_zombie &amp;quot;0&amp;quot; 备注 目前</description>
@@ -554,70 +554,70 @@
     <item>
       <title>JWT</title>
       <link>http://domain.yqjdcyy.com/post/jwt/</link>
-      <pubDate>Fri, 09 Mar 2018 16:00:00 +0800</pubDate>
+      <pubDate>Fri, 09 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/jwt/</guid>
-      <description>[TOC] 定义 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适</description>
+      <description>定义 Json web token (JWT), 是为了在网络应用环境间传递声明而执行的一种基于JSON的开放标准（(RFC 7519).该token被设计为紧凑且安全的，特别适用</description>
+    </item>
+    
+    <item>
+      <title>Hello.洋酒</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%B4%8B%E9%85%92.%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Tue, 06 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%B4%8B%E9%85%92.%E5%85%A5%E9%97%A8/</guid>
+      <description>洋酒.入门 单一麦芽 The Singleton of Dufftown 12 YO 名称 苏格登达夫镇12年单一麦芽 特征 清淡的鲜花、水果、坚果、香草味，容易入口 销量高 价位 320元 图示 Glen Moray Classic 名称 格兰</description>
     </item>
     
     <item>
       <title>王垠-如何掌握所有的程序语言</title>
       <link>http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/</link>
-      <pubDate>Tue, 06 Mar 2018 15:00:00 +0800</pubDate>
+      <pubDate>Tue, 06 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%8E%8B%E5%9E%A0-%E5%A6%82%E4%BD%95%E6%8E%8C%E6%8F%A1%E6%89%80%E6%9C%89%E7%9A%84%E7%A8%8B%E5%BA%8F%E8%AF%AD%E8%A8%80/</guid>
-      <description>[TOC] 王垠-如何掌握所有的程序语言 针对处理 你是编程初学者，不知道该选择什么程序语言来入门。 你是资深的程序员或者团队领导，对新出现的种种语言感到困</description>
-    </item>
-    
-    <item>
-      <title>洋酒.入门</title>
-      <link>http://domain.yqjdcyy.com/post/%E6%B4%8B%E9%85%92.%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Tue, 06 Mar 2018 11:00:00 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E6%B4%8B%E9%85%92.%E5%85%A5%E9%97%A8/</guid>
-      <description>[TOC] 洋酒.入门 单一麦芽 The Singleton of Dufftown 12 YO 名称 苏格登达夫镇12年单一麦芽 特征 清淡的鲜花、水果、坚果、香草味，容易入口 销量高 价位 320元 图示 Glen Moray Classic 名称 格</description>
+      <description>王垠-如何掌握所有的程序语言 针对处理 你是编程初学者，不知道该选择什么程序语言来入门。 你是资深的程序员或者团队领导，对新出现的种种语言感到困惑</description>
     </item>
     
     <item>
       <title>鸡尾酒</title>
       <link>http://domain.yqjdcyy.com/post/%E9%B8%A1%E5%B0%BE%E9%85%92/</link>
-      <pubDate>Mon, 05 Mar 2018 19:00:00 +0800</pubDate>
+      <pubDate>Mon, 05 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%B8%A1%E5%B0%BE%E9%85%92/</guid>
-      <description>[TOC] 国际调酒师协会指定比赛鸡尾酒 阿美利加诺（Americano） 做法 依次倒入 30ml甜味味美思（Vermouth） 30ml金巴利（Carmpa</description>
+      <description>国际调酒师协会指定比赛鸡尾酒 阿美利加诺（Americano） 做法 依次倒入 30ml甜味味美思（Vermouth） 30ml金巴利（Carmpar</description>
     </item>
     
     <item>
       <title>PDF部分页面转图片异常</title>
       <link>http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/</link>
-      <pubDate>Sun, 04 Mar 2018 10:07:46 +0800</pubDate>
+      <pubDate>Sun, 04 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/pdf%E9%83%A8%E5%88%86%E9%A1%B5%E9%9D%A2%E8%BD%AC%E5%9B%BE%E7%89%87%E5%BC%82%E5%B8%B8/</guid>
-      <description>[TOC] Error java.lang.IllegalArgumentException: Numbers of source Raster bands and source color space components do not match at java.awt.image.ColorConvertOp.filter(ColorConvertOp.java:482) at com.sun.imageio.plugins.jpeg.JPEGImageReader.acceptPixels(JPEGImageReader.java:1268) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImage(Native Method) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1236) at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039) at javax.imageio.ImageReader.read(ImageReader.java:939) at org.apache.pdfbox.filter.DCTFilter.decode(DCTFilter.java:85) at org.apache.pdfbox.cos.COSInputStream.create(COSInputStream.java:69) at org.apache.pdfbox.cos.COSStream.createInputStream(COSStream.java:162) at org.apache.pdfbox.pdmodel.common.PDStream.createInputStream(PDStream.java:235) at org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.&amp;lt;init&amp;gt;(PDImageXObject.java:125) at org.apache.pdfbox.pdmodel.graphics.PDXObject.createXObject(PDXObject.java:70) at org.apache.pdfbox.pdmodel.PDResources.getXObject(PDResources.java:409) at org.apache.pdfbox.contentstream.operator.graphics.DrawObject.process(DrawObject.java:53) at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:838) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:495) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:469) at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:150) at org.apache.pdfbox.rendering.PageDrawer.drawPage(PageDrawer.java:206) at org.apache.pdfbox.rendering.PDFRenderer.renderImage(PDFRenderer.java:145) at org.apache.pdfbox.rendering.PDFRenderer.renderImageWithDPI(PDFRenderer.java:94) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:72) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:88) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:93) at com.yunkai.component.resource.service.impl.ConvertServiceImpl.pdf2Image(ConvertServiceImpl.java:171) at com.yunkai.training.commons.resource.service.impl.LogicConvertServiceImpl.handlerPDF(LogicConvertServiceImpl.java:319) at</description>
+      <description>Error java.lang.IllegalArgumentException: Numbers of source Raster bands and source color space components do not match at java.awt.image.ColorConvertOp.filter(ColorConvertOp.java:482) at com.sun.imageio.plugins.jpeg.JPEGImageReader.acceptPixels(JPEGImageReader.java:1268) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readImage(Native Method) at com.sun.imageio.plugins.jpeg.JPEGImageReader.readInternal(JPEGImageReader.java:1236) at com.sun.imageio.plugins.jpeg.JPEGImageReader.read(JPEGImageReader.java:1039) at javax.imageio.ImageReader.read(ImageReader.java:939) at org.apache.pdfbox.filter.DCTFilter.decode(DCTFilter.java:85) at org.apache.pdfbox.cos.COSInputStream.create(COSInputStream.java:69) at org.apache.pdfbox.cos.COSStream.createInputStream(COSStream.java:162) at org.apache.pdfbox.pdmodel.common.PDStream.createInputStream(PDStream.java:235) at org.apache.pdfbox.pdmodel.graphics.image.PDImageXObject.&amp;lt;init&amp;gt;(PDImageXObject.java:125) at org.apache.pdfbox.pdmodel.graphics.PDXObject.createXObject(PDXObject.java:70) at org.apache.pdfbox.pdmodel.PDResources.getXObject(PDResources.java:409) at org.apache.pdfbox.contentstream.operator.graphics.DrawObject.process(DrawObject.java:53) at org.apache.pdfbox.contentstream.PDFStreamEngine.processOperator(PDFStreamEngine.java:838) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStreamOperators(PDFStreamEngine.java:495) at org.apache.pdfbox.contentstream.PDFStreamEngine.processStream(PDFStreamEngine.java:469) at org.apache.pdfbox.contentstream.PDFStreamEngine.processPage(PDFStreamEngine.java:150) at org.apache.pdfbox.rendering.PageDrawer.drawPage(PageDrawer.java:206) at org.apache.pdfbox.rendering.PDFRenderer.renderImage(PDFRenderer.java:145) at org.apache.pdfbox.rendering.PDFRenderer.renderImageWithDPI(PDFRenderer.java:94) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:72) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:88) at com.yunkai.component.resource.service.impl.PDFConvertServiceImpl.convertToImage(PDFConvertServiceImpl.java:93) at com.yunkai.component.resource.service.impl.ConvertServiceImpl.pdf2Image(ConvertServiceImpl.java:171) at com.yunkai.training.commons.resource.service.impl.LogicConvertServiceImpl.handlerPDF(LogicConvertServiceImpl.java:319) at com.yunkai.training.commons.resource.service.impl.LogicConvertServiceImpl.convertExerciseToAVI(LogicConvertServiceImpl.java:187)</description>
     </item>
     
     <item>
       <title>小丸压缩视频转M3U8异常</title>
       <link>http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/</link>
-      <pubDate>Sat, 03 Mar 2018 18:07:46 +0800</pubDate>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/</guid>
-      <description>[TOC] 异常反馈 2 frames left in the queue on closing Command 原始转换请求转换语句 &amp;gt; /usr/local/ffmpeg/bin/ffmpeg -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 -vcodec libx264 -r 24 -vf scale=640:360,pad=640:360:0:0:black -acodec aac -ar 22050 -ab 24k -map 0 -f ssegment -segment_format mpegts -segment_list /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/index.m3u8 -segment_time 10 /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/%04d.ts Info /usr/local/ffmpeg/bin/ffprobe -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 客户使用「小丸」进行视频压缩，</description>
+      <description>异常反馈 2 frames left in the queue on closing Command 原始转换请求转换语句 &amp;gt; /usr/local/ffmpeg/bin/ffmpeg -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 -vcodec libx264 -r 24 -vf scale=640:360,pad=640:360:0:0:black -acodec aac -ar 22050 -ab 24k -map 0 -f ssegment -segment_format mpegts -segment_list /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/index.m3u8 -segment_time 10 /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/%04d.ts Info /usr/local/ffmpeg/bin/ffprobe -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 客户使用「小丸」进行视频压缩，添</description>
     </item>
     
     <item>
       <title>调酒</title>
       <link>http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/</link>
-      <pubDate>Sat, 03 Mar 2018 18:07:46 +0800</pubDate>
+      <pubDate>Sat, 03 Mar 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/</guid>
-      <description>[TOC] Mojito 莫吉托 材料 白郎姆酒 40ml 青柠檬汁 30ml 可用屈臣氏青柠汁替换 薄荷叶 6片 白糖 2茶匙 苏打水 可用屈臣氏苏打水替换 冰块 杯子 海波杯 做法 薄荷叶+ 白糖+ 青柠（檬</description>
+      <description>Mojito 莫吉托 材料 白郎姆酒 40ml 青柠檬汁 30ml 可用屈臣氏青柠汁替换 薄荷叶 6片 白糖 2茶匙 苏打水 可用屈臣氏苏打水替换 冰块 杯子 海波杯 做法 薄荷叶+ 白糖+ 青柠（檬）</description>
     </item>
     
     <item>
       <title>富爸爸穷爸爸</title>
       <link>http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/</link>
-      <pubDate>Thu, 22 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/</guid>
       <description>富爸爸穷爸爸 课程 富爸爸，穷爸爸 我怎样才能付得起？ 贫穷和破产的区别是：破产是暂时的，而贫穷是永久的。 富人不为钱工作 如果你不能下定决心，就永远也</description>
@@ -626,34 +626,34 @@
     <item>
       <title>小王子</title>
       <link>http://domain.yqjdcyy.com/post/%E5%B0%8F%E7%8E%8B%E5%AD%90/</link>
-      <pubDate>Thu, 22 Feb 2018 14:07:46 +0800</pubDate>
+      <pubDate>Thu, 22 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B0%8F%E7%8E%8B%E5%AD%90/</guid>
       <description>小王子(65周年纪念版) 旅伴 玫瑰 国王 地理学家 商人 酒鬼 自高自大的人 玫瑰 标注 如果有一个人爱上在这亿万颗星星中仅有的一朵花，这人望着星空的时候，就</description>
     </item>
     
     <item>
-      <title>阅读清单-2018</title>
-      <link>http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/</link>
-      <pubDate>Mon, 12 Feb 2018 18:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/</guid>
-      <description>技术 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 Java7&amp;amp; 8 深入Java虚拟机 算法 思考 凯文·凯利 失控 沈君山 浮生三记 浮生再记 丁文江 少数人的责任 黄仁宇 万历十</description>
-    </item>
-    
-    <item>
       <title>知乎架构变迁史</title>
       <link>http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/</link>
-      <pubDate>Mon, 12 Feb 2018 12:07:46 +0800</pubDate>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%9F%A5%E4%B9%8E%E6%9E%B6%E6%9E%84%E5%8F%98%E8%BF%81%E5%8F%B2/</guid>
       <description>知乎架构变迁史 引言 You jump off a cliff and you assemble an aeroplane on the way down. - Reid Hoffman 阶段 上线 选型 Python.Tornado Python 简单强大、快速上手、开发效率高、社区活跃 Tornado 支持异步、适合实时Comet应</description>
     </item>
     
     <item>
+      <title>阅读清单-2018</title>
+      <link>http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/</link>
+      <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/</guid>
+      <description>技术 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 Java7&amp;amp; 8 深入Java虚拟机 算法 思考 凯文·凯利 失控 沈君山 浮生三记 浮生再记 丁文江 少数人的责任 黄仁宇 万历十</description>
+    </item>
+    
+    <item>
       <title>海姆立克急救法</title>
       <link>http://domain.yqjdcyy.com/post/%E6%B5%B7%E5%A7%86%E7%AB%8B%E5%85%8B%E6%80%A5%E6%95%91%E6%B3%95/</link>
-      <pubDate>Sun, 11 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%B5%B7%E5%A7%86%E7%AB%8B%E5%85%8B%E6%80%A5%E6%95%91%E6%B3%95/</guid>
       <description>海姆立克急救法 参考 海姆立克急救法 简介 海姆立克急救法（Heimlich Maneuver），又名“海氏急救法” 美国医师亨利·海姆力克（Henry</description>
@@ -662,7 +662,7 @@
     <item>
       <title>扫描二维码自动连接WIFI</title>
       <link>http://domain.yqjdcyy.com/post/%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5wifi/</link>
-      <pubDate>Sat, 10 Feb 2018 16:07:46 +0800</pubDate>
+      <pubDate>Sat, 10 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%89%AB%E6%8F%8F%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%87%AA%E5%8A%A8%E8%BF%9E%E6%8E%A5wifi/</guid>
       <description>扫描二维码自动连接WIFI 参考 想更优雅地分享 Wi-Fi 密码，只需一枚二维码 Wifi Network config 场景 手机扫描二维码，自动弹出「连接 WI-FI」建议 连接指令 WIFI:</description>
@@ -671,16 +671,16 @@
     <item>
       <title>IDEA.快捷键</title>
       <link>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</link>
-      <pubDate>Thu, 08 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>[TOC] 参考 http://www.cnblogs.com/tonycody/p/3257601.html http://www.importnew.com/15462.html 快捷键 包、结构或视图 Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查</description>
+      <description>快捷键 包、结构或视图 Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查找代码所在</description>
     </item>
     
     <item>
       <title>彻底终结MySQL同步延迟问题</title>
       <link>http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 07 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Wed, 07 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%BD%BB%E5%BA%95%E7%BB%88%E7%BB%93mysql%E5%90%8C%E6%AD%A5%E5%BB%B6%E8%BF%9F%E9%97%AE%E9%A2%98/</guid>
       <description>彻底终结MySQL同步延迟问题 参考 彻底终结MySQL同步延迟问题 Binary Logging Options and Variables Estimating potential for MySQL 5.7 parallel replication 版本 MySQL.Version 5.7 Storage.Engine TokuDB 影响因素 网络 主机或者从机的带宽打满 主从之</description>
@@ -689,7 +689,7 @@
     <item>
       <title>美国-夏威夷</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/</link>
-      <pubDate>Tue, 06 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A4%8F%E5%A8%81%E5%A4%B7%E4%B9%8B%E6%97%85/</guid>
       <description>夏威夷 参考 ALOHA! 夏威夷之旅 路线 夏威夷大岛（Islandof Hawaii） 茂宜岛（Maui） 欧湖岛（Oahu）檀香山 夏威夷大岛 - 火山 由两座活火山组</description>
@@ -698,7 +698,7 @@
     <item>
       <title>阿里为什么不去清华招人？</title>
       <link>http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/</link>
-      <pubDate>Tue, 06 Feb 2018 18:07:46 +0800</pubDate>
+      <pubDate>Tue, 06 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%98%BF%E9%87%8C%E4%B8%BA%E4%BB%80%E4%B9%88%E4%B8%8D%E5%8E%BB%E6%B8%85%E5%8D%8E%E6%8B%9B%E4%BA%BA/</guid>
       <description>阿里为什么不去清华招人？ 参考 阿里为什么不去清华招人？｜草铺半生 整理 卫哲 29岁，成为普华永道史上最年轻的合伙人之一 32岁，担任百安居中国区总裁</description>
@@ -707,16 +707,16 @@
     <item>
       <title>设计模式</title>
       <link>http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</link>
-      <pubDate>Fri, 02 Feb 2018 17:07:46 +0800</pubDate>
+      <pubDate>Fri, 02 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/</guid>
-      <description>[TOC] 设计模式 参考 《HEAD_FIRST 设计模式》 图说设计模式 design pattern 包教不包会 设计原则 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要</description>
+      <description>设计模式 参考 《HEAD_FIRST 设计模式》 图说设计模式 design pattern 包教不包会 设计原则 找出应用中可能需要变化之处，把它们独立出来，不要和那些不需要变</description>
     </item>
     
     <item>
-      <title>区块链技术浅识</title>
+      <title>Hello.区块链</title>
       <link>http://domain.yqjdcyy.com/post/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E6%B5%85%E8%AF%86/</link>
-      <pubDate>Tue, 30 Jan 2018 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%8C%BA%E5%9D%97%E9%93%BE%E6%8A%80%E6%9C%AF%E6%B5%85%E8%AF%86/</guid>
       <description>区块链技术浅识 参考 区块链技术 前情 存在着各种互相孤立的数据系统及运作体系，这极大地影响了金融市场效率的进一步提升。 在世界银行的报告中，跨国汇款</description>
@@ -725,7 +725,7 @@
     <item>
       <title>恩佐·法拉利博物馆</title>
       <link>http://domain.yqjdcyy.com/post/%E6%81%A9%E4%BD%90%E6%B3%95%E6%8B%89%E5%88%A9%E5%8D%9A%E7%89%A9%E9%A6%86/</link>
-      <pubDate>Tue, 30 Jan 2018 20:07:46 +0800</pubDate>
+      <pubDate>Tue, 30 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%81%A9%E4%BD%90%E6%B3%95%E6%8B%89%E5%88%A9%E5%8D%9A%E7%89%A9%E9%A6%86/</guid>
       <description>恩佐·法拉利博物馆 参考 恩佐·法拉利博物馆 List of Ferrari competition cars 简介 经典车型 GTO F40 F50 EnzoFerrari LaFerrari 经典系列 250 系列 Dino 经典赛车 F40 1987年在法兰克福车展首次亮相 庆祝建厂4</description>
@@ -734,7 +734,7 @@
     <item>
       <title>第二届创始人代表大会</title>
       <link>http://domain.yqjdcyy.com/post/%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A/</link>
-      <pubDate>Mon, 22 Jan 2018 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 22 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%AC%AC%E4%BA%8C%E5%B1%8A%E5%88%9B%E5%A7%8B%E4%BA%BA%E4%BB%A3%E8%A1%A8%E5%A4%A7%E4%BC%9A/</guid>
       <description>第二届创始人代表大会 流程 14:00 集合 14:30 各人发言 针对产品和公司的想法 现阶段的阻碍和思考 冲刺方向的准备 15:00 问答规类 公司形态 战略方向 流程合理化 996 等相关企业</description>
@@ -743,97 +743,106 @@
     <item>
       <title>伏特加</title>
       <link>http://domain.yqjdcyy.com/post/%E4%BC%8F%E7%89%B9%E5%8A%A0/</link>
-      <pubDate>Fri, 19 Jan 2018 17:07:46 +0800</pubDate>
+      <pubDate>Fri, 19 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%BC%8F%E7%89%B9%E5%8A%A0/</guid>
-      <description>[TOC] 伏特加 参考 无论打冷战还是“冷战”，伏特加永不退场！！ Banya桑拿浴 美国大厨兼作家安东尼伯尔顿 &amp;gt;在气温零度的日子，湖边小浴场最适合这</description>
+      <description>伏特加 参考 无论打冷战还是“冷战”，伏特加永不退场！！ Banya桑拿浴 美国大厨兼作家安东尼伯尔顿 &amp;gt;在气温零度的日子，湖边小浴场最适合这种</description>
+    </item>
+    
+    <item>
+      <title>ImageMagick</title>
+      <link>http://domain.yqjdcyy.com/post/imagemagick.basic/</link>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/imagemagick.basic/</guid>
+      <description>ImageMagick Reference 官网 Anatomy convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames] Input FileNames FileName Globbing Analysis pattern match about */? Example convert *.jpg images.gif Explicit Image Format Analysis specified a explicit image format is better than in the case of the image donot contain a signature of identify format Example convert -size 640x480 -depth 8 rgb:image image.png Built-in Image and Pattern Analysis you</description>
     </item>
     
     <item>
       <title>许式伟</title>
       <link>http://domain.yqjdcyy.com/post/%E8%AE%B8%E5%BC%8F%E4%BC%9F/</link>
-      <pubDate>Thu, 18 Jan 2018 17:30:46 +0800</pubDate>
+      <pubDate>Thu, 18 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%AE%B8%E5%BC%8F%E4%BC%9F/</guid>
       <description>参考 许式伟：十一年逆流顺流，首席架构师到CEO 问答 创业公司做这种重大决策要冒很大风险，能不能谈谈做这些决策背后的思路？ 选择和信息的对称程度有</description>
     </item>
     
     <item>
-      <title>ImageMagick</title>
-      <link>http://domain.yqjdcyy.com/post/imagemagick.basic/</link>
-      <pubDate>Thu, 18 Jan 2018 15:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/imagemagick.basic/</guid>
-      <description>[TOC] ImageMagick Reference 官网 Anatomy convert|composite|montage|compare|import|conjure [input filenames] [image settings] [image operators] [sequence operators] [stacks] [output image filenames] Input FileNames FileName Globbing Analysis pattern match about */? Example convert *.jpg images.gif Explicit Image Format Analysis specified a explicit image format is better than in the case of the image donot contain a signature of identify format Example convert -size 640x480 -depth 8 rgb:image image.png Built-in Image and Pattern Analysis</description>
-    </item>
-    
-    <item>
       <title>Linux.Crontab</title>
       <link>http://domain.yqjdcyy.com/post/linux.crond/</link>
-      <pubDate>Wed, 17 Jan 2018 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.crond/</guid>
       <description>Linux.Crontab 参考 每天一个linux命令（50）：crontab命令 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所</description>
     </item>
     
     <item>
-      <title>约翰·帕森</title>
-      <link>http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/</link>
-      <pubDate>Tue, 16 Jan 2018 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/</guid>
-      <description>[TOC] 约翰·帕森 简介 John Pawson，极简主义之父，师从传奇设计大师仓俣史朗 参考 极简主义大师：约翰·帕森 风格 极简主义 作品 Moritzkirche教</description>
-    </item>
-    
-    <item>
       <title>Linux.Expect</title>
       <link>http://domain.yqjdcyy.com/post/linux.expect/</link>
-      <pubDate>Tue, 16 Jan 2018 16:07:46 +0800</pubDate>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.expect/</guid>
       <description>Linux.Expect 参考 expect spawn、linux expect 用法 expect spawn、linux expect 用法小记 作用 代替实现与终端的交换，根据系统的输出运行相应的命令 需要 Tcl 编程语言的</description>
     </item>
     
     <item>
-      <title>UML</title>
+      <title>约翰·帕森</title>
+      <link>http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/</link>
+      <pubDate>Tue, 16 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E7%BA%A6%E7%BF%B0-%E5%B8%95%E6%A3%AE/</guid>
+      <description>约翰·帕森 简介 John Pawson，极简主义之父，师从传奇设计大师仓俣史朗 参考 极简主义大师：约翰·帕森 风格 极简主义 作品 Moritzkirche教堂</description>
+    </item>
+    
+    <item>
+      <title>Hello.UML</title>
       <link>http://domain.yqjdcyy.com/post/uml/</link>
-      <pubDate>Mon, 18 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 18 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/uml/</guid>
-      <description>[TOC] UML 参考 看懂UML类图和时序图 大纲 使用 StarUML UML.mdj</description>
+      <description>UML 参考 看懂UML类图和时序图 大纲 使用 StarUML UML.mdj</description>
     </item>
     
     <item>
       <title>Linux.Lsof</title>
       <link>http://domain.yqjdcyy.com/post/linux.lsof/</link>
-      <pubDate>Mon, 11 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 11 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.lsof/</guid>
       <description>参考 lsof 一切皆文件 功能 查看当前系统文件的工具 支持文件类型 普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（</description>
     </item>
     
     <item>
-      <title>网络-七层协议</title>
+      <title>网络.七层协议</title>
       <link>http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</link>
-      <pubDate>Fri, 08 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</guid>
       <description>参考 深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 网络七层协议 定义 网络七层协议，理论模型 OSI（Open System Interconnectio</description>
     </item>
     
     <item>
-      <title>网络-四层协议</title>
+      <title>网络.四层协议</title>
       <link>http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/</link>
-      <pubDate>Fri, 08 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E5%9B%9B%E5%B1%82%E5%8D%8F%E8%AE%AE/</guid>
       <description>参考 TCP/IP四层模型 深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 TCP/IP四层模型 OSI七层和TCP/IP四层的关系 定义 网络事</description>
     </item>
     
     <item>
-      <title>中国-厦门-同安</title>
+      <title>中国-福建-厦门</title>
+      <link>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</link>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</guid>
+      <description>美食 - 厦门 参考 吃遍了厦门正港美食，本地人有张清单想告诉你~ 沙茶面 菜品 炸豆腐 猪肝沿 瘦肉 剔骨肉 鸭胗 推荐店铺 沙糖 月华 思明区镇邦路78号，民立小学对</description>
+    </item>
+    
+    <item>
+      <title>中国-福建-厦门-同安</title>
       <link>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8-%E5%90%8C%E5%AE%89.%E7%BE%8E%E9%A3%9F/</link>
-      <pubDate>Mon, 04 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 04 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8-%E5%90%8C%E5%AE%89.%E7%BE%8E%E9%A3%9F/</guid>
       <description>参考 揣着100块钱来同安吃1整天！ 路线 T4候机楼站 凤岗大肠国大肠血 BRT快2线，至同安枢纽站 阿呆盐鸭店 630A，由同安枢纽站至小西门 鑫旺旺汤</description>
@@ -842,7 +851,7 @@
     <item>
       <title>云开-服务端架构-20171203</title>
       <link>http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/</link>
-      <pubDate>Sun, 03 Dec 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 03 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%BA%91%E5%BC%80-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9E%B6%E6%9E%84-20171203/</guid>
       <description>流程 华山分享现有架构整理 志高补充压测等情况 讨论瓶颈优化 系统架构 客户端 微信 NW 老师端 PC 学习端 连接方式 HTTP TCP/IP 微服务 用户中心 直播相关 业务服务相关 推荐相</description>
@@ -851,7 +860,7 @@
     <item>
       <title>Kafka</title>
       <link>http://domain.yqjdcyy.com/post/kafka/</link>
-      <pubDate>Wed, 29 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/kafka/</guid>
       <description>Kafka 参考 Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer</description>
@@ -860,16 +869,16 @@
     <item>
       <title>FFmpeg.阅读笔记</title>
       <link>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
-      <description>[TOC] 简介 FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts 概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ |</description>
+      <description>简介 FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts 概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | |</description>
     </item>
     
     <item>
       <title>Git.Subtree</title>
       <link>http://domain.yqjdcyy.com/post/git.subtree/</link>
-      <pubDate>Thu, 23 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.subtree/</guid>
       <description>参考 Git Subtree的使用 Git Tools - Subtree Merging 用 Git Subtree 在多个 Git 项目间双向同步子项目，附简明使用手册 描述 简介 &amp;gt; 经由 Git Subtree 来维护的子项目代码，对于父项目来说是</description>
@@ -878,25 +887,34 @@
     <item>
       <title>20岁的你</title>
       <link>http://domain.yqjdcyy.com/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/20%E5%B2%81%E7%9A%84%E4%BD%A0/</guid>
-      <description>[TOC] 20岁时做什么到40岁时才不会后悔？ 要点 知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础</description>
+      <description>20岁时做什么到40岁时才不会后悔？ 要点 知道什么是生命中最重要的东西 尽量不要去想太多竞争 善待那些喜欢自己的人 学会欣赏这个世界 为健康打下基础 试</description>
     </item>
     
     <item>
       <title>Apache.Beam的前世今生</title>
       <link>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/apache.beam%E7%9A%84%E5%89%8D%E4%B8%96%E4%BB%8A%E7%94%9F/</guid>
-      <description>{TOC} Apache Beam的前世今生 开源原因 意识到开源软件的巨大价值 足够多模型才能促使项目成功 简介 基础 Cloud Dataflow 介绍 构建、管理和优化复杂数据流水线的方法 用于构建</description>
+      <description>Apache Beam的前世今生 开源原因 意识到开源软件的巨大价值 足够多模型才能促使项目成功 简介 基础 Cloud Dataflow 介绍 构建、管理和优化复杂数据流水线的方法 用于构建移</description>
+    </item>
+    
+    <item>
+      <title>Hello.精酿啤酒</title>
+      <link>http://domain.yqjdcyy.com/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</guid>
+      <description>酒-精酿啤酒 参考 夏日炎炎，来瓶啤酒 - 一次关于精酿啤酒的安利 推荐7款精酿的啤酒，也许能让你爱不释手 角鲨头 Dogfish Head——一个神奇的啤酒厂 BrewDog 啤酒狗</description>
     </item>
     
     <item>
       <title>Java.9.Feature</title>
       <link>http://domain.yqjdcyy.com/post/java.9.feature/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.9.feature/</guid>
       <description>深入解读 Java 9 新特性 参考 深入解读 Java 9 新特性 Java9先睹为快：JShell动手实践 JavaOne 2016——观众得以一睹JShell的威力 Jigsaw 核心 -实现 Java 平</description>
@@ -905,7 +923,7 @@
     <item>
       <title>Java.Native</title>
       <link>http://domain.yqjdcyy.com/post/java.native/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.native/</guid>
       <description>参考 http://blog.csdn.net/xw13106209/article/details/6989415 http://www.iteye.com/topic/304594 概念 Jni sun 提供 支持通过与 c/c++ 交互调用系统的相关技术 Jawin sourceforge 提供基于 Jni 的应用库 支持调用 com 对象，和win32-dll 动态链接库的方法 Jacob sourceforge 提供 提供</description>
@@ -914,25 +932,25 @@
     <item>
       <title>Java.泛型</title>
       <link>http://domain.yqjdcyy.com/post/java.%E6%B3%9B%E5%9E%8B/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.%E6%B3%9B%E5%9E%8B/</guid>
-      <description>[TOC] 泛型 与 C++ 的比较 优点 泛型实现参数化类型 创建泛型的一个实例时，编译器负责转型并保证类型的正确性 缺点 其它语言能做、好做的，java 中却不支持，难</description>
+      <description>泛型 与 C++ 的比较 优点 泛型实现参数化类型 创建泛型的一个实例时，编译器负责转型并保证类型的正确性 缺点 其它语言能做、好做的，java 中却不支持，难以</description>
     </item>
     
     <item>
       <title>Linux 单TCP连接占用最少内存</title>
       <link>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux-%E5%8D%95tcp%E8%BF%9E%E6%8E%A5%E5%8D%A0%E7%94%A8%E6%9C%80%E5%B0%91%E5%86%85%E5%AD%98/</guid>
-      <description>[TOC] Linux 单 TCP 连接占用最少内存 结构 错 TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control</description>
+      <description>Linux 单 TCP 连接占用最少内存 结构 错 TCP 连接建立的时候会分配接收缓冲区和发送缓冲区，各 4KB，一共是 8KB。如果加上 TCP 协议控制块（protocol control b</description>
     </item>
     
     <item>
       <title>Linux.Vimium</title>
       <link>http://domain.yqjdcyy.com/post/linux.vimium/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.vimium/</guid>
       <description>Vimium 快捷键指南 页面导航 j 向下滚动 k 向上滚动 d 向下翻页 u 向上翻页 gg 滚动至顶部 G 滚动至底部 r 刷新界面 yy 复制当前界面 URL p 在当前标签页打开剪贴板中的 URL</description>
@@ -941,7 +959,7 @@
     <item>
       <title>PowerPoint.CoverExport</title>
       <link>http://domain.yqjdcyy.com/post/powerpoint.coverexport/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/powerpoint.coverexport/</guid>
       <description>文件法 实现 将 .pptx 文件后缀更新为 .zip 获取 /docProps/thumbnail.jpeg 缺点 仅适用于 .pptx windows api + code 实现 环境要求&amp;amp; 版本限制 v4.0.30319 缺点 与「文件法」一致，导出图片尺寸过小 PPT 操作导出 -</description>
@@ -950,7 +968,7 @@
     <item>
       <title>ServiceMesh</title>
       <link>http://domain.yqjdcyy.com/post/servicemesh/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/servicemesh/</guid>
       <description>参考 Java未来也许不再是电商的首选开发语言 从零开始k8s 明细 首选语言 优点 JVM 运行时强大 工具链成熟 Spring 庞大的生态 dubbo Spring Cloud 缺点 开发繁琐 包体积大 运行时</description>
@@ -959,97 +977,97 @@
     <item>
       <title>不可描述</title>
       <link>http://domain.yqjdcyy.com/post/%E4%B8%8D%E5%8F%AF%E6%8F%8F%E8%BF%B0/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%B8%8D%E5%8F%AF%E6%8F%8F%E8%BF%B0/</guid>
-      <description>[TOC] 参考 香辣家常菜 0/6 料理 黄油炒蛋 [2&amp;frasl;5] 材料 鸡蛋* 3 全脂牛奶 玉米粉/ 土豆粉 黄油 盐、胡椒 步骤 鸡蛋撑匀 全脂牛奶溶玉米粉，搅拌均匀后与鸡蛋混合 黄油于不粘中</description>
+      <description>参考 香辣家常菜 0/6 料理 黄油炒蛋 [2&amp;frasl;5] 材料 鸡蛋* 3 全脂牛奶 玉米粉/ 土豆粉 黄油 盐、胡椒 步骤 鸡蛋撑匀 全脂牛奶溶玉米粉，搅拌均匀后与鸡蛋混合 黄油于不粘中融</description>
     </item>
     
     <item>
       <title>代码整洁之道.程序员的职业素养</title>
       <link>http://domain.yqjdcyy.com/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93.%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB/</guid>
-      <description>[TOC] 代码整洁之道 - 程序员的职业素养 专业主义 为自身错误埋单 注重自测 要求自测基本完整覆盖 建议要求 设计模式 GOF* 24 POSA 中多数模式的实战 设计原则 了解 SOLID 原则 深</description>
+      <description>代码整洁之道 - 程序员的职业素养 专业主义 为自身错误埋单 注重自测 要求自测基本完整覆盖 建议要求 设计模式 GOF* 24 POSA 中多数模式的实战 设计原则 了解 SOLID 原则 深刻</description>
     </item>
     
     <item>
       <title>卡西欧-CASIO</title>
       <link>http://domain.yqjdcyy.com/post/%E5%8D%A1%E8%A5%BF%E6%AC%A7-casio/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%8D%A1%E8%A5%BF%E6%AC%A7-casio/</guid>
-      <description>[TOC] 品牌 简介 1946年4月 由㭴尾忠雄创立 生产香烟指环 1954年成功研制首台电子计算机 1957年 卡西欧推出14-A型、全球首款全电子计算机 公司更</description>
+      <description>品牌 简介 1946年4月 由㭴尾忠雄创立 生产香烟指环 1954年成功研制首台电子计算机 1957年 卡西欧推出14-A型、全球首款全电子计算机 公司更名</description>
     </item>
     
     <item>
       <title>妙梅家招牌</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A6%99%E6%A2%85%E5%AE%B6%E6%8B%9B%E7%89%8C/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A6%99%E6%A2%85%E5%AE%B6%E6%8B%9B%E7%89%8C/</guid>
-      <description>[TOC] 蒸鸡 [2.5&amp;frasl;5] 材料 八角 桂皮 香菇 香葱头 当归 料酒 生姜 鸡 工具 电饭锅 蒸架 流程 鸡洗净过水，各材料切好洗净 盐，料酒里外抹一下 各材料塞里面，隔水蒸一小时</description>
+      <description>蒸鸡 [2.5&amp;frasl;5] 材料 八角 桂皮 香菇 香葱头 当归 料酒 生姜 鸡 工具 电饭锅 蒸架 流程 鸡洗净过水，各材料切好洗净 盐，料酒里外抹一下 各材料塞里面，隔水蒸一小时 腌萝卜 材料</description>
     </item>
     
     <item>
       <title>宝珀-Blancpain</title>
       <link>http://domain.yqjdcyy.com/post/%E5%AE%9D%E7%8F%80-blancpain/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%AE%9D%E7%8F%80-blancpain/</guid>
-      <description>[TOC] 品牌 简介 1735年，Jehan-Jacques Blancpain创立宝珀品牌 1926年，宝珀制表厂与制表师John Harwood合作，推出</description>
+      <description>品牌 简介 1735年，Jehan-Jacques Blancpain创立宝珀品牌 1926年，宝珀制表厂与制表师John Harwood合作，推出首</description>
     </item>
     
     <item>
       <title>工装鞋</title>
       <link>http://domain.yqjdcyy.com/post/%E5%B7%A5%E8%A3%85%E9%9E%8B/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B7%A5%E8%A3%85%E9%9E%8B/</guid>
-      <description>[TOC] 参考 鞋靴 | 我要给第1次买工装靴的人，挑一双穿10年的靴子 品牌 顶端 Viberg 炒作嫌疑，价格虚高，不推荐 Wesco、White&amp;rsquo;s Boots 现货 $</description>
+      <description>参考 鞋靴 | 我要给第1次买工装靴的人，挑一双穿10年的靴子 品牌 顶端 Viberg 炒作嫌疑，价格虚高，不推荐 Wesco、White&amp;rsquo;s Boots 现货 $4</description>
     </item>
     
     <item>
       <title>技术人员的发展之路</title>
       <link>http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%8A%80%E6%9C%AF%E4%BA%BA%E5%91%98%E7%9A%84%E5%8F%91%E5%B1%95%E4%B9%8B%E8%B7%AF/</guid>
-      <description>[TOC] 技术人员的发展之路 阶段和标志 20-30岁 提升学习和解决难题的能力 提升领导力 高效学习能力 基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独</description>
+      <description>技术人员的发展之路 阶段和标志 20-30岁 提升学习和解决难题的能力 提升领导力 高效学习能力 基础扎实，触类旁通 寻找前沿知识 看清问题和技术的本质 独立</description>
     </item>
     
     <item>
       <title>歌川广重</title>
       <link>http://domain.yqjdcyy.com/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%AD%8C%E5%B7%9D%E5%B9%BF%E9%87%8D/</guid>
-      <description>[TOC] 歌川广重 简介 1811年他在江户成为浮世绘大师歌川丰广的学生 于1833～1834年间的55幅风景画系列《东海道五十三次》确立了他作为有史以来</description>
+      <description>歌川广重 简介 1811年他在江户成为浮世绘大师歌川丰广的学生 于1833～1834年间的55幅风景画系列《东海道五十三次》确立了他作为有史以来最</description>
     </item>
     
     <item>
       <title>水</title>
       <link>http://domain.yqjdcyy.com/post/%E6%B0%B4/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%B0%B4/</guid>
-      <description>[TOC] 蒸 蒸馒头 10:00 蒸肉包 &amp;gt;= 12:00 蒸地瓜、玉米 &amp;gt;= 15:00 大块地瓜需要切段 煮 水煮蛋 水烧开后煮 7:30 速冻肉粽 水烧开后煮 15:00 速冻辣肠 水烧开后煮 15:00</description>
+      <description>蒸 蒸馒头 10:00 蒸肉包 &amp;gt;= 12:00 蒸地瓜、玉米 &amp;gt;= 15:00 大块地瓜需要切段 煮 水煮蛋 水烧开后煮 7:30 速冻肉粽 水烧开后煮 15:00 速冻辣肠 水烧开后煮 15:00</description>
     </item>
     
     <item>
       <title>汤</title>
       <link>http://domain.yqjdcyy.com/post/%E6%B1%A4/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%B1%A4/</guid>
-      <description>[TOC] 冬瓜排骨汤 材料 排骨 冬瓜 葱、姜 盐 流程 葱挽结，姜、冬瓜切片 排骨洗净，过开水焯后，冲净撇去血末 冷水烧开后转小火煲一小时，后加冬瓜煲制十五分钟 加盐</description>
+      <description>冬瓜排骨汤 材料 排骨 冬瓜 葱、姜 盐 流程 葱挽结，姜、冬瓜切片 排骨洗净，过开水焯后，冲净撇去血末 冷水烧开后转小火煲一小时，后加冬瓜煲制十五分钟 加盐、</description>
     </item>
     
     <item>
       <title>浏览器缓存知识小结及应用</title>
       <link>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E7%9F%A5%E8%AF%86%E5%B0%8F%E7%BB%93%E5%8F%8A%E5%BA%94%E7%94%A8/</guid>
       <description>浏览器缓存知识小结及应用 分类 强缓存 判断命中，则直接从浏览器缓存中读取资源，不发请求至服务器（200） 协商缓存 发请求至服务器，协商缓存命中，则</description>
@@ -1058,106 +1076,97 @@
     <item>
       <title>甜</title>
       <link>http://domain.yqjdcyy.com/post/%E7%94%9C/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%94%9C/</guid>
-      <description>[TOC] 芒果西米露 [4&amp;frasl;5] 材料 西米 小芒果 牛奶 蜂蜜 流程 芒果剖开刮下果肉 大量水煮西米，15分钟至剩下白芯后关火加盖焖熟 完全透明后捞起过冰水 起碗加入西米、牛奶</description>
-    </item>
-    
-    <item>
-      <title>精酿啤酒.入门</title>
-      <link>http://domain.yqjdcyy.com/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E7%B2%BE%E9%85%BF%E5%95%A4%E9%85%92.%E5%85%A5%E9%97%A8/</guid>
-      <description>[TOC] 酒-精酿啤酒 参考 夏日炎炎，来瓶啤酒 - 一次关于精酿啤酒的安利 推荐7款精酿的啤酒，也许能让你爱不释手 角鲨头 Dogfish Head——一个神奇的啤酒厂 BrewDog 啤酒</description>
+      <description>芒果西米露 [4&amp;frasl;5] 材料 西米 小芒果 牛奶 蜂蜜 流程 芒果剖开刮下果肉 大量水煮西米，15分钟至剩下白芯后关火加盖焖熟 完全透明后捞起过冰水 起碗加入西米、牛奶、</description>
     </item>
     
     <item>
       <title>肉</title>
       <link>http://domain.yqjdcyy.com/post/%E8%82%89/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%82%89/</guid>
-      <description>[TOC] 参考 高分肉菜 - 0/7 料理 啤酒鸭 [4&amp;frasl;5] 材料 鸭 啤酒 姜、蒜 干辣椒、八角 盐、糖、食用油、老抽、生抽 工具 流程 鸭肉洗净切小块，淋水备用 炒锅加热，倒油后加入姜片</description>
+      <description>参考 高分肉菜 - 0/7 料理 啤酒鸭 [4&amp;frasl;5] 材料 鸭 啤酒 姜、蒜 干辣椒、八角 盐、糖、食用油、老抽、生抽 工具 流程 鸭肉洗净切小块，淋水备用 炒锅加热，倒油后加入姜片、</description>
     </item>
     
     <item>
       <title>股权&amp;期权</title>
       <link>http://domain.yqjdcyy.com/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%82%A1%E6%9D%83%E6%9C%9F%E6%9D%83/</guid>
-      <description>[TOC] 股权、期权有哪些坑？从技术创业的角度说开去 比例 依赖独特技术 技术* 50% 业务* 40% 管理* 10% 依赖业务领先 技术* 40% 业务* 50% 管理* 10% 注意 一开始就要定位准</description>
+      <description>股权、期权有哪些坑？从技术创业的角度说开去 比例 依赖独特技术 技术* 50% 业务* 40% 管理* 10% 依赖业务领先 技术* 40% 业务* 50% 管理* 10% 注意 一开始就要定位准确</description>
     </item>
     
     <item>
       <title>菜</title>
       <link>http://domain.yqjdcyy.com/post/%E8%8F%9C/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%8F%9C/</guid>
-      <description>[TOC] 烫生菜 [3&amp;frasl;5] 材料 生菜 蒜 生抽 工具 流程 生菜洗净焯熟 蒜末炒香，关火后加生抽搅匀后淋在生菜上 酸辣土豆丝 [3&amp;frasl;5] 材料 土豆 青辣椒 干红辣椒、大蒜、葱、姜、花椒 醋、</description>
+      <description>烫生菜 [3&amp;frasl;5] 材料 生菜 蒜 生抽 工具 流程 生菜洗净焯熟 蒜末炒香，关火后加生抽搅匀后淋在生菜上 酸辣土豆丝 [3&amp;frasl;5] 材料 土豆 青辣椒 干红辣椒、大蒜、葱、姜、花椒 醋、盐</description>
     </item>
     
     <item>
       <title>葛饰北斋</title>
       <link>http://domain.yqjdcyy.com/post/%E8%91%9B%E9%A5%B0%E5%8C%97%E6%96%8B/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%91%9B%E9%A5%B0%E5%8C%97%E6%96%8B/</guid>
-      <description>[TOC] 葛饰北斋 简介 葛飾 北斎／かつしか ほくさい Katsushika Hokusai （1760年10月31日－1849年5月10日） 日本江户时代后期的浮世绘师 14岁学雕版印刷，18</description>
+      <description>葛饰北斋 简介 葛飾 北斎／かつしか ほくさい Katsushika Hokusai （1760年10月31日－1849年5月10日） 日本江户时代后期的浮世绘师 14岁学雕版印刷，18岁</description>
     </item>
     
     <item>
       <title>语言类型</title>
       <link>http://domain.yqjdcyy.com/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E8%AF%AD%E8%A8%80%E7%B1%BB%E5%9E%8B/</guid>
-      <description>[TOC] 语言类型 参考 编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别 弱类型、强类型、动态类型、静态类型语言的区别是什么？ 类型 编译型语言</description>
+      <description>语言类型 参考 编译型语言、解释型语言、静态类型语言、动态类型语言概念与区别 弱类型、强类型、动态类型、静态类型语言的区别是什么？ 类型 编译型语言 描</description>
     </item>
     
     <item>
-      <title>销售就是要搞定人 </title>
+      <title>销售就是要搞定人</title>
       <link>http://domain.yqjdcyy.com/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%94%80%E5%94%AE%E5%B0%B1%E6%98%AF%E8%A6%81%E6%90%9E%E5%AE%9A%E4%BA%BA/</guid>
-      <description>[TOC] 销售就是要搞定人 对自己 提升能力 解决问题 全局前提：了解局部、推荐人、相关影响人、决策人和拍板人 局部前提：搞定局部相关人员 搞定关键人前提：善于</description>
+      <description>销售就是要搞定人 对自己 提升能力 解决问题 全局前提：了解局部、推荐人、相关影响人、决策人和拍板人 局部前提：搞定局部相关人员 搞定关键人前提：善于答</description>
     </item>
     
     <item>
       <title>面</title>
       <link>http://domain.yqjdcyy.com/post/%E9%9D%A2/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%9D%A2/</guid>
-      <description>[TOC] 面食 西红柿鸡蛋面 [3&amp;frasl;5] 材料 鸡蛋 西红柿 小葱 流程 鸡蛋炒开 西红柿去皮压碎后与鸡蛋拌炒 4&amp;frasl;5 碗水，大拇指至食指末节数量挂面 焖煮9分钟，加盐、香油等出锅 阳春</description>
+      <description>面食 西红柿鸡蛋面 [3&amp;frasl;5] 材料 鸡蛋 西红柿 小葱 流程 鸡蛋炒开 西红柿去皮压碎后与鸡蛋拌炒 4&amp;frasl;5 碗水，大拇指至食指末节数量挂面 焖煮9分钟，加盐、香油等出锅 阳春面</description>
     </item>
     
     <item>
       <title>饭</title>
       <link>http://domain.yqjdcyy.com/post/%E9%A5%AD/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%A5%AD/</guid>
-      <description>[TOC] 煮干饭 材料 米饭 两人三小碗左右 流程 淘米后加同杯量的水 什蔬咖喱炒饭 材料 米饭 西兰花、胡萝卜、玉米、青豆 圣女果 咖喱块、盐 流程 西兰花切块，胡萝卜切丁</description>
+      <description>煮干饭 材料 米饭 两人三小碗左右 流程 淘米后加同杯量的水 什蔬咖喱炒饭 材料 米饭 西兰花、胡萝卜、玉米、青豆 圣女果 咖喱块、盐 流程 西兰花切块，胡萝卜切丁，</description>
     </item>
     
     <item>
       <title>香水.推荐</title>
       <link>http://domain.yqjdcyy.com/post/%E9%A6%99%E6%B0%B4.%E6%8E%A8%E8%8D%90/</link>
-      <pubDate>Thu, 16 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%A6%99%E6%B0%B4.%E6%8E%A8%E8%8D%90/</guid>
-      <description>[TOC] 男香分享 推荐 Dolce &amp;amp; Gabbana the one 浓香版 [香调]东方辛香调 [前调]罗勒 葡萄柚 胡荽 [中调]小豆蔻 姜 橙花 [后调]烟草调 雪松木 龙涎香 时效性:一整天 推荐季节:</description>
+      <description>男香分享 推荐 Dolce &amp;amp; Gabbana the one 浓香版 [香调]东方辛香调 [前调]罗勒 葡萄柚 胡荽 [中调]小豆蔻 姜 橙花 [后调]烟草调 雪松木 龙涎香 时效性:一整天 推荐季节:秋</description>
     </item>
     
     <item>
       <title>ActiveMq</title>
       <link>http://domain.yqjdcyy.com/post/activemq/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/activemq/</guid>
       <description>地址 入门：http://www.cnblogs.com/xwdreamer/archive/2012/02/21/2360818.html 下</description>
@@ -1166,7 +1175,7 @@
     <item>
       <title>CSS4.Color</title>
       <link>http://domain.yqjdcyy.com/post/css4.color/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/css4.color/</guid>
       <description>[TOC]
@@ -1176,16 +1185,16 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Go.Wukong</title>
       <link>http://domain.yqjdcyy.com/post/go.wukong/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.wukong/</guid>
-      <description>[TOC] 悟空引擎使用 参考 使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur 介绍 内部结构 主协程，用于收发用户请求 分词器（seg</description>
+      <description>悟空引擎使用 参考 使用wukong全文搜索引擎 huichen/wukong 悟空：用Go语言编写的全文搜索引擎 huichen/sego boltdb/bolt cznic/kv huichen/murmur 介绍 内部结构 主协程，用于收发用户请求 分词器（segm</description>
     </item>
     
     <item>
       <title>Hugo 建站</title>
       <link>http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/hugo%E5%BB%BA%E7%AB%99/</guid>
       <description>Hugo 建站 参考 使用Hugo搭建个人博客 Hugo Themes Hugo 中文文档 利用Github Pages和基于Go的Hugo搭建个人博客 Host on GitHub 使用hugo搭建个人博客站点</description>
@@ -1194,7 +1203,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Java.Log4j</title>
       <link>http://domain.yqjdcyy.com/post/java.log4j/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.log4j/</guid>
       <description>文件格式 配置根Logger log4j.rootLogger = [ level ] , appenderName1 , appenderName2 , … 配置日志信息输出目的地 log4j.appender.appenderName = Appender log4j.appender.appenderName. Threshold= DEBUG ##输出DEBUG级别以上的日志 … log4j.appender.appenderName.optionN = valueN 配置日志信息的格式</description>
@@ -1203,7 +1212,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Java.注意事项</title>
       <link>http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9/</guid>
       <description>finally 用于及时释放资源以不影响系统性能，并遵循最晚申请，最早释放原则，就近释放（若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放</description>
@@ -1212,52 +1221,52 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>JavaScript.TypeScript</title>
       <link>http://domain.yqjdcyy.com/post/javascript.typescript/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/javascript.typescript/</guid>
-      <description>[TOC] TypeScript 参考 Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols 简介 微软开发、开源的编程语</description>
+      <description>TypeScript 参考 Wiki - TypeScript TypeScript Handbook（中文版） 官网 Microsoft/TypeScript 5分钟上手TypeScript 深入浅出ES6（八）：Symbols 简介 微软开发、开源的编程语言</description>
     </item>
     
     <item>
       <title>Linux.Chown</title>
       <link>http://domain.yqjdcyy.com/post/linux.chown/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.chown/</guid>
-      <description>[TOC] chown 格式 chown [option]* [user[:[group]*]] [file|group]* 必要参数 -c 显示更改的部分的信息 -f 忽略错误信息 -h 修复符号链接 -R 处理指定目录以及其子目录下的所有文件 -v 显示详细的处理信息 -deference 作用于</description>
+      <description>chown 格式 chown [option]* [user[:[group]*]] [file|group]* 必要参数 -c 显示更改的部分的信息 -f 忽略错误信息 -h 修复符号链接 -R 处理指定目录以及其子目录下的所有文件 -v 显示详细的处理信息 -deference 作用于符</description>
     </item>
     
     <item>
       <title>Linux.Git</title>
       <link>http://domain.yqjdcyy.com/post/linux.git/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.git/</guid>
-      <description>[TOC] 参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
+      <description>参考 安装 Git 生成 SSH 公钥 流程 INSTALL yum install git-core SSH CHECK less cd ~/.ssh CREATE ssh-keygen</description>
     </item>
     
     <item>
       <title>Linux.Scp</title>
       <link>http://domain.yqjdcyy.com/post/linux.scp/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.scp/</guid>
-      <description>[TOC] 参考 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1</description>
+      <description>参考 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1 强</description>
     </item>
     
     <item>
       <title>OpenXml.ShapeDefinition</title>
       <link>http://domain.yqjdcyy.com/post/openxml.shapedefinition/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/openxml.shapedefinition/</guid>
-      <description>[TOC] Shape Definitions And Attributes The Coordinate Systems The Document Coordinate System (0,0) in the upper left of the document x++, move right y++, move downwards Unit EMUs 1 pixel= 9525 EMUs 1 cm= 360000 EMUs 1 inch = 914400 EMUs The Shape Coordinate System When get the width and height (0,0) in the upper left of the shape Unit: EMUs The Path Coordinate System (0,0) in the upper left</description>
+      <description>Shape Definitions And Attributes The Coordinate Systems The Document Coordinate System (0,0) in the upper left of the document x++, move right y++, move downwards Unit EMUs 1 pixel= 9525 EMUs 1 cm= 360000 EMUs 1 inch = 914400 EMUs The Shape Coordinate System When get the width and height (0,0) in the upper left of the shape Unit: EMUs The Path Coordinate System (0,0) in the upper left of</description>
     </item>
     
     <item>
       <title>Oracle.常见问题</title>
       <link>http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/oracle.%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98/</guid>
       <description>ORA-12541:TNS:无监听程序 监听失败，自己遇到的情况是主机设置错误 -进入到下述文件中： D:\oracle\product\10.2.0\db_2\network\ADMIN\listener.ora (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.1.101)(PORT = 1521)) 更新HOST为本地即 HOST= 127.0.0.1</description>
@@ -1266,7 +1275,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Redis.使用</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</guid>
       <description>简介 介绍 支持网络，可基于内存亦可持久化的日志型、Key-Value数据库 参考 官网 文档 命令 Linux下安装 Jedis使用示例 安装-WINDOW</description>
@@ -1275,7 +1284,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>项目发布总结</title>
       <link>http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/</link>
-      <pubDate>Wed, 15 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%A1%B9%E7%9B%AE%E5%8F%91%E5%B8%83%E6%80%BB%E7%BB%93/</guid>
       <description>域名相关 购买： 购买网站 万网 www.net.cn 示例： fzsfxd.com 有限时间三年，金额为149元 服务器备案 若使用国内服务器，且要使用购买的域名，均需要进行备案，周期大概要半</description>
@@ -1284,7 +1293,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>如何炼成商业分析能力</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</link>
-      <pubDate>Mon, 13 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 13 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E7%82%BC%E6%88%90%E5%95%86%E4%B8%9A%E5%88%86%E6%9E%90%E8%83%BD%E5%8A%9B/</guid>
       <description>如何炼成商业分析能力 参考 商业分析能力是怎样炼成的？ 前言 幸存者偏差 任何商业活动最终的成败，都是由一系列完整的环节相互作用所决定的 成功的商业决策</description>
@@ -1293,16 +1302,16 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Tomcat.Service</title>
       <link>http://domain.yqjdcyy.com/post/tomcat.service/</link>
-      <pubDate>Thu, 09 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 09 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/tomcat.service/</guid>
-      <description>[TOC] 参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log</description>
+      <description>参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log run</description>
     </item>
     
     <item>
       <title>如何轻松聊天</title>
       <link>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</link>
-      <pubDate>Wed, 08 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%A6%82%E4%BD%95%E8%BD%BB%E6%9D%BE%E8%81%8A%E5%A4%A9/</guid>
       <description>如何轻松聊天 参考 不懂跟异性轻松聊天，你如何get到这个技能 因素 心态 影响 自信心 个人价值 提升 提升个人价值 提高立身处世能力 收拾外表、整洁干净 与价值</description>
@@ -1311,34 +1320,25 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>浮世绘</title>
       <link>http://domain.yqjdcyy.com/post/%E6%B5%AE%E4%B8%96%E7%BB%98/</link>
-      <pubDate>Tue, 31 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E6%B5%AE%E4%B8%96%E7%BB%98/</guid>
-      <description>[TOC] 浮世绘 简介 常指彩色印刷的木版画 “浮世”是指当时人们所处的现世，即现代、当代、尘世之类的意思 浮世绘画师以狩野派、土佐派出身者居多，这是因为当</description>
+      <description>浮世绘 简介 常指彩色印刷的木版画 “浮世”是指当时人们所处的现世，即现代、当代、尘世之类的意思 浮世绘画师以狩野派、土佐派出身者居多，这是因为当时</description>
     </item>
     
     <item>
       <title>美式足球</title>
       <link>http://domain.yqjdcyy.com/post/%E7%BE%8E%E5%BC%8F%E8%B6%B3%E7%90%83/</link>
-      <pubDate>Tue, 31 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%BE%8E%E5%BC%8F%E8%B6%B3%E7%90%83/</guid>
-      <description>[TOC] 美式足球 参考 美式足球 美式橄榄球基本规则 国家橄榄球联盟 NFL 有哪些现役球星值得关注？ 规则 场地 100码* 53码 时间 4节* 15分 12分中场休息 每档组</description>
+      <description>美式足球 参考 美式足球 美式橄榄球基本规则 国家橄榄球联盟 NFL 有哪些现役球星值得关注？ 规则 场地 100码* 53码 时间 4节* 15分 12分中场休息 每档组织</description>
     </item>
     
     <item>
-      <title>中国-厦门.美食</title>
-      <link>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</link>
-      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E5%8E%A6%E9%97%A8.%E7%BE%8E%E9%A3%9F/</guid>
-      <description>[TOC] 美食 - 厦门 参考 吃遍了厦门正港美食，本地人有张清单想告诉你~ 沙茶面 菜品 炸豆腐 猪肝沿 瘦肉 剔骨肉 鸭胗 推荐店铺 沙糖 月华 思明区镇邦路78号，民立小学</description>
-    </item>
-    
-    <item>
-      <title>攻略-中国-桂林</title>
+      <title>中国-桂林</title>
       <link>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E6%A1%82%E6%9E%97/</link>
-      <pubDate>Thu, 26 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 26 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E4%B8%AD%E5%9B%BD-%E6%A1%82%E6%9E%97/</guid>
       <description>桂林 参考 桂林攻略 桂林旅游攻略 漓江经典五大玩法全攻略 谢大姐啤酒鱼 椿记烧鹅 崇善米粉(总店) 老油条甲天下桂林米粉 大师傅金奖啤酒鱼 推荐 时间 9-11月</description>
@@ -1354,27 +1354,27 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     </item>
     
     <item>
-      <title>Tomcat. AccessLog </title>
+      <title>Tomcat.AccessLog</title>
       <link>http://domain.yqjdcyy.com/post/tomcat.-accesslog/</link>
-      <pubDate>Sat, 21 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 21 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/tomcat.-accesslog/</guid>
-      <description>[TOC] Tomcat. AccessLog 参考 Tomcat Access Log配置 Class AccessLogValve 作用 设置请求日志中的日志输出格式 详解 位置 conf.server.xml value.className= *.AccessLogValve 参数 className 执行类 org.apache.catalina.valves.AccessLogValve 默认 org.apache.catalina.valves.FastCommonAccessLogValve 仅支持 common 和 combined patterns directory 产生文件所存放目录的[绝对|相</description>
+      <description>Tomcat. AccessLog 参考 Tomcat Access Log配置 Class AccessLogValve 作用 设置请求日志中的日志输出格式 详解 位置 conf.server.xml value.className= *.AccessLogValve 参数 className 执行类 org.apache.catalina.valves.AccessLogValve 默认 org.apache.catalina.valves.FastCommonAccessLogValve 仅支持 common 和 combined patterns directory 产生文件所存放目录的[绝对|相对</description>
     </item>
     
     <item>
-      <title>Spark </title>
+      <title>Hello.Spark</title>
       <link>http://domain.yqjdcyy.com/post/spark/</link>
-      <pubDate>Fri, 20 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 20 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spark/</guid>
-      <description>[TOC] Spark 启动 Spark method setUp threadPool ipAddress port secure start init stop webSocket other (String path, Route route) get post put patch delete head trace connect options before after (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler) class SingletonHolder static final SparkInstance INSTANCE = new SparkInstance(); SparkInstance parameter port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch method init() this.routeMatcher = RouteMatcherFactory.get(); (new Thread(run&amp;lt;invokedynamic&amp;gt;(this))).start(); getter/ setter webSocket(String</description>
+      <description>Spark 启动 Spark method setUp threadPool ipAddress port secure start init stop webSocket other (String path, Route route) get post put patch delete head trace connect options before after (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler) class SingletonHolder static final SparkInstance INSTANCE = new SparkInstance(); SparkInstance parameter port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch method init() this.routeMatcher = RouteMatcherFactory.get(); (new Thread(run&amp;lt;invokedynamic&amp;gt;(this))).start(); getter/ setter webSocket(String path,</description>
     </item>
     
     <item>
       <title>Linux.XArgs</title>
       <link>http://domain.yqjdcyy.com/post/linux.xargs/</link>
-      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.xargs/</guid>
       <description>参考 Linux 系統 xargs 指令範例與教學 Wiki-xargs 作用 将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串</description>
@@ -1383,16 +1383,16 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Redis.Keys-Del</title>
       <link>http://domain.yqjdcyy.com/post/redis.keys-del/</link>
-      <pubDate>Mon, 16 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.keys-del/</guid>
       <description>参考 Linux 系統 xargs 指令範例與教學 获取Redis所有Key / 删除指定前缀的Key 批量删除Redis数据库中的Key 明细 Login /opt/redis/redis-cli -p &amp;lt;port&amp;gt; -a &amp;lt;password&amp;gt; Search-Delete /opt/redis/redis-cli keys &amp;quot;*&amp;quot; | xargs /opt/redis/redis-cli del 示</description>
     </item>
     
     <item>
-      <title>Linux.Nginx </title>
+      <title>Linux.Nginx</title>
       <link>http://domain.yqjdcyy.com/post/linux.nginx/</link>
-      <pubDate>Wed, 04 Oct 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 04 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.nginx/</guid>
       <description>Linux.Nginx 参考 反向代理 Nginx 配置简述 nginx服务器安装及配置文件详解 nginx服务器详细安装过程 Centos下 Nginx安装与配置 nginx 官网 nginx配置</description>
@@ -1401,61 +1401,52 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Linux.Grep</title>
       <link>http://domain.yqjdcyy.com/post/linux.grep/</link>
-      <pubDate>Wed, 20 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.grep/</guid>
-      <description>[TOC] Grep 参考 grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep 格式 grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...] 参数 匹配器选择 -E, --extended-regexp 扩展正则表达式</description>
+      <description>Grep 参考 grep命令 每天一个linux命令（39）：grep 命令 linux grep命令 man-grep 格式 grep [OPTIONS] PATTERN [FILE...] grep [OPTIONS] [-e PATTERN | -f FILE] [FILE...] 参数 匹配器选择 -E, --extended-regexp 扩展正则表达式 由</description>
     </item>
     
     <item>
-      <title>Go.并行&amp;并发 </title>
+      <title>Go.并行&amp;并发</title>
       <link>http://domain.yqjdcyy.com/post/go.goruntime/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.goruntime/</guid>
       <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
     </item>
     
     <item>
-      <title>Go.并行&amp;并发 </title>
-      <link>http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
-      <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
-    </item>
-    
-    <item>
       <title>GraphQL</title>
       <link>http://domain.yqjdcyy.com/post/graphql/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/graphql/</guid>
-      <description>[TOC] GraphQL 参考 GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql 介绍 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法</description>
+      <description>GraphQL 参考 GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql 介绍 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导</description>
     </item>
     
     <item>
       <title>Wechat.Export</title>
       <link>http://domain.yqjdcyy.com/post/wechat.export/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/wechat.export/</guid>
-      <description>[TOC] 微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&amp;frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder 流程 将语</description>
+      <description>微信语音导出 参考 -如何导出微信【收藏】中的语音文件？ -Windows下批量转换Silk v3音频文件为MP3格式 -silk2mp3.zip - 3&amp;frasl;3 -ONLINE AUDIO CONVERTER - 0/ 1 -kn007/silk-v3-decoder 流程 将语音</description>
     </item>
     
     <item>
-      <title>Error.Mysql</title>
+      <title>Error.MYSQL</title>
       <link>http://domain.yqjdcyy.com/post/error.mysql/</link>
-      <pubDate>Tue, 12 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 12 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/error.mysql/</guid>
       <description> 1175  Description  You are using safe update mode and you tried to update a table without a WHERE that uses a KEY column To disable safe mode, toggle the option in Preferences -&amp;gt; SQL Editor and reconnect.  Answer  SET SQL_SAFE_UPDATES = 0;   </description>
     </item>
     
     <item>
-      <title>右键菜单绑定</title>
+      <title>Windows.右键菜单绑定</title>
       <link>http://domain.yqjdcyy.com/post/windows.right-click.menu/</link>
-      <pubDate>Fri, 08 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 08 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/windows.right-click.menu/</guid>
       <description>右键菜单绑定 参考 Windows右键菜单设置与应用技巧 命令提示符中同时运行多命令 右键上传 修改注册表 结构 HKEY_CLASSES_ROOT * shell （╯‵□′）╯︵┴─┴ 新增「项」，</description>
@@ -1464,115 +1455,106 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Go.Upload.Qiniu</title>
       <link>http://domain.yqjdcyy.com/post/go.upload.qiniu/</link>
-      <pubDate>Thu, 07 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 07 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.upload.qiniu/</guid>
-      <description>[TOC] 描述 将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板 参考 Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard 需求 将链</description>
+      <description>描述 将指定 [文件|文件夹|当前文件夹] 的内容上传至 七牛云 上传完毕后将链接转换为 Markdown 格式文本 将结果数据更新至剪贴板 参考 Go SDK qiniu/api.v7 package context tjgq/clipboard package clipboard 需求 将链接</description>
     </item>
     
     <item>
-      <title>Herman Miller </title>
+      <title>Herman Miller</title>
       <link>http://domain.yqjdcyy.com/post/herman-miller/</link>
-      <pubDate>Fri, 01 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 01 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/herman-miller/</guid>
-      <description>[TOC] Herman Miller 参考 Herman Miller 官网 里程碑 60s 行动式办公室 Action Office Robert Propst 开放式办公屏风系统 1976 Ergon 1984 Equa 1994 Aeron 网椅 近期 Embody 推荐 Aeron 价位 天猫 Herman Miller 新款 Aeron【高端配置】 天猫 Herman Miller Aeron</description>
+      <description>Herman Miller 参考 Herman Miller 官网 里程碑 60s 行动式办公室 Action Office Robert Propst 开放式办公屏风系统 1976 Ergon 1984 Equa 1994 Aeron 网椅 近期 Embody 推荐 Aeron 价位 天猫 Herman Miller 新款 Aeron【高端配置】 天猫 Herman Miller Aeron 座</description>
     </item>
     
     <item>
       <title>Go.交叉编译</title>
       <link>http://domain.yqjdcyy.com/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</link>
-      <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91/</guid>
-      <description>[TOC] Go.交叉编译 参考 交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译 作用 Go作为编译型语言，在不同平台上需要编译生成</description>
+      <description>Go.交叉编译 参考 交叉编译 Golang 交叉编译 go tool cgo Golang 在 Mac、Linux、Windows 下交叉编译 作用 Go作为编译型语言，在不同平台上需要编译生成不</description>
     </item>
     
     <item>
       <title>Linux.Run</title>
       <link>http://domain.yqjdcyy.com/post/linux.run/</link>
-      <pubDate>Mon, 28 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 28 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.run/</guid>
-      <description>[TOC] 命令后台运行 参考 Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令 类型 后台运行，终端关闭时停止 后台运行，终</description>
+      <description>命令后台运行 参考 Linux 技巧：让进程在后台可靠运行的几种方法 linux命令后台运行 nohup命令 fg命令 类型 后台运行，终端关闭时停止 后台运行，终端</description>
     </item>
     
     <item>
-      <title>Linux 的目录与权限</title>
+      <title>Linux.目录与权限</title>
       <link>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</link>
-      <pubDate>Fri, 25 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 25 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux%E7%9A%84%E7%9B%AE%E5%BD%95%E4%B8%8E%E6%9D%83%E9%99%90/</guid>
-      <description>[TOC] Linux 的目录与权限 参考 Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件 使用者与群组 文件拥有者 群组 当前拥有者所在群组</description>
+      <description>Linux 的目录与权限 参考 Linux 的文件权限与目录配置 理解inode Linux下 通过删除inode来删除文件 使用者与群组 文件拥有者 群组 当前拥有者所在群组其</description>
     </item>
     
     <item>
       <title>IDEA.MyBatisCodeHelper</title>
       <link>http://domain.yqjdcyy.com/post/idea.mybatiscodehelper/</link>
-      <pubDate>Mon, 21 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 21 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/idea.mybatiscodehelper/</guid>
-      <description>[TOC] IDEA.MyBatisCodeHelper 参考 MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，极大提升效率 描述 根据 JavaBean 生成 MyBatis 和 SQL.Create 更新方法名生成表单操作 使用 详见参考二中动态图</description>
-    </item>
-    
-    <item>
-      <title>Linux.Jenkins</title>
-      <link>http://domain.yqjdcyy.com/post/linux.jenkins/</link>
-      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/linux.jenkins/</guid>
-      <description>[TOC] 参考 Centos yum install jenkins jenkins实战之jenkins安装部署 Tomcat 部署方式 jenkins.io jenkins.war jenkins集成git，构建项目报错，做了ssh的认证，还是提示 Host key</description>
+      <description>IDEA.MyBatisCodeHelper 参考 MyBatisCodeHelper MyBatisCodeHelper 1.2 发布，极大提升效率 描述 根据 JavaBean 生成 MyBatis 和 SQL.Create 更新方法名生成表单操作 使用 详见参考二中动态图</description>
     </item>
     
     <item>
       <title>Linux.Maven</title>
       <link>http://domain.yqjdcyy.com/post/linux.maven/</link>
-      <pubDate>Thu, 17 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 17 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.maven/</guid>
-      <description>[TOC] 参考 Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz 流程 Java.config check $JAVA_HOME Maven.config UNZIP /data/soft/apache-maven-3.5.0 EXPORT.ADD /etc/profile export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2} EXPORT.SAVE source /etc/profile CHECK mvn -v MAVEN.CONFIG /data/soft/apache-maven-3.5.0/conf/settings.xml &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt; 常用指令 clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X 显示 Debbug 信息</description>
+      <description>参考 Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz 流程 Java.config check $JAVA_HOME Maven.config UNZIP /data/soft/apache-maven-3.5.0 EXPORT.ADD /etc/profile export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2} EXPORT.SAVE source /etc/profile CHECK mvn -v MAVEN.CONFIG /data/soft/apache-maven-3.5.0/conf/settings.xml &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt; 常用指令 clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X 显示 Debbug 信息</description>
     </item>
     
     <item>
       <title>Linux.Tomcat</title>
       <link>http://domain.yqjdcyy.com/post/linux.tomcat/</link>
-      <pubDate>Wed, 16 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 16 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.tomcat/</guid>
-      <description>[TOC] 参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log</description>
+      <description>参考 tomcat中server.xml配置详解 Tomcat server.xml配置示例 service.xml 软件 java tomcat scp -rv /data/service/tomcat root@39.108.103.85:/data/service/tomcat 目录结构 data service bin 运行脚本 wechat-forum-dev-start.sh wechat-forum-dev-stop.sh deploy-instance.sh logs wechat-forum-dev catalina.2017-08-15.log catalina.2017-08-15.out host-manager.2017-08-15.log localhost_access_log.2017-08-15.txt manager.2017-08-15.log wechat-forum-dev_gc.log run</description>
     </item>
     
     <item>
       <title>Mysql.SELECT-INTO</title>
       <link>http://domain.yqjdcyy.com/post/mysql.select-into/</link>
-      <pubDate>Tue, 15 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.select-into/</guid>
-      <description>[TOC] 参考 SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE 命令 SELECT ... INTO VAR_LIST</description>
+      <description>参考 SELECT &amp;hellip; INTO Syntax MySQL下SELECT…INTO OUTFILE导出文本文件命令 mysql导入数据load data infile用法 SELECT INTO OUTFILE 命令 SELECT ... INTO VAR_LIST 将</description>
     </item>
     
     <item>
       <title>Linux.Firewalld</title>
       <link>http://domain.yqjdcyy.com/post/linux.firewalld/</link>
-      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.firewalld/</guid>
-      <description>[TOC] firewalld 参考 CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置 指令 常见 添加端口 firewall-cmd --permanent --zone=public --add-port=3306/tcp 重启 firewall-cmd --reload 添</description>
+      <description>firewalld 参考 CentOS 7 为firewalld添加开放端口及相关资料 使用FirewallD替代Iptables的一些配置 指令 常见 添加端口 firewall-cmd --permanent --zone=public --add-port=3306/tcp 重启 firewall-cmd --reload 添加</description>
     </item>
     
     <item>
       <title>Linux.Mysql</title>
       <link>http://domain.yqjdcyy.com/post/linux.mysql/</link>
-      <pubDate>Mon, 14 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 14 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.mysql/</guid>
-      <description>[TOC] 参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装</description>
+      <description>参考 centos7 mysql数据库安装和配置 CentOS 7 安装 MySQL Linux下安装MySQL centos7 mysql数据库安装和配置 环境 Linux LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.3.1611 (Core) Release: 7.3.1611 Codename: Core 安装 默</description>
     </item>
     
     <item>
       <title>Dump.Analyze</title>
       <link>http://domain.yqjdcyy.com/post/dump.analyze/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/dump.analyze/</guid>
       <description>使用 安装 Dump 包分析软件 安装完成后进行初始化设置 设置【File/ Symbol file path】的属性值为【D:\MyCodesSymbols;SRV*c:\sy</description>
@@ -1581,79 +1563,88 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Git.Install</title>
       <link>http://domain.yqjdcyy.com/post/git.install/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.install/</guid>
-      <description>[TOC] Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意</description>
+      <description>Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，</description>
     </item>
     
     <item>
       <title>Java.Basic</title>
       <link>http://domain.yqjdcyy.com/post/java.basic/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.basic/</guid>
-      <description>[TOC] 参考 使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁 功能 获取路径 分类 绝对路径 主</description>
+      <description>参考 使用 JDK 5 后的线程并发，Callable, Future, ExecutorServie Lock(重入锁，读写锁)及Condition示例 Java中的锁 功能 获取路径 分类 绝对路径 主页</description>
     </item>
     
     <item>
       <title>Java.Command</title>
       <link>http://domain.yqjdcyy.com/post/java.command/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.command/</guid>
-      <description>[TOC] Javac 作用 将 *.java 源代码转换为 *.class 格式文件 参考 Javac编译原理 事例 目录 D:\workspace\Knowledge_Structure\jni\JNIProxy.java 执行语句 D:\workspace\Knowledge_Structure\jni&amp;gt; javac JNIProxy.java Javah 作用 生成类中所需的 JNI 头文件 参考 用javah 导出类的头文件，</description>
+      <description>Javac 作用 将 *.java 源代码转换为 *.class 格式文件 参考 Javac编译原理 事例 目录 D:\workspace\Knowledge_Structure\jni\JNIProxy.java 执行语句 D:\workspace\Knowledge_Structure\jni&amp;gt; javac JNIProxy.java Javah 作用 生成类中所需的 JNI 头文件 参考 用javah 导出类的头文件， 常</description>
+    </item>
+    
+    <item>
+      <title>Java.Container</title>
+      <link>http://domain.yqjdcyy.com/post/java.container/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.container/</guid>
+      <description>[TOC] Structure Image Text Iterable Collection List AbstractCollection AbstractList Vector Stack ArrayList SubList RandomAccessSubList AbstractSequentiaList LinkedList ArrayDeque AbstractQueue PriorityQueue AbstractSet EnumSet RegularEnumSet JumboEnumSet TreeSet HashSet LinkedHashSet Queue Set SortedSet NavigableSet ServiceLoader Map SortedMap NavigableMap Abstractmap WeakHashMap IdentityHashMap EnumMap TreeMap HashMap LinkedHashMap Dictionary Hashtable Properties Utils Collections Arrays Tidy Iterable methods iterator() forEach(Consumer&amp;lt;? super T&amp;gt; action) Collection methods check contains(Object o) retainAll(Collection&amp;lt;?&amp;gt; c) stream iterator() Object[] toArray() operate add(E e) remove(Object</description>
     </item>
     
     <item>
       <title>Java.Detail</title>
       <link>http://domain.yqjdcyy.com/post/java.detail/</link>
-      <pubDate>Wed, 09 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.detail/</guid>
-      <description>[TOC] finally 用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放 若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉 preparedStatement</description>
+      <description>finally 用于及时释放资源以不影响系统性能 遵循最晚申请，最早释放原则，就近释放 若在A类一方法中申请到某个资源，应该就在这个方法的末尾将资源释放掉 preparedStatement 预</description>
     </item>
     
     <item>
       <title>Linux.Vim</title>
       <link>http://domain.yqjdcyy.com/post/linux.vim/</link>
-      <pubDate>Tue, 08 Aug 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 08 Aug 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.vim/</guid>
-      <description>[TOC] 简明 VIM 练级攻略 阶段 存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力 存活 i Insert 模式 ESC 返回 Normal 模式 x 删除当前光标所有的一个字符 dd 剪切当前行 p 粘贴</description>
+      <description>简明 VIM 练级攻略 阶段 存活 感觉良好 觉得更好，更强，更快 使用VIM的超能力 存活 i Insert 模式 ESC 返回 Normal 模式 x 删除当前光标所有的一个字符 dd 剪切当前行 p 粘贴 hjkl</description>
     </item>
     
     <item>
       <title>Go.VSCode</title>
       <link>http://domain.yqjdcyy.com/post/go.vscode/</link>
-      <pubDate>Mon, 31 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 31 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.vscode/</guid>
-      <description>[TOC] VS-Code Go 开发 参考 VS Code 搭建 Go 开发IDE Running VS Code on Windows 安装 安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukeh</description>
+      <description>VS-Code Go 开发 参考 VS Code 搭建 Go 开发IDE Running VS Code on Windows 安装 安装 vs-code 「Ctrl+ Shift+ P」后输入 「install Extensions」「Go」 安装「lukeho</description>
     </item>
     
     <item>
       <title>Go.Nsq</title>
       <link>http://domain.yqjdcyy.com/post/go.nsq/</link>
-      <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.nsq/</guid>
-      <description>[TOC] [NSQ] 参考 An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南 介绍 NSQ 实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化 可通过设置 --mem-queue-size 参数为 0 变更 接收到的消息</description>
+      <description>[NSQ] 参考 An Example of Using NSQ From Go NSQ 官网 NSQ Github NSQ 指南 介绍 NSQ 实时的分页式消息处理平台 支持无 SPOF 的分布式拓扑 默认消息不持久化 可通过设置 --mem-queue-size 参数为 0 变更 接收到的消息无</description>
     </item>
     
     <item>
       <title>Linux.Make</title>
       <link>http://domain.yqjdcyy.com/post/linux.make/</link>
-      <pubDate>Tue, 25 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 25 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.make/</guid>
-      <description>[TOC] Make 参考 例解 Linux 下 Make 命令 作用 编译和安装开源工具 管理大型复杂项目的编译 原理 配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建</description>
+      <description>Make 参考 例解 Linux 下 Make 命令 作用 编译和安装开源工具 管理大型复杂项目的编译 原理 配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立</description>
     </item>
     
     <item>
       <title>Go.GPM</title>
       <link>http://domain.yqjdcyy.com/post/go.gpm/</link>
-      <pubDate>Sun, 23 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 23 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gpm/</guid>
       <description>[TOC] 参考 gpm - Go Package Manager 跟我一起写Makefile Creating a personal access token 介绍 GPM 通过名为 Godeps 的 manifest 文件来管理、获取引用的指定版本依赖 Godeps文件置于 go 应用程序的根</description>
@@ -1662,7 +1653,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Go.Reflect</title>
       <link>http://domain.yqjdcyy.com/post/go.reflect/</link>
-      <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.reflect/</guid>
       <description>[TOC] Go.Reflect 参考 Package reflect [](http://www.golang.ltd/forum.php?mod=viewthread&amp;amp;tid=6017) 类型和接口 Go 为静态类型语言，变量有且只有一个静态类型，于编译时已确认 var r io.Reader r = os.Stdin r = bufio.NewReader(r) r = new(bytes.Buffer) // r 不管指向什么，类型永远是 io.Reader interface{} 任</description>
@@ -1671,106 +1662,124 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Windows.Service</title>
       <link>http://domain.yqjdcyy.com/post/windows.service/</link>
-      <pubDate>Thu, 20 Jul 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 20 Jul 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/windows.service/</guid>
-      <description>[TOC] Windows 程序服务化 参考 SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053 SC - Service Controller 语法 sc [ServerName] [command] [Optionname= Optionvalues] 常用参数 config 更新服务配置 sc config nsqd start= auto control 发送控制指令 sc [&amp;lt;ServerName&amp;gt;] control [&amp;lt;ServiceName&amp;gt;] [{paramchange</description>
+      <description>Windows 程序服务化 参考 SC NSSM windows service startup timeout reset service timeout 服务安装启动报错误1053 SC - Service Controller 语法 sc [ServerName] [command] [Optionname= Optionvalues] 常用参数 config 更新服务配置 sc config nsqd start= auto control 发送控制指令 sc [&amp;lt;ServerName&amp;gt;] control [&amp;lt;ServiceName&amp;gt;] [{paramchange |</description>
     </item>
     
     <item>
-      <title>Chrome.Plugin </title>
+      <title>Chrome.Plugin</title>
       <link>http://domain.yqjdcyy.com/post/chrome.plugin/</link>
-      <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/chrome.plugin/</guid>
-      <description>[TOC] 参考 Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions 示例解析 目录结构 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js</description>
+      <description>参考 Getting Started: Building a Chrome Extension Overview Developer&amp;rsquo;s Guide Sample Extensions 示例解析 目录结构 html setting.html // 弹出界面 images icon.png // banner 上小图标，推荐使用 19*19 的半透明 png 图片，同时提供 38*38 的半透明 png 图片作为大图标 js setting.js //</description>
     </item>
     
     <item>
       <title>Go.安装配置</title>
       <link>http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</link>
-      <pubDate>Wed, 28 Jun 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 28 Jun 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/</guid>
-      <description>[TOC] 配置 GOROOT 配置 GO 的可执行文件路径 D:\server\go\1.8 PATH 将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin GOPATH 目录列表，类似于maven中的repository目录，引用库 其中第</description>
+      <description>配置 GOROOT 配置 GO 的可执行文件路径 D:\server\go\1.8 PATH 将 Go 相关可执行文件列表入搜索路径中 %GOROOT%\bin GOPATH 目录列表，类似于maven中的repository目录，引用库 其中第一</description>
+    </item>
+    
+    <item>
+      <title>Java.Filter-Lisenter-Inteceptor-AOP</title>
+      <link>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</link>
+      <pubDate>Mon, 05 Jun 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.filter-lisenter-inteceptor-aop/</guid>
+      <description>Compare 名称 机制 适用范围 生命周期 对象调用权限 优点/场景 Filter 过滤器 函数回调 Servlet 于 Servlet 前后作用 仅于 Servlet 初始化时调用 Request/ Response 不依赖框架，便于移植 字符编码设置、过滤敏</description>
     </item>
     
     <item>
       <title>Go.异常处理</title>
       <link>http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</link>
-      <pubDate>Tue, 23 May 2017 22:07:46 +0800</pubDate>
+      <pubDate>Tue, 23 May 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/</guid>
-      <description>[TOC] Defer, Panic, Recover 参考 Defer, Panic, and Recover Go的异常处理 defer, panic, recover 使用 defer 作用 用于在当前方法结束时，执行相关方法 特点 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进</description>
+      <description>Defer, Panic, Recover 参考 Defer, Panic, and Recover Go的异常处理 defer, panic, recover 使用 defer 作用 用于在当前方法结束时，执行相关方法 特点 声明 defer 时值即为方法中参数被赋的值 声明多个时，即以后进先</description>
     </item>
     
     <item>
       <title>Go.GoSublime</title>
       <link>http://domain.yqjdcyy.com/post/go.gosublime/</link>
-      <pubDate>Wed, 26 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 26 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.gosublime/</guid>
-      <description>[TOC] 注解 Path 分隔符 Windows - ; Linux| OS X - : 设置 路径 Packages/User/GoSublime.sublime-settings 推荐更新覆盖 Packages/GoSublime/GoSublime.sublime-settings 默认配置，不建议更新 代码补全 配置 Preferences/Package Settings/GoSublime/Settings - User { &amp;quot;autocomplete_builtins&amp;quot;: true, &amp;quot;autocomplete_closures&amp;quot;: true } 快捷键 Code Complete Ctrl+ [Space] package import Ctrl+[.], Ctrl+ P jump F12 Crl+ [.], Ctrl+</description>
+      <description>注解 Path 分隔符 Windows - ; Linux| OS X - : 设置 路径 Packages/User/GoSublime.sublime-settings 推荐更新覆盖 Packages/GoSublime/GoSublime.sublime-settings 默认配置，不建议更新 代码补全 配置 Preferences/Package Settings/GoSublime/Settings - User { &amp;quot;autocomplete_builtins&amp;quot;: true, &amp;quot;autocomplete_closures&amp;quot;: true } 快捷键 Code Complete Ctrl+ [Space] package import Ctrl+[.], Ctrl+ P jump F12 Crl+ [.], Ctrl+ i</description>
     </item>
     
     <item>
       <title>Go.Flag</title>
       <link>http://domain.yqjdcyy.com/post/go.flag/</link>
-      <pubDate>Mon, 24 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 24 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.flag/</guid>
-      <description>[TOC] Flag 参考 Package flag Golang flag包使用详解 作用 用于解析命令行参数的功能接口 常用 flag.Xxx[String| Bool| Int](name string, default-value Xxx, usage-info string) 返回相应指针 flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info) 将 flag 绑定到变量 flag.Var(&amp;amp;custom-type, name, usage-info) custom-type 需要实现 Value 接</description>
+      <description>Flag 参考 Package flag Golang flag包使用详解 作用 用于解析命令行参数的功能接口 常用 flag.Xxx[String| Bool| Int](name string, default-value Xxx, usage-info string) 返回相应指针 flag.XxxVar(ptr-store *Xxx, name, default-value, usage-info) 将 flag 绑定到变量 flag.Var(&amp;amp;custom-type, name, usage-info) custom-type 需要实现 Value 接口</description>
     </item>
     
     <item>
-      <title>MYSQL.LOCK-WAITS</title>
+      <title>Mysql.LOCK-WAITS</title>
       <link>http://domain.yqjdcyy.com/post/mysql.lock-waits/</link>
-      <pubDate>Sun, 23 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 23 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.lock-waits/</guid>
-      <description>[TOC] MySQL 5.5 InnoDB 锁等待 锁相关表 表名 作用 innodb_trx 当前正在执行事务的信息 innodb_locks 各已被请求但未被提交的事务锁 innodb_lock_waits 各阻塞事务的一至多行记录信息 字段 innodb_trx 字段 注释 trx_id 事务ID。</description>
+      <description>MySQL 5.5 InnoDB 锁等待 锁相关表 表名 作用 innodb_trx 当前正在执行事务的信息 innodb_locks 各已被请求但未被提交的事务锁 innodb_lock_waits 各阻塞事务的一至多行记录信息 字段 innodb_trx 字段 注释 trx_id 事务ID。 trx_state</description>
+    </item>
+    
+    <item>
+      <title>Java.Exception</title>
+      <link>http://domain.yqjdcyy.com/post/java.exception/</link>
+      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.exception/</guid>
+      <description>分类 Throwable Exception ReflectiveOperationException NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException CloneNotSupportedException InterruptedException ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException IllegalThreadStateException NumberFormatException SecurityException RuntimeException ArithmeticException TypeNotPresentException IndexOutOfBoundsException ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException IOException SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException InterruptedIOException UTFDataFormatException FileNotFoundException EOFException Error VirtualMachineError InternalError StackOverflowError UnknownError OutOfMemoryError ThreadDeath AssertionError LinkageError UnsatisfiedLinkError NoClassDefFoundError VerifyError IncompatibleClassChangeError InstantiationError NoSuchFieldError NoSuchMethodError AbstractMethodError IllegalAcessError BootstrapMethodError ExceptionInInitializerError ClassFormatError UnsupportedClassVersionError ClassCircularityError</description>
     </item>
     
     <item>
       <title>Linux.Curl</title>
       <link>http://domain.yqjdcyy.com/post/linux.curl/</link>
-      <pubDate>Sat, 01 Apr 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 01 Apr 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.curl/</guid>
-      <description>[TOC] 参考 curl网站开发指南 curl 官网 everything-curl.pdf 指令 -O | -o path 下载 -i 显示 http response 头信息 -v 显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程 -X [DELETE| POST| PUT| ...] 支持其它类型参数</description>
+      <description>参考 curl网站开发指南 curl 官网 everything-curl.pdf 指令 -O | -o path 下载 -i 显示 http response 头信息 -v 显示通信全过程信息 可使用 --trace output.txt 保存更详细通信过程 -X [DELETE| POST| PUT| ...] 支持其它类型参数 --data</description>
     </item>
     
     <item>
-      <title>加藤鹰-秘技传授</title>
+      <title>加藤鹰.秘技</title>
       <link>http://domain.yqjdcyy.com/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/</link>
-      <pubDate>Mon, 20 Mar 2017 22:07:46 +0800</pubDate>
+      <pubDate>Mon, 20 Mar 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/</guid>
-      <description>[TOC] 加藤鹰-秘技传授 接吻 搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧 爱抚 耳朵 待定 舌技 待定 指技 待定 异物插入 待</description>
+      <description>加藤鹰-秘技传授 接吻 搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧 爱抚 耳朵 待定 舌技 待定 指技 待定 异物插入 待定</description>
     </item>
     
     <item>
-      <title>MYSQL.Information_schema</title>
+      <title>Mysql.Information_schema</title>
       <link>http://domain.yqjdcyy.com/post/mysql.information_schema/</link>
-      <pubDate>Sun, 26 Feb 2017 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 26 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.information_schema/</guid>
-      <description>[TOC] MYSQL.INFORMATION_SCHEMA 简介 MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于M</description>
+      <description>MYSQL.INFORMATION_SCHEMA 简介 MySQL自带的，它提供了访问数据库元数据的方式。 元数据是关于数据的数据，如数据库名或表名，列的数据类型，或访问权限等。 保存着关于My</description>
     </item>
     
     <item>
-      <title>常用CMD指令</title>
+      <title>Windows.Shell.Commons</title>
       <link>http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/</link>
-      <pubDate>Thu, 23 Feb 2017 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 23 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8cmd%E6%8C%87%E4%BB%A4/</guid>
-      <description>[TOC] 强制关闭占用指定端口服务 查询指定窗口是否被占用： netstat -aon|findstr &amp;ldquo;9050&amp;rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &amp;ldquo;2748&amp;rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：tas</description>
+      <description>强制关闭占用指定端口服务 查询指定窗口是否被占用： netstat -aon|findstr &amp;ldquo;9050&amp;rdquo; 查询哪个应用占用了指定端口： tasklist|findstr &amp;ldquo;2748&amp;rdquo; 关闭相应的进程：taskkill /f /t /im adb.exe 常用：task</description>
     </item>
     
     <item>
       <title>音视频的相关名词</title>
       <link>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</link>
-      <pubDate>Wed, 08 Feb 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 08 Feb 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%9F%B3%E8%A7%86%E9%A2%91%E7%9A%84%E7%9B%B8%E5%85%B3%E5%90%8D%E8%AF%8D/</guid>
       <description>参考 码流 / 码率 / 比特率 / 帧速率 / 分辨率 / 高清 解析 码率 解析 Data Rate，又名码流、码流率 视频文件在单位时间内使用的数据流量，单位为 Kb/s 或 Mb/s 通指视频</description>
@@ -1779,7 +1788,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>XSD</title>
       <link>http://domain.yqjdcyy.com/post/xsd/</link>
-      <pubDate>Fri, 16 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 16 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/xsd/</guid>
       <description>简介 全称为 XML Schema 定义，即 XML Schema Definition (XSD) XML Schema 是基于 XML 的 DTD 替代，用于描述 XML 文档的结构。 支持数据类型，便于描述、验证正确性和约束、转换、定义等工作。 参考 教</description>
@@ -1788,7 +1797,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Oracle.分析函数</title>
       <link>http://domain.yqjdcyy.com/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/</link>
-      <pubDate>Thu, 15 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 15 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/oracle.%E5%88%86%E6%9E%90%E5%87%BD%E6%95%B0/</guid>
       <description>统计方面 合并 Sum( ) Over ([Partition by ] [Order by ]) ROLLUP(COL1, COL2&amp;hellip;) 按照COLX的降序层次逐层汇总合并 CUBE(COL1, COL2&amp;hellip;) 排序 Rank() Over ([Partition by ] [Order by ] [Nulls First/Last]) 相同数据排名一致，但下一记录会空出其中的排名</description>
@@ -1797,7 +1806,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>AngularJS.Basic</title>
       <link>http://domain.yqjdcyy.com/post/angularjs.basic/</link>
-      <pubDate>Wed, 14 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 14 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/angularjs.basic/</guid>
       <description>导言和准备 地址 源码 图解Git 引导程序 参考 - 详细：http://angularjs.cn/A003 - 源码：https://github.com</description>
@@ -1806,7 +1815,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>常用技术</title>
       <link>http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Wed, 14 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 14 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
       <description>灰化 grayscale(document.body); 遮罩 //隐藏页面上一些特殊的控件 function HideElement(){ var HideElementTemp = new Array(&amp;#39;IMG&amp;#39;,&amp;#39;SELECT&amp;#39;,&amp;#39;OBJECT&amp;#39;,&amp;#39;IFRAME&amp;#39;); for(var j=0;j&amp;lt;HideElementTemp.length;j++){ try{ var strElementTagName=HideElementTemp[j]; for(i=0;i&amp;lt;document.all.tags(strElementTagName).length; i++){ var objTemp = document.all.tags(strElementTagName)[i]; if(!objTemp||!objTemp.offsetParent) continue; //objTemp.style.visibility=&amp;#34;hidden&amp;#34;; objTemp.disabled=&amp;#34;disabled&amp;#34; } } catch(e){} } } //隐藏特殊控件+ 全网页置灰 function MaskAndGray(){ HideElement(); grayscale(document.body); //全网页置</description>
@@ -1815,97 +1824,97 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Git.命令小结</title>
       <link>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
-      <description>[TOC] 查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并</description>
+      <description>查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到</description>
     </item>
     
     <item>
       <title>HTTP.协议相关</title>
       <link>http://domain.yqjdcyy.com/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/http.%E5%8D%8F%E8%AE%AE%E7%9B%B8%E5%85%B3/</guid>
-      <description>[TOC] 参考 Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary Http.detail Message Body 消息体 Request 请求头 POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1 Header 头文件 Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length:</description>
+      <description>参考 Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary Http.detail Message Body 消息体 Request 请求头 POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1 Header 头文件 Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261</description>
     </item>
     
     <item>
-      <title>MYSQL.开发规范</title>
-      <link>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
-      <description>[TOC] [数据库开发规范简版] 数据库创建 命名规范 Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称] 例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;; 表创建 命名规</description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>http://domain.yqjdcyy.com/post/markdown/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/markdown/</guid>
-      <description>目录 [TOC] 标题 二级标题 ####### 最大支持六级标题 注：序号和*号，与内容之间均需要一个空格 列表1 列表2 列表3 无序列表 无序列表 无序列表缩进 无序列表 字体支持很</description>
-    </item>
-    
-    <item>
-      <title>Spring.Basic</title>
-      <link>http://domain.yqjdcyy.com/post/spring.basic/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/spring.basic/</guid>
-      <description>[TOC] AOP 介绍 Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入） 代理 代码写死 interface public interface Greeting { void sayHello(String name); } implement public class GreetingImpl implements Greeting { @Override public void sayHello(String</description>
-    </item>
-    
-    <item>
-      <title>SpringBoot.JPA</title>
+      <title>Hello.Spring.JPA</title>
       <link>http://domain.yqjdcyy.com/post/springboot.jpa/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/springboot.jpa/</guid>
-      <description>[TOC] 文章来源 Spring Data JPA - Reference Documentation 学习整理 Basic Example Entity @Entity @Table(name = &amp;#34;user&amp;#34;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &amp;#34;user_name&amp;#34;) private long userName; } Repository public interface UserRepository extends CrudRepository&amp;lt;User, Long&amp;gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&amp;lt;User&amp;gt; findByLastname(String lastname); } Common-Repository</description>
+      <description>示例 Basic Example Entity @Entity @Table(name = &amp;#34;user&amp;#34;) public class User { @Id @GeneratedValue(strategy = GenerationType.AUTO) private Long id; @Column(name = &amp;#34;user_name&amp;#34;) private long userName; } Repository public interface UserRepository extends CrudRepository&amp;lt;User, Long&amp;gt; { // 必须指定操作对象及ID类型 Long countByLastname(String lastname); List&amp;lt;User&amp;gt; findByLastname(String lastname); } Common-Repository PagingAndSortingRepository CrudRepository Repository Config @Configuration @EnableJpaRepositories(basePackages = &amp;#34;com.yunkai&amp;#34;) // 指定 Repository 位</description>
     </item>
     
     <item>
-      <title>SpringBoot.入门</title>
+      <title>Hello.SpringBoot</title>
       <link>http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/springboot.%E5%85%A5%E9%97%A8/</guid>
       <description>作用 创建和启动新的 Spring 框架项目 特性 嵌入 Tomcat 或 Jetty 提供生产环境使用功能，如性能指标、应用信息和应用健康检查 POM 配置 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;UTF-8&amp;#34;?&amp;gt; &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.midgetontoes&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-simple&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;spring.boot.version&amp;gt;1.1.4.RELEASE&amp;lt;/spring.boot.version&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt;</description>
     </item>
     
     <item>
-      <title>Storm</title>
+      <title>Hello.Storm</title>
       <link>http://domain.yqjdcyy.com/post/storm/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/storm/</guid>
       <description>通信机制 选型 进程间使用 Netty/ ZeroMQ 进行通信 同一进程内的诸多线程，采用 Disruptor Queue 完成通信 注： LocalCluster 模式下，参数 storm.local.mode.zmq= false 则采用线程模拟进程方式启动，通过 LinkedBlockingQueue 模拟 进程间通</description>
     </item>
     
     <item>
+      <title>Markdown</title>
+      <link>http://domain.yqjdcyy.com/post/markdown/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/markdown/</guid>
+      <description>目录 [TOC] 标题 二级标题 ####### 最大支持六级标题 注：序号和*号，与内容之间均需要一个空格 列表1 列表2 列表3 无序列表 无序列表 无序列表缩进 无序列表 字体支持很</description>
+    </item>
+    
+    <item>
+      <title>Mysql.开发规范</title>
+      <link>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/</guid>
+      <description>[数据库开发规范简版] 数据库创建 命名规范 Pascal样式(每个单词首字母大写)命名 命名格式为[项目英文名称] 例 CREATE DATABASE test CHARACTER SET &amp;lsquo;utf8&amp;rsquo; COLLATE &amp;lsquo;utf8_general_ci&amp;rsquo;; 表创建 命名规范</description>
+    </item>
+    
+    <item>
+      <title>Spring.Basic</title>
+      <link>http://domain.yqjdcyy.com/post/spring.basic/</link>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.basic/</guid>
+      <description>AOP 介绍 Aspect-Oriented Programming 面向切面编程，对着代码横着切入 对方法的增强为 Weaving （织入） 对类的增强为 Introduction （引入） 代理 代码写死 interface public interface Greeting { void sayHello(String name); } implement public class GreetingImpl implements Greeting { @Override public void sayHello(String name)</description>
+    </item>
+    
+    <item>
       <title>Sublime.Plugin</title>
       <link>http://domain.yqjdcyy.com/post/sublime.plugin/</link>
-      <pubDate>Sun, 11 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/sublime.plugin/</guid>
-      <description>[TOC] 参考 sublime插件开发 结构 Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式 流</description>
+      <description>参考 sublime插件开发 结构 Packages plugin-fodler plugin.sublime-package(.zip) default key/ menu/ setup user read at lastest plugin-command Text Commands: current view Window Commands: current windows Application Commands: nothing 注： sublime 会将继承 plugin-command 的类去掉 Command 后缀，并将驼峰格式转换为下划线格式 流程</description>
     </item>
     
     <item>
       <title>Mysql.Basic</title>
       <link>http://domain.yqjdcyy.com/post/mysql.basic/</link>
-      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/mysql.basic/</guid>
-      <description>[TOC] 基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-</description>
+      <description>基础知识 存储结构 表空间：所有数据逻辑地存放于ib_data1文件中 |- 数据库 |- 区：InnoDB每次最多申请4个区，即 4M 的存储空间 |- 页1：B-T</description>
     </item>
     
     <item>
-      <title>Oracle - 基础</title>
+      <title>Oracle.基础</title>
       <link>http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/</link>
-      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/oracle.%E5%9F%BA%E7%A1%80/</guid>
       <description>系统构造 The System Global Area (SGA) 组成 描述 Buffer Cache 作为查询修改前的优先查看区 Shared Pool SQL重用、储存程序、数据字典信息如用户账号信息及表索引 Redo Log Buffer 多次缓存重做信息一</description>
@@ -1914,7 +1923,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Redis.Basic</title>
       <link>http://domain.yqjdcyy.com/post/redis.basic/</link>
-      <pubDate>Sat, 10 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Sat, 10 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.basic/</guid>
       <description>参考 Redis Virtual Memory: the story and the code ​Virtual Memory technical specification 数据类型 Keys del key1 key2&amp;hellip; keyN 删除给定KEY type key 返回当前key类型 keys pattern 匹配指定模式的所有KEY randomkey 返回当前库随机</description>
@@ -1923,7 +1932,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Java.常用技术</title>
       <link>http://domain.yqjdcyy.com/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Fri, 09 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
       <description>参考 http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/ http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html http://ifeve.com/locks/ 获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文</description>
@@ -1932,25 +1941,25 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Maven</title>
       <link>http://domain.yqjdcyy.com/post/maven/</link>
-      <pubDate>Fri, 09 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/maven/</guid>
-      <description>[TOC] 部署安装 下载地址 http://maven.apache.org/download.cgi 安装流程 至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量 [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里</description>
+      <description>部署安装 下载地址 http://maven.apache.org/download.cgi 安装流程 至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量 [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补</description>
     </item>
     
     <item>
       <title>DWR</title>
       <link>http://domain.yqjdcyy.com/post/dwr/</link>
-      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/dwr/</guid>
-      <description>[TOC] 参考 在 Spring Web MVC 环境下使用 DWR 作用 Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象 配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt; springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt;</description>
+      <description>参考 在 Spring Web MVC 环境下使用 DWR 作用 Spring 框架提供，可将 Java 组件方法直接暴露给 JavaScript 客户端 通过将 Spring 容易中的 Bean 转换为 JavaScript 对象 配置 web.xml &amp;lt;servlet-mapping&amp;gt; &amp;lt;servlet-name&amp;gt;springServlet&amp;lt;/servlet-name&amp;gt; &amp;lt;url-pattern&amp;gt;/dwr/*&amp;lt;/url-pattern&amp;gt; &amp;lt;/servlet-mapping&amp;gt; springmvc.xml &amp;lt;!-- DWR3.0配置 --&amp;gt; &amp;lt;!--</description>
     </item>
     
     <item>
       <title>Regex</title>
       <link>http://domain.yqjdcyy.com/post/regex/</link>
-      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/regex/</guid>
       <description>元字符 . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字</description>
@@ -1959,7 +1968,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     <item>
       <title>Spring.Cache</title>
       <link>http://domain.yqjdcyy.com/post/spring.cache/</link>
-      <pubDate>Thu, 08 Dec 2016 22:07:46 +0800</pubDate>
+      <pubDate>Thu, 08 Dec 2016 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/spring.cache/</guid>
       <description>参考链接 http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/ 特点 通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓</description>
@@ -1976,16 +1985,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
-      <link>http://domain.yqjdcyy.com/post/java.container/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.container/</guid>
-      <description>[TOC]
-Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;?</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://domain.yqjdcyy.com/post/pyqt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -1996,16 +1995,6 @@ Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractL
  PyQt5
  PyQt5学习与交流
   </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/%E5%BA%84%E5%AE%B6%E6%9D%9C%E5%9D%87/</guid>
-      <description>+++ date = &amp;#34;2018-03-23T17:00:00+08:00&amp;#34; title = &amp;#34;庄家杜均&amp;#34; draft = false tags = [&amp;#34;阅读&amp;#34;,&amp;#34;虚拟币&amp;#34;] share = true +++ [TOC]
-【深度调查】 庄家杜均 时间点 2013.7  杜均从腾讯辞职，与李林等人联合创立数字货币交易所——火币网。 昔日的领导戴志康则成了火币网的天使投资人。  2013.11  火币网上线，打出了“免交易手续费”的旗号  发展壮大后，连同国内几大交易所重新开始收取手续费，甚至开始向项目收取巨额的ICO“上币费”   2014  杜均创办了区块链代币媒体“金色财经” 杜均募集了自己的基金”节点资本”  2017.9  中国的监管机构下令禁止境内的ICO（首次代币发行，是用区块链把使用权和加密货币合二为一，来为开发、维护、交换相关产品或者服务的项目进融资的方式）交易，并陆续屏蔽境外ICO交易平台的域名。  2017.12  代币“WAX”登录“火币Pro”交易所后，狂跌99%的惨烈景象 IOST（Internet of Service Token）的区块链项目正在筹划ICO，募资数额巨大 每个币种登录火币Pro开始交易后，开放充值和提现的间隔时间越来越长  2018.1  包括杜均在内，币圈主要人物已经被限制出境  2018.2.15  名为“三点钟无眠区块链”的微信群横空出世，在各种区块链微信群里呼风唤雨的，是薛蛮子、徐小平、蔡文胜和王峰这样的传统天使风险投资人。  2018.3.3  全国政协十三届一次会议开幕，中国进入“两会时期”。  火币网公众号更名为 “huobicom” OKEx公众号被封号   关键点 杜均  重庆开县人，1986年出生 初中期间，杜均曾靠打游戏卖装备、建站赚广告费谋生，是早年间国内互联网野蛮生长时代孕育的无数- 个人站长之一。 凭借常年混迹互联网圈积累的经验和圈子，杜均成功进入知名企业家和天使投资人戴志康创立的康盛创想，在旗下Discuz!</description>
     </item>
     
     <item>

@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -143,8 +161,6 @@
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h1 id="现状">现状</h1>
 
@@ -597,8 +613,6 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/docker" rel="tag" title="Docker">#Docker#</a>
     
 </div>
@@ -608,16 +622,16 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E8%B7%B3%E5%87%BA%E7%A0%81%E5%86%9C%E8%81%8C%E4%B8%9A%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" rel="next" title="跳出码农职业的生命周期">
-        <i class="fa fa-chevron-left"></i> 跳出码农职业的生命周期
+        <a href="http://domain.yqjdcyy.com/post/hello.docker.command/" rel="next" title="Hello.Docker.Command">
+        <i class="fa fa-chevron-left"></i> Hello.Docker.Command
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/hello.docker.command/" rel="prev" title="Hello.Docker.Command">
-        Hello.Docker.Command <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/linux.jenkins/" rel="prev" title="Linux.Jenkins">
+        Linux.Jenkins <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -663,7 +677,16 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -675,14 +698,14 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -692,7 +715,7 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -718,6 +741,39 @@ dae54d95f428        hello-world         &#34;/hello&#34;            11 minutes a
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#现状">现状</a></li>
+<li><a href="#简介">简介</a>
+<ul>
+<li><a href="#用途">用途</a></li>
+<li><a href="#版本">版本</a></li>
+<li><a href="#关键字">关键字</a></li>
+</ul></li>
+<li><a href="#对比">对比</a></li>
+<li><a href="#入门">入门</a>
+<ul>
+<li><a href="#安装">安装</a>
+<ul>
+<li><a href="#linux">Linux</a></li>
+</ul></li>
+<li><a href="#指令">指令</a>
+<ul>
+<li><a href="#repository">Repository</a></li>
+<li><a href="#docker-http-domain-yqjdcyy-com-post-hello-docker-command"><a href="http://domain.yqjdcyy.com/post/hello.docker.command">Docker</a></a></li>
+</ul></li>
+<li><a href="#示例">示例</a></li>
+<li><a href="#dockerfile-http-domain-yqjdcyy-com-post-hello-docker-dockerfile"><a href="http://domain.yqjdcyy.com/post/hello.docker.dockerfile/">Dockerfile</a></a></li>
+<li><a href="#异常">异常</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

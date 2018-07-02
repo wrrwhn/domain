@@ -131,6 +131,24 @@
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
@@ -143,8 +161,6 @@
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<p>[TOC]</p>
 
 <h2 id="部署安装">部署安装</h2>
 
@@ -486,8 +502,6 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b4%e7%90%86" rel="tag" title="整理">#整理#</a>
-    
     <a href="http://domain.yqjdcyy.com/tags/maven" rel="tag" title="Maven">#Maven#</a>
     
 </div>
@@ -552,7 +566,16 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/logo.jpg"
@@ -564,14 +587,14 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">222</span>
+        <span class="site-state-item-count">221</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
     <div class="site-state-item site-state-categories">    
         <a href="http://domain.yqjdcyy.com/categories/">      
          
-        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-count">9</span>
         
         <span class="site-state-item-name">分类</span>
         
@@ -581,7 +604,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">142</span>
+        <span class="site-state-item-count">115</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -607,6 +630,54 @@
 
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#部署安装">部署安装</a>
+<ul>
+<li><a href="#下载地址">下载地址</a></li>
+<li><a href="#安装流程">安装流程</a></li>
+</ul></li>
+<li><a href="#生命周期-http-maven-apache-org-guides-introduction-introduction-to-the-lifecycle-html"><a href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">生命周期 </a></a>
+<ul>
+<li><a href="#内置构建">内置构建：</a></li>
+<li><a href="#各生命周期执行内容">各生命周期执行内容：</a>
+<ul>
+<li><a href="#clean-lifecycle">Clean Lifecycle</a></li>
+<li><a href="#default-lifecycle">Default Lifecycle</a></li>
+<li><a href="#site-lifecycle">Site Lifecycle</a></li>
+</ul></li>
+<li><a href="#调用">调用</a>
+<ul>
+<li><a href="#如调用deploy-mvn-deploy-便会自动调用前面的几个流程步骤">如调用deploy(mvn deploy)便会自动调用前面的几个流程步骤</a></li>
+<li><a href="#仍可在同一指令中调用多个操作-多模块场景中会自动递归至各子模块-如-mvn-clean-install">仍可在同一指令中调用多个操作（多模块场景中会自动递归至各子模块），如 mvn clean install</a></li>
+<li><a href="#相关指令">相关指令</a></li>
+</ul></li>
+<li><a href="#初始化">初始化</a>
+<ul>
+<li><a href="#pom文件中补充-packaging-节点-默认值为jar-可选值为jar-war-ear-pom">POM文件中补充<packaging>节点，默认值为jar，可选值为jar/war/ear/pom</a></li>
+<li><a href="#jar方式流程">jar方式流程</a></li>
+<li><a href="#使用plugins来实现各环节的操作步骤-其中若同一环节有多个插件支持-则以pom文件顺序下的第一个进行处理">使用Plugins来实现各环节的操作步骤，其中若同一环节有多个插件支持，则以POM文件顺序下的第一个进行处理</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#pom-xml详解-http-blog-csdn-net-zhuxinhua-article-details-5788546"><a href="http://blog.csdn.net/zhuxinhua/article/details/5788546">POM.XML详解</a></a>
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#结构">结构</a></li>
+</ul></li>
+<li><a href="#示例">示例</a>
+<ul>
+<li><a href="#外部-jar-引入本地项目system">外部 Jar 引入本地项目System</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

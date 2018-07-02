@@ -6,7 +6,7 @@
     <description>Recent content in Sql on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 27 Apr 2018 19:30:00 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Apr 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,10 +14,10 @@
     <item>
       <title>SQL.优化</title>
       <link>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</link>
-      <pubDate>Fri, 27 Apr 2018 19:30:00 +0800</pubDate>
+      <pubDate>Fri, 27 Apr 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/sql.%E4%BC%98%E5%8C%96/</guid>
-      <description>[TOC] 特点 SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻</description>
+      <description>特点 SQL为非过程化语言，只需要告诉机器做什么，而不需要指名每一步该怎么做。 SQL语句的输入输出均为同一类型数据对象（记录集），因此可以轻松</description>
     </item>
     
   </channel>

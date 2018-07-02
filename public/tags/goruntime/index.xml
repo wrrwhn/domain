@@ -6,26 +6,17 @@
     <description>Recent content in Goruntime on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Sep 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 13 Sep 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/goruntime/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Go.并行&amp;并发 </title>
+      <title>Go.并行&amp;并发</title>
       <link>http://domain.yqjdcyy.com/post/go.goruntime/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/go.goruntime/</guid>
-      <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
-    </item>
-    
-    <item>
-      <title>Go.并行&amp;并发 </title>
-      <link>http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</link>
-      <pubDate>Wed, 13 Sep 2017 22:07:46 +0800</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/go.%E5%B9%B6%E8%A1%8C%E5%B9%B6%E5%8F%91/</guid>
       <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
     </item>
     

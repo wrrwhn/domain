@@ -6,7 +6,7 @@
     <description>Recent content in Kafka on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 Nov 2017 22:07:46 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 29 Nov 2017 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/kafka/index.xml" rel="self" type="application/rss+xml" />
     
@@ -14,7 +14,7 @@
     <item>
       <title>Kafka</title>
       <link>http://domain.yqjdcyy.com/post/kafka/</link>
-      <pubDate>Wed, 29 Nov 2017 22:07:46 +0800</pubDate>
+      <pubDate>Wed, 29 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/kafka/</guid>
       <description>Kafka 参考 Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer</description>
