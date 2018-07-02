@@ -237,6 +237,29 @@ Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令
         
             <article class="post">
     
+<h1><a href="http://domain.yqjdcyy.com/post/mysql.lock-waits/" title="MYSQL.LOCK-WAITS">MYSQL.LOCK-WAITS</a></h1>
+
+<footer class="post-info"> <span class="post-meta"><time datetime="2017.04.23">2017.04.23</time>
+
+    &middot; 
+        
+        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
+        
+        <a href="http://domain.yqjdcyy.com/tags/mysql">mysql</a>
+        
+    
+
+</span>
+</footer>
+
+    <p>[TOC]
+MySQL 5.5 InnoDB 锁等待 锁相关表    表名 作用     innodb_trx 当前正在执行事务的信息   innodb_locks 各已被请求但未被提交的事务锁   innodb_lock_waits 各阻塞事务的一至多行记录信息    字段 innodb_trx    字段 注释     trx_id 事务ID。   trx_state 事务状态，有以下几种状态:RUNNING、LOCK WAIT、ROLLING BACK 和 COMMITTING。   trx_started 事务开始时间。   trx_requested_lock_id 事务当前正在等待锁的标识，可以和 INNODB_LOCKS 表 JOIN 以得到更多详细信息。   trx_wait_started 事务开始等待的时间。   trx_weight 事务的权重。   trx_mysql_thread_id 事务线程 ID，可以和 PROCESSLIST 表 JOIN。   trx_query 事务正在执行的 SQL 语句。   trx_operation_state 事务当前操作状态。   trx_tables_in_use 当前事务执行的 SQL 中使用的表的个数。   trx_tables_locked 当前执行 SQL 的行锁数量。   trx_lock_structs 事务保留的锁数量。   trx_lock_memory_bytes 事务锁住的内存大小，单位为 BYTES。   trx_rows_locked 事务锁住的记录数。包含标记为 DELETED，并且已经保存到磁盘但对事务不可见的行。   trx_rows_modified 事务更改的行数。   trx_concurrency_tickets 事务并发票数。   trx_isolation_level 当前事务的隔离级别。   trx_unique_checks 是否打开唯一性检查的标识。   trx_foreign_key_checks 是否打开外键检查的标识。   trx_last_foreign_key_error 最后一次的外键错误信息。   trx_adaptive_hash_latched 自适应散列索引是否被当前事务锁住的标识。   trx_adaptive_hash_timeout 是否立刻放弃为自适应散列索引搜索 LATCH 的标识。    innodb_locks    字段 注释     lock_id 锁 ID。   lock_trx_id 拥有锁的事务 ID。可以和 INNODB_TRX 表 JOIN 得到事务的详细信息。   lock_mode 锁的模式。有如下锁类型: 行级锁包括 S、X、IS、IX，分别代表共享锁、排它锁、意向共享锁、意向排它锁。表级锁包括 S_GAP、X_GAP、IS_GAP、IX_GAP 和 AUTO_INC，分别代表共享间隙锁、排它间隙锁、意向共享间隙锁、意向排它间隙锁和自动递增锁。   lock_type 锁的类型。RECORD 代表行级锁，TABLE 代表表级锁。   lock_table 被锁定的或者包含锁定记录的表的名称。   lock_index 当 LOCK_TYPE=’RECORD’ 时，表示索引的名称；否则为 NULL。   lock_space 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的表空间 ID；否则为 NULL。   lock_page 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的页号；否则为 NULL。   lock_rec 当 LOCK_TYPE=’RECORD’ 时，表示一堆页面中锁定行的数量，亦即被锁定的记录号；否则为 NULL。   lock_data 当 LOCK_TYPE=’RECORD’ 时，表示锁定行的主键；否则为NULL。    innodb_lock_waits | 字段 | 注释 | | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- | &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash; &mdash;&mdash; | | requesting_trx_id | 请求事务的 ID。 | | requested_lock_id | 事务所等待的锁定的 ID。可以和 INNODB_LOCKS 表 JOIN。 | | blocking_trx_id | 阻塞事务的 ID。 | | blocking_lock_id | 某一事务的锁的 ID，该事务阻塞了另一事务的运行。可以和 INNODB_LOCKS 表 JOIN。 |&hellip;</p>
+    <a href="http://domain.yqjdcyy.com/post/mysql.lock-waits/" title="MYSQL.LOCK-WAITS"> &raquo;</a>
+</article>
+
+        
+            <article class="post">
+    
 <h1><a href="http://domain.yqjdcyy.com/post/linux.curl/" title="Linux.Curl">Linux.Curl</a></h1>
 
 <footer class="post-info"> <span class="post-meta"><time datetime="2017.04.01">2017.04.01</time>
@@ -255,29 +278,6 @@ Flag 参考  Package flag Golang flag包使用详解  作用  用于解析命令
     <p>[TOC]
 参考  curl网站开发指南 curl 官网 everything-curl.pdf  指令  -O | -o path  下载  -i  显示 http response 头信息  -v  显示通信全过程信息 可使用 &ndash;trace output.txt 保存更详细通信过程  -X [DELETE| POST| PUT| &hellip;]  支持其它类型参数  &ndash;data &quot;arg=val&quot;  传递参数  &ndash;user-agent  传递客户端设备信息  -c cookie-file + -b cookie-file  分别用于保留服务器返回的 cookie 至指定文件，和请求时读取文件作为 cookie 信息  -header &quot;Content-Type:application/json&quot;  增加头信息   示例  带 cookie 请求  curl -X POST -H &quot;Content-Type: application/json;charset=UTF-8&quot; -d &lsquo;{&quot;username&quot;:&quot;15880777595&quot;,&quot;pwd&quot;:&quot;1&quot;}&rsquo; &ndash;cookie-jar /data/cdn/resource/curl-cookie <a href="http://live">http://live</a>.&hellip;</p>
     <a href="http://domain.yqjdcyy.com/post/linux.curl/" title="Linux.Curl"> &raquo;</a>
-</article>
-
-        
-            <article class="post">
-    
-<h1><a href="http://domain.yqjdcyy.com/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授">加藤鹰-秘技传授</a></h1>
-
-<footer class="post-info"> <span class="post-meta"><time datetime="2017.03.20">2017.03.20</time>
-
-    &middot; 
-        
-        <a href="http://domain.yqjdcyy.com/tags/%E6%95%B4%E7%90%86">整理</a>, 
-        
-        <a href="http://domain.yqjdcyy.com/tags/sex">sex</a>
-        
-    
-
-</span>
-</footer>
-
-    <p>[TOC]
-加藤鹰-秘技传授 接吻  搂脖子，抚摸脸颊、上下嘴唇，将耳边头发撩至耳后 侧头舔吸上下唇 敏感部位：上牙龈后侧  爱抚 耳朵  待定  舌技  待定  指技  待定  异物插入  待定  插入  待定&hellip;</p>
-    <a href="http://domain.yqjdcyy.com/post/%E5%8A%A0%E8%97%A4%E9%B9%B0-%E7%A7%98%E6%8A%80%E4%BC%A0%E6%8E%88/" title="加藤鹰-秘技传授"> &raquo;</a>
 </article>
 
         
