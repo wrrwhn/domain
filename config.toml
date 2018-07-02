@@ -58,8 +58,8 @@ pygmentsCodefencesGuessSyntax = true
 DefaultContentLanguage = "zh"
 
 [Params]
-  Introduce = "Programmer & Architect"
-  Description = "好久不见 | 博客 | 软件 | 架构 | Java | Golang"
+  Introduce = "Have fun~"
+  Description = "好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"
   Keywords =  "好久不见,博客,程序,思考,笔记,分享"
   Subtitle = "生之所向"
   Imglogo = "/img/logo.png"
@@ -93,14 +93,9 @@ DefaultContentLanguage = "zh"
   URL = "/categories/乐趣/"
   Weight = 4
 [[Menu.Main]]
-  Name = "归档"
-  Pre = "archive"
-  URL = "/post/"
-  Weight = 6
-[[Menu.Main]]
   Name = "关于"
   Pre = "user"
-  URL = "/about/"
+  URL = "/about/关于/"
   Weight = 7
 
 [[Params.Socials]]
