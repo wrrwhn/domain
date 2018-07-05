@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 02 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Time</title>
+      <link>http://domain.yqjdcyy.com/post/linux.time/</link>
+      <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.time/</guid>
+      <description>Command Function 测量指定指令执行所消耗的时间、系统资源 Format time [options] &amp;lt;command [arguments...]&amp;gt; result /usr/bin/time -p ls -l total 2104 -rw-rw-r-- 1 appuser appuser 218 Aug 14 2017 curl-cookie-test real 0.00 user 0.00 sys 0.00 options option | 选项 | 描述 | |&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-| | -f &amp;lt;FORMAT&amp;gt; &amp;ndash;format=&amp;lt;FORMAT&amp;gt; | 指定输出格式 重</description>
+    </item>
     
     <item>
       <title>Hello.Docker.Network</title>
