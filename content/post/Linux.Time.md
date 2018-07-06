@@ -106,43 +106,45 @@ sys 0.00
 # Example
 - `/usr/bin/time -v ps -aux`
     - 显示指令的完整信息
-    ```sh
-    USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-    root         2  0.0  0.0      0     0 ?        S     2017   0:06 [kthreadd]
+    
+        ```sh
+        USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+        root         2  0.0  0.0      0     0 ?        S     2017   0:06 [kthreadd]
 
-        Command being timed: "ps -aux"
-        User time (seconds): 0.00
-        System time (seconds): 0.01
-        Percent of CPU this job got: 78%
-        Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
-        Average shared text size (kbytes): 0
-        Average unshared data size (kbytes): 0
-        Average stack size (kbytes): 0
-        Average total size (kbytes): 0
-        Maximum resident set size (kbytes): 1736
-        Average resident set size (kbytes): 0
-        Major (requiring I/O) page faults: 0
-        Minor (reclaiming a frame) page faults: 532
-        Voluntary context switches: 2
-        Involuntary context switches: 240
-        Swaps: 0
-        File system inputs: 0
-        File system outputs: 0
-        Socket messages sent: 0
-        Socket messages received: 0
-        Signals delivered: 0
-        Page size (bytes): 4096
-        Exit status: 0
-    ```
+            Command being timed: "ps -aux"
+            User time (seconds): 0.00
+            System time (seconds): 0.01
+            Percent of CPU this job got: 78%
+            Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.01
+            Average shared text size (kbytes): 0
+            Average unshared data size (kbytes): 0
+            Average stack size (kbytes): 0
+            Average total size (kbytes): 0
+            Maximum resident set size (kbytes): 1736
+            Average resident set size (kbytes): 0
+            Major (requiring I/O) page faults: 0
+            Minor (reclaiming a frame) page faults: 532
+            Voluntary context switches: 2
+            Involuntary context switches: 240
+            Swaps: 0
+            File system inputs: 0
+            File system outputs: 0
+            Socket messages sent: 0
+            Socket messages received: 0
+            Signals delivered: 0
+            Page size (bytes): 4096
+            Exit status: 0
+        ```
 
 - `/usr/bin/time -f "\ntime: %E"  /usr/local/ffmpeg -i /data/090913f7-b3e3-4050-ba7b-a9d7d664fd8d/record.m3u8 -c copy -bsf:a aac_adtstoasc -y /data/090913f7-b3e3-4050-ba7b-a9d7d664fd8d/090913f7-v2.mp4`
     - 定制显示数据格式
-    ```sh
-    [mp4 @ 0x291f020] Non-monotonous DTS in output stream 0:0; previous: 26142599, current: 24141600; changing to 26142600. This may result in incorrect timestamps in the output file.
-    frame=12746 fps=2334 q=-1.0 Lsize=   27848kB time=00:04:50.71 bitrate= 784.7kbits/s speed=53.2x    
-    video:25851kB audio:1731kB subtitle:0kB other streams:0kB global headers:1kB muxing overhead: 0.966411%
-    time: 0:05.51
-    ```
+
+        ```sh
+        [mp4 @ 0x291f020] Non-monotonous DTS in output stream 0:0; previous: 26142599, current: 24141600; changing to 26142600. This may result in incorrect timestamps in the output file.
+        frame=12746 fps=2334 q=-1.0 Lsize=   27848kB time=00:04:50.71 bitrate= 784.7kbits/s speed=53.2x    
+        video:25851kB audio:1731kB subtitle:0kB other streams:0kB global headers:1kB muxing overhead: 0.966411%
+        time: 0:05.51
+        ```
 
 # Supplement 
 - 页面错误
