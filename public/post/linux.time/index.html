@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1304 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1086 字 ~3分钟</span>
 </span>
       </div>
     </header>
@@ -186,72 +186,364 @@ sys <span style="color:#ae81ff">0</span>.00</code></pre></div>
 <h2 id="options">options</h2>
 
 <ul>
-<li><p>option
-| 选项                                 | 描述                                               |
-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
-| -f <code>&lt;FORMAT&gt;</code><br>&ndash;format=<code>&lt;FORMAT&gt;</code> | <strong>指定输出格式</strong><br>重写环境变量 <code>TIME</code> 指定的模式 |
-| -p<br> &ndash;portability                 | 使用 <code>POSIX</code> 的默认格式                            |
-| -o <code>&lt;FILE&gt;</code><br> &ndash;output=<code>&lt;FILE&gt;</code>    | 将结果 <strong>重定向</strong>至指定文件                        |
-| -a<br> &ndash;append                      | 结合 <code>-o &lt;FILE&gt;</code> 使用；表示以追加形式写入           |
-| -v<br> &ndash;verbose                     | 输出 <strong>详细</strong>结果                                  |
-| &ndash;help                               | 打印帮助文档                                       |
-| -V<br> &ndash;version                     | 打印版本信息                                       |</p></li>
+<li><p>option</p>
 
-<li><p>option.format
-| 类型 | 选项 | 描述                                                                                                           |
-|&mdash;&mdash;|&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|
-| 时间 |      |                                                                                                                |
-|      | %E   | <strong>消耗</strong>时间，格式为 <code>[hours:]minutes:seconds</code>                                                                  |
-|      | %e   | <strong>实时运行</strong>用时，以秒为单位                                                                                    |
-|      | %S   | System Time<br><strong>内核</strong>运行的总体 <strong>CPU 时间</strong>，以秒为单位                                                                     |
-|      | %U   | User Time<br><strong>用户</strong>模式运行下的总体 <strong>CPU 时间</strong>，以秒为单位                                                               |
-|      | %P   | 当前任务所占 <strong>CPU 百分比</strong><br>公式为 <code>(%U + %S) / %E</code>                                                         |
-| 内存 |      |                                                                                                                |
-|      | %M   | 进程生命周期内的 <strong>最大驻留大小</strong>，单位为 KB                                                                    |
-|      | %t   | 进程 <strong>平均驻留大小</strong>，单位为 KB                                                                                |
-|      | %K   | 进程 <strong>平均总内存</strong>使用情况，单位为 KB； 公式为 <code>数据+ 堆栈+ 文本</code>                                               |
-|      | %D   | 进程的 <strong>非共享</strong>数据区域大小，单位为 KB                                                                        |
-|      | %p   | 进程的 <strong>非共享</strong>堆栈空间 <strong>平均值</strong>，单位为 KB                                                                 |
-|      | %X   | 进程的 <strong>共享文本</strong>空间的 <strong>平均值</strong>，单位为 KB                                                                 |
-|      | %Z   | 系统的 <strong>页面大小</strong>，以字节为单位<br> <strong>各系统预设常量值不同</strong>                                                  |
-|      | %F   | 进程运行时发生 <strong>错误</strong>的主 <strong>页面</strong>（必须由硬盘中读取）<strong>数量</strong>                                                 |
-|      | %R   | <strong>小、可恢复的页面错误的数量</strong>，特指其它虚拟页面未声明但无效的错误；因此页面数据仍然有效，但系统页面分配表需要更新 |
-|      | %W   | 进程被 <strong>调换出主内存的次数</strong>                                                                                  |
-|      | %c   | 进程被动进行 <strong>上下文切换的次数</strong><br><strong>时间片过期的情况</strong>                                                      |
-|      | %w   | 进程主动进行 <strong>上下文切换后的等待时长</strong><br>例如 <strong>等待 I/O</strong>操作的完成                                         |
-| I/O  |      |                                                                                                                |
-|      | %I   | 进程中进行文件 <strong>输入的数量</strong>                                                                                  |
-|      | %O   | 进程中进行文件 <strong>输出的数量</strong>                                                                                  |
-|      | %r   | 进程 <strong>接收 socket 消息的数量</strong>                                                                                |
-|      | %s   | 进程 <strong>发送的 socket 消息的数量</strong>                                                                              |
-|      | %k   | 提交给进程的 <strong>信号数量</strong>                                                                                      |
-|      | %C   | 正在被講的命令的名称和命令行参数                                                                               |
-|      | %x   | 命令行的 <strong>退出状态码</strong>                                                                                        |</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>-f <code>&lt;FORMAT&gt;</code><br>&ndash;format=<code>&lt;FORMAT&gt;</code></td>
+<td><strong>指定输出格式</strong><br>重写环境变量 <code>TIME</code> 指定的模式</td>
+</tr>
+
+<tr>
+<td>-p<br> &ndash;portability</td>
+<td>使用 <code>POSIX</code> 的默认格式</td>
+</tr>
+
+<tr>
+<td>-o <code>&lt;FILE&gt;</code><br> &ndash;output=<code>&lt;FILE&gt;</code></td>
+<td>将结果 <strong>重定向</strong>至指定文件</td>
+</tr>
+
+<tr>
+<td>-a<br> &ndash;append</td>
+<td>结合 <code>-o &lt;FILE&gt;</code> 使用；表示以追加形式写入</td>
+</tr>
+
+<tr>
+<td>-v<br> &ndash;verbose</td>
+<td>输出 <strong>详细</strong>结果</td>
+</tr>
+
+<tr>
+<td>&ndash;help</td>
+<td>打印帮助文档</td>
+</tr>
+
+<tr>
+<td>-V<br> &ndash;version</td>
+<td>打印版本信息</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>option.format</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>选项</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>时间</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%E</td>
+<td><strong>消耗</strong>时间，格式为 <code>[hours:]minutes:seconds</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%e</td>
+<td><strong>实时运行</strong>用时，以秒为单位</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%S</td>
+<td>System Time<br><strong>内核</strong>运行的总体 <strong>CPU 时间</strong>，以秒为单位</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%U</td>
+<td>User Time<br><strong>用户</strong>模式运行下的总体 <strong>CPU 时间</strong>，以秒为单位</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%P</td>
+<td>当前任务所占 <strong>CPU 百分比</strong><br>公式为 <code>(%U + %S) / %E</code></td>
+</tr>
+
+<tr>
+<td>内存</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%M</td>
+<td>进程生命周期内的 <strong>最大驻留大小</strong>，单位为 KB</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%t</td>
+<td>进程 <strong>平均驻留大小</strong>，单位为 KB</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%K</td>
+<td>进程 <strong>平均总内存</strong>使用情况，单位为 KB； 公式为 <code>数据+ 堆栈+ 文本</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%D</td>
+<td>进程的 <strong>非共享</strong>数据区域大小，单位为 KB</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%p</td>
+<td>进程的 <strong>非共享</strong>堆栈空间 <strong>平均值</strong>，单位为 KB</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%X</td>
+<td>进程的 <strong>共享文本</strong>空间的 <strong>平均值</strong>，单位为 KB</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%Z</td>
+<td>系统的 <strong>页面大小</strong>，以字节为单位<br> <strong>各系统预设常量值不同</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%F</td>
+<td>进程运行时发生 <strong>错误</strong>的主 <strong>页面</strong>（必须由硬盘中读取）<strong>数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%R</td>
+<td><strong>小、可恢复的页面错误的数量</strong>，特指其它虚拟页面未声明但无效的错误；因此页面数据仍然有效，但系统页面分配表需要更新</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%W</td>
+<td>进程被 <strong>调换出主内存的次数</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%c</td>
+<td>进程被动进行 <strong>上下文切换的次数</strong><br><strong>时间片过期的情况</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%w</td>
+<td>进程主动进行 <strong>上下文切换后的等待时长</strong><br>例如 <strong>等待 I/O</strong>操作的完成</td>
+</tr>
+
+<tr>
+<td>I/O</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%I</td>
+<td>进程中进行文件 <strong>输入的数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%O</td>
+<td>进程中进行文件 <strong>输出的数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%r</td>
+<td>进程 <strong>接收 socket 消息的数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%s</td>
+<td>进程 <strong>发送的 socket 消息的数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%k</td>
+<td>提交给进程的 <strong>信号数量</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>%C</td>
+<td>正在被講的命令的名称和命令行参数</td>
+</tr>
+
+<tr>
+<td></td>
+<td>%x</td>
+<td>命令行的 <strong>退出状态码</strong></td>
+</tr>
+</tbody>
+</table>
 
 <ul>
-<li>option.format.exit_status
-| 类型 | 状态值 | 描述             |
-|&mdash;&mdash;|&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
-| 成功 |        |                  |
-|      | 0      | 正常结束         |
-| 失败 |        |                  |
-|      | 64     | 命令行使用错误   |
-|      | 65     | 数据格式错误     |
-|      | 66     | 无法打开输入流   |
-|      | 67     | 地址未知         |
-|      | 68     | 主机名未知       |
-|      | 69     | 服务不可用       |
-|      | 70     | 内部软件错误     |
-|      | 71     | 系统错误         |
-|      | 72     | 关键系统文件缺失 |
-|      | 73     | 无法创建输出文件 |
-|      | 74     | 输入输出错误     |
-|      | 75     | 重试<br>临时错误 |
-|      | 76     | 远程协议错误     |
-|      | 77     | 权限不足         |
-|      | 78     | 配置错误         |
-|      | 126    | 命令无法执行     |
-|      | 127    | 命令未找到       |</li>
+<li><p>option.format.exit_status</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>状态值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>成功</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>0</td>
+<td>正常结束</td>
+</tr>
+
+<tr>
+<td>失败</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>64</td>
+<td>命令行使用错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>65</td>
+<td>数据格式错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>66</td>
+<td>无法打开输入流</td>
+</tr>
+
+<tr>
+<td></td>
+<td>67</td>
+<td>地址未知</td>
+</tr>
+
+<tr>
+<td></td>
+<td>68</td>
+<td>主机名未知</td>
+</tr>
+
+<tr>
+<td></td>
+<td>69</td>
+<td>服务不可用</td>
+</tr>
+
+<tr>
+<td></td>
+<td>70</td>
+<td>内部软件错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>71</td>
+<td>系统错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>72</td>
+<td>关键系统文件缺失</td>
+</tr>
+
+<tr>
+<td></td>
+<td>73</td>
+<td>无法创建输出文件</td>
+</tr>
+
+<tr>
+<td></td>
+<td>74</td>
+<td>输入输出错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>75</td>
+<td>重试<br>临时错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>76</td>
+<td>远程协议错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>77</td>
+<td>权限不足</td>
+</tr>
+
+<tr>
+<td></td>
+<td>78</td>
+<td>配置错误</td>
+</tr>
+
+<tr>
+<td></td>
+<td>126</td>
+<td>命令无法执行</td>
+</tr>
+
+<tr>
+<td></td>
+<td>127</td>
+<td>命令未找到</td>
+</tr>
+</tbody>
+</table></li>
 </ul></li>
 </ul>
 

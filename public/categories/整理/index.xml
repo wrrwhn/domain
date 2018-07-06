@@ -17,7 +17,7 @@
       <pubDate>Thu, 05 Jul 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.time/</guid>
-      <description>Command Function 测量指定指令执行所消耗的时间、系统资源 Format time [options] &amp;lt;command [arguments...]&amp;gt; result /usr/bin/time -p ls -l total 2104 -rw-rw-r-- 1 appuser appuser 218 Aug 14 2017 curl-cookie-test real 0.00 user 0.00 sys 0.00 options option | 选项 | 描述 | |&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;-| | -f &amp;lt;FORMAT&amp;gt; &amp;ndash;format=&amp;lt;FORMAT&amp;gt; | 指定输出格式 重</description>
+      <description>Command Function 测量指定指令执行所消耗的时间、系统资源 Format time [options] &amp;lt;command [arguments...]&amp;gt; result /usr/bin/time -p ls -l total 2104 -rw-rw-r-- 1 appuser appuser 218 Aug 14 2017 curl-cookie-test real 0.00 user 0.00 sys 0.00 options option 选项 描述 -f &amp;lt;FORMAT&amp;gt; &amp;ndash;format=&amp;lt;FORMAT&amp;gt; 指定输出格式 重写环境变量 TIME</description>
     </item>
     
     <item>
