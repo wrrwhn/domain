@@ -141,7 +141,6 @@ sys 0.00
     [mp4 @ 0x291f020] Non-monotonous DTS in output stream 0:0; previous: 26142599, current: 24141600; changing to 26142600. This may result in incorrect timestamps in the output file.
     frame=12746 fps=2334 q=-1.0 Lsize=   27848kB time=00:04:50.71 bitrate= 784.7kbits/s speed=53.2x    
     video:25851kB audio:1731kB subtitle:0kB other streams:0kB global headers:1kB muxing overhead: 0.966411%
-
     time: 0:05.51
     ```
 
