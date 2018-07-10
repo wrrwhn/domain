@@ -125,7 +125,7 @@ toc: true
 
   - `ffmpeg -f concat -safe 0 -i list -codec copy -y output.mp4`
     - `cat index.m3u8 | grep ".ts" | awk '{printf "file %s\n", $0}' > list`
-    - 速度较 all.ts 慢差不多一倍，具体统计可见 [补充 - all.ts 与 ts.list 方案对比](#all-list)
+    - 速度较 all.ts 慢差不多一倍，具体统计可见 [补充 - all.ts 与 ts.list 方案对比](https://github.com/yqjdcyy/Hello_Ffmpeg/blob/master/README.md#%E6%AF%94%E8%BE%83)
 
 - 其它格式
   - `ffmpeg -i index.m3u8 -vcodec libvpx -acodec vorbis -strict -2 -ac 2 -ar 22050 -ab 24k -y common.webm`
@@ -177,37 +177,6 @@ toc: true
     - 强制输入或输出的文件格式
   - `http://rtmp.com/proxy/dc6af2ec`
     - 代理请求接口
-
-
-# 补充
-## <a name="all-list"></a>all.ts 与 ts.list 方案对比
-
-| 类型 |                     名称                    |         分辨率         |     时长    | 大小 | 转换方式 |    转换时长   |
-|------|---------------------------------------------|------------------------|-------------|------|----------|---------------|
-| MP3  |                                             |                        |             |      |          |               |
-|      | 74434125-45a7-4c37-a3a8-5156b327bda1        | 24 kb/s                | 00:14:29.69 | 2.5M |          |               |
-|      |                                             |                        |             |      | all.ts   | 10.741287936s |
-|      |                                             |                        |             |      | ts.list  | 5.829118866s  |
-|      | 5c311087-4a3f-4fb3-bb6e-af7ed403a009        | 24 kb/s                | 00:06:43.91 | 1.2M |          |               |
-|      |                                             |                        |             |      | all.ts   | 4.82727274s   |
-|      |                                             |                        |             |      | ts.list  | 1.04991862s   |
-|      | b036b618-f9c9-4165-8c09-65c1fa301ccd        | 24 kb/s                | 00:01:23.57 | 245K |          |               |
-|      |                                             |                        |             |      | all.ts   | 1.198884141s  |
-|      |                                             |                        |             |      | ts.list  | 1.07304459s   |
-| MP4  |                                             |                        |             |      |          |               |
-|      | 171c8282-5291-4727-9e39-35ceb54588e9_camera | 640x360 <br>442 kb/s   | 00:14:50.64 | 48M  |          |               |
-|      |                                             |                        |             |      | all.ts   | 3.116673884s  |
-|      |                                             |                        |             |      | ts.list  | 5.82908783s   |
-|      | 6fb3a20a-e2aa-4bbf-b5d1-3b24fe3b9f53_camera | 1920x1080 <br>585 kb/s | 00:04:54.44 | 21M  |          |               |
-|      |                                             |                        |             |      | all.ts   | 894.732724ms  |
-|      |                                             |                        |             |      | ts.list  | 4.38981284s   |
-|      | 7335cb91-a56e-49e4-92d4-0f561d4f6cef_camera | 640x360 <br>356 kb/s   | 00:00:46.88 | 2.0M |          |               |
-|      |                                             |                        |             |      | all.ts   | 291.281715ms  |
-|      |                                             |                        |             |      | ts.list  | 416.529161ms  |
-|      | 24631476-9976-4c10-9193-10f522a16992_camera | 640x360 <br>339 kb/s   | 01:36:38.71 | 235M |          |               |
-|      |                                             |                        |             |      | all.ts   | 22.508821932s |
-|      |                                             |                        |             |      | ts.list  | 38.972474909s |
-
 
 
 # 参考
