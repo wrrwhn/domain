@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1192 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1095 字 ~3分钟</span>
 </span>
       </div>
     </header>
@@ -345,7 +345,7 @@ Result
 
 <li><p><code>cat index.m3u8 | grep &quot;.ts&quot; | awk '{printf &quot;file %s\n&quot;, $0}' &gt; list</code></p></li>
 
-<li><p>速度较 all.ts 慢差不多一倍，具体统计可见 <a href="#all-list">补充 - all.ts 与 ts.list 方案对比</a></p></li>
+<li><p>速度较 all.ts 慢差不多一倍，具体统计可见 <a href="https://github.com/yqjdcyy/Hello_Ffmpeg/blob/master/README.md#%E6%AF%94%E8%BE%83">补充 - all.ts 与 ts.list 方案对比</a></p></li>
 </ul></li>
 
 <li><p>其它格式</p>
@@ -437,256 +437,6 @@ Result
 <li>代理请求接口</li>
 </ul></li>
 </ul>
-
-<h1 id="补充">补充</h1>
-
-<h2 id="a-name-all-list-a-all-ts-与-ts-list-方案对比"><a name="all-list"></a>all.ts 与 ts.list 方案对比</h2>
-
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>名称</th>
-<th>分辨率</th>
-<th>时长</th>
-<th>大小</th>
-<th>转换方式</th>
-<th>转换时长</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>MP3</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>74434125-45a7-4c37-a3a8-5156b327bda1</td>
-<td>24 kb/s</td>
-<td>00:14:29.69</td>
-<td>2.5M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>10.741287936s</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>5.829118866s</td>
-</tr>
-
-<tr>
-<td></td>
-<td>5c311087-4a3f-4fb3-bb6e-af7ed403a009</td>
-<td>24 kb/s</td>
-<td>00:06:43.91</td>
-<td>1.2M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>4.82727274s</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>1.04991862s</td>
-</tr>
-
-<tr>
-<td></td>
-<td>b036b618-f9c9-4165-8c09-65c1fa301ccd</td>
-<td>24 kb/s</td>
-<td>00:01:23.57</td>
-<td>245K</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>1.198884141s</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>1.07304459s</td>
-</tr>
-
-<tr>
-<td>MP4</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>171c8282-5291-4727-9e39-35ceb54588e9_camera</td>
-<td>640x360 <br>442 kb/s</td>
-<td>00:14:50.64</td>
-<td>48M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>3.116673884s</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>5.82908783s</td>
-</tr>
-
-<tr>
-<td></td>
-<td>6fb3a20a-e2aa-4bbf-b5d1-3b24fe3b9f53_camera</td>
-<td>1920x1080 <br>585 kb/s</td>
-<td>00:04:54.44</td>
-<td>21M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>894.732724ms</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>4.38981284s</td>
-</tr>
-
-<tr>
-<td></td>
-<td>7335cb91-a56e-49e4-92d4-0f561d4f6cef_camera</td>
-<td>640x360 <br>356 kb/s</td>
-<td>00:00:46.88</td>
-<td>2.0M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>291.281715ms</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>416.529161ms</td>
-</tr>
-
-<tr>
-<td></td>
-<td>24631476-9976-4c10-9193-10f522a16992_camera</td>
-<td>640x360 <br>339 kb/s</td>
-<td>01:36:38.71</td>
-<td>235M</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>all.ts</td>
-<td>22.508821932s</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td>ts.list</td>
-<td>38.972474909s</td>
-</tr>
-</tbody>
-</table>
 
 <h1 id="参考">参考</h1>
 
@@ -883,10 +633,6 @@ Result
 <li><a href="#裁剪">裁剪</a></li>
 <li><a href="#定时请求代理">定时请求代理</a></li>
 </ul></li>
-</ul></li>
-<li><a href="#补充">补充</a>
-<ul>
-<li><a href="#a-name-all-list-a-all-ts-与-ts-list-方案对比"><a name="all-list"></a>all.ts 与 ts.list 方案对比</a></li>
 </ul></li>
 <li><a href="#参考">参考</a>
 <ul>
