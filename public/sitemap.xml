@@ -2915,7 +2915,7 @@ Hash BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);
         <tags>
           <tag>Linux</tag>
         </tags>
-        <content type="html">  参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d  指定输入的分隔符 -d\n  ``  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?...  y    -r  避免以空字符串作为参数 echo | xargs -p -r  -t  显示执行的指令 echo 1 2 3 | xargs -t  echo 1 2 3 1 2 3    示例  删除当前目录下，指定格式的重复图片  find . -name &amp;quot;*).png&amp;quot; | xargs -p rm -f   </content>
+        <content type="html">  参考  Linux 系統 xargs 指令範例與教學 Wiki-xargs  作用  将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数  INPUT  xargs cat arg1 arg2 arg3  EXECUTE  cat arg1 arg2 arg3    参数  -d .*  指定输入的分隔符 -d\n  -n \d&#43;  指定每次执行时所用参数上限值 echo a b c d e f | xargs -n 3  echo a b c echo d e f   -p  每条分割语句执行前需经确认 echo 1 2 3 | xargs -p  echo 1 2 3 ?...  y    -r  避免以空字符串作为参数 echo | xargs -p -r  -t  显示执行的指令 echo 1 2 3 | xargs -t  echo 1 2 3 1 2 3    示例  删除当前目录下，指定格式的重复图片  find . -name &amp;quot;*).png&amp;quot; | xargs -p rm -f   </content>
     </entry>
     
      <entry>

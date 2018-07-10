@@ -25,10 +25,10 @@ toc: true
         - `cat arg1 arg2 arg3`
 
 # 参数
-- `-d`
+- `-d .*`
     - 指定输入的分隔符
     - `-d\n`
-- ``
+- `-n \d+`
     - 指定每次执行时所用**参数上限值**
     - `echo a b c d e f | xargs -n 3`
         - `echo a b c`
