@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 07 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.FFmpeg</title>
+      <link>http://domain.yqjdcyy.com/post/hello.ffmpeg/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.ffmpeg/</guid>
+      <description>概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file |</description>
+    </item>
     
     <item>
       <title>注册资本</title>
@@ -882,15 +891,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/kafka/</guid>
       <description>Kafka 参考 Kafka剖析（一）：Kafka背景及架构介绍 Apache kafka 工作原理介绍 Quickstart Kafka系列2-producer和consumer报错 Using new consumer API with a Deserializer</description>
-    </item>
-    
-    <item>
-      <title>FFmpeg.阅读笔记</title>
-      <link>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
-      <description>简介 FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts 概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | |</description>
     </item>
     
     <item>

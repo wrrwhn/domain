@@ -6,10 +6,19 @@
     <description>Recent content in Ffmpeg on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 01 Jun 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/ffmpeg/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.FFmpeg</title>
+      <link>http://domain.yqjdcyy.com/post/hello.ffmpeg/</link>
+      <pubDate>Tue, 10 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.ffmpeg/</guid>
+      <description>概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | | | decoded | | frames | |_________| ________ ______________ | | | | | | | output | &amp;lt;-------- | encoded data | &amp;lt;----+ | file |</description>
+    </item>
     
     <item>
       <title>FFmpeg.2Gif.Ass</title>
@@ -27,15 +36,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/%E5%B0%8F%E4%B8%B8%E5%8E%8B%E7%BC%A9%E8%A7%86%E9%A2%91%E8%BD%ACm3u8%E5%BC%82%E5%B8%B8/</guid>
       <description>异常反馈 2 frames left in the queue on closing Command 原始转换请求转换语句 &amp;gt; /usr/local/ffmpeg/bin/ffmpeg -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 -vcodec libx264 -r 24 -vf scale=640:360,pad=640:360:0:0:black -acodec aac -ar 22050 -ab 24k -map 0 -f ssegment -segment_format mpegts -segment_list /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/index.m3u8 -segment_time 10 /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906_640x360/%04d.ts Info /usr/local/ffmpeg/bin/ffprobe -i /static/cdn/prod/video/38ad11be-f1c7-4dea-9ce0-6ed13a93d906.mp4 客户使用「小丸」进行视频压缩，添</description>
-    </item>
-    
-    <item>
-      <title>FFmpeg.阅读笔记</title>
-      <link>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</link>
-      <pubDate>Thu, 23 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/ffmpeg.%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/</guid>
-      <description>简介 FFmpeg ffmpeg FFmpeg Formats Documentation FFmpeg - wiki FFmpeg - github 使用ffmpeg将视频转ts 概要 ffmpeg [global_options] {[input_file_options] -i input_url} ... {[output_file_options] output_url} ... 流程 _______ ______________ | | | | | input | demuxer | encoded data | decoder | file | ---------&amp;gt; | packets | -----+ |_______| |______________| | v _________ | |</description>
     </item>
     
   </channel>
