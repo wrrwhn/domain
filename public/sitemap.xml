@@ -2,6 +2,72 @@
 <search>
     
      <entry>
+        <title>Linux.AWK</title>
+        <url>http://domain.yqjdcyy.com/post/linux.awk/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Linux</tag>
+        </tags>
+        <content type="html">  Description AWK  1977年，贝尔实验室开发的文本处理神器 命名取自其创始人Alfred Aho、Peter Weinberger 和 Brian Kernighan 的姓的首字母 推荐书籍 《The AWK Programming Language》
+GAWK GNU Project 的 AWK 解释器
+  Command Format  awk [options] [-f program-file|program-text] file... awk &#39;BEGIN{ &amp;lt;commands&amp;gt; } pattern{ &amp;lt;commands&amp;gt; } END{ &amp;lt;commands&amp;gt; }&#39;  执行 BEGIN 逐行扫描匹配 PATTERN 执行 END   Options    类型 变量 含义     常用      -F 
+&amp;ndash;field-separator  指定字段分隔符    -v =
+&amp;ndash;assign = 设置变量值，在 BEGIN 模块开始执行前执行    -E 
+&amp;ndash;exec  类似 -f，针对于脚本、 CGI 应用
+将禁用命令行变量赋值    -e 
+&amp;ndash;source  在命令行中执行源代码   文件      -d[file]
+&amp;ndash;dump-variables[=file] 将全局变量打印至文件
+默认打印至 awkvars.out    -p 
+&amp;ndash;profile  保存性能分析数据
+默认为 awkprof.out    -g
+&amp;ndash;gen-pot 描述并解析 AWK 程序至 GNU .pot（Portable Object Template） 文件中    -V
+&amp;ndash;version 打印详细的版本信息   可选      -O
+&amp;ndash;optimize 启用优化    -h
+&amp;ndash;help 打印帮助文档    -P
+&amp;ndash;posix 开始兼容模式
+\x不被解析    -n
+&amp;ndash;non-decimal-data 识别数据中的八进制、十六进制数据
+谨慎使用    -b
+&amp;ndash;characters-as-bytes 将所有输入均当成单字节字符    -t
+&amp;ndash;lint-old 针对不可移植于 Unix AWK 的结构的警告    -L [value]
+&amp;ndash;lint[=value] 针对可疑、不可移植的结构代码提供警告    -S
+&amp;ndash;sandbox 开启沙盒模式
+使用 system() 方法，使用 getline 进行输入，使用 print[f] 进行输出
+有效地阻止脚本对本地资源的访问    -N
+&amp;ndash;use-lc-numeric 解析输入数据时，强制 GAWK 使用本地十进制的点   版本相关      -c
+&amp;ndash;traditional 兼容模式，不使用 GAWK 扩展    -r
+&amp;ndash;re-interval 允许在正则表达式中使用区间表达式
+默认允许，需配合 --traditional 使用    -C
+&amp;ndash;copyright 打印简短的 GNU 版权信息    -R
+&amp;ndash;command file 从文件中读取命令
+仅 DGAWK 可用    Built-in Variables    类型 变量值 含义     常用      $0 当前记录行    $1~$n 当前记录的第n个字段，字段间由FS分隔    FS 输入字段分隔符
+默认为空格或Tab    RS 输入的记录分隔符
+默认为换行符    OFS 输出字段间分隔符
+默认为空格    ORS 输出行间分隔符
+默认为换行符   补充      ENVIRON 当前环境属性拷贝列表，使用如 ENVIRON[&amp;quot;HOME&amp;quot;]    NF 当前记录行的列数    NR 已读记录行数，从1开始
+跨多文件    FNR 当前文件的已读记录行数    FILENAME 当前输入文件的名字    OFMT 输出数据格式
+默认为%.6g    RT 输出行分隔符
+默认同 RS    ARGC 命令行参数的数目    ARGIND 命令行中当前文件的位置(从0开始算)    ARGV 包含命令行参数的数组    CONVFMT 数字转换格式
+默认为%.6g    ERRNO 最后一个系统错误的描述    FIELDWIDTHS 字段宽度列表
+用空格键分隔    IGNORECASE 忽略大小写的匹配    RLENGTH 由 match 函数所匹配的字符串的长度    RSTART 由 match 函数所匹配的字符串的第一个位置    SUBSEP 数组下标分隔符
+默认为 /034    Printf.*    类型 变量 含义     基础      %c 字符
+若输入数字，则转为对应字符
+若输入为文本，则仅输出首字符    %d, %i 小数，整数    %e, %E [-]d.dddddde[&#43;-]dd 形式浮点数    %f, %F [-]ddd.dddddd 形式浮点数    %g, %G 彩 %e 和 %f 形式数据中短者    %o 无符号八进制数    %u 无符号十进制数    %s 字符文本    %x, %X 无符号十六进制数
+%X 则将使用大写字母显示    %% %   补充      - 左对齐    space 数值转换时，正值无符号，负数补-    &#43; 于宽度修饰符前使用，正数时补&#43;    # 修饰符，如八进制前补0，十六进制前补0x    0 数值显示时，值小于字段宽度时，补0    width 字段填充至指定宽度    .prec 指定数值的小数位精度    *.Functions  详见 Reference/ Man  Numeric String Time Bit Manipulations Type Internationalization   Example Data  cat netstat.log
+Active Internet connections (w/o servers) Proto Recv-Q Send-Q Local Address Foreign Address State tcp 1 0 localhost:59796 localhos:macromedia-fcs CLOSE_WAIT tcp 0 0 localhost:55125 localhost:mysql ESTABLISHED tcp 1 0 localhost:59184 localhos:macromedia-fcs CLOSE_WAIT tcp 0 0 iZ94nvigjtdZ:scp-config iZ94nvigjtdZ:35778 ESTABLISHED tcp 0 720149 localhost:47634 localhost:20100 FIN_WAIT1  netstat.log
+  Show  awk &#39;{print $1, $6}&#39; netstat.log
+Active Proto Foreign tcp CLOSE_WAIT tcp ESTABLISHED tcp CLOSE_WAIT tcp ESTABLISHED tcp FIN_WAIT1  Format  awk &#39;{printf &amp;quot;%-8s %-22s\n&amp;quot;, $1, $6}&#39; netstat.log
+Active Proto Foreign tcp CLOSE_WAIT tcp ESTABLISHED tcp CLOSE_WAIT tcp ESTABLISHED tcp FIN_WAIT1   Filter  awk &#39;$2&amp;gt;0 &amp;amp;&amp;amp; $6==&amp;quot;ESTABLISHED&amp;quot; &amp;amp;&amp;amp; $5 ~ /47400|42785/ || NR== 2 {printf &amp;quot;%&#43;d\t%20s\t%-20s\n&amp;quot;,$2,$5,$6}&#39; netstat.log | less
+&#43;0 Address Foreign &#43;205414 localhost:47400 ESTABLISHED &#43;223733 localhost:42785 ESTABLISHED   File  awk &#39;NR!= 1 { if($6 ~ /FIN_WAIT|ESTABLISHED|CLOSE_WAIT/) printf &amp;quot;%s\n&amp;quot;, $0 &amp;gt; $6;}&#39; ../netstat.log
+-rw-rw-r-- 1 appuser appuser 5840 Jul 11 16:31 CLOSE_WAIT -rw-rw-r-- 1 appuser appuser 41840 Jul 11 16:31 ESTABLISHED -rw-rw-r-- 1 appuser appuser 3280 Jul 11 16:31 FIN_WAIT1 -rw-rw-r-- 1 appuser appuser 480 Jul 11 16:31 FIN_WAIT2 awk -f sum.awk ../netstat.log
+ cat sum.awk
+#!/bin/awk -f BEGIN{ wait= 0 printf &amp;#34;TYPE NUM\n&amp;#34; printf &amp;#34;-------------------\n&amp;#34; } { wait&#43;=$6 ~ /WAIT/? 1: 0 printf &amp;#34;%10s\t%d\n&amp;#34;, $6, ($6 ~ /WAIT/? 1: 0) } END{ printf &amp;#34;--------------------\n&amp;#34; printf &amp;#34;\tWAIT.NUM:%10d\n\tWAIT.AVG: %10f\n&amp;#34;,wait, wait/NR } result
+TYPE NUM ------------------- 0 Foreign 0 CLOSE_WAIT 1 ESTABLISHED 0 .... CONNECTED 0 -------------------- WAIT.NUM: 136 WAIT.AVG: 0.176853   Reference Man  gawk.log  More  AWK 简明教程 linux awk命令详解 awk、nawk、mawk、gawk的简答介绍 Linux awk 命令 awk命令  </content>
+    </entry>
+    
+     <entry>
         <title>Hello.FFmpeg</title>
         <url>http://domain.yqjdcyy.com/post/hello.ffmpeg/</url>
         <categories>
@@ -1787,7 +1853,17 @@ SPAWN    -re
         <tags>
           <tag>Linux</tag>
         </tags>
-        <content type="html">  参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &amp;lt;进程名&amp;gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &amp;lt;文件号&amp;gt;  列出占用该文件号的进程  &#43;d &amp;lt;目录&amp;gt;  列出目录下被打开的文件  &#43;D &amp;lt;目录&amp;gt;  递归列出目录下被打开的文件  -n &amp;lt;目录&amp;gt;  列出使用NFS的文件  -i &amp;lt;条件&amp;gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &amp;lt;进程号&amp;gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more  Result | COMMAND | PID | TID | USER | FD | TYPE | DEVICE | SIZE/OFF | NODE | NAME | |&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| | 进程名称 | 进程标识符 | | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称 | | systemd | 1 | | root | cwd | unknown | | | | /proc/1/cwd(readlink: Permission denied) | FD  cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.  m86  DOS Merge mapped file;  mem  memory-mapped file;  mmap  memory-mapped device;  pd  parent directory;  rtd  root directory;  tr  kernel trace file (OpenBSD);  `v86 VP/ix mapped file; 0  表示标准输入  1  表示标准输出  2  表示标准错误一般在标准输出、标准错误、标准输入后还跟着文件状态模式- r、w、u等  u  表示该文件被打开并处于读取/写入模式  r  表示该文件被打开并处于只读模式  w  表示该文件被打开并处于只写模式  空格  表示该文件的状态模式为unknow，且未被锁定  -  表示该文件的状态模式为unknow，且被锁定,同时在文件状态模式后面，还跟着相关的锁  N  for a Solaris NFS lock of unknown type;  r  for read lock on part of the file;  R  for a read lock on the entire file;  w  for a write lock on part of the file;（文件的部分写锁）  W  for a write lock on the entire file;（整个文件的写锁）  u  for a read and write lock of any length;  U  for a lock of unknown type;  x  for an SCO OpenServer Xenix lock on part of the file;  X  for an SCO OpenServer Xenix lock on the entire file;  space  if there is no lock.   TYPE  DIR  表示目录  CHR  表示字符类型  BLK  块设备类型  UNIX  UNIX 域套接字  FIFO  先进先出 (FIFO) 队列  IPv4  网际协议 (IP) 套接字    lsof -i :6666 -r 3  每三秒查看端口占用情况  lsof error.log  查看指定文件的相关进程  lsof -u appuser | more  查看用户 appuser 打开的文件列表  lsof -c java | more  查看 Java 进程所打开的文件  lsof -p 12617 | more  查看 12617 进程所打开的文件  lsof -n -i tcp | grep LISTEN | less  查看处于连接状态的 TCP 连接   </content>
+        <content type="html">  参考  lsof 一切皆文件  功能  查看当前系统文件的工具 支持文件类型  普通文件 目录 网络文件系统的文件 字符或设备文件 函数共享库 管道、命名管道 符号链接 网络文件（NFS、Socket）   参数  -a  列出打开文件存在的进程  -c &amp;lt;进程名&amp;gt;  列出指定进程所打开的文件  -g  列出GID号进程详情  -d &amp;lt;文件号&amp;gt;  列出占用该文件号的进程  &#43;d &amp;lt;目录&amp;gt;  列出目录下被打开的文件  &#43;D &amp;lt;目录&amp;gt;  递归列出目录下被打开的文件  -n &amp;lt;目录&amp;gt;  列出使用NFS的文件  -i &amp;lt;条件&amp;gt;  列出符合条件的进程。（4、6、协议、:端口、 @ip）  -p &amp;lt;进程号&amp;gt;  列出指定进程号所打开的文件  -u  列出UID号进程详情  -h  显示帮助信息  -v  显示版本信息   示例  lsof | more
+ Result
+   COMMAND PID TID USER FD TYPE DEVICE SIZE/OFF NODE NAME     进程名称 进程标识符  进程所有者 文件描述符 文件类型 指定磁盘 文件大小 索引节点 打开文件的确切名称   systemd 1  root cwd unknown    /proc/1/cwd(readlink: Permission denied)    FD
+ cwd  表示current work dirctory，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改  txt  该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序  lnn  library references (AIX);  er  FD information error (see NAME column);  jld  jail directory (FreeBSD);  ltx  shared library text (code and data);  mxx  hex memory-mapped type number xx.  m86  DOS Merge mapped file;  mem  memory-mapped file;  mmap  memory-mapped device;  pd  parent directory;  rtd  root directory;  tr  kernel trace file (OpenBSD);  `v86 VP/ix mapped file; 0  表示标准输入  1  表示标准输出  2  表示标准错误一般在标准输出、标准错误、标准输入后还跟着文件状态模式- r、w、u等  u  表示该文件被打开并处于读取/写入模式  r  表示该文件被打开并处于只读模式  w  表示该文件被打开并处于只写模式  空格  表示该文件的状态模式为unknow，且未被锁定  -  表示该文件的状态模式为unknow，且被锁定,同时在文件状态模式后面，还跟着相关的锁  N  for a Solaris NFS lock of unknown type;  r  for read lock on part of the file;  R  for a read lock on the entire file;  w  for a write lock on part of the file;（文件的部分写锁）  W  for a write lock on the entire file;（整个文件的写锁）  u  for a read and write lock of any length;  U  for a lock of unknown type;  x  for an SCO OpenServer Xenix lock on part of the file;  X  for an SCO OpenServer Xenix lock on the entire file;  space  if there is no lock.   TYPE
+ DIR  表示目录  CHR  表示字符类型  BLK  块设备类型  UNIX  UNIX 域套接字  FIFO  先进先出 (FIFO) 队列  IPv4  网际协议 (IP) 套接字    lsof -i :6666 -r 3
+ 每三秒查看端口占用情况  lsof error.log
+ 查看指定文件的相关进程  lsof -u appuser | more
+ 查看用户 appuser 打开的文件列表  lsof -c java | more
+ 查看 Java 进程所打开的文件  lsof -p 12617 | more
+ 查看 12617 进程所打开的文件  lsof -n -i tcp | grep LISTEN | less
+ 查看处于连接状态的 TCP 连接   </content>
     </entry>
     
      <entry>

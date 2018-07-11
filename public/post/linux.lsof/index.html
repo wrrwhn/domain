@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">987 字 ~2分钟</span>
+<span class="leancloud-visitors-count">953 字 ~2分钟</span>
 </span>
       </div>
     </header>
@@ -254,15 +254,57 @@
 <h2 id="示例">示例</h2>
 
 <ul>
-<li><code>lsof | more</code>
+<li><p><code>lsof | more</code></p>
 
 <ul>
-<li>Result
-| COMMAND  |    PID     | TID |    USER    |     FD     |   TYPE   |  DEVICE  | SIZE/OFF |   NODE   |                   NAME                   |
-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
-| 进程名称 | 进程标识符 |     | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称                       |
-| systemd  | 1          |     | root       | cwd        | unknown  |          |          |          | /proc/1/cwd(readlink: Permission denied) |</li>
-<li>FD
+<li><p>Result</p>
+
+<table>
+<thead>
+<tr>
+<th>COMMAND</th>
+<th>PID</th>
+<th>TID</th>
+<th>USER</th>
+<th>FD</th>
+<th>TYPE</th>
+<th>DEVICE</th>
+<th>SIZE/OFF</th>
+<th>NODE</th>
+<th>NAME</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>进程名称</td>
+<td>进程标识符</td>
+<td></td>
+<td>进程所有者</td>
+<td>文件描述符</td>
+<td>文件类型</td>
+<td>指定磁盘</td>
+<td>文件大小</td>
+<td>索引节点</td>
+<td>打开文件的确切名称</td>
+</tr>
+
+<tr>
+<td>systemd</td>
+<td>1</td>
+<td></td>
+<td>root</td>
+<td>cwd</td>
+<td>unknown</td>
+<td></td>
+<td></td>
+<td></td>
+<td>/proc/1/cwd(readlink: Permission denied)</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>FD</p>
 
 <ul>
 <li><code>cwd</code>
@@ -422,7 +464,8 @@
 <li>if there is no lock.</li>
 </ul></li>
 </ul></li>
-<li>TYPE
+
+<li><p>TYPE</p>
 
 <ul>
 <li><code>DIR</code>
@@ -457,32 +500,38 @@
 </ul></li>
 </ul></li>
 </ul></li>
-<li><code>lsof -i :6666 -r 3</code>
+
+<li><p><code>lsof -i :6666 -r 3</code></p>
 
 <ul>
 <li><code>每三秒</code>查看<code>端口占用</code>情况</li>
 </ul></li>
-<li><code>lsof error.log</code>
+
+<li><p><code>lsof error.log</code></p>
 
 <ul>
 <li>查看指定<code>文件的相关进程</code></li>
 </ul></li>
-<li><code>lsof -u appuser | more</code>
+
+<li><p><code>lsof -u appuser | more</code></p>
 
 <ul>
 <li>查看用户 appuser 打开的文件列表</li>
 </ul></li>
-<li><code>lsof -c java | more</code>
+
+<li><p><code>lsof -c java | more</code></p>
 
 <ul>
 <li>查看 Java <code>进程所打开</code>的文件</li>
 </ul></li>
-<li><code>lsof -p 12617 | more</code>
+
+<li><p><code>lsof -p 12617 | more</code></p>
 
 <ul>
 <li>查看 12617 <code>进程所打开</code>的文件</li>
 </ul></li>
-<li><code>lsof -n -i tcp | grep LISTEN | less</code>
+
+<li><p><code>lsof -n -i tcp | grep LISTEN | less</code></p>
 
 <ul>
 <li>查看处于<code>连接状态的 TCP</code> 连接</li>
@@ -577,7 +626,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">223</span>
+        <span class="site-state-item-count">224</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>

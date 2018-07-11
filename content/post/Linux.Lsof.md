@@ -53,10 +53,12 @@ toc: true
 ## 示例
 - `lsof | more`
 	- Result
+
 		| COMMAND  |    PID     | TID |    USER    |     FD     |   TYPE   |  DEVICE  | SIZE/OFF |   NODE   |                   NAME                   |
 		|----------|------------|-----|------------|------------|----------|----------|----------|----------|------------------------------------------|
 		| 进程名称 | 进程标识符 |     | 进程所有者 | 文件描述符 | 文件类型 | 指定磁盘 | 文件大小 | 索引节点 | 打开文件的确切名称                       |
 		| systemd  | 1          |     | root       | cwd        | unknown  |          |          |          | /proc/1/cwd(readlink: Permission denied) |
+		
 	- FD
 		- `cwd`
 			- 表示`current work dirctory`，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改

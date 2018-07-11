@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 05 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.AWK</title>
+      <link>http://domain.yqjdcyy.com/post/linux.awk/</link>
+      <pubDate>Wed, 11 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.awk/</guid>
+      <description>Description AWK 1977年，贝尔实验室开发的文本处理神器 命名取自其创始人Alfred Aho、Peter Weinberger 和 Brian Kernighan 的姓的首字母 推荐书籍 《The AWK Programming Langu</description>
+    </item>
     
     <item>
       <title>Linux.Time</title>
