@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1095 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1175 字 ~3分钟</span>
 </span>
       </div>
     </header>
@@ -310,42 +310,43 @@ file[-r 24 -s 320:260].size= 1,824K</pre></div></li>
 <li><p>常用</p>
 
 <ul>
-<li><code>ffmpeg -i index.m3u8 [-c copy -bsf:a aac_adtstoasc] -y output.mp4</code>
-```sh
-Result
-  ts.time:    603.386| 10:03
-  mp4.time:   04:50.55
-  <strong>实际时长与转换后时长不一致</strong>
-      部分情况下出现</li>
+<li><code>ffmpeg -i index.m3u8 [-c copy -bsf:a aac_adtstoasc] -y output.mp4</code></li>
 </ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">  Result
+      ts.time:    <span style="color:#ae81ff">603</span>.386| <span style="color:#ae81ff">10</span>:03
+      mp4.time:   <span style="color:#ae81ff">04</span>:50.55
+      **实际时长与转换后时长不一致** 偶现
 
-<p>Error
-      Non-monotonous DTS in output stream 0:0; previous: 26142599, current: 24141600; changing to 26142600. This may result in incorrect timestamps in the output file.
-      ResultDuration is less than real duration</p>
+  Error
+      Non-monotonous DTS in output stream <span style="color:#ae81ff">0</span>:0; previous: <span style="color:#ae81ff">26142599</span>, current: <span style="color:#ae81ff">24141600</span>; changing to <span style="color:#ae81ff">26142600</span>. This may result in incorrect timestamps in the output file.
+      ResultDuration is less than real duration
 
-<p>Duration
+  Duration
       ffmpeg -i index.m3u8 -y output.mp4
-          1:53.81
+          <span style="color:#ae81ff">1</span>:53.81
       ffmpeg -i index.m3u8 -c copy -bsf:a aac_adtstoasc -y output.mp4
-          0:05.51
-  ```</p></li>
+          <span style="color:#ae81ff">0</span>:05.51</code></pre></div></li>
 
 <li><p>优化</p>
 
 <ul>
-<li>针对常用可能出现的 TS 片长度与 m3u8 文件中记录存在偏差，导致合成时长不足的异常</li>
+<li>针对常用可能出现的 TS 片长度与 m3u8 文件中记录值存在偏差，导致合成 <strong>时长不足</strong>的异常</li>
+<li><code>ffmpeg -i all.ts -codec copy -y output.mp4</code></li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">ls -v *.ts | grep <span style="color:#e6db74">&#34;[0-9]&#34;</span> | xargs cat &gt; all.ts
+    阿里云存在使用 <span style="color:#e6db74">`</span>ls<span style="color:#e6db74">`</span> 无法正常获取所有 ts 的偶然情况
 
-<li><p><code>ffmpeg -i all.ts -codec copy -y output.mp4</code></p>
-
+cat index.m3u8 | grep <span style="color:#e6db74">&#34;.ts&#34;</span> | xargs cat &gt; all.ts
+    兼容处理以上异常
+    针对 **大文件**，会有一定的 **效率提升**</code></pre></div>
 <ul>
-<li><code>ls -v *.ts | grep &quot;[0-9]&quot; | xargs cat &gt; all.ts</code></li>
-</ul></li>
+<li><p><code>ffmpeg -f concat -safe 0 -i list -codec copy -y output.mp4</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat index.m3u8 | grep <span style="color:#e6db74">&#34;.ts&#34;</span> | awk <span style="color:#e6db74">&#39;{printf &#34;file %s\n&#34;, $0}&#39;</span> &gt; list
+速度较 all.ts **慢差不多一倍**
+异常 ts 无法处理的情况
+    <span style="color:#ae81ff">0</span>.ts: Invalid data found when processing input</code></pre></div></li>
 
-<li><p><code>ffmpeg -f concat -safe 0 -i list -codec copy -y output.mp4</code></p></li>
-
-<li><p><code>cat index.m3u8 | grep &quot;.ts&quot; | awk '{printf &quot;file %s\n&quot;, $0}' &gt; list</code></p></li>
-
-<li><p>速度较 all.ts 慢差不多一倍，具体统计可见 <a href="https://github.com/yqjdcyy/Hello_Ffmpeg/blob/master/README.md#%E6%AF%94%E8%BE%83">补充 - all.ts 与 ts.list 方案对比</a></p></li>
+<li><p>效率可参见 <a href="https://github.com/yqjdcyy/Hello_Ffmpeg#%E6%AF%94%E8%BE%83">补充 - all.ts 与 ts.list 方案对比</a></p></li>
 </ul></li>
 
 <li><p>其它格式</p>

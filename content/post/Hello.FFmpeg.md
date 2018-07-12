@@ -100,12 +100,12 @@ toc: true
 ### M3U8 转
 - 常用
   - `ffmpeg -i index.m3u8 [-c copy -bsf:a aac_adtstoasc] -y output.mp4`
+
       ```sh
       Result
           ts.time:    603.386| 10:03
           mp4.time:   04:50.55
-          **实际时长与转换后时长不一致**
-              部分情况下出现
+          **实际时长与转换后时长不一致** 偶现
 
       Error
           Non-monotonous DTS in output stream 0:0; previous: 26142599, current: 24141600; changing to 26142600. This may result in incorrect timestamps in the output file.
@@ -119,13 +119,28 @@ toc: true
       ```
 
 - 优化
-  - 针对常用可能出现的 TS 片长度与 m3u8 文件中记录存在偏差，导致合成时长不足的异常
+  - 针对常用可能出现的 TS 片长度与 m3u8 文件中记录值存在偏差，导致合成 **时长不足**的异常
   - `ffmpeg -i all.ts -codec copy -y output.mp4`
-      - `ls -v *.ts | grep "[0-9]" | xargs cat > all.ts`
+
+    ```sh
+    ls -v *.ts | grep "[0-9]" | xargs cat > all.ts
+        阿里云存在使用 `ls` 无法正常获取所有 ts 的偶然情况
+
+    cat index.m3u8 | grep ".ts" | xargs cat > all.ts
+        兼容处理以上异常
+        针对 **大文件**，会有一定的 **效率提升**
+    ```
 
   - `ffmpeg -f concat -safe 0 -i list -codec copy -y output.mp4`
-    - `cat index.m3u8 | grep ".ts" | awk '{printf "file %s\n", $0}' > list`
-    - 速度较 all.ts 慢差不多一倍，具体统计可见 [补充 - all.ts 与 ts.list 方案对比](https://github.com/yqjdcyy/Hello_Ffmpeg/blob/master/README.md#%E6%AF%94%E8%BE%83)
+    ```sh
+    cat index.m3u8 | grep ".ts" | awk '{printf "file %s\n", $0}' > list
+        速度较 all.ts **慢差不多一倍**
+        异常 ts 无法处理的情况
+            0.ts: Invalid data found when processing input
+    ```
+
+  - 效率可参见 [补充 - all.ts 与 ts.list 方案对比](https://github.com/yqjdcyy/Hello_Ffmpeg#%E6%AF%94%E8%BE%83)
+
 
 - 其它格式
   - `ffmpeg -i index.m3u8 -vcodec libvpx -acodec vorbis -strict -2 -ac 2 -ar 22050 -ab 24k -y common.webm`
