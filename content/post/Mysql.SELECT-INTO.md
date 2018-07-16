@@ -50,13 +50,15 @@ toc: true
 
 ## 实例
 - VAR_LIST
-    ```
+
+    ```sql
     SELECT id, data INTO @x, @y FROM test.t1 LIMIT 1;
     ```
 
 - OUTFILE
     - 查看权限目录
-        ```
+
+        ```sql
         mysql> show variables like 'datadir';
         +---------------+-------------------+
         | Variable_name | Value             |
@@ -64,8 +66,10 @@ toc: true
         | datadir       | /data/mysql/data/ |
         +---------------+-------------------+
         ```
+
     - 导出数据
-        ```
+
+        ```sql
         select e.id, e.name, q.id, q.content, o.content, o.true_flag, u.user_name, if(a.option_id is not null, if(a.option_id= o.id, o.content, ''), a.reply) as reply
         INTO OUTFILE '/data/mysql/tmp/2758.txt'
         from question_options o
@@ -75,8 +79,10 @@ toc: true
             left join user u on a.user_id = u.id
         order by e.id, q.id, a.user_id;
         ```
+
     - 格式化导出数据
-        ```
+
+        ```sql
         select e.id, q.id, u.user_name, if(a.option_id is not null, o.content , a.reply) as reply
             INTO OUTFILE '/data/mysql/data/2758.txt'
                 COLUMNS ENCLOSED BY '|'
@@ -93,7 +99,8 @@ toc: true
 ## 补充
 ### 导入数据
 - 语句
-    ```
+
+    ```sql
     load data infile '/tmp/t0.txt'
     ignore into table t0
         character set gbk
@@ -102,6 +109,7 @@ toc: true
         lines terminated by '\n'
     (`name`,`age`,`description`);
     ```
+
 - 指令
     - `character set gbk `
         - 必输，避免乱码
