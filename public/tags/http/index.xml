@@ -6,10 +6,28 @@
     <description>Recent content in Http on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 11 Dec 2016 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTTP.Header.Connection</title>
+      <link>http://domain.yqjdcyy.com/post/http.header.connection/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/http.header.connection/</guid>
+      <description>Introduce 作用 指定网络连接于请求完成后保持连接，允许同一服务器对后续请求的处理 使 客户端到 服务器端的连接持续有效，当出现对服务器的后继请求时，Keep</description>
+    </item>
+    
+    <item>
+      <title>HTTP.Header.Keep-Alive</title>
+      <link>http://domain.yqjdcyy.com/post/http.header.keep-alive/</link>
+      <pubDate>Wed, 18 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/http.header.keep-alive/</guid>
+      <description>Introduce 参见 HTTP.Header.Connection Parameters timeout 指明空闲链接的 最短保持链接 时间 单位为秒 当 TCP 未设置保持连接时，超时时长比 TCP 超时时长更长情况下则忽略 max 指明关闭前 最多可请求的 次数 Example HTTP/1.1</description>
+    </item>
     
     <item>
       <title>HTTP.协议相关</title>
