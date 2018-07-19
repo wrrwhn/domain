@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Java8 on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/java8/</link>
+    <description>Recent content in Java8 on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/java8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java.FunctionInterface</title>
+      <link>http://domain.yqjdcyy.com/post/java.functioninterface/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.functioninterface/</guid>
+      <description>Effect 用于在 Java 8 中 支持 Lambda 表达式 Java8 中新特性 Introduce Function.Interface 接口 只有一个抽象方法 SAM 接口（Single Abstract Method interfaces） Annotation @FunctionalInterface 用于 检测编译级错误 提醒编译器 检</description>
+    </item>
+    
+  </channel>
+</rss>

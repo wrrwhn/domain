@@ -60,7 +60,7 @@ toc: true
 - else
 - for
 - if
-- instanceof
+- instanceofinstanceof
 	- The instanceof keyword is used to **determine the class** of an object
 	- node instanceof TreeNode
 		- node 为 **TreeNode或其子类的实例** 情况下，均返回 true

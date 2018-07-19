@@ -90,7 +90,7 @@ toc: true
 ## List
 - description
 	- extends Collection
-	- **排序**数据，允许**重复**或**空**
+	- **排序**数据，允许 **重复**或 **空**
 - methods
 	- operate
 	    - get(int index)

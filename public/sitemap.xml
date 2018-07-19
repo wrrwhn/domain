@@ -2,6 +2,18 @@
 <search>
     
      <entry>
+        <title>Java.FunctionInterface</title>
+        <url>http://domain.yqjdcyy.com/post/java.functioninterface/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Java8</tag>
+        </tags>
+        <content type="html">  Effect  用于在 Java 8 中 支持 Lambda 表达式 Java8 中新特性  Introduce Function.Interface  接口 只有一个抽象方法  SAM 接口（Single Abstract Method interfaces）   Annotation  @FunctionalInterface  用于 检测编译级错误  提醒编译器 检测接口是否 有且仅有一个抽象方法 对是否支持函数式接口 无影响    Situation.allow  定义 默认方法 定义 静态方法 覆盖实现 Object.public 方法 声明可检查异常  List  java.lang.Runnable  public abstract void run()  java.util.Comparator  int compare(T o1, T o2)  java.util.concurrent.Callable  V call() throws Exception   Change Interface.Default  为 Iterable/ Collection 增加方法  为保障接口的向后兼容，增加了 default function   Example Define&amp;amp; Use - Define @FunctionalInterface public interface FInterface { // 抽象方法  void print(); // 默认方法  default void printDefault() { System.out.println(&amp;#34;FInterface.default&amp;#34;); } // 静态方法  static Object printStatic() { System.out.println(&amp;#34;FInterface.static&amp;#34;); return &amp;#34;&amp;#34;; } // 覆盖 Object 的 public 方法  @Override String toString(); } - Use public static void main(String[] args) { FInterface fi = () -&amp;gt; System.out.println(&amp;#34;FInterface.print&amp;#34;); fi.print(); fi.printDefault(); FInterface.printStatic(); System.out.println(fi); } Iterable.default-function public interface Iterable&amp;lt;T&amp;gt; { **default** void forEach(Consumer&amp;lt;? super T&amp;gt; action) { Objects.requireNonNull(action); for (T t : this) { action.accept(t); } } } Reference  什么是函数式接口（Functional Interface） Java 8函数式接口functional interface的秘密 Java8学习笔记（1） &amp;ndash; 从函数式接口说起 Java 8 函数式接口  </content>
+    </entry>
+    
+     <entry>
         <title>HTTP.Header.Connection</title>
         <url>http://domain.yqjdcyy.com/post/http.header.connection/</url>
         <categories>
@@ -1245,7 +1257,7 @@ flow   break
  else
  for
  if
- instanceof
+ instanceofinstanceof
  The instanceof keyword is used to determine the class of an object node instanceof TreeNode  node 为 TreeNode或其子类的实例 情况下，均返回 true   return
  while
   package  import package  primitive  boolean byte char double float int long short  error  assert try catch finally throw throws  enumeration  enum  other  super this void  unused  const goto  Reference  官方  Java Language Keywords JavaKeywordReference.pdf List of Java keywords  补充  java native关键字 ava中的strictfp关键字 Java transient关键字使用小记 Java并发编程：volatile关键字解析 Java 8 默认方法（Default Methods）   </content>
@@ -1651,7 +1663,7 @@ GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 Copyright (C) 2007 Free Softw
         <tags>
           <tag>思考</tag>
         </tags>
-        <content type="html">  技术  Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 Java7&amp;amp; 8 深入Java虚拟机 算法  思考  凯文·凯利  失控  沈君山  浮生三记 浮生再记  丁文江  少数人的责任  黄仁宇  万历十五年  尼尔.波兹曼  娱乐至死  史铁生  我与地坛   金融相关  罗伯特·清崎和莎朗·L·莱希特  穷爸爸与富爸爸  朱宁  投资者的敌人  格林斯潘  动荡的世界：风险、人性与未来的前景   </content>
+        <content type="html">  技术  Java7&amp;amp; 8 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 深入Java虚拟机 算法  思考  凯文·凯利  失控  沈君山  浮生三记 浮生再记  丁文江  少数人的责任  黄仁宇  万历十五年  尼尔.波兹曼  娱乐至死  史铁生  我与地坛   金融相关  罗伯特·清崎和莎朗·L·莱希特  穷爸爸与富爸爸  朱宁  投资者的敌人  格林斯潘  动荡的世界：风险、人性与未来的前景   </content>
     </entry>
     
      <entry>
@@ -3454,7 +3466,7 @@ public class ReflectionTest { //测试变更属性，其中为了直观调用属
           <tag>Java</tag>
         </tags>
         <content type="html">  [TOC]
-Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;? super T&amp;gt; action)   Collection  methods  check  contains(Object o) retainAll(Collection&amp;lt;?&amp;gt; c)  stream  iterator() Object[] toArray()  operate  add(E e) remove(Object o) addAll(Collection&amp;lt;? extends E&amp;gt; c) removeAll(Collection&amp;lt;?&amp;gt; c) clear()    List  description  extends Collection 排序数据，允许重复或空  methods  operate  get(int index) set(int index, E element) add(int index, E element) remove(int index) indexOf(Object o) lastIndexOf(Object o) containsAll(Collection&amp;lt;?&amp;gt; c) addAll(int index, Collection&amp;lt;? extends E&amp;gt; c) default void replaceAll(UnaryOperator operator) sort(Comparator&amp;lt;? super E&amp;gt; c)  stream  subList(int fromIndex, int toIndex)    AbstractCollection  description  最小接口框架  methods  abstract Iterator iterator() abstract int size() add(E e) {throw new UnsupportedOperationException();}   AbstractList  description  随机存取的最小框架 不强制要求提供 iterator 实现  methods  subList(int fromIndex, int toIndex) removeRange(int fromIndex, int toIndex)   Vector  description    params    methods        Reference  []() []() []() []() []() []()  </content>
+Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;? super T&amp;gt; action)   Collection  methods  check  contains(Object o) retainAll(Collection&amp;lt;?&amp;gt; c)  stream  iterator() Object[] toArray()  operate  add(E e) remove(Object o) addAll(Collection&amp;lt;? extends E&amp;gt; c) removeAll(Collection&amp;lt;?&amp;gt; c) clear()    List  description  extends Collection 排序数据，允许 重复或 空  methods  operate  get(int index) set(int index, E element) add(int index, E element) remove(int index) indexOf(Object o) lastIndexOf(Object o) containsAll(Collection&amp;lt;?&amp;gt; c) addAll(int index, Collection&amp;lt;? extends E&amp;gt; c) default void replaceAll(UnaryOperator operator) sort(Comparator&amp;lt;? super E&amp;gt; c)  stream  subList(int fromIndex, int toIndex)    AbstractCollection  description  最小接口框架  methods  abstract Iterator iterator() abstract int size() add(E e) {throw new UnsupportedOperationException();}   AbstractList  description  随机存取的最小框架 不强制要求提供 iterator 实现  methods  subList(int fromIndex, int toIndex) removeRange(int fromIndex, int toIndex)   Vector  description    params    methods        Reference  []() []() []() []() []() []()  </content>
     </entry>
     
      <entry>
@@ -3681,14 +3693,7 @@ var gopherType string func init() { const ( defaultGopher = &amp;#34;pocket&amp;
         <tags>
           <tag>Java</tag>
         </tags>
-        <content type="html">  分类 Throwable Exception  ReflectiveOperationException  NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException  CloneNotSupportedException InterruptedException  ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException  IllegalThreadStateException NumberFormatException  SecurityException  RuntimeException  ArithmeticException TypeNotPresentException IndexOutOfBoundsException  ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException  NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException  IOException
- SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException  NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException  InterruptedIOException UTFDataFormatException FileNotFoundException EOFException
-Error  VirtualMachineError
- InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath
- AssertionError
- LinkageError
- UnsatisfiedLinkError NoClassDefFoundError VerifyError IncompatibleClassChangeError  InstantiationError NoSuchFieldError NoSuchMethodError AbstractMethodError IllegalAcessError  BootstrapMethodError ExceptionInInitializerError ClassFormatError  UnsupportedClassVersionError  ClassCircularityError  IOError
-  明细 Throwable  简介  所有错误和异常的基类 仅该类实例可被 JVM 抛出或于声明中抛出 设计中包含 cause 的原因  底层定义异常类型，顶层描述报错位置和具体异常原因 设计上提醒开发者注意异常，并进行捕获处理，而非直接抛出   方法  Throwable(String message) getMessage()  明细消息  getLocalizedMessage()  局部描述，子类重写该方法  toString()
+        <content type="html">  分类 Throwable Exception  ReflectiveOperationException  NoSuchMethodException IllegalAccessException NoSuchFieldException InstantiationException ClassNotFoundException  CloneNotSupportedException InterruptedException  ClassCastException EnumConstantNotPresentException IllegalStateException NullPointException IllegalMonitorStateException IllegalArgumentException  IllegalThreadStateException NumberFormatException  SecurityException  RuntimeException  ArithmeticException TypeNotPresentException IndexOutOfBoundsException  ArrayIndexoutOfBoundsExxception StringIndexoutOfBoundsException  NegativeArraySizeException ArrayStoreException UnsupportedOperationException UnCheckIOException  IOException  SyncFailedException CharConversionException UnsupportedEncodingException ObjectStreamException  NotSerializableException InvalidObjectException NotActiveException InvalidClassException WriteAbortedException StreamCorruptedException OptionDataException  InterruptedIOException UTFDataFormatException FileNotFoundException EOFException    Error  VirtualMachineError  InternalError StackOverflowError UnknownError OutOfMemoryError  ThreadDeath AssertionError LinkageError  UnsatisfiedLinkError NoClassDefFoundError VerifyError IncompatibleClassChangeError  InstantiationError NoSuchFieldError NoSuchMethodError AbstractMethodError IllegalAcessError  BootstrapMethodError ExceptionInInitializerError ClassFormatError  UnsupportedClassVersionError  ClassCircularityError  IOError  明细 Throwable  简介  所有错误和异常的基类 仅该类实例可被 JVM 抛出或于声明中抛出 设计中包含 cause 的原因  底层定义异常类型，顶层描述报错位置和具体异常原因 设计上提醒开发者注意异常，并进行捕获处理，而非直接抛出   方法  Throwable(String message) getMessage()  明细消息  getLocalizedMessage()  局部描述，子类重写该方法  toString()
  printStackTrace() printStackTrace(PrintStream s)   Exception  描述
  分类  检查型异常  编译器要求程序必须捕获或声明抛出异常  非检查型异常 | 运行时异常   方法
  Exception() Exception(String message)   Error  描述  编译时错误 | 系统错误  方法  Error() Error(String message)   </content>

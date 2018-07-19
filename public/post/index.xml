@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jul 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.FunctionInterface</title>
+      <link>http://domain.yqjdcyy.com/post/java.functioninterface/</link>
+      <pubDate>Thu, 19 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.functioninterface/</guid>
+      <description>Effect 用于在 Java 8 中 支持 Lambda 表达式 Java8 中新特性 Introduce Function.Interface 接口 只有一个抽象方法 SAM 接口（Single Abstract Method interfaces） Annotation @FunctionalInterface 用于 检测编译级错误 提醒编译器 检</description>
+    </item>
     
     <item>
       <title>HTTP.Header.Connection</title>
@@ -710,7 +719,7 @@
       <pubDate>Mon, 12 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E9%98%85%E8%AF%BB%E6%B8%85%E5%8D%95-2018/</guid>
-      <description>技术 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 Java7&amp;amp; 8 深入Java虚拟机 算法 思考 凯文·凯利 失控 沈君山 浮生三记 浮生再记 丁文江 少数人的责任 黄仁宇 万历十</description>
+      <description>技术 Java7&amp;amp; 8 Apache Common/ Guava 等常用工具类 JVM Java并发编程实践 深入Java虚拟机 算法 思考 凯文·凯利 失控 沈君山 浮生三记 浮生再记 丁文江 少数人的责任 黄仁宇 万历十</description>
     </item>
     
     <item>
