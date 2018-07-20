@@ -126,7 +126,7 @@ toc: true
 
 ## Vector
 - description
-    - 
+    - 可增长数组，自动进行扩容、收缩
 - params
     - 
 - methods
