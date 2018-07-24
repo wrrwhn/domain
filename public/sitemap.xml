@@ -2,6 +2,34 @@
 <search>
     
      <entry>
+        <title>我与地坛</title>
+        <url>http://domain.yqjdcyy.com/post/%E6%88%91%E4%B8%8E%E5%9C%B0%E5%9D%9B/</url>
+        <categories>
+          <category>阅读</category>
+        </categories>
+        <tags>
+          <tag>思考</tag>
+        </tags>
+        <content type="html">  作者 史铁生 经历  1951年1月4日生于北京 1969年1月13日18岁时上山下乡运动展开，自愿到陕北延安农村插队 1969年4月因腰腿病返京治病，6月回村，生产队照顾他，让他担任饲养员，放牛喂牛 1971年9月，史铁生腰疼加重，回北京治病 1972年1月5日住友谊医院，一年有半，治疗结束之时即轮椅生涯开始之日 1981年因患肾病回家疗养后从事写作 1998年被确诊为尿毒症 2010年12月31日凌晨3点46分，因突发脑溢血在北京宣武医院去世  根据他的遗愿，不举行遗体告别仪式，器官捐献给医学研究 31日凌晨6时许，其肝脏已移植给天津的一位病人   作品&amp;amp;荣誉  1979年发表第一篇小说《法学教授及其夫人》 成名作是《我的遥远的清平湾》，获1983年全国优秀短篇小说奖 小说《老屋小记》获首届鲁迅文学奖 2002年获华语文学传媒大奖年度杰出成就奖  《病隙碎笔》（之六）获首届“老舍散文奖”一等奖  2009年荣获首届残疾人“绽放文学艺术成就奖”  经典  一个人，出 生了，这就不再是一个可以辩论的问题，而只是上帝交给他的一个 事实；
+上帝在交给我们这件事实的时候，已经顺便保证了它的结果，所以 死是一件不必急于求成的事，死是一个必然会降临的节日。
+  由谁去充任那些苦难的角色？又有谁去体现这世间的幸福，骄傲和快乐?
+只好听凭偶然，是没有道理好讲的。
+  因为人想活着，说到底是这么回事，人真正的名字叫作：欲望。
+  在人为灵魂的安宁寻找种种理由的过程即是写作行为，不非用纸笔不可。
+值生而写作如春雨点滴，向死而作则如惊天雷鸣 他们（像鲁迅那样）爱极了也恨透了，别的办法没有便洒一天一地自己的鲜血，用纯真的眼睛问每一个人：你们看到了吗？
+  三种文学：纯文学、严肃文学和通俗文学
+纯文学是面对着人本的困境。
+人当然不可能无视社会、政治、阶级，严肃文学便是侧重于这一层面。
+通俗文学主要是为着人的娱乐需要，人不能没有娱乐。
+  现实主义的写作方法，源于现实反映现实
+它是把形式和内容分开来对待的，认为内容就是内容是第一位的，形式单是形式位在其次，最多赞成内容与形式的和谐
+  中国的文化传统中，有一种怕孩子长大失了质朴干脆就 不让孩子长大的倾向，这是极糟糕的事。
+  人的根本标志是精神，所以人道主义应是主要对此而言。
+  所谓“空观人道主义”大概是说：目的皆是虚空，人生只有一个实在的过程，在此过程中唯有实现精神的步步升华才是意义之所在。
+ </content>
+    </entry>
+    
+     <entry>
         <title>Java.FunctionInterface</title>
         <url>http://domain.yqjdcyy.com/post/java.functioninterface/</url>
         <categories>
@@ -3466,7 +3494,12 @@ public class ReflectionTest { //测试变更属性，其中为了直观调用属
           <tag>Java</tag>
         </tags>
         <content type="html">  [TOC]
-Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;? super T&amp;gt; action)   Collection  methods  check  contains(Object o) retainAll(Collection&amp;lt;?&amp;gt; c)  stream  iterator() Object[] toArray()  operate  add(E e) remove(Object o) addAll(Collection&amp;lt;? extends E&amp;gt; c) removeAll(Collection&amp;lt;?&amp;gt; c) clear()    List  description  extends Collection 排序数据，允许 重复或 空  methods  operate  get(int index) set(int index, E element) add(int index, E element) remove(int index) indexOf(Object o) lastIndexOf(Object o) containsAll(Collection&amp;lt;?&amp;gt; c) addAll(int index, Collection&amp;lt;? extends E&amp;gt; c) default void replaceAll(UnaryOperator operator) sort(Comparator&amp;lt;? super E&amp;gt; c)  stream  subList(int fromIndex, int toIndex)    AbstractCollection  description  最小接口框架  methods  abstract Iterator iterator() abstract int size() add(E e) {throw new UnsupportedOperationException();}   AbstractList  description  随机存取的最小框架 不强制要求提供 iterator 实现  methods  subList(int fromIndex, int toIndex) removeRange(int fromIndex, int toIndex)   Vector  description  可增长数组，自动进行扩容、收缩  params    methods        Reference  []() []() []() []() []() []()  </content>
+Structure Image    Text Iterable  Collection  List AbstractCollection  AbstractList  Vector  Stack  ArrayList SubList  RandomAccessSubList  AbstractSequentiaList  LinkedList   ArrayDeque AbstractQueue  PriorityQueue  AbstractSet  EnumSet  RegularEnumSet JumboEnumSet  TreeSet HashSet  LinkedHashSet    Queue Set  SortedSet  NavigableSet    ServiceLoader  Map  SortedMap  NavigableMap  Abstractmap  WeakHashMap IdentityHashMap EnumMap TreeMap HashMap  LinkedHashMap    Dictionary  Hashtable Properties  Utils  Collections Arrays  Tidy Iterable  methods  iterator() forEach(Consumer&amp;lt;? super T&amp;gt; action)   Collection  methods  check  contains(Object o) retainAll(Collection&amp;lt;?&amp;gt; c)  stream  iterator() Object[] toArray()  operate  add(E e) remove(Object o) addAll(Collection&amp;lt;? extends E&amp;gt; c) removeAll(Collection&amp;lt;?&amp;gt; c) clear()    List  description  extends Collection 排序数据，允许 重复或 空  methods  operate  get(int index) set(int index, E element) add(int index, E element) remove(int index) indexOf(Object o) lastIndexOf(Object o) containsAll(Collection&amp;lt;?&amp;gt; c) addAll(int index, Collection&amp;lt;? extends E&amp;gt; c) default void replaceAll(UnaryOperator operator) sort(Comparator&amp;lt;? super E&amp;gt; c)  stream  subList(int fromIndex, int toIndex)    AbstractCollection  description  最小接口框架  methods  abstract Iterator&amp;lt;E&amp;gt; iterator() abstract int size() add(E e) {throw new UnsupportedOperationException();}   AbstractList  description  随机存取的最小框架 不强制要求提供 iterator 实现  methods  subList(int fromIndex, int toIndex) removeRange(int fromIndex, int toIndex)   Vector  description  可增长数组，自动进行扩容、收缩 通过 capacity 和 capacityIncrement 来控制容量的变化 iterator 在检测到异常时快速失败  iterator创建后， vector 在结构上发生了调整 无法确保非同步情况下的修改同步  在不需要保障线程安全的情况下，推荐使用 ArrayList 代替  params  Object[] elementData int elementCount  容器实际使用情况  int capacityIncrement  容器单次扩容值，若为负数则每次扩容一倍  int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8  允许分配的数组 最大尺寸，预留操作系统将头数据存于数组的情况 分配更大的数据情况下，抛出 OutOfMemoryError  transient int modCount = 0  transient 保障序列化前后不影响该值   methods
+ iterator() elements() add(E e)
+ensureCapacityHelper(elementCount &#43; 1) int newCapacity = oldCapacity &#43; ((capacityIncrement &amp;gt; 0) ?capacityIncrement : oldCapacity); elementData[elementCount&#43;&#43;] = e;   Stack  description
+ params
+ methods
+  ArrayList  description params methods  SubList  description params methods  RandomAccessSubList  description params methods  AbstractSequentiaList  description params methods  LinkedList ArrayDeque AbstractQueue PriorityQueue AbstractSet EnumSet RegularEnumSet JumboEnumSet TreeSet HashSet LinkedHashSet Queue Set SortedSet NavigableSet Reference  []() []() []() []() []() []()  </content>
     </entry>
     
      <entry>

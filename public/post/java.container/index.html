@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">208 字 ~1分钟</span>
+<span class="leancloud-visitors-count">448 字 ~1分钟</span>
 </span>
       </div>
     </header>
@@ -336,14 +336,14 @@
 <li>operate
 
 <ul>
-<li>get(int index)</li>
-<li>set(int index, E element)</li>
-<li>add(int index, E element)</li>
-<li>remove(int index)</li>
+<li><code>get(int index)</code></li>
+<li><code>set(int index, E element)</code></li>
+<li><code>add(int index, E element)</code></li>
+<li><code>remove(int index)</code></li>
 <li><strong>indexOf(Object o)</strong></li>
-<li>lastIndexOf(Object o)</li>
-<li>containsAll(Collection&lt;?&gt; c)</li>
-<li>addAll(int index, Collection&lt;? extends E&gt; c)</li>
+<li><code>lastIndexOf(Object o)</code></li>
+<li><code>containsAll(Collection&lt;?&gt; c)</code></li>
+<li><code>addAll(int index, Collection&lt;? extends E&gt; c)</code></li>
 <li><strong>default void replaceAll(UnaryOperator<E> operator)</strong></li>
 <li><strong>sort(Comparator&lt;? super E&gt; c)</strong></li>
 </ul></li>
@@ -366,9 +366,9 @@
 <li>methods
 
 <ul>
-<li>abstract Iterator<E> iterator()</li>
-<li>abstract int size()</li>
-<li>add(E e) {throw new UnsupportedOperationException();}</li>
+<li><code>abstract Iterator&lt;E&gt; iterator()</code></li>
+<li><code>abstract int size()</code></li>
+<li><code>add(E e) {throw new UnsupportedOperationException();}</code></li>
 </ul></li>
 </ul>
 
@@ -384,8 +384,8 @@
 <li>methods
 
 <ul>
-<li>subList(int fromIndex, int toIndex)</li>
-<li>removeRange(int fromIndex, int toIndex)</li>
+<li><code>subList(int fromIndex, int toIndex)</code></li>
+<li><code>removeRange(int fromIndex, int toIndex)</code></li>
 </ul></li>
 </ul>
 
@@ -396,23 +396,126 @@
 
 <ul>
 <li>可增长数组，自动进行扩容、收缩</li>
+<li>通过 <code>capacity</code> 和 <code>capacityIncrement</code> 来控制容量的变化</li>
+<li><code>iterator</code> 在检测到异常时快速失败
+
+<ul>
+<li><code>iterator</code>创建后， <code>vector</code> 在结构上发生了调整</li>
+<li>无法确保非同步情况下的修改同步</li>
+</ul></li>
+<li>在不需要保障线程安全的情况下，推荐使用 <code>ArrayList</code> 代替</li>
 </ul></li>
 <li>params
 
 <ul>
-<li></li>
-</ul></li>
-<li>methods
+<li>Object[] elementData</li>
+<li>int elementCount
 
 <ul>
-<li></li>
-<li></li>
-<li>
+<li>容器实际使用情况</li>
+</ul></li>
+<li>int capacityIncrement
 
+<ul>
+<li>容器单次扩容值，若为负数则每次扩容一倍</li>
+</ul></li>
+<li>int MAX_ARRAY_SIZE = Integer.MAX_VALUE - 8
 
-<br /></li>
+<ul>
+<li>允许分配的数组 <strong>最大尺寸</strong>，预留操作系统将头数据存于数组的情况</li>
+<li>分配更大的数据情况下，抛出 <code>OutOfMemoryError</code></li>
+</ul></li>
+<li>transient int modCount = 0
+
+<ul>
+<li>transient 保障序列化前后不影响该值</li>
+</ul></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>iterator()</code></li>
+<li><code>elements()</code></li>
+
+<li><p><code>add(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">ensureCapacityHelper<span style="color:#f92672">(</span>elementCount <span style="color:#f92672">+</span> 1<span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">int</span> newCapacity <span style="color:#f92672">=</span> oldCapacity <span style="color:#f92672">+</span> <span style="color:#f92672">((</span>capacityIncrement <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">?</span>capacityIncrement <span style="color:#f92672">:</span> oldCapacity<span style="color:#f92672">);</span>
+elementData<span style="color:#f92672">[</span>elementCount<span style="color:#f92672">++]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span></code></pre></div></li>
 </ul></li>
 </ul>
+
+<h2 id="stack">Stack</h2>
+
+<ul>
+<li><p>description</p></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p></li>
+</ul>
+
+<h2 id="arraylist">ArrayList</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="sublist">SubList</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="randomaccesssublist">RandomAccessSubList</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="abstractsequentialist">AbstractSequentiaList</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="linkedlist">LinkedList</h2>
+
+<h2 id="arraydeque">ArrayDeque</h2>
+
+<h2 id="abstractqueue">AbstractQueue</h2>
+
+<h2 id="priorityqueue">PriorityQueue</h2>
+
+<h2 id="abstractset">AbstractSet</h2>
+
+<h2 id="enumset">EnumSet</h2>
+
+<h2 id="regularenumset">RegularEnumSet</h2>
+
+<h2 id="jumboenumset">JumboEnumSet</h2>
+
+<h2 id="treeset">TreeSet</h2>
+
+<h2 id="hashset">HashSet</h2>
+
+<h2 id="linkedhashset">LinkedHashSet</h2>
+
+<h2 id="queue">Queue</h2>
+
+<h2 id="set">Set</h2>
+
+<h2 id="sortedset">SortedSet</h2>
+
+<h2 id="navigableset">NavigableSet</h2>
 
 <h1 id="reference">Reference</h1>
 
@@ -513,7 +616,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">228</span>
+        <span class="site-state-item-count">229</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -579,6 +682,26 @@
 <li><a href="#abstractcollection">AbstractCollection</a></li>
 <li><a href="#abstractlist">AbstractList</a></li>
 <li><a href="#vector">Vector</a></li>
+<li><a href="#stack">Stack</a></li>
+<li><a href="#arraylist">ArrayList</a></li>
+<li><a href="#sublist">SubList</a></li>
+<li><a href="#randomaccesssublist">RandomAccessSubList</a></li>
+<li><a href="#abstractsequentialist">AbstractSequentiaList</a></li>
+<li><a href="#linkedlist">LinkedList</a></li>
+<li><a href="#arraydeque">ArrayDeque</a></li>
+<li><a href="#abstractqueue">AbstractQueue</a></li>
+<li><a href="#priorityqueue">PriorityQueue</a></li>
+<li><a href="#abstractset">AbstractSet</a></li>
+<li><a href="#enumset">EnumSet</a></li>
+<li><a href="#regularenumset">RegularEnumSet</a></li>
+<li><a href="#jumboenumset">JumboEnumSet</a></li>
+<li><a href="#treeset">TreeSet</a></li>
+<li><a href="#hashset">HashSet</a></li>
+<li><a href="#linkedhashset">LinkedHashSet</a></li>
+<li><a href="#queue">Queue</a></li>
+<li><a href="#set">Set</a></li>
+<li><a href="#sortedset">SortedSet</a></li>
+<li><a href="#navigableset">NavigableSet</a></li>
 </ul></li>
 <li><a href="#reference">Reference</a></li>
 </ul>
