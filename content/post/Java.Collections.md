@@ -1,5 +1,5 @@
 ---
-title: "Java.Container"
+title: "Java.Collections"
 date: "2017-08-09"
 categories:
  - "整理"
@@ -13,7 +13,7 @@ toc: true
 
 # Structure
 ## Image
-- ![java.container.png](http://otzm88f21.bkt.clouddn.com/32445d0d-3135-4eb3-a0f7-2217ff29d269.png)
+- ![java.collections.png](http://otzm88f21.bkt.clouddn.com/32445d0d-3135-4eb3-a0f7-2217ff29d269.png)
 
 ## Text
 ### Iterable
@@ -155,17 +155,64 @@ toc: true
 		```
 
 ## Stack
-
 - description
+	- 先进后出栈
 
-- params
 - methods
+	- `E push(E item)`
+	- `synchronized E pop()`
 
 ## ArrayList
 
 - description
+	- 可扩展队列，允许空值
+	- 添加元素花费固定时间 `O(n)`，其它操作为线性时间
+	- 不支持多线程同步
+		- 必须于外部扩展支持多线程
+		- 如 `List list = Collections.synchronizedList(new ArrayList(...));`
+	- iterator() 快速失败机制
+
 - params
+	- transient Object[] elementData
+		- 序列化时忽略该值，并通过 `(write|read)Object` 实现序列结果
+		- 保证序列时仅操作存储数据，而非完整数组
+	- protected transient int modCount = 0
+
 - methods
+	- `void ensureCapacity(int minCapacity)`
+
+		```java
+		if (minCapacity > minExpand) {
+            ensureExplicitCapacity(minCapacity){
+
+				if (minCapacity - elementData.length > 0)
+					grow(minCapacity){
+
+						int oldCapacity = elementData.length;
+						int newCapacity = oldCapacity + (**oldCapacity >> 1**);
+						if (newCapacity - minCapacity < 0)
+							newCapacity = minCapacity;
+						if (newCapacity - MAX_ARRAY_SIZE > 0)
+							newCapacity = hugeCapacity(minCapacity);
+						elementData = Arrays.copyOf(elementData, newCapacity);
+					}
+			}
+		}
+		```
+
+	- `void writeObject(java.io.ObjectOutputStream s)`
+	- `void readObject(java.io.ObjectInputStream s)`
+	- `void sort(Comparator<? super E> c)`
+
+		```java
+        final int expectedModCount = modCount;
+		// TODO
+        if (modCount != expectedModCount) {			// 判断是否值变更以确认是否有其它线程操作
+            throw new ConcurrentModificationException();
+        }
+        modCount++;
+		```
+
 
 ## SubList
 
@@ -205,9 +252,12 @@ toc: true
 
     
 # Reference
+## 
 - []()
 - []()
 - []()
-- []()
+
+## 
+- [ArrayList中elementData为什么被transient修饰？](https://blog.csdn.net/zero__007/article/details/52166306)
 - []()
 - []()
