@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">709 字 ~2分钟</span>
+<span class="leancloud-visitors-count">1689 字 ~4分钟</span>
 </span>
       </div>
     </header>
@@ -198,7 +198,7 @@
 <ul>
 <li>RandomAccessSubList</li>
 </ul></li>
-<li>AbstractSequentiaList
+<li>AbstractSequentialList
 
 <ul>
 <li>LinkedList</li>
@@ -227,7 +227,11 @@
 </ul></li>
 </ul></li>
 </ul></li>
-<li>Queue</li>
+<li>Queue
+
+<ul>
+<li>Deque</li>
+</ul></li>
 <li>Set
 
 <ul>
@@ -529,20 +533,273 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
 <h2 id="sublist">SubList</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li><p>description</p>
+
+<ul>
+<li>子列表的相关操作</li>
+</ul></li>
+
+<li><p>params</p>
+
+<ul>
+<li>final AbstractList<E> l
+
+<ul>
+<li>存储初始化列表</li>
+</ul></li>
+<li>final int offset
+
+<ul>
+<li>指定子列表相对初始化列表的开始位置</li>
+</ul></li>
+<li>int size
+
+<ul>
+<li>指定子列表的长度</li>
+</ul></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p>List.*</p>
+
+<ul>
+<li><p><code>E set(int var1, E var2)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> var1<span style="color:#f92672">,</span> E var2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">rangeCheck</span><span style="color:#f92672">(</span>var1<span style="color:#f92672">);</span>              <span style="color:#75715e">// check index out of boundary
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">checkForComodification</span><span style="color:#f92672">();</span>      <span style="color:#75715e">// check other thread update the structure
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">l</span><span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span>var1 <span style="color:#f92672">+</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">offset</span><span style="color:#f92672">,</span> var2<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h2 id="randomaccesssublist">RandomAccessSubList</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li><p>description</p>
+
+<ul>
+<li><code>SubList</code> 的重命名版</li>
+</ul></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p><code>RandomAccessSubList(AbstractList&lt;E&gt; list, int fromIndex, int toIndex)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RandomAccessSubList</span><span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">extends</span> SubList<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">implements</span> RandomAccess <span style="color:#f92672">{</span>
+        
+RandomAccessSubList<span style="color:#f92672">(</span>AbstractList<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> list<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> fromIndex<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> toIndex<span style="color:#f92672">){</span>
+    <span style="color:#66d9ef">super</span><span style="color:#f92672">(</span>list<span style="color:#f92672">,</span> fromIndex<span style="color:#f92672">,</span> toIndex<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul></li>
 </ul>
 
-<h2 id="abstractsequentialist">AbstractSequentiaList</h2>
+<h2 id="abstractsequentiallist">AbstractSequentialList</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>序列化访问列表的最小实现框架
+
+<ul>
+<li>而随机访问的则是 <code>AbstractList</code></li>
+</ul></li>
+<li>列表，需要实现 <code>listIterator</code> 和<code>size</code></li>
+<li>无法修改的列表，需实现 <code>hasNext</code>、<code>next</code>、<code>hasPrevious</code>、<code>previous</code>、<code>index</code></li>
+<li>可修改的列表，需实现 <code>set</code></li>
+<li>可变长列表，需实现 <code>remove</code>、<code>add</code></li>
+</ul></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p>
+
+<ul>
+<li>get|set|add|remove|addAll</li>
+<li><code>iterator()</code></li>
+<li><code>abstract ListIterator&lt;E&gt; listIterator(int index)</code></li>
+</ul></li>
+</ul>
+
+<h2 id="linkedlist">LinkedList</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>双向连接列表</li>
+<li>不支持同步操作
+
+<ul>
+<li>需在外部进行同步支持</li>
+<li>或使用 <code>synchronizedList</code>
+
+<ul>
+<li>于创建时使用，如 <code>List list = Collections.synchronizedList(new LinkedList(...));</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>params</p>
+
+<ul>
+<li><code>transient</code> int size = 0</li>
+<li><code>transient</code> Node<E> first</li>
+<li><code>transient</code> Node<E> last</li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>(link|unlink|get|remove|add)[(First|Last)]</code></li>
+
+<li><p><code>(write|read)Object</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">s<span style="color:#f92672">.</span><span style="color:#a6e22e">defaultWriteObject</span><span style="color:#f92672">();</span>
+s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span><span style="color:#f92672">(</span>size<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Node<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> first<span style="color:#f92672">;</span> x <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span> x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">)</span>
+    s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeObject</span><span style="color:#f92672">(</span>x<span style="color:#f92672">.</span><span style="color:#a6e22e">item</span><span style="color:#f92672">);</span></code></pre></div></li>
+
+<li><p><code>Node&lt;E&gt; node(int index)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>index <span style="color:#f92672">&lt;</span> <span style="color:#f92672">(</span>size <span style="color:#f92672">&gt;&gt;</span> 1<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+    Node<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> first<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> index<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span>
+        x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+    Node<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> x <span style="color:#f92672">=</span> last<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> size <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;</span> index<span style="color:#f92672">;</span> i<span style="color:#f92672">--)</span>
+        x <span style="color:#f92672">=</span> x<span style="color:#f92672">.</span><span style="color:#a6e22e">prev</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> x<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="arraydeque">ArrayDeque</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>可扩展数组</li>
+<li>非线程安全</li>
+<li>禁止添加 <code>Null</code></li>
+<li>比 <code>stack</code>、<code>LinkedList</code> <strong>更快</strong></li>
+</ul></li>
+
+<li><p>params</p>
+
+<ul>
+<li>transient Object[] elements</li>
+<li>transient int head</li>
+<li>transient int tail</li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p><code>private boolean delete(int i)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> Object<span style="color:#f92672">[]</span> elements <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">elements</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> mask <span style="color:#f92672">=</span> elements<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> h <span style="color:#f92672">=</span> head<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> t <span style="color:#f92672">=</span> tail<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> front <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">-</span> h<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> mask<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> back  <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>t <span style="color:#f92672">-</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> mask<span style="color:#f92672">;</span>
+
+<span style="color:#75715e">// 判断序列值是否超过实际长度
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>front <span style="color:#f92672">&gt;=</span> <span style="color:#f92672">((</span>t <span style="color:#f92672">-</span> h<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> mask<span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> ConcurrentModificationException<span style="color:#f92672">();</span>
+
+<span style="color:#75715e">// 判断序列值处于前半段或后半段，从而进行最小量的数量移动
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>front <span style="color:#f92672">&lt;</span> back<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>h <span style="color:#f92672">&lt;=</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> h<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> h <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> front<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Wrap around
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> i<span style="color:#f92672">);</span>
+        elements<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> elements<span style="color:#f92672">[</span>mask<span style="color:#f92672">];</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> h<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> h <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> mask <span style="color:#f92672">-</span> h<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    elements<span style="color:#f92672">[</span>h<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    head <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>h <span style="color:#f92672">+</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> mask<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&lt;</span> t<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Copy the null tail as well
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> i<span style="color:#f92672">,</span> back<span style="color:#f92672">);</span>
+        tail <span style="color:#f92672">=</span> t <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// Wrap around
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> i<span style="color:#f92672">,</span> mask <span style="color:#f92672">-</span> i<span style="color:#f92672">);</span>
+        elements<span style="color:#f92672">[</span>mask<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> elements<span style="color:#f92672">[</span>0<span style="color:#f92672">];</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">arraycopy</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">,</span> 1<span style="color:#f92672">,</span> elements<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> t<span style="color:#f92672">);</span>
+        tail <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>t <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> mask<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>private void allocateElements(int numElements)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>numElements <span style="color:#f92672">&gt;=</span> initialCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 转为最接近该值的 2^n 次数值
+</span><span style="color:#75715e"></span>    initialCapacity <span style="color:#f92672">=</span> numElements<span style="color:#f92672">;</span>
+    initialCapacity <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;&gt;&gt;</span>  1<span style="color:#f92672">);</span>
+    initialCapacity <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;&gt;&gt;</span>  2<span style="color:#f92672">);</span>
+    initialCapacity <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;&gt;&gt;</span>  4<span style="color:#f92672">);</span>
+    initialCapacity <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;&gt;&gt;</span>  8<span style="color:#f92672">);</span>
+    initialCapacity <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&gt;&gt;&gt;</span> 16<span style="color:#f92672">);</span>
+    initialCapacity<span style="color:#f92672">++;</span>
+
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>initialCapacity <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span>   <span style="color:#75715e">// Too many elements, must back off
+</span><span style="color:#75715e"></span>        initialCapacity <span style="color:#f92672">&gt;&gt;&gt;=</span> 1<span style="color:#f92672">;</span><span style="color:#75715e">// Good luck allocating 2 ^ 30 elements
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>public void addFirst(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">elements<span style="color:#f92672">[</span>head <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>head <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> <span style="color:#f92672">(</span>elements<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">)]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span></code></pre></div></li>
+
+<li><p><code>public void addLast(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">elements<span style="color:#f92672">[</span>tail<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span> <span style="color:#f92672">(</span>tail <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>tail <span style="color:#f92672">+</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> <span style="color:#f92672">(</span>elements<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">))</span> <span style="color:#f92672">==</span> head<span style="color:#f92672">)</span>
+    doubleCapacity<span style="color:#f92672">();</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="abstractqueue">AbstractQueue</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>队列的实现框架</li>
+<li>不允许空值，失败时直接抛出异常</li>
+</ul></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p><code>boolean add(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>offer<span style="color:#f92672">(</span>e<span style="color:#f92672">))</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#66d9ef">else</span>
+    <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Queue full&#34;</span><span style="color:#f92672">);</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="priorityqueue">PriorityQueue</h2>
+
+<ul>
+<li><p>description
+无限制优先级队列
+不允许空值、无法比较的对象</p></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p></li>
+</ul>
+
+<h2 id="abstractset">AbstractSet</h2>
 
 <ul>
 <li>description</li>
@@ -550,35 +807,153 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
 <li>methods</li>
 </ul>
 
-<h2 id="linkedlist">LinkedList</h2>
-
-<h2 id="arraydeque">ArrayDeque</h2>
-
-<h2 id="abstractqueue">AbstractQueue</h2>
-
-<h2 id="priorityqueue">PriorityQueue</h2>
-
-<h2 id="abstractset">AbstractSet</h2>
-
 <h2 id="enumset">EnumSet</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
 
 <h2 id="regularenumset">RegularEnumSet</h2>
 
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
 <h2 id="jumboenumset">JumboEnumSet</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
 
 <h2 id="treeset">TreeSet</h2>
 
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
 <h2 id="hashset">HashSet</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
 
 <h2 id="linkedhashset">LinkedHashSet</h2>
 
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
 <h2 id="queue">Queue</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>先进先出队列</li>
+</ul></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p>
+
+<ul>
+<li>boolean add(E e)
+
+<ul>
+<li>插入元素</li>
+<li>容量足够时返回 <code>true</code>，否则抛出 <code>IllegalStateException</code> 异常</li>
+</ul></li>
+<li>boolean offer(E e)
+
+<ul>
+<li>插入元素</li>
+<li>容量限制情况下，与 <code>add</code> 方法一样，无法插入时抛出异常</li>
+</ul></li>
+<li>E remove()
+
+<ul>
+<li>获取并移除队列头部</li>
+<li>队列空时 <strong>抛出异常</strong></li>
+</ul></li>
+<li>E poll()
+
+<ul>
+<li>获取并移除队列头部</li>
+<li>队列空时返回 null</li>
+</ul></li>
+<li>E element()
+
+<ul>
+<li>仅获取队列头部</li>
+<li>队列空时 <strong>抛出异常</strong></li>
+</ul></li>
+<li>E peek()
+
+<ul>
+<li>仅获取队列头部</li>
+<li>队列空时返回 null</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="deque">Deque</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>双端队列</li>
+<li>允许空值
+<br /></li>
+</ul></li>
+
+<li><p>params</p></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>(add|offer|remove|poll|get|peekLast)[First|Last]</code></li>
+<li><code>push/ pop</code></li>
+</ul></li>
+</ul>
 
 <h2 id="set">Set</h2>
 
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
 <h2 id="sortedset">SortedSet</h2>
 
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
 <h2 id="navigableset">NavigableSet</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods
+
+<br /></li>
+</ul>
 
 <h1 id="reference">Reference</h1>
 
@@ -590,6 +965,9 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
 
 <ul>
 <li><a href="https://blog.csdn.net/zero__007/article/details/52166306">ArrayList中elementData为什么被transient修饰？</a></li>
+<li><a href="http://cakin24.iteye.com/blog/2324030">rrayDeque集合的妙用</a></li>
+<li>[]()</li>
+<li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
 </ul>
@@ -682,7 +1060,7 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">230</span>
+        <span class="site-state-item-count">231</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -699,7 +1077,7 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">115</span>
+        <span class="site-state-item-count">116</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -752,7 +1130,7 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
 <li><a href="#arraylist">ArrayList</a></li>
 <li><a href="#sublist">SubList</a></li>
 <li><a href="#randomaccesssublist">RandomAccessSubList</a></li>
-<li><a href="#abstractsequentialist">AbstractSequentiaList</a></li>
+<li><a href="#abstractsequentiallist">AbstractSequentialList</a></li>
 <li><a href="#linkedlist">LinkedList</a></li>
 <li><a href="#arraydeque">ArrayDeque</a></li>
 <li><a href="#abstractqueue">AbstractQueue</a></li>
@@ -765,6 +1143,7 @@ modCount<span style="color:#f92672">++;</span></code></pre></div></li>
 <li><a href="#hashset">HashSet</a></li>
 <li><a href="#linkedhashset">LinkedHashSet</a></li>
 <li><a href="#queue">Queue</a></li>
+<li><a href="#deque">Deque</a></li>
 <li><a href="#set">Set</a></li>
 <li><a href="#sortedset">SortedSet</a></li>
 <li><a href="#navigableset">NavigableSet</a></li>
