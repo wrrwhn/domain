@@ -26,7 +26,7 @@ toc: true
 			- ArrayList
 			- SubList
 				- RandomAccessSubList
-			- AbstractSequentiaList
+			- AbstractSequentialList
 				- LinkedList
 		- ArrayDeque
 		- AbstractQueue
@@ -39,6 +39,7 @@ toc: true
 			- HashSet
 				- LinkedHashSet
 	- Queue
+		- Deque
 	- Set
 		- SortedSet
 			- NavigableSet
@@ -217,38 +218,330 @@ toc: true
 ## SubList
 
 - description
+	- 子列表的相关操作
+
 - params
+    - final AbstractList<E> l
+		- 存储初始化列表
+    - final int offset
+		- 指定子列表相对初始化列表的开始位置
+    - int size
+		- 指定子列表的长度
+
 - methods
+	- List.*
+		- `E set(int var1, E var2)`
+
+			```java
+			public E set(int var1, E var2) {
+				this.rangeCheck(var1);				// check index out of boundary
+				this.checkForComodification();		// check other thread update the structure
+				return this.l.set(var1 + this.offset, var2);
+			}
+			```
+
 
 ## RandomAccessSubList
 
 - description
+	- `SubList` 的重命名版
+
+- params
+
+- methods
+	- `RandomAccessSubList(AbstractList<E> list, int fromIndex, int toIndex)`
+
+		```java
+		class RandomAccessSubList<E> extends SubList<E> implements RandomAccess {
+        
+		RandomAccessSubList(AbstractList<E> list, int fromIndex, int toIndex){
+			super(list, fromIndex, toIndex);
+		}
+		```
+
+
+## AbstractSequentialList
+
+- description
+	- 序列化访问列表的最小实现框架
+		- 而随机访问的则是 `AbstractList`
+	- 列表，需要实现 `listIterator` 和`size`
+	- 无法修改的列表，需实现 `hasNext`、`next`、`hasPrevious`、`previous`、`index`
+	- 可修改的列表，需实现 `set`
+	- 可变长列表，需实现 `remove`、`add`
+
+- params
+
+- methods
+	- get|set|add|remove|addAll
+	- `iterator()`
+	- `abstract ListIterator<E> listIterator(int index)`
+
+
+## LinkedList
+
+- description
+	- 双向连接列表
+	- 不支持同步操作
+		- 需在外部进行同步支持
+		- 或使用 `synchronizedList`
+			- 于创建时使用，如 `List list = Collections.synchronizedList(new LinkedList(...));`
+
+- params
+	- `transient` int size = 0
+	- `transient` Node<E> first
+	- `transient` Node<E> last
+
+- methods
+	- `(link|unlink|get|remove|add)[(First|Last)]`
+	- `(write|read)Object`
+
+		```java
+		s.defaultWriteObject();
+		s.writeInt(size);
+		for (Node<E> x = first; x != null; x = x.next)
+            s.writeObject(x.item);
+		```
+
+	- `Node<E> node(int index)`
+
+		```java
+		if (index < (size >> 1)) {
+            Node<E> x = first;
+            for (int i = 0; i < index; i++)
+                x = x.next;
+            return x;
+        } else {
+            Node<E> x = last;
+            for (int i = size - 1; i > index; i--)
+                x = x.prev;
+            return x;
+        }
+		```
+
+## ArrayDeque
+
+- description
+	- 可扩展数组
+	- 非线程安全
+	- 禁止添加 `Null`
+	- 比 `stack`、`LinkedList` **更快**
+
+- params
+	- transient Object[] elements
+	- transient int head
+	- transient int tail
+
+- methods
+	- `private boolean delete(int i)`
+
+		```java
+		final Object[] elements = this.elements;
+        final int mask = elements.length - 1;
+        final int h = head;
+        final int t = tail;
+        final int front = (i - h) & mask;
+        final int back  = (t - i) & mask;
+
+        // 判断序列值是否超过实际长度
+        if (front >= ((t - h) & mask))
+            throw new ConcurrentModificationException();
+
+        // 判断序列值处于前半段或后半段，从而进行最小量的数量移动
+        if (front < back) {
+            if (h <= i) {
+                System.arraycopy(elements, h, elements, h + 1, front);
+            } else { // Wrap around
+                System.arraycopy(elements, 0, elements, 1, i);
+                elements[0] = elements[mask];
+                System.arraycopy(elements, h, elements, h + 1, mask - h);
+            }
+            elements[h] = null;
+            head = (h + 1) & mask;
+            return false;
+        } else {
+            if (i < t) { // Copy the null tail as well
+                System.arraycopy(elements, i + 1, elements, i, back);
+                tail = t - 1;
+            } else { // Wrap around
+                System.arraycopy(elements, i + 1, elements, i, mask - i);
+                elements[mask] = elements[0];
+                System.arraycopy(elements, 1, elements, 0, t);
+                tail = (t - 1) & mask;
+            }
+            return true;
+        }
+		```
+
+	- `private void allocateElements(int numElements)`
+
+		```java
+		if (numElements >= initialCapacity) {
+			// 转为最接近该值的 2^n 次数值
+            initialCapacity = numElements;
+            initialCapacity |= (initialCapacity >>>  1);
+            initialCapacity |= (initialCapacity >>>  2);
+            initialCapacity |= (initialCapacity >>>  4);
+            initialCapacity |= (initialCapacity >>>  8);
+            initialCapacity |= (initialCapacity >>> 16);
+            initialCapacity++;
+
+            if (initialCapacity < 0)   // Too many elements, must back off
+                initialCapacity >>>= 1;// Good luck allocating 2 ^ 30 elements
+        }
+		```
+
+	- `public void addFirst(E e)`
+
+		```java
+		elements[head = (head - 1) & (elements.length - 1)] = e;
+		```
+
+	- `public void addLast(E e)`
+		```java
+		elements[tail] = e;
+        if ( (tail = (tail + 1) & (elements.length - 1)) == head)
+            doubleCapacity();
+		```
+
+## AbstractQueue
+
+- description
+	- 队列的实现框架
+	- 不允许空值，失败时直接抛出异常
+
+- params
+- methods
+	- `boolean add(E e)`
+
+		```java
+		if (offer(e))
+            return true;
+        else
+            throw new IllegalStateException("Queue full");
+		```
+
+
+## PriorityQueue
+
+- description
+	无限制优先级队列
+	不允许空值、无法比较的对象
+
 - params
 - methods
 
 
-## AbstractSequentiaList
+## AbstractSet
 
 - description
 - params
 - methods
 
 
-## LinkedList
-## ArrayDeque
-## AbstractQueue
-## PriorityQueue
-## AbstractSet
 ## EnumSet
+
+- description
+- params
+- methods
+
+
 ## RegularEnumSet
+
+- description
+- params
+- methods
+
+
 ## JumboEnumSet
+
+- description
+- params
+- methods
+
+
 ## TreeSet
+
+- description
+- params
+- methods
+
+
 ## HashSet
+
+- description
+- params
+- methods
+
+
 ## LinkedHashSet
+
+- description
+- params
+- methods
+
+
+
 ## Queue
+
+- description
+	- 先进先出队列
+
+- params
+
+- methods
+	- boolean add(E e)
+		- 插入元素
+		- 容量足够时返回 `true`，否则抛出 `IllegalStateException` 异常
+	- boolean offer(E e)
+		- 插入元素
+		- 容量限制情况下，与 `add` 方法一样，无法插入时抛出异常
+	- E remove()
+		- 获取并移除队列头部
+		- 队列空时 **抛出异常**	
+	- E poll()
+		- 获取并移除队列头部
+		- 队列空时返回 null
+	- E element()
+		- 仅获取队列头部
+		- 队列空时 **抛出异常**
+	- E peek()
+		- 仅获取队列头部
+		- 队列空时返回 null
+
+## Deque
+
+- description
+	- 双端队列
+	- 允许空值
+	
+- params
+	
+- methods
+	- `(add|offer|remove|poll|get|peekLast)[First|Last]`
+	- `push/ pop`
+
+
+
 ## Set
+
+- description
+- params
+- methods
+
+
 ## SortedSet
+
+- description
+- params
+- methods
+
+
 ## NavigableSet
+
+- description
+- params
+- methods
 
     
 # Reference
@@ -259,5 +552,8 @@ toc: true
 
 ## 
 - [ArrayList中elementData为什么被transient修饰？](https://blog.csdn.net/zero__007/article/details/52166306)
+- [rrayDeque集合的妙用](http://cakin24.iteye.com/blog/2324030)
+- []()
+- []()
 - []()
 - []()
