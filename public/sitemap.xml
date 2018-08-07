@@ -2,6 +2,23 @@
 <search>
     
      <entry>
+        <title>FFmpeg.Upgrade</title>
+        <url>http://domain.yqjdcyy.com/post/ffmpeg.upgrade/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>FFMPEG</tag>
+        </tags>
+        <content type="html">  系统情况 cat /proc/version Linux version 3.10.0-123.9.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014  lsb_release -a LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.0.1406 (Core) Release: 7.0.1406 Codename: Core Make - Fail 情况  安装指定编解码器时，部分必须组件[FriBidi]无法正常安装，导致 FFmpeg 无法正常配置安装  流程 下载  到官网下载最新版本 解压安装 sh tar -jxvf ffmpeg-4.0.2.tar.bz2 -C ffmpeg-4.0.2 cd ffmpeg-4.0.2 &amp;amp;&amp;amp; ./configure --prefix=/usr/local/ffmpeg &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install  实际线上测试后发现少安装编码解码器  Unknown encoder &#39;libx264&#39;  重新安装并配置相关编解码器
+./configure \  --extra-cflags=&amp;#34;-I/usr/local/ffmpeg/include&amp;#34; \  --extra-ldflags=&amp;#34;-L/usr/local/ffmpeg/lib&amp;#34; \  --pkg-config-flags=&amp;#34;--static&amp;#34; \  --prefix=/usr/local/ffmpeg \  --disable-debug \  --enable-gpl \  --enable-libvorbis \  --enable-libvpx \  --enable-libx264 \  --enable-libx265 \  --enable-libmp3lame **ERROR: vorbis not found using pkg-config** 安装相关的必须组件
+ 详情可参照 FFmpeg-4.0 指令如下
+libogg wget http://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.gz tar xzvf libogg-1.3.3.tar.gz cd libogg-1.3.3 &amp;amp;&amp;amp;./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install make distclean libvorbis wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.6.tar.gz tar xzvf libvorbis-1.3.6.tar.gz cd libvorbis-1.3.6 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install make distclean fribidi wget https://github.com/fribidi/fribidi/releases/download/v1.0.5/fribidi-1.0.5.tar.bz2 tar xjf fribidi-1.0.5.tar.bz2 cd fribidi-1.0.5 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install // cd fribidi-1.0.5 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr&amp;#34; --disable-static &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install // cd fribidi-1.0.5 &amp;amp;&amp;amp; mkdir -p build &amp;amp;&amp;amp; cd build &amp;amp;&amp;amp; meson --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; .. &amp;amp;&amp;amp; ninja &amp;amp;&amp;amp; ninja stall // /usr/local/ffmpeg/lib/pkgconfig libass wget https://github.com/libass/libass/releases/download/0.14.0/libass-0.14.0.tar.xz tar xvJf libass-0.14.0.tar.xz cd libass-0.14.0 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install libass 需要 fribidi 0.19 以上版本，但已安装 1.0.5 却并未被识别到   FFmpeg-install - Success  下载脚本 - https://raw.githubusercontent.com/q3aql/ffmpeg-install/master/ffmpeg-install 更新脚本内参数「PATH_INSTALL」至你须安装路径  vim ffmpeg-install  调整权限  chmod 733 ffmpeg-install  安装
+# 查看帮助 ./ffmpeg-install -h ./ffmpeg-install: line 68: axel: command not found axel disabled ./ffmpeg-install: line 76: aria2c: command not found aria2c disabled ** ffmpeg-install v.1.2 ** * How to install: ffmpeg-install --install (Latest git version) ffmpeg-install --install release (Latest stable version) * How to update: ffmpeg-install --update (Latest git version) ffmpeg-install --update release (Latest stable version) * How to uninstall: ffmpeg-install --uninstall * Show help: ffmpeg --help # 安装最新稳定版本 ffmpeg-install --install release  补充
+ 使用 make 方式安装，执行文件路径为 /usr/local/ffmpeg/bin/ffmpeg 而使用 ffmpeg-install 被安装，执行文件路径为 /usr/local/ffmpeg，且无 include 等相关目录   参考 资源  FFmpeg 官方 FFmpeg-4.0  libogg-1.3.3 Ninja ninja-build/ninja-Release  xiph.org  教程  FFMpeg Install On CentOS 7  一键化部署，须按需更新脚本中的目录位置  在CentOS上编译安装FFmpeg  内有 Yum 安装和自行编译安装两种模式，后者有详尽的指令  2017年12月14日ubuntu下ffmpeg安装过程记录  </content>
+    </entry>
+    
+     <entry>
         <title>互联网产品的运营模式</title>
         <url>http://domain.yqjdcyy.com/post/%E4%BA%92%E8%81%94%E7%BD%91%E4%BA%A7%E5%93%81%E7%9A%84%E8%BF%90%E8%90%A5%E6%A8%A1%E5%BC%8F/</url>
         <categories>
@@ -16,8 +33,8 @@
 世界杯广告投放   高频非消费 日历、闹钟、播放器、新闻 使用频率高，但无付费意愿 增强体验、打造口碑 网易云音乐
 口碑提升后尝试于评论中插入广告   高频消费 外卖、打车 使用频率高且付费意愿强 活动、补贴 饿了么、滴滴
 会员机制、套餐   用户创建价值 UGC、社交、平台 本身内容、服务源自用户 用户生态搭建、种子用户运营 抖音、Instgram
-排序、人工审核     运营参考 曲线阅读    示例 工具类  快手   历史拐点  增加相框、画笔等玩法 性能效率优化 创建社区，增加社交、互动和关系建立功能  核心思路  体验 效率 社交场景打通    内容类  懂球帝   历史拐点  内部生成原创优质内容 在知乎推广其优质内容以吸引优质球迷用户 深度开发独特内容  助攻榜 杯赛榜   核心思路  内容品质 独特性 互动    社交类  微信   历史拐点  消息&#43; 语音 导入 QQ 已有好友 摇一摇、漂流瓶、附近的人  核心思路  关系链 氛围  比如本产品的用途，如陌陌  玩法    社区类  IN   历史拐点  内容质量 个性化塑造 话题  核心思路  氛围 内容质量 话题    平台类  滴滴   历史拐点  切强需求用户  偏远、叫车不易  交叉补贴  核心思路  细分价值点 交叉补贴    思考 产品形态  历程  初始定位为工具，意为演讲工具 后觉发展不易，上限明显，转型作教育型辅助工具 而后为了生存，进行平台尝试未果 最后发挥领导商务能力，转型为企业服务提供商  结论  工具类   运营方式  前提  自觉现在功能混杂，工具&#43; 机构&#43; 平台&#43; 企业服务，业务复杂，定位不清 觉得需先进行业务的划分，精简集中或业务分离  方式  工具角度  首先集中核心技术人员进行工具产品的抽离、优化 丰富工具的使用方式 提升用户体验，降低使用难度  服务提供  提升口碑，二次传播  目前较为薄弱，基本纯靠销售（总监级）堆  进行广告投放  百度推广，经费有限 但推广转化率较高  知乎、微博宣传  佛系推广，纯看运营人民     备注  公司组织报名学习 3节课，觉得思路、结构清晰，特记录如下 如有不当，请告知，当立即配合处理  # 参考 - 不同互联网产品背后的运营玩法
-</content>
+排序、人工审核     运营参考 曲线阅读    示例 工具类  快手   历史拐点  增加相框、画笔等玩法 性能效率优化 创建社区，增加社交、互动和关系建立功能  核心思路  体验 效率 社交场景打通    内容类  懂球帝   历史拐点  内部生成原创优质内容 在知乎推广其优质内容以吸引优质球迷用户 深度开发独特内容  助攻榜 杯赛榜   核心思路  内容品质 独特性 互动    社交类  微信   历史拐点  消息&#43; 语音 导入 QQ 已有好友 摇一摇、漂流瓶、附近的人  核心思路  关系链 氛围  比如本产品的用途，如陌陌  玩法    社区类  IN   历史拐点  内容质量 个性化塑造 话题  核心思路  氛围 内容质量 话题    平台类  滴滴   历史拐点  切强需求用户  偏远、叫车不易  交叉补贴  核心思路  细分价值点 交叉补贴    思考 产品形态  历程  初始定位为工具，意为演讲工具 后觉发展不易，上限明显，转型作教育型辅助工具 而后为了生存，进行平台尝试未果 最后发挥领导商务能力，转型为企业服务提供商  结论  工具类   运营方式  前提  自觉现在功能混杂，工具&#43; 机构&#43; 平台&#43; 企业服务，业务复杂，定位不清 觉得需先进行业务的划分，精简集中或业务分离  方式  工具角度  首先集中核心技术人员进行工具产品的抽离、优化 丰富工具的使用方式 提升用户体验，降低使用难度  服务提供  提升口碑，二次传播  目前较为薄弱，基本纯靠销售（总监级）堆  进行广告投放  百度推广，经费有限 但推广转化率较高  知乎、微博宣传  佛系推广，纯看运营人民     备注  公司组织报名学习 3节课，觉得思路、结构清晰，特记录如下 如有不当，请告知，当立即配合处理  # 参考
+ 不同互联网产品背后的运营玩法  </content>
     </entry>
     
      <entry>
@@ -3653,7 +3670,10 @@ if (offer(e)) return true; else throw new IllegalStateException(&amp;#34;Queue f
         <tags>
           <tag>Linux</tag>
         </tags>
-        <content type="html">  Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件  all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.c clean: rm -rf *.o test  make  gcc -c -Wall test.c gcc -c -Wall anotherTest.c gcc -Wall test.o anotherTest.o -o test  make clean  rm -rf *.o test   </content>
+        <content type="html">  Make 参考  例解 Linux 下 Make 命令  作用  编译和安装开源工具 管理大型复杂项目的编译  原理  配合 Makefile 文件进行文件与相应目标的对应操作 扫描 Makefile 找到目标及其依赖，并递归建立扫描、编译，后编译主目标 再次执行时，仅编译相关目标文件  参数  -B  让所有目标总是重新建立  -d  打印调试信息  -C  切换到指定目录执行  -f  指定 Makefile 配置文件名   示例  配置文件
+all: test test: test.o anotherTest.o gcc -Wall test.o anotherTest.o -o test test.o: test.c gcc -c -Wall test.c anotherTest.o: anotherTest.c gcc -c -Wall anotherTest.c clean: rm -rf *.o test make
+gcc -c -Wall test.c gcc -c -Wall anotherTest.c gcc -Wall test.o anotherTest.o -o test make clean
+rm -rf *.o test  </content>
     </entry>
     
      <entry>

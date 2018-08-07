@@ -34,24 +34,27 @@ toc: true
 
 ## 示例
 - 配置文件
-```
-all: test
-test: test.o anotherTest.o
-    gcc -Wall test.o anotherTest.o -o test
-test.o: test.c
-    gcc -c -Wall test.c
-anotherTest.o: anotherTest.c
-    gcc -c -Wall anotherTest.c
-clean:
-    rm -rf *.o test
-```
+
+    ```sh
+    all: test
+    test: test.o anotherTest.o
+        gcc -Wall test.o anotherTest.o -o test
+    test.o: test.c
+        gcc -c -Wall test.c
+    anotherTest.o: anotherTest.c
+        gcc -c -Wall anotherTest.c
+    clean:
+        rm -rf *.o test
+    ```
 - `make`
-```
-gcc -c -Wall test.c
-gcc -c -Wall anotherTest.c
-gcc -Wall test.o anotherTest.o -o test
-```
+
+    ```sh
+    gcc -c -Wall test.c
+    gcc -c -Wall anotherTest.c
+    gcc -Wall test.o anotherTest.o -o test
+    ```
 - `make clean`
-```
-rm -rf *.o test
-```
+
+    ```sh
+    rm -rf *.o test
+    ```

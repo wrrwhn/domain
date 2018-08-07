@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 26 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>FFmpeg.Upgrade</title>
+      <link>http://domain.yqjdcyy.com/post/ffmpeg.upgrade/</link>
+      <pubDate>Tue, 07 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/ffmpeg.upgrade/</guid>
+      <description>系统情况 cat /proc/version Linux version 3.10.0-123.9.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014 lsb_release -a LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.0.1406 (Core) Release: 7.0.1406 Codename: Core Make - Fail 情况 安装指定编解码器时，部分必须组件[Fri</description>
+    </item>
     
     <item>
       <title>厦门云开云有限公司</title>

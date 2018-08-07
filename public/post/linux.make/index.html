@@ -213,28 +213,24 @@
 <h2 id="示例">示例</h2>
 
 <ul>
-<li>配置文件
-<code>
-all: test
+<li><p>配置文件</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">all: test
 test: test.o anotherTest.o
-gcc -Wall test.o anotherTest.o -o test
+    gcc -Wall test.o anotherTest.o -o test
 test.o: test.c
-gcc -c -Wall test.c
+    gcc -c -Wall test.c
 anotherTest.o: anotherTest.c
-gcc -c -Wall anotherTest.c
+    gcc -c -Wall anotherTest.c
 clean:
-rm -rf *.o test
-</code></li>
-<li><code>make</code>
-<code>
-gcc -c -Wall test.c
+    rm -rf *.o test</code></pre></div></li>
+
+<li><p><code>make</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">gcc -c -Wall test.c
 gcc -c -Wall anotherTest.c
-gcc -Wall test.o anotherTest.o -o test
-</code></li>
-<li><code>make clean</code>
-<code>
-rm -rf *.o test
-</code></li>
+gcc -Wall test.o anotherTest.o -o test</code></pre></div></li>
+
+<li><p><code>make clean</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">rm -rf *.o test</code></pre></div></li>
 </ul>
 
     </div>
@@ -325,7 +321,7 @@ rm -rf *.o test
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">231</span>
+        <span class="site-state-item-count">232</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
