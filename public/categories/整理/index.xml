@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Install</title>
+      <link>http://domain.yqjdcyy.com/post/linux.install/</link>
+      <pubDate>Wed, 08 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.install/</guid>
+      <description>方式 RPM 描述 全称为 Redhat Package Manager，支持安装、卸载、升级、查询和验证 指令 cmd rmp [option] &amp;lt;soft.rpm|soft&amp;gt; option -a 查询所有套件 -b&amp;lt;stage&amp;gt;&amp;lt;sof</description>
+    </item>
     
     <item>
       <title>FFmpeg.Upgrade</title>

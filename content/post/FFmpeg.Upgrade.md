@@ -9,6 +9,7 @@ toc: true
 ---
 
 # 系统情况
+
 ```sh
 cat /proc/version
     Linux version 3.10.0-123.9.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014
@@ -31,6 +32,7 @@ lsb_release -a
 ### 下载
 - 到[官网](http://www.ffmpeg.org/releases/)下载最新版本
 - 解压安装
+
     ```sh
     tar -jxvf ffmpeg-4.0.2.tar.bz2 -C ffmpeg-4.0.2
     cd ffmpeg-4.0.2 && ./configure --prefix=/usr/local/ffmpeg && make && make install
@@ -99,6 +101,7 @@ lsb_release -a
 - 调整权限 
     - `chmod 733 ffmpeg-install`
 - 安装
+
     ```sh
     # 查看帮助
     ./ffmpeg-install -h

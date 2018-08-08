@@ -2,6 +2,32 @@
 <search>
     
      <entry>
+        <title>Linux.Install</title>
+        <url>http://domain.yqjdcyy.com/post/linux.install/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Linux</tag>
+        </tags>
+        <content type="html">  方式 RPM 描述  全称为 Redhat Package Manager，支持安装、卸载、升级、查询和验证  指令  cmd  rmp [option] &amp;lt;soft.rpm|soft&amp;gt;  option  -a  查询所有套件  -b&amp;lt;stage&amp;gt;&amp;lt;soft&amp;gt;&#43;或-t &amp;lt;stage&amp;gt;&amp;lt;soft&amp;gt;&#43;  设置包装套件的完成阶段，并指定套件档的文件名称  -e&amp;lt;soft&amp;gt;或--erase&amp;lt;soft&amp;gt;  删除指定的套件  -f&amp;lt;file&amp;gt;&#43;  查询拥有指定文件的套件  -h或--hash  套件安装时列出标记  -i  显示套件的相关信息  -i&amp;lt;soft&amp;gt;或--install&amp;lt;soft&amp;gt;  安装指定的套件档  -l  显示套件的文件列表 -c  只列出组态配置文件，本参数需配合&amp;rdquo;-l&amp;rdquo;参数使用  -d  只列出文本文件，本参数需配合&amp;rdquo;-l&amp;rdquo;参数使用  -s  显示文件状态，本参数需配合&amp;rdquo;-l&amp;rdquo;参数使用   -p&amp;lt;soft&amp;gt;&#43;  查询指定的RPM套件档  -q  使用 询问模式，当遇到任何问题时，rpm指令会先询问用户  -R  显示套件的关联性信息  -U&amp;lt;soft&amp;gt;或--upgrade&amp;lt;soft&amp;gt;  升级指定的套件档  -v  显示指令 执行过程  -vv  详细显示指令执行过程，便于排错    示例  安装 rpm 包
+ rpm -ivh soft.rmp rpm --force --nodeps -ivh soft.rmp  覆盖安装 忽略未安装此包需要的一些软件   安装 .src.rpm 包
+ 该软件包含源代码，需在安装时进行编译  # 方法一 rpm -i soft.src.rpm cd /usr/src/redhat/SPECS &amp;amp;&amp;amp; rembuild -bp soft.specs cd /usr/src/redhat/BUILD/soft/ &amp;amp;&amp;amp; ./configure &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install # 方法二 rpm -i soft.src.rpm cd /usr/src/redhat/SPECS &amp;amp;&amp;amp; rembuild -bp soft.specs cd /usr/src/redhat/RPM/(i386|i686|noarch) &amp;amp;&amp;amp; rpm -8 &amp;lt;new-soft&amp;gt;.rpm 卸载 rpm 包
+ rpm -e &amp;lt;soft[-version]&amp;gt; rpm -e --nodeps &amp;lt;soft[-version]&amp;gt;  该软件为其它软件所须，但仍强制删除   罗列系统中安装过的 rpm 包
+ rpm -qa  查看指定软件的安装目录
+ rpm -ql &amp;lt;soft&amp;gt;   tar.gz | tar.bz2 描述  源代码方式安装  默认安装目录为 /usr/local/bin  但具体参见该软件的 INSTALL 和 README    示例 # tar.gz wget http://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.gz tar **xzvf** libogg-1.3.3.tar.gz cd libogg-1.3.3 ## 配置，根据需求调整生成目录 ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static ## 编译 make ## 安装 make install ## 移除安装时产生的是临时文件 make clean # tar.bz2 tar **-jxvf** libogg.tar.bz2 YUM 描述 用于解决普通 RPM 包安装时关联性太大的问题 自动下载并安装 RPM 包
+指令  cmd
+ yum [option] [args] [&amp;lt;soft&amp;gt;]  option
+ -h  显示帮助信息  -y  对所有的提问都回答 “yes”  -c  指定配置文件  -q  安静模式  -v  详细模式  -d  设置调试等级（0-10）  -e  设置错误等级（0-10）  -R  设置yum处理一个命令的最大等待时间  -C  完全从缓存中运行，而不去下载或者更新任何头文件   args
+ install  安装rpm软件包  update  更新rpm软件包  check-update  检查是否有可用的更新rpm软件包  remove  删除指定的rpm软件包  list  显示软件包的信息  search  搜索软件包的信息  info  显示指定的rpm软件包的描述信息和概要信息  clean  清理yum过期的缓存  shell  进入yum的shell提示符  resolvedep  显示rpm软件包的依赖关系  localinstall  安装本地的rpm软件包  localupdate  显示本地rpm软件包进行更新  deplist  显示rpm软件包的所有依赖关系    示例  安装
+yum install yum install &amp;lt;soft&amp;gt; yum groupinstall &amp;lt;group&amp;gt; 更新
+yum update yum update &amp;lt;soft&amp;gt; yum check-update yum groupupdate &amp;lt;group&amp;gt; 查看
+yum info &amp;lt;soft&amp;gt; yum list yum list &amp;lt;soft&amp;gt; # 查看软件的依赖情况 yum deplist &amp;lt;soft&amp;gt; yum groupinfo &amp;lt;group&amp;gt; 删除
+yum remove &amp;lt;soft&amp;gt; yum groupremove &amp;lt;group&amp;gt; 清除缓存
+yum clean &amp;lt;soft&amp;gt; # 清除已下载的 rpm 包 yum clean packages # 清理 /var/cache/yum 中的 headers 信息 yum clean headers yum clean oldheaders  参考  Linux安装软件总结（二.几种安装命令介绍） rpm命令 yum命令 Centos Ram缓存清理  </content>
+    </entry>
+    
+     <entry>
         <title>FFmpeg.Upgrade</title>
         <url>http://domain.yqjdcyy.com/post/ffmpeg.upgrade/</url>
         <categories>
@@ -10,7 +36,9 @@
         <tags>
           <tag>FFMPEG</tag>
         </tags>
-        <content type="html">  系统情况 cat /proc/version Linux version 3.10.0-123.9.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014  lsb_release -a LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.0.1406 (Core) Release: 7.0.1406 Codename: Core Make - Fail 情况  安装指定编解码器时，部分必须组件[FriBidi]无法正常安装，导致 FFmpeg 无法正常配置安装  流程 下载  到官网下载最新版本 解压安装 sh tar -jxvf ffmpeg-4.0.2.tar.bz2 -C ffmpeg-4.0.2 cd ffmpeg-4.0.2 &amp;amp;&amp;amp; ./configure --prefix=/usr/local/ffmpeg &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install  实际线上测试后发现少安装编码解码器  Unknown encoder &#39;libx264&#39;  重新安装并配置相关编解码器
+        <content type="html">  系统情况 cat /proc/version Linux version 3.10.0-123.9.3.el7.x86_64 (builder@kbuilder.dev.centos.org) (gcc version 4.8.2 20140120 (Red Hat 4.8.2-16) (GCC) ) #1 SMP Thu Nov 6 15:06:03 UTC 2014  lsb_release -a LSB Version: :core-4.1-amd64:core-4.1-noarch Distributor ID: CentOS Description: CentOS Linux release 7.0.1406 (Core) Release: 7.0.1406 Codename: Core Make - Fail 情况  安装指定编解码器时，部分必须组件[FriBidi]无法正常安装，导致 FFmpeg 无法正常配置安装  流程 下载  到官网下载最新版本 解压安装
+tar -jxvf ffmpeg-4.0.2.tar.bz2 -C ffmpeg-4.0.2 cd ffmpeg-4.0.2 &amp;amp;&amp;amp; ./configure --prefix=/usr/local/ffmpeg &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install 实际线上测试后发现少安装编码解码器
+ Unknown encoder &#39;libx264&#39;  重新安装并配置相关编解码器
 ./configure \  --extra-cflags=&amp;#34;-I/usr/local/ffmpeg/include&amp;#34; \  --extra-ldflags=&amp;#34;-L/usr/local/ffmpeg/lib&amp;#34; \  --pkg-config-flags=&amp;#34;--static&amp;#34; \  --prefix=/usr/local/ffmpeg \  --disable-debug \  --enable-gpl \  --enable-libvorbis \  --enable-libvpx \  --enable-libx264 \  --enable-libx265 \  --enable-libmp3lame **ERROR: vorbis not found using pkg-config** 安装相关的必须组件
  详情可参照 FFmpeg-4.0 指令如下
 libogg wget http://downloads.xiph.org/releases/ogg/libogg-1.3.3.tar.gz tar xzvf libogg-1.3.3.tar.gz cd libogg-1.3.3 &amp;amp;&amp;amp;./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install make distclean libvorbis wget http://downloads.xiph.org/releases/vorbis/libvorbis-1.3.6.tar.gz tar xzvf libvorbis-1.3.6.tar.gz cd libvorbis-1.3.6 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install make distclean fribidi wget https://github.com/fribidi/fribidi/releases/download/v1.0.5/fribidi-1.0.5.tar.bz2 tar xjf fribidi-1.0.5.tar.bz2 cd fribidi-1.0.5 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install // cd fribidi-1.0.5 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr&amp;#34; --disable-static &amp;amp;&amp;amp; make &amp;amp;&amp;amp; make install // cd fribidi-1.0.5 &amp;amp;&amp;amp; mkdir -p build &amp;amp;&amp;amp; cd build &amp;amp;&amp;amp; meson --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; .. &amp;amp;&amp;amp; ninja &amp;amp;&amp;amp; ninja stall // /usr/local/ffmpeg/lib/pkgconfig libass wget https://github.com/libass/libass/releases/download/0.14.0/libass-0.14.0.tar.xz tar xvJf libass-0.14.0.tar.xz cd libass-0.14.0 &amp;amp;&amp;amp; ./configure --prefix=&amp;#34;/usr/local/ffmpeg&amp;#34; --disable-static &amp;amp;&amp;amp; make make install libass 需要 fribidi 0.19 以上版本，但已安装 1.0.5 却并未被识别到   FFmpeg-install - Success  下载脚本 - https://raw.githubusercontent.com/q3aql/ffmpeg-install/master/ffmpeg-install 更新脚本内参数「PATH_INSTALL」至你须安装路径  vim ffmpeg-install  调整权限  chmod 733 ffmpeg-install  安装
