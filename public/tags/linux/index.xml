@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 08 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Find</title>
+      <link>http://domain.yqjdcyy.com/post/linux.find/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.find/</guid>
+      <description>Find 描述 用于指定目录下的文件查找 格式 find [-H] [-L] [-P] [-D debugopts] [-Olevel] [path...] [expression] 参数 -P 表示不追随符号链接 -L 表示追随符号链接 -H 表示只追随命令行中的符号链接 -D &amp;lt;debug.option&amp;gt; debug的</description>
+    </item>
     
     <item>
       <title>Linux.Install</title>
@@ -152,7 +161,7 @@
       <pubDate>Mon, 16 Oct 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.xargs/</guid>
-      <description>参考 Linux 系統 xargs 指令範例與教學 Wiki-xargs 作用 将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串</description>
+      <description>作用 将参数列表转换成小块分段传递给其他命令，以避免参数列表过长 以空白字符或换行作为分隔，将标准输入切割为多字符串并作为指定指令执行时的参数 INPUT</description>
     </item>
     
     <item>

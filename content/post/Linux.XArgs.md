@@ -9,11 +9,6 @@ toc: true
 ---
 
 
-# 参考
-- [Linux 系統 xargs 指令範例與教學](https://blog.gtwang.org/linux/xargs-command-examples-in-linux-unix/)
-- [Wiki-xargs](https://zh.wikipedia.org/wiki/Xargs)
-
-
 # 作用
 - 将参数列表转换成小块分段传递给其他命令，以**避免参数列表过长**
 - 以空白字符或换行作为分隔，将标准输入切割为多字符串并**作为指定指令执行时的参数**
@@ -46,8 +41,20 @@ toc: true
     - `echo 1 2 3 | xargs -t`
         - `echo 1 2 3 `
         - `1 2 3`
+- `-I`
+    - 指定替换字符
 
+        ```sh
+        cat list | grep -v -f listed | xargs -I {} convert -resize "1024x768" -strip -quality 75% {} {}
+        ```
 
 # 示例
 - 删除当前目录下，指定格式的重复图片
     - `find . -name "*).png" | xargs -p rm -f`
+
+
+
+# 参考
+- [Linux 系統 xargs 指令範例與教學](https://blog.gtwang.org/linux/xargs-command-examples-in-linux-unix/)
+- [Wiki-xargs](https://zh.wikipedia.org/wiki/Xargs)
+- []()

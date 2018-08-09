@@ -155,19 +155,12 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">223 字 ~1分钟</span>
+<span class="leancloud-visitors-count">263 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
-
-<h1 id="参考">参考</h1>
-
-<ul>
-<li><a href="https://blog.gtwang.org/linux/xargs-command-examples-in-linux-unix/">Linux 系統 xargs 指令範例與教學</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/Xargs">Wiki-xargs</a></li>
-</ul>
 
 <h1 id="作用">作用</h1>
 
@@ -242,6 +235,13 @@
 <li><code>1 2 3</code></li>
 </ul></li>
 </ul></li>
+
+<li><p><code>-I</code></p>
+
+<ul>
+<li><p>指定替换字符</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">cat list | grep -v -f listed | xargs -I <span style="color:#f92672">{}</span> convert -resize <span style="color:#e6db74">&#34;1024x768&#34;</span> -strip -quality <span style="color:#ae81ff">75</span>% <span style="color:#f92672">{}</span> <span style="color:#f92672">{}</span></code></pre></div></li>
+</ul></li>
 </ul>
 
 <h1 id="示例">示例</h1>
@@ -252,6 +252,14 @@
 <ul>
 <li><code>find . -name &quot;*).png&quot; | xargs -p rm -f</code></li>
 </ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://blog.gtwang.org/linux/xargs-command-examples-in-linux-unix/">Linux 系統 xargs 指令範例與教學</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/Xargs">Wiki-xargs</a></li>
+<li>[]()</li>
 </ul>
 
     </div>
@@ -342,7 +350,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">234</span>
+        <span class="site-state-item-count">235</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -359,7 +367,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">116</span>
+        <span class="site-state-item-count">117</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -389,10 +397,10 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#参考">参考</a></li>
 <li><a href="#作用">作用</a></li>
 <li><a href="#参数">参数</a></li>
 <li><a href="#示例">示例</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>

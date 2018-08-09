@@ -1,4 +1,12 @@
-
+---
+title: "Linux.Find"
+date: "2018-08-09"
+categories:
+ - "整理"
+tags:
+ - "Linux"
+toc: true
+---
 
 # Find
 ## 描述
@@ -168,7 +176,7 @@
 
     ```sh
     # 优化100K以上图片的分辨率
-    find /data/cdn -regex '.*\(jpg\|JPG\|png\|PNG\|jpeg\)' -size +100k -exec convert resize "1024x768" -strip -quality 75% {} {} \;
+    find /data/cdn -regex '.*\(jpg\|JPG\|png\|PNG\|jpeg\|JPEG\)' -size +100k -exec convert resize "1024x768" -strip -quality 75% {} {} \;
     ```
 
 # 对比
