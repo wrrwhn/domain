@@ -9,9 +9,7 @@ toc: true
 ---
 
 
-## 参考
-- http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html
-
+# SCP
 ## 特点
 - scp 为加密传输
 - scp 消耗资源少，不会提高多少系统负荷
@@ -61,3 +59,27 @@ toc: true
 - `scp -r root@10.6.159.147:/opt/soft/test /opt/soft/`
 - `scp /data/jenkins/jobs/basic-portal-jianguo/workspace/code/basic-portal/target/basic-portal.war root@106.14.223.58:/data/service/webapps/`
 - `scp -rv /data/service/tomcat root@39.108.103.85:/data/service`
+
+
+# 后台运行
+
+```sh
+# 执行任务
+scp -rv /data/* appuser@120.25.34.33/data
+
+# 暂停任务
+ctrl+ z && jobs
+    [1]+  Stopped                 scp -rv /data/* appuser@120.25.34.33/data
+
+# 将任务切换至后台
+bg %1 && jobs
+    [1]+  Running                 scp -rv /data/* appuser@120.25.34.33/data
+
+# 将该作业忽略 HUP 信号以便不受会话影响
+disown -h %1
+```
+
+
+# 参考
+- [scp 跨机远程拷贝](http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html)
+- [Linux scp 设置nohup后台运行](https://www.cnblogs.com/jyzhao/p/6253728.html)
