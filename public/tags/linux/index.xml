@@ -152,7 +152,7 @@
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.scp/</guid>
-      <description>参考 http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1 强</description>
+      <description>SCP 特点 scp 为加密传输 scp 消耗资源少，不会提高多少系统负荷 rsync 快一点，但小文件多时会导致硬盘 I/O 非常高 格式 scp [参数] [原路径] [目标路径] 参数 -1 强制s</description>
     </item>
     
     <item>

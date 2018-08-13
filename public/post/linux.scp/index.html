@@ -155,18 +155,14 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">493 字 ~1分钟</span>
+<span class="leancloud-visitors-count">583 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html">http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html</a></li>
-</ul>
+<h1 id="scp">SCP</h1>
 
 <h2 id="特点">特点</h2>
 
@@ -282,6 +278,27 @@
 <li><code>scp -r root@10.6.159.147:/opt/soft/test /opt/soft/</code></li>
 <li><code>scp /data/jenkins/jobs/basic-portal-jianguo/workspace/code/basic-portal/target/basic-portal.war root@106.14.223.58:/data/service/webapps/</code></li>
 <li><code>scp -rv /data/service/tomcat root@39.108.103.85:/data/service</code></li>
+</ul>
+
+<h1 id="后台运行">后台运行</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh"><span style="color:#75715e"># 执行任务
+</span><span style="color:#75715e"></span>scp -rv /data/* appuser@120.25.34.33/data
+
+<span style="color:#75715e"># 暂停任务
+</span><span style="color:#75715e"></span>ctrl+ z <span style="color:#f92672">&amp;&amp;</span> jobs
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span>+  Stopped                 scp -rv /data/* appuser@120.25.34.33/data
+
+<span style="color:#75715e"># 将任务切换至后台
+</span><span style="color:#75715e"></span>bg %1 <span style="color:#f92672">&amp;&amp;</span> jobs
+    <span style="color:#f92672">[</span><span style="color:#ae81ff">1</span><span style="color:#f92672">]</span>+  Running                 scp -rv /data/* appuser@120.25.34.33/data
+
+<span style="color:#75715e"># 将该作业忽略 HUP 信号以便不受会话影响
+</span><span style="color:#75715e"></span>disown -h %1</code></pre></div>
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/scp.html">scp 跨机远程拷贝</a></li>
+<li><a href="https://www.cnblogs.com/jyzhao/p/6253728.html">Linux scp 设置nohup后台运行</a></li>
 </ul>
 
     </div>
@@ -419,14 +436,15 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#scp">SCP</a>
 <ul>
-<li><a href="#参考">参考</a></li>
 <li><a href="#特点">特点</a></li>
 <li><a href="#格式">格式</a></li>
 <li><a href="#参数">参数</a></li>
 <li><a href="#事例">事例</a></li>
 </ul></li>
+<li><a href="#后台运行">后台运行</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>
