@@ -11,10 +11,6 @@ toc: true
 
 # Linux.Crontab
 
-## 参考
-- [每天一个linux命令（50）：crontab命令](http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html)
-
-
 ## 简介
 - 用来周期性的执行某种任务或等待处理某些事件的一个守护进程
 - 系统任务调度
@@ -100,7 +96,7 @@ toc: true
 - `-r`
     - **移除**当前定时任务
 - `-e`
-    - 以 `视图` 或 `编辑器` 编辑，并于离开编辑器时，修改的定时任务将自动被安装
+    - 以 `视图` 或 `编辑器` 编辑，并于离开编辑器时，修改的定时任务将自动被**安装**
 - `-i`
     - 配合 `-r` 使用，用于删除前的提示，避免误操作
 - `-s`
@@ -113,12 +109,16 @@ toc: true
 - `-c`
     - 允许支持集群，用于查询当前集群中哪台主机用于执行 `/var/spool/cron` 中的定时任务
 
-
 ## 事例
-
 
 
 ## 异常
 - `no crontab for root`
 	- `crontab -l` 时触发，因为该用户第一次使用，尚未生成对应文件导致
 	- 可使用 `crontab -e` 后保存以解决
+
+
+
+# 参考
+- [每天一个linux命令（50）：crontab命令](http://www.cnblogs.com/peida/archive/2013/01/08/2850483.html)
+- [Linux之crontab定时任务](https://www.jianshu.com/p/838db0269fd0)
