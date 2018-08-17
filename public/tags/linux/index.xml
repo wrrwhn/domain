@@ -89,7 +89,7 @@
       <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.crond/</guid>
-      <description>Linux.Crontab 参考 每天一个linux命令（50）：crontab命令 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所</description>
+      <description>Linux.Crontab 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab SHELL=/bin/bash # 指</description>
     </item>
     
     <item>

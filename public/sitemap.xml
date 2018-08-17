@@ -2,6 +2,35 @@
 <search>
     
      <entry>
+        <title>Hello.GraphQL</title>
+        <url>http://domain.yqjdcyy.com/post/graphql/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>GraphQL</tag>
+        </tags>
+        <content type="html">  简介 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  类型  Query
+query { hero { name } droid(id: &amp;#34;2000&amp;#34;) { name } } Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
+  { &amp;ldquo;ep&amp;rdquo;: &amp;ldquo;JEDI&amp;rdquo;, &amp;ldquo;review&amp;rdquo;: { &amp;ldquo;stars&amp;rdquo;: 5, &amp;ldquo;commentary&amp;rdquo;: &amp;ldquo;This is a great movie!&amp;rdquo; } }
+## 请求即输出 - 请求格式与返回格式近似 - 任性地满足产品和开发的数据驱动要求 ## 等级分层 - 遵循对象层级、关系 - 服务端需多次网络请求或复杂 SQL 查询 - 促进服务端以层次、图形化结构存储 ## 强类型 - 每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段 - 允许 GraphQL 于执行查询前抛出描述性异常信息 ## 协议而非存储 - 每个 Graphql 字段均有任意方法支持 - 复杂的排序、存储模型 - 依赖现有的实现，而不指定或提供任何备份存储 ## 内省 - 提供强大的平台 - 帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具 ## **版本无关** - 字段弃用等并不影响数据输出 - 渐进的向后兼容过程消除了版本号的需要 # 教程 ## 查询&amp;amp;变更 ### 请求 # 指定 操作类型[query|mutation|subscription]、操作名称(明确操作的意义、便于排查) query UserSystem{ # 参数传替 &amp;amp; 变量调用 human(id: $id) { name # 支持多级选择 ## 标量以枚举 CUSTOM 作为参数，实现服务端转换 ## 构建组件，通过参数控制 friends(type: CUSTOM) @include(if: $withFriends) { name },
+# 别名 site: human(id: &amp;#34;2&amp;#34;){ # 无字段，获取该位置对象类型的名称 __typename name }, # 重复片段 admins: human(type: ADMIN){ ...complexFields }, users: human(type: USER){ ...complexFields }, } }
+# 变量定义 ## v1 variables{ &amp;ldquo;id&amp;rdquo;: 1, &amp;ldquo;withFriends&amp;rdquo;: true }
+## v2 ### 声明类型值可为 标量| 枚举| Schema.Object ### ! 表示是否是可选项 ### = 指定默认值 query UserSystem($id: [声明类型][!]= &amp;ldquo;默认值&amp;rdquo;)
+# 片段定义 ## v1 fragment complexFields on human{ id name } ## v2 ### 内联片段，仅在返回类型是 human 情况下执行 &amp;hellip; on human{ id }
+# 指令 ## @include(if: Boolean) 仅当为 true 时包含 ## @skip(if: Boolean) 仅当为 true 跳过
+### 输出 { &amp;ldquo;data&amp;rdquo;:{
+# 多级 &amp;#34;human&amp;#34;:{ &amp;#34;name&amp;#34;: &amp;#34;R2-D2&amp;#34;, &amp;#34;friends&amp;#34;: [ {&amp;#34;name&amp;#34;: &amp;#34;Luke&amp;#34;}, {&amp;#34;name&amp;#34;: &amp;#34;Han&amp;#34;}, ] }, # 别名 &amp;#34;site&amp;#34;:{ &amp;#34;__typename&amp;#34;: &amp;#34;human&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;绝地神殿&amp;#34; }, # 片段 &amp;#34;admins&amp;#34;:[ { &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: R2-D2&amp;#34;, } ], &amp;#34;users&amp;#34;:[ { &amp;#34;id&amp;#34;: 2, &amp;#34;name&amp;#34;: Han&amp;#34;, } ], } }
+## Schema ### 类型 - 对象 - GraphQL.newObject ``` type Character { # 非空文本 name: String! # 非空数组 appearsIn: [Episode]! } ``` - 参数 type User{ # 当 unit 参数未传值时，将其默认为 METER momey(unit: LengthUnit = METER): Float }
+- 标量 - 对应 GraphQL 查询的子节点,系统最小颗粒 - 系统默认标题 - Int - 有符号 32 位整数。 - Float - 有符号双精度浮点值。 - String - UTF‐8 字符序列。 - Boolean - true 或者 false。 - ID - ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型 - 自定义标量 `Date` ``` scalar Date ``` - 枚举 - 可在 `Schema` 中任意处使用 - 定义 ``` enum Role{ ADMIN USER } ``` - 列表 human{ # 数组本身可为空，但内容值不能为空 name: [String!] # 数组不能为空，但内容值可为空 phone: [String]! }
+- 接口 interface Character{ id: ID! name: String! }
+# 可结合内联片段实现调用 type Human implements Character{ id: ID! name: String! friends: [Character] }
+- 联合类型 - 不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象 union SearchResult = Human | Droid | Starship ```
+ 输入类型
+ 定义修改时的所需的复杂输入对象  mutation CreateInput($obj: InputObj){ create(obj: $obj){ id name } } input InputObj{ id: Int! Name: String! } variables{ &amp;#34;obj&amp;#34;{ &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: 10 } }  参考 官方  GraphQL 入门 GraphQL GraphQL: A data query language facebook/graphql  补充  Graphql入门 30分钟理解GraphQL核心概念 []()  框架  GraphQL graphql-go/graphql Introduction to GraphQL  </content>
+    </entry>
+    
+     <entry>
         <title>Linux.Find</title>
         <url>http://domain.yqjdcyy.com/post/linux.find/</url>
         <categories>
@@ -2055,10 +2084,10 @@ Stream Buffering   Analysis Example
         <tags>
           <tag>Linux</tag>
         </tags>
-        <content type="html">  Linux.Crontab 参考  每天一个linux命令（50）：crontab命令  简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
+        <content type="html">  Linux.Crontab 简介  用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度
  系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab
 SHELL=/bin/bash # 指定 Shell 版本 PATH=/sbin:/bin:/usr/sbin:/usr/bin # 指定系统执行命令的路径 MAILTO=&amp;#34;&amp;#34; # 指定 crond 任务执行消息将通过指定邮件发送给 root 用户 HOME=/ # 指定在执行命令谨脚本时使用的主目录 # run-parts 51 * * * * root run-parts /etc/cron.hourly 24 7 * * * root run-parts /etc/cron.daily  用户任务调度
- 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig --list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &amp;lt;user&amp;gt;  调用指定用户 &amp;lt;user&amp;gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.d 中的定时任务的运行  -c  允许支持集群，用于查询当前集群中哪台主机用于执行 /var/spool/cron 中的定时任务   事例 异常  no crontab for root  crontab -l 时触发，因为该用户第一次使用，尚未生成对应文件导致 可使用 crontab -e 后保存以解决   </content>
+ 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等 /var/spool/cron   配置  /etc/cron.deny  列举不允许使用 crontab 命令的用户  /etc/cron.allow  列举允许使用 crontab 命令的用户  /var/spool/cron/  所有用户 crontab 文件存放的目录   格式  minute hour day month week command  字段  minute  0- 59  hour  0- 23  day  1- 31  month  1- 12  week  0- 7  0和 7 均代表星期天   command  可选项  *  所有可能值  ,  值列表，如 1,2,5,7  -  值范围，如 2-6  /  指定间隔频率，如 */10，表示每隔十分钟执行一次   说明      服务  /sbin/service crond [start|stop|restart|reload|status] ntsysv  查看服务是否设置为开机启动  chkconfig -level 35 crond on  将 crond 加入开机自动启动  ntsysv | chkconfig --list  查看 crond 是否已添加至开机启动  chkconfig –level 35 crond on  将 crond 添加至开机启动 本地尝试无果   格式  crontab [-u user] file crontab [-u user] [-l | -r | -e] [-i] [-s] crontab -n [ hostname ] crontab -c  参数  -u &amp;lt;user&amp;gt;  调用指定用户 &amp;lt;user&amp;gt; 名下的定时任务  -l  于标准输出流中展示当前的定时任务列表  -r  移除当前定时任务  -e  以 视图 或 编辑器 编辑，并于离开编辑器时，修改的定时任务将自动被安装  -i  配合 -r 使用，用于删除前的提示，避免误操作  -s  于定时任务编辑或替换发生前，追加安全内容字符串作为 MLS_LEVEL 设置  -n  配合 -c 使用，支持集群 设置集群主机，用于运行 /var/spool/cron 下的定时任务 若提供主机名被匹配，将被选择运行指定的定时任务；若无主机匹配，则定时任务不再运行；而若主机名被忽略，则当前主机升级为默认主机 参数不影响 /etc/crontab 和 /etc/cron.d 中的定时任务的运行  -c  允许支持集群，用于查询当前集群中哪台主机用于执行 /var/spool/cron 中的定时任务   事例 异常  no crontab for root  crontab -l 时触发，因为该用户第一次使用，尚未生成对应文件导致 可使用 crontab -e 后保存以解决   参考  每天一个linux命令（50）：crontab命令 Linux之crontab定时任务  </content>
     </entry>
     
      <entry>
@@ -3329,21 +3358,6 @@ for i := 0; i &amp;lt; count; i&#43;&#43; { go foo(i) } for i :=0 ; i &amp;lt; c
 func main() { runtime.GOMAXPROCS(2) go loop()* 2 for i := 0; i &amp;lt; 2; i&#43;&#43; { &amp;lt;- quit } } ```
  单线程并发
  多线程多任务显式切换  func loop() { for i := 0; i &amp;lt; 10; i&#43;&#43; { runtime.Gosched() fmt.Printf(&amp;quot;%d &amp;quot;, i) } quit &amp;lt;- 0 }    </content>
-    </entry>
-    
-     <entry>
-        <title>GraphQL</title>
-        <url>http://domain.yqjdcyy.com/post/graphql/</url>
-        <categories>
-          <category>整理</category>
-        </categories>
-        <tags>
-          <tag>GraphQL</tag>
-        </tags>
-        <content type="html">  GraphQL 参考  GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql  介绍 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  机制 类型  Query
-query { hero { name } droid(id: &amp;#34;2000&amp;#34;) { name } } Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
-  { &amp;ldquo;ep&amp;rdquo;: &amp;ldquo;JEDI&amp;rdquo;, &amp;ldquo;review&amp;rdquo;: { &amp;ldquo;stars&amp;rdquo;: 5, &amp;ldquo;commentary&amp;rdquo;: &amp;ldquo;This is a great movie!&amp;rdquo; } } ```
-请求即输出  请求格式与返回格式近似 任性地满足产品和开发的数据驱动要求  等级分层  遵循对象层级、关系  服务端需多次网络请求或复杂 SQL 查询  促进服务端以层次、图形化结构存储  强类型  每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段 允许 GraphQL 于执行查询前抛出描述性异常信息  协议而非存储  每个 Graphql 字段均有任意方法支持 复杂的排序、存储模型 依赖现有的实现，而不指定或提供任何备份存储  内省  提供强大的平台 帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具  版本无关  字段弃用等并不影响数据输出 渐进的向后兼容过程消除了版本号的需要  实践  graphql-go/graphql Introduction to GraphQL  </content>
     </entry>
     
      <entry>

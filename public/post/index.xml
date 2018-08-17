@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.GraphQL</title>
+      <link>http://domain.yqjdcyy.com/post/graphql/</link>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/graphql/</guid>
+      <description>简介 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移</description>
+    </item>
     
     <item>
       <title>Linux.Find</title>
@@ -908,7 +917,7 @@
       <pubDate>Wed, 17 Jan 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/linux.crond/</guid>
-      <description>Linux.Crontab 参考 每天一个linux命令（50）：crontab命令 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所</description>
+      <description>Linux.Crontab 简介 用来周期性的执行某种任务或等待处理某些事件的一个守护进程 系统任务调度 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等 /etec/crontab SHELL=/bin/bash # 指</description>
     </item>
     
     <item>
@@ -1531,15 +1540,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       
       <guid>http://domain.yqjdcyy.com/post/go.goruntime/</guid>
       <description>参考 Go语言并发与并行学习笔记 What exactly does runtime.Gosched do? 关于GoRoutine的一个运行问题 概念 默认设置 所有 goruutime 均在单原生线程中运行，仅占用单 CPU 当前 goruutime 不阻塞则</description>
-    </item>
-    
-    <item>
-      <title>GraphQL</title>
-      <link>http://domain.yqjdcyy.com/post/graphql/</link>
-      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/graphql/</guid>
-      <description>GraphQL 参考 GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql 介绍 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导</description>
     </item>
     
     <item>

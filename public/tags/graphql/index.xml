@@ -6,18 +6,18 @@
     <description>Recent content in Graphql on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 13 Sep 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/graphql/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>GraphQL</title>
+      <title>Hello.GraphQL</title>
       <link>http://domain.yqjdcyy.com/post/graphql/</link>
-      <pubDate>Wed, 13 Sep 2017 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/graphql/</guid>
-      <description>GraphQL 参考 GraphQL Graphql入门 GraphQL GraphQL: A data query language graphql-go/graphql facebook/graphql 介绍 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导</description>
+      <description>简介 因果 大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移</description>
     </item>
     
   </channel>

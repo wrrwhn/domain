@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>GraphQL - 好久不见</title>
+    <title>Hello.GraphQL - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="GraphQL">
+    <meta property="og:title" content="Hello.GraphQL">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="GraphQL - 好久不见" />
+    <meta name="title" content="Hello.GraphQL - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/graphql/" itemprop="url">
-        GraphQL
+        Hello.GraphQL
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2017-09-13">
-    2017-09-13
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-08-17">
+    2018-08-17
 </time>
 </span> 
       
@@ -155,29 +155,16 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">431 字 ~1分钟</span>
+<span class="leancloud-visitors-count">1234 字 ~3分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="graphql">GraphQL</h1>
+<h1 id="简介">简介</h1>
 
-<h2 id="参考">参考</h2>
-
-<ul>
-<li><a href="http://graphql.org/">GraphQL</a></li>
-<li><a href="http://www.jianshu.com/p/2ec22fc1219c">Graphql入门</a></li>
-<li><a href="http://facebook.github.io/graphql/">GraphQL</a></li>
-<li><a href="https://code.facebook.com/posts/1691455094417024/graphql-a-data-query-language/">GraphQL: A data query language</a></li>
-<li><a href="https://github.com/graphql-go/graphql">graphql-go/graphql</a></li>
-<li><a href="https://github.com/facebook/graphql">facebook/graphql</a></li>
-</ul>
-
-<h2 id="介绍">介绍</h2>
-
-<h3 id="因果">因果</h3>
+<h2 id="因果">因果</h2>
 
 <ul>
 <li>大量并发请求和数据更新的二次请求，造成响应和维护的难度提升</li>
@@ -185,97 +172,286 @@
 <li>大而全的通用性接口又不利于移动端使用</li>
 </ul>
 
-<h3 id="优点">优点</h3>
+<h2 id="优点">优点</h2>
 
 <ul>
 <li>足够描述性的数据抓取通用性 API</li>
 <li>服务端解释后返回以特定形式</li>
 </ul>
 
-<h2 id="机制">机制</h2>
-
-<h3 id="类型">类型</h3>
+<h2 id="类型">类型</h2>
 
 <ul>
 <li><p>Query</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">query {
-  hero {
-    name
-  }
-  droid(id: &#34;2000&#34;) {
-    name
-  }
-}</pre></div></li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  query {
+    hero {
+      name
+    }
+    droid(id: &#34;2000&#34;) {
+      name
+    }
+  }</pre></div></li>
 
 <li><p>Mutation
 ```
 mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
 createReview(episode: $ep, review: $review) {
-stars
-commentary
+  stars
+  commentary
 }
 }</p></li>
 </ul>
 
 <p>{
-  &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;,
-  &ldquo;review&rdquo;: {
-    &ldquo;stars&rdquo;: 5,
-    &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&rdquo;
+    &ldquo;ep&rdquo;: &ldquo;JEDI&rdquo;,
+    &ldquo;review&rdquo;: {
+      &ldquo;stars&rdquo;: 5,
+      &ldquo;commentary&rdquo;: &ldquo;This is a great movie!&rdquo;
+    }
+  }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## 请求即输出
+- 请求格式与返回格式近似
+- 任性地满足产品和开发的数据驱动要求
+
+## 等级分层
+- 遵循对象层级、关系
+    - 服务端需多次网络请求或复杂 SQL 查询
+- 促进服务端以层次、图形化结构存储
+
+## 强类型
+- 每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段
+- 允许 GraphQL 于执行查询前抛出描述性异常信息
+
+## 协议而非存储
+- 每个 Graphql 字段均有任意方法支持
+- 复杂的排序、存储模型
+- 依赖现有的实现，而不指定或提供任何备份存储
+
+## 内省
+- 提供强大的平台
+- 帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具
+
+## **版本无关**
+- 字段弃用等并不影响数据输出
+- 渐进的向后兼容过程消除了版本号的需要
+
+
+# 教程
+
+## 查询&amp;变更
+### 请求</pre></div>
+<p># 指定 <strong>操作类型</strong>[query|mutation|subscription]、<strong>操作名称</strong>(明确操作的意义、便于排查)
+  query UserSystem{
+    # 参数传替 &amp; 变量调用
+    human(id: $id) {
+      name
+      # 支持多级选择
+      ## 标量以枚举 <code>CUSTOM</code> 作为参数，实现服务端转换
+      ## 构建组件，通过参数控制
+      friends(type: CUSTOM)  @include(if: $withFriends) {
+        name
+      },</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  # 别名
+  site: human(id: &#34;2&#34;){
+    # 无字段，获取该位置对象类型的名称
+    __typename
+    name
+  },
+
+  # 重复片段
+  admins: human(type: ADMIN){
+    ...complexFields
+  },
+  users: human(type: USER){
+    ...complexFields
+  },
+}</pre></div>
+<p>}</p>
+
+<p># 变量定义
+  ## v1
+  variables{
+    &ldquo;id&rdquo;: 1,
+    &ldquo;withFriends&rdquo;: true
+  }</p>
+
+<p>## v2
+  ### 声明类型值可为 标量| 枚举| Schema.Object
+  ### ! 表示是否是可选项
+  ### = 指定默认值
+  query UserSystem($id: [声明类型][!]= &ldquo;默认值&rdquo;)</p>
+
+<p># 片段定义
+  ## v1
+  fragment complexFields on human{
+    id
+    name
+  }
+  ## v2
+  ### 内联片段，仅在返回类型是 <code>human</code> 情况下执行
+  &hellip; on human{
+    id
+  }</p>
+
+<p># 指令
+  ## @include(if: Boolean)  仅当为 true 时包含
+  ## @skip(if: Boolean)     仅当为 true 跳过</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">### 输出</pre></div>
+<p>{
+    &ldquo;data&rdquo;:{</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">  # 多级
+  &#34;human&#34;:{
+    &#34;name&#34;: &#34;R2-D2&#34;,
+    &#34;friends&#34;: [
+      {&#34;name&#34;: &#34;Luke&#34;},
+      {&#34;name&#34;: &#34;Han&#34;},
+    ]
+  },
+
+  # 别名
+  &#34;site&#34;:{
+    &#34;__typename&#34;: &#34;human&#34;,
+    &#34;name&#34;: &#34;绝地神殿&#34;
+  },
+
+  # 片段
+  &#34;admins&#34;:[
+    {
+      &#34;id&#34;: 1,
+      &#34;name&#34;: R2-D2&#34;,
+    }
+  ],
+  &#34;users&#34;:[
+    {
+      &#34;id&#34;: 2,
+      &#34;name&#34;: Han&#34;,
+    }
+  ],
+}</pre></div>
+<p>}</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">## Schema
+
+### 类型
+- 对象
+  - GraphQL.newObject
+
+    ```
+    type Character {
+      # 非空文本
+      name: String!
+      # 非空数组
+      appearsIn: [Episode]!
+    }
+    ```
+
+- 参数</pre></div>
+<p>type User{
+    # 当 unit 参数未传值时，将其默认为 <code>METER</code>
+    momey(unit: LengthUnit = METER): Float
+  }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">- 标量
+  - 对应 GraphQL 查询的子节点,系统最小颗粒
+  - 系统默认标题
+    - Int
+      - 有符号 32 位整数。
+    - Float
+      - 有符号双精度浮点值。
+    - String
+      - UTF‐8 字符序列。
+    - Boolean
+      - true 或者 false。
+    - ID
+      - ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型
+  - 自定义标量 `Date`
+
+    ```
+    scalar Date
+    ```
+
+- 枚举
+  - 可在 `Schema` 中任意处使用
+  - 定义
+
+    ```
+    enum Role{
+      ADMIN
+      USER
+    }
+    ```
+
+- 列表</pre></div>
+<p>human{
+    # 数组本身可为空，但内容值不能为空
+    name: [String!]
+    # 数组不能为空，但内容值可为空
+    phone: [String]!
+  }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">- 接口</pre></div>
+<p>interface Character{
+    id: ID!
+    name: String!
+  }</p>
+
+<p># 可结合内联片段实现调用
+  type Human implements Character{
+    id: ID!
+    name: String!
+    friends: [Character]
+  }</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">- 联合类型
+  - 不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象</pre></div>
+<p>union SearchResult = Human | Droid | Starship
+  ```</p>
+
+<ul>
+<li><p>输入类型</p>
+
+<ul>
+<li>定义修改时的所需的复杂输入对象</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">mutation CreateInput($obj: InputObj){
+  create(obj: $obj){
+    id
+    name
   }
 }
-```</p>
 
-<h3 id="请求即输出">请求即输出</h3>
+input InputObj{
+  id: Int!
+  Name: String!
+}
 
-<ul>
-<li>请求格式与返回格式近似</li>
-<li>任性地满足产品和开发的数据驱动要求</li>
+variables{
+  &#34;obj&#34;{
+    &#34;id&#34;: 1,
+    &#34;name&#34;: 10
+  }
+}</pre></div></li>
 </ul>
 
-<h2 id="等级分层">等级分层</h2>
+<h1 id="参考">参考</h1>
+
+<h2 id="官方">官方</h2>
 
 <ul>
-<li>遵循对象层级、关系
-
-<ul>
-<li>服务端需多次网络请求或复杂 SQL 查询</li>
-</ul></li>
-<li>促进服务端以层次、图形化结构存储</li>
+<li><a href="http://graphql.cn/learn/">GraphQL 入门</a></li>
+<li><a href="http://graphql.cn/">GraphQL</a></li>
+<li><a href="https://code.facebook.com/posts/1691455094417024/graphql-a-data-query-language/">GraphQL: A data query language</a></li>
+<li><a href="https://github.com/facebook/graphql">facebook/graphql</a></li>
 </ul>
 
-<h2 id="强类型">强类型</h2>
+<h2 id="补充">补充</h2>
 
 <ul>
-<li>每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段</li>
-<li>允许 GraphQL 于执行查询前抛出描述性异常信息</li>
+<li><a href="http://www.jianshu.com/p/2ec22fc1219c">Graphql入门</a></li>
+<li><a href="https://segmentfault.com/a/1190000014131950">30分钟理解GraphQL核心概念</a></li>
+<li>[]()</li>
 </ul>
 
-<h2 id="协议而非存储">协议而非存储</h2>
+<h2 id="框架">框架</h2>
 
 <ul>
-<li>每个 Graphql 字段均有任意方法支持</li>
-<li>复杂的排序、存储模型</li>
-<li>依赖现有的实现，而不指定或提供任何备份存储</li>
-</ul>
-
-<h2 id="内省">内省</h2>
-
-<ul>
-<li>提供强大的平台</li>
-<li>帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具</li>
-</ul>
-
-<h2 id="版本无关"><strong>版本无关</strong></h2>
-
-<ul>
-<li>字段弃用等并不影响数据输出</li>
-<li>渐进的向后兼容过程消除了版本号的需要</li>
-</ul>
-
-<h2 id="实践">实践</h2>
-
-<ul>
+<li><a href="http://facebook.github.io/graphql/">GraphQL</a></li>
 <li><a href="https://github.com/graphql-go/graphql">graphql-go/graphql</a></li>
 <li><a href="http://graphql.org/learn">Introduction to GraphQL</a></li>
 </ul>
@@ -295,17 +471,13 @@ commentary
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/wechat.export/" rel="next" title="Wechat.Export">
-        <i class="fa fa-chevron-left"></i> Wechat.Export
+        <a href="http://domain.yqjdcyy.com/post/linux.find/" rel="next" title="Linux.Find">
+        <i class="fa fa-chevron-left"></i> Linux.Find
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/go.goruntime/" rel="prev" title="Go.并行&amp;并发">
-        Go.并行&amp;并发 <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -314,7 +486,7 @@ commentary
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：GraphQL
+                标题：Hello.GraphQL
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -415,25 +587,17 @@ commentary
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#graphql">GraphQL</a>
-<ul>
-<li><a href="#参考">参考</a></li>
-<li><a href="#介绍">介绍</a>
+<li><a href="#简介">简介</a>
 <ul>
 <li><a href="#因果">因果</a></li>
 <li><a href="#优点">优点</a></li>
-</ul></li>
-<li><a href="#机制">机制</a>
-<ul>
 <li><a href="#类型">类型</a></li>
-<li><a href="#请求即输出">请求即输出</a></li>
 </ul></li>
-<li><a href="#等级分层">等级分层</a></li>
-<li><a href="#强类型">强类型</a></li>
-<li><a href="#协议而非存储">协议而非存储</a></li>
-<li><a href="#内省">内省</a></li>
-<li><a href="#版本无关"><strong>版本无关</strong></a></li>
-<li><a href="#实践">实践</a></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#官方">官方</a></li>
+<li><a href="#补充">补充</a></li>
+<li><a href="#框架">框架</a></li>
 </ul></li>
 </ul>
 </nav></div>
