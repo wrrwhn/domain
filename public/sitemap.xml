@@ -10,23 +10,12 @@
         <tags>
           <tag>GraphQL</tag>
         </tags>
-        <content type="html">  简介 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  类型  Query
-query { hero { name } droid(id: &amp;#34;2000&amp;#34;) { name } } Mutation ``` mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } }
-  { &amp;ldquo;ep&amp;rdquo;: &amp;ldquo;JEDI&amp;rdquo;, &amp;ldquo;review&amp;rdquo;: { &amp;ldquo;stars&amp;rdquo;: 5, &amp;ldquo;commentary&amp;rdquo;: &amp;ldquo;This is a great movie!&amp;rdquo; } }
-## 请求即输出 - 请求格式与返回格式近似 - 任性地满足产品和开发的数据驱动要求 ## 等级分层 - 遵循对象层级、关系 - 服务端需多次网络请求或复杂 SQL 查询 - 促进服务端以层次、图形化结构存储 ## 强类型 - 每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段 - 允许 GraphQL 于执行查询前抛出描述性异常信息 ## 协议而非存储 - 每个 Graphql 字段均有任意方法支持 - 复杂的排序、存储模型 - 依赖现有的实现，而不指定或提供任何备份存储 ## 内省 - 提供强大的平台 - 帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具 ## **版本无关** - 字段弃用等并不影响数据输出 - 渐进的向后兼容过程消除了版本号的需要 # 教程 ## 查询&amp;amp;变更 ### 请求 # 指定 操作类型[query|mutation|subscription]、操作名称(明确操作的意义、便于排查) query UserSystem{ # 参数传替 &amp;amp; 变量调用 human(id: $id) { name # 支持多级选择 ## 标量以枚举 CUSTOM 作为参数，实现服务端转换 ## 构建组件，通过参数控制 friends(type: CUSTOM) @include(if: $withFriends) { name },
-# 别名 site: human(id: &amp;#34;2&amp;#34;){ # 无字段，获取该位置对象类型的名称 __typename name }, # 重复片段 admins: human(type: ADMIN){ ...complexFields }, users: human(type: USER){ ...complexFields }, } }
-# 变量定义 ## v1 variables{ &amp;ldquo;id&amp;rdquo;: 1, &amp;ldquo;withFriends&amp;rdquo;: true }
-## v2 ### 声明类型值可为 标量| 枚举| Schema.Object ### ! 表示是否是可选项 ### = 指定默认值 query UserSystem($id: [声明类型][!]= &amp;ldquo;默认值&amp;rdquo;)
-# 片段定义 ## v1 fragment complexFields on human{ id name } ## v2 ### 内联片段，仅在返回类型是 human 情况下执行 &amp;hellip; on human{ id }
-# 指令 ## @include(if: Boolean) 仅当为 true 时包含 ## @skip(if: Boolean) 仅当为 true 跳过
-### 输出 { &amp;ldquo;data&amp;rdquo;:{
-# 多级 &amp;#34;human&amp;#34;:{ &amp;#34;name&amp;#34;: &amp;#34;R2-D2&amp;#34;, &amp;#34;friends&amp;#34;: [ {&amp;#34;name&amp;#34;: &amp;#34;Luke&amp;#34;}, {&amp;#34;name&amp;#34;: &amp;#34;Han&amp;#34;}, ] }, # 别名 &amp;#34;site&amp;#34;:{ &amp;#34;__typename&amp;#34;: &amp;#34;human&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;绝地神殿&amp;#34; }, # 片段 &amp;#34;admins&amp;#34;:[ { &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: R2-D2&amp;#34;, } ], &amp;#34;users&amp;#34;:[ { &amp;#34;id&amp;#34;: 2, &amp;#34;name&amp;#34;: Han&amp;#34;, } ], } }
-## Schema ### 类型 - 对象 - GraphQL.newObject ``` type Character { # 非空文本 name: String! # 非空数组 appearsIn: [Episode]! } ``` - 参数 type User{ # 当 unit 参数未传值时，将其默认为 METER momey(unit: LengthUnit = METER): Float }
-- 标量 - 对应 GraphQL 查询的子节点,系统最小颗粒 - 系统默认标题 - Int - 有符号 32 位整数。 - Float - 有符号双精度浮点值。 - String - UTF‐8 字符序列。 - Boolean - true 或者 false。 - ID - ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型 - 自定义标量 `Date` ``` scalar Date ``` - 枚举 - 可在 `Schema` 中任意处使用 - 定义 ``` enum Role{ ADMIN USER } ``` - 列表 human{ # 数组本身可为空，但内容值不能为空 name: [String!] # 数组不能为空，但内容值可为空 phone: [String]! }
-- 接口 interface Character{ id: ID! name: String! }
-# 可结合内联片段实现调用 type Human implements Character{ id: ID! name: String! friends: [Character] }
-- 联合类型 - 不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象 union SearchResult = Human | Droid | Starship ```
- 输入类型
+        <content type="html">  简介 因果  大量并发请求和数据更新的二次请求，造成响应和维护的难度提升 不同 app 对相同资源的不同使用方法导致 API 爆炸性增长 大而全的通用性接口又不利于移动端使用  优点  足够描述性的数据抓取通用性 API 服务端解释后返回以特定形式  类型  Query  query { hero { name } droid(id: &amp;#34;2000&amp;#34;) { name } }  Mutation  mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) { createReview(episode: $ep, review: $review) { stars commentary } } { &amp;#34;ep&amp;#34;: &amp;#34;JEDI&amp;#34;, &amp;#34;review&amp;#34;: { &amp;#34;stars&amp;#34;: 5, &amp;#34;commentary&amp;#34;: &amp;#34;This is a great movie!&amp;#34; } } 请求即输出  请求格式与返回格式近似 任性地满足产品和开发的数据驱动要求  等级分层  遵循对象层级、关系  服务端需多次网络请求或复杂 SQL 查询  促进服务端以层次、图形化结构存储  强类型  每个层级的查询都对应着特定的类型，而每个类型都描述以一组可用的字段 允许 GraphQL 于执行查询前抛出描述性异常信息  协议而非存储  每个 Graphql 字段均有任意方法支持 复杂的排序、存储模型 依赖现有的实现，而不指定或提供任何备份存储  内省  提供强大的平台 帮助开发学习和探索 API，而不需要依赖代码库或 CURL 工具  版本无关  字段弃用等并不影响数据输出 渐进的向后兼容过程消除了版本号的需要  教程 查询&amp;amp;变更 请求 # 指定 **操作类型**[query|mutation|subscription]、**操作名称**(明确操作的意义、便于排查) query UserSystem{ # 参数传替 &amp;amp; 变量调用 human(id: $id) { name # 支持多级选择 ## 标量以枚举 `CUSTOM` 作为参数，实现服务端转换 ## 构建组件，通过参数控制 friends(type: CUSTOM) @include(if: $withFriends) { name }, # 别名 site: human(id: &amp;#34;2&amp;#34;){ # 无字段，获取该位置对象类型的名称 __typename name }, # 重复片段 admins: human(type: ADMIN){ ...complexFields }, users: human(type: USER){ ...complexFields }, } } # 变量定义 ## v1 variables{ &amp;#34;id&amp;#34;: 1, &amp;#34;withFriends&amp;#34;: true } ## v2 ### 声明类型值可为 标量| 枚举| Schema.Object ### ! 表示是否是可选项 ### = 指定默认值 query UserSystem($id: [声明类型][!]= &amp;#34;默认值&amp;#34;) # 片段定义 ## v1 fragment complexFields on human{ id name } ## v2 ### 内联片段，仅在返回类型是 `human` 情况下执行 ... on human{ id } # 指令 ## @include(if: Boolean) 仅当为 true 时包含 ## @skip(if: Boolean) 仅当为 true 跳过 输出 { &amp;#34;data&amp;#34;:{ # 多级 &amp;#34;human&amp;#34;:{ &amp;#34;name&amp;#34;: &amp;#34;R2-D2&amp;#34;, &amp;#34;friends&amp;#34;: [ {&amp;#34;name&amp;#34;: &amp;#34;Luke&amp;#34;}, {&amp;#34;name&amp;#34;: &amp;#34;Han&amp;#34;}, ] }, # 别名 &amp;#34;site&amp;#34;:{ &amp;#34;__typename&amp;#34;: &amp;#34;human&amp;#34;, &amp;#34;name&amp;#34;: &amp;#34;绝地神殿&amp;#34; }, # 片段 &amp;#34;admins&amp;#34;:[ { &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: R2-D2&amp;#34;, } ], &amp;#34;users&amp;#34;:[ { &amp;#34;id&amp;#34;: 2, &amp;#34;name&amp;#34;: Han&amp;#34;, } ], } } Schema 类型  对象
+ GraphQL.newObject  type Character { # 非空文本 name: String! # 非空数组 appearsIn: [Episode]! } 参数
+  type User{ # 当 unit 参数未传值时，将其默认为 `METER` momey(unit: LengthUnit = METER): Float }  标量
+ 对应 GraphQL 查询的子节点,系统最小颗粒 系统默认标题 Int  有符号 32 位整数。  Float  有符号双精度浮点值。  String  UTF‐8 字符序列。  Boolean  true 或者 false。  ID  ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型  自定义标量 Date  scalar Date 枚举
+ 可在 Schema 中任意处使用 定义  enum Role{ ADMIN USER } 列表
+  human{ # 数组本身可为空，但内容值不能为空 name: [String!] # 数组不能为空，但内容值可为空 phone: [String]! }  接口  interface Character{ id: ID! name: String! } # 可结合内联片段实现调用 type Human implements Character{ id: ID! name: String! friends: [Character] }  联合类型  不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象   union SearchResult = Human | Droid | Starship  输入类型
  定义修改时的所需的复杂输入对象  mutation CreateInput($obj: InputObj){ create(obj: $obj){ id name } } input InputObj{ id: Int! Name: String! } variables{ &amp;#34;obj&amp;#34;{ &amp;#34;id&amp;#34;: 1, &amp;#34;name&amp;#34;: 10 } }  参考 官方  GraphQL 入门 GraphQL GraphQL: A data query language facebook/graphql  补充  Graphql入门 30分钟理解GraphQL核心概念 []()  框架  GraphQL graphql-go/graphql Introduction to GraphQL  </content>
     </entry>
     
@@ -3246,8 +3235,9 @@ Hash BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);
  桂林米粉，最低五元  住宿
  青旅均价为80元 三星酒店均为价为180元 四星级酒店均价为280元  交通
  轮渡  桂林-阳朔  200&#43;     计划  11.2
- 象鼻山 椿记烧鹅 两江四湖&#43; 东西巷  11.3
-  机票  11.1  高崎-两江 20:05-21:55  270* 2   11.6  两江-高崎 22:40-00:20  270* 2    </content>
+ 象鼻山 椿记烧鹅 两江四湖&#43; 东西巷 崇善米粉  11.3
+ 龙脊梯田  商务车&#43; 单索   11.4-.5
+ 漓江  竹筏  西街 热气球 老油条甲天下桂林米粉 大师傅金奖啤酒鱼   机票  11.1  高崎-两江 20:05-21:55  270* 2   11.6  两江-高崎 22:40-00:20  270* 2    </content>
     </entry>
     
      <entry>

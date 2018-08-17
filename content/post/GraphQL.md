@@ -20,6 +20,7 @@ toc: true
 
 ## 类型
 - Query
+
   ```
       query {
         hero {
@@ -32,6 +33,7 @@ toc: true
   ```
 
 - Mutation
+
   ```
   mutation CreateReviewForEpisode($ep: Episode!, $review: ReviewInput!) {
     createReview(episode: $ep, review: $review) {
@@ -39,7 +41,6 @@ toc: true
       commentary
     }
   }
-
   {
     "ep": "JEDI",
     "review": {
