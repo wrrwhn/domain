@@ -183,20 +183,19 @@ toc: true
 
 ## Schema
 
-### 类型
-- 对象
-  - GraphQL.newObject
+### 对象
+- GraphQL.newObject
 
-    ```
-    type Character {
-      # 非空文本
-      name: String!
-      # 非空数组
-      appearsIn: [Episode]!
-    }
-    ```
+  ```
+  type Character {
+    # 非空文本
+    name: String!
+    # 非空数组
+    appearsIn: [Episode]!
+  }
+  ```
 
-- 参数
+### 参数
 
   ```
   type User{
@@ -205,37 +204,37 @@ toc: true
   }
   ```
 
-- 标量
-  - 对应 GraphQL 查询的子节点,系统最小颗粒
-  - 系统默认标题
-    - Int
-      - 有符号 32 位整数。
-    - Float
-      - 有符号双精度浮点值。
-    - String
-      - UTF‐8 字符序列。
-    - Boolean
-      - true 或者 false。
-    - ID
-      - ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型
-  - 自定义标量 `Date`
+### 标量
+- 对应 GraphQL 查询的子节点,系统最小颗粒
+- 系统默认标题
+  - Int
+    - 有符号 32 位整数。
+  - Float
+    - 有符号双精度浮点值。
+  - String
+    - UTF‐8 字符序列。
+  - Boolean
+    - true 或者 false。
+  - ID
+    - ID 标量类型表示一个唯一标识符，通常用以重新获取对象或者作为缓存中的键，不可人为阅读类型
+- 自定义标量 `Date`
 
-    ```
-    scalar Date
-    ```
+  ```
+  scalar Date
+  ```
 
-- 枚举
-  - 可在 `Schema` 中任意处使用
-  - 定义
+### 枚举
+- 可在 `Schema` 中任意处使用
+- 定义
 
-    ```
-    enum Role{
-      ADMIN
-      USER
-    }
-    ```
+  ```
+  enum Role{
+    ADMIN
+    USER
+  }
+  ```
 
-- 列表
+### 列表
 
   ```
   human{
@@ -246,7 +245,7 @@ toc: true
   }
   ```
 
-- 接口
+### 接口
 
   ```
   interface Character{
@@ -262,36 +261,36 @@ toc: true
   }
   ```
 
-- 联合类型
-  - 不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象
+### 联合类型
+- 不指定类型之前的共同字段，只表示返回联合类型的地方，可能得到其定义中的任一类型对象
 
   ```
   union SearchResult = Human | Droid | Starship
   ```
 
 - 输入类型
-  - 定义修改时的所需的复杂输入对象
+- 定义修改时的所需的复杂输入对象
 
-    ```
-    mutation CreateInput($obj: InputObj){
-      create(obj: $obj){
-        id
-        name
-      }
+  ```
+  mutation CreateInput($obj: InputObj){
+    create(obj: $obj){
+      id
+      name
     }
+  }
 
-    input InputObj{
-      id: Int!
-      Name: String!
-    }
+  input InputObj{
+    id: Int!
+    Name: String!
+  }
 
-    variables{
-      "obj"{
-        "id": 1,
-        "name": 10
-      }
+  variables{
+    "obj"{
+      "id": 1,
+      "name": 10
     }
-    ```
+  }
+  ```
 
 
 # 参考
@@ -304,9 +303,11 @@ toc: true
 ## 补充
 - [Graphql入门](http://www.jianshu.com/p/2ec22fc1219c)
 - [30分钟理解GraphQL核心概念](https://segmentfault.com/a/1190000014131950)
-- []()
 
 ## 框架
 - [GraphQL](http://facebook.github.io/graphql/)
 - [graphql-go/graphql](https://github.com/graphql-go/graphql)
 - [Introduction to GraphQL](http://graphql.org/learn)
+
+## 代码
+- [golang-graphql-demo](https://github.com/yqjdcyy/Utils_Go/tree/master/src/graphql)
