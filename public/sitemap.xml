@@ -3565,6 +3565,34 @@ load data infile &amp;#39;/tmp/t0.txt&amp;#39; ignore into table t0 character se
     </entry>
     
      <entry>
+        <title>Hello.Spring 30%</title>
+        <url>http://domain.yqjdcyy.com/post/hello.spring/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>框架</tag><tag>Spring</tag>
+        </tags>
+        <content type="html">  组成 原理 AOP 描述  Aspect Orient Programming 面向方面（切面）编程，用于处理系统中分布中各模块的横切关注点，如事务、日志、缓存、对象池  类型  静态  使用 AOP 框架提供的命令进行编译，从而在编译阶段生成 AOP 代理类 编译时增强 AspectJ  动态  运行时借助于 JDK 动态代理、CGLIB等在内存临时生成动态代理类  通过注解以定义 方面（Aspect）、切入点（Pointcut）和增强处理（Advice）  运行时增强 Spring AOP  JDK 动态代理  要求被代理类必须有一个实现接口 通过 Proxy.newProxyInstance(ClassLoader, Class&amp;lt;?&amp;gt;[], InvocationHandler h) 实现  CGLIB 动态代理  底层通过 asm 来生成 生成类效率较低（但可通过将生成类缓存以提升效率），执行时效率较高 通过继承方式动态代理，若类被标记为 final 则无法使用 具体通过 implements MethodInterceptor 和 Enhancer 生成     实现  AspectJ
+// 1.基类 public class Hello { public static void main(String[] args) { new Hello().say(); } public void say() { System.out.println(&amp;#34;Hello&amp;#34;); } } // 2.切面设置类 public aspect HelloAspect { void around():call(void Hello.say()){ System.out.println(&amp;#34;Hello.Aspect start&amp;#34;); proceed(); System.out.println(&amp;#34;Hello.Aspect end&amp;#34;); } } // 3. Intellij 为当前项目设置 Aspecj 处理  // 3.1 到 AspectJ 官网下载 Jar 包  // 3.2 参照 《Creating a Library for aspectjrt.jar》将 =aspectjrt.jar 作为 library 添加至当前项目  // 4.直接运行 Hello 项目即可  // Hello.Aspect start  // Hello  // Hello.Aspect end Spring.AOP
+ Commons
+// * 必须指定作用于方法，于运行时生效 @Target(ElementType.METHOD) @Retention(RetentionPolicy.RUNTIME) public @interface Timer { } @Aspect @Component public class Advice { // 指定横切点，此处为对指定注解生效  @Pointcut(&amp;#34;@annotation(com.yao.aop.spring.Timer)&amp;#34;) public void pointcut() { } // 对指定横切点增强  @Before(&amp;#34;pointcut()&amp;#34;) public void before() { System.out.println(&amp;#34;\tAdvice.before&amp;#34;); } } JDK
+public interface Person { String say(String name); } // JDK 接口对象创建时，必须创建实现类以供 jdk 调用生成 @Component public class Chinese implements Person { @Timer @Override public String say(String name) { name = &amp;#34;中国人讲：&amp;#34; &#43; name; System.out.println(name); return name; } } CGlib
+// 只需注意非 final 类型即可 @Component public class American { @Timer public String say(String name) { name = &amp;#34;American.say: &amp;#34; &#43; name; System.out.println(name); return name; } public void eat(String food) { System.out.println(&amp;#34;I&amp;#39;m eating &amp;#34; &#43; food); } }  Call
+@SpringBootApplication @ComponentScan // 切面注解自动代理 @EnableAspectJAutoProxy @RestController public class AOPApplication { @Autowired private Person chinese; @RequestMapping(&amp;#34;/aop/spring/jdk&amp;#34;) public void jdk() { chinese.say(&amp;#34;Hi&amp;#34;); System.out.println(chinese.getClass()); } @Autowired private American american; @RequestMapping(&amp;#34;/aop/spring/cglib&amp;#34;) public void cglib() { american.say(&amp;#34;Hi&amp;#34;); american.eat(&amp;#34;potato&amp;#34;); System.out.println(american.getClass()); } public static void main(String[] args) { SpringApplication.run(AOPApplication.class, args); } }   详解 Spring.AOP 关键词  Aspect  横切关注点的抽象  JoinPoint  拦截点  方法 字段 构造函数  Spring 仅支持方法拦截  PointCut  对拦截点的定义  Advice  通知、增强 类型  Before After After-Returning After-Throwing Around   Target  代理的目标对象  Weave  织入 将切面应用到目标对象，并代理对象创建的过程  Introduction  运行期，动态地为类添加字段、方法   注解 PointCut  用法
+ @Pointcut(&amp;quot;within(@org.springframework.stereotype.Repository *)&amp;quot;) @Around(&amp;quot;repositoryClassMethods()&amp;quot;) xml
+&amp;lt;aop:config&amp;gt; &amp;lt;aop:pointcut id=&amp;#34;anyDaoMethod&amp;#34; expression=&amp;#34;@target(org.springframework.stereotype.Repository)&amp;#34;/&amp;gt; &amp;lt;/aop:config&amp;gt;  标示符
+ execution  描述  通用匹配  格式  @Pointcut(&amp;quot;execution(&amp;lt;作用域&amp;gt; &amp;lt;返回值&amp;gt; &amp;lt;路径&amp;gt;.&amp;lt;类&amp;gt;.&amp;lt;方法&amp;gt;(&amp;lt;参数&amp;gt;))&amp;quot;)  参数  作用域  public private protected  返回值  Java 对象  路径  包路径  类  类名  方法  方法名  参数  Java 对象   示例  @Pointcut(&amp;quot;execution(* org.baeldung.dao.FooDao.*(..))&amp;quot;)  针对 FooDao 的任意返回值、任意参数的任意方法生效    within  描述  限制于指定匹配类型  格式  @Pointcut(&amp;quot;within(&amp;lt;路径&amp;gt;.&amp;lt;类&amp;gt;)&amp;quot;)  示例  @Pointcut(&amp;quot;within(org.baeldung..*)&amp;quot;)  匹配 org.baeldung 子目录下的任意类型    this|target  描述  匹配指定类型的子类实现 this 创建以 CGLIB 为基础的代理实现  不要求一定要实现接口  target 创建以 JDK 为基础的代理实现  要求一定要实现接口   格式  @Pointcut(&amp;quot;this|target(&amp;lt;路径&amp;gt;.&amp;lt;类&amp;gt;)&amp;quot;)  示例  public class FooDao implements BarDao {}  @Pointcut(&amp;quot;target(org.baeldung.dao.BarDao)&amp;quot;)  public class FooDao {}  @Pointcut(&amp;quot;this(org.baeldung.dao.FooDao)&amp;quot;)    args  描述  用于匹配指定的方法参数  格式  @Pointcut(&amp;quot;execution(* *..&amp;lt;方法&amp;gt;(&amp;lt;参数&amp;gt;))&amp;quot;)  示例  @Pointcut(&amp;quot;execution(* *..find*(Long))&amp;quot;)  匹配任意以 find 开头，且仅有一个 Long 型参数的方法  @Pointcut(&amp;quot;execution(* *..find*(Long,..))&amp;quot;)  匹配任意以 find 开头，且首个参数为 Long 型的方法    @target
+ 描述  指定包含指定注解的类  格式  @Pointcut(&amp;quot;@target(&amp;lt;注解&amp;gt;)&amp;quot;)  示例  @Pointcut(&amp;quot;@target(org.springframework.stereotype.Repository)&amp;quot;)  匹配添加有 Repository 注解的类    @args
+ 描述  匹配指定注解的对象作用入参类型的方法  格式  @Pointcut(&amp;quot;@args(&amp;lt;注解&amp;gt;)&amp;quot;)  示例
+@PrintArgs(name = &amp;#34;input&amp;#34;) public class Input{} @Before(&amp;#34;@args(input)&amp;#34;)  @within
+ 描述  指定注解的方法于本类或子类中调用时匹配调用  格式  @Pointcut(&amp;quot;@within(&amp;lt;注解&amp;gt;)&amp;quot;)  示例  @Pointcut(&amp;quot;@within(org.springframework.stereotype.Repository)&amp;quot;)   @annotation
+ 描述  匹配拥有指定注解的方法  格式  @Pointcut(&amp;quot;@annotation(&amp;lt;注解&amp;gt;)&amp;quot;)  示例  @Pointcut(&amp;quot;@annotation(org.baeldung.aop.annotations.Loggable)&amp;quot;)    匹配
+ * ..  作为参数时，代表任意参数形式 作用路径时，代表子目录  &#43;  指定类型的子类型  通过 &amp;amp;&amp;amp; || ! 以组合指示符
+@Pointcut(&amp;#34;@target(org.springframework.stereotype.Repository)&amp;#34;) public void repositoryMethods() {} @Pointcut(&amp;#34;execution(* *..create*(Long,..))&amp;#34;) public void firstLongParamMethods() {} @Pointcut(&amp;#34;repositoryMethods() &amp;amp;&amp;amp; firstLongParamMethods()&amp;#34;) public void entityCreationMethods() {}   参考 Spring  Spring 框架简介 []() []()  AOP  Spring AOP的实现原理 Spring AOP 实现原理与 CGLIB 应用 AspectJ 官网 IntelliJ Idea 下配置 AspectJ，及简单 demo Creating a Library for aspectjrt.jar Implementing a Custom Spring AOP Annotation Introduction to Pointcut Expressions in Spring Spring Aop（三）——Pointcut表达式介绍  针对 PointCut 的中文详解，包含示例  Spring AOP &#43; AspectJ annotation examp`le` AOP的底层实现-CGLIB动态代理和JDK动态代理   []()  整理  []()  </content>
+    </entry>
+    
+     <entry>
         <title>Java.Basic</title>
         <url>http://domain.yqjdcyy.com/post/java.basic/</url>
         <categories>
@@ -3601,7 +3629,7 @@ public class ReflectionTest { //测试变更属性，其中为了直观调用属
     </entry>
     
      <entry>
-        <title>Java.Collections</title>
+        <title>Java.Collections 60%</title>
         <url>http://domain.yqjdcyy.com/post/java.collections/</url>
         <categories>
           <category>整理</category>
@@ -3649,16 +3677,58 @@ elements[tail] = e; if ( (tail = (tail &#43; 1) &amp;amp; (elements.length - 1))
  队列的实现框架 不允许空值，失败时直接抛出异常  params
  methods
  boolean add(E e)
-if (offer(e)) return true; else throw new IllegalStateException(&amp;#34;Queue full&amp;#34;);   PriorityQueue  description 无限制优先级队列 不允许空值、无法比较的对象
- params
- methods
-  AbstractSet  description params methods  EnumSet  description params methods  RegularEnumSet  description params methods  JumboEnumSet  description params methods  TreeSet  description params methods  HashSet  description params methods  LinkedHashSet  description params methods  Queue  description
+if (offer(e)) return true; else throw new IllegalStateException(&amp;#34;Queue full&amp;#34;);   PriorityQueue  description
+ 无限制优先级队列  构建时通过自然排序或指定排序方式进行优先级调整  不允许空值、无法比较的对象 注意多个元素同为最小值情况 注意  iterator() 不保障队列以任意顺序排列  排序遍历情况可使用 Arrays.sort(pq.toArray())  非线程安全，可用 PriorityBlockingQueue 代替   params
+ transient Object[] queue
+平衡二进制堆，将队列以树形式进行对比存储，排序最低值存于[0]位 queue[n]= queue[2n&#43;1]&#43; queue[2*(n&#43;1)] 存储形式 [0] [1] [2] [3] [4] [5] [6] 记录形式 [0] [1] [2] [3] [4] [5] [6]  methods
+ public PriorityQueue(int initialCapacity) public PriorityQueue(Collection&amp;lt;? extends E&amp;gt; c)
+private void initFromCollection(Collection&amp;lt;? extends E&amp;gt; c) { // 拷贝集合元素，并进行非空判断  initElementsFromCollection(c); heapify(); } // 堆化 private void heapify() { for (int i = (size &amp;gt;&amp;gt;&amp;gt; 1) - 1; i &amp;gt;= 0; i--) siftDown(i, (E) queue[i]); } private void siftDown(int k, E x) { if (comparator != null) siftDownUsingComparator(k, x); else siftDownComparable(k, x); } // 插入项，并与低级节点对比至小于等于 private void siftDownComparable(int k, E x) { Comparable&amp;lt;? super E&amp;gt; key = (Comparable&amp;lt;? super E&amp;gt;)x; // 递归到最后一种可能，2*(n&#43;1)  int half = size &amp;gt;&amp;gt;&amp;gt; 1; while (k &amp;lt; half) { // 替换父结点、父亲兄弟结点中的最小值  int child = (k &amp;lt;&amp;lt; 1) &#43; 1; Object c = queue[child]; int right = child &#43; 1; if (right &amp;lt; size &amp;amp;&amp;amp; ((Comparable&amp;lt;? super E&amp;gt;) c).compareTo((E) queue[right]) &amp;gt; 0) c = queue[child = right]; if (key.compareTo((E) c) &amp;lt;= 0) break; queue[k] = c; k = child; } queue[k] = key; } public boolean offer(E e)
+public boolean offer(E e) { if (e == null) throw new NullPointerException(); modCount&#43;&#43;; int i = size; if (i &amp;gt;= queue.length) grow(i &#43; 1); size = i &#43; 1; if (i == 0) queue[0] = e; else siftUp(i, e); return true; } // 扩容，小于64时加2，否则加一半容量 private void grow(int minCapacity) { int oldCapacity = queue.length; int newCapacity = oldCapacity &#43; ((oldCapacity &amp;lt; 64) ? (oldCapacity &#43; 2) : (oldCapacity &amp;gt;&amp;gt; 1)); if (newCapacity - MAX_ARRAY_SIZE &amp;gt; 0) newCapacity = hugeCapacity(minCapacity); queue = Arrays.copyOf(queue, newCapacity); } private static int hugeCapacity(int minCapacity) { if (minCapacity &amp;lt; 0) // overflow  throw new OutOfMemoryError(); return (minCapacity &amp;gt; MAX_ARRAY_SIZE) ? Integer.MAX_VALUE : MAX_ARRAY_SIZE; } private void siftUp(int k, E x) { if (comparator != null) siftUpUsingComparator(k, x); else siftUpComparable(k, x); } // 向根节点递归比较、替换，siftDown 的简化版本 private void siftUpComparable(int k, E x) { Comparable&amp;lt;? super E&amp;gt; key = (Comparable&amp;lt;? super E&amp;gt;) x; while (k &amp;gt; 0) { int parent = (k - 1) &amp;gt;&amp;gt;&amp;gt; 1; Object e = queue[parent]; if (key.compareTo((E) e) &amp;gt;= 0) break; queue[k] = e; k = parent; } queue[k] = key; } E removeAt(int i)
+private E removeAt(int i) { // assert i &amp;gt;= 0 &amp;amp;&amp;amp; i &amp;lt; size;  modCount&#43;&#43;; int s = --size; if (s == i) // removed last element  queue[i] = null; else { E moved = (E) queue[s]; queue[s] = null; siftDown(i, moved); if (queue[i] == moved) { siftUp(i, moved); if (queue[i] != moved) return moved; } } return null; } void (read|write)Object(Object(Input|Output)Stream s)
+   AbstractSet  description
+ Set 的最小化实现框架  methods
+ boolean equals(Object o) int hashCode()
+int h= 0 h &#43;= next().hashCode(); boolean removeAll(Collection&amp;lt;?&amp;gt; c)
+   EnumSet  description
+ 创建时指定使用的枚举类型  内部将枚举值转换为位向量，以实现空间和时间执行上的优化  迭代器为弱关联，即生成迭代器时进行修改，不会抛出 ConcurrentModificationException 异常，但不一定会显示修改情况 非线程安全，推荐依赖对象进行同步限制，或使用 synchronizedSet 封装  Set&amp;lt;MyEnum&amp;gt; s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));  所有基础方法均可在常量时间内执行  params
+ final Class&amp;lt;E&amp;gt; elementType final Enum&amp;lt;?&amp;gt;[] universe  methods
+ 实现  EnumSet(Class&amp;lt;E&amp;gt;elementType, Enum&amp;lt;?&amp;gt;[] universe) EnumSet&amp;lt;E&amp;gt; clone()  初始化
+ static &amp;lt;E extends Enum&amp;lt;E&amp;gt;&amp;gt; EnumSet&amp;lt;E&amp;gt; （all|none)Of(Class&amp;lt;E&amp;gt; elementType) static &amp;lt;E extends Enum&amp;lt;E&amp;gt;&amp;gt; EnumSet&amp;lt;E&amp;gt; copyOf((EnumSet|Collection)&amp;lt;E&amp;gt; s) static &amp;lt;E extends Enum&amp;lt;E&amp;gt;&amp;gt; EnumSet&amp;lt;E&amp;gt; of(E first, E... rest)
+// 将枚举类型设置至 elementType EnumSet&amp;lt;E&amp;gt; result = noneOf(first.getDeclaringClass()); // 添加枚举元素 result.add(first); for (E e : rest) result.add(e); return result;  抽象接口
+ abstract void addAll() abstract void addRange(E from, E to) abstract void complement()    JumboEnumSet  description  EnumSet 的私有实现，针对超过64个元素大枚举类型使用 实现思路参照 RegularEnumSet，只是通过 Long 数组来支持更长纬度的数据  params  long elements[] int size = 0  methods
+ void addAll() void addRange(E from, E to)
+void addRange(E from, E to) { // 计算当前序列位于第几个 Long 的区间上  int fromIndex = from.ordinal() &amp;gt;&amp;gt;&amp;gt; 6; int toIndex = to.ordinal() &amp;gt;&amp;gt;&amp;gt; 6; // 同一区间的话，将该区间视同 RegularEnumSet 即可  if (fromIndex == toIndex) { elements[fromIndex] = (-1L &amp;gt;&amp;gt;&amp;gt; (from.ordinal() - to.ordinal() - 1)) &amp;lt;&amp;lt; from.ordinal(); // 不同区间情况下，需要填充中间区间，并于头尾处各自处理  } else { elements[fromIndex] = (-1L &amp;lt;&amp;lt; from.ordinal()); for (int i = fromIndex &#43; 1; i &amp;lt; toIndex; i&#43;&#43;) elements[i] = -1; elements[toIndex] = -1L &amp;gt;&amp;gt;&amp;gt; (63 - to.ordinal()); } size = to.ordinal() - from.ordinal() &#43; 1; } boolean add(E e)
+/*** 通过移位跳转到对应区间，然后对该区间长整型 */ public boolean add(E e) { typeCheck(e); int eOrdinal = e.ordinal(); int eWordNum = eOrdinal &amp;gt;&amp;gt;&amp;gt; 6; long oldElements = elements[eWordNum]; elements[eWordNum] |= (1L &amp;lt;&amp;lt; eOrdinal); boolean result = (elements[eWordNum] != oldElements); if (result) size&#43;&#43;; return result; }   RegularEnumSet  description  EnumSet 的私有实现，针对元素于64位以内 用64位的 long 的各位来指定枚举值在枚举中的对应数值  params  long elements = 0L= 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000  methods
+ void addAll()
+elements = -1L &amp;gt;&amp;gt;&amp;gt; -universe.length; /** -1L = 11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 length = 6 &amp;gt;&amp;gt;&amp;gt; -6 = &amp;gt;&amp;gt;&amp;gt; (64&#43; (-6)) -1L&amp;gt;&amp;gt;&amp;gt;-6 = 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111 */ void addRange(E from, E to)
+void addRange(E from, E to) { elements = (-1L &amp;gt;&amp;gt;&amp;gt; (from.ordinal() - to.ordinal() - 1)) &amp;lt;&amp;lt; from.ordinal(); /** from= 5 to= 10 -1l= 11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 -1l &amp;gt;&amp;gt;&amp;gt; (5- 10- 1) -&amp;gt; -1l &amp;gt;&amp;gt;&amp;gt; -6 -&amp;gt; -1l &amp;gt;&amp;gt;&amp;gt; (64- 6) // 根据结果推导，不确定 -&amp;gt; 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111 -&amp;gt; 63 (-1l &amp;gt;&amp;gt;&amp;gt; (5- 10- 1)) &amp;lt;&amp;lt; 5 -&amp;gt; 63 &amp;lt;&amp;lt; 5 -&amp;gt; 2016 */ } void complement()
+ public Iterator&amp;lt;E&amp;gt; iterator()
+public Iterator&amp;lt;E&amp;gt; iterator() { return new EnumSetIterator&amp;lt;&amp;gt;(); } private class EnumSetIterator&amp;lt;E extends Enum&amp;lt;E&amp;gt;&amp;gt; implements Iterator&amp;lt;E&amp;gt; { long unseen; long lastReturned = 0; EnumSetIterator() { unseen = elements; } public boolean hasNext() { return unseen != 0; } @SuppressWarnings(&amp;#34;unchecked&amp;#34;) public E next() { if (unseen == 0) throw new NoSuchElementException(); // 找出最后一位并抛出  lastReturned = unseen &amp;amp; -unseen; unseen -= lastReturned; return (E) universe[Long.numberOfTrailingZeros(lastReturned)]; } public void remove() { if (lastReturned == 0) throw new IllegalStateException(); elements &amp;amp;= ~lastReturned; lastReturned = 0; } } int size()
+return Long.bitCount(elements); public static int bitCount(long i) { // 每格两位存储这两位的 1 的数量，等价于 i= i &amp;amp; 0x5555555555555555L &#43; (i&amp;gt;&amp;gt;&amp;gt;1) &amp;amp; 0x5555555555555555L  i = i - ((i &amp;gt;&amp;gt;&amp;gt; 1) &amp;amp; 0x5555555555555555L); // 此后每次翻倍移位，进行数量累加  i = (i &amp;amp; 0x3333333333333333L) &#43; ((i &amp;gt;&amp;gt;&amp;gt; 2) &amp;amp; 0x3333333333333333L); i = (i &#43; (i &amp;gt;&amp;gt;&amp;gt; 4)) &amp;amp; 0x0f0f0f0f0f0f0f0fL; i = i &#43; (i &amp;gt;&amp;gt;&amp;gt; 8); i = i &#43; (i &amp;gt;&amp;gt;&amp;gt; 16); i = i &#43; (i &amp;gt;&amp;gt;&amp;gt; 32); return (int)i &amp;amp; 0x7f; } boolean contains(Object e)
+return (elements &amp;amp; (1L &amp;lt;&amp;lt; ((Enum&amp;lt;?&amp;gt;)e).ordinal())) != 0; /*** elements = 0000 1111 e.ordinal = 3 1L&amp;lt;&amp;lt;3 = 0000 0100 elements&amp;amp;(1L&amp;lt;&amp;lt;3)= 0000 1111 &amp;amp; 0000 0100 0000 0100 = 4 != 0 *指定位比较，其它位清零* */ boolean add(E e)
+ elements |= (1L &amp;lt;&amp;lt; ((Enum&amp;lt;?&amp;gt;)e).ordinal())  boolean remove(Object e)
+ elements &amp;amp;= ~(1L &amp;lt;&amp;lt; ((Enum&amp;lt;?&amp;gt;)e).ordinal())    TreeSet  description  基于 TreeMap 的对 NavigableSet 的实现 add、remove、contains 均可在 log(n) 时间内完成 Set 的比较通过 TreeSet 的 compareTo 实现 非同步实现，须于外部进行同步扩展  SortedSet s = Collections.synchronizedSortedSet(new TreeSet(...));  迭代器在操作时碰到修改，会快速失败以避免数据风险  params  transient NavigableMap&amp;lt;E,Object&amp;gt; m  methods  HashSet  description params methods  LinkedHashSet  description params methods  Queue  description
  先进先出队列  params
  methods
  boolean add(E e)  插入元素 容量足够时返回 true，否则抛出 IllegalStateException 异常  boolean offer(E e)  插入元素 容量限制情况下，与 add 方法一样，无法插入时抛出异常  E remove()  获取并移除队列头部 队列空时 抛出异常  E poll()  获取并移除队列头部 队列空时返回 null  E element()  仅获取队列头部 队列空时 抛出异常  E peek()  仅获取队列头部 队列空时返回 null    Deque  description
  双端队列 允许空值   params
  methods
- (add|offer|remove|poll|get|peekLast)[First|Last] push/ pop   Set  description params methods  SortedSet  description params methods  NavigableSet  description params methods   Reference  []() []() []()   ArrayList中elementData为什么被transient修饰？ rrayDeque集合的妙用 []() []() []() []()  </content>
+ (add|offer|remove|poll|get|peekLast)[First|Last] push/ pop   Set  description  不包含重复元素 元素为可变对象时，需小心元素的变更，影响到集合中对象的 equals 判断  禁止将自己作为元素加入到集合中 通过抛出 NullPointerException、ClassCastException 异常或 false 来限制填充元素   methods  int size() boolean contains(Object o) boolean add(E e) boolean remove(Object o) Iterator&amp;lt;E&amp;gt; iterator() Object[] toArray() boolean (contains|add|retain|remove)All(Collection&amp;lt;?&amp;gt; c) void clear() boolean equals(Object o) int hashCode()   SortedSet  description  迭代器按升序遍历 所有元素须实现 Comparable 接口，相互比较 默认四种标准构建函数  SortedSet()  空构建函数，创建空的排序集合  SortedSet(Comparator comparator)  仅提供比较器，并创建以此判断的空集合  SortedSet(Collection coleection)  将集合的元素通过原始排序初始化成新的集合  SortedSet(SortedSet set)  拷贝传入的排序器    params  Comparator&amp;lt;? super E&amp;gt; comparator()  methods  SortedSet&amp;lt;E&amp;gt; subSet(E fromElement, E toElement) SortedSet&amp;lt;E&amp;gt; (head|tail)Set(E toElement) E (first|last)()   NavigableSet  description  支持搜索、倒序输出，并可指定子集的上下边界是否包含 提供最接近匹配的搜索匹配 升序操作会比降序操作更快 允许添加 null，但鼓励实现时限制，以避免混淆不清  methods  E lower(E e); E floor(E e); E ceiling(E e); E higher(E e); E pollFirst(); E pollLast();   ## ServiceLoader
+Map  description  用于映射键值对，不允许重复的键值 提供三种视图来查看映射内容：键的集合，值的列表和键值对的映射集合 极度小心键值为可变对象的情况，例如严禁将映射自己做为键值，但允许将自身做为值存储  对象的变化会影响到 equals 和 hashcode 的计算   methods
+ Query
+ int size() boolean containsKey(Object key) boolean containsValue(Object value) V get(Object key)  Modification
+ V put(K key, V value) V remove(Object key)  Bulk
+ void putAll(Map&amp;lt;? extends K, ? extends V&amp;gt; m) void clear()  Views
+ Set&amp;lt;K&amp;gt; keySet() Collection&amp;lt;V&amp;gt; values() Set&amp;lt;Map.Entry&amp;lt;K, V&amp;gt;&amp;gt; entrySet()  Comparison
+ boolean equals(Object o) int hashCode()  Default
+ default V getOrDefault(Object key, V defaultValue) default void forEach(BiConsumer&amp;lt;? super K, ? super V&amp;gt; action) default void replaceAll(BiFunction&amp;lt;? super K, ? super V, ? extends V&amp;gt; function) default V putIfAbsent(K key, V value) default boolean remove(Object key, Object value)  仅当保存值为指定值时移除指定键值  default boolean replace(K key, V oldValue, V newValue)  仅当指定键对应值为指定值时，覆盖以新值  default V replace(K key, V value) default V computeIf(Absent|Present)(K key, Function&amp;lt;? super K, ? extends V&amp;gt; mappingFunction)  仅当键值（不存在|存在）情况下，覆盖以新计算值     SortedMap  description
+ 进一步在键值上进行整体性的排序 建议实现的构建函数  SortedMap() SortedMap(Comparator) SortedMap(Map) SortedMap(SortedMap)   methods
+ Sub  SortedMap&amp;lt;K,V&amp;gt; subMap(K fromKey, K toKey)  [fromKey,toKey)  SortedMap&amp;lt;K,V&amp;gt; headMap(K toKey)  [,toKey)  SortedMap&amp;lt;K,V&amp;gt; tailMap(K fromKey)  [fromKey,]   Query  K firstKey() K lastKey()  View  Set&amp;lt;K&amp;gt; keySet() Collection&amp;lt;V&amp;gt; values() Set&amp;lt;Map.Entry&amp;lt;K, V&amp;gt;&amp;gt; entrySet()    NavigableMap  description
+ 在 SortedSet 的基础上扩展导航、搜索功能 支持正反向查询、遍历，但升序速度更快 新增 pollFirst 和 pollLast 方法，并可通过参数获取指定上下限数据 建议不允许添加 null  methods
+ Query
+ E lower(E e)  &amp;lt;  E floor(E e)  &amp;lt;=  E ceiling(E e)  &amp;gt;=  E higher(E e)  &amp;gt;  E pollFirst() E pollLast()  View
+ Iterator&amp;lt;E&amp;gt; iterator() NavigableSet&amp;lt;E&amp;gt; descendingSet() Iterator&amp;lt;E&amp;gt; descendingIterator()  SubSet
+ NavigableSet&amp;lt;E&amp;gt; subSet(E fromElement, boolean fromInclusive, E toElement, boolean toInclusive) NavigableSet&amp;lt;E&amp;gt; headSet(E toElement, boolean inclusive) NavigableSet&amp;lt;E&amp;gt; tailSet(E fromElement, boolean inclusive) SortedSet&amp;lt;E&amp;gt; subSet(E fromElement, E toElement) SortedSet&amp;lt;E&amp;gt; headSet(E toElement) SortedSet&amp;lt;E&amp;gt; tailSet(E fromElement)    Abstractmap  description params methods  WeakHashMap  description params methods  IdentityHashMap  description params methods  EnumMap  description params methods  TreeMap  description params methods  HashMap  description params methods  LinkedHashMap  description params methods  Dictionary  description params methods  Hashtable  description params methods  Properties  description params methods  Utils  description params methods  Collections  description params methods  Arrays  description params methods  Reference 官方  15.19. Shift Operators []() []() []()  补充  ArrayList中elementData为什么被transient修饰？ rrayDeque集合的妙用 JDK源码解读之RegularEnumSet []() []()  </content>
     </entry>
     
      <entry>
@@ -4753,6 +4823,18 @@ Site Lifecycle pre-site executes processes needed prior to the actual project si
  PyQt5
  PyQt5学习与交流
   </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/spring.cloud/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html"> </content>
     </entry>
     
      <entry>

@@ -1687,6 +1687,15 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     </item>
     
     <item>
+      <title>Hello.Spring 30%</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring/</link>
+      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring/</guid>
+      <description>组成 原理 AOP 描述 Aspect Orient Programming 面向方面（切面）编程，用于处理系统中分布中各模块的横切关注点，如事务、日志、缓存、对象池 类型 静态 使用 AOP 框架提供的命令进行</description>
+    </item>
+    
+    <item>
       <title>Java.Basic</title>
       <link>http://domain.yqjdcyy.com/post/java.basic/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
@@ -1696,7 +1705,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     </item>
     
     <item>
-      <title>Java.Collections</title>
+      <title>Java.Collections 60%</title>
       <link>http://domain.yqjdcyy.com/post/java.collections/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
       
@@ -2112,6 +2121,15 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
  PyQt5
  PyQt5学习与交流
   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/spring.cloud/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.cloud/</guid>
+      <description></description>
     </item>
     
     <item>

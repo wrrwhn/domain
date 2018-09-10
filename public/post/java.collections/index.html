@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Java.Collections - 好久不见</title>
+    <title>Java.Collections 60% - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Java.Collections">
+    <meta property="og:title" content="Java.Collections 60%">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Java.Collections - 好久不见" />
+    <meta name="title" content="Java.Collections 60% - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.collections/" itemprop="url">
-        Java.Collections
+        Java.Collections 60%
         </a>
       </h1>
       <div class="post-meta">
@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1689 字 ~4分钟</span>
+<span class="leancloud-visitors-count">4256 字 ~9分钟</span>
 </span>
       </div>
     </header>
@@ -790,52 +790,465 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
 <h2 id="priorityqueue">PriorityQueue</h2>
 
 <ul>
-<li><p>description
-无限制优先级队列
-不允许空值、无法比较的对象</p></li>
+<li><p>description</p>
 
-<li><p>params</p></li>
+<ul>
+<li>无限制优先级队列
 
-<li><p>methods</p></li>
+<ul>
+<li>构建时通过自然排序或指定排序方式进行优先级调整</li>
+</ul></li>
+<li>不允许空值、无法比较的对象</li>
+<li>注意多个元素同为最小值情况</li>
+<li>注意
+
+<ul>
+<li><code>iterator()</code> 不保障队列以任意顺序排列
+
+<ul>
+<li>排序遍历情况可使用 <code>Arrays.sort(pq.toArray())</code></li>
+</ul></li>
+<li>非线程安全，可用 <code>PriorityBlockingQueue</code> 代替</li>
+</ul></li>
+</ul></li>
+
+<li><p>params</p>
+
+<ul>
+<li><p><code>transient Object[] queue</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">平衡二进制堆<span style="color:#960050;background-color:#1e0010">，</span>将队列以树形式进行对比存储<span style="color:#960050;background-color:#1e0010">，</span>排序最低值存于<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>位
+queue<span style="color:#f92672">[</span>n<span style="color:#f92672">]=</span> queue<span style="color:#f92672">[</span>2n<span style="color:#f92672">+</span>1<span style="color:#f92672">]+</span> queue<span style="color:#f92672">[</span>2<span style="color:#f92672">*(</span>n<span style="color:#f92672">+</span>1<span style="color:#f92672">)]</span>
+存储形式
+    <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>5<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>6<span style="color:#f92672">]</span>
+记录形式
+        <span style="color:#f92672">[</span>0<span style="color:#f92672">]</span>
+        <span style="color:#f92672">[</span>1<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>2<span style="color:#f92672">]</span>
+    <span style="color:#f92672">[</span>3<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>4<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>5<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>6<span style="color:#f92672">]</span></code></pre></div></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>public PriorityQueue(int initialCapacity)</code></li>
+
+<li><p><code>public PriorityQueue(Collection&lt;? extends E&gt; c)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">initFromCollection</span><span style="color:#f92672">(</span>Collection<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">extends</span> E<span style="color:#f92672">&gt;</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 拷贝集合元素，并进行非空判断
+</span><span style="color:#75715e"></span>    initElementsFromCollection<span style="color:#f92672">(</span>c<span style="color:#f92672">);</span>
+    heapify<span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// 堆化
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">heapify</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>size <span style="color:#f92672">&gt;&gt;&gt;</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">;</span> i<span style="color:#f92672">--)</span>
+        siftDown<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span> queue<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">siftDown</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k<span style="color:#f92672">,</span> E x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>comparator <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+        siftDownUsingComparator<span style="color:#f92672">(</span>k<span style="color:#f92672">,</span> x<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">else</span>
+        siftDownComparable<span style="color:#f92672">(</span>k<span style="color:#f92672">,</span> x<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// 插入项，并与低级节点对比至小于等于
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">siftDownComparable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k<span style="color:#f92672">,</span> E x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Comparable<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> E<span style="color:#f92672">&gt;</span> key <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Comparable<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> E<span style="color:#f92672">&gt;)</span>x<span style="color:#f92672">;</span>
+    <span style="color:#75715e">// 递归到最后一种可能，2*(n+1)
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> half <span style="color:#f92672">=</span> size <span style="color:#f92672">&gt;&gt;&gt;</span> 1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&lt;</span> half<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 替换父结点、父亲兄弟结点中的最小值
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">int</span> child <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&lt;&lt;</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+        Object c <span style="color:#f92672">=</span> queue<span style="color:#f92672">[</span>child<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">int</span> right <span style="color:#f92672">=</span> child <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>right <span style="color:#f92672">&lt;</span> size <span style="color:#f92672">&amp;&amp;</span>
+            <span style="color:#f92672">((</span>Comparable<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> E<span style="color:#f92672">&gt;)</span> c<span style="color:#f92672">).</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">((</span>E<span style="color:#f92672">)</span> queue<span style="color:#f92672">[</span>right<span style="color:#f92672">])</span> <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span>
+            c <span style="color:#f92672">=</span> queue<span style="color:#f92672">[</span>child <span style="color:#f92672">=</span> right<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>key<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">((</span>E<span style="color:#f92672">)</span> c<span style="color:#f92672">)</span> <span style="color:#f92672">&lt;=</span> 0<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+        queue<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> c<span style="color:#f92672">;</span>
+        k <span style="color:#f92672">=</span> child<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    queue<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> key<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>public boolean offer(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">offer</span><span style="color:#f92672">(</span>E e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>e <span style="color:#f92672">==</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NullPointerException<span style="color:#f92672">();</span>
+    modCount<span style="color:#f92672">++;</span>
+    <span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> size<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;=</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">)</span>
+        grow<span style="color:#f92672">(</span>i <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+    size <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>
+        queue<span style="color:#f92672">[</span>0<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">else</span>
+        siftUp<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> e<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// 扩容，小于64时加2，否则加一半容量
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">grow</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> minCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> oldCapacity <span style="color:#f92672">=</span> queue<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">int</span> newCapacity <span style="color:#f92672">=</span> oldCapacity <span style="color:#f92672">+</span> <span style="color:#f92672">((</span>oldCapacity <span style="color:#f92672">&lt;</span> 64<span style="color:#f92672">)</span> <span style="color:#f92672">?</span>
+                                    <span style="color:#f92672">(</span>oldCapacity <span style="color:#f92672">+</span> 2<span style="color:#f92672">)</span> <span style="color:#f92672">:</span>
+                                    <span style="color:#f92672">(</span>oldCapacity <span style="color:#f92672">&gt;&gt;</span> 1<span style="color:#f92672">));</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>newCapacity <span style="color:#f92672">-</span> MAX_ARRAY_SIZE <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span>
+        newCapacity <span style="color:#f92672">=</span> hugeCapacity<span style="color:#f92672">(</span>minCapacity<span style="color:#f92672">);</span>
+    queue <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">copyOf</span><span style="color:#f92672">(</span>queue<span style="color:#f92672">,</span> newCapacity<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">hugeCapacity</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> minCapacity<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>minCapacity <span style="color:#f92672">&lt;</span> 0<span style="color:#f92672">)</span> <span style="color:#75715e">// overflow
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> OutOfMemoryError<span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>minCapacity <span style="color:#f92672">&gt;</span> MAX_ARRAY_SIZE<span style="color:#f92672">)</span> <span style="color:#f92672">?</span>
+        Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">MAX_VALUE</span> <span style="color:#f92672">:</span>
+        MAX_ARRAY_SIZE<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">siftUp</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k<span style="color:#f92672">,</span> E x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>comparator <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+        siftUpUsingComparator<span style="color:#f92672">(</span>k<span style="color:#f92672">,</span> x<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">else</span>
+        siftUpComparable<span style="color:#f92672">(</span>k<span style="color:#f92672">,</span> x<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#75715e">// 向根节点递归比较、替换，siftDown 的简化版本
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">siftUpComparable</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> k<span style="color:#f92672">,</span> E x<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Comparable<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> E<span style="color:#f92672">&gt;</span> key <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Comparable<span style="color:#f92672">&lt;?</span> <span style="color:#66d9ef">super</span> E<span style="color:#f92672">&gt;)</span> x<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">&gt;</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">int</span> parent <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>k <span style="color:#f92672">-</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;&gt;&gt;</span> 1<span style="color:#f92672">;</span>
+        Object e <span style="color:#f92672">=</span> queue<span style="color:#f92672">[</span>parent<span style="color:#f92672">];</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>key<span style="color:#f92672">.</span><span style="color:#a6e22e">compareTo</span><span style="color:#f92672">((</span>E<span style="color:#f92672">)</span> e<span style="color:#f92672">)</span> <span style="color:#f92672">&gt;=</span> 0<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">break</span><span style="color:#f92672">;</span>
+        queue<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> e<span style="color:#f92672">;</span>
+        k <span style="color:#f92672">=</span> parent<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+    queue<span style="color:#f92672">[</span>k<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> key<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>E removeAt(int i)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> E <span style="color:#a6e22e">removeAt</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// assert i &gt;= 0 &amp;&amp; i &lt; size;
+</span><span style="color:#75715e"></span>    modCount<span style="color:#f92672">++;</span>
+    <span style="color:#66d9ef">int</span> s <span style="color:#f92672">=</span> <span style="color:#f92672">--</span>size<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>s <span style="color:#f92672">==</span> i<span style="color:#f92672">)</span> <span style="color:#75715e">// removed last element
+</span><span style="color:#75715e"></span>        queue<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        E moved <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span> queue<span style="color:#f92672">[</span>s<span style="color:#f92672">];</span>
+        queue<span style="color:#f92672">[</span>s<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        siftDown<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> moved<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>queue<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">==</span> moved<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            siftUp<span style="color:#f92672">(</span>i<span style="color:#f92672">,</span> moved<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>queue<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> moved<span style="color:#f92672">)</span>
+                <span style="color:#66d9ef">return</span> moved<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>void (read|write)Object(Object(Input|Output)Stream s)</code></p></li>
+</ul></li>
 </ul>
 
 <h2 id="abstractset">AbstractSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li><p>description</p>
+
+<ul>
+<li><code>Set</code> 的最小化实现框架</li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>boolean equals(Object o)</code></li>
+
+<li><p><code>int hashCode()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">int</span> h<span style="color:#f92672">=</span> 0 
+h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</span><span style="color:#a6e22e">hashCode</span><span style="color:#f92672">();</span></code></pre></div></li>
+
+<li><p><code>boolean removeAll(Collection&lt;?&gt; c)</code></p></li>
+</ul></li>
 </ul>
 
 <h2 id="enumset">EnumSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
-</ul>
-
-<h2 id="regularenumset">RegularEnumSet</h2>
+<li><p>description</p>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li>创建时指定使用的枚举类型
+
+<ul>
+<li>内部将枚举值转换为位向量，以实现空间和时间执行上的优化</li>
+</ul></li>
+<li>迭代器为弱关联，即生成迭代器时进行修改，不会抛出 <code>ConcurrentModificationException</code> 异常，但不一定会显示修改情况</li>
+<li>非线程安全，推荐依赖对象进行同步限制，或使用 <code>synchronizedSet</code> 封装
+
+<ul>
+<li><code>Set&lt;MyEnum&gt; s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));</code></li>
+</ul></li>
+<li>所有基础方法均可在常量时间内执行</li>
+</ul></li>
+
+<li><p>params</p>
+
+<ul>
+<li><code>final Class&lt;E&gt; elementType</code></li>
+<li><code>final Enum&lt;?&gt;[] universe</code></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li>实现
+
+<ul>
+<li><code>EnumSet(Class&lt;E&gt;elementType, Enum&lt;?&gt;[] universe)</code></li>
+<li><code>EnumSet&lt;E&gt; clone()</code></li>
+</ul></li>
+
+<li><p>初始化</p>
+
+<ul>
+<li><code>static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; （all|none)Of(Class&lt;E&gt; elementType)</code></li>
+<li><code>static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; copyOf((EnumSet|Collection)&lt;E&gt; s)</code></li>
+
+<li><p><code>static &lt;E extends Enum&lt;E&gt;&gt; EnumSet&lt;E&gt; of(E first, E... rest)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 将枚举类型设置至 elementType
+</span><span style="color:#75715e"></span>EnumSet<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> noneOf<span style="color:#f92672">(</span>first<span style="color:#f92672">.</span><span style="color:#a6e22e">getDeclaringClass</span><span style="color:#f92672">());</span>
+<span style="color:#75715e">// 添加枚举元素
+</span><span style="color:#75715e"></span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>first<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>E e <span style="color:#f92672">:</span> rest<span style="color:#f92672">)</span>
+    result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+<span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span></code></pre></div></li>
+</ul></li>
+
+<li><p>抽象接口</p>
+
+<ul>
+<li><code>abstract void addAll()</code></li>
+<li><code>abstract void addRange(E from, E to)</code></li>
+<li><code>abstract void complement()</code></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h2 id="jumboenumset">JumboEnumSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li>description
+
+<ul>
+<li><code>EnumSet</code> 的私有实现，针对超过64个元素大枚举类型使用</li>
+<li>实现思路参照 <code>RegularEnumSet</code>，只是通过 Long 数组来支持更长纬度的数据</li>
+</ul></li>
+<li>params
+
+<ul>
+<li><code>long elements[]</code></li>
+<li><code>int size = 0</code></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>void addAll()</code></li>
+
+<li><p><code>void addRange(E from, E to)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addRange</span><span style="color:#f92672">(</span>E from<span style="color:#f92672">,</span> E to<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 计算当前序列位于第几个 Long 的区间上
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> fromIndex <span style="color:#f92672">=</span> from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;&gt;&gt;</span> 6<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">int</span> toIndex <span style="color:#f92672">=</span> to<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;&gt;&gt;</span> 6<span style="color:#f92672">;</span>
+
+    <span style="color:#75715e">// 同一区间的话，将该区间视同 RegularEnumSet 即可
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>fromIndex <span style="color:#f92672">==</span> toIndex<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        elements<span style="color:#f92672">[</span>fromIndex<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(-</span>1L <span style="color:#f92672">&gt;&gt;&gt;</span>  <span style="color:#f92672">(</span>from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> to<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">))</span>
+                        <span style="color:#f92672">&lt;&lt;</span> from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">();</span>
+
+    <span style="color:#75715e">// 不同区间情况下，需要填充中间区间，并于头尾处各自处理                               
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span>
+        elements<span style="color:#f92672">[</span>fromIndex<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">(-</span>1L <span style="color:#f92672">&lt;&lt;</span> from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i <span style="color:#f92672">=</span> fromIndex <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span> i <span style="color:#f92672">&lt;</span> toIndex<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span>
+            elements<span style="color:#f92672">[</span>i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1<span style="color:#f92672">;</span>
+        elements<span style="color:#f92672">[</span>toIndex<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1L <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">(</span>63 <span style="color:#f92672">-</span> to<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+    size <span style="color:#f92672">=</span> to<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>boolean add(E e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">/***
+</span><span style="color:#75715e">通过移位跳转到对应区间，然后对该区间长整型
+</span><span style="color:#75715e">*/</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>E e<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    typeCheck<span style="color:#f92672">(</span>e<span style="color:#f92672">);</span>
+
+    <span style="color:#66d9ef">int</span> eOrdinal <span style="color:#f92672">=</span> e<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">int</span> eWordNum <span style="color:#f92672">=</span> eOrdinal <span style="color:#f92672">&gt;&gt;&gt;</span> 6<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">long</span> oldElements <span style="color:#f92672">=</span> elements<span style="color:#f92672">[</span>eWordNum<span style="color:#f92672">];</span>
+    elements<span style="color:#f92672">[</span>eWordNum<span style="color:#f92672">]</span> <span style="color:#f92672">|=</span> <span style="color:#f92672">(</span>1L <span style="color:#f92672">&lt;&lt;</span> eOrdinal<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">boolean</span> result <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>elements<span style="color:#f92672">[</span>eWordNum<span style="color:#f92672">]</span> <span style="color:#f92672">!=</span> oldElements<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>result<span style="color:#f92672">)</span>
+        size<span style="color:#f92672">++;</span>
+    <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="regularenumset">RegularEnumSet</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li><code>EnumSet</code> 的私有实现，针对元素于64位以内</li>
+<li>用64位的 <code>long</code> 的各位来指定枚举值在枚举中的对应数值</li>
+</ul></li>
+<li>params
+
+<ul>
+<li><code>long elements = 0L= 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000</code></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p><code>void addAll()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">elements <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>1L <span style="color:#f92672">&gt;&gt;&gt;</span> <span style="color:#f92672">-</span>universe<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span>
+
+<span style="color:#75715e">/**
+</span><span style="color:#75715e">-1L     =   11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111
+</span><span style="color:#75715e">length      =   6
+</span><span style="color:#75715e">&gt;&gt;&gt; -6      =   &gt;&gt;&gt; (64+ (-6))
+</span><span style="color:#75715e">-1L&gt;&gt;&gt;-6    =   00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111
+</span><span style="color:#75715e">*/</span></code></pre></div></li>
+
+<li><p><code>void addRange(E from, E to)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addRange</span><span style="color:#f92672">(</span>E from<span style="color:#f92672">,</span> E to<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    elements <span style="color:#f92672">=</span> <span style="color:#f92672">(-</span>1L <span style="color:#f92672">&gt;&gt;&gt;</span>  <span style="color:#f92672">(</span>from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> to<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">))</span> <span style="color:#f92672">&lt;&lt;</span> from<span style="color:#f92672">.</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">();</span>
+
+    <span style="color:#75715e">/**
+</span><span style="color:#75715e">    from= 5
+</span><span style="color:#75715e">    to= 10
+</span><span style="color:#75715e">    -1l=    11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 
+</span><span style="color:#75715e">    -1l &gt;&gt;&gt; (5- 10- 1)
+</span><span style="color:#75715e">        -&gt; -1l &gt;&gt;&gt; -6
+</span><span style="color:#75715e">        -&gt; -1l &gt;&gt;&gt; (64- 6)      // 根据结果推导，不确定
+</span><span style="color:#75715e">        -&gt; 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111
+</span><span style="color:#75715e">        -&gt; 63
+</span><span style="color:#75715e">    (-1l &gt;&gt;&gt; (5- 10- 1)) &lt;&lt; 5
+</span><span style="color:#75715e">        -&gt; 63 &lt;&lt; 5
+</span><span style="color:#75715e">        -&gt; 2016
+</span><span style="color:#75715e">    */</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>void complement()</code></p></li>
+
+<li><p><code>public Iterator&lt;E&gt; iterator()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> Iterator<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">iterator</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> EnumSetIterator<span style="color:#f92672">&lt;&gt;();</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">private</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EnumSetIterator</span><span style="color:#f92672">&lt;</span>E <span style="color:#66d9ef">extends</span> Enum<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;&gt;</span> <span style="color:#66d9ef">implements</span> Iterator<span style="color:#f92672">&lt;</span>E<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">long</span> unseen<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">long</span> lastReturned <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+
+    EnumSetIterator<span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        unseen <span style="color:#f92672">=</span> elements<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">hasNext</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> unseen <span style="color:#f92672">!=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@SuppressWarnings</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;unchecked&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> E <span style="color:#a6e22e">next</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>unseen <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> NoSuchElementException<span style="color:#f92672">();</span>
+
+        <span style="color:#75715e">// 找出最后一位并抛出
+</span><span style="color:#75715e"></span>        lastReturned <span style="color:#f92672">=</span> unseen <span style="color:#f92672">&amp;</span> <span style="color:#f92672">-</span>unseen<span style="color:#f92672">;</span>
+        unseen <span style="color:#f92672">-=</span> lastReturned<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>E<span style="color:#f92672">)</span> universe<span style="color:#f92672">[</span>Long<span style="color:#f92672">.</span><span style="color:#a6e22e">numberOfTrailingZeros</span><span style="color:#f92672">(</span>lastReturned<span style="color:#f92672">)];</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">remove</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>lastReturned <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> IllegalStateException<span style="color:#f92672">();</span>
+        elements <span style="color:#f92672">&amp;=</span> <span style="color:#f92672">~</span>lastReturned<span style="color:#f92672">;</span>
+        lastReturned <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>int size()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> Long<span style="color:#f92672">.</span><span style="color:#a6e22e">bitCount</span><span style="color:#f92672">(</span>elements<span style="color:#f92672">);</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">bitCount</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> i<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// 每格两位存储这两位的 1 的数量，等价于 i= i &amp; 0x5555555555555555L + (i&gt;&gt;&gt;1) &amp; 0x5555555555555555L
+</span><span style="color:#75715e"></span>    i <span style="color:#f92672">=</span> i <span style="color:#f92672">-</span> <span style="color:#f92672">((</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 1<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> 0x5555555555555555L<span style="color:#f92672">);</span>
+    <span style="color:#75715e">// 此后每次翻倍移位，进行数量累加
+</span><span style="color:#75715e"></span>    i <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&amp;</span> 0x3333333333333333L<span style="color:#f92672">)</span> <span style="color:#f92672">+</span> <span style="color:#f92672">((</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 2<span style="color:#f92672">)</span> <span style="color:#f92672">&amp;</span> 0x3333333333333333L<span style="color:#f92672">);</span>
+    i <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 4<span style="color:#f92672">))</span> <span style="color:#f92672">&amp;</span> 0x0f0f0f0f0f0f0f0fL<span style="color:#f92672">;</span>
+    i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 8<span style="color:#f92672">);</span>
+    i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 16<span style="color:#f92672">);</span>
+    i <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> <span style="color:#f92672">(</span>i <span style="color:#f92672">&gt;&gt;&gt;</span> 32<span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span><span style="color:#f92672">)</span>i <span style="color:#f92672">&amp;</span> 0x7f<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>boolean contains(Object e)</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>elements <span style="color:#f92672">&amp;</span> <span style="color:#f92672">(</span>1L <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">((</span>Enum<span style="color:#f92672">&lt;?&gt;)</span>e<span style="color:#f92672">).</span><span style="color:#a6e22e">ordinal</span><span style="color:#f92672">()))</span> <span style="color:#f92672">!=</span> 0<span style="color:#f92672">;</span>
+        
+<span style="color:#75715e">/***
+</span><span style="color:#75715e">elements    =   0000 1111
+</span><span style="color:#75715e">e.ordinal   =   3
+</span><span style="color:#75715e">1L&lt;&lt;3       =   0000 0100
+</span><span style="color:#75715e">elements&amp;(1L&lt;&lt;3)= 
+</span><span style="color:#75715e">    0000 1111
+</span><span style="color:#75715e">&amp;   0000 0100
+</span><span style="color:#75715e">    0000 0100   = 4 !=  0
+</span><span style="color:#75715e">    *指定位比较，其它位清零*
+</span><span style="color:#75715e">*/</span></code></pre></div></li>
+
+<li><p><code>boolean add(E e)</code></p>
+
+<ul>
+<li><code>elements |= (1L &lt;&lt; ((Enum&lt;?&gt;)e).ordinal())</code></li>
+</ul></li>
+
+<li><p><code>boolean remove(Object e)</code></p>
+
+<ul>
+<li><code>elements &amp;= ~(1L &lt;&lt; ((Enum&lt;?&gt;)e).ordinal())</code></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h2 id="treeset">TreeSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
+<li>description
+
+<ul>
+<li>基于 <code>TreeMap</code> 的对 <code>NavigableSet</code> 的实现</li>
+<li><code>add</code>、<code>remove</code>、<code>contains</code> 均可在 <code>log(n)</code> 时间内完成</li>
+<li><code>Set</code> 的比较通过 <code>TreeSet</code> 的 <code>compareTo</code> 实现</li>
+<li>非同步实现，须于外部进行同步扩展
+
+<ul>
+<li><code>SortedSet s = Collections.synchronizedSortedSet(new TreeSet(...));</code></li>
+</ul></li>
+<li>迭代器在操作时碰到修改，会快速失败以避免数据风险</li>
+</ul></li>
+<li>params
+
+<ul>
+<li><code>transient NavigableMap&lt;E,Object&gt; m</code></li>
+</ul></li>
 <li>methods</li>
 </ul>
 
@@ -932,42 +1345,427 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
 <h2 id="set">Set</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li>description
+
+<ul>
+<li>不包含重复元素</li>
+<li>元素为可变对象时，需小心元素的变更，影响到集合中对象的 <code>equals</code> 判断
+
+<ul>
+<li>禁止将自己作为元素加入到集合中</li>
+<li>通过抛出 <code>NullPointerException</code>、<code>ClassCastException</code> 异常或 <code>false</code> 来限制填充元素</li>
+</ul></li>
+</ul></li>
+<li>methods
+
+<ul>
+<li><code>int size()</code></li>
+<li><code>boolean contains(Object o)</code></li>
+<li><code>boolean add(E e)</code></li>
+<li><code>boolean remove(Object o)</code></li>
+<li><code>Iterator&lt;E&gt; iterator()</code></li>
+<li><code>Object[] toArray()</code></li>
+<li><code>boolean (contains|add|retain|remove)All(Collection&lt;?&gt; c)</code></li>
+<li><code>void clear()</code></li>
+<li><code>boolean equals(Object o)</code></li>
+<li><code>int hashCode()</code></li>
+</ul></li>
 </ul>
 
 <h2 id="sortedset">SortedSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
-<li>methods</li>
+<li>description
+
+<ul>
+<li>迭代器按升序遍历</li>
+<li>所有元素须实现 <code>Comparable</code> 接口，相互比较</li>
+<li>默认四种标准构建函数
+
+<ul>
+<li><code>SortedSet()</code>
+
+<ul>
+<li>空构建函数，创建空的排序集合</li>
+</ul></li>
+<li><code>SortedSet(Comparator comparator)</code>
+
+<ul>
+<li>仅提供比较器，并创建以此判断的空集合</li>
+</ul></li>
+<li><code>SortedSet(Collection coleection)</code>
+
+<ul>
+<li>将集合的元素通过原始排序初始化成新的集合</li>
+</ul></li>
+<li><code>SortedSet(SortedSet set)</code>
+
+<ul>
+<li>拷贝传入的排序器</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>params
+
+<ul>
+<li><code>Comparator&lt;? super E&gt; comparator()</code></li>
+</ul></li>
+<li>methods
+
+<ul>
+<li><code>SortedSet&lt;E&gt; subSet(E fromElement, E toElement)</code></li>
+<li><code>SortedSet&lt;E&gt; (head|tail)Set(E toElement)</code></li>
+<li><code>E (first|last)()</code></li>
+</ul></li>
 </ul>
 
 <h2 id="navigableset">NavigableSet</h2>
 
 <ul>
-<li>description</li>
-<li>params</li>
+<li>description
+
+<ul>
+<li>支持搜索、倒序输出，并可指定子集的上下边界是否包含</li>
+<li>提供最接近匹配的搜索匹配</li>
+<li>升序操作会比降序操作更快</li>
+<li>允许添加 <code>null</code>，但鼓励实现时限制，以避免混淆不清</li>
+</ul></li>
 <li>methods
 
-<br /></li>
+<ul>
+<li><code>E lower(E e);</code></li>
+<li><code>E floor(E e);</code></li>
+<li><code>E ceiling(E e);</code></li>
+<li><code>E higher(E e);</code></li>
+<li><code>E pollFirst();</code></li>
+<li><code>E pollLast();</code></li>
+</ul></li>
+</ul>
+
+<p>## ServiceLoader</p>
+
+<h2 id="map-1">Map</h2>
+
+<ul>
+<li>description
+
+<ul>
+<li>用于映射键值对，不允许重复的键值</li>
+<li>提供三种视图来查看映射内容：键的集合，值的列表和键值对的映射集合</li>
+<li>极度小心键值为可变对象的情况，例如严禁将映射自己做为键值，但允许将自身做为值存储
+
+<ul>
+<li>对象的变化会影响到 <code>equals</code> 和 <code>hashcode</code> 的计算</li>
+</ul></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p>Query</p>
+
+<ul>
+<li><code>int size()</code></li>
+<li><code>boolean containsKey(Object key)</code></li>
+<li><code>boolean containsValue(Object value)</code></li>
+<li><code>V get(Object key)</code></li>
+</ul></li>
+
+<li><p>Modification</p>
+
+<ul>
+<li><code>V put(K key, V value)</code></li>
+<li><code>V remove(Object key)</code></li>
+</ul></li>
+
+<li><p>Bulk</p>
+
+<ul>
+<li><code>void putAll(Map&lt;? extends K, ? extends V&gt; m)</code></li>
+<li><code>void clear()</code></li>
+</ul></li>
+
+<li><p>Views</p>
+
+<ul>
+<li><code>Set&lt;K&gt; keySet()</code></li>
+<li><code>Collection&lt;V&gt; values()</code></li>
+<li><code>Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</code></li>
+</ul></li>
+
+<li><p>Comparison</p>
+
+<ul>
+<li><code>boolean equals(Object o)</code></li>
+<li><code>int hashCode()</code></li>
+</ul></li>
+
+<li><p>Default</p>
+
+<ul>
+<li><code>default V getOrDefault(Object key, V defaultValue)</code></li>
+<li><code>default void forEach(BiConsumer&lt;? super K, ? super V&gt; action)</code></li>
+<li><code>default void replaceAll(BiFunction&lt;? super K, ? super V, ? extends V&gt; function)</code></li>
+<li><code>default V putIfAbsent(K key, V value)</code></li>
+<li><code>default boolean remove(Object key, Object value)</code>
+
+<ul>
+<li>仅当保存值为指定值时移除指定键值</li>
+</ul></li>
+<li><code>default boolean replace(K key, V oldValue, V newValue)</code>
+
+<ul>
+<li>仅当指定键对应值为指定值时，覆盖以新值</li>
+</ul></li>
+<li><code>default V replace(K key, V value)</code></li>
+<li><code>default V computeIf(Absent|Present)(K key, Function&lt;? super K, ? extends V&gt; mappingFunction)</code>
+
+<ul>
+<li>仅当键值（不存在|存在）情况下，覆盖以新计算值</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="sortedmap">SortedMap</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>进一步在键值上进行整体性的排序</li>
+<li>建议实现的构建函数
+
+<ul>
+<li><code>SortedMap()</code></li>
+<li><code>SortedMap(Comparator)</code></li>
+<li><code>SortedMap(Map)</code></li>
+<li><code>SortedMap(SortedMap)</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li>Sub
+
+<ul>
+<li><code>SortedMap&lt;K,V&gt; subMap(K fromKey, K toKey)</code>
+
+<ul>
+<li>[fromKey,toKey)</li>
+</ul></li>
+<li><code>SortedMap&lt;K,V&gt; headMap(K toKey)</code>
+
+<ul>
+<li>[,toKey)</li>
+</ul></li>
+<li><code>SortedMap&lt;K,V&gt; tailMap(K fromKey)</code>
+
+<ul>
+<li>[fromKey,]</li>
+</ul></li>
+</ul></li>
+<li>Query
+
+<ul>
+<li><code>K firstKey()</code></li>
+<li><code>K lastKey()</code></li>
+</ul></li>
+<li>View
+
+<ul>
+<li><code>Set&lt;K&gt; keySet()</code></li>
+<li><code>Collection&lt;V&gt; values()</code></li>
+<li><code>Set&lt;Map.Entry&lt;K, V&gt;&gt; entrySet()</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="navigablemap">NavigableMap</h2>
+
+<ul>
+<li><p>description</p>
+
+<ul>
+<li>在 <code>SortedSet</code> 的基础上扩展导航、搜索功能</li>
+<li>支持正反向查询、遍历，但升序速度更快</li>
+<li>新增 <code>pollFirst</code> 和 <code>pollLast</code> 方法，并可通过参数获取指定上下限数据</li>
+<li>建议不允许添加 <code>null</code></li>
+</ul></li>
+
+<li><p>methods</p>
+
+<ul>
+<li><p>Query</p>
+
+<ul>
+<li><code>E lower(E e)</code>
+
+<ul>
+<li><code>&lt;</code></li>
+</ul></li>
+<li><code>E floor(E e)</code>
+
+<ul>
+<li><code>&lt;=</code></li>
+</ul></li>
+<li><code>E ceiling(E e)</code>
+
+<ul>
+<li><code>&gt;=</code></li>
+</ul></li>
+<li><code>E higher(E e)</code>
+
+<ul>
+<li><code>&gt;</code></li>
+</ul></li>
+<li><code>E pollFirst()</code></li>
+<li><code>E pollLast()</code></li>
+</ul></li>
+
+<li><p>View</p>
+
+<ul>
+<li><code>Iterator&lt;E&gt; iterator()</code></li>
+<li><code>NavigableSet&lt;E&gt; descendingSet()</code></li>
+<li><code>Iterator&lt;E&gt; descendingIterator()</code></li>
+</ul></li>
+
+<li><p>SubSet</p>
+
+<ul>
+<li><code>NavigableSet&lt;E&gt; subSet(E fromElement, boolean fromInclusive, E toElement,   boolean toInclusive)</code></li>
+<li><code>NavigableSet&lt;E&gt; headSet(E toElement, boolean inclusive)</code></li>
+<li><code>NavigableSet&lt;E&gt; tailSet(E fromElement, boolean inclusive)</code></li>
+<li><code>SortedSet&lt;E&gt; subSet(E fromElement, E toElement)</code></li>
+<li><code>SortedSet&lt;E&gt; headSet(E toElement)</code></li>
+<li><code>SortedSet&lt;E&gt; tailSet(E fromElement)</code></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="abstractmap">Abstractmap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="weakhashmap">WeakHashMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="identityhashmap">IdentityHashMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="enummap">EnumMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="treemap">TreeMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="hashmap">HashMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="linkedhashmap">LinkedHashMap</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="dictionary-1">Dictionary</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="hashtable">Hashtable</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="properties">Properties</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="utils-1">Utils</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="collections">Collections</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
+</ul>
+
+<h2 id="arrays">Arrays</h2>
+
+<ul>
+<li>description</li>
+<li>params</li>
+<li>methods</li>
 </ul>
 
 <h1 id="reference">Reference</h1>
 
+<h2 id="官方">官方</h2>
+
 <ul>
+<li><a href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.19">15.19. Shift Operators</a></li>
 <li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
 </ul>
 
+<h2 id="补充">补充</h2>
+
 <ul>
 <li><a href="https://blog.csdn.net/zero__007/article/details/52166306">ArrayList中elementData为什么被transient修饰？</a></li>
 <li><a href="http://cakin24.iteye.com/blog/2324030">rrayDeque集合的妙用</a></li>
-<li>[]()</li>
-<li>[]()</li>
+<li><a href="https://blog.csdn.net/java_4_ever/article/details/42263297">JDK源码解读之RegularEnumSet</a></li>
 <li>[]()</li>
 <li>[]()</li>
 </ul>
@@ -1006,7 +1804,7 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Java.Collections
+                标题：Java.Collections 60%
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -1060,7 +1858,7 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">235</span>
+        <span class="site-state-item-count">237</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -1137,8 +1935,8 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
 <li><a href="#priorityqueue">PriorityQueue</a></li>
 <li><a href="#abstractset">AbstractSet</a></li>
 <li><a href="#enumset">EnumSet</a></li>
-<li><a href="#regularenumset">RegularEnumSet</a></li>
 <li><a href="#jumboenumset">JumboEnumSet</a></li>
+<li><a href="#regularenumset">RegularEnumSet</a></li>
 <li><a href="#treeset">TreeSet</a></li>
 <li><a href="#hashset">HashSet</a></li>
 <li><a href="#linkedhashset">LinkedHashSet</a></li>
@@ -1147,8 +1945,28 @@ s<span style="color:#f92672">.</span><span style="color:#a6e22e">writeInt</span>
 <li><a href="#set">Set</a></li>
 <li><a href="#sortedset">SortedSet</a></li>
 <li><a href="#navigableset">NavigableSet</a></li>
+<li><a href="#map-1">Map</a></li>
+<li><a href="#sortedmap">SortedMap</a></li>
+<li><a href="#navigablemap">NavigableMap</a></li>
+<li><a href="#abstractmap">Abstractmap</a></li>
+<li><a href="#weakhashmap">WeakHashMap</a></li>
+<li><a href="#identityhashmap">IdentityHashMap</a></li>
+<li><a href="#enummap">EnumMap</a></li>
+<li><a href="#treemap">TreeMap</a></li>
+<li><a href="#hashmap">HashMap</a></li>
+<li><a href="#linkedhashmap">LinkedHashMap</a></li>
+<li><a href="#dictionary-1">Dictionary</a></li>
+<li><a href="#hashtable">Hashtable</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#utils-1">Utils</a></li>
+<li><a href="#collections">Collections</a></li>
+<li><a href="#arrays">Arrays</a></li>
 </ul></li>
-<li><a href="#reference">Reference</a></li>
+<li><a href="#reference">Reference</a>
+<ul>
+<li><a href="#官方">官方</a></li>
+<li><a href="#补充">补充</a></li>
+</ul></li>
 </ul>
 </nav></div>
     </div>

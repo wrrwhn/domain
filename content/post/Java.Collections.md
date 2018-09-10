@@ -1,5 +1,5 @@
 ---
-title: "Java.Collections"
+title: "Java.Collections 60%"
 date: "2017-08-09"
 categories:
  - "整理"
@@ -425,45 +425,405 @@ toc: true
 ## PriorityQueue
 
 - description
-	无限制优先级队列
-	不允许空值、无法比较的对象
+	- 无限制优先级队列
+		- 构建时通过自然排序或指定排序方式进行优先级调整
+	- 不允许空值、无法比较的对象
+	- 注意多个元素同为最小值情况
+	- 注意
+		- `iterator()` 不保障队列以任意顺序排列
+			- 排序遍历情况可使用 `Arrays.sort(pq.toArray())`
+		- 非线程安全，可用 `PriorityBlockingQueue` 代替
 
 - params
+	- `transient Object[] queue`
+
+		```java
+		平衡二进制堆，将队列以树形式进行对比存储，排序最低值存于[0]位
+		queue[n]= queue[2n+1]+ queue[2*(n+1)]
+		存储形式
+			[0]	[1]	[2]	[3]	[4]	[5]	[6]
+		记录形式
+				[0]
+				[1]	[2]
+			[3]	[4]	[5]	[6]
+		```
+
 - methods
 
+	- `public PriorityQueue(int initialCapacity)`
+	- `public PriorityQueue(Collection<? extends E> c)`
+
+		```java
+		private void initFromCollection(Collection<? extends E> c) {
+			// 拷贝集合元素，并进行非空判断
+			initElementsFromCollection(c);
+			heapify();
+		}
+
+		// 堆化
+		private void heapify() {
+			for (int i = (size >>> 1) - 1; i >= 0; i--)
+				siftDown(i, (E) queue[i]);
+		}
+
+		private void siftDown(int k, E x) {
+			if (comparator != null)
+				siftDownUsingComparator(k, x);
+			else
+				siftDownComparable(k, x);
+		}
+
+		// 插入项，并与低级节点对比至小于等于
+		private void siftDownComparable(int k, E x) {
+			Comparable<? super E> key = (Comparable<? super E>)x;
+			// 递归到最后一种可能，2*(n+1)
+			int half = size >>> 1;
+			while (k < half) {
+				// 替换父结点、父亲兄弟结点中的最小值
+				int child = (k << 1) + 1;
+				Object c = queue[child];
+				int right = child + 1;
+				if (right < size &&
+					((Comparable<? super E>) c).compareTo((E) queue[right]) > 0)
+					c = queue[child = right];
+				if (key.compareTo((E) c) <= 0)
+					break;
+				queue[k] = c;
+				k = child;
+			}
+			queue[k] = key;
+		}
+		```
+
+	- `public boolean offer(E e)`
+
+		``` java
+		public boolean offer(E e) {
+			if (e == null)
+				throw new NullPointerException();
+			modCount++;
+			int i = size;
+			if (i >= queue.length)
+				grow(i + 1);
+			size = i + 1;
+			if (i == 0)
+				queue[0] = e;
+			else
+				siftUp(i, e);
+			return true;
+		}
+
+		// 扩容，小于64时加2，否则加一半容量
+		private void grow(int minCapacity) {
+			int oldCapacity = queue.length;
+			int newCapacity = oldCapacity + ((oldCapacity < 64) ?
+											(oldCapacity + 2) :
+											(oldCapacity >> 1));
+			if (newCapacity - MAX_ARRAY_SIZE > 0)
+				newCapacity = hugeCapacity(minCapacity);
+			queue = Arrays.copyOf(queue, newCapacity);
+		}
+
+		private static int hugeCapacity(int minCapacity) {
+			if (minCapacity < 0) // overflow
+				throw new OutOfMemoryError();
+			return (minCapacity > MAX_ARRAY_SIZE) ?
+				Integer.MAX_VALUE :
+				MAX_ARRAY_SIZE;
+		}
+
+		private void siftUp(int k, E x) {
+			if (comparator != null)
+				siftUpUsingComparator(k, x);
+			else
+				siftUpComparable(k, x);
+		}
+
+		// 向根节点递归比较、替换，siftDown 的简化版本
+		private void siftUpComparable(int k, E x) {
+			Comparable<? super E> key = (Comparable<? super E>) x;
+			while (k > 0) {
+				int parent = (k - 1) >>> 1;
+				Object e = queue[parent];
+				if (key.compareTo((E) e) >= 0)
+					break;
+				queue[k] = e;
+				k = parent;
+			}
+			queue[k] = key;
+		}
+		```
+
+	- `E removeAt(int i)`
+
+		```java
+		private E removeAt(int i) {
+			// assert i >= 0 && i < size;
+			modCount++;
+			int s = --size;
+			if (s == i) // removed last element
+				queue[i] = null;
+			else {
+				E moved = (E) queue[s];
+				queue[s] = null;
+				siftDown(i, moved);
+				if (queue[i] == moved) {
+					siftUp(i, moved);
+					if (queue[i] != moved)
+						return moved;
+				}
+			}
+			return null;
+		}
+		```
+	
+	- `void (read|write)Object(Object(Input|Output)Stream s)`
 
 ## AbstractSet
 
 - description
-- params
-- methods
+	- `Set` 的最小化实现框架
 
+- methods
+	- `boolean equals(Object o)`
+ 	- `int hashCode()`
+
+	 	```java
+		int h= 0 
+		h += next().hashCode();
+		```
+
+	- `boolean removeAll(Collection<?> c)`
 
 ## EnumSet
 
 - description
+	- 创建时指定使用的枚举类型
+		- 内部将枚举值转换为位向量，以实现空间和时间执行上的优化
+	- 迭代器为弱关联，即生成迭代器时进行修改，不会抛出 `ConcurrentModificationException` 异常，但不一定会显示修改情况
+	- 非线程安全，推荐依赖对象进行同步限制，或使用 `synchronizedSet` 封装
+		- `Set<MyEnum> s = Collections.synchronizedSet(EnumSet.noneOf(MyEnum.class));`
+	- 所有基础方法均可在常量时间内执行
+
 - params
+	- `final Class<E> elementType`
+	- `final Enum<?>[] universe`
+
 - methods
+	- 实现
+		- `EnumSet(Class<E>elementType, Enum<?>[] universe)`
+		- `EnumSet<E> clone()`
+	- 初始化
+		- `static <E extends Enum<E>> EnumSet<E> （all|none)Of(Class<E> elementType)`
+		- `static <E extends Enum<E>> EnumSet<E> copyOf((EnumSet|Collection)<E> s)`
+		- `static <E extends Enum<E>> EnumSet<E> of(E first, E... rest)`
 
-
-## RegularEnumSet
-
-- description
-- params
-- methods
+			```java
+			// 将枚举类型设置至 elementType
+			EnumSet<E> result = noneOf(first.getDeclaringClass());
+			// 添加枚举元素
+			result.add(first);
+			for (E e : rest)
+				result.add(e);
+			return result;
+			```
+	- 抽象接口
+		- `abstract void addAll()`
+		- `abstract void addRange(E from, E to)`
+		- `abstract void complement()`
 
 
 ## JumboEnumSet
 
 - description
+	- `EnumSet` 的私有实现，针对超过64个元素大枚举类型使用
+	- 实现思路参照 `RegularEnumSet`，只是通过 Long 数组来支持更长纬度的数据
 - params
+	- `long elements[]`
+	- `int size = 0`
 - methods
+	- `void addAll()`
+	- `void addRange(E from, E to)`
+
+		```java
+		void addRange(E from, E to) {
+
+			// 计算当前序列位于第几个 Long 的区间上
+			int fromIndex = from.ordinal() >>> 6;
+			int toIndex = to.ordinal() >>> 6;
+
+			// 同一区间的话，将该区间视同 RegularEnumSet 即可
+			if (fromIndex == toIndex) {
+				elements[fromIndex] = (-1L >>>  (from.ordinal() - to.ordinal() - 1))
+								<< from.ordinal();
+
+			// 不同区间情况下，需要填充中间区间，并于头尾处各自处理								
+			} else {
+				elements[fromIndex] = (-1L << from.ordinal());
+				for (int i = fromIndex + 1; i < toIndex; i++)
+					elements[i] = -1;
+				elements[toIndex] = -1L >>> (63 - to.ordinal());
+			}
+			size = to.ordinal() - from.ordinal() + 1;
+		}
+		```
+
+	- `boolean add(E e)`
+
+		```java
+		/***
+		通过移位跳转到对应区间，然后对该区间长整型
+		*/
+		public boolean add(E e) {
+			typeCheck(e);
+
+			int eOrdinal = e.ordinal();
+			int eWordNum = eOrdinal >>> 6;
+
+			long oldElements = elements[eWordNum];
+			elements[eWordNum] |= (1L << eOrdinal);
+			boolean result = (elements[eWordNum] != oldElements);
+			if (result)
+				size++;
+			return result;
+		}
+		```
+
+
+## RegularEnumSet
+
+- description
+	- `EnumSet` 的私有实现，针对元素于64位以内
+	- 用64位的 `long` 的各位来指定枚举值在枚举中的对应数值
+- params
+	- `long elements = 0L= 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00000000 `
+- methods
+	- `void addAll()`
+
+		```java
+		elements = -1L >>> -universe.length;
+
+		/**
+		-1L		= 	11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111
+		length		=	6
+		>>> -6 		= 	>>> (64+ (-6))
+		-1L>>>-6	= 	00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111
+		*/
+		```
+	- `void addRange(E from, E to)`
+
+		```java
+		void addRange(E from, E to) {
+			elements = (-1L >>>  (from.ordinal() - to.ordinal() - 1)) << from.ordinal();
+
+			/**
+			from= 5
+			to= 10
+			-1l=	11111111 11111111 11111111 11111111 11111111 11111111 11111111 11111111 
+			-1l >>> (5- 10- 1)
+				-> -1l >>> -6
+				-> -1l >>> (64- 6)		// 根据结果推导，不确定
+				-> 00000000 00000000 00000000 00000000 00000000 00000000 00000000 00111111
+				-> 63
+			(-1l >>> (5- 10- 1)) << 5
+				-> 63 << 5
+				-> 2016
+			*/
+		}
+		```
+	- `void complement()`
+
+	- `public Iterator<E> iterator()`
+
+		```java
+		public Iterator<E> iterator() {
+			return new EnumSetIterator<>();
+		}
+
+		private class EnumSetIterator<E extends Enum<E>> implements Iterator<E> {
+			long unseen;
+			long lastReturned = 0;
+
+			EnumSetIterator() {
+				unseen = elements;
+			}
+
+			public boolean hasNext() {
+				return unseen != 0;
+			}
+
+			@SuppressWarnings("unchecked")
+			public E next() {
+				if (unseen == 0)
+					throw new NoSuchElementException();
+
+				// 找出最后一位并抛出
+				lastReturned = unseen & -unseen;
+				unseen -= lastReturned;
+				return (E) universe[Long.numberOfTrailingZeros(lastReturned)];
+			}
+
+			public void remove() {
+				if (lastReturned == 0)
+					throw new IllegalStateException();
+				elements &= ~lastReturned;
+				lastReturned = 0;
+			}
+		}
+
+		```
+
+	- `int size()`
+
+		```java
+		return Long.bitCount(elements);
+
+		public static int bitCount(long i) {
+			// 每格两位存储这两位的 1 的数量，等价于 i= i & 0x5555555555555555L + (i>>>1) & 0x5555555555555555L
+			i = i - ((i >>> 1) & 0x5555555555555555L);
+			// 此后每次翻倍移位，进行数量累加
+			i = (i & 0x3333333333333333L) + ((i >>> 2) & 0x3333333333333333L);
+			i = (i + (i >>> 4)) & 0x0f0f0f0f0f0f0f0fL;
+			i = i + (i >>> 8);
+			i = i + (i >>> 16);
+			i = i + (i >>> 32);
+			return (int)i & 0x7f;
+		}
+		```
+
+	- `boolean contains(Object e)`
+		
+		```java
+		return (elements & (1L << ((Enum<?>)e).ordinal())) != 0;
+		
+		/***
+		elements	=	0000 1111
+		e.ordinal	=	3
+		1L<<3		=	0000 0100
+		elements&(1L<<3)= 
+			0000 1111
+		&	0000 0100
+			0000 0100	= 4	!=	0
+			*指定位比较，其它位清零*
+		*/
+		```
+	- `boolean add(E e)`
+		- `elements |= (1L << ((Enum<?>)e).ordinal())`
+	- `boolean remove(Object e)`
+		- `elements &= ~(1L << ((Enum<?>)e).ordinal())`
 
 
 ## TreeSet
 
 - description
+	- 基于 `TreeMap` 的对 `NavigableSet` 的实现
+	- `add`、`remove`、`contains` 均可在 `log(n)` 时间内完成
+	- `Set` 的比较通过 `TreeSet` 的 `compareTo ` 实现
+	- 非同步实现，须于外部进行同步扩展
+		- `SortedSet s = Collections.synchronizedSortedSet(new TreeSet(...));`
+	- 迭代器在操作时碰到修改，会快速失败以避免数据风险
 - params
+	- `transient NavigableMap<E,Object> m`
 - methods
 
 
@@ -524,36 +884,261 @@ toc: true
 
 
 ## Set
-
 - description
-- params
+	- 不包含重复元素
+	- 元素为可变对象时，需小心元素的变更，影响到集合中对象的 `equals` 判断
+		- 禁止将自己作为元素加入到集合中
+		- 通过抛出 `NullPointerException`、`ClassCastException` 异常或 `false` 来限制填充元素
 - methods
+	- `int size()`
+	- `boolean contains(Object o)`
+	- `boolean add(E e)`
+	- `boolean remove(Object o)`
+	- `Iterator<E> iterator()`
+	- `Object[] toArray()`
+	- `boolean (contains|add|retain|remove)All(Collection<?> c)`
+	- `void clear()`
+	- `boolean equals(Object o)`
+	- `int hashCode()`
+
 
 
 ## SortedSet
-
 - description
+	- 迭代器按升序遍历
+	- 所有元素须实现 `Comparable` 接口，相互比较
+	- 默认四种标准构建函数
+		- `SortedSet()`
+			- 空构建函数，创建空的排序集合
+		- `SortedSet(Comparator comparator)`
+			- 仅提供比较器，并创建以此判断的空集合
+		- `SortedSet(Collection coleection)`
+			- 将集合的元素通过原始排序初始化成新的集合
+		- `SortedSet(SortedSet set)`
+			- 拷贝传入的排序器
 - params
+	- `Comparator<? super E> comparator()`
 - methods
-
+	- `SortedSet<E> subSet(E fromElement, E toElement)`
+	- `SortedSet<E> (head|tail)Set(E toElement)`
+	- `E (first|last)()`
 
 ## NavigableSet
 
 - description
+	- 支持搜索、倒序输出，并可指定子集的上下边界是否包含
+	- 提供最接近匹配的搜索匹配
+	- 升序操作会比降序操作更快
+	- 允许添加 `null`，但鼓励实现时限制，以避免混淆不清
+- methods
+	- `E lower(E e);`
+	- `E floor(E e);`
+	- `E ceiling(E e);`
+	- `E higher(E e);`
+	- `E pollFirst();`
+	- `E pollLast();`
+
+
+ ## ServiceLoader
+
+
+## Map
+
+- description
+	- 用于映射键值对，不允许重复的键值
+	- 提供三种视图来查看映射内容：键的集合，值的列表和键值对的映射集合
+	- 极度小心键值为可变对象的情况，例如严禁将映射自己做为键值，但允许将自身做为值存储
+		- 对象的变化会影响到 `equals` 和 `hashcode` 的计算
+- methods
+	- Query
+		- `int size()`
+		- `boolean containsKey(Object key)`
+		- `boolean containsValue(Object value)`
+		- `V get(Object key)`
+
+	- Modification		
+		- `V put(K key, V value)`
+		- `V remove(Object key)`
+
+	- Bulk
+		- `void putAll(Map<? extends K, ? extends V> m)`
+		- `void clear()`
+
+	- Views
+		- `Set<K> keySet()`
+		- `Collection<V> values()`
+		- `Set<Map.Entry<K, V>> entrySet()`
+
+	- Comparison
+		- `boolean equals(Object o)`
+		- `int hashCode()`
+
+	- Default
+		- `default V getOrDefault(Object key, V defaultValue)`
+		- `default void forEach(BiConsumer<? super K, ? super V> action)`
+		- `default void replaceAll(BiFunction<? super K, ? super V, ? extends V> function) `
+		- `default V putIfAbsent(K key, V value)`
+		- `default boolean remove(Object key, Object value)`
+			- 仅当保存值为指定值时移除指定键值
+		- `default boolean replace(K key, V oldValue, V newValue)`
+			- 仅当指定键对应值为指定值时，覆盖以新值
+		- `default V replace(K key, V value)`
+		- `default V computeIf(Absent|Present)(K key, Function<? super K, ? extends V> mappingFunction)`
+			- 仅当键值（不存在|存在）情况下，覆盖以新计算值
+
+
+## SortedMap
+
+- description
+	- 进一步在键值上进行整体性的排序
+	- 建议实现的构建函数
+		- `SortedMap()`
+		- `SortedMap(Comparator)`
+		- `SortedMap(Map)`
+		- `SortedMap(SortedMap)`
+
+- methods
+	- Sub
+		- `SortedMap<K,V> subMap(K fromKey, K toKey)`
+			- [fromKey,toKey)
+		- `SortedMap<K,V> headMap(K toKey)`
+			- [,toKey)
+		- `SortedMap<K,V> tailMap(K fromKey)`
+			- [fromKey,]
+	- Query
+		- `K firstKey()`
+		- `K lastKey()`
+	- View
+		- `Set<K> keySet()`
+		- `Collection<V> values()`
+		- `Set<Map.Entry<K, V>> entrySet()`
+
+
+## NavigableMap
+
+- description
+	- 在 `SortedSet` 的基础上扩展导航、搜索功能
+	- 支持正反向查询、遍历，但升序速度更快
+	- 新增 `pollFirst` 和 `pollLast` 方法，并可通过参数获取指定上下限数据
+	- 建议不允许添加 `null`
+
+- methods
+	- Query
+		- `E lower(E e)`
+			- `<`
+		- `E floor(E e)`
+			- `<=`
+		- `E ceiling(E e)`
+			- `>=`
+		- `E higher(E e)`
+			- `>`
+		- `E pollFirst()`
+		- `E pollLast()`
+
+	- View
+		- `Iterator<E> iterator()`
+		- `NavigableSet<E> descendingSet()`
+		- `Iterator<E> descendingIterator()`
+	- SubSet	
+		- `NavigableSet<E> subSet(E fromElement, boolean fromInclusive, E toElement,   boolean toInclusive)`
+		- `NavigableSet<E> headSet(E toElement, boolean inclusive)`
+		- `NavigableSet<E> tailSet(E fromElement, boolean inclusive)`
+		- `SortedSet<E> subSet(E fromElement, E toElement)`
+		- `SortedSet<E> headSet(E toElement)`
+		- `SortedSet<E> tailSet(E fromElement)`
+
+## Abstractmap
+
+- description
 - params
 - methods
 
-    
+## WeakHashMap
+
+- description
+- params
+- methods
+
+## IdentityHashMap
+
+- description
+- params
+- methods
+
+## EnumMap
+
+- description
+- params
+- methods
+
+## TreeMap
+
+- description
+- params
+- methods
+
+## HashMap
+
+- description
+- params
+- methods
+
+## LinkedHashMap
+
+- description
+- params
+- methods
+
+## Dictionary
+
+- description
+- params
+- methods
+
+## Hashtable
+
+- description
+- params
+- methods
+
+## Properties
+
+- description
+- params
+- methods
+
+## Utils
+
+- description
+- params
+- methods
+
+## Collections
+
+- description
+- params
+- methods
+
+## Arrays
+
+- description
+- params
+- methods
+
+
+
+
+
 # Reference
-## 
+## 官方
+- [15.19. Shift Operators](https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.19)
 - []()
 - []()
 - []()
 
-## 
+## 补充
 - [ArrayList中elementData为什么被transient修饰？](https://blog.csdn.net/zero__007/article/details/52166306)
 - [rrayDeque集合的妙用](http://cakin24.iteye.com/blog/2324030)
-- []()
-- []()
+- [JDK源码解读之RegularEnumSet](https://blog.csdn.net/java_4_ever/article/details/42263297)
 - []()
 - []()
