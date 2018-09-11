@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring/</guid>
+      <description>架构 架构图 4.2.x x.x.x 模块 Core BeanFactory Dependency Injection Utils AOP 元数据 AOP 基础架构 ORM 对象关系映射 支持 Hibernate iBatis JDO WEB DAO 事务 JDBC 抽象 DAO WEB.MVC MVC Framework views JSP/ Velocity PDF/ Excel Context 应用上下文 UI Validation JDNI EJB Email 国际化 I18N 包 spring-aop spring-aspects spring-beans</description>
+    </item>
     
     <item>
       <title>Hello.GraphQL</title>
@@ -1684,15 +1693,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       
       <guid>http://domain.yqjdcyy.com/post/git.install/</guid>
       <description>Git 安装 参考 GotGitHub git - 简易指南 GitHub Help Git教程 安装 Windows git config --global user.name wrrwhn git config --global user.email yqjdcyy@gmail.com git config --global alias.gcf git config ssh-keygen 创建公钥/私钥对（id_rsa.pub/id_rsa） - 注意，</description>
-    </item>
-    
-    <item>
-      <title>Hello.Spring 30%</title>
-      <link>http://domain.yqjdcyy.com/post/hello.spring/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.spring/</guid>
-      <description>组成 原理 AOP 描述 Aspect Orient Programming 面向方面（切面）编程，用于处理系统中分布中各模块的横切关注点，如事务、日志、缓存、对象池 类型 静态 使用 AOP 框架提供的命令进行</description>
     </item>
     
     <item>

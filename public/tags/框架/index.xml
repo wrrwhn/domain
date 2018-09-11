@@ -6,10 +6,19 @@
     <description>Recent content in 框架 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 20 Oct 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring/</link>
+      <pubDate>Tue, 11 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring/</guid>
+      <description>架构 架构图 4.2.x x.x.x 模块 Core BeanFactory Dependency Injection Utils AOP 元数据 AOP 基础架构 ORM 对象关系映射 支持 Hibernate iBatis JDO WEB DAO 事务 JDBC 抽象 DAO WEB.MVC MVC Framework views JSP/ Velocity PDF/ Excel Context 应用上下文 UI Validation JDNI EJB Email 国际化 I18N 包 spring-aop spring-aspects spring-beans</description>
+    </item>
     
     <item>
       <title>Hello.Spark</title>
@@ -18,15 +27,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/spark/</guid>
       <description>Spark 启动 Spark method setUp threadPool ipAddress port secure start init stop webSocket other (String path, Route route) get post put patch delete head trace connect options before after (String path, String acceptType, Route route) webSocket(String path, Class&amp;lt;?&amp;gt; handler) class SingletonHolder static final SparkInstance INSTANCE = new SparkInstance(); SparkInstance parameter port ipAddress max|min Threads webSocketHandlers SparkServer SimpleRouteMatcher CountDownLatch method init() this.routeMatcher = RouteMatcherFactory.get(); (new Thread(run&amp;lt;invokedynamic&amp;gt;(this))).start(); getter/ setter webSocket(String path,</description>
-    </item>
-    
-    <item>
-      <title>Hello.Spring 30%</title>
-      <link>http://domain.yqjdcyy.com/post/hello.spring/</link>
-      <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.spring/</guid>
-      <description>组成 原理 AOP 描述 Aspect Orient Programming 面向方面（切面）编程，用于处理系统中分布中各模块的横切关注点，如事务、日志、缓存、对象池 类型 静态 使用 AOP 框架提供的命令进行</description>
     </item>
     
     <item>

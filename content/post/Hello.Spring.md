@@ -1,6 +1,6 @@
 ---
-title: "Hello.Spring 30%"
-date: "2017-08-09"
+title: "Hello.Spring"
+date: "2018-09-11"
 categories:
  - "整理"
 tags:
@@ -9,10 +9,141 @@ tags:
 toc: true
 ---
 
-# 组成
+# 架构
+## 架构图
+- 4.2.x
+    - ![spring-overview.png](http://otzm88f21.bkt.clouddn.com/f5e660a7-3798-41a1-8ee0-fd9d84359ca0.png)
+- x.x.x
+    - ![702767-20150907115314981-2080783917.jpg](http://otzm88f21.bkt.clouddn.com/c3eefed2-02c5-46c7-bb58-41f8de994adc.jpg)
+
+## 模块
+- Core
+    - BeanFactory
+        - Dependency Injection
+    - Utils
+- AOP
+    - 元数据
+    - AOP 基础架构
+- ORM
+    - 对象关系映射
+    - 支持
+        - Hibernate
+        - iBatis
+        - JDO
+- WEB
+- DAO
+    - 事务
+    - JDBC 抽象
+    - DAO
+- WEB.MVC
+    - MVC Framework
+    - views
+    - JSP/ Velocity
+    - PDF/ Excel
+- Context
+    - 应用上下文
+    - UI
+    - Validation
+    - JDNI
+    - EJB
+    - Email
+    - 国际化
+        - I18N
+
+## 包
+- spring-aop
+- spring-aspects
+- spring-beans
+- spring-context
+    - IoC功能扩展服务
+        - 邮件
+        - 任务调度
+        - JDNI
+        - EJB集成
+        - 远程访问
+        - 缓存
+        - 视图框架封装
+- spring-context-support
+    - 用于将第三方类引入至 Spring 应用上下文
+        - ehcache
+        - JCA
+        - JMX
+        - JavaMail
+        - Quartz
+- spring-core
+- spring-expression
+- spring-instrument
+    - 服务器代理接口
+- spring-instrument-tomcat
+- spring-jdbc
+- spring-jms
+    - Java Message Service
+- spring-messaging
+- spring-orm
+- spring-oxm
+    - Object与 XML 的相互转换支持
+- spring-test
+- spring-tx
+    - 事务
+- spring-web
+    - Web 开发核心类
+        - WebApplicationContext
+        - Struts
+        - JSF
+        - Resource.Upload
+        - Filter
+        - Utils
+- spring-webmvc
+    - 图际化
+    - 标签
+    - Theme
+    - View
+        - FreeMarker
+        - JasperReports
+        - Tiles
+        - Velocity
+        - XSLT
+- spring-websocket
+    - 支持 portlet 标准
 
 
 # 原理
+
+## DI
+- 全称
+    - Dependency Injection
+- 概念
+    - 将其参数的实例传递给所属对象
+- 方式
+    - 构建函数
+    - Setter
+- 示例
+
+    ```java
+    public class Hunter {
+        private Weapon weapon;
+        public Hunter(Weapon weapon) {
+            this.weapon = weapon;
+        }
+    }
+    public class Hunter {
+        private Weapon weapon;
+        public void setWeapon(Weapon weapon) {
+            this.weapon = weapon;
+        }
+    }
+    ```
+
+## IoC
+- 全称
+    - Inversion of Control
+- 概念
+    - 由系统内对象监管中心，将目标所需要的对象的引用传递给该目标对象
+- 方式
+    - 依赖注入
+    - 依赖查找
+
+
 ## AOP
 ### 描述
 - Aspect Orient Programming
@@ -338,15 +469,13 @@ toc: true
 
 
 
-# 参考
 
+# 参考
 ## Spring
 - [Introduction to Spring Framework](https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/overview.html)
 - [Introduction to the Spring Framework](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/overview.html)
 - [Spring 框架简介](https://www.ibm.com/developerworks/cn/java/wa-spring1/index.html)
 - [Spring 模块组成](https://blog.csdn.net/qq_29631809/article/details/72669583)
-- []()
-- []()
 
 ## AOP
 - [Spring AOP的实现原理](http://www.importnew.com/24305.html)
@@ -362,9 +491,15 @@ toc: true
 - [AOP的底层实现-CGLIB动态代理和JDK动态代理](https://blog.csdn.net/dreamrealised/article/details/12885739)
 
 
-## 
-- []()
+## DI
+- [What is dependency injection?](https://stackoverflow.com/questions/130794/what-is-dependency-injection)
+- [Dependency Injection Demystified](https://www.jamesshore.com/Blog/Dependency-Injection-Demystified.html)
+- [Inversion of Control Containers and the Dependency Injection pattern](https://martinfowler.com/articles/injection.html)
 
+
+## IoC
+- [http://blog.xiaohansong.com/2015/10/21/IoC-and-DI/](https://zh.wikipedia.org/wiki/%E6%8E%A7%E5%88%B6%E5%8F%8D%E8%BD%AC)
+- [控制反转（IoC）与依赖注入（DI）](http://blog.xiaohansong.com/2015/10/21/IoC-and-DI/)
 
 ## 整理
-- []()
+- [Spring.xmind](http://otzm88f21.bkt.clouddn.com/6cad91c1-e981-4aac-8a43-04922a0dbb55.xmind)
