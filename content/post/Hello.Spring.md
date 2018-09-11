@@ -334,10 +334,17 @@ toc: true
 
 
 
+
+
+
+
 # 参考
 
 ## Spring
+- [Introduction to Spring Framework](https://docs.spring.io/spring/docs/3.0.x/spring-framework-reference/html/overview.html)
+- [Introduction to the Spring Framework](https://docs.spring.io/spring/docs/4.2.x/spring-framework-reference/html/overview.html)
 - [Spring 框架简介](https://www.ibm.com/developerworks/cn/java/wa-spring1/index.html)
+- [Spring 模块组成](https://blog.csdn.net/qq_29631809/article/details/72669583)
 - []()
 - []()
 
@@ -354,8 +361,10 @@ toc: true
 - [Spring AOP + AspectJ annotation examp`le](https://www.mkyong.com/spring3/spring-aop-aspectj-annotation-example/)`
 - [AOP的底层实现-CGLIB动态代理和JDK动态代理](https://blog.csdn.net/dreamrealised/article/details/12885739)
 
+
 ## 
 - []()
+
 
 ## 整理
 - []()
