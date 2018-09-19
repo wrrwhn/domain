@@ -59,16 +59,16 @@ toc: true
 - 注意
     - 插入元素均为红色，然后再通过变色、旋转进行调整
 - 图示
+    - 详见整理
 
 
-
-# 参考    
+# 参考
+## 参考
 - [二叉树](https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%A0%91)
 - [二叉排序树](https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91gg)
 - [AVL树](https://baike.baidu.com/item/AVL%E6%A0%91)
+- [红黑树](https://zh.wikipedia.org/wiki/%E7%BA%A2%E9%BB%91%E6%A0%91)
 - [红黑树](https://baike.baidu.com/item/红黑树)
-- []()
-- []()
-- []()
-- []()
-- []()
+
+## 整理
+- [红黑树.xmind](http://otzm88f21.bkt.clouddn.com/bdbf2158-8a72-4de1-9f37-60ad9e7194eb.xmind)
