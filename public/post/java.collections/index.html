@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">4256 字 ~9分钟</span>
+<span class="leancloud-visitors-count">4364 字 ~9分钟</span>
 </span>
       </div>
     </header>
@@ -1248,8 +1248,14 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
 
 <ul>
 <li><code>transient NavigableMap&lt;E,Object&gt; m</code></li>
+<li><code>static final Object PRESENT = new Object()</code></li>
 </ul></li>
-<li>methods</li>
+
+<li><p>methods</p>
+
+<ul>
+<li><code>TreeSet([|NavigableMap|Comparator|Comparator|SortedSet])</code></li>
+</ul></li>
 </ul>
 
 <h2 id="hashset">HashSet</h2>
@@ -1680,7 +1686,15 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
 <h2 id="treemap">TreeMap</h2>
 
 <ul>
-<li>description</li>
+<li>description
+
+<ul>
+<li>基于 <code>NavigableMap</code> 的红黑树实现，键值根据指定比较器排序</li>
+<li>红黑树算法保障了 <code>containsKey</code>、<code>get</code>、<code>put</code> 和 <code>remove</code> 的 <code>long(n)</code> 的复杂度</li>
+<li>指定的比较器需支持相等判定</li>
+<li>不支持同步操作，但可通过 <code>SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));</code> 支持</li>
+<li><code>iterator</code> 生成时遵从快速失败原则</li>
+</ul></li>
 <li>params</li>
 <li>methods</li>
 </ul>
@@ -1858,7 +1872,7 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">237</span>
+        <span class="site-state-item-count">238</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -1875,7 +1889,7 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">117</span>
+        <span class="site-state-item-count">118</span>
         
         <span class="site-state-item-name">标签</span>
         </a>

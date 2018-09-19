@@ -1048,6 +1048,15 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     </item>
     
     <item>
+      <title>Hello.Binary.Tree</title>
+      <link>http://domain.yqjdcyy.com/post/hello.binary.tree/</link>
+      <pubDate>Sat, 12 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.binary.tree/</guid>
+      <description>类型 二叉树 定义 每个结点最多有两个子树的树结构 图示 遍历 DLR LDR LRD 存储 顺序存储 left: 2* n+ 1 right: 2* n+ 2 parent: (n-1)/ 2 链表存储 二叉排序树 性质 左子树所有结点均小于其根结</description>
+    </item>
+    
+    <item>
       <title>Dump.Analyze</title>
       <link>http://domain.yqjdcyy.com/post/dump.analyze/</link>
       <pubDate>Wed, 09 Aug 2017 00:00:00 +0000</pubDate>

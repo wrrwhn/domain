@@ -824,7 +824,11 @@ toc: true
 	- 迭代器在操作时碰到修改，会快速失败以避免数据风险
 - params
 	- `transient NavigableMap<E,Object> m`
+	- `static final Object PRESENT = new Object()`
 - methods
+
+	- `TreeSet([|NavigableMap|Comparator|Comparator|SortedSet])`
+
 
 
 ## HashSet
@@ -839,7 +843,6 @@ toc: true
 - description
 - params
 - methods
-
 
 
 ## Queue
@@ -1074,6 +1077,11 @@ toc: true
 ## TreeMap
 
 - description
+	- 基于 `NavigableMap` 的红黑树实现，键值根据指定比较器排序
+	- 红黑树算法保障了 `containsKey`、`get`、`put` 和 `remove` 的 `long(n)` 的复杂度
+	- 指定的比较器需支持相等判定
+	- 不支持同步操作，但可通过 `SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));` 支持
+	- `iterator` 生成时遵从快速失败原则
 - params
 - methods
 
