@@ -30,6 +30,15 @@
     </item>
     
     <item>
+      <title>Hello.Spring.Cloud</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud/</link>
+      <pubDate>Wed, 20 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud/</guid>
+      <description>架构 API 调用 内容 API 调用方 类型 PC Phone Client 服务治理 服务注册与发现 内容 基于 REST 的服务注册、发布、故障转移 类型 Netfix Eureka 类型 AP 作用 服务的注册与发布 功能 注册 发布 熔断</description>
+    </item>
+    
+    <item>
       <title>Hello.Storm</title>
       <link>http://domain.yqjdcyy.com/post/storm/</link>
       <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>

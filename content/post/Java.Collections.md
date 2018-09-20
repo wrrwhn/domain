@@ -1083,7 +1083,18 @@ toc: true
 	- 不支持同步操作，但可通过 `SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));` 支持
 	- `iterator` 生成时遵从快速失败原则
 - params
+	final Comparator<? super K> comparator
+	transient Entry<K,V> root
+	transient int size = 0
 - methods
+	- Constructor
+		- `TreeMap()`
+		- `TreeMap(Comparator<? super K> comparator)`
+		- `TreeMap(Map<? extends K, ? extends V> m)`
+		- `TreeMap(SortedMap<K, ? extends V> m)`
+
+
+
 
 ## HashMap
 

@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">4364 字 ~9分钟</span>
+<span class="leancloud-visitors-count">4395 字 ~9分钟</span>
 </span>
       </div>
     </header>
@@ -1695,8 +1695,22 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
 <li>不支持同步操作，但可通过 <code>SortedMap m = Collections.synchronizedSortedMap(new TreeMap(...));</code> 支持</li>
 <li><code>iterator</code> 生成时遵从快速失败原则</li>
 </ul></li>
-<li>params</li>
-<li>methods</li>
+<li>params
+final Comparator&lt;? super K&gt; comparator
+transient Entry<K,V> root
+transient int size = 0</li>
+<li>methods
+
+<ul>
+<li>Constructor
+
+<ul>
+<li><code>TreeMap()</code></li>
+<li><code>TreeMap(Comparator&lt;? super K&gt; comparator)</code></li>
+<li><code>TreeMap(Map&lt;? extends K, ? extends V&gt; m)</code></li>
+<li><code>TreeMap(SortedMap&lt;K, ? extends V&gt; m)</code></li>
+</ul></li>
+</ul></li>
 </ul>
 
 <h2 id="hashmap">HashMap</h2>
@@ -1889,7 +1903,7 @@ h <span style="color:#f92672">+=</span> next<span style="color:#f92672">().</spa
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-count">119</span>
         
         <span class="site-state-item-name">标签</span>
         </a>

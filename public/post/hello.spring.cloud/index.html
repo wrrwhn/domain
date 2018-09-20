@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title> - 好久不见</title>
+    <title>Hello.Spring.Cloud - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="">
+    <meta property="og:title" content="Hello.Spring.Cloud">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content=" - 好久不见" />
+    <meta name="title" content="Hello.Spring.Cloud - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud/" itemprop="url">
-        
+        Hello.Spring.Cloud
         </a>
       </h1>
       <div class="post-meta">
@@ -126,63 +126,1072 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
-    0001-01-01
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2017-09-20">
+    2017-09-20
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">13 字 ~1分钟</span>
+<span class="leancloud-visitors-count">1997 字 ~4分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="定义">定义</h1>
-
 <h1 id="架构">架构</h1>
+
+<h2 id="api-调用">API 调用</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>API 调用方</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>PC</li>
+<li>Phone</li>
+<li>Client</li>
+</ul></li>
+</ul>
+
+<h2 id="服务治理">服务治理</h2>
+
+<h3 id="服务注册与发现">服务注册与发现</h3>
+
+<ul>
+<li>内容
+
+<ul>
+<li>基于 REST 的服务注册、发布、故障转移</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Netfix Eureka
+
+<ul>
+<li>类型
+
+<ul>
+<li><strong>AP</strong></li>
+</ul></li>
+<li>作用
+
+<ul>
+<li>服务的注册与发布</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>注册</li>
+<li>发布</li>
+<li>熔断</li>
+<li>负载</li>
+<li>降级</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>Netflix 公司开发</li>
+<li>C-S 架构</li>
+<li>使用客户端连接到服务，并维护心跳连接</li>
+</ul></li>
+<li>推荐
+
+<ul>
+<li>集群保障</li>
+</ul></li>
+</ul></li>
+<li>Spring Cloud Consul
+
+<ul>
+<li>类型
+
+<ul>
+<li><strong>CP</strong></li>
+</ul></li>
+<li>作用
+
+<ul>
+<li>支持多数据中心的分页式高可用的服务发布和配置共享</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>健康检测</li>
+<li>支持 Http 和 DNS 协议调用 API</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>HashiCorp 公司开发</li>
+<li>Go 语言开发</li>
+<li>基于 Mozilla Public License 2.0 协议开源</li>
+<li>与 Docker 无缝集成</li>
+</ul></li>
+</ul></li>
+<li>Spring Cloud Zookeeper
+
+<ul>
+<li>类型
+
+<ul>
+<li><strong>CP</strong></li>
+</ul></li>
+<li>作用
+
+<ul>
+<li>为分页式应用提供一致性服务</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>配置维护</li>
+<li>域名服务</li>
+<li>分布式同步</li>
+<li>组维护</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>Google.Chubby 的开源实现</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="服务调用">服务调用</h3>
+
+<h4 id="调用端熔断器">调用端熔断器</h4>
+
+<ul>
+<li>内容
+
+<ul>
+<li>在远程服务不可用时自动熔断，并在远程服务恢复时自动恢复</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Hystrix
+
+<ul>
+<li>优势
+
+<ul>
+<li>避免基础服务故障导致的级联故障
+
+<ul>
+<li>阀值
+
+<ul>
+<li>20/5s</li>
+</ul></li>
+<li>打开断路后，服务转到 fallback 并返回固定值</li>
+</ul></li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>断路器</li>
+<li>资源隔离</li>
+<li>自我修复</li>
+</ul></li>
+<li>扩展
+
+<ul>
+<li>Hystrix Dashboard
+
+<ul>
+<li>实时监控各请求的响应时间、成功率等</li>
+</ul></li>
+<li>Turbine
+
+<ul>
+<li>汇总各服务数据</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="调用端负载均衡">调用端负载均衡</h4>
+
+<ul>
+<li>内容
+
+<ul>
+<li>提供客户端的负载均衡算法</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Ribbon
+
+<ul>
+<li>优势
+
+<ul>
+<li>易于与 Eureka 等服务发布组件集成</li>
+<li>使用 Archaius 完成运行时配置</li>
+<li>使用 JMX 暴露去给指标</li>
+<li>使用 Servo 发布</li>
+<li>多种可插拨的序列化选择</li>
+</ul></li>
+<li>策略
+
+<ul>
+<li>简单轮询</li>
+<li>加权响应时间</li>
+<li>区域感知轮询</li>
+<li>随机负载</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h4 id="调用端代码封装抽象">调用端代码封装抽象</h4>
+
+<ul>
+<li>内容
+
+<ul>
+<li>服务调用端代码的揭是和封装</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Feign
+
+<ul>
+<li>功能
+
+<ul>
+<li>可插拨的注解支持
+
+<ul>
+<li>Feign</li>
+<li>JAX-RS</li>
+</ul></li>
+<li>可插拨的 HTTP 编解码器</li>
+<li>支持 Hystrix</li>
+<li>支持 Ribbon</li>
+<li>支持 Http 请求和响应的压缩</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="服务路由和过滤">服务路由和过滤</h3>
+
+<ul>
+<li>内容
+
+<ul>
+<li>作为资源的统一访问接口，实行校验、请求等功能</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Zuul
+
+<ul>
+<li>作用
+
+<ul>
+<li>提供动态路由、监控、弹性和安全服务</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>负载均衡</li>
+<li>反射代理</li>
+<li>权限认证</li>
+<li>动态路由</li>
+<li>监控</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>Servlet 2.5</li>
+<li>JVM 路由</li>
+<li>阻塞 API</li>
+<li>不支持长连接，如 websockets</li>
+<li>Filter</li>
+</ul></li>
+</ul></li>
+<li>Gateway
+
+<ul>
+<li>作用
+
+<ul>
+<li>通过横切方式关注案例性、监控、指标和弹性</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>动态路由</li>
+<li>过滤</li>
+<li>可修改下游的 Http 的请求和响应</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>Java 8</li>
+<li>Spring Framework 5</li>
+<li>Spring Boot 2</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="服务监测">服务监测</h3>
+
+<ul>
+<li>内容
+
+<ul>
+<li>监测各端的运行情况</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spectator
+
+<ul>
+<li>作用
+
+<ul>
+<li>用于收集客户端的相关指标</li>
+</ul></li>
+</ul></li>
+<li>Servo
+
+<ul>
+<li>作用
+
+<ul>
+<li>应用监控库</li>
+</ul></li>
+</ul></li>
+<li>Atlas
+
+<ul>
+<li>作用
+
+<ul>
+<li>存储于内存的，以时间为主线的，多维度数据库</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="分页式链路监控">分页式链路监控</h2>
+
+<h3 id="埋点">埋点</h3>
+
+<ul>
+<li>内容
+
+<ul>
+<li>全自动、可配置的数据的埋点</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Cloud Sleuth
+
+<ul>
+<li>作用
+
+<ul>
+<li>日志收集工具包</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>调用链分析</li>
+<li>服务调用关系</li>
+<li>请求调用链</li>
+<li>调用链各环节的消费时间</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>封装服务
+
+<ul>
+<li>Dapper</li>
+<li>logbased 追踪</li>
+<li>Zipkin.HTrace</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="收集">收集</h3>
+
+<ul>
+<li>内容
+
+<ul>
+<li>埋点数据的收集、存储、统计与展示</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Zipkin
+
+<ul>
+<li>作用
+
+<ul>
+<li>实现数据的收集、存储、查找和展现的分布式追踪系统</li>
+</ul></li>
+<li>存储方式
+
+<ul>
+<li>Im-Memory</li>
+<li>MySql</li>
+<li>Cassandra</li>
+<li>Elasticsearch</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>Twitter 公司开源</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="消息组件">消息组件</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>微服务间的异步通信</li>
+<li>功能
+
+<ul>
+<li>发布订阅</li>
+<li>分组消费</li>
+<li>消息分片</li>
+</ul></li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Cloud Stream
+
+<ul>
+<li>作用
+
+<ul>
+<li>微服务间消息通信的基础框架</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>封装第三方消息中间信实现
+
+<ul>
+<li>Redis</li>
+<li>RabbitMQ</li>
+<li>Apache Kafka</li>
+</ul></li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>基于 Spring Boot 创建</li>
+<li>使用 Spring integration 提供与消息代理间的连接</li>
+</ul></li>
+</ul></li>
+<li>Spring Cloud Bus
+
+<ul>
+<li>作用
+
+<ul>
+<li>微服务间的消息通信</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>基于 Spring Cloud Stream</li>
+<li>Spring Cloud Stream</li>
+</ul></li>
+<li>场景
+
+<ul>
+<li>结合 Spring Cloud Config 实现动态的配置修改</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="配置中心">配置中心</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>服务配置的动态管理</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Cloud Config
+
+<ul>
+<li>作用
+
+<ul>
+<li>配置管理</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>配置存储</li>
+<li>接口</li>
+</ul></li>
+<li>来源
+
+<ul>
+<li>本地存储</li>
+<li>Git</li>
+<li>Subversion</li>
+</ul></li>
+</ul></li>
+<li>Archaius
+
+<ul>
+<li>作用
+
+<ul>
+<li>配置管理</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>动态类型化属性</li>
+<li>配置操作
+
+<ul>
+<li>线程安全</li>
+</ul></li>
+<li>轮询</li>
+<li>回调</li>
+</ul></li>
+<li>原理
+
+<ul>
+<li>每隔固定时间，从配置源读取一次内容
+
+<ul>
+<li>默认配置为 60s</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="安全控制">安全控制</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>基于 OAUTH2 安全标准的认证和授权</li>
+<li>功能
+
+<ul>
+<li>单点登录</li>
+<li>资源授权</li>
+<li>令牌管理</li>
+</ul></li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Cloud Security
+
+<ul>
+<li>作用
+
+<ul>
+<li>为应用程序添加安全控制</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>OAuth2</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>对Spring Security的封装</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="集群工具">集群工具</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>辅助集群服务的调用</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>集群选主</li>
+<li>分布式锁</li>
+<li>一次性令牌</li>
+<li>暂未实现</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Integration
+
+<ul>
+<li>作用
+
+<ul>
+<li>异步消息驱动不同系统间的交互</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>轻量级的事件驱动交互框架</li>
+<li>基于适配器的灵活的系统间交互</li>
+</ul></li>
+</ul></li>
+<li>Spring Cloud Cluster
+
+<ul>
+<li>作用
+
+<ul>
+<li>负载均衡</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>选举</li>
+<li>集群状态一致性</li>
+<li>全局锁</li>
+<li>tokens</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="命令行工具">命令行工具</h2>
+
+<ul>
+<li>内容
+
+<ul>
+<li>以命令行或脚本方式管理微服务、组件</li>
+</ul></li>
+<li>类型
+
+<ul>
+<li>Spring Cloud CLI</li>
+</ul></li>
+</ul>
+
+<h2 id="补充">补充</h2>
+
+<h3 id="大数据">大数据</h3>
+
+<h4 id="spring-cloud-data-flow">Spring Cloud Data Flow</h4>
+
+<ul>
+<li>作用
+
+<ul>
+<li>针对大量数据的处理、开发的编程模型和托管服务</li>
+</ul></li>
+<li>模式
+
+<ul>
+<li>ETL
+
+<ul>
+<li>Extract-Transform-Load</li>
+<li>描述将数据从来源端经过抽取（extract）、交互转换（transform）、加载（load）至目的端的过程</li>
+</ul></li>
+<li>批量运算</li>
+<li>持续运算</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>自动部署</li>
+</ul></li>
+<li>实现
+
+<ul>
+<li>基于 Spring Boot 的 stream 和 task/batch 重构的流处理和批处理</li>
+<li>原生支持
+
+<ul>
+<li>Cloud Foundry</li>
+<li>Apache YARN</li>
+<li>Apache Mesos</li>
+<li>Kubernetes</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="定时任务">定时任务</h3>
+
+<h4 id="spring-cloud-task">Spring Cloud Task</h4>
+
+<ul>
+<li>作用
+
+<ul>
+<li>针对短效、定期任务的管理</li>
+</ul></li>
+<li>功能
+
+<ul>
+<li>调度实现
+
+<ul>
+<li>完成后自动停止，释放系统占有的资源、线程</li>
+<li>Quartz 为常驻线程模式</li>
+</ul></li>
+<li>支持多数据库
+
+<ul>
+<li>DB2</li>
+<li>H2</li>
+<li>HSQLDB</li>
+<li>MySql</li>
+<li>Oracle</li>
+<li>Postgres</li>
+<li>SqlServer</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="其它">其它</h3>
+
+<h4 id="spring-cloud-connectors">Spring Cloud Connectors</h4>
+
+<ul>
+<li><p>功能</p>
+
+<ul>
+<li>简化连接到服务的过程</li>
+
+<li><p>从云平台获取操作</p>
+
+<h4 id="spring-cloud-starters">Spring Cloud Starters</h4></li>
+</ul></li>
+
+<li><p>作用</p>
+
+<ul>
+<li><p>Spring Boot 式的启动项目，提供开箱即用的依赖管理</p>
+
+<h4 id="spring-cloud-foundry">Spring Cloud Foundry</h4></li>
+</ul></li>
+
+<li><p>作用</p>
+
+<ul>
+<li>开源 PaaS 云平台</li>
+</ul></li>
+
+<li><p>功能</p>
+
+<ul>
+<li>多框架支持</li>
+<li>多语言支持</li>
+</ul></li>
+
+<li><p>实现</p>
+
+<ul>
+<li>VMWare 推出</li>
+</ul></li>
+</ul>
+
+<h1 id="概念">概念</h1>
+
+<h2 id="iass">IasS</h2>
+
+<ul>
+<li>全称
+
+<ul>
+<li>Infrastructure-as-a-service</li>
+</ul></li>
+<li>描述
+
+<ul>
+<li>基础设施服务</li>
+</ul></li>
+<li>内容
+
+<ul>
+<li>计算</li>
+<li>存储</li>
+<li>网络</li>
+</ul></li>
+<li>示例
+
+<ul>
+<li>AWS</li>
+<li>Azure</li>
+<li>AliYun</li>
+</ul></li>
+</ul>
+
+<h2 id="paas">PaaS</h2>
+
+<ul>
+<li>全称
+
+<ul>
+<li>Platform-as-a-service</li>
+</ul></li>
+<li>描述
+
+<ul>
+<li>平台服务</li>
+</ul></li>
+<li>内容
+
+<ul>
+<li>MySql</li>
+<li>angodb</li>
+<li>RabbitMQ</li>
+<li>Java</li>
+<li>NodeJs</li>
+</ul></li>
+<li>示例
+
+<ul>
+<li>CloudFoundry</li>
+<li>OpenShift</li>
+</ul></li>
+</ul>
+
+<h2 id="saas">Saas</h2>
+
+<ul>
+<li>全称
+
+<ul>
+<li>Software-as-a-service</li>
+</ul></li>
+<li>描述
+
+<ul>
+<li>软件服务</li>
+</ul></li>
+<li>内容
+
+<ul>
+<li>Email</li>
+<li>IM</li>
+<li>Facebook</li>
+<li>Twitter</li>
+</ul></li>
+<li>示例
+
+<ul>
+<li>所有应用</li>
+</ul></li>
+</ul>
+
+<h2 id="bbf">BBF</h2>
+
+<ul>
+<li>全称
+
+<ul>
+<li>Backend For Frontend</li>
+</ul></li>
+<li>作用
+
+<ul>
+<li>作为逻辑层聚合底层服务，针对多端进行展示</li>
+</ul></li>
+</ul>
+
+<h1 id="原理">原理</h1>
+
+<h2 id="cap">CAP</h2>
+
+<ul>
+<li>全称
+
+<ul>
+<li>布鲁尔定理</li>
+</ul></li>
+<li>定义
+
+<ul>
+<li>分布式系统，无法同时满足如下三点
+
+<ul>
+<li>Consistency
+
+<ul>
+<li>一致性</li>
+<li>所有节点访问同一份最新数据副本</li>
+</ul></li>
+<li>Availability
+
+<ul>
+<li>可用性</li>
+<li>每次请求均能获取非异常响应
+
+<ul>
+<li>不保证获取的为最新的数据</li>
+</ul></li>
+</ul></li>
+<li>Partition tolerance
+
+<ul>
+<li>分区容错性
+
+<ul>
+<li>始终成立</li>
+</ul></li>
+<li>不同网络分区间通信允许失败</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
 
 <h1 id="参考">参考</h1>
 
+<h2 id="spring-cloud">Spring.Cloud</h2>
+
 <ul>
 <li><a href="http://tech.lede.com/2017/03/15/rd/server/SpringCloud0/">Spring Cloud技术分析（序）</a></li>
-<li>[]()</li>
+<li><a href="https://my.oschina.net/geekidentity/blog/876315">Spring Cloud 项目综述</a></li>
+<li><a href="http://tech.lede.com/tags/Spring-Cloud/">网易乐得-Spring Cloud</a></li>
+<li><a href="http://www.ityouknow.com/springcloud/2017/05/01/simple-springcloud.html">大话Spring Cloud</a></li>
+<li><a href="http://codin.im/2016/12/15/spring-cloud-architect-intro/">Spring Cloud netflix概览和架构设计</a>
 
-<li><p>[]()</p></li>
+<ul>
+<li>包含服务的相关异常</li>
+</ul></li>
+<li><a href="http://www.ityouknow.com/springcloud/2017/05/26/springcloud-config-eureka-bus.html">springcloud(九)：配置中心和消息总线</a>
 
-<li><p>CAP</p></li>
+<ul>
+<li><code>/bus/refresh</code> 引起 <code>Eureka</code> 连接断开</li>
+</ul></li>
+<li><a href="https://www.jianshu.com/p/3899d7f47303">微服务架构集大成者—Spring Cloud</a>
 
-<li><p><a href="http://www.ruanyifeng.com/blog/2018/07/cap.html">CAP 定理的含义</a></p></li>
-
-<li><p><a href="https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86">CAP定理</a></p></li>
+<ul>
+<li>包含各组件的详细介绍</li>
+</ul></li>
+<li><a href="https://blog.csdn.net/forezp/article/details/70148833">史上最简单的 SpringCloud 教程</a></li>
 </ul>
 
-<p><a href="http://www.ityouknow.com/springcloud/2017/05/01/simple-springcloud.html">http://www.ityouknow.com/springcloud/2017/05/01/simple-springcloud.html</a>
-<a href="https://blog.csdn.net/forezp/article/details/70148833">https://blog.csdn.net/forezp/article/details/70148833</a></p>
+<h2 id="spring-component">Spring.Component</h2>
+
+<ul>
+<li><a href="https://juejin.im/post/5aa4eacbf265da237a4ca36f">Spring Cloud Gateway 入门</a></li>
+<li><a href="https://www.jianshu.com/p/fb2e973fb325">spring cloud task</a></li>
+<li><a href="http://docs.spring.io/spring-security/site/docs/4.2.2.RELEASE/reference/htmlsingle/">Spring Security</a></li>
+</ul>
+
+<h2 id="补充-1">补充</h2>
+
+<h3 id="cap-1">CAP</h3>
+
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2018/07/cap.html">CAP 定理的含义</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86">CAP定理</a></li>
+</ul>
+
+<h3 id="其它-1">其它</h3>
+
+<ul>
+<li><a href="http://www.ruanyifeng.com/blog/2017/07/iaas-paas-saas.html">IaaS，PaaS，SaaS 的区别</a></li>
+<li><a href="https://www.jianshu.com/p/eb1875c62ad3">BFF —— Backend For Frontend</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html">OAuth2（重点），参考文档</a></li>
+<li><a href="http://docs.spring.io/spring-boot/docs/1.5.2.RELEASE/reference/htmlsingle/#boot-features-security-oauth2">Spring Security OAuth2，参考文档</a></li>
+</ul>
+
+<h2 id="整理">整理</h2>
+
+<ul>
+<li><a href="http://otzm88f21.bkt.clouddn.com/9b2f1b98-e458-4544-b4a4-b3074ef2a800.xmind">Spring.Cloud.xmind</a></li>
+</ul>
 
     </div>
     <footer class="post-footer">
      
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/%e6%a1%86%e6%9e%b6" rel="tag" title="框架">#框架#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/spring.cloud" rel="tag" title="Spring.Cloud">#Spring.Cloud#</a>
+    
+</div>
+
+
 
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/hello.docker.data/" rel="next" title="">
-        <i class="fa fa-chevron-left"></i> 
+        <a href="http://domain.yqjdcyy.com/post/linux.grep/" rel="next" title="Linux.Grep">
+        <i class="fa fa-chevron-left"></i> Linux.Grep
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/spring.cache/" rel="prev" title="Spring.Cache">
-        Spring.Cache <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/linux.nginx/" rel="prev" title="Linux.Nginx">
+        Linux.Nginx <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -192,7 +1201,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：
+                标题：Hello.Spring.Cloud
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -225,7 +1234,16 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/profile-image.png"
@@ -254,7 +1272,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">118</span>
+        <span class="site-state-item-count">119</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -280,6 +1298,80 @@
 </div>
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#架构">架构</a>
+<ul>
+<li><a href="#api-调用">API 调用</a></li>
+<li><a href="#服务治理">服务治理</a>
+<ul>
+<li><a href="#服务注册与发现">服务注册与发现</a></li>
+<li><a href="#服务调用">服务调用</a>
+<ul>
+<li><a href="#调用端熔断器">调用端熔断器</a></li>
+<li><a href="#调用端负载均衡">调用端负载均衡</a></li>
+<li><a href="#调用端代码封装抽象">调用端代码封装抽象</a></li>
+</ul></li>
+<li><a href="#服务路由和过滤">服务路由和过滤</a></li>
+<li><a href="#服务监测">服务监测</a></li>
+</ul></li>
+<li><a href="#分页式链路监控">分页式链路监控</a>
+<ul>
+<li><a href="#埋点">埋点</a></li>
+<li><a href="#收集">收集</a></li>
+</ul></li>
+<li><a href="#消息组件">消息组件</a></li>
+<li><a href="#配置中心">配置中心</a></li>
+<li><a href="#安全控制">安全控制</a></li>
+<li><a href="#集群工具">集群工具</a></li>
+<li><a href="#命令行工具">命令行工具</a></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#大数据">大数据</a>
+<ul>
+<li><a href="#spring-cloud-data-flow">Spring Cloud Data Flow</a></li>
+</ul></li>
+<li><a href="#定时任务">定时任务</a>
+<ul>
+<li><a href="#spring-cloud-task">Spring Cloud Task</a></li>
+</ul></li>
+<li><a href="#其它">其它</a>
+<ul>
+<li><a href="#spring-cloud-connectors">Spring Cloud Connectors</a></li>
+<li><a href="#spring-cloud-starters">Spring Cloud Starters</a></li>
+<li><a href="#spring-cloud-foundry">Spring Cloud Foundry</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><a href="#概念">概念</a>
+<ul>
+<li><a href="#iass">IasS</a></li>
+<li><a href="#paas">PaaS</a></li>
+<li><a href="#saas">Saas</a></li>
+<li><a href="#bbf">BBF</a></li>
+</ul></li>
+<li><a href="#原理">原理</a>
+<ul>
+<li><a href="#cap">CAP</a></li>
+</ul></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#spring-cloud">Spring.Cloud</a></li>
+<li><a href="#spring-component">Spring.Component</a></li>
+<li><a href="#补充-1">补充</a>
+<ul>
+<li><a href="#cap-1">CAP</a></li>
+<li><a href="#其它-1">其它</a></li>
+</ul></li>
+<li><a href="#整理">整理</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 
