@@ -6,10 +6,19 @@
     <description>Recent content in 框架 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 20 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Cloud.Config</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.config/</link>
+      <pubDate>Sun, 30 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.config/</guid>
+      <description>组件 配置读取 Spring.Cloud.Config.Server Spring.Cloud.Config.Client 主动更新 Spring.Cloud.Config.Server Spring.Cloud.Config.Client Spring.Cloud.Bus Redis/ RabbitMQ/ Kafka 实现 Config-Server Maven pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-config-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; Properties src/main/resource/application.yml ## config.server git # cloud: # config: # server: # git: # uri: https://github.com/yqjdcyy/Hello_Spring_Cloud_Config ## config.server locale profiles: active: native cloud: config: server: native: search-locations: D:/work/git/yao/java/Hello_Spring_Cloud_Config Code Application.java @SpringBootApplication @EnableConfigServer // * 必须项 public class Application { public static</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud</title>
