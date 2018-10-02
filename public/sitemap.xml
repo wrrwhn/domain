@@ -2,6 +2,38 @@
 <search>
     
      <entry>
+        <title>Hello.Spring.Cloud.Eureka</title>
+        <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>框架</tag><tag>Spring.Cloud</tag>
+        </tags>
+        <content type="html">  细节 Region-Zone-Eureka  名词解析
+ Region
+ 区域 基础服务的地区集合
+   区域 编码     亚太-东京 ap-northeast-1   亚太-新加坡 ap-southeast-1   亚太-悉尼 ap-southeast-2   欧洲-爱尔兰 eu-east-1   南美-圣保罗 sa-east-1   美东-北佛杰尼亚 us-east-1   美西-北加利佛尼亚 us-west-1   美西-俄勒风 us-west-2     Zone
+ 可用区/ 机房/ Availability Zone/ AZ 多独立供电、网络服务的数据中心组成 如 us-west-2a 区  Eureka
+  层级
+ region= n* zone= n* (m* eureka)  架构
+    模块  Eureka.Server  存储 Eureka.Client 的注册信息 心跳超时，自动注销指定服务节点  默认 90s  复制，同步各 Eureka.Server 的注册表  Eureka.Client  服务启动时，通过其向 Eureka.Server 端注册服务信息 周期心跳  默认 30s  缓存向 Eureka.Server 请求的信息  即使 Eureka.Server 均宕机，仍可通过缓存信息，找到服务提供者    调用 Robbin&#43; RestTemplate  Robbin  基于 HTTP 或 TCP 的客户端负载均衡工具   Feign  Feign  声明式 HTTP 调用 底层通过 Robbin 进行调用   异常 Eureka.自我保护  提示
+ EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY&#39;RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.  触发机制
+ 在 15分钟 内 超过85% 的客户端节点都没有正常的心跳  效果
+ 不再从注册列表中移除心跳过期的客户端 仍能接受服务的注册、查询，但不可被同步到其它节点  仅当网络稳定时，新注册的信息才会被同步到其它节点   配置
+# Eureka.Config.* eureka: instance: # 检测心跳异常的超时时长 lease-expiration-duration-in-seconds: 90 server:1 # 关闭自我保护机构 enable-self-preservation: false # 检查失效服务的间隔时间 eviction-interval-timer-in-ms: 3000  应用 Eureka.Server Maven  pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-server&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;   Properties  bootstrap.yml
+# Eureka.Config.* eureka: client: # 是否将自身注册至 Eureka.Server register-with-eureka: false # 是否同步其它 Eureka.Server 节点数据 fetch-registry: false instance: # 检测心跳异常的超时时长 lease-expiration-duration-in-seconds: 90 server: # 关闭自我保护机构 enable-self-preservation: false # 检查失效服务的间隔时间 eviction-interval-timer-in-ms: 3000  Code  Application.java
+// 配置当前服务为 Eureka.Server @EnableEurekaServer @SpringBootApplication public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } }   Monitor  http://localhost:10000/   Eureka.Client Maven  pom.xml
+&amp;lt;!--Eureka.Client.*--&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-eureka-client&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Eureka.Client.Invoke - Robbin --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-ribbon&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Eureka.Client.Invoke - Feign --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-feign&amp;lt;/artifactId&amp;gt; &amp;lt;!-- **有时加上版本才能正常运行** --&amp;gt; &amp;lt;version&amp;gt;1.4.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  bootstrap.yml
+## Eureka.* eureka: client: service-url: defaultZone: http://localhost:10000/eureka   Code  Application.java
+@EnableEurekaClient // 注册为 Eureka 客户端 @SpringBootApplication public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } } ConfigureApplication
+@Configuration public class ConfigureApplication { @Bean // 注册 RestTemplate 供服务调用  @LoadBalanced // 标注为通过负载均衡  public RestTemplate restTemplate() { return new RestTemplate(); } } FeignService.java
+// 代理接口类 // 使用 FeignClient 指定向 Eureka 中注册指定名称的服务 @FeignClient(&amp;#34;portal&amp;#34;) public interface FeignService { // 对应服务内的链接  @RequestMapping(&amp;#34;/config&amp;#34;) String config(); } EurekaController.java
+@RestController @RequestMapping(&amp;#34;/eureka&amp;#34;) public class EurekaController { // Ribbon&#43; RestTemplate  @Autowired RestTemplate restTemplate; @RequestMapping(value = &amp;#34;/robbin/{application}/{method}&amp;#34;, method = RequestMethod.GET) public String invoke(@PathVariable String application, @PathVariable String method) { // 调用 portal 应用的 config 接口，接口为 http://PORTAL/config  // 其中应用名称为 Eureka.Monitor 的 Instances 列表上的 Application 字段  return restTemplate.getForObject(String.format(&amp;#34;http://%s/%s&amp;#34;, application.toUpperCase(), method), String.class); } // Feign  @Autowired FeignService feignService; @RequestMapping(value = &amp;#34;/feign/{method}&amp;#34;, method = RequestMethod.GET) public String feign(@PathVariable String method) { return feignService.config(); } }  参考 文档  Eureka  Spring Cloud第一篇 Eureka简介及原理 AWS的区域和可用区概念解释 Spring Cloud中，Eureka常见问题总结 Spring Cloud Eureka 自我保护机制 Understanding Eureka Peer to Peer Communication F1V3.0-7 Spring Cloud 介绍  Eureka 相关配置参数一览   Robbin  SpringCloud 教程 | 第二篇: 服务消费者（rest&#43;ribbon） Spring Cloud之服务调用及使用ribbon实现负载均衡(三) Spring Cloud源码分析（二）Ribbon  Feign  Spring Cloud中声明式服务调用Feign Spring Cloud Feign 声明式服务调用   代码  yqjdcyy/Hello_Spring_Cloud  </content>
+    </entry>
+    
+     <entry>
         <title>Hello.Spring.Cloud.Config</title>
         <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.config/</url>
         <categories>

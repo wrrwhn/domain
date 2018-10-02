@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 30 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 02 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Cloud.Eureka</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/</link>
+      <pubDate>Tue, 02 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/</guid>
+      <description>细节 Region-Zone-Eureka 名词解析 Region 区域 基础服务的地区集合 区域 编码 亚太-东京 ap-northeast-1 亚太-新加坡 ap-southeast-1 亚太-悉尼 ap-southeast-2 欧洲-爱尔兰 eu-east-1 南美-圣保罗 sa-east-1 美东-北佛杰尼亚 us-east-1 美西-北加</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud.Config</title>

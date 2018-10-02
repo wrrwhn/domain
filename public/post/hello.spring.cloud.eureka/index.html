@@ -1,0 +1,781 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Hello.Spring.Cloud.Eureka - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Hello.Spring.Cloud.Eureka">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Hello.Spring.Cloud.Eureka - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/" itemprop="url">
+        Hello.Spring.Cloud.Eureka
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-02">
+    2018-10-02
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">996 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="细节">细节</h1>
+
+<h2 id="region-zone-eureka">Region-Zone-Eureka</h2>
+
+<ul>
+<li><p>名词解析</p>
+
+<ul>
+<li><p>Region</p>
+
+<ul>
+<li>区域</li>
+
+<li><p>基础服务的地区集合</p>
+
+<table>
+<thead>
+<tr>
+<th>区域</th>
+<th>编码</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>亚太-东京</td>
+<td>ap-northeast-1</td>
+</tr>
+
+<tr>
+<td>亚太-新加坡</td>
+<td>ap-southeast-1</td>
+</tr>
+
+<tr>
+<td>亚太-悉尼</td>
+<td>ap-southeast-2</td>
+</tr>
+
+<tr>
+<td>欧洲-爱尔兰</td>
+<td>eu-east-1</td>
+</tr>
+
+<tr>
+<td>南美-圣保罗</td>
+<td>sa-east-1</td>
+</tr>
+
+<tr>
+<td>美东-北佛杰尼亚</td>
+<td>us-east-1</td>
+</tr>
+
+<tr>
+<td>美西-北加利佛尼亚</td>
+<td>us-west-1</td>
+</tr>
+
+<tr>
+<td>美西-俄勒风</td>
+<td>us-west-2</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li><p>Zone</p>
+
+<ul>
+<li>可用区/ 机房/ Availability Zone/ AZ</li>
+<li>多独立供电、网络服务的数据中心组成</li>
+<li>如 <code>us-west-2a</code> 区</li>
+</ul></li>
+
+<li><p>Eureka</p></li>
+</ul></li>
+
+<li><p>层级</p>
+
+<ul>
+<li><code>region= n* zone= n* (m* eureka)</code></li>
+</ul></li>
+
+<li><p>架构</p>
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/e483c027-70da-4212-9d6d-9314f0107adf.png" alt="region-zone-eureka.png" /></li>
+</ul></li>
+</ul>
+
+<h2 id="模块">模块</h2>
+
+<ul>
+<li>Eureka.Server
+
+<ul>
+<li>存储 <code>Eureka.Client</code> 的注册信息</li>
+<li>心跳超时，自动注销指定服务节点
+
+<ul>
+<li>默认 <strong>90s</strong></li>
+</ul></li>
+<li>复制，同步各 <code>Eureka.Server</code> 的注册表</li>
+</ul></li>
+<li>Eureka.Client
+
+<ul>
+<li>服务启动时，通过其向 <code>Eureka.Server</code> 端注册服务信息</li>
+<li>周期心跳
+
+<ul>
+<li>默认 <strong>30s</strong></li>
+</ul></li>
+<li>缓存向 <code>Eureka.Server</code> 请求的信息
+
+<ul>
+<li>即使 <code>Eureka.Server</code> 均宕机，仍可通过缓存信息，找到服务提供者</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="调用">调用</h2>
+
+<h3 id="robbin-resttemplate">Robbin+ RestTemplate</h3>
+
+<ul>
+<li>Robbin
+
+<ul>
+<li>基于 HTTP 或 TCP 的客户端<code>负载均衡</code>工具</li>
+</ul></li>
+</ul>
+
+<h3 id="feign">Feign</h3>
+
+<ul>
+<li>Feign
+
+<ul>
+<li><code>声明式</code> HTTP 调用</li>
+<li>底层通过 Robbin 进行调用</li>
+</ul></li>
+</ul>
+
+<h2 id="异常">异常</h2>
+
+<h3 id="eureka-自我保护">Eureka.自我保护</h3>
+
+<ul>
+<li><p>提示</p>
+
+<ul>
+<li><code>EMERGENCY! EUREKA MAY BE INCORRECTLY CLAIMING INSTANCES ARE UP WHEN THEY'RE NOT. RENEWALS ARE LESSER THAN THRESHOLD AND HENCE THE INSTANCES ARE NOT BEING EXPIRED JUST TO BE SAFE.</code></li>
+</ul></li>
+
+<li><p>触发机制</p>
+
+<ul>
+<li>在 <strong>15分钟</strong> 内 <strong>超过85%</strong> 的客户端节点都没有正常的心跳</li>
+</ul></li>
+
+<li><p>效果</p>
+
+<ul>
+<li>不再从注册列表中移除心跳过期的客户端</li>
+<li>仍能接受服务的注册、查询，但不可被同步到其它节点
+
+<ul>
+<li>仅当网络稳定时，新注册的信息才会被同步到其它节点</li>
+</ul></li>
+</ul></li>
+
+<li><p>配置</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"># Eureka.Config.*
+eureka:
+    instance:
+        # 检测心跳异常的超时时长
+        lease-expiration-duration-in-seconds: 90
+    server:1
+        # 关闭自我保护机构
+        enable-self-preservation: false
+        # 检查失效服务的间隔时间
+        eviction-interval-timer-in-ms: 3000</code></pre></div></li>
+</ul>
+
+<h1 id="应用">应用</h1>
+
+<h2 id="eureka-server">Eureka.Server</h2>
+
+<h3 id="maven">Maven</h3>
+
+<ul>
+<li><p>pom.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-server<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>    </code></pre></div></li>
+</ul>
+
+<h3 id="properties">Properties</h3>
+
+<ul>
+<li><p>bootstrap.yml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"># Eureka.Config.*
+eureka:
+    client:
+        # 是否将自身注册至 Eureka.Server
+        register-with-eureka: false
+        # 是否同步其它 Eureka.Server 节点数据
+        fetch-registry: false
+    instance:
+        # 检测心跳异常的超时时长
+        lease-expiration-duration-in-seconds: 90
+    server:
+        # 关闭自我保护机构
+        enable-self-preservation: false
+        # 检查失效服务的间隔时间
+        eviction-interval-timer-in-ms: 3000</code></pre></div></li>
+</ul>
+
+<h3 id="code">Code</h3>
+
+<ul>
+<li><p>Application.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 配置当前服务为 Eureka.Server
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@EnableEurekaServer</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+</ul>
+
+<h3 id="monitor">Monitor</h3>
+
+<ul>
+<li><a href="http://localhost:10000/">http://localhost:10000/</a></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/a66926c7-1fbf-4980-9155-02e81be8065c.png" alt="Eureka-Monitor.png" /></li>
+</ul>
+
+<h2 id="eureka-client">Eureka.Client</h2>
+
+<h3 id="maven-1">Maven</h3>
+
+<ul>
+<li><p>pom.xml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml">    <span style="color:#75715e">&lt;!--Eureka.Client.*--&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-eureka-client<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+
+    <span style="color:#75715e">&lt;!-- Eureka.Client.Invoke - Robbin --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-ribbon<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span>
+
+    <span style="color:#75715e">&lt;!-- Eureka.Client.Invoke - Feign --&gt;</span>
+    <span style="color:#f92672">&lt;dependency&gt;</span>
+        <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+        <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-feign<span style="color:#f92672">&lt;/artifactId&gt;</span>
+        <span style="color:#75715e">&lt;!-- **有时加上版本才能正常运行** --&gt;</span>
+        <span style="color:#f92672">&lt;version&gt;</span>1.4.5.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h3 id="properties-1">Properties</h3>
+
+<ul>
+<li><p>bootstrap.yml</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">## Eureka.*
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:10000/eureka    </code></pre></div></li>
+</ul>
+
+<h3 id="code-1">Code</h3>
+
+<ul>
+<li><p>Application.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@EnableEurekaClient</span>     <span style="color:#75715e">// 注册为 Eureka 客户端
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p>ConfigureApplication</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConfigureApplication</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Bean</span>               <span style="color:#75715e">// 注册 RestTemplate 供服务调用
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@LoadBalanced</span>       <span style="color:#75715e">// 标注为通过负载均衡
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">public</span> RestTemplate <span style="color:#a6e22e">restTemplate</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> RestTemplate<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p>FeignService.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 代理接口类
+</span><span style="color:#75715e">// 使用 FeignClient 指定向 Eureka 中注册指定名称的服务
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@FeignClient</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;portal&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">FeignService</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 对应服务内的链接
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/config&#34;</span><span style="color:#f92672">)</span>
+    String <span style="color:#a6e22e">config</span><span style="color:#f92672">();</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p>EurekaController.java</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/eureka&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">EurekaController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// Ribbon+ RestTemplate
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
+    RestTemplate restTemplate<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/robbin/{application}/{method}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">invoke</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> String application<span style="color:#f92672">,</span> <span style="color:#a6e22e">@PathVariable</span> String method<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// 调用 portal 应用的 config 接口，接口为 http://PORTAL/config
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// 其中应用名称为 Eureka.Monitor 的 Instances 列表上的 Application 字段
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> restTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">getForObject</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;http://%s/%s&#34;</span><span style="color:#f92672">,</span> application<span style="color:#f92672">.</span><span style="color:#a6e22e">toUpperCase</span><span style="color:#f92672">(),</span> method<span style="color:#f92672">),</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// Feign
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
+    FeignService feignService<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/feign/{method}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">feign</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> String method<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> feignService<span style="color:#f92672">.</span><span style="color:#a6e22e">config</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>        
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<h2 id="文档">文档</h2>
+
+<ul>
+<li>Eureka
+
+<ul>
+<li><a href="http://www.itmuch.com/spring-cloud-1/">Spring Cloud第一篇 Eureka简介及原理</a></li>
+<li><a href="https://blog.csdn.net/awschina/article/details/17639191">AWS的区域和可用区概念解释</a></li>
+<li><a href="http://www.itmuch.com/spring-cloud-sum-eureka/">Spring Cloud中，Eureka常见问题总结</a></li>
+<li><a href="https://www.jianshu.com/p/ee4785a212f6">Spring Cloud Eureka 自我保护机制</a></li>
+<li><a href="https://github.com/Netflix/eureka/wiki/Understanding-Eureka-Peer-to-Peer-Communication">Understanding Eureka Peer to Peer Communication</a></li>
+<li><a href="https://blog.csdn.net/zhbr_f1/article/details/72301903">F1V3.0-7 Spring Cloud 介绍</a>
+
+<ul>
+<li>Eureka 相关配置参数一览</li>
+</ul></li>
+</ul></li>
+<li>Robbin
+
+<ul>
+<li><a href="https://juejin.im/post/5905b43961ff4b0066ba6237">SpringCloud 教程 | 第二篇: 服务消费者（rest+ribbon）</a></li>
+<li><a href="https://blog.csdn.net/u014401141/article/details/78652101">Spring Cloud之服务调用及使用ribbon实现负载均衡(三)</a></li>
+<li><a href="http://blog.didispace.com/springcloud-sourcecode-ribbon/">Spring Cloud源码分析（二）Ribbon</a></li>
+</ul></li>
+<li>Feign
+
+<ul>
+<li><a href="https://blog.csdn.net/u012702547/article/details/78251985">Spring Cloud中声明式服务调用Feign</a></li>
+<li><a href="https://juejin.im/post/5adee93551882567137dd71f">Spring Cloud Feign 声明式服务调用</a></li>
+</ul></li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<ul>
+<li><a href="https://github.com/yqjdcyy/Hello_Spring_Cloud/tree/eureka">yqjdcyy/Hello_Spring_Cloud</a></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/%e6%a1%86%e6%9e%b6" rel="tag" title="框架">#框架#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/spring.cloud" rel="tag" title="Spring.Cloud">#Spring.Cloud#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/hello.spring.cloud.config/" rel="next" title="Hello.Spring.Cloud.Config">
+        <i class="fa fa-chevron-left"></i> Hello.Spring.Cloud.Config
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Hello.Spring.Cloud.Eureka
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">241</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">120</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#细节">细节</a>
+<ul>
+<li><a href="#region-zone-eureka">Region-Zone-Eureka</a></li>
+<li><a href="#模块">模块</a></li>
+<li><a href="#调用">调用</a>
+<ul>
+<li><a href="#robbin-resttemplate">Robbin+ RestTemplate</a></li>
+<li><a href="#feign">Feign</a></li>
+</ul></li>
+<li><a href="#异常">异常</a>
+<ul>
+<li><a href="#eureka-自我保护">Eureka.自我保护</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#应用">应用</a>
+<ul>
+<li><a href="#eureka-server">Eureka.Server</a>
+<ul>
+<li><a href="#maven">Maven</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#monitor">Monitor</a></li>
+</ul></li>
+<li><a href="#eureka-client">Eureka.Client</a>
+<ul>
+<li><a href="#maven-1">Maven</a></li>
+<li><a href="#properties-1">Properties</a></li>
+<li><a href="#code-1">Code</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#文档">文档</a></li>
+<li><a href="#代码">代码</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>
