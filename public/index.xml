@@ -2156,6 +2156,17 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/</guid>
+      <description>作用  在高并发下，避免服务阻塞造成对整体服务稳定性的影响 通过服务降级、服务隔离来保障业务的顺利进行  选型  命令模式
+   线程|线程池
+ 客户端单独线程执行，避免阻塞影响调用线程的正常任务 便于即时更新客户端库包 避免调用端性能下降，反作用影响请求调用 支持异步操作  网络等操作大部分为同步执行    流程 流程图    节点 *Command.init  HystrixCommand  HystrixCommand command = new HystrixCommand(arg1, arg2);cls  HystrixObservableCommand  HystrixObservableCommand command = new HystrixObservableCommand(arg1, arg2);   *Command.execute  HystrixCommand  execute  同步请求 K value = command.execute();  queue  异步请求 Future&amp;lt;K&amp;gt; fValue = command.queue();   HystrixObservableCommand  observe  订阅 Observable，返回源 Observable 的拷贝 Observable&amp;lt;K&amp;gt; ohValue = command.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/hello.docker.data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
