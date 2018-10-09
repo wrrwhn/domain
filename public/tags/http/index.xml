@@ -6,10 +6,19 @@
     <description>Recent content in Http on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 18 Jul 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/http/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>HTTP.Header.UserAgent</title>
+      <link>http://domain.yqjdcyy.com/post/http.header.useragent/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/http.header.useragent/</guid>
+      <description>Introduce 作用 User-Agent 请求头包含一特征文本，供允许网络协议获取应用类型、操作系统、软件供应商和软件版本 统计用户浏览器的使用情况 请求服务提供商为当前 PC/ WEb 提供</description>
+    </item>
     
     <item>
       <title>HTTP.Header.Connection</title>

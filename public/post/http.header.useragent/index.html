@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>富爸爸穷爸爸 - 好久不见</title>
+    <title>HTTP.Header.UserAgent - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="富爸爸穷爸爸">
+    <meta property="og:title" content="HTTP.Header.UserAgent">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="富爸爸穷爸爸 - 好久不见" />
+    <meta name="title" content="HTTP.Header.UserAgent - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E5%AF%8C%E7%88%B8%E7%88%B8%E7%A9%B7%E7%88%B8%E7%88%B8/" itemprop="url">
-        富爸爸穷爸爸
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/http.header.useragent/" itemprop="url">
+        HTTP.Header.UserAgent
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-02-22">
-    2018-02-22
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-09">
+    2018-10-09
 </time>
 </span> 
       
@@ -140,8 +140,8 @@
   <span class="post-meta-item-text">分类：</span>
   
     <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-      <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB" itemprop="url" rel="index">
-        <span itemprop="name">阅读</span>
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
       </a>
       &nbsp; 
     </span>
@@ -155,200 +155,465 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">2137 字 ~5分钟</span>
+<span class="leancloud-visitors-count">1008 字 ~3分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="富爸爸穷爸爸">富爸爸穷爸爸</h1>
+<h1 id="introduce">Introduce</h1>
 
-<h2 id="课程">课程</h2>
-
-<h3 id="富爸爸-穷爸爸">富爸爸，穷爸爸</h3>
+<h2 id="作用">作用</h2>
 
 <ul>
-<li>我<strong>怎样才能付得起</strong>？</li>
-<li>贫穷和破产的区别是：破产是暂时的，而贫穷是永久的。</li>
-</ul>
-
-<h3 id="富人不为钱工作">富人不为钱工作</h3>
+<li>User-Agent 请求头包含一特征文本，供允许网络协议获取应用类型、操作系统、软件供应商和软件版本
 
 <ul>
-<li>如果你不能<strong>下定决心</strong>，就永远也学不会如何赚钱。</li>
-<li>在生活推着他转的同时，<strong>抓住</strong>生活赐予的<strong>每个机会</strong>；</li>
-<li>如果你认为是我的问题，你就会想改变我；如果你<strong>认为问题在你那儿</strong>，你就会<strong>改变自己</strong>，学习一些东西让自己变得更聪明。大多数人认为世界上除了自己外，其他人都应该改变。让我告诉你吧，<strong>改变自己比改变他人更容易</strong>。</li>
-<li>老鼠赛跑
-
-<ul>
-<li>学习为钱工作很容易，特别是当你一谈到钱就觉得恐惧时，学习为钱工作就更容易了。</li>
-<li>没钱的恐惧会促使他们努力工作，得到报酬后，贪婪或欲望又让他们想拥有所有用钱能买到的好东西。</li>
+<li>统计用户浏览器的使用情况</li>
 </ul></li>
-<li>控制欲望，控制自己
+<li>请求服务提供商为当前 PC/ WEb 提供的特定格式网页
 
 <ul>
-<li>你无需告诉别人你的感觉，只有你自己知道。</li>
-<li>人生实际上是在无知和觉醒之间的一场斗争。</li>
-<li>忠实于你的感情，以你喜欢的方式运用你的头脑和感情，不要让它们控制你。</li>
-<li>你有两种感情——恐惧和欲望，如果你让它们来控制你的思想，你就会落入一生中最大的陷阱。</li>
+<li>前端实现上需要考虑浏览器兼容问题</li>
 </ul></li>
 </ul>
 
-<h3 id="为什么要教授财务知识">为什么要教授财务知识</h3>
+<h1 id="语法">语法</h1>
+
+<h2 id="格式">格式</h2>
 
 <ul>
-<li>只有知识才能解决问题并<strong>创造财富</strong>，那些不是靠财务知识挣来的钱也不会长久。</li>
-<li>从长远来看，重要的不是你挣了多少钱，而是你能<strong>留下多少钱</strong>，以及能够留住多久。</li>
-<li>聪明人总是雇用比他更聪明的人。</li>
-<li>你为别人工作。就像为工资而工作的大多数人一样，你的工作只会使雇主或股东更加富有，<strong>你的努力和成功将使雇主更加成功并得以提早退休</strong>。</li>
-<li><strong>财富就是支撑一个人生存多长时间的能力</strong>，或者说，如果我今天停止工作，我还能活多久？</li>
-<li>财富是将资产项产生的现金与支出项流出的现金进行比较而定的。</li>
+<li><code>User-Agent: &lt;product&gt; / &lt;product-version&gt; &lt;comment&gt;</code></li>
+<li><code>User-Agent: Mozilla/&lt;version&gt; (&lt;system-information&gt;) &lt;platform&gt; (&lt;platform-details&gt;) &lt;extensions&gt;</code>
+
+<ul>
+<li><code>User-Agent: Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion</code></li>
+</ul></li>
+
+<li><p><code>User-Agent: &lt;浏览器标识&gt; (&lt;操作系统标识&gt;; &lt;加密等级标识&gt;; &lt;浏览器语言&gt;) &lt;渲染引擎标识&gt; &lt;版本信息&gt;</code></p>
+
+<h2 id="选项">选项</h2></li>
+
+<li><p><code>&lt;product&gt;</code></p>
+
+<ul>
+<li>产品识别码| 浏览器标识</li>
+<li><code>Mozilla/5.0</code>
+
+<ul>
+<li>通用标识符，表示与 <code>Mozilla</code> 兼容</li>
+<li>早期服务器于加载前检查是否为 <code>Netscape</code> 浏览器，其它浏览器不得不伪装</li>
+</ul></li>
+</ul></li>
+
+<li><p><code>&lt;product-version&gt;</code></p>
+
+<ul>
+<li>产品版本号| 渲染引擎标识</li>
+</ul></li>
+
+<li><p><code>&lt;comment&gt;</code></p>
+
+<ul>
+<li>产品相关备注信息 |版本信息
+<br /></li>
+</ul></li>
+
+<li><p><code>rv:geckoversion</code></p>
+
+<ul>
+<li><code>Gecko</code> 的发布版本号</li>
+<li><code>geckoversion</code> 与 <code>firefoxversion</code> 相同</li>
+</ul></li>
+
+<li><p><code>system-information</code></p>
+
+<ul>
+<li>操作系统标识</li>
+
+<li><p>如若有多个，则以 <code>;</code> 进行分隔</p>
+
+<table>
+<thead>
+<tr>
+<th>操作系统</th>
+<th>版本标识</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>FreeBSD</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; FreeBSD (version no.) i386</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; FreeBSD (version no.) AMD64</td>
+</tr>
+
+<tr>
+<td>Linux</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; Linux ppc</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; Linux ppc64</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; Linux i686</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; Linux x86_64</td>
+</tr>
+
+<tr>
+<td>Mac</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Macintosh; PPC Mac OS X</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Macintosh; Intel Mac OS X</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Solaris</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; SunOS i86pc</td>
+</tr>
+
+<tr>
+<td></td>
+<td>X11; SunOS sun4u</td>
+</tr>
+
+<tr>
+<td>Windows</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows NT 6.1 (windows 7)</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows NT 6.0 (windows vista)</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows NT 5.2 (windows 2003)</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows NT 5.1 (windows xp)</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows NT 5.0 (windows 2000)</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows ME</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Windows 98</td>
+</tr>
+
+<tr>
+<td>Android</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Iphone</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Mobile</td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li><p><code>Gecko/geckotrail</code></p>
+
+<ul>
+<li>说明使用浏览器基于 <code>Gecko</code> 渲染引擎</li>
+<li>桌面浏览器，<code>geckotrail</code> 固定为 <code>20100101</code></li>
+</ul></li>
+
+<li><p><code>Firefox/firefoxversion</code></p>
+
+<ul>
+<li>说明该浏览器是 <code>Firefox</code></li>
+</ul></li>
+
+<li><p>加密等级标识</p>
+
+<table>
+<thead>
+<tr>
+<th>标识</th>
+<th>含义</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>N</td>
+<td>无安全加密</td>
+</tr>
+
+<tr>
+<td>I</td>
+<td>弱安全加密<br><strong>40位</strong> 加密</td>
+</tr>
+
+<tr>
+<td>U</td>
+<td>强安全加密<br><strong>120位</strong> 加密</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>浏览器语言</p>
+
+<ul>
+<li>表示当前浏览器指定的语言</li>
+</ul></li>
+
+<li><p>渲染引擎标识</p></li>
 </ul>
 
-<h3 id="关注自己的-事业">关注自己的<strong>事业</strong></h3>
+<h2 id="示例">示例</h2>
 
 <ul>
-<li>从事你所学的专业的可怕后果在于，它会让你忘记关注自己的事业。人们耗尽一生去关注别人的事业并使他人致富。</li>
-<li>只有你把额外的收入用来购买可产生收入的<strong>资产</strong>，你才能获得真正的财务安全。
+<li>Firefox
 
 <ul>
-<li>不需到场就可以正常运作的<strong>业务</strong></li>
-<li><strong>股票</strong></li>
-<li><strong>债券</strong></li>
-<li>能够产生收入的<strong>房地产</strong></li>
-<li><strong>版税</strong>，如音乐、手稿、专利</li>
+<li><code>Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0</code></li>
+<li><code>Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0</code></li>
+</ul></li>
+<li>Chrome
+
+<ul>
+<li><code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</code></li>
+</ul></li>
+<li>Opera
+
+<ul>
+<li><code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 OPR/38.0.2220.41</code></li>
+</ul></li>
+<li>Safari
+
+<ul>
+<li><code>Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1</code></li>
+</ul></li>
+<li>Internet Explorer
+
+<ul>
+<li><code>Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)</code></li>
+</ul></li>
+<li>爬虫和机器人
+
+<ul>
+<li><code>Googlebot/2.1 (+http://www.google.com/bot.html)</code></li>
 </ul></li>
 </ul>
 
-<h3 id="富人的投资">富人的投资</h3>
+<h1 id="supplement">Supplement</h1>
+
+<h2 id="浏览器发展史">浏览器发展史</h2>
 
 <ul>
-<li>我们都拥有巨大的潜能——这是上天赏赐的礼物。然而，我们都或多或少地存在着某种自我怀疑的心理，从而阻碍前进的步伐。这种障碍很少是缺乏某种技术性的东西，更多的是缺乏自信。有些人更容易受到外界的影响。</li>
-<li><strong>财务</strong>知识</li>
-<li><strong>投资</strong>策略</li>
-<li><strong>市场、供给与需求</strong></li>
-<li><strong>法律规章</strong></li>
-<li>如何寻找其他人都<strong>忽视的机会</strong></li>
-<li>怎样把精明的人<strong>组织</strong>起来</li>
+<li>NCSA.Mosaic</li>
+<li>Netscape.Mozilla</li>
+<li>Microsoft.IE</li>
+<li>Firefox.Gecko</li>
+<li>KHTML
+
+<ul>
+<li>Konqueror
+
+<ul>
+<li>WebKit
+
+<ul>
+<li>Mac.Safari</li>
+</ul></li>
+<li>Google.Chrome</li>
+</ul></li>
+</ul></li>
+<li>Opera<br /></li>
 </ul>
 
-<h3 id="学会不为钱工作">学会不为钱工作</h3>
+<h2 id="浏览器">浏览器</h2>
+
+<table>
+<thead>
+<tr>
+<th>浏览器名称</th>
+<th>包含关键词</th>
+<th>禁止包含关键词</th>
+<th>补充</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Firefox</td>
+<td>Firefox/xyz</td>
+<td>Seamonkey/xyz</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Seamonkey</td>
+<td>Seamonkey/xyz</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Chrome</td>
+<td>Chrome/xyz</td>
+<td>Chromium/xyz</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Chromium</td>
+<td>Chromium/xyz</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Safari</td>
+<td>Safari/xyz</td>
+<td>Chrome/xyz <br> Chromium/xyz</td>
+<td>Safari 有两个版本号，一个技术性较强，格式是Safari/xyz，一个对用户友好一点，格式是Version/xyz</td>
+</tr>
+
+<tr>
+<td>Opera</td>
+<td>OPR/xyz [1]<br>Opera/xyz [2]</td>
+<td></td>
+<td>[1] Opera 15+ (基于Blink的引擎) <br>[2] Opera 12- (基于Presto的引擎)</td>
+</tr>
+
+<tr>
+<td>Internet Explorer</td>
+<td>; MSIE xyz;</td>
+<td></td>
+<td>IE浏览器的名字并没有使用BrowserName/VersionNumber的格式</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="渲染引擎">渲染引擎</h2>
+
+<table>
+<thead>
+<tr>
+<th>渲染引擎名称</th>
+<th>包含关键字</th>
+<th>补充</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Gecko</td>
+<td>Gecko/xyz</td>
+<td></td>
+</tr>
+
+<tr>
+<td>WebKit</td>
+<td>AppleWebKit/xyz</td>
+<td>请注意，WebKit浏览器包含了&rsquo;like Gecko&rsquo;字符串，如果不加以注意，可能会触发检测Gecko的false positive。</td>
+</tr>
+
+<tr>
+<td>Presto</td>
+<td>Opera/xyz</td>
+<td>注: 在Opera浏览器在15及以上的版本中，已经不再使用Presto（参见&rsquo;Blink&rsquo;）。</td>
+</tr>
+
+<tr>
+<td>Trident</td>
+<td>Trident/xyz</td>
+<td>IE浏览器将此字符串放在User Agent字符串的注释部分。</td>
+</tr>
+
+<tr>
+<td>Blink</td>
+<td>Chrome/xyz</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="reference">Reference</h1>
+
+<h2 id="官方">官方</h2>
 
 <ul>
-<li><strong>财商</strong>是会计、投资、市场和法律等各方面知识和能力的综合。
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent</a>
 
 <ul>
-<li>“工作（job）一词就是‘比破产强一点’（just over broke）。”</li>
-<li>“工人付出最大努力以免于被解雇，而雇主提供最低工资以防止工人辞职。”</li>
-<li>在很多情况下，他们贫穷、财务困难或者只能挣到低于他们应得的薪水，不是因为他们已知的东西而是因为他们<strong>未知的东西</strong>。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/User-Agent">User-Agent 中文版本</a></li>
 </ul></li>
-<li>这些聪明的年轻人并不去专项钻研某一个部门的业务，而是从一个部门跳到另一个部门，从而<strong>学到整个企业各个系统的知识</strong>。
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent">Browser detection using the user agent</a>
 
 <ul>
-<li>能对如何经营一家企业有一个<strong>整体的认识</strong>，并可以了解不同<strong>部门的相互关系</strong>。</li>
-<li>必需的管理技能
-
-<ul>
-<li>对<strong>现金流</strong>的管理</li>
-<li>对<strong>系统</strong>（包括你本人、时间及家庭）的管理</li>
-<li>对<strong>人员</strong>的管理。</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Browser_detection_using_the_user_agent">Browser detection using the user agent 中文版本</a></li>
 </ul></li>
-</ul></li>
-<li>你在处理<strong>人际关系</strong>、商务<strong>谈判</strong>和<strong>被拒绝</strong>时的恐惧心理等方面做得越好，生活就会越轻松。</li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox">Firefox user agent string reference</a></li>
 </ul>
 
-<h2 id="开端">开端</h2>
-
-<h3 id="克服困难">克服困难</h3>
+<h2 id="补充">补充</h2>
 
 <ul>
-<li>困难
-
-<ul>
-<li>恐惧心理</li>
-<li>愤世嫉俗</li>
-<li>懒惰</li>
-<li>不良习惯</li>
-<li>自负</li>
-</ul></li>
-
-<li><p>关键</p>
-
-<ul>
-<li>我不想要</li>
-</ul></li>
-
-<li><p>技巧</p>
-
-<ul>
-<li><strong>横盘</strong>好比一个计算机指令，当股价开始下跌时自动卖出股票，帮助你将损失最小化、收益最大化</li>
-<li><strong>我可付不起</strong> 禁锢了你的思想，使你无法进一步思考</li>
-<li><strong>我可付不起</strong> 带来的悲哀和无助感会使人们失望、迟钝以至意志消沉</li>
-<li><strong>我怎样才能付得起</strong> 打开了充满可能性的快乐和梦想</li>
-</ul></li>
-
-<li><p>事例</p>
-
-<ul>
-<li>1626年，荷兰人用价值24美元的物品从印第安人手中买下了曼哈顿岛，并取名为新阿姆斯特丹。1664年曼哈顿岛被英国人占领，改名为纽约。</li>
-</ul></li>
-</ul>
-
-<h2 id="开始行动">开始行动</h2>
-
-<h3 id="开始行动-1">开始行动</h3>
-
-<ul>
-<li>超现实的理由——<strong>精神</strong>的力量。</li>
-<li>作出一个<strong>选择</strong>，这个选择是我们利用自己的时间、金钱和头脑里学到的东西作出的。</li>
-<li>保留了自己习惯的<strong>思考方式</strong>，同时又学到了彼得·林奇分析同一问题或趋势的思考方式。
-
-<ul>
-<li>学习</li>
-</ul></li>
-<li>选择朋友——<strong>关系</strong>的力量。</li>
-<li>在竞争激烈的市场上，<strong>群体</strong>往往会反应<strong>迟钝</strong>，成为被“宰割”的对象。</li>
-<li>学习一种新的模式——<strong>快速学习</strong>的力量。</li>
-<li>支付自己——<strong>自律</strong>的力量。如果你控制不了自己，就别想着致富。
-
-<ul>
-<li>生活之所以能推着你转，不是因为生活的力量很强大，而是因为你缺乏自律。</li>
-</ul></li>
-<li>有<strong>胆量</strong>不随大流才能致富。
-
-<ul>
-<li>你也许并不软弱，但一旦涉及金钱，往往会变得怯懦。</li>
-</ul></li>
-<li>穷人有一些不好的习惯
-
-<ul>
-<li>其中一个普遍的坏习惯就是<strong>随便动用储蓄</strong>。富人知道储蓄只能用于<strong>创造更多的收入</strong>，而不是用来支付账单。</li>
-</ul></li>
-<li>以优厚的报酬——<strong>好建议</strong>的力量。</li>
-<li>要找一位很关心你的利益的<strong>经纪人</strong>。
-
-<ul>
-<li>许多经纪人会花时间来教导你，那么他们可能是你得到的最好的资产。</li>
-</ul></li>
-<li>印第安给予者——<strong>无私</strong>的力量。</li>
-<li>不只看到投资回报率，而且还能看到，一旦收回投资，就能<strong>额外</strong>得到的资产。这也是财商。</li>
-<li>轻松的道路往往会越走越艰难，而<strong>艰难的道路往往会越走越轻松</strong>。</li>
-<li>对英雄的崇拜——<strong>神话</strong>的力量。</li>
-<li>在市场上或为交易进行谈判时，我下意识地<strong>模仿</strong>川普的那种气势；当分析某种趋势时，我学着像彼得·林奇那样思考。通过偶像的模范作用，我们挖掘出自身的巨大潜能。</li>
-<li>上帝不需要得到，但人类需要<strong>付出</strong></li>
-</ul>
-
-<h3 id="还想要更多吗-这里有一些要做的事情">还想要更多吗？这里有一些要做的事情</h3>
-
-<ul>
-<li>房地产中介并不那么尽力，所以他们常常什么也不做而是去寻找一处更好的房产。</li>
-<li>没卖过东西的人，对想卖出东西的迫切心情是不会理解的。</li>
-<li>你要<strong>知道你在寻找什么</strong>，然后开始<strong>行动</strong>！
-
-<ul>
-<li>我首<strong>先寻找想买进的人</strong>，然后才去找想卖出的人。</li>
-</ul></li>
+<li><a href="https://blog.csdn.net/rj042/article/details/6991441">认识User-Agent</a></li>
+<li><a href="https://www.w3schools.com/browsers/default.asp">Browser Statistics</a></li>
 </ul>
 
     </div>
@@ -357,7 +622,7 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/%e5%95%86%e4%b8%9a" rel="tag" title="商业">#商业#</a>
+    <a href="http://domain.yqjdcyy.com/tags/http" rel="tag" title="HTTP">#HTTP#</a>
     
 </div>
 
@@ -366,17 +631,13 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E5%B0%8F%E7%8E%8B%E5%AD%90/" rel="next" title="小王子">
-        <i class="fa fa-chevron-left"></i> 小王子
+        <a href="http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/" rel="next" title="Hello.Spring.Cloud.Eureka">
+        <i class="fa fa-chevron-left"></i> Hello.Spring.Cloud.Eureka
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/%E8%B0%83%E9%85%92/" rel="prev" title="调酒">
-        调酒 <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -385,7 +646,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：富爸爸穷爸爸
+                标题：HTTP.Header.UserAgent
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -486,26 +747,26 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#富爸爸穷爸爸">富爸爸穷爸爸</a>
+<li><a href="#introduce">Introduce</a>
 <ul>
-<li><a href="#课程">课程</a>
-<ul>
-<li><a href="#富爸爸-穷爸爸">富爸爸，穷爸爸</a></li>
-<li><a href="#富人不为钱工作">富人不为钱工作</a></li>
-<li><a href="#为什么要教授财务知识">为什么要教授财务知识</a></li>
-<li><a href="#关注自己的-事业">关注自己的<strong>事业</strong></a></li>
-<li><a href="#富人的投资">富人的投资</a></li>
-<li><a href="#学会不为钱工作">学会不为钱工作</a></li>
+<li><a href="#作用">作用</a></li>
 </ul></li>
-<li><a href="#开端">开端</a>
+<li><a href="#语法">语法</a>
 <ul>
-<li><a href="#克服困难">克服困难</a></li>
+<li><a href="#格式">格式</a></li>
+<li><a href="#选项">选项</a></li>
+<li><a href="#示例">示例</a></li>
 </ul></li>
-<li><a href="#开始行动">开始行动</a>
+<li><a href="#supplement">Supplement</a>
 <ul>
-<li><a href="#开始行动-1">开始行动</a></li>
-<li><a href="#还想要更多吗-这里有一些要做的事情">还想要更多吗？这里有一些要做的事情</a></li>
+<li><a href="#浏览器发展史">浏览器发展史</a></li>
+<li><a href="#浏览器">浏览器</a></li>
+<li><a href="#渲染引擎">渲染引擎</a></li>
 </ul></li>
+<li><a href="#reference">Reference</a>
+<ul>
+<li><a href="#官方">官方</a></li>
+<li><a href="#补充">补充</a></li>
 </ul></li>
 </ul>
 </nav></div>
