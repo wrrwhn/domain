@@ -6,10 +6,19 @@
     <description>Recent content in Linux on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 09 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 09 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Iptables</title>
+      <link>http://domain.yqjdcyy.com/post/linux.iptables/</link>
+      <pubDate>Tue, 09 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.iptables/</guid>
+      <description>介绍 作用 配置 Linux 内核防火墙的命令行工具 检测、修改、转发、重定向和丢弃 IPv4 数据包 针对 IPv6 需使用 ip6tables 组成 Tables 作为具有相同功能规则的合集 table work raw 网址过滤，ra</description>
+    </item>
     
     <item>
       <title>Linux.Find</title>

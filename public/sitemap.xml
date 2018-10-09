@@ -30,6 +30,29 @@ Opera/xyz [2]  [1] Opera 15&#43; (基于Blink的引擎) [2] Opera 12- (基于Pre
     </entry>
     
      <entry>
+        <title>Linux.Iptables</title>
+        <url>http://domain.yqjdcyy.com/post/linux.iptables/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Linux</tag>
+        </tags>
+        <content type="html">  介绍 作用  配置 Linux 内核防火墙的命令行工具  检测、修改、转发、重定向和丢弃 IPv4 数据包 针对 IPv6 需使用 ip6tables   组成  Tables
+ 作为具有相同功能规则的合集
+   table work     raw 网址过滤，raw 中的数据包不会被系统跟踪   filter 包过滤，存放所有与防火墙相关操作的默认表   nat 用于网络地址转换
+例如端口转发   mangle 用于对特定数据包的修改
+例如损坏数据包   security 用于强制访问控制 网络规则
+例如 SELinux     Chains
+ 为按顺序排列的规则列表 是表的组成元件  filter= INPUT&#43; OUTPUT&#43; FORWARD nat= PREROUTING&#43; OUTPUT mangle= PREROUTING&#43; INPUT&#43; FORWARD&#43; OUTPUT&#43; POSTROUTING  默认无规则，而添加的默认规则为 ACCEPT 而新添加的规则，默认置于队尾，需在前面规则通过的基础上才能生效 链路功能
+   链路类型 处理数据类型     INPUT 数据包目标地是本地主机   OUTPUT 处理输出数据包   FORWARD 数据包目标地是其它主机   PREROUTING 用于目标地址转换（DNAT）   POSTOUTING 用于源地址转换（SNAT）     Rules
+ 规则用于过滤数据包 由一个目标&#43; 多个匹配组成  顺序  在通过多个匹配后，执行目标  目标  使用 -j|-jump 指定 可指定自定义链、内置的特定目标、不终止  内置目标  ACCEPT DROP QUEUE RETURN  目标扩展  REJECT LOG    匹配  端口  eth0 eth1  类型  ICMP TCP UDP  目标端口  指定端口，如 8080    动作
+   动作 实现功能     ACCEPT 接收数据包   DROP 丢弃数据包   REDIRECT 重定向、映射、透明代理   SNAT 源地址转换   DNAT 目标地址转换   MASQUERADE IP伪装（NAT），用于ADSL   LOG 日志记录     Traversing Chains
+ 描述接收到的网络数据包，按照怎样的顺序通过表的交通管制链  Modules
+ 通过模块以扩展功能，实现更为复杂的过滤 模块  connlimit  限制同一 IP 连接数  conntrack  追踪、记录一个连接的状态  limit  限速  recent  大型地址列表 配合限制登录等操作使用     路由  网络请求由 &amp;lt;Network&amp;gt; 作为起点流通 本地请求则由 &amp;lt;local process&amp;gt; 作为起点流通  XXXXXXXXXXXXXXXXXX XXX Network XXX XXXXXXXXXXXXXXXXXX &#43; | v &#43;-------------&#43; &#43;------------------&#43; |table: filter| &amp;lt;---&#43; | table: nat | |chain: INPUT | | | chain: PREROUTING| &#43;-----&#43;-------&#43; | &#43;--------&#43;---------&#43; | | | v | v [local process] | **************** &#43;--------------&#43; | &#43;---------&#43; Routing decision &#43;------&amp;gt; |table: filter | v **************** |chain: FORWARD| **************** &#43;------&#43;-------&#43; Routing decision | **************** | | | v **************** | &#43;-------------&#43; &#43;------&amp;gt; Routing decision &amp;lt;---------------&#43; |table: nat | | **************** |chain: OUTPUT| | &#43; &#43;-----&#43;-------&#43; | | | | v v | &#43;-------------------&#43; &#43;--------------&#43; | | table: nat | |table: filter | &#43;----&#43; | chain: POSTROUTING| |chain: OUTPUT | &#43;--------&#43;----------&#43; &#43;--------------&#43; | v XXXXXXXXXXXXXXXXXX XXX Network XXX XXXXXXXXXXXXXXXXXX 指令 格式  iptables &amp;lt;option&amp;gt; (&amp;lt;args&amp;gt;) iptables -t 表名 &amp;lt;-A/I/D/R&amp;gt; 规则链名 [规则号] &amp;lt;-i/o 网卡名&amp;gt; -p 协议名 &amp;lt;-s 源IP/源子网&amp;gt; --sport 源端口 &amp;lt;-d 目标IP/目标子网&amp;gt; --dport 目标端口 -j 动作  详解    选项 作用     -t &amp;lt;表&amp;gt; 指定要操纵的表   -A 向规则链中添加条目   -D 从规则链中删除条目   -i 向规则链中插入条目   -R 替换规则链中的条目   -L 显示规则链中已有的条目   -F 清除规则链中已有的条目   -Z 清空规则链中的数据包计算器和字节计数器   -N 创建新的用户自定义规则链   -P 定义规则链中的默认目标   -h 显示帮助信息   -p 指定要匹配的数据包协议类型   -s 指定要匹配的数据包源IP地址   -j &amp;lt;目标&amp;gt; 指定要跳转的目标   -i &amp;lt;网络接口&amp;gt; 指定数据包进入本机的网络接口   -o &amp;lt;网络接口&amp;gt; 指定数据包要离开本机所使用的网络接口    示例 限制每IP在一分钟内最多对服务器只能有3个SSH连接 iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 3 --name SSH -j LOG --log-prefix &amp;#34;SSH Attack&amp;#34; iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --update --seconds 60 --hitcount 3 --name SSH -j DROP iptables -A INPUT -p tcp --dport 22 -m state --state NEW -m recent --set --name SSH -j ACCEPT 查看并删除第8条规则 iptables -L -n --line-numbers iptables -D INPUT 8 添加规则 # 配置规则  # 允许 192.168.1.0/24 针对 22 端口的 tcp 请求  iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT # 开放外网对 80 端口的 tcp 请求  iptables -A INPUT -p tcp --dport 80 -j ACCEPT # 限制来自 123.45.6.7 的请求  iptables -I INPUT -s 123.45.6.7 -j DROP # 重启 service iptables restart # 状态 service iptables status 配置查看 cat /etc/sysconfig/iptables 参考 IPTables  Linux - CentOS6下操作防火墙(iptables) iptables详解（1）：iptables概念 Iptables (简体中文)  安全  Iptables防攻击模块介绍（五） 通过iptables配置加强服务器安全  扩展  网络地址转换 损坏数据包 强制访问控制 SELinux   </content>
+    </entry>
+    
+     <entry>
         <title>Hello.Spring.Cloud.Eureka</title>
         <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.eureka/</url>
         <categories>
