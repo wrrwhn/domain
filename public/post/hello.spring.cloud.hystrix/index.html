@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title> - 好久不见</title>
+    <title>Hello.Spring.Cloud.Hystrix - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="">
+    <meta property="og:title" content="Hello.Spring.Cloud.Hystrix">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content=" - 好久不见" />
+    <meta name="title" content="Hello.Spring.Cloud.Hystrix - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/" itemprop="url">
-        
+        Hello.Spring.Cloud.Hystrix
         </a>
       </h1>
       <div class="post-meta">
@@ -126,18 +126,36 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
-    0001-01-01
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-12">
+    2018-10-12
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">316 字 ~2分钟</span>
+<span class="leancloud-visitors-count">1381 字 ~3分钟</span>
 </span>
       </div>
     </header>
@@ -458,16 +476,16 @@
 
 <h1 id="应用">应用</h1>
 
-<h2 id="maven">Maven</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">```xml
-&lt;!-- Hystrix.* --&gt;
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-cloud-starter-hystrix&lt;/artifactId&gt;
-    &lt;version&gt;1.4.5.RELEASE&lt;/version&gt;
-&lt;/dependency&gt;    
-```</pre></div>
-<h2 id="code">Code</h2>
+<h2 id="hystrix">Hystrix</h2>
+
+<h3 id="maven">Maven</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Hystrix.* --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-hystrix<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.4.5.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>    </code></pre></div>
+<h3 id="code">Code</h3>
 
 <ul>
 <li><p><code>EurekaController</code></p>
@@ -511,14 +529,100 @@
 <span style="color:#f92672">}</span></code></pre></div></li>
 </ul>
 
-<h2 id="request">Request</h2>
+<h3 id="request">Request</h3>
 
 <ul>
 <li><code>/actuator/hystrix.stream</code><br />
 
 <ul>
-<li></li>
+<li>请求查询监控状态</li>
 </ul></li>
+</ul>
+
+<h2 id="monitor-hystrix">Monitor.Hystrix</h2>
+
+<h3 id="maven-1">Maven</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#75715e">&lt;!-- Hystrix.* --&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-hystrix-dashboard<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div>
+<h3 id="code-1">Code</h3>
+
+<ul>
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@EnableEurekaClient</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#a6e22e">@EnableFeignClients</span>
+<span style="color:#a6e22e">@EnableCircuitBreaker</span>
+<span style="color:#75715e">// 添加 Hystrix 面板功能
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@EnableHystrixDashboard</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h3 id="request-1">Request</h3>
+
+<ul>
+<li>登录 <a href="http://domain.yqjdcyy.com/hystrix">/hystrix</a></li>
+<li>在观看链路中输入 <a href="http://localhost:8301/actuator/hystrix.stream">http://localhost:8301/actuator/hystrix.stream</a></li>
+<li>调用已添加断路监控的请求，查看动态请求状态
+
+<ul>
+<li><img src="http://otzm88f21.bkt.clouddn.com/672fe2f2-669e-425f-9d6a-099ff0a27a3f.png" alt="Hystrix.Monitor.png" /></li>
+</ul></li>
+</ul>
+
+<h2 id="monitor-turbine">Monitor.Turbine</h2>
+
+<h3 id="maven-2">Maven</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">```xml
+&lt;!-- Hystrix.* --&gt;
+&lt;dependency&gt;
+    &lt;groupId&gt;org.springframework.cloud&lt;/groupId&gt;
+    &lt;artifactId&gt;spring-cloud-starter-netflix-turbine&lt;/artifactId&gt;
+&lt;/dependency&gt;
+```</pre></div>
+<h3 id="code-2">Code</h3>
+
+<ul>
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@EnableEurekaClient</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#a6e22e">@EnableFeignClients</span>
+<span style="color:#a6e22e">@EnableCircuitBreaker</span>
+<span style="color:#a6e22e">@EnableHystrixDashboard</span>
+<span style="color:#75715e">// 添加 Turbine 监控
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@EnableTurbine</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h3 id="properties">Properties</h3>
+
+<ul>
+<li><p><code>bootstrap</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">turbine:
+app-config: hystrix
+aggregator:
+    cluster-config: default
+cluster-name-expression: new String(&#34;default&#34;)</code></pre></div></li>
+</ul>
+
+<h3 id="request-2">Request</h3>
+
+<ul>
+<li>登录 <a href="http://domain.yqjdcyy.com/hystrix">/hystrix</a></li>
+<li>在观看链路中输入 <a href="http://localhost:8301/turbine.stream">http://localhost:8301/turbine.stream</a></li>
+<li>调用已添加断路监控的请求，查看动态请求状态</li>
 </ul>
 
 <h1 id="参考">参考</h1>
@@ -536,38 +640,40 @@
 <ul>
 <li><a href="https://www.jianshu.com/p/b9af028efebb">Hystrix使用入门手册</a></li>
 <li><a href="http://www.importnew.com/25704.html">使用 Hystrix 实现自动降级与依赖隔离</a></li>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
+<li><a href="https://www.cnblogs.com/yjmyzz/p/spring-cloud-hystrix-tutorial.html">spring cloud 学习(4) - hystrix 服务熔断处理</a></li>
+<li><a href="http://www.ityouknow.com/springcloud/2017/05/18/hystrix-dashboard-turbine.html">springcloud(五)：熔断监控Hystrix Dashboard和Turbine</a></li>
 </ul>
 
 <h2 id="代码">代码</h2>
 
 <ul>
-<li><a href="https://www.cnblogs.com/yjmyzz/p/spring-cloud-hystrix-tutorial.html">spring cloud 学习(4) - hystrix 服务熔断处理</a></li>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
+<li><a href="https://github.com/yqjdcyy/Hello_Spring_Cloud">yqjdcyy/Hello_Spring_Cloud</a></li>
 </ul>
 
     </div>
     <footer class="post-footer">
      
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/%e6%a1%86%e6%9e%b6" rel="tag" title="框架">#框架#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/spring.cloud" rel="tag" title="Spring.Cloud">#Spring.Cloud#</a>
+    
+</div>
+
+
 
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/hello.docker.data/" rel="next" title="">
-        <i class="fa fa-chevron-left"></i> 
+        <a href="http://domain.yqjdcyy.com/post/http.header.useragent/" rel="next" title="HTTP.Header.UserAgent">
+        <i class="fa fa-chevron-left"></i> HTTP.Header.UserAgent
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/spring.cache/" rel="prev" title="Spring.Cache">
-        Spring.Cache <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -576,7 +682,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：
+                标题：Hello.Spring.Cloud.Hystrix
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -609,7 +715,16 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/profile-image.png"
@@ -621,7 +736,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">244</span>
+        <span class="site-state-item-count">245</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -664,6 +779,67 @@
 </div>
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#选型">选型</a></li>
+<li><a href="#流程">流程</a>
+<ul>
+<li><a href="#流程图">流程图</a></li>
+<li><a href="#节点">节点</a>
+<ul>
+<li><a href="#command-init">*Command.init</a></li>
+<li><a href="#command-execute">*Command.execute</a></li>
+<li><a href="#cache-response">Cache.Response</a></li>
+<li><a href="#circuit-open">Circuit.Open</a></li>
+<li><a href="#thread-pool-queue-semaphore-full">Thread Pool| Queue| Semaphore full</a></li>
+<li><a href="#hystrixobservablecommand-construct-hystrixcommand-run">HystrixObservableCommand.construct() | HystrixCommand.run()</a></li>
+<li><a href="#circuit-health-calc">Circuit.Health calc</a></li>
+<li><a href="#fallback">Fallback</a></li>
+<li><a href="#response-success">Response.success</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#细节">细节</a>
+<ul>
+<li><a href="#融断器">融断器</a></li>
+<li><a href="#隔离">隔离</a></li>
+<li><a href="#参数">参数</a></li>
+</ul></li>
+<li><a href="#应用">应用</a>
+<ul>
+<li><a href="#hystrix">Hystrix</a>
+<ul>
+<li><a href="#maven">Maven</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#request">Request</a></li>
+</ul></li>
+<li><a href="#monitor-hystrix">Monitor.Hystrix</a>
+<ul>
+<li><a href="#maven-1">Maven</a></li>
+<li><a href="#code-1">Code</a></li>
+<li><a href="#request-1">Request</a></li>
+</ul></li>
+<li><a href="#monitor-turbine">Monitor.Turbine</a>
+<ul>
+<li><a href="#maven-2">Maven</a></li>
+<li><a href="#code-2">Code</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#request-2">Request</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#原理">原理</a></li>
+<li><a href="#使用">使用</a></li>
+<li><a href="#代码">代码</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 

@@ -6,10 +6,19 @@
     <description>Recent content in 框架 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 02 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 12 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/%E6%A1%86%E6%9E%B6/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Cloud.Hystrix</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/</link>
+      <pubDate>Fri, 12 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/</guid>
+      <description>作用 在高并发下，避免服务阻塞造成对整体服务稳定性的影响 通过服务降级、服务隔离来保障业务的顺利进行 选型 命令模式 线程|线程池 客户端单独线程执行，</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud.Eureka</title>
