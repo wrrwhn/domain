@@ -1,3 +1,14 @@
+---
+title: "Hello.Spring.Cloud.Hystrix"
+date: "2018-10-12"
+categories:
+ - "整理"
+tags:
+ - "框架"
+ - "Spring.Cloud"
+toc: true
+---
+
 
 # 作用
 - 在高并发下，避免服务阻塞造成对整体服务稳定性的影响
@@ -148,18 +159,19 @@
 
 # 应用
 
-## Maven
+## Hystrix
+### Maven
 
-    ```xml
-    <!-- Hystrix.* -->
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-hystrix</artifactId>
-        <version>1.4.5.RELEASE</version>
-    </dependency>    
-    ```
+```xml
+<!-- Hystrix.* -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-hystrix</artifactId>
+    <version>1.4.5.RELEASE</version>
+</dependency>    
+```
 
-## Code
+### Code
 
 - `EurekaController`
 
@@ -207,10 +219,103 @@
     }
     ```
 
-## Request
+### Request
 
 - `/actuator/hystrix.stream`    
-    - 
+    - 请求查询监控状态
+
+
+## Monitor.Hystrix
+
+### Maven
+
+```xml
+<!-- Hystrix.* -->
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+</dependency>
+```
+
+### Code
+
+- `Application`
+
+    ```java
+    @EnableEurekaClient
+    @SpringBootApplication
+    @EnableFeignClients
+    @EnableCircuitBreaker
+    // 添加 Hystrix 面板功能
+    @EnableHystrixDashboard
+    public class Application {
+
+        public static void main(String[] args) {
+            SpringApplication.run(Application.class, args);
+        }
+    }
+    ```
+
+### Request    
+
+- 登录 [/hystrix](/hystrix)
+- 在观看链路中输入 [http://localhost:8301/actuator/hystrix.stream](http://localhost:8301/actuator/hystrix.stream)
+- 调用已添加断路监控的请求，查看动态请求状态
+    - ![Hystrix.Monitor.png](http://otzm88f21.bkt.clouddn.com/672fe2f2-669e-425f-9d6a-099ff0a27a3f.png)
+
+
+## Monitor.Turbine
+
+### Maven
+
+    ```xml
+    <!-- Hystrix.* -->
+    <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-turbine</artifactId>
+    </dependency>
+    ```
+
+### Code
+
+- `Application`
+
+    ```java
+    @EnableEurekaClient
+    @SpringBootApplication
+    @EnableFeignClients
+    @EnableCircuitBreaker
+    @EnableHystrixDashboard
+    // 添加 Turbine 监控
+    @EnableTurbine
+    public class Application {
+
+        public static void main(String[] args) {
+            SpringApplication.run(Application.class, args);
+        }
+    }
+    ```
+
+
+### Properties
+
+- `bootstrap`
+
+    ```yml
+    turbine:
+    app-config: hystrix
+    aggregator:
+        cluster-config: default
+    cluster-name-expression: new String("default")
+    ```
+
+### Request
+
+- 登录 [/hystrix](/hystrix)
+- 在观看链路中输入 [http://localhost:8301/turbine.stream](http://localhost:8301/turbine.stream)
+- 调用已添加断路监控的请求，查看动态请求状态
+
+
 
 # 参考
 ## 原理
@@ -221,12 +326,8 @@
 ## 使用
 - [Hystrix使用入门手册](https://www.jianshu.com/p/b9af028efebb)
 - [使用 Hystrix 实现自动降级与依赖隔离](http://www.importnew.com/25704.html)
-- []()
-- []()
-- []()
+- [spring cloud 学习(4) - hystrix 服务熔断处理](https://www.cnblogs.com/yjmyzz/p/spring-cloud-hystrix-tutorial.html)
+- [springcloud(五)：熔断监控Hystrix Dashboard和Turbine](http://www.ityouknow.com/springcloud/2017/05/18/hystrix-dashboard-turbine.html)
 
 ## 代码
-- [spring cloud 学习(4) - hystrix 服务熔断处理](https://www.cnblogs.com/yjmyzz/p/spring-cloud-hystrix-tutorial.html)
-- []()
-- []()
-- []()
+- [yqjdcyy/Hello_Spring_Cloud](https://github.com/yqjdcyy/Hello_Spring_Cloud)
