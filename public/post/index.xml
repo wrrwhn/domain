@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 12 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 16 Oct 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Cloud.Zuul</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/</link>
+      <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/</guid>
+      <description>作用 保障服务无状态 确保对外服务的安全性，增加服务访问的控制控制 保障集群中 REST API 无状态 保障接口的复用 功能 服务路由 通过 JVM 实现 均衡负载 权限控制 ZuulFilter filterType pre</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud.Hystrix</title>

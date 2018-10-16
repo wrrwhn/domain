@@ -2,6 +2,24 @@
 <search>
     
      <entry>
+        <title>Hello.Spring.Cloud.Zuul</title>
+        <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>框架</tag><tag>Spring.Cloud</tag>
+        </tags>
+        <content type="html">  作用  保障服务无状态  确保对外服务的安全性，增加服务访问的控制控制 保障集群中 REST API 无状态  保障接口的复用  功能 服务路由  通过 JVM 实现
+均衡负载 权限控制 ZuulFilter
+ filterType  pre  pre-routing filtering 请求被路由之前调用  route  routing to an origin 请求路由时调用  post  post-routing filters 调用后，未调用  error  error handling   filterOrder  filterOrder 是必须的 但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序 不需要该顺序值是连续的  shouldFilter  当返回 true 的时候表示执行 run() 方法  run  过滤器实现的核心    动态路由 服务迁移 静态响应 实现 转跳 Maven  pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-zuul&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  bootstrap.yml
+zuul: routes: # v3 other: path: /other/** url: http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/other-service # v2 portal: path: /portal/** serviceId: portal # v1 sns: /sns/** # v0 ## hystrix: ## 默认通过 `http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/&amp;lt;Eureka.ServiceId&amp;gt;/** ` 访问  Code  Application
+@EnableEurekaClient @SpringBootApplication @EnableZuulProxy public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } }  Invoke  http://localhost:8302/portal/config  相当于调用 http://localhost:8100/config   过滤 Code  ZuulFilter
+public class ZuulFilter extends com.netflix.zuul.ZuulFilter { private static Logger logger = LoggerFactory.getLogger(ZuulFilter.class); @Override public String filterType() { return &amp;#34;pre&amp;#34;; } @Override public int filterOrder() { return 0; } @Override public boolean shouldFilter() { return true; } @Override public Object run() throws ZuulException { RequestContext ctx = RequestContext.getCurrentContext(); HttpServletRequest req = ctx.getRequest(); logger.info(&amp;#34;[{}] request to [{}]&amp;#34;, req.getMethod(), req.getRequestURL().toString()); Object token = req.getParameter(&amp;#34;token&amp;#34;); if (null == token) { logger.warn(&amp;#34;token is empty&amp;#34;); ctx.setSendZuulResponse(false); ctx.setResponseStatusCode(401); return null; } logger.info(&amp;#34;token pass&amp;#34;); return null; } }  Invoke  http://localhost:8302/portal/config  HTTP 401  http://localhost:8302/portal/config?token=yao  basic   参考 官方  19. Router and Filter: Zuul  补充  Spring Cloud构建微服务架构（五）服务网关 springcloud(十)：服务网关zuul初级篇  代码  yqjdcyy/Hello_Spring_Cloud  </content>
+    </entry>
+    
+     <entry>
         <title>Hello.Spring.Cloud.Hystrix</title>
         <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/</url>
         <categories>

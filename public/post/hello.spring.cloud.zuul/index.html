@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Java.Tools.JStack - 好久不见</title>
+    <title>Hello.Spring.Cloud.Zuul - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Java.Tools.JStack">
+    <meta property="og:title" content="Hello.Spring.Cloud.Zuul">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Java.Tools.JStack - 好久不见" />
+    <meta name="title" content="Hello.Spring.Cloud.Zuul - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.tools.jstack/" itemprop="url">
-        Java.Tools.JStack
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/" itemprop="url">
+        Hello.Spring.Cloud.Zuul
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-05-03">
-    2018-05-03
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-16">
+    2018-10-16
 </time>
 </span> 
       
@@ -155,217 +155,232 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">807 字 ~2分钟</span>
+<span class="leancloud-visitors-count">414 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="jstack">JSTACK</h1>
-
-<h2 id="作用">作用</h2>
+<h1 id="作用">作用</h1>
 
 <ul>
-<li>观察当前java虚拟机内每一条线程正在执行的<strong>方法堆栈</strong>的集合，以定位线程出现长时间停顿的原因，如线程间死锁、死循环、请求外部资源导致的长时间等待等</li>
-<li><code>java</code> 程序崩溃生成 <code>core</code> 文件，<code>jstack</code>工具可以用来获得 <code>core</code> 文件的<code>java stack</code>和n<code>ative stack</code>的信息，从而可以轻松地知道 <code>java</code> 程序是如何崩溃和在程序何处发生问题</li>
-<li>Java <strong>1.8</strong> 版本中<strong>不支持</strong></li>
+<li>保障服务无状态
+
+<ul>
+<li>确保对外服务的安全性，增加服务访问的控制控制</li>
+<li>保障集群中 REST API 无状态</li>
+</ul></li>
+<li>保障接口的复用</li>
 </ul>
 
-<h2 id="机制">机制</h2>
+<h1 id="功能">功能</h1>
+
+<h2 id="服务路由">服务路由</h2>
 
 <ul>
-<li>生成java虚拟机当前时刻的线程快照</li>
-<li>观察 Object.Monitor 于线程拥有和区域的情况，获得各进程的相关情况
-|    区域   |                     状态                     |                                            描述                                            |
-|&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|
-| Entry Set | Waiting Thread<br/>Waiting for monitor entry | BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区） |
-| The Owner | Active Thread                                | RUNNABLE                                                                                   |
-| Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |</li>
-<li><img src="http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp" alt="thread.bmp" /></li>
-</ul>
+<li><p>通过 JVM 实现</p>
 
-<h2 id="调用">调用</h2>
+<h2 id="均衡负载">均衡负载</h2>
+
+<h2 id="权限控制">权限控制</h2></li>
+
+<li><p><code>ZuulFilter</code></p>
 
 <ul>
-<li><code>jstack [-Fml|h] &lt;pid&gt;</code></li>
-<li>参数
+<li><code>filterType</code>
 
 <ul>
-<li><code>-F</code>
+<li>pre
 
 <ul>
-<li><code>jstack &lt;pid&gt;</code>未响应或进程挂起时，**强制 <code>Dump</code> **出线程数据</li>
+<li>pre-routing filtering</li>
+<li>请求被路由之前调用</li>
 </ul></li>
-<li><code>-m</code>
+<li>route
 
 <ul>
-<li>混合模式打印出 <code>java</code> 和本机的框架信息</li>
+<li>routing to an origin</li>
+<li>请求路由时调用</li>
 </ul></li>
-<li><code>-l</code>
+<li>post
 
 <ul>
-<li>长清单，显示锁相关信息</li>
+<li>post-routing filters</li>
+<li>调用后，未调用</li>
 </ul></li>
-<li><code>-h</code>
+<li>error
 
 <ul>
-<li>打印出帮助文档信息</li>
-</ul></li>
-</ul></li>
-<li>状态
-
-<ul>
-<li><code>NEW</code>
-
-<ul>
-<li>未启动的不会出现在 <code>Dump</code> 中</li>
-</ul></li>
-<li><code>RUNNABLE</code>
-
-<ul>
-<li>在虚拟机内执行的</li>
-</ul></li>
-<li><code>BLOCKED</code>
-
-<ul>
-<li>受阻塞并等待监视器锁</li>
-</ul></li>
-<li><code>WATING</code>
-
-<ul>
-<li>无限期等待另一个线程执行特定操作</li>
-</ul></li>
-<li><code>TIMED_WATING</code>
-
-<ul>
-<li>有时限的等待另一个线程的特定操作</li>
-</ul></li>
-<li><code>TERMINATED</code>
-
-<ul>
-<li>已退出的</li>
+<li>error handling</li>
 </ul></li>
 </ul></li>
-<li>修饰
+<li><code>filterOrder</code>
 
 <ul>
-<li><code>locked &lt;地址&gt; 目标</code>
-
-<ul>
-<li>使用 <code>synchronized</code> 申请对象锁成功,监视器的拥有者。</li>
+<li>filterOrder 是必须的</li>
+<li>但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序</li>
+<li>不需要该顺序值是连续的</li>
 </ul></li>
-<li><code>waiting to lock &lt;地址&gt; 目标</code>
+<li><code>shouldFilter</code>
 
 <ul>
-<li>使用 <code>synchronized</code> 申请对象锁未成功,在进入区等待。</li>
+<li>当返回 <code>true</code> 的时候表示执行 <code>run()</code> 方法</li>
 </ul></li>
-<li><code>waiting on &lt;地址&gt; 目标</code>
+<li><code>run</code>
 
 <ul>
-<li>使用 <code>synchronized</code> 申请对象锁成功后,释放锁幵在等待区等待。</li>
-</ul></li>
-<li><code>parking to wait for &lt;地址&gt; 目标</code></li>
-</ul></li>
-<li>动作
-
-<ul>
-<li><code>runnable</code>
-
-<ul>
-<li>状态一般为 <code>RUNNABLE</code></li>
-</ul></li>
-<li><code>in Object.wait()</code>
-
-<ul>
-<li>等待区等待,状态为 <code>WAITING</code> 或 <code>TIMED_WAITING</code></li>
-</ul></li>
-<li><code>waiting for monitor entry</code>
-
-<ul>
-<li>进入区等待,状态为 <code>BLOCKED</code></li>
-</ul></li>
-<li><code>waiting on condition</code>
-
-<ul>
-<li>等待区等待、被 <code>park</code></li>
-</ul></li>
-<li><code>sleeping</code>
-
-<ul>
-<li>休眠的线程,调用了 <code>Thread.sleep()</code></li>
+<li>过滤器实现的<strong>核心</strong></li>
 </ul></li>
 </ul></li>
 </ul>
 
-<h2 id="示例">示例</h2>
+<h2 id="动态路由">动态路由</h2>
+
+<h2 id="服务迁移">服务迁移</h2>
+
+<h2 id="静态响应">静态响应</h2>
+
+<h1 id="实现">实现</h1>
+
+<h2 id="转跳">转跳</h2>
+
+<h3 id="maven">Maven</h3>
 
 <ul>
-<li><p><code>/usr/java/jdk1.7.0_60/bin/jstack 29003</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#34;http-nio-127.0.0.1-29029-ClientPoller-0&#34; #28 daemon prio=5 os_prio=0 tid=0x00007f9d8c4a5800 nid=0x71ba runnable [0x00007f9d513be000]
-java.lang.Thread.State: RUNNABLE
-
-&#34;ContainerBackgroundProcessor[StandardEngine[Catalina]]&#34; #27 daemon prio=5 os_prio=0 tid=0x00007f9d8c4a4000 nid=0x71b9 waitin on condition [0x00007f9d514bf000]
-java.lang.Thread.State: TIMED_WAITING (sleeping)
-
-&#34;Abandoned connection cleanup thread&#34; #24 daemon prio=5 os_prio=0 tid=0x00007f9d15de4000 nid=0x7188 in Object.wait() [0x00007f9d138fd000]
-java.lang.Thread.State: TIMED_WAITING (on object monitor)</pre></div></li>
-
-<li><p><code>while(true)</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&#34;main&#34; #1 prio=5 os_prio=0 tid=0x0000000005422800 nid=0x20e0 runnable [0x000000000517f000]
-java.lang.Thread.State: RUNNABLE
-        at com.yao.common.thread.ThreadBlockTest.main(ThreadBlockTest.java:12)    </pre></div></li>
-
-<li><p><code>lock</code></p>
-
-<ul>
-<li><a href="http://otzm88f21.bkt.clouddn.com/f01c473b-eabd-4337-a0e0-3d8d3d571494.log">jstack-deadlock.log</a>
-```
-Found one Java-level deadlock:
-=============================
-&ldquo;Thread-1&rdquo;:
-waiting to lock monitor 0x0000000004b47828 (object 0x000000076b45c4d0, a java.lang.Object),
-which is held by &ldquo;Thread-0&rdquo;
-&ldquo;Thread-0&rdquo;:
-waiting to lock monitor 0x00000000209a0a68 (object 0x000000076b45c4e0, a java.lang.Object),
-which is held by &ldquo;Thread-1&rdquo;</li>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-netflix-zuul<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
 </ul>
 
-<h1 id="java-stack-information-for-the-threads-listed-above">Java stack information for the threads listed above:</h1>
+<h3 id="properties">Properties</h3>
 
-<p>&ldquo;Thread-1&rdquo;:
-        at com.yao.common.thread.DeadLock.run(ThreadLockDead.java:52)
-        - waiting to lock <0x000000076b45c4d0> (a java.lang.Object)
-        - locked <0x000000076b45c4e0> (a java.lang.Object)
-        at java.lang.Thread.run(Thread.java:745)
-&ldquo;Thread-0&rdquo;:
-        at com.yao.common.thread.DeadLock.run(ThreadLockDead.java:39)
-        - waiting to lock <0x000000076b45c4e0> (a java.lang.Object)
-        - locked <0x000000076b45c4d0> (a java.lang.Object)
-        at java.lang.Thread.run(Thread.java:745)<br />
-```</p></li>
+<ul>
+<li><p><code>bootstrap.yml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">zuul:
+    routes:
+        # v3
+        other:
+            path: /other/**
+            url: http://&lt;ZUUL_HOST&gt;:&lt;ZUUL_PORT&gt;/other-service
+        # v2
+        portal:
+            path: /portal/**
+            serviceId: portal
+        # v1
+        sns: /sns/**
+        # v0
+        ## hystrix:
+        ## 默认通过 `http://&lt;ZUUL_HOST&gt;:&lt;ZUUL_PORT&gt;/&lt;Eureka.ServiceId&gt;/**  ` 访问</code></pre></div></li>
 </ul>
 
-<h1 id="reference">Reference</h1>
+<h3 id="code">Code</h3>
 
 <ul>
-<li>官方
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@EnableEurekaClient</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#a6e22e">@EnableZuulProxy</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h3 id="invoke">Invoke</h3>
 
 <ul>
-<li><a href="https://docs.oracle.com/javase/8/docs/technotes/tools/unix/jstack.html">jstack</a><br /></li>
-<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/troubleshoot/tooldescr016.html">2.16 The jstack Utility</a></li>
+<li><code>http://localhost:8302/portal/config</code>
+
+<ul>
+<li>相当于调用 <code>http://localhost:8100/config</code></li>
 </ul></li>
-<li>整理
+</ul>
+
+<h2 id="过滤">过滤</h2>
+
+<h3 id="code-1">Code</h3>
 
 <ul>
-<li><a href="http://www.hollischuang.com/archives/110">Java命令学习系列（二）——Jstack</a></li>
-</ul></li>
-<li>补充
+<li><p><code>ZuulFilter</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ZuulFilter</span> <span style="color:#66d9ef">extends</span> com<span style="color:#f92672">.</span><span style="color:#a6e22e">netflix</span><span style="color:#f92672">.</span><span style="color:#a6e22e">zuul</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ZuulFilter</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> Logger logger <span style="color:#f92672">=</span> LoggerFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">getLogger</span><span style="color:#f92672">(</span>ZuulFilter<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">filterType</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;pre&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">filterOrder</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">shouldFilter</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> Object <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> ZuulException <span style="color:#f92672">{</span>
+
+        RequestContext ctx <span style="color:#f92672">=</span> RequestContext<span style="color:#f92672">.</span><span style="color:#a6e22e">getCurrentContext</span><span style="color:#f92672">();</span>
+        HttpServletRequest req <span style="color:#f92672">=</span> ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequest</span><span style="color:#f92672">();</span>
+
+        logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[{}] request to [{}]&#34;</span><span style="color:#f92672">,</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">getMethod</span><span style="color:#f92672">(),</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">getRequestURL</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+
+        Object token <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">getParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;token&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> token<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            logger<span style="color:#f92672">.</span><span style="color:#a6e22e">warn</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;token is empty&#34;</span><span style="color:#f92672">);</span>
+            ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">setSendZuulResponse</span><span style="color:#f92672">(</span><span style="color:#66d9ef">false</span><span style="color:#f92672">);</span>
+            ctx<span style="color:#f92672">.</span><span style="color:#a6e22e">setResponseStatusCode</span><span style="color:#f92672">(</span>401<span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        logger<span style="color:#f92672">.</span><span style="color:#a6e22e">info</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;token pass&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h3 id="invoke-1">Invoke</h3>
 
 <ul>
-<li><a href="http://www.importnew.com/23601.html">如何使用jstack分析线程状态</a></li>
-<li><a href="https://blog.csdn.net/neu_yousei/article/details/23827631">java死锁的例子</a></li>
+<li><code>http://localhost:8302/portal/config</code>
+
+<ul>
+<li><code>HTTP 401</code></li>
 </ul></li>
+<li><code>http://localhost:8302/portal/config?token=yao</code>
+
+<ul>
+<li><code>basic</code></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<h2 id="官方">官方</h2>
+
+<ul>
+<li><a href="http://cloud.spring.io/spring-cloud-static/Edgware.RELEASE/single/spring-cloud.html#_router_and_filter_zuul">19. Router and Filter: Zuul</a></li>
+</ul>
+
+<h2 id="补充">补充</h2>
+
+<ul>
+<li><a href="http://blog.didispace.com/springcloud5/">Spring Cloud构建微服务架构（五）服务网关</a></li>
+<li><a href="http://www.ityouknow.com/springcloud/2017/06/01/gateway-service-zuul.html">springcloud(十)：服务网关zuul初级篇</a></li>
+</ul>
+
+<h2 id="代码">代码</h2>
+
+<ul>
+<li><a href="https://github.com/yqjdcyy/Hello_Spring_Cloud/tree/zuul">yqjdcyy/Hello_Spring_Cloud</a></li>
 </ul>
 
     </div>
@@ -374,9 +389,9 @@ which is held by &ldquo;Thread-1&rdquo;</li>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java">#Java#</a>
+    <a href="http://domain.yqjdcyy.com/tags/%e6%a1%86%e6%9e%b6" rel="tag" title="框架">#框架#</a>
     
-    <a href="http://domain.yqjdcyy.com/tags/tools" rel="tag" title="tools">#tools#</a>
+    <a href="http://domain.yqjdcyy.com/tags/spring.cloud" rel="tag" title="Spring.Cloud">#Spring.Cloud#</a>
     
 </div>
 
@@ -385,17 +400,13 @@ which is held by &ldquo;Thread-1&rdquo;</li>
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/java.tools.jstat/" rel="next" title="Java.Tools.JStat">
-        <i class="fa fa-chevron-left"></i> Java.Tools.JStat
+        <a href="http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/" rel="next" title="Hello.Spring.Cloud.Hystrix">
+        <i class="fa fa-chevron-left"></i> Hello.Spring.Cloud.Hystrix
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/java.tools.jps/" rel="prev" title="Java.Tools.JPS">
-        Java.Tools.JPS <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -404,7 +415,7 @@ which is held by &ldquo;Thread-1&rdquo;</li>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Java.Tools.JStack
+                标题：Hello.Spring.Cloud.Zuul
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -505,15 +516,37 @@ which is held by &ldquo;Thread-1&rdquo;</li>
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#jstack">JSTACK</a>
-<ul>
 <li><a href="#作用">作用</a></li>
-<li><a href="#机制">机制</a></li>
-<li><a href="#调用">调用</a></li>
-<li><a href="#示例">示例</a></li>
+<li><a href="#功能">功能</a>
+<ul>
+<li><a href="#服务路由">服务路由</a></li>
+<li><a href="#均衡负载">均衡负载</a></li>
+<li><a href="#权限控制">权限控制</a></li>
+<li><a href="#动态路由">动态路由</a></li>
+<li><a href="#服务迁移">服务迁移</a></li>
+<li><a href="#静态响应">静态响应</a></li>
 </ul></li>
-<li><a href="#java-stack-information-for-the-threads-listed-above">Java stack information for the threads listed above:</a></li>
-<li><a href="#reference">Reference</a></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li><a href="#转跳">转跳</a>
+<ul>
+<li><a href="#maven">Maven</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#invoke">Invoke</a></li>
+</ul></li>
+<li><a href="#过滤">过滤</a>
+<ul>
+<li><a href="#code-1">Code</a></li>
+<li><a href="#invoke-1">Invoke</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#官方">官方</a></li>
+<li><a href="#补充">补充</a></li>
+<li><a href="#代码">代码</a></li>
+</ul></li>
 </ul>
 </nav></div>
     </div>
