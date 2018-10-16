@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>HTTP.Header.UserAgent - 好久不见</title>
+    <title>Hello.Spring.Cloud.Sleuth - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="HTTP.Header.UserAgent">
+    <meta property="og:title" content="Hello.Spring.Cloud.Sleuth">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="HTTP.Header.UserAgent - 好久不见" />
+    <meta name="title" content="Hello.Spring.Cloud.Sleuth - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/http.header.useragent/" itemprop="url">
-        HTTP.Header.UserAgent
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud.sleuth/" itemprop="url">
+        Hello.Spring.Cloud.Sleuth
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-09">
-    2018-10-09
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-10-16">
+    2018-10-16
 </time>
 </span> 
       
@@ -155,466 +155,378 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1008 字 ~3分钟</span>
+<span class="leancloud-visitors-count">997 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="introduce">Introduce</h1>
-
-<h2 id="作用">作用</h2>
+<h1 id="功能">功能</h1>
 
 <ul>
-<li>User-Agent 请求头包含一特征文本，供允许网络协议获取应用类型、操作系统、软件供应商和软件版本
+<li>链路追踪
 
 <ul>
-<li>统计用户浏览器的使用情况</li>
+<li>查看该请求经过了哪些服务，当前哪些服务异常（<strong>实时数据</strong>）</li>
 </ul></li>
-<li>请求服务提供商为当前 PC/ WEb 提供的特定格式网页
+<li>可视化异常
 
 <ul>
-<li>前端实现上需要考虑浏览器兼容问题</li>
+<li>在 <code>zipkin</code> 界面上查看异常情况</li>
+</ul></li>
+<li>分析蚝时
+
+<ul>
+<li>记录各采样请求的蚝时，可控地进行服务扩容</li>
+</ul></li>
+<li>优化链路
+
+<ul>
+<li>根据服务调用的频次，合理配置各服务数量(<strong>全量数据</strong>)</li>
 </ul></li>
 </ul>
 
-<h1 id="语法">语法</h1>
-
-<h2 id="格式">格式</h2>
+<h1 id="结构">结构</h1>
 
 <ul>
-<li><code>User-Agent: &lt;product&gt; / &lt;product-version&gt; &lt;comment&gt;</code></li>
-<li><code>User-Agent: Mozilla/&lt;version&gt; (&lt;system-information&gt;) &lt;platform&gt; (&lt;platform-details&gt;) &lt;extensions&gt;</code>
+<li>采集端
 
 <ul>
-<li><code>User-Agent: Mozilla/5.0 (platform; rv:geckoversion) Gecko/geckotrail Firefox/firefoxversion</code></li>
+<li>sleuth</li>
 </ul></li>
-
-<li><p><code>User-Agent: &lt;浏览器标识&gt; (&lt;操作系统标识&gt;; &lt;加密等级标识&gt;; &lt;浏览器语言&gt;) &lt;渲染引擎标识&gt; &lt;版本信息&gt;</code></p>
-
-<h2 id="选项">选项</h2></li>
-
-<li><p><code>&lt;product&gt;</code></p>
+<li>显示端
 
 <ul>
-<li>产品识别码| 浏览器标识</li>
-<li><code>Mozilla/5.0</code>
+<li>zipkin
 
 <ul>
-<li>通用标识符，表示与 <code>Mozilla</code> 兼容</li>
-<li>早期服务器于加载前检查是否为 <code>Netscape</code> 浏览器，其它浏览器不得不伪装</li>
+<li>数据存储
+
+<ul>
+<li>In-Memory</li>
+<li>Kafka</li>
+<li>MySql</li>
+<li>Elasticsearch</li>
+<li>Cassandra</li>
 </ul></li>
 </ul></li>
-
-<li><p><code>&lt;product-version&gt;</code></p>
-
-<ul>
-<li>产品版本号| 渲染引擎标识</li>
 </ul></li>
-
-<li><p><code>&lt;comment&gt;</code></p>
+<li>连接方式
 
 <ul>
-<li>产品相关备注信息 |版本信息
-<br /></li>
+<li>http</li>
+<li>stream
+
+<ul>
+<li>kafka</li>
+<li>rabbitmq.binder</li>
 </ul></li>
-
-<li><p><code>rv:geckoversion</code></p>
-
-<ul>
-<li><code>Gecko</code> 的发布版本号</li>
-<li><code>geckoversion</code> 与 <code>firefoxversion</code> 相同</li>
 </ul></li>
+</ul>
 
-<li><p><code>system-information</code></p>
+<h1 id="原理">原理</h1>
+
+<h2 id="由-google-dapper-论文发展而来">由 Google.dapper 论文发展而来</h2>
+
+<h2 id="示例">示例</h2>
 
 <ul>
-<li>操作系统标识</li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f4bfe281-f05f-4f1a-aa49-c6ae795a1d5c.png" alt="tracing.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/f95c6cdd-29f2-4b03-8d66-065e47b6b9f9.png" alt="sleuth-struct.png" /></li>
+<li><img src="http://otzm88f21.bkt.clouddn.com/2894cbc9-1502-4c4c-a5d4-d60cd983e2b0.png" alt="tracing-example.png" /></li>
+</ul>
 
-<li><p>如若有多个，则以 <code>;</code> 进行分隔</p>
+<h2 id="术语">术语</h2>
 
 <table>
 <thead>
 <tr>
-<th>操作系统</th>
-<th>版本标识</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>FreeBSD</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; FreeBSD (version no.) i386</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; FreeBSD (version no.) AMD64</td>
-</tr>
-
-<tr>
-<td>Linux</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; Linux ppc</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; Linux ppc64</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; Linux i686</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; Linux x86_64</td>
-</tr>
-
-<tr>
-<td>Mac</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>Macintosh; PPC Mac OS X</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Macintosh; Intel Mac OS X</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Solaris</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; SunOS i86pc</td>
-</tr>
-
-<tr>
-<td></td>
-<td>X11; SunOS sun4u</td>
-</tr>
-
-<tr>
-<td>Windows</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows NT 6.1 (windows 7)</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows NT 6.0 (windows vista)</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows NT 5.2 (windows 2003)</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows NT 5.1 (windows xp)</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows NT 5.0 (windows 2000)</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows ME</td>
-</tr>
-
-<tr>
-<td></td>
-<td>Windows 98</td>
-</tr>
-
-<tr>
-<td>Android</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Iphone</td>
-<td></td>
-</tr>
-
-<tr>
-<td>Mobile</td>
-<td></td>
-</tr>
-</tbody>
-</table></li>
-</ul></li>
-
-<li><p><code>Gecko/geckotrail</code></p>
-
-<ul>
-<li>说明使用浏览器基于 <code>Gecko</code> 渲染引擎</li>
-<li>桌面浏览器，<code>geckotrail</code> 固定为 <code>20100101</code></li>
-</ul></li>
-
-<li><p><code>Firefox/firefoxversion</code></p>
-
-<ul>
-<li>说明该浏览器是 <code>Firefox</code></li>
-</ul></li>
-
-<li><p>加密等级标识</p>
-
-<table>
-<thead>
-<tr>
-<th>标识</th>
+<th>模块</th>
+<th>字段</th>
 <th>含义</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>N</td>
-<td>无安全加密</td>
-</tr>
-
-<tr>
-<td>I</td>
-<td>弱安全加密<br><strong>40位</strong> 加密</td>
-</tr>
-
-<tr>
-<td>U</td>
-<td>强安全加密<br><strong>120位</strong> 加密</td>
-</tr>
-</tbody>
-</table></li>
-
-<li><p>浏览器语言</p>
-
-<ul>
-<li>表示当前浏览器指定的语言</li>
-</ul></li>
-
-<li><p>渲染引擎标识</p></li>
-</ul>
-
-<h2 id="示例">示例</h2>
-
-<ul>
-<li>Firefox
-
-<ul>
-<li><code>Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0</code></li>
-<li><code>Mozilla/5.0 (Macintosh; Intel Mac OS X x.y; rv:42.0) Gecko/20100101 Firefox/42.0</code></li>
-</ul></li>
-<li>Chrome
-
-<ul>
-<li><code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36</code></li>
-</ul></li>
-<li>Opera
-
-<ul>
-<li><code>Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.106 Safari/537.36 OPR/38.0.2220.41</code></li>
-</ul></li>
-<li>Safari
-
-<ul>
-<li><code>Mozilla/5.0 (iPhone; CPU iPhone OS 10_3_1 like Mac OS X) AppleWebKit/603.1.30 (KHTML, like Gecko) Version/10.0 Mobile/14E304 Safari/602.1</code></li>
-</ul></li>
-<li>Internet Explorer
-
-<ul>
-<li><code>Mozilla/5.0 (compatible; MSIE 9.0; Windows Phone OS 7.5; Trident/5.0; IEMobile/9.0)</code></li>
-</ul></li>
-<li>爬虫和机器人
-
-<ul>
-<li><code>Googlebot/2.1 (+http://www.google.com/bot.html)</code></li>
-</ul></li>
-</ul>
-
-<h1 id="supplement">Supplement</h1>
-
-<h2 id="浏览器发展史">浏览器发展史</h2>
-
-<ul>
-<li>NCSA.Mosaic</li>
-<li>Netscape.Mozilla</li>
-<li>Microsoft.IE</li>
-<li>Firefox.Gecko</li>
-<li>KHTML
-
-<ul>
-<li>Konqueror
-
-<ul>
-<li>WebKit
-
-<ul>
-<li>Mac.Safari</li>
-</ul></li>
-<li>Google.Chrome</li>
-</ul></li>
-</ul></li>
-<li>Opera<br /></li>
-</ul>
-
-<h2 id="浏览器">浏览器</h2>
-
-<table>
-<thead>
-<tr>
-<th>浏览器名称</th>
-<th>包含关键词</th>
-<th>禁止包含关键词</th>
-<th>补充</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>Firefox</td>
-<td>Firefox/xyz</td>
-<td>Seamonkey/xyz</td>
+<td>trace</td>
 <td></td>
+<td>多个 <code>span</code> 组成的树状请求</td>
 </tr>
 
 <tr>
-<td>Seamonkey</td>
-<td>Seamonkey/xyz</td>
+<td>span</td>
 <td></td>
-<td></td>
+<td>工作单元，以 <code>spanId</code> 标识<br>服务间调用时生成同一 <code>spanId</code> 的客户端请求和服务端处理记录</td>
 </tr>
 
 <tr>
-<td>Chrome</td>
-<td>Chrome/xyz</td>
-<td>Chromium/xyz</td>
 <td></td>
+<td>traceId</td>
+<td>此次请求的标识 ID</td>
 </tr>
 
 <tr>
-<td>Chromium</td>
-<td>Chromium/xyz</td>
 <td></td>
-<td></td>
+<td>pspanId</td>
+<td>上一服务请求 <code>spanId</code></td>
 </tr>
 
 <tr>
-<td>Safari</td>
-<td>Safari/xyz</td>
-<td>Chrome/xyz <br> Chromium/xyz</td>
-<td>Safari 有两个版本号，一个技术性较强，格式是Safari/xyz，一个对用户友好一点，格式是Version/xyz</td>
+<td></td>
+<td>spanId</td>
+<td>此次请求的 <code>spanId</code></td>
 </tr>
 
 <tr>
-<td>Opera</td>
-<td>OPR/xyz [1]<br>Opera/xyz [2]</td>
 <td></td>
-<td>[1] Opera 15+ (基于Blink的引擎) <br>[2] Opera 12- (基于Presto的引擎)</td>
+<td>cs</td>
+<td>client-send</td>
 </tr>
 
 <tr>
-<td>Internet Explorer</td>
-<td>; MSIE xyz;</td>
 <td></td>
-<td>IE浏览器的名字并没有使用BrowserName/VersionNumber的格式</td>
+<td>cr</td>
+<td>client-receive</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ss</td>
+<td>server-send</td>
+</tr>
+
+<tr>
+<td></td>
+<td>sr</td>
+<td>server-receive</td>
 </tr>
 </tbody>
 </table>
 
-<h2 id="渲染引擎">渲染引擎</h2>
+<h2 id="采样">采样</h2>
 
-<table>
-<thead>
-<tr>
-<th>渲染引擎名称</th>
-<th>包含关键字</th>
-<th>补充</th>
-</tr>
-</thead>
+<ul>
+<li>配置
 
-<tbody>
-<tr>
-<td>Gecko</td>
-<td>Gecko/xyz</td>
-<td></td>
-</tr>
+<ul>
+<li><code>spring.sleuth.sampler.percentage=0.1</code></li>
+</ul></li>
+<li>默认
 
-<tr>
-<td>WebKit</td>
-<td>AppleWebKit/xyz</td>
-<td>请注意，WebKit浏览器包含了&rsquo;like Gecko&rsquo;字符串，如果不加以注意，可能会触发检测Gecko的false positive。</td>
-</tr>
+<ul>
+<li>采样率为 <code>0.1</code></li>
+</ul></li>
+<li>算法
 
-<tr>
-<td>Presto</td>
-<td>Opera/xyz</td>
-<td>注: 在Opera浏览器在15及以上的版本中，已经不再使用Presto（参见&rsquo;Blink&rsquo;）。</td>
-</tr>
+<ul>
+<li>Reservoir sampling | 水塘抽样</li>
+</ul></li>
+<li>实现
 
-<tr>
-<td>Trident</td>
-<td>Trident/xyz</td>
-<td>IE浏览器将此字符串放在User Agent字符串的注释部分。</td>
-</tr>
+<ul>
+<li><code>PercentageBasedSampler</code></li>
+</ul></li>
+</ul>
 
-<tr>
-<td>Blink</td>
-<td>Chrome/xyz</td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<h1 id="细节">细节</h1>
 
-<h1 id="reference">Reference</h1>
+<h2 id="sleuth">Sleuth</h2>
+
+<h3 id="http">Http</h3>
+
+<ul>
+<li><code>TraceFilter</code>
+
+<ul>
+<li>对请求添加 <code>X-B3-SpanId</code>、 <code>X-B3-TraceId</code>等属性进行链路跟踪</li>
+</ul></li>
+<li><code>TraceHandlerInterceptor</code>
+
+<ul>
+<li>检测到 <code>HttpServletRequest</code> 中若不存在</li>
+</ul></li>
+</ul>
+
+<h1 id="实现">实现</h1>
+
+<h3 id="maven">Maven</h3>
+
+<ul>
+<li><p><code>Server.pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>io.zipkin.java<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>zipkin-server<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.11.7<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>io.zipkin.java<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>zipkin-autoconfigure-ui<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.11.7<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+
+<li><p><code>Client.pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.cloud<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-cloud-starter-zipkin<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h3 id="properties">Properties</h3>
+
+<ul>
+<li><p><code>Server.bootstrap.yml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml"># 未配置，默认走 In-Memory 形式
+management:
+    metrics:
+        web:
+            server:
+                # 修复运行后无法正常运行的异常
+                auto-time-requests: false</code></pre></div></li>
+
+<li><p><code>Client.bootstrap.yml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">spring:
+    sleuth:
+        sampler:
+            # 采集率调整为 100%，全部采集
+            probability: 1.0
+    zipkin:
+        # 指定 Zipkin 的推送地址
+        base-url: http://localhost:8303</code></pre></div></li>
+</ul>
+
+<h3 id="code">Code</h3>
+
+<ul>
+<li><p><code>Server.Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// v2.* 版本请引用此路径下文件
+</span><span style="color:#75715e"></span><span style="color:#f92672">import</span> zipkin2.server.internal.EnableZipkinServer<span style="color:#f92672">;</span>
+
+<span style="color:#a6e22e">@EnableEurekaClient</span>
+<span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#75715e">// 启动 Zipkin 服务收集
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@EnableZipkinServer</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>Client</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">//</span> 无须添加代码<span style="color:#960050;background-color:#1e0010">！</span></code></pre></div></li>
+</ul>
+
+<h3 id="invoke">Invoke</h3>
+
+<ul>
+<li><p><code>http://localhost:8303/zipkin/index.html</code></p>
+
+<ul>
+<li>Zipkin 首页</li>
+</ul></li>
+
+<li><p><code>http://localhost:8303/zipkin/</code></p>
+
+<ul>
+<li>Zipkin 搜索</li>
+<li>注： 如若仅使用 <code>Feign</code> 或 <code>Robbin</code> 进行转跳，不会判定为 <code>depth</code> 增加</li>
+</ul></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="zipkin">ZipKin</h2>
+
+<ul>
+<li>Twitter 开源的分布式跟踪系统</li>
+<li>致力于收集服务的定时数据，用以解决微服务架构中的延迟问题</li>
+<li>功能
+
+<ul>
+<li>收集</li>
+<li>存储
+
+<ul>
+<li>In-Memory
+
+<ul>
+<li>测试推荐</li>
+</ul></li>
+<li>Kafka</li>
+<li>MySql</li>
+<li>Elasticsearch
+
+<ul>
+<li><strong>生产推荐</strong></li>
+</ul></li>
+<li>Cassandra</li>
+</ul></li>
+<li>查找</li>
+<li>展现
+
+<ul>
+<li>提供 Web 前端界面进行数据展示</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="error">Error</h2>
+
+<ul>
+<li><p><code>Caused by: java.lang.ClassNotFoundException: org.springframework.boot.actuate.metrics.buffer.CounterBuffers</code></p>
+
+<ul>
+<li>配置
+
+<ul>
+<li>Spring.Boot 2.0.5.RELEASE</li>
+<li>Zipkin.Server 1.30.2</li>
+<li>Zipkin.UI 1.30.2</li>
+</ul></li>
+
+<li><p>参考
+-<a href="https://github.com/spring-cloud/spring-cloud-sleuth/issues/736">I get a class error when trying to create a reactive spring cloud sleuth zipkin server</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">```
+Yeah. See #727. Short summary: Zipkin doesn&#39;t work with Boot 2.0, so if you need a stream server, use Spring Boot 1.5.
+```</pre></div></li>
+</ul></li>
+
+<li><p><code>java.lang.IllegalArgumentException: Prometheus requires that all meters with the same name have the same set of tag keys.</code></p>
+
+<ul>
+<li><p>参考</p>
+
+<ul>
+<li><p><a href="https://blog.csdn.net/duanqing_song/article/details/80422301">zipkin日志收集注意事项</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">a、将management.metrics.web.server.auto-time-requests=false设置为false,默认为true;
+b、重写DefaultWebMvcTagsProvider或者实现接口WebMvcTagsProvider，参照DefaultWebMvcTagsProvider的写法，只需要把DefaultWebMvcTagsProvider下getTages()方法的WebMvcTags.exception(exception)去除掉。</pre></div></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
 
 <h2 id="官方">官方</h2>
 
-<ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent</a>
+<p>-<a href="http://cloud.spring.io/spring-cloud-static/Edgware.RELEASE/single/spring-cloud.html#_spring_cloud_sleuth">Part VII. Spring Cloud Sleuth</a>
+-<a href="https://ai.google/research/pubs/pub36356">Dapper, a Large-Scale Distributed Systems Tracing Infrastructure</a></p>
 
-<ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/User-Agent">User-Agent 中文版本</a></li>
-</ul></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Browser_detection_using_the_user_agent">Browser detection using the user agent</a>
+<h2 id="补充-1">补充</h2>
 
-<ul>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Browser_detection_using_the_user_agent">Browser detection using the user agent 中文版本</a></li>
-</ul></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent/Firefox">Firefox user agent string reference</a></li>
-</ul>
+<p>-<a href="http://tech.lede.com/2017/04/19/rd/server/SpringCloudSleuth/">Spring Cloud技术分析（3）- spring cloud sleuth</a>
+-<a href="http://www.ityouknow.com/springcloud/2018/02/02/spring-cloud-sleuth-zipkin.html">springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪</a>
+-<a href="https://blog.csdn.net/forezp/article/details/76795269">Spring Cloud Sleuth进阶实战</a>
+-<a href="https://bigbully.github.io/Dapper-translation/">Dapper，大规模分布式系统的跟踪系统</a>
+-[]()</p>
 
-<h2 id="补充">补充</h2>
+<h2 id="代码">代码</h2>
 
-<ul>
-<li><a href="https://blog.csdn.net/rj042/article/details/6991441">认识User-Agent</a></li>
-<li><a href="https://www.w3schools.com/browsers/default.asp">Browser Statistics</a></li>
-</ul>
+<p>-[]()
+-[]()
+-[]()
+-[]()</p>
 
     </div>
     <footer class="post-footer">
@@ -622,7 +534,9 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/http" rel="tag" title="HTTP">#HTTP#</a>
+    <a href="http://domain.yqjdcyy.com/tags/%e6%a1%86%e6%9e%b6" rel="tag" title="框架">#框架#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/spring.cloud" rel="tag" title="Spring.Cloud">#Spring.Cloud#</a>
     
 </div>
 
@@ -631,17 +545,13 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/linux.iptables/" rel="next" title="Linux.Iptables">
-        <i class="fa fa-chevron-left"></i> Linux.Iptables
+        <a href="http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/" rel="next" title="Hello.Spring.Cloud.Zuul">
+        <i class="fa fa-chevron-left"></i> Hello.Spring.Cloud.Zuul
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/hello.spring.cloud.hystrix/" rel="prev" title="Hello.Spring.Cloud.Hystrix">
-        Hello.Spring.Cloud.Hystrix <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -650,7 +560,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：HTTP.Header.UserAgent
+                标题：Hello.Spring.Cloud.Sleuth
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -751,26 +661,42 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#introduce">Introduce</a>
+<li><a href="#功能">功能</a></li>
+<li><a href="#结构">结构</a></li>
+<li><a href="#原理">原理</a>
 <ul>
-<li><a href="#作用">作用</a></li>
-</ul></li>
-<li><a href="#语法">语法</a>
-<ul>
-<li><a href="#格式">格式</a></li>
-<li><a href="#选项">选项</a></li>
+<li><a href="#由-google-dapper-论文发展而来">由 Google.dapper 论文发展而来</a></li>
 <li><a href="#示例">示例</a></li>
+<li><a href="#术语">术语</a></li>
+<li><a href="#采样">采样</a></li>
 </ul></li>
-<li><a href="#supplement">Supplement</a>
+<li><a href="#细节">细节</a>
 <ul>
-<li><a href="#浏览器发展史">浏览器发展史</a></li>
-<li><a href="#浏览器">浏览器</a></li>
-<li><a href="#渲染引擎">渲染引擎</a></li>
+<li><a href="#sleuth">Sleuth</a>
+<ul>
+<li><a href="#http">Http</a></li>
 </ul></li>
-<li><a href="#reference">Reference</a>
+</ul></li>
+<li><a href="#实现">实现</a>
+<ul>
+<li>
+<ul>
+<li><a href="#maven">Maven</a></li>
+<li><a href="#properties">Properties</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#invoke">Invoke</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#zipkin">ZipKin</a></li>
+<li><a href="#error">Error</a></li>
+</ul></li>
+<li><a href="#参考">参考</a>
 <ul>
 <li><a href="#官方">官方</a></li>
-<li><a href="#补充">补充</a></li>
+<li><a href="#补充-1">补充</a></li>
+<li><a href="#代码">代码</a></li>
 </ul></li>
 </ul>
 </nav></div>

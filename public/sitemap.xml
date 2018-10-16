@@ -2,6 +2,35 @@
 <search>
     
      <entry>
+        <title>Hello.Spring.Cloud.Sleuth</title>
+        <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.sleuth/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>框架</tag><tag>Spring.Cloud</tag>
+        </tags>
+        <content type="html">  功能  链路追踪  查看该请求经过了哪些服务，当前哪些服务异常（实时数据）  可视化异常  在 zipkin 界面上查看异常情况  分析蚝时  记录各采样请求的蚝时，可控地进行服务扩容  优化链路  根据服务调用的频次，合理配置各服务数量(全量数据)   结构  采集端  sleuth  显示端  zipkin  数据存储  In-Memory Kafka MySql Elasticsearch Cassandra    连接方式  http stream  kafka rabbitmq.binder    原理 由 Google.dapper 论文发展而来 示例      术语    模块 字段 含义     trace  多个 span 组成的树状请求   span  工作单元，以 spanId 标识
+服务间调用时生成同一 spanId 的客户端请求和服务端处理记录    traceId 此次请求的标识 ID    pspanId 上一服务请求 spanId    spanId 此次请求的 spanId    cs client-send    cr client-receive    ss server-send    sr server-receive    采样  配置  spring.sleuth.sampler.percentage=0.1  默认  采样率为 0.1  算法  Reservoir sampling | 水塘抽样  实现  PercentageBasedSampler   细节 Sleuth Http  TraceFilter  对请求添加 X-B3-SpanId、 X-B3-TraceId等属性进行链路跟踪  TraceHandlerInterceptor  检测到 HttpServletRequest 中若不存在   实现 Maven  Server.pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.zipkin.java&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zipkin-server&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.11.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;io.zipkin.java&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;zipkin-autoconfigure-ui&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.11.7&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; Client.pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-zipkin&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  Server.bootstrap.yml
+# 未配置，默认走 In-Memory 形式 management: metrics: web: server: # 修复运行后无法正常运行的异常 auto-time-requests: false Client.bootstrap.yml
+spring: sleuth: sampler: # 采集率调整为 100%，全部采集 probability: 1.0 zipkin: # 指定 Zipkin 的推送地址 base-url: http://localhost:8303  Code  Server.Application
+// v2.* 版本请引用此路径下文件 import zipkin2.server.internal.EnableZipkinServer; @EnableEurekaClient @SpringBootApplication // 启动 Zipkin 服务收集 @EnableZipkinServer public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } } Client
+// 无须添加代码！  Invoke  http://localhost:8303/zipkin/index.html
+ Zipkin 首页  http://localhost:8303/zipkin/
+ Zipkin 搜索 注： 如若仅使用 Feign 或 Robbin 进行转跳，不会判定为 depth 增加   补充 ZipKin  Twitter 开源的分布式跟踪系统 致力于收集服务的定时数据，用以解决微服务架构中的延迟问题 功能  收集 存储  In-Memory  测试推荐  Kafka MySql Elasticsearch  生产推荐  Cassandra  查找 展现  提供 Web 前端界面进行数据展示    Error  Caused by: java.lang.ClassNotFoundException: org.springframework.boot.actuate.metrics.buffer.CounterBuffers
+ 配置  Spring.Boot 2.0.5.RELEASE Zipkin.Server 1.30.2 Zipkin.UI 1.30.2  参考 -I get a class error when trying to create a reactive spring cloud sleuth zipkin server
+``` Yeah. See #727. Short summary: Zipkin doesn&amp;#39;t work with Boot 2.0, so if you need a stream server, use Spring Boot 1.5. ```  java.lang.IllegalArgumentException: Prometheus requires that all meters with the same name have the same set of tag keys.
+ 参考
+ zipkin日志收集注意事项
+a、将management.metrics.web.server.auto-time-requests=false设置为false,默认为true; b、重写DefaultWebMvcTagsProvider或者实现接口WebMvcTagsProvider，参照DefaultWebMvcTagsProvider的写法，只需要把DefaultWebMvcTagsProvider下getTages()方法的WebMvcTags.exception(exception)去除掉。    参考 官方 -Part VII. Spring Cloud Sleuth -Dapper, a Large-Scale Distributed Systems Tracing Infrastructure
+补充 -Spring Cloud技术分析（3）- spring cloud sleuth -springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪 -Spring Cloud Sleuth进阶实战 -Dapper，大规模分布式系统的跟踪系统 -[]()
+代码 -[]() -[]() -[]() -[]()
+</content>
+    </entry>
+    
+     <entry>
         <title>Hello.Spring.Cloud.Zuul</title>
         <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/</url>
         <categories>
@@ -12,7 +41,9 @@
         </tags>
         <content type="html">  作用  保障服务无状态  确保对外服务的安全性，增加服务访问的控制控制 保障集群中 REST API 无状态  保障接口的复用  功能 服务路由  通过 JVM 实现
 均衡负载 权限控制 ZuulFilter
- filterType  pre  pre-routing filtering 请求被路由之前调用  route  routing to an origin 请求路由时调用  post  post-routing filters 调用后，未调用  error  error handling   filterOrder  filterOrder 是必须的 但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序 不需要该顺序值是连续的  shouldFilter  当返回 true 的时候表示执行 run() 方法  run  过滤器实现的核心    动态路由 服务迁移 静态响应 实现 转跳 Maven  pom.xml
+ filterType  pre  pre-routing filtering 请求被路由之前调用  route  routing to an origin 请求路由时调用  post  post-routing filters 调用后，未调用  error  error handling   filterOrder  filterOrder 是必须的 但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序 不需要该顺序值是连续的  shouldFilter  当返回 true 的时候表示执行 run() 方法  run  过滤器实现的核心   流程图
+ ![]()
+动态路由 服务迁移 静态响应   实现 转跳 Maven  pom.xml
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-zuul&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  bootstrap.yml
 zuul: routes: # v3 other: path: /other/** url: http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/other-service # v2 portal: path: /portal/** serviceId: portal # v1 sns: /sns/** # v0 ## hystrix: ## 默认通过 `http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/&amp;lt;Eureka.ServiceId&amp;gt;/** ` 访问  Code  Application
 @EnableEurekaClient @SpringBootApplication @EnableZuulProxy public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } }  Invoke  http://localhost:8302/portal/config  相当于调用 http://localhost:8100/config   过滤 Code  ZuulFilter

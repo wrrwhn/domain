@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Hello.Spring.Cloud.Sleuth</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.sleuth/</link>
+      <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.sleuth/</guid>
+      <description>功能 链路追踪 查看该请求经过了哪些服务，当前哪些服务异常（实时数据） 可视化异常 在 zipkin 界面上查看异常情况 分析蚝时 记录各采样请求的蚝时，可控地进行服</description>
+    </item>
+    
+    <item>
       <title>Hello.Spring.Cloud.Zuul</title>
       <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.zuul/</link>
       <pubDate>Tue, 16 Oct 2018 00:00:00 +0000</pubDate>
