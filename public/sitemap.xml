@@ -25,8 +25,8 @@ spring: sleuth: sampler: # 采集率调整为 100%，全部采集 probability: 1
  参考
  zipkin日志收集注意事项
 a、将management.metrics.web.server.auto-time-requests=false设置为false,默认为true; b、重写DefaultWebMvcTagsProvider或者实现接口WebMvcTagsProvider，参照DefaultWebMvcTagsProvider的写法，只需要把DefaultWebMvcTagsProvider下getTages()方法的WebMvcTags.exception(exception)去除掉。    参考 官方 -Part VII. Spring Cloud Sleuth -Dapper, a Large-Scale Distributed Systems Tracing Infrastructure
-补充 -Spring Cloud技术分析（3）- spring cloud sleuth -springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪 -Spring Cloud Sleuth进阶实战 -Dapper，大规模分布式系统的跟踪系统 -[]()
-代码 -[]() -[]() -[]() -[]()
+补充 -Spring Cloud技术分析（3）- spring cloud sleuth -springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪 -Spring Cloud Sleuth进阶实战 -Dapper，大规模分布式系统的跟踪系统 -水塘抽样（Reservoir Sampling）
+代码 -yqjdcyy/Hello_Spring_Cloud
 </content>
     </entry>
     

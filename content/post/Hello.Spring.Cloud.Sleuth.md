@@ -212,10 +212,7 @@ toc: true
 -[springcloud(十二)：使用Spring Cloud Sleuth和Zipkin进行分布式链路跟踪](http://www.ityouknow.com/springcloud/2018/02/02/spring-cloud-sleuth-zipkin.html)
 -[Spring Cloud Sleuth进阶实战](https://blog.csdn.net/forezp/article/details/76795269)
 -[Dapper，大规模分布式系统的跟踪系统](https://bigbully.github.io/Dapper-translation/)
--[]()
+-[水塘抽样（Reservoir Sampling）](https://zhuanlan.zhihu.com/p/29178293)
 
 ## 代码
--[]()
--[]()
--[]()
--[]()
+-[yqjdcyy/Hello_Spring_Cloud](https://github.com/yqjdcyy/Hello_Spring_Cloud/tree/sleuth)
