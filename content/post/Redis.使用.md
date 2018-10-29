@@ -12,12 +12,6 @@ toc: true
 ## 简介
 ### 介绍
 - 支持网络，可基于内存亦可持久化的日志型、Key-Value数据库
-### 参考
-- [官网](http://redis.io)
-- [文档](http://redis.io/documentation)
-- [命令](http://redis.readthedocs.org/en/2.4/index.html)
-- [Linux下安装](http://www.php100.com/html/webkaifa/PHP/PHPyingyong/2011/0406/7873.html)
-- [Jedis使用示例](http://javacrazyer.iteye.com/blog/1840161)
 
 
 ## 安装-WINDOWS
@@ -37,7 +31,7 @@ toc: true
 - 跳转至解压目录
     + `cd redis-2.8.3`
 - 安装Redis
-    + make
+    + `make PREFIX=/usr/local/redis install`
         * 若提示make指定未安装，执行`yum -y install gcc automake autoconf libtool make` 进行安装
 - 拷贝执行相关
     + src路径下的redis-server、redis-benchmark、redis-cli，redis-2.8.3目录下redis.conf至服务目录/usr/local/redis
@@ -46,7 +40,8 @@ toc: true
     - `cd /usr/local/redis`
 - 启动服务                 
     + `./redis-server   redis.conf`
-    + 若服务未后台启动，修改redis.conf的daemonize no为yes
+        - 若服务未后台启动，修改redis.conf的daemonize no为yes
+        - 对外情况下，需将 bind 配置一率关闭，同时将 protected-mode 更新为 no
 - 启动客户端
     + `./redis-cli`
 - 写数据
@@ -58,7 +53,8 @@ toc: true
 
 ## 调用-Jedis
 ### 实例
-```
+
+``` java
 import redis.clients.jedis.Jedis;
 public class Client {
     public static void main(String[] args) {
@@ -99,14 +95,16 @@ public class Client {
 
 ## 实例
 ### 调用实现
-```
+
+``` java
 org.springframework.data.redis.core.StringRedisTemplate
 @Autowired
 StringRedisTemplate stringRedisTemplate;
 ```
 
 ### 数据结构
-```
+
+``` sh
 blog:id:hash
   id  1
   likeCount 12
@@ -118,7 +116,8 @@ blog:zset
 ```
 
 ### 工具类
-```
+
+``` java
 public class RedisKeyUtils {
     public static String generate(String key, Long id) {    //blog:l:%d:hash  10 -> blog:l:10:hash
         return String.format(key, id);
@@ -149,7 +148,8 @@ public class AppConfig extends AbstractAppConfig    //于系统启动时进行�
 
 ### 业务操作
 #### 新增
-```
+
+``` java
 String likeHashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), microBlogLike.getBlogId());
 addToLikeHash(likeHashKey, microBlogLike);
 stringRedisTemplate.opsForHash().put(likeHashKey, microBlogLike.getId().toString(), jsonConverter.toJson(microBlogLike));
@@ -168,13 +168,15 @@ boundHashOperations.putAll(map);
 ```
 
 #### 删除
-```
+
+``` java
 String key = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
 stringRedisTemplate.opsForHash().delete(key, microBlogLikeId.toString());
 ```
 
 #### 查询   
-```
+
+``` java
 String hashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
 HashOperations<String, String, String> hashOperations = stringRedisTemplate.opsForHash();
 List<String> jsonList = hashOperations.multiGet(hashKey, microBlogLikeIdSet);
@@ -184,19 +186,31 @@ stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);
 
 ## 调用-SpringDataRedis
 ### Key           
-- redisTemplate.hasKey(key)
-- redisTemplate.delete(key);
+- `redisTemplate.hasKey(key)`
+- `redisTemplate.delete(key);`
 ### String   
 ### List   
 ### Set   
 ### Sorted Set   
-- redisTemplate.boundZSetOps(key).add(baseQaAnswer.getId(), 0);
-- redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY_DAY).incrementScore(baseQaAnswer.getQuestionId(), hotCnt);
-- redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY).remove(id);
-- redisTemplate.opsForZSet().reverseRange(key, startIndex, endIndex);
+- `redisTemplate.boundZSetOps(key).add(baseQaAnswer.getId(), 0);`
+- `redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY_DAY).incrementScore(baseQaAnswer.getQuestionId(), hotCnt);`
+- `redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY).remove(id);`
+- `redisTemplate.opsForZSet().reverseRange(key, startIndex, endIndex);`
 ### Hash   
-- BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);
-    + boundHashOperations.putAll(map);
-    + boundHashOperations.expire(QaRedisConfig.QA_EXPIRE_HOURS, TimeUnit.HOURS);
-    + boundHashOperations.increment(userId.toString(), 1);
-- redisTemplate.opsForHash().multiGet(key, HASH_FIELDS_ANSWER);
+- `BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);`
+    + `boundHashOperations.putAll(map);`
+    + `boundHashOperations.expire(QaRedisConfig.QA_EXPIRE_HOURS, TimeUnit.HOURS);`
+    + `boundHashOperations.increment(userId.toString(), 1);`
+- `redisTemplate.opsForHash().multiGet(key, HASH_FIELDS_ANSWER);`
+
+
+
+
+### 参考
+- [官网](http://redis.io)
+- [文档](http://redis.io/documentation)
+- [命令](http://redis.readthedocs.org/en/2.4/index.html)
+- [Linux下安装](http://www.php100.com/html/webkaifa/PHP/PHPyingyong/2011/0406/7873.html)
+- [Jedis使用示例](http://javacrazyer.iteye.com/blog/1840161)
+- [配置redis外网可访问](https://blog.csdn.net/hel12he/article/details/46911159)
+- [Linux下redis安装和部署](https://www.jianshu.com/p/bc84b2b71c1c)
