@@ -927,7 +927,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</guid>
-      <description>简介 介绍 支持网络，可基于内存亦可持久化的日志型、Key-Value数据库 参考 官网 文档 命令 Linux下安装 Jedis使用示例 安装-WINDOW</description>
+      <description>简介 介绍 支持网络，可基于内存亦可持久化的日志型、Key-Value数据库 安装-WINDOWS 下载 http://www.Juming.com/Csdn/dx/?i=712654422676017&amp;amp;s=a2b84b5fc8f9fa297831deba85c07317 解压至 D:\redis-2.0.2，并更新</description>
     </item>
     
     <item>

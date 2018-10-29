@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">801 字 ~2分钟</span>
+<span class="leancloud-visitors-count">844 字 ~2分钟</span>
 </span>
       </div>
     </header>
@@ -167,19 +167,7 @@
 <h3 id="介绍">介绍</h3>
 
 <ul>
-<li><p>支持网络，可基于内存亦可持久化的日志型、Key-Value数据库</p>
-
-<h3 id="参考">参考</h3></li>
-
-<li><p><a href="http://redis.io">官网</a></p></li>
-
-<li><p><a href="http://redis.io/documentation">文档</a></p></li>
-
-<li><p><a href="http://redis.readthedocs.org/en/2.4/index.html">命令</a></p></li>
-
-<li><p><a href="http://www.php100.com/html/webkaifa/PHP/PHPyingyong/2011/0406/7873.html">Linux下安装</a></p></li>
-
-<li><p><a href="http://javacrazyer.iteye.com/blog/1840161">Jedis使用示例</a></p></li>
+<li>支持网络，可基于内存亦可持久化的日志型、Key-Value数据库</li>
 </ul>
 
 <h2 id="安装-windows">安装-WINDOWS</h2>
@@ -215,7 +203,7 @@
 <li>安装Redis
 
 <ul>
-<li>make
+<li><code>make PREFIX=/usr/local/redis install</code>
 
 <ul>
 <li>若提示make指定未安装，执行<code>yum -y install gcc automake autoconf libtool make</code> 进行安装</li>
@@ -232,8 +220,12 @@
 <li>启动服务<br />
 
 <ul>
-<li><code>./redis-server   redis.conf</code></li>
+<li><code>./redis-server   redis.conf</code>
+
+<ul>
 <li>若服务未后台启动，修改redis.conf的daemonize no为yes</li>
+<li>对外情况下，需将 bind 配置一率关闭，同时将 protected-mode 更新为 no</li>
+</ul></li>
 </ul></li>
 <li>启动客户端
 
@@ -255,16 +247,16 @@
 <h2 id="调用-jedis">调用-Jedis</h2>
 
 <h3 id="实例">实例</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">import redis.clients.jedis.Jedis;
-public class Client {
-    public static void main(String[] args) {
-        Jedis jedis= new Jedis(&#34;localhost&#34;);
-        jedis.set(&#34;age&#34;, &#34;25&#34;);
-        String name= jedis.get(&#34;name&#34;);
-        String age= jedis.get(&#34;age&#34;);
-        System.out.println(&#34;[name: &#34;+ name+&#34;, age: &#34;+ age+&#34;]&#34;);
-    }
-}</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> redis.clients.jedis.Jedis<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Client</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        Jedis jedis<span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Jedis<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;localhost&#34;</span><span style="color:#f92672">);</span>
+        jedis<span style="color:#f92672">.</span><span style="color:#a6e22e">set</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;25&#34;</span><span style="color:#f92672">);</span>
+        String name<span style="color:#f92672">=</span> jedis<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;name&#34;</span><span style="color:#f92672">);</span>
+        String age<span style="color:#f92672">=</span> jedis<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;age&#34;</span><span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;[name: &#34;</span><span style="color:#f92672">+</span> name<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;, age: &#34;</span><span style="color:#f92672">+</span> age<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;]&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 <h3 id="常用方法">常用方法</h3>
 
 <ul>
@@ -333,80 +325,80 @@ public class Client {
 <h2 id="实例-1">实例</h2>
 
 <h3 id="调用实现">调用实现</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">org.springframework.data.redis.core.StringRedisTemplate
-@Autowired
-StringRedisTemplate stringRedisTemplate;</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">org<span style="color:#f92672">.</span><span style="color:#a6e22e">springframework</span><span style="color:#f92672">.</span><span style="color:#a6e22e">data</span><span style="color:#f92672">.</span><span style="color:#a6e22e">redis</span><span style="color:#f92672">.</span><span style="color:#a6e22e">core</span><span style="color:#f92672">.</span><span style="color:#a6e22e">StringRedisTemplate</span>
+<span style="color:#a6e22e">@Autowired</span>
+StringRedisTemplate stringRedisTemplate<span style="color:#f92672">;</span></code></pre></div>
 <h3 id="数据结构">数据结构</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">blog:id:hash
-  id  1
-  likeCount 12
-  blog  [...]
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">blog:id:hash
+  id  <span style="color:#ae81ff">1</span>
+  likeCount <span style="color:#ae81ff">12</span>
+  blog  <span style="color:#f92672">[</span>...<span style="color:#f92672">]</span>
 blog:zset
-  1 10
-  2 2
-  4 0</pre></div>
+  <span style="color:#ae81ff">1</span> <span style="color:#ae81ff">10</span>
+  <span style="color:#ae81ff">2</span> <span style="color:#ae81ff">2</span>
+  <span style="color:#ae81ff">4</span> <span style="color:#ae81ff">0</span></code></pre></div>
 <h3 id="工具类">工具类</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">public class RedisKeyUtils {
-    public static String generate(String key, Long id) {    //blog:l:%d:hash  10 -&gt; blog:l:10:hash
-        return String.format(key, id);
-    }
-}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RedisKeyUtils</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>String key<span style="color:#f92672">,</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">//blog:l:%d:hash  10 -&gt; blog:l:10:hash
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span>key<span style="color:#f92672">,</span> id<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-public class RedisSettings {    //Redis相关配置参数对象Bean
-    private String blogHashKey;
-    private String blogSortedSetKey;
-}
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">RedisSettings</span> <span style="color:#f92672">{</span>    <span style="color:#75715e">//Redis相关配置参数对象Bean
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> String blogHashKey<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String blogSortedSetKey<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span>
 
-public class ColleagueCircleConfig {      //Redis初始化
-    @Autowired
-    Environment environment;
-    @Bean
-    public RedisSettings microBlogRedisSettings() {
-        RedisSettings microBlogRedisSettings = new RedisSettings();
-        microBlogRedisSettings.setBlogSortedSetKey(&#34;blog:zset&#34;);
-        microBlogRedisSettings.setBlogHashKey(&#34;blog:%d:hash&#34;);
-        microBlogRedisSettings.setBlogCommentSortedSetKey(&#34;blog:%d:c:zset&#34;);
-        microBlogRedisSettings.setBlogCommentHashSetKey(&#34;blog:c:%d:hash&#34;);
-    }
-}
-@Configuration
-@Import(value = {ColleagueCircleConfig.class})
-public class AppConfig extends AbstractAppConfig    //于系统启动时进行初始化</pre></div>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ColleagueCircleConfig</span> <span style="color:#f92672">{</span>      <span style="color:#75715e">//Redis初始化
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Autowired</span>
+    Environment environment<span style="color:#f92672">;</span>
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> RedisSettings <span style="color:#a6e22e">microBlogRedisSettings</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        RedisSettings microBlogRedisSettings <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> RedisSettings<span style="color:#f92672">();</span>
+        microBlogRedisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">setBlogSortedSetKey</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;blog:zset&#34;</span><span style="color:#f92672">);</span>
+        microBlogRedisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">setBlogHashKey</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;blog:%d:hash&#34;</span><span style="color:#f92672">);</span>
+        microBlogRedisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">setBlogCommentSortedSetKey</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;blog:%d:c:zset&#34;</span><span style="color:#f92672">);</span>
+        microBlogRedisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">setBlogCommentHashSetKey</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;blog:c:%d:hash&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+<span style="color:#a6e22e">@Configuration</span>
+<span style="color:#a6e22e">@Import</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>ColleagueCircleConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">})</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AppConfig</span> <span style="color:#66d9ef">extends</span> AbstractAppConfig    <span style="color:#f92672">//</span>于系统启动时进行初始化</code></pre></div>
 <h3 id="业务操作">业务操作</h3>
 
 <h4 id="新增">新增</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">String likeHashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), microBlogLike.getBlogId());
-addToLikeHash(likeHashKey, microBlogLike);
-stringRedisTemplate.opsForHash().put(likeHashKey, microBlogLike.getId().toString(), jsonConverter.toJson(microBlogLike));
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String likeHashKey <span style="color:#f92672">=</span> RedisKeyUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>redisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">getBlogLikeHashSetKey</span><span style="color:#f92672">(),</span> microBlogLike<span style="color:#f92672">.</span><span style="color:#a6e22e">getBlogId</span><span style="color:#f92672">());</span>
+addToLikeHash<span style="color:#f92672">(</span>likeHashKey<span style="color:#f92672">,</span> microBlogLike<span style="color:#f92672">);</span>
+stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">opsForHash</span><span style="color:#f92672">().</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>likeHashKey<span style="color:#f92672">,</span> microBlogLike<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">().</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">(),</span> jsonConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">toJson</span><span style="color:#f92672">(</span>microBlogLike<span style="color:#f92672">));</span>
 
-stringRedisTemplate.opsForHash().increment(blogKey, MicroBlogServiceRedisImpl.BLOG_HASH_FIELD_LIKE_COUNT, 1);
+stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">opsForHash</span><span style="color:#f92672">().</span><span style="color:#a6e22e">increment</span><span style="color:#f92672">(</span>blogKey<span style="color:#f92672">,</span> MicroBlogServiceRedisImpl<span style="color:#f92672">.</span><span style="color:#a6e22e">BLOG_HASH_FIELD_LIKE_COUNT</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
 
 
-BoundHashOperations boundHashOperations = stringRedisTemplate.boundHashOps(key);
-Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();
-map.put(BLOG_HASH_FIELD_BLOG, jsonConverter.toJson(microBlog));
-map.put(BLOG_HASH_FIELD_ATTACHMENTS, jsonConverter.toJson(attachments));
-map.put(BLOG_HASH_FIELD_RECEIVERS, jsonConverter.toJson(receivers));
-map.put(BLOG_HASH_FIELD_COMMENT_COUNT, &#34;0&#34;);
-map.put(BLOG_HASH_FIELD_LIKE_COUNT, &#34;0&#34;);
-boundHashOperations.putAll(map);</pre></div>
+BoundHashOperations boundHashOperations <span style="color:#f92672">=</span> stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">boundHashOps</span><span style="color:#f92672">(</span>key<span style="color:#f92672">);</span>
+Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> Object<span style="color:#f92672">&gt;</span> map <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;&gt;();</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>BLOG_HASH_FIELD_BLOG<span style="color:#f92672">,</span> jsonConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">toJson</span><span style="color:#f92672">(</span>microBlog<span style="color:#f92672">));</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>BLOG_HASH_FIELD_ATTACHMENTS<span style="color:#f92672">,</span> jsonConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">toJson</span><span style="color:#f92672">(</span>attachments<span style="color:#f92672">));</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>BLOG_HASH_FIELD_RECEIVERS<span style="color:#f92672">,</span> jsonConverter<span style="color:#f92672">.</span><span style="color:#a6e22e">toJson</span><span style="color:#f92672">(</span>receivers<span style="color:#f92672">));</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>BLOG_HASH_FIELD_COMMENT_COUNT<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">);</span>
+map<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>BLOG_HASH_FIELD_LIKE_COUNT<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;0&#34;</span><span style="color:#f92672">);</span>
+boundHashOperations<span style="color:#f92672">.</span><span style="color:#a6e22e">putAll</span><span style="color:#f92672">(</span>map<span style="color:#f92672">);</span></code></pre></div>
 <h4 id="删除">删除</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">String key = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
-stringRedisTemplate.opsForHash().delete(key, microBlogLikeId.toString());</pre></div>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String key <span style="color:#f92672">=</span> RedisKeyUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>redisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">getBlogLikeHashSetKey</span><span style="color:#f92672">(),</span> blogId<span style="color:#f92672">);</span>
+stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">opsForHash</span><span style="color:#f92672">().</span><span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span>key<span style="color:#f92672">,</span> microBlogLikeId<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span></code></pre></div>
 <h4 id="查询">查询</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">String hashKey = RedisKeyUtils.generate(redisSettings.getBlogLikeHashSetKey(), blogId);
-HashOperations&lt;String, String, String&gt; hashOperations = stringRedisTemplate.opsForHash();
-List&lt;String&gt; jsonList = hashOperations.multiGet(hashKey, microBlogLikeIdSet);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String hashKey <span style="color:#f92672">=</span> RedisKeyUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">generate</span><span style="color:#f92672">(</span>redisSettings<span style="color:#f92672">.</span><span style="color:#a6e22e">getBlogLikeHashSetKey</span><span style="color:#f92672">(),</span> blogId<span style="color:#f92672">);</span>
+HashOperations<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> hashOperations <span style="color:#f92672">=</span> stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">opsForHash</span><span style="color:#f92672">();</span>
+List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> jsonList <span style="color:#f92672">=</span> hashOperations<span style="color:#f92672">.</span><span style="color:#a6e22e">multiGet</span><span style="color:#f92672">(</span>hashKey<span style="color:#f92672">,</span> microBlogLikeIdSet<span style="color:#f92672">);</span>
 
-stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);</pre></div>
+stringRedisTemplate<span style="color:#f92672">.</span><span style="color:#a6e22e">opsForZSet</span><span style="color:#f92672">().</span><span style="color:#a6e22e">reverseRange</span><span style="color:#f92672">(</span>sortedSetKey<span style="color:#f92672">,</span> 0<span style="color:#f92672">,</span> pageCount <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span></code></pre></div>
 <h2 id="调用-springdataredis">调用-SpringDataRedis</h2>
 
 <h3 id="key">Key</h3>
 
 <ul>
-<li>redisTemplate.hasKey(key)</li>
+<li><code>redisTemplate.hasKey(key)</code></li>
 
-<li><p>redisTemplate.delete(key);</p>
+<li><p><code>redisTemplate.delete(key);</code></p>
 
 <h3 id="string">String</h3>
 
@@ -416,25 +408,37 @@ stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);</
 
 <h3 id="sorted-set">Sorted Set</h3></li>
 
-<li><p>redisTemplate.boundZSetOps(key).add(baseQaAnswer.getId(), 0);</p></li>
+<li><p><code>redisTemplate.boundZSetOps(key).add(baseQaAnswer.getId(), 0);</code></p></li>
 
-<li><p>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY_DAY).incrementScore(baseQaAnswer.getQuestionId(), hotCnt);</p></li>
+<li><p><code>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY_DAY).incrementScore(baseQaAnswer.getQuestionId(), hotCnt);</code></p></li>
 
-<li><p>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY).remove(id);</p></li>
+<li><p><code>redisTemplate.boundZSetOps(QaRedisConfig.QUESTION_ZSET_KEY).remove(id);</code></p></li>
 
-<li><p>redisTemplate.opsForZSet().reverseRange(key, startIndex, endIndex);</p>
+<li><p><code>redisTemplate.opsForZSet().reverseRange(key, startIndex, endIndex);</code></p>
 
 <h3 id="hash">Hash</h3></li>
 
-<li><p>BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);</p>
+<li><p><code>BoundHashOperations boundHashOperations = redisTemplate.boundHashOps(key);</code></p>
 
 <ul>
-<li>boundHashOperations.putAll(map);</li>
-<li>boundHashOperations.expire(QaRedisConfig.QA_EXPIRE_HOURS, TimeUnit.HOURS);</li>
-<li>boundHashOperations.increment(userId.toString(), 1);</li>
+<li><code>boundHashOperations.putAll(map);</code></li>
+<li><code>boundHashOperations.expire(QaRedisConfig.QA_EXPIRE_HOURS, TimeUnit.HOURS);</code></li>
+<li><code>boundHashOperations.increment(userId.toString(), 1);</code></li>
 </ul></li>
 
-<li><p>redisTemplate.opsForHash().multiGet(key, HASH_FIELDS_ANSWER);</p></li>
+<li><p><code>redisTemplate.opsForHash().multiGet(key, HASH_FIELDS_ANSWER);</code></p></li>
+</ul>
+
+<h3 id="参考">参考</h3>
+
+<ul>
+<li><a href="http://redis.io">官网</a></li>
+<li><a href="http://redis.io/documentation">文档</a></li>
+<li><a href="http://redis.readthedocs.org/en/2.4/index.html">命令</a></li>
+<li><a href="http://www.php100.com/html/webkaifa/PHP/PHPyingyong/2011/0406/7873.html">Linux下安装</a></li>
+<li><a href="http://javacrazyer.iteye.com/blog/1840161">Jedis使用示例</a></li>
+<li><a href="https://blog.csdn.net/hel12he/article/details/46911159">配置redis外网可访问</a></li>
+<li><a href="https://www.jianshu.com/p/bc84b2b71c1c">Linux下redis安装和部署</a></li>
 </ul>
 
     </div>
@@ -525,7 +529,7 @@ stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);</
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">247</span>
+        <span class="site-state-item-count">249</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -577,7 +581,6 @@ stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);</
 <li><a href="#简介">简介</a>
 <ul>
 <li><a href="#介绍">介绍</a></li>
-<li><a href="#参考">参考</a></li>
 </ul></li>
 <li><a href="#安装-windows">安装-WINDOWS</a></li>
 <li><a href="#安装-linux">安装-LINUX</a>
@@ -609,6 +612,7 @@ stringRedisTemplate.opsForZSet().reverseRange(sortedSetKey, 0, pageCount - 1);</
 <li><a href="#set">Set</a></li>
 <li><a href="#sorted-set">Sorted Set</a></li>
 <li><a href="#hash">Hash</a></li>
+<li><a href="#参考">参考</a></li>
 </ul></li>
 </ul></li>
 </ul>
