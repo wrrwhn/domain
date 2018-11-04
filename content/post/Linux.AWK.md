@@ -179,6 +179,7 @@ toc: true
 
 
 ## File
+
 - `awk 'NR!= 1 { if($6 ~ /FIN_WAIT|ESTABLISHED|CLOSE_WAIT/) printf "%s\n", $0 > $6;}' ../netstat.log`
 
 
@@ -225,6 +226,8 @@ toc: true
                 WAIT.NUM:       136
                 WAIT.AVG:   0.176853
         ```
+
+- `awk '{print $1}' access.log |sort|uniq -c|sort -nr|head -10`
 
 
 # Reference

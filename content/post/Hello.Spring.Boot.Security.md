@@ -344,7 +344,8 @@ authorization
 - [Spring Security Reference - 5.0.5](https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/)
 - [Spring Security](https://spring.io/projects/spring-security)
 - [Spring Security Reference - 5.1.2](https://docs.spring.io/spring-security/site/docs/5.1.2.BUILD-SNAPSHOT/reference/htmlsingle/#community)
-- []()
+- [/spring-session/docs](https://docs.spring.io/spring-session/docs/)
+- [H2.Features](http://www.h2database.com/html/features.html)
 - []()
 
 ## 补充
