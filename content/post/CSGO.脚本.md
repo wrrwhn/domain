@@ -12,7 +12,7 @@ toc: true
 
 
 # 设置项
-- [CSGO详细参数.md](http://otzm88f21.bkt.clouddn.com/c53affd5-4640-4464-9a64-af36de605fa3.md)
+- [CSGO详细参数.md](http://doc.yqjdcyy.com/c53affd5-4640-4464-9a64-af36de605fa3.md)
 
 # 脚本
 ## 示例

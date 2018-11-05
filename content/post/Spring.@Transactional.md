@@ -78,7 +78,7 @@ toc: true
 		- 判断执行过程是否出现异常
 			- 提交事务
 			- 回滚事务
-- ![事务实现机制.jpg](http://otzm88f21.bkt.clouddn.com/f13bc7d3-ab03-4b28-94d4-238e5c2a7162.jpg)
+- ![事务实现机制.jpg](http://doc.yqjdcyy.com/f13bc7d3-ab03-4b28-94d4-238e5c2a7162.jpg)
 
 
 ## 代理类
@@ -89,7 +89,7 @@ toc: true
 - PlatformTransactionManager
 	- AbstractPlatformTransactionManager
 		- DataSourceTransactionManager
-- ![TransactionManager框架.jpg](http://otzm88f21.bkt.clouddn.com/87910f53-47c1-4bc1-bfac-09a739a7ef53.jpg)
+- ![TransactionManager框架.jpg](http://doc.yqjdcyy.com/87910f53-47c1-4bc1-bfac-09a739a7ef53.jpg)
 
 
 # 注意事项

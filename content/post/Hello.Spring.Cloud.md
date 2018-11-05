@@ -459,4 +459,4 @@ toc: true
 - [Spring Security OAuth2，参考文档](http://docs.spring.io/spring-boot/docs/1.5.2.RELEASE/reference/htmlsingle/#boot-features-security-oauth2)
 
 ## 整理
-- [Spring.Cloud.xmind](http://otzm88f21.bkt.clouddn.com/9b2f1b98-e458-4544-b4a4-b3074ef2a800.xmind)
+- [Spring.Cloud.xmind](http://doc.yqjdcyy.com/9b2f1b98-e458-4544-b4a4-b3074ef2a800.xmind)

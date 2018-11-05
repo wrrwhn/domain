@@ -101,7 +101,7 @@ fetch('api/user/1', {
     }
 })
 ```
-- ![JWT流程.png](http://otzm88f21.bkt.clouddn.com/2c8aeed0-ced4-41df-8bc8-39d8cdb3e0e9.png)
+- ![JWT流程.png](http://doc.yqjdcyy.com/2c8aeed0-ced4-41df-8bc8-39d8cdb3e0e9.png)
 
 
 # 优点

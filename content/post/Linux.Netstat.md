@@ -36,8 +36,8 @@ toc: true
 
 
 ## 序列图
-- ![TCP.jpg](http://otzm88f21.bkt.clouddn.com/bb53031b-ec76-4c75-bae5-6f373f59cccb.jpg)
-- ![TCP-2.jpg](http://otzm88f21.bkt.clouddn.com/bc17ba30-587b-4f0b-a409-80be30673389.jpg)
+- ![TCP.jpg](http://doc.yqjdcyy.com/bb53031b-ec76-4c75-bae5-6f373f59cccb.jpg)
+- ![TCP-2.jpg](http://doc.yqjdcyy.com/bc17ba30-587b-4f0b-a409-80be30673389.jpg)
 
 
 ## 输出

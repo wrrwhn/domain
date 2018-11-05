@@ -26,7 +26,7 @@ toc: true
 ### 反向代理
 - 概念
     - 用代理服务器来接受internet上的连接请求，然后将请求「转发」给内部网络上的服务器，并将从服务器上得到的结果返回给 internet 上请求连接的客户端
-    - ![proxy.png](http://otzm88f21.bkt.clouddn.com/0b924f9c-91dd-49cb-af53-0338dea58fd8.png)
+    - ![proxy.png](http://doc.yqjdcyy.com/0b924f9c-91dd-49cb-af53-0338dea58fd8.png)
 - 用途
     - 将防火墙后面的服务器提供给 Internet 用户访问
         - 负载均衡

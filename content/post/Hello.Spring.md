@@ -12,9 +12,9 @@ toc: true
 # 架构
 ## 架构图
 - 4.2.x
-    - ![spring-overview.png](http://otzm88f21.bkt.clouddn.com/f5e660a7-3798-41a1-8ee0-fd9d84359ca0.png)
+    - ![spring-overview.png](http://doc.yqjdcyy.com/f5e660a7-3798-41a1-8ee0-fd9d84359ca0.png)
 - x.x.x
-    - ![702767-20150907115314981-2080783917.jpg](http://otzm88f21.bkt.clouddn.com/c3eefed2-02c5-46c7-bb58-41f8de994adc.jpg)
+    - ![702767-20150907115314981-2080783917.jpg](http://doc.yqjdcyy.com/c3eefed2-02c5-46c7-bb58-41f8de994adc.jpg)
 
 ## 模块
 - Core
@@ -502,4 +502,4 @@ toc: true
 - [控制反转（IoC）与依赖注入（DI）](http://blog.xiaohansong.com/2015/10/21/IoC-and-DI/)
 
 ## 整理
-- [Spring.xmind](http://otzm88f21.bkt.clouddn.com/6cad91c1-e981-4aac-8a43-04922a0dbb55.xmind)
+- [Spring.xmind](http://doc.yqjdcyy.com/6cad91c1-e981-4aac-8a43-04922a0dbb55.xmind)

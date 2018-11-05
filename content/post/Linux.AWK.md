@@ -136,7 +136,7 @@ toc: true
     tcp        0 720149 localhost:47634         localhost:20100         FIN_WAIT1  
     ```
 
-- [netstat.log](http://otzm88f21.bkt.clouddn.com/38c169bc-4859-4d43-9d3e-66984ad0abc0.log)
+- [netstat.log](http://doc.yqjdcyy.com/38c169bc-4859-4d43-9d3e-66984ad0abc0.log)
 
 
 ## Show
@@ -232,7 +232,7 @@ toc: true
 
 # Reference
 ## Man
-- [gawk.log](http://otzm88f21.bkt.clouddn.com/e7effdb5-b4b9-4042-9480-54d16d093c39.log)
+- [gawk.log](http://doc.yqjdcyy.com/e7effdb5-b4b9-4042-9480-54d16d093c39.log)
 
 ## More
 - [AWK 简明教程](https://coolshell.cn/articles/9070.html)

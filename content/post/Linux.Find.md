@@ -190,7 +190,7 @@ toc: true
 
 # 参考
 ## 官方
-- [man.find](http://otzm88f21.bkt.clouddn.com/154e120c-1731-4427-8ff5-df3c085e5941.find)
+- [man.find](http://doc.yqjdcyy.com/154e120c-1731-4427-8ff5-df3c085e5941.find)
 
 ## 补充
 - [find命令](http://man.linuxde.net/find)

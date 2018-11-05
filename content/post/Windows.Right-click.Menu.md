@@ -32,5 +32,5 @@ toc: true
                                             - 在 cmd 中执行 `XXXXX` 指令
                                             - `&&` 于前一条指令执行完成后执行
     - 示例
-        - ![微信图片_20170908170222.png](http://otzm88f21.bkt.clouddn.com/425eca95-80af-4988-97fc-a1676e190dd4.png)
-        - ![2.png](http://otzm88f21.bkt.clouddn.com/0a666895-6f16-4dc8-8a4b-5493713fc25f.png)
+        - ![微信图片_20170908170222.png](http://doc.yqjdcyy.com/425eca95-80af-4988-97fc-a1676e190dd4.png)
+        - ![2.png](http://doc.yqjdcyy.com/0a666895-6f16-4dc8-8a4b-5493713fc25f.png)

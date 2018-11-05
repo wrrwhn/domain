@@ -60,7 +60,7 @@ So if you use python 2.7 64 bit it is not possible, as far as I know, to produce
 			- 指定可执行文件的**图标**
 	- 示例
 		- `pyinstaller -F -i favicon.ico pack.py`
-			- ![pack-exe.png](http://otzm88f21.bkt.clouddn.com/3d05119a-51e4-4dd9-b015-dd230f4d11fd.png)
+			- ![pack-exe.png](http://doc.yqjdcyy.com/3d05119a-51e4-4dd9-b015-dd230f4d11fd.png)
 - 查看文件列表
 	- `pyi-archive_viewer *.exe`
 	- 示例

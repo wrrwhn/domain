@@ -14,7 +14,7 @@ toc: true
 - 定义
     - 每个结点最多有两个子树的树结构
 - 图示
-    - ![二叉树.jpg](http://otzm88f21.bkt.clouddn.com/e8bc9be9-b0ac-4ba7-a220-fbdea61c8bba.jpg)
+    - ![二叉树.jpg](http://doc.yqjdcyy.com/e8bc9be9-b0ac-4ba7-a220-fbdea61c8bba.jpg)
 - 遍历
     - DLR
     - LDR
@@ -34,7 +34,7 @@ toc: true
     - 左右子树亦为二叉排序树
     - 无键值相等的节点
 - 图示
-    - ![二叉排序树.jpg](http://otzm88f21.bkt.clouddn.com/d04afa12-458a-46cd-9a10-3cd8bfa1af5a.jpg)
+    - ![二叉排序树.jpg](http://doc.yqjdcyy.com/d04afa12-458a-46cd-9a10-3cd8bfa1af5a.jpg)
 
 
 ## AVL树
@@ -43,8 +43,8 @@ toc: true
 - 性质
     - 每个结点的左右子树调度之差的绝对值最多为1
 - 图示
-    - ![AVL树.png](http://otzm88f21.bkt.clouddn.com/350a69d0-c61b-45dd-9057-618576a785b9.png)
-    - ![AVL树-Order.png](http://otzm88f21.bkt.clouddn.com/d5554d49-ca3e-4bf3-82f3-e3402c3e2916.png)
+    - ![AVL树.png](http://doc.yqjdcyy.com/350a69d0-c61b-45dd-9057-618576a785b9.png)
+    - ![AVL树-Order.png](http://doc.yqjdcyy.com/d5554d49-ca3e-4bf3-82f3-e3402c3e2916.png)
 
 
 ## 红黑树
@@ -71,4 +71,4 @@ toc: true
 - [红黑树](https://baike.baidu.com/item/红黑树)
 
 ## 整理
-- [红黑树.xmind](http://otzm88f21.bkt.clouddn.com/bdbf2158-8a72-4de1-9f37-60ad9e7194eb.xmind)
+- [红黑树.xmind](http://doc.yqjdcyy.com/bdbf2158-8a72-4de1-9f37-60ad9e7194eb.xmind)

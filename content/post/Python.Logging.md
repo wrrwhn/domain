@@ -103,7 +103,7 @@ toc: true
 	- 略
 
 ## 流程
-- ![logging_flow.png](http://otzm88f21.bkt.clouddn.com/be92d65e-86d8-49e3-be7c-296e02426a99.png)
+- ![logging_flow.png](http://doc.yqjdcyy.com/be92d65e-86d8-49e3-be7c-296e02426a99.png)
 
 
 # 示例

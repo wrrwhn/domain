@@ -12,15 +12,15 @@ toc: true
 # Package
 - Create Artifacts
 	- Open 「Project Structure」
-		- ![1-1.png](http://otzm88f21.bkt.clouddn.com/121dec5a-0f64-476f-99c4-7e9417404346.png)
+		- ![1-1.png](http://doc.yqjdcyy.com/121dec5a-0f64-476f-99c4-7e9417404346.png)
 	- Create Artifacts
-		- ![1-2.png](http://otzm88f21.bkt.clouddn.com/e1748e73-bf6a-44d2-b778-15bd2d43d5aa.png)
+		- ![1-2.png](http://doc.yqjdcyy.com/e1748e73-bf6a-44d2-b778-15bd2d43d5aa.png)
 	- Setting
-		- ![1-3.png](http://otzm88f21.bkt.clouddn.com/a85b2edf-ad9e-482b-9d95-87387f4ed4d8.png)
+		- ![1-3.png](http://doc.yqjdcyy.com/a85b2edf-ad9e-482b-9d95-87387f4ed4d8.png)
 
 - Build Artifacts
-	- ![2-1.png](http://otzm88f21.bkt.clouddn.com/31196862-a83a-4660-893d-6dbe7c1ddc31.png)
-	- ![2-2.png](http://otzm88f21.bkt.clouddn.com/a1d8d5e6-e031-4878-91b8-8334ff11f759.png)
+	- ![2-1.png](http://doc.yqjdcyy.com/31196862-a83a-4660-893d-6dbe7c1ddc31.png)
+	- ![2-2.png](http://doc.yqjdcyy.com/a1d8d5e6-e031-4878-91b8-8334ff11f759.png)
 
 # Run
 - `java -jar PDFBox.jar C:\Users\Yao\Desktop\anythingToPPTX\from\sliders.pdf`

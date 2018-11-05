@@ -24,7 +24,7 @@ toc: true
     | Entry Set | Waiting Thread<br/>Waiting for monitor entry | BLOCKED<br/>waiting for monitor entry<br/>线程进入临界区（ synchronized 保护起来的代码区） |
     | The Owner | Active Thread                                | RUNNABLE                                                                                   |
     | Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |
-- ![thread.bmp](http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
+- ![thread.bmp](http://doc.yqjdcyy.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
 
 ## 调用
 - `jstack [-Fml|h] <pid>`
@@ -89,7 +89,7 @@ toc: true
             at com.yao.common.thread.ThreadBlockTest.main(ThreadBlockTest.java:12)    
     ```
 - `lock`
-    - [jstack-deadlock.log](http://otzm88f21.bkt.clouddn.com/f01c473b-eabd-4337-a0e0-3d8d3d571494.log)
+    - [jstack-deadlock.log](http://doc.yqjdcyy.com/f01c473b-eabd-4337-a0e0-3d8d3d571494.log)
     ```
     Found one Java-level deadlock:
     =============================

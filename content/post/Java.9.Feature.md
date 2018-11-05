@@ -49,7 +49,7 @@ toc: true
         - jlink: The Java Linker。新的`link`工具
 
 - 模块图
-    - ![java.se.ee-graph.png](http://otzm88f21.bkt.clouddn.com/ecd7a640-92c5-4a5f-b32d-8674be84e8e7.png)
+    - ![java.se.ee-graph.png](http://doc.yqjdcyy.com/ecd7a640-92c5-4a5f-b32d-8674be84e8e7.png)
 
 - 开发角度
     - 工具和 API 新增或修改，用以编译、链接和运行时的模块支持
@@ -146,7 +146,7 @@ toc: true
 ## 语言和工具的变化
 - `Jshell`
     - 简单易用的交互式执行 Java 代码
-    - ![99b03cecbd2c9cca2f320ed778ba2f09.png](http://otzm88f21.bkt.clouddn.com/75dc6d1b-1996-403e-b5f9-e3e5fe736abe.png)
+    - ![99b03cecbd2c9cca2f320ed778ba2f09.png](http://doc.yqjdcyy.com/75dc6d1b-1996-403e-b5f9-e3e5fe736abe.png)
 - `Multi-Release JAR Files`
     - 扩展 JAR 文件格式，支持不同版本 class 文件共存
     - `release`指令

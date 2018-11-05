@@ -15,7 +15,7 @@ toc: true
 版权法默认禁止共享，也就是说，没有许可证的软件，就等同于保留版权，虽然开源了，用户只能看看源码，不能用，一用就会侵犯版权。所以软件开源的话，必须明确地授予用户开源许可证。
 
 # 简诉
-- ![License关系图.png](http://otzm88f21.bkt.clouddn.com/201fb774-e22d-47a7-b047-ee01e95156ec.png)
+- ![License关系图.png](http://doc.yqjdcyy.com/201fb774-e22d-47a7-b047-ee01e95156ec.png)
 
 # 类型
 ## MIT

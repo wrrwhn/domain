@@ -98,7 +98,7 @@ import foo/internal/baz/z.go
 
 
 # Reference
-- [Go.Help.GOPATH.log](http://otzm88f21.bkt.clouddn.com/411858e6-313f-4589-b9cb-a41a2718a5d9.log)
+- [Go.Help.GOPATH.log](http://doc.yqjdcyy.com/411858e6-313f-4589-b9cb-a41a2718a5d9.log)
 - [SettingGOPATH](https://golang.org/wiki/SettingGOPATH)
 - [How to Write Go Code](https://golang.org/doc/code.html)
 - [Go 1.4 “Internal” Packages](https://golang.org/s/go14internal)

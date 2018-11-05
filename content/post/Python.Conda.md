@@ -35,8 +35,8 @@ toc: true
 	- [Installation—Conda documentation](https://conda.io/docs/user-guide/install/index.html)
 	- [Installing on Windows](https://conda.io/docs/user-guide/install/windows.html#install-win-silent)
 - 确认
-	- ![目录.png](http://otzm88f21.bkt.clouddn.com/ad77cd1f-3eed-4f86-af30-72c94f17eeeb.png)
-	- ![查看安装列表.png](http://otzm88f21.bkt.clouddn.com/2e746d90-be7e-4d77-8aa5-badb9fb0c1ab.png)
+	- ![目录.png](http://doc.yqjdcyy.com/ad77cd1f-3eed-4f86-af30-72c94f17eeeb.png)
+	- ![查看安装列表.png](http://doc.yqjdcyy.com/2e746d90-be7e-4d77-8aa5-badb9fb0c1ab.png)
 
 # 指令
 ## 环境管理

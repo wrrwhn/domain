@@ -41,9 +41,9 @@ toc: true
 ## 由 Google.dapper 论文发展而来
 
 ## 示例
-- ![tracing.png](http://otzm88f21.bkt.clouddn.com/f4bfe281-f05f-4f1a-aa49-c6ae795a1d5c.png)
-- ![sleuth-struct.png](http://otzm88f21.bkt.clouddn.com/f95c6cdd-29f2-4b03-8d66-065e47b6b9f9.png)
-- ![tracing-example.png](http://otzm88f21.bkt.clouddn.com/2894cbc9-1502-4c4c-a5d4-d60cd983e2b0.png)
+- ![tracing.png](http://doc.yqjdcyy.com/f4bfe281-f05f-4f1a-aa49-c6ae795a1d5c.png)
+- ![sleuth-struct.png](http://doc.yqjdcyy.com/f95c6cdd-29f2-4b03-8d66-065e47b6b9f9.png)
+- ![tracing-example.png](http://doc.yqjdcyy.com/2894cbc9-1502-4c4c-a5d4-d60cd983e2b0.png)
 
 ## 术语
 

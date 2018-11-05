@@ -22,7 +22,7 @@ toc: true
 ## 编辑
 - /视频/打开视频
 - 试听 & 添加行记录 & 更新时间点、字幕内容和样式
-	- ![Aegisub-操作.png](http://otzm88f21.bkt.clouddn.com/47ae9854-8dc0-46f4-9251-3626284c1491.png)
+	- ![Aegisub-操作.png](http://doc.yqjdcyy.com/47ae9854-8dc0-46f4-9251-3626284c1491.png)
 
 # 指令
 ## 模板

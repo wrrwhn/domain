@@ -55,7 +55,7 @@ toc: true
 
 ### 结构拓扑
 - 整体拓扑
-    - ![0310020.png](http://otzm88f21.bkt.clouddn.com/8cae96c5-0537-43ec-a7f3-ce16df61e6b8.png)
+    - ![0310020.png](http://doc.yqjdcyy.com/8cae96c5-0537-43ec-a7f3-ce16df61e6b8.png)
 - 分析
     - kafka 通过 Zoopkeeper 管理集群配置
         - 选举 Leader
@@ -89,7 +89,7 @@ toc: true
                                 - message-34477850175
                                 - ...
                                 - message-35513434344
-                            - ![0310022.png](http://otzm88f21.bkt.clouddn.com/6080ca25-8e46-47e2-9970-f4099f6202a5.png)
+                            - ![0310022.png](http://doc.yqjdcyy.com/6080ca25-8e46-47e2-9970-f4099f6202a5.png)
     - 冗余
         - 保留所有消息，**无论其被消费与否**
         - 删除策略

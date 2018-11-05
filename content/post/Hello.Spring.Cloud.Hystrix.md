@@ -27,7 +27,7 @@ toc: true
 
 # 流程
 ## 流程图
-- ![hystrix-command-flow-chart.png](http://otzm88f21.bkt.clouddn.com/48536c74-2638-42dd-9280-92269b033174.png)
+- ![hystrix-command-flow-chart.png](http://doc.yqjdcyy.com/48536c74-2638-42dd-9280-92269b033174.png)
 
 
 ## 节点
@@ -110,7 +110,7 @@ toc: true
 
 ### Response.success
 
-- ![hystrix-return-flow-640.png](http://otzm88f21.bkt.clouddn.com/15179820-a8d3-4b25-a20c-79a33ef5016f.png)
+- ![hystrix-return-flow-640.png](http://doc.yqjdcyy.com/15179820-a8d3-4b25-a20c-79a33ef5016f.png)
 
 
 # 细节
@@ -136,7 +136,7 @@ toc: true
         - 持续一个睡眠窗口的时间
 
 - 结构
-    - ![circuit-breaker-1280.png](http://otzm88f21.bkt.clouddn.com/755834b2-9adc-4ba6-a607-485d6270ff79.png)
+    - ![circuit-breaker-1280.png](http://doc.yqjdcyy.com/755834b2-9adc-4ba6-a607-485d6270ff79.png)
     - 默认维护 10 个 `Bucket`，每秒一个 `Bucket` 以记录成功、失败、超时和拒绝的状态
 
 
@@ -261,7 +261,7 @@ toc: true
 - 登录 [/hystrix](/hystrix)
 - 在观看链路中输入 [http://localhost:8301/actuator/hystrix.stream](http://localhost:8301/actuator/hystrix.stream)
 - 调用已添加断路监控的请求，查看动态请求状态
-    - ![Hystrix.Monitor.png](http://otzm88f21.bkt.clouddn.com/672fe2f2-669e-425f-9d6a-099ff0a27a3f.png)
+    - ![Hystrix.Monitor.png](http://doc.yqjdcyy.com/672fe2f2-669e-425f-9d6a-099ff0a27a3f.png)
 
 
 ## Monitor.Turbine

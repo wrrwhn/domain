@@ -173,7 +173,7 @@ toc: true
         | The Owner | Active Thread                                | RUNNABLE                                                                                   |
         | Wait Set  | Waiting Thread<br/>in Object.wait()          | WAITING / TIMED_WAITING <br/> in Object.wait()/ waiting on condition                       |
 
-    - ![thread.bmp](http://otzm88f21.bkt.clouddn.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
+    - ![thread.bmp](http://doc.yqjdcyy.com/e320bd53-2e3e-4387-ba72-18711061a224.bmp)
 
 - 调用
     - `jstack [-Fml|h] <pid>`

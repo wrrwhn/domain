@@ -21,6 +21,6 @@ toc: true
 - 输入【!analyze -v -f】分析具体异常
 
 ## 资源
-- [X86 Debuggers And Tools-x86_en-us.msi](http://otzm88f21.bkt.clouddn.com/X86%20Debuggers%20And%20Tools-x86_en-us.msi)
-- [crashdump.vbs](http://otzm88f21.bkt.clouddn.com/crashdump.vbs)
-- [命令集合.xlsx](http://otzm88f21.bkt.clouddn.com/%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.xlsx)
+- [X86 Debuggers And Tools-x86_en-us.msi](http://doc.yqjdcyy.com/X86%20Debuggers%20And%20Tools-x86_en-us.msi)
+- [crashdump.vbs](http://doc.yqjdcyy.com/crashdump.vbs)
+- [命令集合.xlsx](http://doc.yqjdcyy.com/%E5%91%BD%E4%BB%A4%E9%9B%86%E5%90%88.xlsx)

@@ -35,7 +35,7 @@ toc: true
 - 层级
     - `region= n* zone= n* (m* eureka)`
 - 架构
-    - ![region-zone-eureka.png](http://otzm88f21.bkt.clouddn.com/e483c027-70da-4212-9d6d-9314f0107adf.png)
+    - ![region-zone-eureka.png](http://doc.yqjdcyy.com/e483c027-70da-4212-9d6d-9314f0107adf.png)
 
 ## 模块
 - Eureka.Server
@@ -144,7 +144,7 @@ toc: true
 
 ### Monitor
 - http://localhost:10000/
-- ![Eureka-Monitor.png](http://otzm88f21.bkt.clouddn.com/a66926c7-1fbf-4980-9155-02e81be8065c.png)
+- ![Eureka-Monitor.png](http://doc.yqjdcyy.com/a66926c7-1fbf-4980-9155-02e81be8065c.png)
 
 
 ## Eureka.Client

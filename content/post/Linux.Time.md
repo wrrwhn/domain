@@ -157,7 +157,7 @@ sys 0.00
 
 # Reference
 ## 官方
-- [time.main](http://otzm88f21.bkt.clouddn.com/e1d9551c-7186-49cd-af3b-9ef8487510b7.main)
+- [time.main](http://doc.yqjdcyy.com/e1d9551c-7186-49cd-af3b-9ef8487510b7.main)
     - `man time`
 
 ## 参考

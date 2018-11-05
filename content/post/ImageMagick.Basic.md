@@ -103,11 +103,11 @@ toc: true
 ## Example
 - 添加全屏水印图
   - `composite -tile /data/cdn/resource/repeat.png /data/tmp/yao/from/yk-white.jpg /data/tmp/yao/from/yk-white-repeat.jpg`
-  - ![slide-rId3-blue.jpg](http://otzm88f21.bkt.clouddn.com/c954d58e-276f-40cb-9a00-9cbed0f08e0e.jpg)
+  - ![slide-rId3-blue.jpg](http://doc.yqjdcyy.com/c954d58e-276f-40cb-9a00-9cbed0f08e0e.jpg)
 
 - 于指定位置添加水印图
   - `convert slide-rId3.jpg "/data/cdn/resource/logo.png[300x100]" -gravity northeast -geometry +24+20 -composite jpg:- | convert - slide-rId3-logo.jpg`
-  - ![slide-rId3-logo.jpg](http://otzm88f21.bkt.clouddn.com/030cbd21-8248-45af-bee2-edd9beb189d4.jpg)
+  - ![slide-rId3-logo.jpg](http://doc.yqjdcyy.com/030cbd21-8248-45af-bee2-edd9beb189d4.jpg)
 
 - 添加文字水印
   - 失败
@@ -116,8 +116,8 @@ toc: true
 
 - 图片质量调整
   - `convert -quality 75 slide-rId3.jpg slide-rId3-075.jpg`
-  - ![slide-rId3.jpg](http://otzm88f21.bkt.clouddn.com/4e978cef-096b-43a4-92d8-14660bd69f15.jpg)
-  - ![slide-rId3-075.jpg](http://otzm88f21.bkt.clouddn.com/36ae72dd-5ece-4bc7-8fbe-7154d2183006.jpg)
+  - ![slide-rId3.jpg](http://doc.yqjdcyy.com/4e978cef-096b-43a4-92d8-14660bd69f15.jpg)
+  - ![slide-rId3-075.jpg](http://doc.yqjdcyy.com/36ae72dd-5ece-4bc7-8fbe-7154d2183006.jpg)
 
 
 - 动态图倒放

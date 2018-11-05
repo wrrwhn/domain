@@ -13,7 +13,7 @@ toc: true
 
 # Structure
 ## Image
-- ![java.collections.png](http://otzm88f21.bkt.clouddn.com/32445d0d-3135-4eb3-a0f7-2217ff29d269.png)
+- ![java.collections.png](http://doc.yqjdcyy.com/32445d0d-3135-4eb3-a0f7-2217ff29d269.png)
 
 ## Text
 ### Iterable

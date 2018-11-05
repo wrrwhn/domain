@@ -14,7 +14,7 @@ toc: true
 - [grep命令](http://man.linuxde.net/grep)
 - [每天一个linux命令（39）：grep 命令](http://www.cnblogs.com/peida/archive/2012/12/17/2821195.html)
 - [linux grep命令](http://www.cnblogs.com/end/archive/2012/02/21/2360965.html)
-- [man-grep](http://otzm88f21.bkt.clouddn.com/b9a82f1e-a3ba-4f54-b6e4-7aa00de43296.txt)
+- [man-grep](http://doc.yqjdcyy.com/b9a82f1e-a3ba-4f54-b6e4-7aa00de43296.txt)
 
 
 ## 格式

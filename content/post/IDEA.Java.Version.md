@@ -31,9 +31,9 @@ toc: true
 			- Sources/ Language level-> 8 - Lambdas, type annotation etc.
 			- Dependencies/ Module SDK-> 1.8
 	- 截图
-		- ![1.1.png](http://otzm88f21.bkt.clouddn.com/69dbd275-b2f5-4a46-8c5a-6533f072092b.png)
-		- ![1.2.png](http://otzm88f21.bkt.clouddn.com/1b271cf6-6892-45bd-8ebb-637d0268b1e7.png)
-		- ![1.3.png](http://otzm88f21.bkt.clouddn.com/49c887cd-49f1-4823-9519-f92fbdce4208.png)
+		- ![1.1.png](http://doc.yqjdcyy.com/69dbd275-b2f5-4a46-8c5a-6533f072092b.png)
+		- ![1.2.png](http://doc.yqjdcyy.com/1b271cf6-6892-45bd-8ebb-637d0268b1e7.png)
+		- ![1.3.png](http://doc.yqjdcyy.com/49c887cd-49f1-4823-9519-f92fbdce4208.png)
 
 
 - Setting
@@ -46,7 +46,7 @@ toc: true
 				- choice your project
 					- Target bytecodes version-> 1.8
 	- 截图
-		- ![2.1.png](http://otzm88f21.bkt.clouddn.com/12d5e113-12dd-47d1-95aa-7af7feda4b1f.png)
+		- ![2.1.png](http://doc.yqjdcyy.com/12d5e113-12dd-47d1-95aa-7af7feda4b1f.png)
 
 
 ## Maven.Setting

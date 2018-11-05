@@ -38,7 +38,7 @@ toc: true
 	- 将反馈数据根据业务进行处理
 
 #### 图解
-- ![RPC流程.jpg](http://otzm88f21.bkt.clouddn.com/62787ef2-3fd7-47ea-a09b-7c874ed6a9bd.jpg)
+- ![RPC流程.jpg](http://doc.yqjdcyy.com/62787ef2-3fd7-47ea-a09b-7c874ed6a9bd.jpg)
 
 
 ### 协议
@@ -81,7 +81,7 @@ toc: true
 	- DownStream
 		- 业务层返回后，又经过一系列步骤，如加密等，又回到传输层
 ### 图解
-- ![Netty.Stream.jpg](http://otzm88f21.bkt.clouddn.com/790d3b4a-9024-4bb6-a675-ef6eb8b24130.jpg)
+- ![Netty.Stream.jpg](http://doc.yqjdcyy.com/790d3b4a-9024-4bb6-a675-ef6eb8b24130.jpg)
 
 
 
@@ -118,17 +118,17 @@ toc: true
 
 ### 补充
 - 0ms
-	- ![0-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/a8c6767b-9645-470e-8877-0168ebe7e203.png)
-	- ![0-p0-latency.png](http://otzm88f21.bkt.clouddn.com/24315836-b4cf-4f8e-8339-fc07445d60e2.png)
-	- ![0-p0-p99.png](http://otzm88f21.bkt.clouddn.com/baa5f5e9-efe8-4c7a-8d43-12f7c083648a.png)
+	- ![0-p0-throughput.png](http://doc.yqjdcyy.com/a8c6767b-9645-470e-8877-0168ebe7e203.png)
+	- ![0-p0-latency.png](http://doc.yqjdcyy.com/24315836-b4cf-4f8e-8339-fc07445d60e2.png)
+	- ![0-p0-p99.png](http://doc.yqjdcyy.com/baa5f5e9-efe8-4c7a-8d43-12f7c083648a.png)
 - 10ms
-	- ![10-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/c9f77e2c-7598-4ce2-911b-f7237f5cc9ae.png)
-	- ![10-p0-latency.png](http://otzm88f21.bkt.clouddn.com/62aa6f0c-b6c4-4c76-a17a-392414d83f18.png)
-	- ![10-p0-p99.png](http://otzm88f21.bkt.clouddn.com/14a74e3f-40fc-4030-b291-dc4d468da57a.png)
+	- ![10-p0-throughput.png](http://doc.yqjdcyy.com/c9f77e2c-7598-4ce2-911b-f7237f5cc9ae.png)
+	- ![10-p0-latency.png](http://doc.yqjdcyy.com/62aa6f0c-b6c4-4c76-a17a-392414d83f18.png)
+	- ![10-p0-p99.png](http://doc.yqjdcyy.com/14a74e3f-40fc-4030-b291-dc4d468da57a.png)
 - 30ms
-	- ![30-p0-throughput.png](http://otzm88f21.bkt.clouddn.com/9eb99138-b063-4d6e-8d7e-29077be18575.png)
-	- ![30-p0-p99.png](http://otzm88f21.bkt.clouddn.com/36160e2d-c524-4517-945a-0e14a4969860.png)
-	- ![30-p0-latency.png](http://otzm88f21.bkt.clouddn.com/597a2850-b813-4e94-8e37-80d03b14bfd4.png)
+	- ![30-p0-throughput.png](http://doc.yqjdcyy.com/9eb99138-b063-4d6e-8d7e-29077be18575.png)
+	- ![30-p0-p99.png](http://doc.yqjdcyy.com/36160e2d-c524-4517-945a-0e14a4969860.png)
+	- ![30-p0-latency.png](http://doc.yqjdcyy.com/597a2850-b813-4e94-8e37-80d03b14bfd4.png)
 
 
 ## GRPC

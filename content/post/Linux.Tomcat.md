@@ -13,7 +13,7 @@ toc: true
 ## 参考
 - [tomcat中server.xml配置详解](http://blog.csdn.net/zcyhappy1314/article/details/10356909)
 - [Tomcat server.xml配置示例](http://www.importnew.com/17124.html)
-- [service.xml](http://otzm88f21.bkt.clouddn.com/test.server.xml)
+- [service.xml](http://doc.yqjdcyy.com/test.server.xml)
 
 
 ## 软件
@@ -26,9 +26,9 @@ toc: true
     - service
         - bin
             - 运行脚本
-                - [wechat-forum-dev-start.sh](http://otzm88f21.bkt.clouddn.com/wechat-forum-dev-start.sh)
-                - [wechat-forum-dev-stop.sh](http://otzm88f21.bkt.clouddn.com/wechat-forum-dev-stop.sh)
-                - [deploy-instance.sh](http://otzm88f21.bkt.clouddn.com/deploy-instance.sh)
+                - [wechat-forum-dev-start.sh](http://doc.yqjdcyy.com/wechat-forum-dev-start.sh)
+                - [wechat-forum-dev-stop.sh](http://doc.yqjdcyy.com/wechat-forum-dev-stop.sh)
+                - [deploy-instance.sh](http://doc.yqjdcyy.com/deploy-instance.sh)
         - logs
             - wechat-forum-dev
                 - catalina.2017-08-15.log

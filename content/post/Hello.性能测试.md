@@ -39,7 +39,7 @@ toc: true
 ## Latency & Thoughput
 ### 关联
 - 随着并发量（吞吐量）的上升，系统愈发不稳定，响应时间延长
-- ![BenchmarkOptimalRate.png](http://otzm88f21.bkt.clouddn.com/58bda10e-0315-47be-859b-b02a6c39b87d.png)
+- ![BenchmarkOptimalRate.png](http://doc.yqjdcyy.com/58bda10e-0315-47be-859b-b02a6c39b87d.png)
 
 ### 推荐格式
 - `TP99`小于`100ms`的时候，系统可以承载的最大并发数是`1000qps`

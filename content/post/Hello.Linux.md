@@ -32,7 +32,7 @@ toc: true
 - 内存管理：控制内存，虚拟内存
 - 档案系统管理：数据I/O及NTFS档案格式硬盘
 - 装置驱动
-    - ![装置驱动](http://otzm88f21.bkt.clouddn.com/aee190c7-5746-42a6-886d-f45819cba6ea.jpg)
+    - ![装置驱动](http://doc.yqjdcyy.com/aee190c7-5746-42a6-886d-f45819cba6ea.jpg)
 
 
 ## 系统演化
