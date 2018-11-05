@@ -2,6 +2,22 @@
 <search>
     
      <entry>
+        <title>Linux.Netstat</title>
+        <url>http://domain.yqjdcyy.com/post/linux.netstat/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Linux</tag>
+        </tags>
+        <content type="html">  Netstat 作用  可于内核中访问网络连接状态及其相关信息 用于显示网络连接、路由表和每个网络接口设备的状态信息  格式  netstat [-a][-e][-n][-o][-p Protocol][-r][-s][Interval]  参数    参数 作用     -a/-all 显示所有socket，不论是否正在监听   -c/-continuous 持续每秒进行选中信息的输出显示   -i/-interfaces=iface 显示所有的网络接口   -n/-numeric 以数值地址形式进行展示   -r/-route 显示内核路由表，同 route -e   -t/-tcp 显示 TCP 协议的连接情况   -u/-udp 显示 UDP 协议的连接情况   -v/-verbose 详细显示正在进行的工作   -p/-program 显示套接字关联的程序名称和 PID   -e/-extend 显示额外信息，如 uid 等
+若连续两次调用则显示最大程度明细   -o/-timers 显示与网络计时器相关的信息   -s/-statistics 展示每个协议的摘要统计   -l/-listening 仅显示监听中的套接字    序列图     输出 State    State Desc     LISTENING 正在监听端口   SYNC_SEND 已发送 SYN 报文等待连接请求建立   SYNC_RECEIVED 已接收 SYN 报文的连接请求后，发送 SYN 回包后的   ESTABLISHED 连接已建立，开始进行数据传输   CLOSE_WAIT 服务端等待关闭
+回应客户端的 FIN报文以 ACK报文，无后缀则关闭 Socket 并发送 FIN 报文   FIN_WAIT_1 客户端请求断开，发送 FIN 报文后的等待状态
+由于服务端响应及时，观察频率低   FIN_WAIT_2 客户端等待数据传输完成后，服务端发送FIN 报文确认的过程
+半连接   LAST_ACK 被动关闭方等待最终 ACK 报文的确认   TIME_WAIT 接收 FIN 并返回 ACK 报文后，等待 2MSL 后返回 CLOSED 状态   CLOSING 等待远程 TCP 对连接的确认   CLOSED 无连接状态链路    示例 过滤 TCP 连接统计  netstat -nat |awk &#39;{print $6}&#39;| sort | uniq -c  查询指定端口的 TCP 连接数  netstat -ant | grep -i &amp;quot;80&amp;quot; | wc -l  已连接链路数  netstat -an | grep ESTABLISHED | wc -l  参考  netstat用法及TCP state解析 查看linux中的TCP连接数  </content>
+    </entry>
+    
+     <entry>
         <title>Hello.Spring.Cloud.Sleuth</title>
         <url>http://domain.yqjdcyy.com/post/hello.spring.cloud.sleuth/</url>
         <categories>
@@ -716,7 +732,8 @@ Active Proto Foreign tcp CLOSE_WAIT tcp ESTABLISHED tcp CLOSE_WAIT tcp ESTABLISH
 -rw-rw-r-- 1 appuser appuser 5840 Jul 11 16:31 CLOSE_WAIT -rw-rw-r-- 1 appuser appuser 41840 Jul 11 16:31 ESTABLISHED -rw-rw-r-- 1 appuser appuser 3280 Jul 11 16:31 FIN_WAIT1 -rw-rw-r-- 1 appuser appuser 480 Jul 11 16:31 FIN_WAIT2 awk -f sum.awk ../netstat.log
  cat sum.awk
 #!/bin/awk -f BEGIN{ wait= 0 printf &amp;#34;TYPE NUM\n&amp;#34; printf &amp;#34;-------------------\n&amp;#34; } { wait&#43;=$6 ~ /WAIT/? 1: 0 printf &amp;#34;%10s\t%d\n&amp;#34;, $6, ($6 ~ /WAIT/? 1: 0) } END{ printf &amp;#34;--------------------\n&amp;#34; printf &amp;#34;\tWAIT.NUM:%10d\n\tWAIT.AVG: %10f\n&amp;#34;,wait, wait/NR } result
-TYPE NUM ------------------- 0 Foreign 0 CLOSE_WAIT 1 ESTABLISHED 0 .... CONNECTED 0 -------------------- WAIT.NUM: 136 WAIT.AVG: 0.176853   Reference Man  gawk.log  More  AWK 简明教程 linux awk命令详解 awk、nawk、mawk、gawk的简答介绍 Linux awk 命令 awk命令  </content>
+TYPE NUM ------------------- 0 Foreign 0 CLOSE_WAIT 1 ESTABLISHED 0 .... CONNECTED 0 -------------------- WAIT.NUM: 136 WAIT.AVG: 0.176853  awk &#39;{print $1}&#39; access.log |sort|uniq -c|sort -nr|head -10
+  Reference Man  gawk.log  More  AWK 简明教程 linux awk命令详解 awk、nawk、mawk、gawk的简答介绍 Linux awk 命令 awk命令  </content>
     </entry>
     
      <entry>
@@ -5084,7 +5101,8 @@ OAuth2 模式 授权码模式 - authorization code 简化模式 - implicit 密�
 参考 官方   Spring Security Reference - 5.0.5
  Spring Security
  Spring Security Reference - 5.1.2
- []()
+ /spring-session/docs
+ H2.Features
  []()
   补充  理解OAuth 2.0 spring boot集成h2指南 Spring Data JPA(二)：SpringBoot集成H2 []() []()  异常  There is no PasswordEncoder mapped for the id &amp;ldquo;null&amp;rdquo; Why I can&amp;rsquo;t get the org.h2.Driver? I use maven  将 H2.scope 由 test 更新为 runtime  springboot配置内存数据库H2  数据插入，但无法正常查询  H2 Database Console  H2.Console 连接 403  H2 in-memory database. Table not found JdbcDaoImpl  sql.init  []() []()  代码  4. Samples and Guides  Hello Spring Security Hello Spring Security Boot Hello Spring Security XML Hello Spring MVC Security Custom Login Form OAuth 2.0 Login  []() []() []() []()  </content>
     </entry>
@@ -5129,6 +5147,26 @@ OAuth2 模式 授权码模式 - authorization code 简化模式 - implicit 密�
  PyQt5
  PyQt5学习与交流
   </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/servlet.work/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  整体  Tomcat 容器模型     Tomcat.start() Tomcat.getServer() Tomcat.server = new StandardServer() StandardServer.globalNamingResources= new NamingResourcesImpl(); if(isUseNaming()) StandardServer.namingContextListener = new NamingContextListener(); Tomcat.getConnecotr() Tomcat.server.start()
+细节 Servlet 作用 Filter Listener ServletContext 启动  程序容器启动
+ Tomcat Jetty  应用部署
+ 应用加载
+ ServletContext 创建 应用加载  web.xml 解析 &amp;lt;servlet&amp;gt;/ &amp;lt;filter&amp;gt;/ &amp;lt;listener&amp;gt; 实例化  在服务器内存中进行 实例化过滤器时，将由容器的一个新 FilterConfig 来调用应用的 init()     关闭  程序容器关闭  应用卸载  servlet|filter destroy() ServletContext/ Servlet/ Filter/ Listener 废弃    配置 load-on-startup  当 &amp;lt;servlet&amp;gt;&amp;lt;load-on-startup&amp;gt; &amp;gt; 0，Servlet.init() 方法将于启动时使用一个新的 ServletConfig 来调用  参数值代表序列值  比如 1 表示第一个被实例化 如若数值相同，则按 web.xml 出现的顺序进行加载  而若 load-on-startup 未配置，则将于第一次 HTTP 请求命中时，调用 init() 方法   HttpServlet(Request|Response)  Servlet 容器监听于指定端口的 HTTP 请求命中时，调用 客户端发起 HTTP 请求  Servlet 容器创建 HttpServletRequest 和 HttpServletResponse 对象 将对象传递给 Filter 链路  过滤器未拦截，则通过调用 chain.doFilter(request, response) 继续执行  最后传递给 Servlet 实例  调用 Servlet.service() 方法  通过 request.getMethod() 将请求分发给指定的 doXxx() 方法  传递的内容包含 HTTP.Request/ HTTP.Header/ HTTP.Body HttpServletResponse 可设置 HTTP.Header/ HTTP.Body 请求完成后，HttpServletRequest 和 HttpServletResponse 对象均将被回收再利用  如若特地方法不支持，则返回 405 Method not allowed 异常     HttpSession  客户端首次访问应用
+ 通过 request.getSession() 创建获取 HttpSession  生成长且唯一的 Session.Id，并存储于服务器内存中  返回时将 Session 一并返回  通过 HTTP.Set-Cookie 将 session.id 作为 JSESSIONID 返回 服务端将读取 cookie.JSESSIONID 值并匹配内存中的 HttpSession   客户端再次请求
+ 只要 cookie 仍有效，就将其通过 Http.Header.Cookie 带回  服务器留存
+ HttpSession 将于未使用情况下， web.xml &amp;lt;session-timeout&amp;gt; 分钟后销毁  默认的 session.timeout 为 30 分钟  而在 HttpSession 过期后，客户端重新访问，将会生成以新的 HttpSession  客户端留存
+ 在浏览器实例运行其中，session.cookie 将始终保留   生命周期 ServletContext  同容器一并销毁 于所有请求、会话中共享  HttpSession  HttpSession 于客户端交互期间存在 服务端的会话不存在过期 于同一会话的所有请求中共享  HttpServlet(Request|Response)  于请求的发起时创建，于响应完成时销毁 不共享  Servlet/ Servlet/ Servlet  同容器一并销毁 于所有的请求、会话中共享  Attribute  于 ServletContext/ HttpServletRequest/ HttpSession 中创建的属性，于所属容器管理  类似于对象管理框架中的对象，如 JSF、CDI、Spring 等   线程安全  Servlet 和 Filter 于所有请求中共享  通过多线程、不同进程在同一实例中进行支持  实例的重新  切匆将请求或会话域数据作为 Servlet 或过滤器的实例变量  于所有请求、会话中共享，导致非线程安全    参考  How do servlets work? Servlet 工作原理解析 Spring Boot Servlet Java Servlet 技术简介 []() []() []() []()  </content>
     </entry>
     
      <entry>

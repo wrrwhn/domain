@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Netstat</title>
+      <link>http://domain.yqjdcyy.com/post/linux.netstat/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.netstat/</guid>
+      <description>Netstat 作用 可于内核中访问网络连接状态及其相关信息 用于显示网络连接、路由表和每个网络接口设备的状态信息 格式 netstat [-a][-e][-n][-o][-p Protocol][-r][-s][Interval] 参数 参数 作用 -a/-all 显示所有socket</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud.Sleuth</title>
@@ -2249,6 +2258,19 @@ FAQ Architecture Code 2.</description>
  PyQt5
  PyQt5学习与交流
   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/servlet.work/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/servlet.work/</guid>
+      <description>整体  Tomcat 容器模型     Tomcat.start() Tomcat.getServer() Tomcat.server = new StandardServer() StandardServer.globalNamingResources= new NamingResourcesImpl(); if(isUseNaming()) StandardServer.namingContextListener = new NamingContextListener(); Tomcat.getConnecotr() Tomcat.server.start()
+细节 Servlet 作用 Filter Listener ServletContext 启动  程序容器启动
+ Tomcat Jetty  应用部署
+ 应用加载
+ ServletContext 创建 应用加载  web.xml 解析 &amp;lt;servlet&amp;gt;/ &amp;lt;filter&amp;gt;/ &amp;lt;listener&amp;gt; 实例化  在服务器内存中进行 实例化过滤器时，将由容器的一个新 FilterConfig 来调用应用的 init()     关闭  程序容器关闭  应用卸载  servlet|filter destroy() ServletContext/ Servlet/ Filter/ Listener 废弃    配置 load-on-startup  当 &amp;lt;servlet&amp;gt;&amp;lt;load-on-startup&amp;gt; &amp;gt; 0，Servlet.</description>
     </item>
     
     <item>

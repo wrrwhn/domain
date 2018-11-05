@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Oct 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 04 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux.Netstat</title>
+      <link>http://domain.yqjdcyy.com/post/linux.netstat/</link>
+      <pubDate>Sun, 04 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/linux.netstat/</guid>
+      <description>Netstat 作用 可于内核中访问网络连接状态及其相关信息 用于显示网络连接、路由表和每个网络接口设备的状态信息 格式 netstat [-a][-e][-n][-o][-p Protocol][-r][-s][Interval] 参数 参数 作用 -a/-all 显示所有socket</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Cloud.Sleuth</title>
