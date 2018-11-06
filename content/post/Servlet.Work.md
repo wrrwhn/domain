@@ -6,23 +6,26 @@
     - ![tomcat-container.jpg](http://doc.yqjdcyy.com/e6aa9c86-f4bf-4f50-9040-67a3bedff6b7.jpg)
 
 
-# 
+# 11
 
-Tomcat.start()
-    Tomcat.getServer()
-        Tomcat.server = new StandardServer()
-            StandardServer.globalNamingResources= new NamingResourcesImpl();
-            if(isUseNaming())
-                StandardServer.namingContextListener = new NamingContextListener();
-    Tomcat.getConnecotr()
-    Tomcat.server.start()
-
+    ```java
+    Tomcat.start()
+        Tomcat.getServer()
+            Tomcat.server = new StandardServer()
+                StandardServer.globalNamingResources= new NamingResourcesImpl();
+                if(isUseNaming())
+                    StandardServer.namingContextListener = new NamingContextListener();
+        Tomcat.getConnecotr()
+        Tomcat.server.start()
+    ```
 
 # 细节
 ## Servlet
 ### 作用
 
-### 
+### 代码
+
+### 补充
 
 
 
