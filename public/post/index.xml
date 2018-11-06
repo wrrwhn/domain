@@ -2284,8 +2284,7 @@ FAQ Architecture Code 2.</description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/servlet.work/</guid>
-      <description>整体  Tomcat 容器模型     Tomcat.start() Tomcat.getServer() Tomcat.server = new StandardServer() StandardServer.globalNamingResources= new NamingResourcesImpl(); if(isUseNaming()) StandardServer.namingContextListener = new NamingContextListener(); Tomcat.getConnecotr() Tomcat.server.start()
-细节 Servlet 作用 Filter Listener ServletContext 启动  程序容器启动
+      <description>整体  Tomcat 容器模型     11 ```java Tomcat.start() Tomcat.getServer() Tomcat.server = new StandardServer() StandardServer.globalNamingResources= new NamingResourcesImpl(); if(isUseNaming()) StandardServer.namingContextListener = new NamingContextListener(); Tomcat.getConnecotr() Tomcat.server.start() ``` 细节 Servlet 作用 代码 补充 Filter Listener ServletContext 启动  程序容器启动
  Tomcat Jetty  应用部署
  应用加载
  ServletContext 创建 应用加载  web.xml 解析 &amp;lt;servlet&amp;gt;/ &amp;lt;filter&amp;gt;/ &amp;lt;listener&amp;gt; 实例化  在服务器内存中进行 实例化过滤器时，将由容器的一个新 FilterConfig 来调用应用的 init()     关闭  程序容器关闭  应用卸载  servlet|filter destroy() ServletContext/ Servlet/ Filter/ Listener 废弃    配置 load-on-startup  当 &amp;lt;servlet&amp;gt;&amp;lt;load-on-startup&amp;gt; &amp;gt; 0，Servlet.</description>
