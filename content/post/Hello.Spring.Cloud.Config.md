@@ -325,9 +325,6 @@ toc: true
 - [微服务之分布式配置中心Cloud Config](http://blueskykong.com/2017/11/20/config-server1/)
 - [spring cloud 学习(5) - config server](https://www.cnblogs.com/yjmyzz/p/spring-cloud-config-server-tutorial.html)
 - [spring boot 2 使用 actuator 404的问题](https://my.oschina.net/iyinghui/blog/1835220)
-- []()
-- []()
-- []()
 
 ## 代码
 - [yqjdcyy/Hello_Spring_Cloud](https://github.com/yqjdcyy/Hello_Spring_Cloud)
