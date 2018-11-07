@@ -79,7 +79,7 @@ SET timestamp=1456293509; select meetingsig0_.id as id1_10_, meetingsig0_.accoun
         <title>费曼学习法</title>
         <url>http://domain.yqjdcyy.com/post/%E8%B4%B9%E6%9B%BC%E5%AD%A6%E4%B9%A0%E6%B3%95/</url>
         <categories>
-          <category>整理</category>
+          <category>阅读</category>
         </categories>
         <tags>
           <tag>学习</tag>
@@ -295,7 +295,7 @@ spring: cloud: config: uri: http://localhost:10086   Code  ConfigController
 ## Bus.Kafka spring: stream: kafka: binder: brokers: &amp;#34;192.168.16.37:9092&amp;#34;  Log  stdout.log log partitions assigned: [springCloudBus-0]   Request  GET /actuator  查看开放的所有监控接口  POST /actuator/bus-refresh  所有关联应用重新拉取配置  POST /actuator/bus-refresh/portal  指定 portal 应用进行配置拉取   细节 配置格式  键值对 YAML 格式  来源  Git SVN 本地目录 JDBC 覆盖  spring.cloud.config.server.overrides   拉取  git 更新后，服务端 自动拉取最新 配置 通过 spring.application.name 的属性值，作为注册到 Config Server 的客户端 portal ID 默认推送 application.[properties|yml] 文件 而 portal.[properties|yml] 将覆盖 application.[properties|yml] 中的相应配置
  示例
 # 文件中的相应属性逐级覆盖 application.yml portal.yml portal-prod.yml   正则  配置文件匹配
-spring: cloud: config: server: git: uri: https://github.com/spring-cloud-samples/config-repo repos: development: pattern: - &amp;#39;*/development&amp;#39; - &amp;#39;*/staging&amp;#39; uri: https://github.com/development/config-repo staging: pattern: - &amp;#39;*/qa&amp;#39; - &amp;#39;*/production&amp;#39; uri: https://github.com/staging/config-repo   参考 文档  Part II. Spring Cloud Config 微服务之分布式配置中心Cloud Config spring cloud 学习(5) - config server spring boot 2 使用 actuator 404的问题 []() []() []()  代码  yqjdcyy/Hello_Spring_Cloud  </content>
+spring: cloud: config: server: git: uri: https://github.com/spring-cloud-samples/config-repo repos: development: pattern: - &amp;#39;*/development&amp;#39; - &amp;#39;*/staging&amp;#39; uri: https://github.com/development/config-repo staging: pattern: - &amp;#39;*/qa&amp;#39; - &amp;#39;*/production&amp;#39; uri: https://github.com/staging/config-repo   参考 文档  Part II. Spring Cloud Config 微服务之分布式配置中心Cloud Config spring cloud 学习(5) - config server spring boot 2 使用 actuator 404的问题  代码  yqjdcyy/Hello_Spring_Cloud  </content>
     </entry>
     
      <entry>
