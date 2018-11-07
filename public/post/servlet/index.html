@@ -1,0 +1,1061 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Hello.Servlet - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Hello.Servlet">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Hello.Servlet - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/servlet/" itemprop="url">
+        Hello.Servlet
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-07">
+    2018-11-07
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">1906 字 ~4分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="整体">整体</h1>
+
+<h2 id="结构图">结构图</h2>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/8c2fa19c-349c-4f95-956d-082fc70d3243.jpg" alt="Servlet.jpg" /></li>
+</ul>
+
+<h2 id="调用顺序">调用顺序</h2>
+
+<h3 id="servlet">Servlet</h3>
+
+<ul>
+<li>Filter.Pre</li>
+<li>Servlet.service</li>
+<li>Filter.After</li>
+</ul>
+
+<h3 id="controller">Controller</h3>
+
+<ul>
+<li>Filter.Pre</li>
+<li>Interceptor.Pre</li>
+<li>HandlerAdapter</li>
+<li>Interceptor.Post</li>
+<li>Interceptor.Complete</li>
+<li>Filter.After</li>
+</ul>
+
+<h1 id="细节">细节</h1>
+
+<h2 id="servlet-1">Servlet</h2>
+
+<h3 id="说明">说明</h3>
+
+<ul>
+<li>通过 <code>Servlet</code> 规范套接字请求，声明了初始化、销毁的生命周期和处理请求的输入输出规范
+
+<ul>
+<li>配置以分发处理指定响应路径的请求，如专门处理 <code>/resource</code> 的资源相关业务</li>
+<li>具体实现可通过实现 <code>HttpServlet</code> 来支持</li>
+<li>屏蔽了不同容器的差异性，保障了代码利用</li>
+</ul></li>
+</ul>
+
+<h3 id="代码">代码</h3>
+
+<h4 id="maven">Maven</h4>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h4 id="code">Code</h4>
+
+<ul>
+<li><p><code>HelloServlet.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 指定响应分发路径
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@WebServlet</span><span style="color:#f92672">(</span>urlPatterns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/hello&#34;</span><span style="color:#f92672">,</span> description <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;Hello.Servlet&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloServlet</span> <span style="color:#66d9ef">extends</span> HttpServlet <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 业务处理
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">service</span><span style="color:#f92672">(</span>ServletRequest req<span style="color:#f92672">,</span> ServletResponse res<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> ServletException<span style="color:#f92672">,</span> IOException <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// 简化实现，未支持请求方法差异化处理
+</span><span style="color:#75715e"></span>        PrintWriter writer <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span><span style="color:#a6e22e">getWriter</span><span style="color:#f92672">();</span>
+        writer<span style="color:#f92672">.</span><span style="color:#a6e22e">print</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello&#34;</span><span style="color:#f92672">);</span>
+        writer<span style="color:#f92672">.</span><span style="color:#a6e22e">flush</span><span style="color:#f92672">();</span>
+        writer<span style="color:#f92672">.</span><span style="color:#a6e22e">close</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>Application.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#a6e22e">@ServletComponentScan</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+</ul>
+
+<h2 id="filter">Filter</h2>
+
+<h3 id="说明-1">说明</h3>
+
+<ul>
+<li><p>于 <code>Servlet</code> 调用前后，进行业务拦截处理</p>
+
+<ul>
+<li>各请求均需要经过 <code>Filter.Chain</code> 中的每个过滤器</li>
+<li>未指定顺序情况下，将按照名称倒序执行</li>
+<li>调用 <code>chain.doFilter(request, response)</code> 继续执行</li>
+</ul></li>
+
+<li><p>常用内容</p>
+
+<ul>
+<li>用户授权</li>
+<li>日志</li>
+<li>编解码</li>
+<li>事务</li>
+</ul></li>
+</ul>
+
+<h3 id="代码-1">代码</h3>
+
+<h4 id="maven-1">Maven</h4>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h4 id="code-1">Code</h4>
+
+<ul>
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#a6e22e">@ServletComponentScan</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;com.yao.filter&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>LogFilter</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// 拦截所有请求
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@WebFilter</span><span style="color:#f92672">(</span>urlPatterns <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/*&#34;</span><span style="color:#f92672">,</span> filterName <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;filter.log&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogFilter</span> <span style="color:#66d9ef">implements</span> Filter <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">doFilter</span><span style="color:#f92672">(</span>ServletRequest request<span style="color:#f92672">,</span> ServletResponse response<span style="color:#f92672">,</span> FilterChain chain<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> ServletException <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// 请求前处理
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">();</span>
+        chain<span style="color:#f92672">.</span><span style="color:#a6e22e">doFilter</span><span style="color:#f92672">(</span>request<span style="color:#f92672">,</span> response<span style="color:#f92672">);</span>
+        <span style="color:#75715e">// 请求后处理
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Request[%s].cost= %d\n&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">((</span>HttpServletRequest<span style="color:#f92672">)</span> request<span style="color:#f92672">).</span><span style="color:#a6e22e">getRequestURL</span><span style="color:#f92672">(),</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+</ul>
+
+<h2 id="listener">Listener</h2>
+
+<h3 id="作用">作用</h3>
+
+<ul>
+<li>针对 <code>application</code>/ <code>session</code>/ <code>request</code> 三者的创建、销毁的监听</li>
+<li>场景
+
+<ul>
+<li>加载配置信息</li>
+<li>获取在线人数</li>
+<li>请求日志</li>
+</ul></li>
+</ul>
+
+<h3 id="代码-2">代码</h3>
+
+<h4 id="maven-2">Maven</h4>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h4 id="code-2">Code</h4>
+
+<ul>
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+
+<li><p><code>ListenerConfig</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ListenerConfig</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORServletContextListener<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">initServletContextListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+        ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORServletContextListener<span style="color:#f92672">&gt;</span> registration <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORServletContextListener<span style="color:#f92672">&gt;();</span>
+        registration<span style="color:#f92672">.</span><span style="color:#a6e22e">setListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ORServletContextListener<span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> registration<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORSessionListener<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">initSessionListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+        ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORSessionListener<span style="color:#f92672">&gt;</span> registration <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORSessionListener<span style="color:#f92672">&gt;();</span>
+        registration<span style="color:#f92672">.</span><span style="color:#a6e22e">setListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ORSessionListener<span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> registration<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORRequestListener<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">initRequestListener</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+        ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORRequestListener<span style="color:#f92672">&gt;</span> registration <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServletListenerRegistrationBean<span style="color:#f92672">&lt;</span>ORRequestListener<span style="color:#f92672">&gt;();</span>
+        registration<span style="color:#f92672">.</span><span style="color:#a6e22e">setListener</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> ORRequestListener<span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> registration<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+
+<li><p><code>ORRequestListener</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ORRequestListener</span> <span style="color:#66d9ef">implements</span> ServletRequestListener <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestInitialized</span><span style="color:#f92672">(</span>ServletRequestEvent sre<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.ServletRequest.Listener.init&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">requestDestroyed</span><span style="color:#f92672">(</span>ServletRequestEvent sre<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.ServletRequest.Listener.destroy&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>ORServletContextListener</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ORServletContextListener</span> <span style="color:#66d9ef">implements</span> ServletContextListener<span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">contextInitialized</span><span style="color:#f92672">(</span>ServletContextEvent sce<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.ServletContext.Listener.init&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">contextDestroyed</span><span style="color:#f92672">(</span>ServletContextEvent sce<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.ServletContext.Listener.destroy&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>ORSessionListener</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ORSessionListener</span> <span style="color:#66d9ef">implements</span> HttpSessionListener <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String SESSION_LIVE_COUNT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SESSION-LIVE-COUNT&#34;</span><span style="color:#f92672">;</span>
+
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sessionCreated</span><span style="color:#f92672">(</span>HttpSessionEvent se<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.HttpSession.Listener.init&#34;</span><span style="color:#f92672">);</span>
+
+        Object obj <span style="color:#f92672">=</span> se<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>SESSION_LIVE_COUNT<span style="color:#f92672">);</span>
+        se<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span>SESSION_LIVE_COUNT<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> obj <span style="color:#f92672">?</span> 1 <span style="color:#f92672">:</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>obj<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">())</span> <span style="color:#f92672">+</span> 1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">sessionDestroyed</span><span style="color:#f92672">(</span>HttpSessionEvent se<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\tOverride.HttpSession.Listener.destroy&#34;</span><span style="color:#f92672">);</span>
+
+        Object obj <span style="color:#f92672">=</span> se<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>SESSION_LIVE_COUNT<span style="color:#f92672">);</span>
+        se<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span>SESSION_LIVE_COUNT<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> obj <span style="color:#f92672">?</span> 0 <span style="color:#f92672">:</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">valueOf</span><span style="color:#f92672">(</span>obj<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">())</span> <span style="color:#f92672">-</span> 1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>UserController</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String USER_SESSION_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;SESSION:USER&#34;</span><span style="color:#f92672">;</span>
+
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">},</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">list</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+
+        <span style="color:#66d9ef">return</span> Stream<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> UserVo <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> Long id<span style="color:#f92672">,</span> HttpServletRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span>USER_SESSION_KEY<span style="color:#f92672">,</span> id<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> UserVo<span style="color:#f92672">(</span>id<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">DELETE</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">delete</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> Long id<span style="color:#f92672">,</span> HttpServletRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">removeAttribute</span><span style="color:#f92672">(</span>USER_SESSION_KEY<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/live&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Integer <span style="color:#a6e22e">live</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        Object obj <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>ORSessionListener<span style="color:#f92672">.</span><span style="color:#a6e22e">SESSION_LIVE_COUNT</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span> <span style="color:#f92672">==</span> obj <span style="color:#f92672">?</span> 0 <span style="color:#f92672">:</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>obj<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h4 id="invoke">Invoke</h4>
+
+<ul>
+<li><p><code>application.start</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletContext</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span></code></pre></div></li>
+
+<li><p><code>/user    GET</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span>
+2018<span style="color:#f92672">-</span>11<span style="color:#f92672">-</span>06 15:57:22<span style="color:#f92672">.</span><span style="color:#a6e22e">289</span>  INFO 221864 <span style="color:#f92672">---</span> <span style="color:#f92672">[</span>nio<span style="color:#f92672">-</span>8080<span style="color:#f92672">-</span>exec<span style="color:#f92672">-</span>4<span style="color:#f92672">]</span> o<span style="color:#f92672">.</span><span style="color:#a6e22e">a</span><span style="color:#f92672">.</span><span style="color:#a6e22e">c</span><span style="color:#f92672">.</span><span style="color:#a6e22e">c</span><span style="color:#f92672">.</span><span style="color:#a6e22e">C</span><span style="color:#f92672">.[</span>Tomcat<span style="color:#f92672">].[</span>localhost<span style="color:#f92672">].[/]</span>       <span style="color:#f92672">:</span> Initializing Spring DispatcherServlet <span style="color:#960050;background-color:#1e0010">&#39;</span>dispatcherServlet<span style="color:#960050;background-color:#1e0010">&#39;</span>
+2018<span style="color:#f92672">-</span>11<span style="color:#f92672">-</span>06 15:57:22<span style="color:#f92672">.</span><span style="color:#a6e22e">289</span>  INFO 221864 <span style="color:#f92672">---</span> <span style="color:#f92672">[</span>nio<span style="color:#f92672">-</span>8080<span style="color:#f92672">-</span>exec<span style="color:#f92672">-</span>4<span style="color:#f92672">]</span> o<span style="color:#f92672">.</span><span style="color:#a6e22e">s</span><span style="color:#f92672">.</span><span style="color:#a6e22e">web</span><span style="color:#f92672">.</span><span style="color:#a6e22e">servlet</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DispatcherServlet</span>        <span style="color:#f92672">:</span> Initializing Servlet <span style="color:#960050;background-color:#1e0010">&#39;</span>dispatcherServlet<span style="color:#960050;background-color:#1e0010">&#39;</span>
+2018<span style="color:#f92672">-</span>11<span style="color:#f92672">-</span>06 15:57:22<span style="color:#f92672">.</span><span style="color:#a6e22e">373</span>  INFO 221864 <span style="color:#f92672">---</span> <span style="color:#f92672">[</span>nio<span style="color:#f92672">-</span>8080<span style="color:#f92672">-</span>exec<span style="color:#f92672">-</span>4<span style="color:#f92672">]</span> o<span style="color:#f92672">.</span><span style="color:#a6e22e">s</span><span style="color:#f92672">.</span><span style="color:#a6e22e">web</span><span style="color:#f92672">.</span><span style="color:#a6e22e">servlet</span><span style="color:#f92672">.</span><span style="color:#a6e22e">DispatcherServlet</span>        <span style="color:#f92672">:</span> Completed initialization in 84 ms
+    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">destroy</span></code></pre></div></li>
+
+<li><p><code>/user/1  GET</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span>
+    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">HttpSession</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span>
+    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">destroy</span></code></pre></div></li>
+
+<li><p><code>/user/1  DELETE</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">init</span>
+    Override<span style="color:#f92672">.</span><span style="color:#a6e22e">ServletRequest</span><span style="color:#f92672">.</span><span style="color:#a6e22e">Listener</span><span style="color:#f92672">.</span><span style="color:#a6e22e">destroy</span></code></pre></div></li>
+
+<li><p><code>/user/live   GET</code></p></li>
+</ul>
+
+<h2 id="interceptor">Interceptor</h2>
+
+<h3 id="说明-2">说明</h3>
+
+<ul>
+<li>基于面向切面编程,使用 java 反射机制实现</li>
+<li>仅过 <code>Controller</code> 中的 <code>HTTP</code> 请求进行拦截</li>
+<li>可针对响应前、响应后和完成渲染三个时机进行控制
+
+<ul>
+<li>通过抛出异常来阻断执行</li>
+</ul></li>
+<li>多个拦截器，依据声明的顺序执行
+
+<ul>
+<li><strong>正序</strong> 执行 <code>preHandle</code></li>
+<li><strong>倒序</strong> 执行 <code>postHandle</code></li>
+<li><strong>倒序</strong> 执行 <code>afterCompletion</code></li>
+</ul></li>
+</ul>
+
+<h3 id="代码-3">代码</h3>
+
+<h4 id="maven-3">Maven</h4>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h4 id="code-3">Code</h4>
+
+<ul>
+<li><p><code>Application</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+
+<li><p><code>LogInterceptor</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">LogInterceptor</span> <span style="color:#66d9ef">implements</span> HandlerInterceptor <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> String LOG_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;INTERCEPTOR_LOG_KEY&#34;</span><span style="color:#f92672">;</span>
+
+
+    <span style="color:#75715e">// 调用请求前
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">preHandle</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">,</span> Object handler<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+        request<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span>LOG_KEY<span style="color:#f92672">,</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">());</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#75715e">// 调用完成后
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">postHandle</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">,</span> Object handler<span style="color:#f92672">,</span> <span style="color:#a6e22e">@Nullable</span> ModelAndView modelAndView<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+        <span style="color:#66d9ef">long</span> start <span style="color:#f92672">=</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">long</span><span style="color:#f92672">)</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>LOG_KEY<span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Request[%s].cost= %d\n&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">((</span>HttpServletRequest<span style="color:#f92672">)</span> request<span style="color:#f92672">).</span><span style="color:#a6e22e">getRequestURL</span><span style="color:#f92672">(),</span> System<span style="color:#f92672">.</span><span style="color:#a6e22e">currentTimeMillis</span><span style="color:#f92672">()</span> <span style="color:#f92672">-</span> start<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+
+<li><p><code>InterceptorConfig</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InterceptorConfig</span> <span style="color:#66d9ef">implements</span> WebMvcConfigurer <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 添加所有路径的日志拦截
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addInterceptors</span><span style="color:#f92672">(</span>InterceptorRegistry registry<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        registry<span style="color:#f92672">.</span><span style="color:#a6e22e">addInterceptor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> LogInterceptor<span style="color:#f92672">()).</span><span style="color:#a6e22e">addPathPatterns</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/**&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+</ul>
+
+<h2 id="servletcontext">ServletContext</h2>
+
+<h3 id="启动">启动</h3>
+
+<ul>
+<li><p>程序容器启动</p>
+
+<ul>
+<li>Tomcat</li>
+<li>Jetty</li>
+</ul></li>
+
+<li><p>应用部署</p></li>
+
+<li><p>应用加载</p>
+
+<ul>
+<li>ServletContext 创建</li>
+<li>应用加载
+
+<ul>
+<li><code>web.xml</code> 解析</li>
+<li><code>&lt;servlet&gt;</code>/ <code>&lt;filter&gt;</code>/ <code>&lt;listener&gt;</code> 实例化
+
+<ul>
+<li>在服务器内存中进行</li>
+<li>实例化过滤器时，将由容器的一个新 <code>FilterConfig</code> 来调用应用的 <code>init()</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="关闭">关闭</h3>
+
+<ul>
+<li>程序容器关闭
+
+<ul>
+<li>应用卸载
+
+<ul>
+<li><code>servlet|filter destroy()</code></li>
+<li><code>ServletContext</code>/ <code>Servlet</code>/ <code>Filter</code>/ <code>Listener</code> 废弃</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="配置">配置</h3>
+
+<h4 id="load-on-startup">load-on-startup</h4>
+
+<ul>
+<li>当 <code>&lt;servlet&gt;&lt;load-on-startup&gt;</code> &gt; 0，<code>Servlet.init()</code> 方法将于启动时使用一个新的 <code>ServletConfig</code> 来调用
+
+<ul>
+<li>参数值代表序列值
+
+<ul>
+<li>比如 1 表示第一个被实例化</li>
+<li>如若数值相同，则按 <code>web.xml</code> 出现的顺序进行加载</li>
+</ul></li>
+<li>而若 <code>load-on-startup</code> 未配置，则将于第一次 HTTP 请求命中时，调用 <code>init()</code> 方法</li>
+</ul></li>
+</ul>
+
+<h2 id="httpservlet-request-response">HttpServlet(Request|Response)</h2>
+
+<ul>
+<li><code>Servlet</code> 容器监听于指定端口的 <code>HTTP</code> 请求命中时，调用</li>
+<li>客户端发起 HTTP 请求
+
+<ul>
+<li><code>Servlet</code> 容器创建 <code>HttpServletRequest</code> 和 <code>HttpServletResponse</code> 对象</li>
+<li>将对象传递给 <code>Filter</code> 链路
+
+<ul>
+<li>过滤器未拦截，则通过调用 <code>chain.doFilter(request, response)</code> 继续执行</li>
+</ul></li>
+<li>最后传递给 <code>Servlet</code> 实例
+
+<ul>
+<li>调用 Servlet.service() 方法
+
+<ul>
+<li>通过 <code>request.getMethod()</code> 将请求分发给指定的 <code>doXxx()</code> 方法
+
+<ul>
+<li>传递的内容包含 <code>HTTP.Request</code>/ <code>HTTP.Header</code>/ <code>HTTP.Body</code></li>
+<li><code>HttpServletResponse</code> 可设置 <code>HTTP.Header</code>/ <code>HTTP.Body</code></li>
+<li>请求完成后，<code>HttpServletRequest</code> 和 <code>HttpServletResponse</code> 对象均将被回收再利用</li>
+</ul></li>
+<li>如若特地方法不支持，则返回 <code>405 Method not allowed</code> 异常</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="httpsession">HttpSession</h2>
+
+<ul>
+<li><p>客户端首次访问应用</p>
+
+<ul>
+<li>通过 <code>request.getSession()</code> 创建获取 <code>HttpSession</code>
+
+<ul>
+<li>生成长且唯一的 <code>Session.Id</code>，并存储于服务器内存中</li>
+</ul></li>
+<li>返回时将 <code>Session</code> 一并返回
+
+<ul>
+<li>通过 <code>HTTP.Set-Cookie</code> 将 <code>session.id</code> 作为 <code>JSESSIONID</code> 返回</li>
+<li>服务端将读取 <code>cookie.JSESSIONID</code> 值并匹配内存中的 HttpSession</li>
+</ul></li>
+</ul></li>
+
+<li><p>客户端再次请求</p>
+
+<ul>
+<li>只要 <code>cookie</code> 仍有效，就将其通过 <code>Http.Header.Cookie</code> 带回</li>
+</ul></li>
+
+<li><p>服务器留存</p>
+
+<ul>
+<li><code>HttpSession</code> 将于未使用情况下， <code>web.xml &lt;session-timeout&gt;</code> 分钟后销毁
+
+<ul>
+<li>默认的 <code>session.timeout</code> 为 30 分钟</li>
+</ul></li>
+<li>而在 <code>HttpSession</code> 过期后，客户端重新访问，将会生成以新的 <code>HttpSession</code></li>
+</ul></li>
+
+<li><p>客户端留存</p>
+
+<ul>
+<li>在浏览器实例运行其中，<code>session.cookie</code> 将始终保留</li>
+</ul></li>
+</ul>
+
+<h2 id="生命周期">生命周期</h2>
+
+<h3 id="servletcontext-1">ServletContext</h3>
+
+<ul>
+<li>同容器一并销毁</li>
+<li>于所有请求、会话中共享</li>
+</ul>
+
+<h3 id="httpsession-1">HttpSession</h3>
+
+<ul>
+<li><code>HttpSession</code> 于客户端交互期间存在</li>
+<li>服务端的会话不存在过期</li>
+<li>于同一会话的所有请求中共享</li>
+</ul>
+
+<h3 id="httpservlet-request-response-1">HttpServlet(Request|Response)</h3>
+
+<ul>
+<li>于请求的发起时创建，于响应完成时销毁</li>
+<li>不共享</li>
+</ul>
+
+<h3 id="servlet-filter-listener">Servlet/ Filter/ Listener</h3>
+
+<ul>
+<li>同容器一并销毁</li>
+<li>于所有的请求、会话中共享</li>
+</ul>
+
+<h3 id="attribute">Attribute</h3>
+
+<ul>
+<li>于 <code>ServletContext</code>/ <code>HttpServletRequest</code>/ <code>HttpSession</code> 中创建的属性，于所属容器管理
+
+<ul>
+<li>类似于对象管理框架中的对象，如 JSF、CDI、Spring 等</li>
+</ul></li>
+</ul>
+
+<h2 id="线程安全">线程安全</h2>
+
+<ul>
+<li><code>Servlet</code> 和 <code>Filter</code> 于所有请求中共享
+
+<ul>
+<li>通过多线程、不同进程在同一实例中进行支持
+
+<ul>
+<li>实例的重新</li>
+</ul></li>
+<li>切匆将请求或会话域数据作为 Servlet 或过滤器的实例变量
+
+<ul>
+<li>于所有请求、会话中共享，导致非线程安全</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://stackoverflow.com/questions/3106452/how-do-servlets-work-instantiation-sessions-shared-variables-and-multithreadi/3106909#3106909">How do servlets work?</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-servlet/index.html">Servlet 工作原理解析</a></li>
+<li><a href="https://blog.csdn.net/catoop/article/details/50501686">Spring Boot Servlet</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/education/java/j-intserv/j-intserv.html">Java Servlet 技术简介</a></li>
+<li><a href="https://blog.csdn.net/justloveyou_/article/details/60964714">Servlet 综述</a></li>
+<li><a href="https://www.zhihu.com/question/21416727">servlet的本质是什么，它是如何工作的</a></li>
+<li><a href="https://www.jianshu.com/p/85371385ae9e">Java &mdash;Filter过滤器</a></li>
+<li><a href="https://www.cnblogs.com/paddix/p/8365558.html">Spring Boot实战：拦截器与过滤器</a></li>
+<li><a href="https://juejin.im/post/5b2ddbcef265da59a76c92a4">实战Spring Boot 2.0系列(五) - Listener, Servlet, Filter和Interceptor</a></li>
+<li><a href="https://tianweili.github.io/2015/01/26/Java%E4%B8%AD%E7%9A%84Filter-%E8%BF%87%E6%BB%A4%E5%99%A8/">Java中的Filter 过滤器</a></li>
+<li><a href="https://www.jianshu.com/p/85371385ae9e">Java &mdash;Filter过滤器</a></li>
+<li><a href="https://tianweili.github.io/2015/01/27/Java%E4%B8%AD%E7%9A%84Listener-%E7%9B%91%E5%90%AC%E5%99%A8/">Java中的Listener 监听器</a></li>
+<li><a href="http://einverne.github.io/post/2017/08/spring-interceptor-vs-filter.html">Spring Interceptor vs Filter 拦截器和过滤器区别 </a></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="java">#java#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="next" title="关于">
+        <i class="fa fa-chevron-left"></i> 关于
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Hello.Servlet
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">253</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">122</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#整体">整体</a>
+<ul>
+<li><a href="#结构图">结构图</a></li>
+<li><a href="#调用顺序">调用顺序</a>
+<ul>
+<li><a href="#servlet">Servlet</a></li>
+<li><a href="#controller">Controller</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#细节">细节</a>
+<ul>
+<li><a href="#servlet-1">Servlet</a>
+<ul>
+<li><a href="#说明">说明</a></li>
+<li><a href="#代码">代码</a>
+<ul>
+<li><a href="#maven">Maven</a></li>
+<li><a href="#code">Code</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#filter">Filter</a>
+<ul>
+<li><a href="#说明-1">说明</a></li>
+<li><a href="#代码-1">代码</a>
+<ul>
+<li><a href="#maven-1">Maven</a></li>
+<li><a href="#code-1">Code</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#listener">Listener</a>
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#代码-2">代码</a>
+<ul>
+<li><a href="#maven-2">Maven</a></li>
+<li><a href="#code-2">Code</a></li>
+<li><a href="#invoke">Invoke</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#interceptor">Interceptor</a>
+<ul>
+<li><a href="#说明-2">说明</a></li>
+<li><a href="#代码-3">代码</a>
+<ul>
+<li><a href="#maven-3">Maven</a></li>
+<li><a href="#code-3">Code</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#servletcontext">ServletContext</a>
+<ul>
+<li><a href="#启动">启动</a></li>
+<li><a href="#关闭">关闭</a></li>
+<li><a href="#配置">配置</a>
+<ul>
+<li><a href="#load-on-startup">load-on-startup</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#httpservlet-request-response">HttpServlet(Request|Response)</a></li>
+<li><a href="#httpsession">HttpSession</a></li>
+<li><a href="#生命周期">生命周期</a>
+<ul>
+<li><a href="#servletcontext-1">ServletContext</a></li>
+<li><a href="#httpsession-1">HttpSession</a></li>
+<li><a href="#httpservlet-request-response-1">HttpServlet(Request|Response)</a></li>
+<li><a href="#servlet-filter-listener">Servlet/ Filter/ Listener</a></li>
+<li><a href="#attribute">Attribute</a></li>
+</ul></li>
+<li><a href="#线程安全">线程安全</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>

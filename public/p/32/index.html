@@ -119,6 +119,42 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.spring.cloud.security/" itemprop="url">
+        
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
+    0001-01-01
+</time>
+</span> 
+      
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">17 字 ~1分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+     细节 client模式，没有用户的概念，直接与认证服务器交互，用配置中的客户端信息去申请accessToken，客户端有自己的client_id,client_secret对应于用户的username,password，而客户端也拥有自己的authorities，当采取client模式认证时，对应的权限也就是客户端自己的authorities。 password模式，自己本身有一套用户体系，在认证时需要带上自己的用户名和密码，以及客户端的client_id,client_secret。此时，accessToken所包含的权限是用户本身的权限，而不是客户端的权限。
+异常 InsufficientAuthenticationException: User must be authenticated with Spring Security before authorization can be completed. 
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.docker.data/" itemprop="url">
         
         </a>
@@ -186,50 +222,6 @@
  PyQt5
  PyQt5学习与交流
   
-    </div>
-    
-    <footer class="post-footer"><div class="post-eof"></div></footer>
-  </article>
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/servlet.work/" itemprop="url">
-        
-        </a>
-      </h1>
-      <div class="post-meta">
-      <span class="post-time">
-<span class="post-meta-item-icon">
-    <i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
-    0001-01-01
-</time>
-</span> 
-      
-       <span>
-&nbsp; | &nbsp;
-<span class="post-meta-item-icon">
-    <i class="fa fa-eye"></i>
-</span>
-<span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">233 字 ~2分钟</span>
-</span>
-      </div>
-    </header>
-    <div class="post-body" itemprop="articleBody">
-    整体  Tomcat 容器模型     11 ```java Tomcat.start() Tomcat.getServer() Tomcat.server = new StandardServer() StandardServer.globalNamingResources= new NamingResourcesImpl(); if(isUseNaming()) StandardServer.namingContextListener = new NamingContextListener(); Tomcat.getConnecotr() Tomcat.server.start() ``` 细节 Servlet 作用 代码 补充 Filter Listener ServletContext 启动  程序容器启动
- Tomcat Jetty  应用部署
- 应用加载
- ServletContext 创建 应用加载  web.xml 解析 &lt;servlet&gt;/ &lt;filter&gt;/ &lt;listener&gt; 实例化  在服务器内存中进行 实例化过滤器时，将由容器的一个新 FilterConfig 来调用应用的 init()     关闭  程序容器关闭  应用卸载  servlet|filter destroy() ServletContext/ Servlet/ Filter/ Listener 废弃    配置 load-on-startup  当 &lt;servlet&gt;&lt;load-on-startup&gt; &gt; 0，Servlet.
-    </div>
-    
-    <div class="post-more-link text-center">
-    <a class="btn" href="http://domain.yqjdcyy.com/post/servlet.work/" rel="contents">
-      阅读全文 &raquo;
-    </a>
     </div>
     
     <footer class="post-footer"><div class="post-eof"></div></footer>

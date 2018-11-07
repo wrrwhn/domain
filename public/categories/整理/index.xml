@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 05 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Servlet</title>
+      <link>http://domain.yqjdcyy.com/post/servlet/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/servlet/</guid>
+      <description>整体 结构图 调用顺序 Servlet Filter.Pre Servlet.service Filter.After Controller Filter.Pre Interceptor.Pre HandlerAdapter Interceptor.Post Interceptor.Complete Filter.After 细节 Servlet 说明 通过 Servlet 规范套接字请求，声明了初始化、销毁的生命周期和处理请求的输入输出规范 配置以分发处理指</description>
+    </item>
     
     <item>
       <title>服务器瓶颈排查</title>
