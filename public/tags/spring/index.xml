@@ -6,10 +6,19 @@
     <description>Recent content in Spring on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 11 Sep 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/spring/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Boot.Security</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</link>
+      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</guid>
+      <description>Introduction providing both authentication and authorization to Java applications. a comprehensive security solution for Java EE-based enterprise software applications layers of security each layer tries to be as secure as possible in its own right authentication 鉴定 the process of establishing a principal is who they claim to be authorization 授权 the process of deciding whether a principal is allowed to perform an action within your application FAQ</description>
+    </item>
     
     <item>
       <title>Hello.Spring</title>

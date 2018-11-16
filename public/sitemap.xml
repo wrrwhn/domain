@@ -2,6 +2,68 @@
 <search>
     
      <entry>
+        <title>Hello.Security</title>
+        <url>http://domain.yqjdcyy.com/post/hello.security/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Security</tag>
+        </tags>
+        <content type="html">  常见类型 HTTP 适用场景  便捷性 支持跨浏览器  流程    注意事项  账号密码暴露，建议使用 HTTPS  Session 适用场景  浏览器自动支持，实现简便  流程    注意事项  会话劫持攻击  Token 适用场景  单页面应用 微服务  流程    注意事项  token 认证为无状态  区别于 session，于服务器内存或 redis 中存在着值以标识该用户的状态  JWT 为其中基于 Web 标准的一种 Token 认证实现  OAuth 版本    版本号 特点     OAuth1.0 因 固定 Session 影响其安全性   OAuth1.0a 需使用用于数字签名的加密库
+适用于高风险业务   OAuth2.0 依靠 HTTPS 进行安全保障    模式    模式 适用场景 授权类型     授权码
+authorization code 通用第三方授权场景 response_type=code   简化
+implicit 移动客户端
+网页客户端 response_type=token   密码
+resource owner password credentials 客户端受用户信息场景
+服务商或桌面操作通讯员    客户端
+client credentials 后端 API 相关操作     流程 授权码    简化    密码    客户端    注意事项  场景中需要的 ClientID 于第三方服务向服务商注册的时候生成，一并生成的还有对应密钥  OpenId 场景  向多实体认证自身时，关联的唯一账户  参照于身份证的用途   流程    注意事项  与 OAuth 的区别  OAuth 认证后，相关于给了你家里面的钥匙，这个可以取，那个可以改 OpenID 认证，则是告诉你 我是我  可选择是否告诉你邮箱等信息    SMAL 2.0 描述  Security Assertion Markup Language 安全断言  XML 格式的语言   流程    注意事项  通知第三方应用方式
+ 重定向  不推荐 URL 长度限制，不便携带 SMAL Token  POST  登录后通过「渲染表单|Javascript」向服务提供商提交 POST 请求   不适用于手机应用
+ 通过 URL 可以呼起应用，但其无法解析 XML 数据，获取   补充 SSO 描述  Single sign-on 同平台下各网站使用同一账号体系，当在某处登录后，即可访问其它所有网站  解决方案   实现方案  OAuth 2.0 SMAL 2.0  参考  HTTP验证大法(Basic Auth,Session, JWT, Oauth, Openid) 理解OAuth 2.0 10 分钟理解什么是 OAuth 2.0 协议 全面了解Token,JWT,OAuth,SAML,SSO OpenID OpenID 认证概述 OpenID 和 OAuth 有什么区别？  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Spring.Boot.Security</title>
+        <url>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Spring</tag><tag>Security</tag>
+        </tags>
+        <content type="html">  Introduction providing both authentication and authorization to Java applications.
+a comprehensive security solution for Java EE-based enterprise software applications
+layers of security
+each layer tries to be as secure as possible in its own right
+authentication 鉴定 the process of establishing a principal is who they claim to be authorization 授权 the process of deciding whether a principal is allowed to perform an action within your application
+FAQ Architecture Code 2.4 Getting Spring Security
+2.4.3 Project Modules
+ Java Configuration  OAuth2 实现 Authentication-Memory Maven  pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-config&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Code  Application
+@SpringBootApplication public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } } SecurityConfig
+@EnableWebSecurity public class SecurityConfig extends WebSecurityConfigurerAdapter { private static final String ROLE_USER = &amp;#34;USER&amp;#34;; @Override protected void configure(HttpSecurity http) throws Exception { http.authorizeRequests() // 配置 /resource 开头的请求无需验证即可访问  .antMatchers(&amp;#34;/resource/**&amp;#34;).permitAll() // 配置 /user 开头的请求均需验证才能访问  .antMatchers(&amp;#34;/user/**&amp;#34;).hasRole(ROLE_USER) // 登录模式为跳转至内置的登录界面  .and().formLogin(); } @Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { // 内存模式存储验证信息  auth.inMemoryAuthentication() // 指定密码编码器，否则 v5.0 以上版本会提示 `There is no PasswordEncoder mapped for the id &amp;#34;null&amp;#34;`  .passwordEncoder(new BCryptPasswordEncoder()) // 配置内置用户 yao 以 USER 角色  .withUser(User.withUsername(&amp;#34;yao&amp;#34;).password(new BCryptPasswordEncoder().encode(&amp;#34;lu&amp;#34;)).roles(ROLE_USER)); } }  Invoke  /recourse  200  /user  跳转至内置登录界面 /login   Upgrade  验证方式自定义 验证持久化 用户数据源配置  Authorization-Jdbc Maven  pom.xml
+&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Security.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-config&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- H2.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.h2database&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.197&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- JPA.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-jpa&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  application.yml
+spring: datasource: url: jdbc:h2:mem:h2test;DB_CLOSE_DELAY=-1 platform: h2 driver-class-name: org.h2.Driver username: sa password: schema: classpath:h2/schema.sql data: classpath:h2/data.sql h2: console: settings: web-allow-others: true path: /h2-console enabled: true jpa: database: h2 database-platform: org.hibernate.dialect.H2Dialect show-sql: true # 无法正常请求数据时添加该行 hibernate: ddl-auto: update  h2/schema.sql
+create table users(id bigint auto_increment, username varchar(255), password varchar(255), enabled boolean); create table authorities(id bigint auto_increment, username varchar(255),authority varchar(255), UNIQUE(username,authority)); h2/data.sql
+insert into users(username,password,enabled) values( &amp;#39;admin&amp;#39;, &amp;#39;$2a$10$BrpHlhYyofs0RSA72JXHxucWRSlHhqyPSdsfqqyY1DSUq5vEWDOH.&amp;#39;, true); insert into users(username,password,enabled) values( &amp;#39;user&amp;#39;, &amp;#39;$2a$10$wBkWTgqlprm1xJCroQo80..KVo.X.gJEgifddua6BSopY7RHVcB0i&amp;#39;, true); insert into authorities (username,authority) values(&amp;#39;admin&amp;#39;,&amp;#39;ROLE_ADMIN&amp;#39;); insert into authorities (username,authority) values(&amp;#39;user&amp;#39;,&amp;#39;ROLE_USER&amp;#39;);  Code  SecurityConfig
+@EnableWebSecurity public class SecurityConfig extends WebSecurityConfigurerAdapter { private static final String ROLE_ADMIN = &amp;#34;ADMIN&amp;#34;; private static final String ROLE_USER = &amp;#34;USER&amp;#34;; @Autowired DataSource dataSource; @Override protected void configure(HttpSecurity http) throws Exception { http.authorizeRequests() // 设置权限为 USER，在内部会自动加上 ROLE_ 前缀，所以数据配置权限时应该为 ROLE_USER  .antMatchers(&amp;#34;/user/role/user&amp;#34;).hasAnyRole(ROLE_ADMIN, ROLE_USER) // ADMIN 或 USER 均可  .antMatchers(&amp;#34;/user/role/admin&amp;#34;).hasAnyRole(ROLE_ADMIN) // 仅 ADMIN 可访问  .antMatchers(&amp;#34;/user/role/all&amp;#34;).authenticated() // 登录用户均可访问  .anyRequest().permitAll() // 所有用户均可  .and().formLogin(); // H2 正常连接  http.authorizeRequests().antMatchers(&amp;#34;/h2-console/**&amp;#34;).permitAll(); http.csrf().ignoringAntMatchers(&amp;#34;/h2-console/**&amp;#34;); http.headers().frameOptions().sameOrigin(); } @Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { // auth.jdbc  auth.jdbcAuthentication() // 指定加密方式  .passwordEncoder(new BCryptPasswordEncoder()) .dataSource(dataSource) .usersByUsernameQuery(&amp;#34;select username,password,enabled from users where username= ?&amp;#34;) .authoritiesByUsernameQuery(&amp;#34;select username,authority from authorities where username= ?&amp;#34;) ; } } H2DataSourceConfig
+@Configuration public class H2DataSourceConfig { @Value(&amp;#34;${spring.datasource.url:}&amp;#34;) private String sourceUrl; @Value(&amp;#34;${spring.datasource.username:}&amp;#34;) private String sourceUsername; @Value(&amp;#34;${spring.datasource.password:}&amp;#34;) private String sourcePassword; // 注册 H2 数据库连接，供配置验证时访问  @Bean public DataSource initH2DataSource() { JdbcDataSource dataSource = new JdbcDataSource(); dataSource.setURL(sourceUrl); dataSource.setUser(sourceUsername); dataSource.setPassword(sourcePassword); return dataSource; } } Invoke     Interface Anonymous User Admin     /user/role/admin HTTP.403 HTTP.403 HTTP.200   /user/role/user HTTP.403 HTTP.200 HTTP.200   /user/role/all HTTP.200 HTTP.200 HTTP.200    Authorization-Custom Authorization-Keep 异常 org.h2.jdbcx.JdbcDataSource 未找到 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.h2database&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.197&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 将 scope 移除，或手动更新为默认的 compile No suitable driver found for 断点发现读取获取文件均为空 将 target 删除，重新运行即可
+HasAnyRole 无法正常过滤，返回403 http.authorizeRequests().antMatchers(&amp;#34;/user/role/user&amp;#34;).hasAnyRole(ROLE_ADMIN, ROLE_USER) insert into authorities (username,authority) values(&amp;#39;admin&amp;#39;,&amp;#39;ROLE_ADMIN&amp;#39;); ExpressionUrlAuthorizationConfigurer.java private static String hasAnyRole(String... authorities) { String anyAuthorities = StringUtils.arrayToDelimitedString(authorities, &amp;#34;&amp;#39;,&amp;#39;ROLE_&amp;#34;); return &amp;#34;hasAnyRole(&amp;#39;ROLE_&amp;#34; &#43; anyAuthorities &#43; &amp;#34;&amp;#39;)&amp;#34;; } OAuth2 实现 配置资源服务器 配置认证服务器 配置spring security
+OAuth2 模式 授权码模式 - authorization code 简化模式 - implicit 密码模式 - resource owner password credentials 客户端模式 - client credentials
+名词解析  CSRF  Cross Site Request Forgery 跨站请求伪造  挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法   CORS
+ Cross-Origin Resource Sharing 跨域资源共享  允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制   LDAP
+ Lightweight Directory Access Protocol 轻量目录访问协议
+ 在公司计算机上登录一次，便可以自动在公司内部网上登录 在多个服务中使用同一个密码
+参考 官方   Spring Security Reference - 5.0.5
+ Spring Security
+ Spring Security Reference - 5.1.2
+ /spring-session/docs
+ H2.Features
+ []()
+  补充  理解OAuth 2.0 spring boot集成h2指南 Spring Data JPA(二)：SpringBoot集成H2 []() []()  异常  There is no PasswordEncoder mapped for the id &amp;ldquo;null&amp;rdquo; Why I can&amp;rsquo;t get the org.h2.Driver? I use maven  将 H2.scope 由 test 更新为 runtime  springboot配置内存数据库H2  数据插入，但无法正常查询  H2 Database Console  H2.Console 连接 403  H2 in-memory database. Table not found JdbcDaoImpl  sql.init  []() []()  代码  4. Samples and Guides  Hello Spring Security Hello Spring Security Boot Hello Spring Security XML Hello Spring MVC Security Custom Login Form OAuth 2.0 Login  []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
         <title>Hello.Servlet</title>
         <url>http://domain.yqjdcyy.com/post/servlet/</url>
         <categories>
@@ -42,6 +104,35 @@ public class LogInterceptor implements HandlerInterceptor { private final String
  只要 cookie 仍有效，就将其通过 Http.Header.Cookie 带回  服务器留存
  HttpSession 将于未使用情况下， web.xml &amp;lt;session-timeout&amp;gt; 分钟后销毁  默认的 session.timeout 为 30 分钟  而在 HttpSession 过期后，客户端重新访问，将会生成以新的 HttpSession  客户端留存
  在浏览器实例运行其中，session.cookie 将始终保留   生命周期 ServletContext  同容器一并销毁 于所有请求、会话中共享  HttpSession  HttpSession 于客户端交互期间存在 服务端的会话不存在过期 于同一会话的所有请求中共享  HttpServlet(Request|Response)  于请求的发起时创建，于响应完成时销毁 不共享  Servlet/ Filter/ Listener  同容器一并销毁 于所有的请求、会话中共享  Attribute  于 ServletContext/ HttpServletRequest/ HttpSession 中创建的属性，于所属容器管理  类似于对象管理框架中的对象，如 JSF、CDI、Spring 等   线程安全  Servlet 和 Filter 于所有请求中共享  通过多线程、不同进程在同一实例中进行支持  实例的重新  切匆将请求或会话域数据作为 Servlet 或过滤器的实例变量  于所有请求、会话中共享，导致非线程安全    参考  How do servlets work? Servlet 工作原理解析 Spring Boot Servlet Java Servlet 技术简介 Servlet 综述 servlet的本质是什么，它是如何工作的 Java &amp;mdash;Filter过滤器 Spring Boot实战：拦截器与过滤器 实战Spring Boot 2.0系列(五) - Listener, Servlet, Filter和Interceptor Java中的Filter 过滤器 Java &amp;mdash;Filter过滤器 Java中的Listener 监听器 Spring Interceptor vs Filter 拦截器和过滤器区别   </content>
+    </entry>
+    
+     <entry>
+        <title>吉他入门</title>
+        <url>http://domain.yqjdcyy.com/post/%E5%90%89%E4%BB%96%E5%85%A5%E9%97%A8/</url>
+        <categories>
+          <category>乐趣</category>
+        </categories>
+        <tags>
+          <tag>音乐</tag>
+        </tags>
+        <content type="html">  入门 调音  辅助工具  调音器 app | 在线调音乐   识谱 文字谱 E---------------3-0--------------------|| B-------------------3-0----------------|| G---7-7-7---------------2-0------------|| D-2-7-7-7-7-7-7------------------------|| A-2-5-5-5-7-7-7------------------------|| E-0-------5-5-5------------------------|| 图谱      解析  弦
+ 图谱由上到下，对照琴弦由细到粗 同一垂直线上，表示了该次弹奏需要同时按压的琴弦和相应的品格  品格
+ 由上到下，由1到19品  古典吉他情况下  琴弦上的数值，对应该弦所在的品格值  当品格值为0时，表示不按只拨   弹奏
+ 同一时间，拨动同一垂直线上有标注品格值的弦  速度
+ 如图谱中第三图左上角所示  速度为 120 拍/分   小节
+ 小节为基本循环单位 如图谱中第三图中六线谱开始处所示  34 = 3&amp;frasl;4 = 3* 4分符  分母表示为对应的值分音符，为一拍 分子表示每小节多少拍 代表一节需要 3个 4分音符  其它常见节拍  4&amp;frasl;4 拍 2&amp;frasl;4 拍 6&amp;frasl;8 拍    音符
+ 表示该音的演奏时长 如图谱中第三图中六线谱中红框标所示  四分音符  品格值下拉一直线  八分音符  品格值下拉后，带一条横线 为四分音符的一半  十六分音符  品格值下拉后，带两条横线   计算  以本例而言，速度为 120 拍/分，3/4 拍  则一拍的时长为 60s/ 120= 0.5s 本次单位为四分符，等价于一拍  四分符= 0.5s 八分符= 0.25s  而一节有三拍，则总时长为 1.5s      姿势  用腹部和胸口抵住吉他，细弦在下，粗弦在上，琴头斜上指向大约45度角，用大腿和右手手肘固定 左手大拇指在后，其余四指在前捏住琴颈，保证左手可以在琴颈上自由地移动。 右手大拇指在上，食指在下，其余指头自然弯曲。手掌与腹部平行，拨片的尖头指向你自己。  指法  弦区  手指末关节尽量垂直向下，指尖按弦 按弦时，尽量靠近品柱  弹奏  大拇指  6弦 5弦 5弦  食指  3弦  中指  2弦  无名指  1弦
+    弹奏  TODO  练习  TODO  进阶 击弦  TODO
+勾弦 TODO
+滑弦 TODO
+摇把 TODO
+揉弦 TODO
+闷音 TODO
+点弦 TODO
+泛音 TODO
+震音 TODO
+匹克震音 TODO
+  注意  TODO  推荐 参考 教程  如何看懂吉他谱 零基础如何自学吉他 什么叫&amp;rdquo;四分音符为一拍&amp;rdquo;? []() []() []()  指法  关于左手按弦的两个基本技巧 []() []() []()  练习  如何练习吉他 []() []() []() []()  </content>
     </entry>
     
      <entry>
@@ -5150,47 +5241,6 @@ Site Lifecycle pre-site executes processes needed prior to the actual project si
  20.5 万  欣赏
  []()
    </content>
-    </entry>
-    
-     <entry>
-        <title></title>
-        <url>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</url>
-        <categories>
-          
-        </categories>
-        <tags>
-          
-        </tags>
-        <content type="html">  Introduction providing both authentication and authorization to Java applications.
-a comprehensive security solution for Java EE-based enterprise software applications
-layers of security
-each layer tries to be as secure as possible in its own right
-authentication 鉴定 the process of establishing a principal is who they claim to be authorization 授权 the process of deciding whether a principal is allowed to perform an action within your application
-FAQ Architecture Code 2.4 Getting Spring Security
-2.4.3 Project Modules
- Java Configuration  OAuth2 实现 Authentication-Memory Maven  pom.xml
-&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-config&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt;  Code  Application
-@SpringBootApplication public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } } SecurityConfig
-@EnableWebSecurity public class SecurityConfig extends WebSecurityConfigurerAdapter { private static final String ROLE_USER = &amp;#34;USER&amp;#34;; @Override protected void configure(HttpSecurity http) throws Exception { http.authorizeRequests() // 配置 /resource 开头的请求无需验证即可访问  .antMatchers(&amp;#34;/resource/**&amp;#34;).permitAll() // 配置 /user 开头的请求均需验证才能访问  .antMatchers(&amp;#34;/user/**&amp;#34;).hasRole(ROLE_USER) // 登录模式为跳转至内置的登录界面  .and().formLogin(); } @Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { // 内存模式存储验证信息  auth.inMemoryAuthentication() // 指定密码编码器，否则 v5.0 以上版本会提示 `There is no PasswordEncoder mapped for the id &amp;#34;null&amp;#34;`  .passwordEncoder(new BCryptPasswordEncoder()) // 配置内置用户 yao 以 USER 角色  .withUser(User.withUsername(&amp;#34;yao&amp;#34;).password(new BCryptPasswordEncoder().encode(&amp;#34;lu&amp;#34;)).roles(ROLE_USER)); } }  Invoke  /recourse  200  /user  跳转至内置登录界面 /login   Upgrade  验证方式自定义 验证持久化 用户数据源配置  Authorization-Jdbc Maven  pom.xml
-&amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-web&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- Security.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-web&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-security-config&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;5.0.5.RELEASE&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- H2.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.h2database&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.197&amp;lt;/version&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;!-- JPA.* --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.boot&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-boot-starter-data-jpa&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  application.yml
-spring: datasource: url: jdbc:h2:mem:h2test;DB_CLOSE_DELAY=-1 platform: h2 driver-class-name: org.h2.Driver username: sa password: schema: classpath:h2/schema.sql data: classpath:h2/data.sql h2: console: settings: web-allow-others: true path: /h2-console enabled: true jpa: database: h2 database-platform: org.hibernate.dialect.H2Dialect show-sql: true # 无法正常请求数据时添加该行 hibernate: ddl-auto: update  h2/schema.sql
-create table users(id bigint auto_increment, username varchar(255), password varchar(255), enabled boolean); create table authorities(id bigint auto_increment, username varchar(255),authority varchar(255), UNIQUE(username,authority)); h2/data.sql
-insert into users(username,password,enabled) values( &amp;#39;admin&amp;#39;, &amp;#39;$2a$10$BrpHlhYyofs0RSA72JXHxucWRSlHhqyPSdsfqqyY1DSUq5vEWDOH.&amp;#39;, true); insert into users(username,password,enabled) values( &amp;#39;user&amp;#39;, &amp;#39;$2a$10$wBkWTgqlprm1xJCroQo80..KVo.X.gJEgifddua6BSopY7RHVcB0i&amp;#39;, true); insert into authorities (username,authority) values(&amp;#39;admin&amp;#39;,&amp;#39;ROLE_ADMIN&amp;#39;); insert into authorities (username,authority) values(&amp;#39;user&amp;#39;,&amp;#39;ROLE_USER&amp;#39;);  Code  SecurityConfig
-@EnableWebSecurity public class SecurityConfig extends WebSecurityConfigurerAdapter { private static final String ROLE_ADMIN = &amp;#34;ADMIN&amp;#34;; private static final String ROLE_USER = &amp;#34;USER&amp;#34;; @Autowired DataSource dataSource; @Override protected void configure(HttpSecurity http) throws Exception { http.authorizeRequests() // 设置权限为 USER，在内部会自动加上 ROLE_ 前缀，所以数据配置权限时应该为 ROLE_USER  .antMatchers(&amp;#34;/user/role/user&amp;#34;).hasAnyRole(ROLE_ADMIN, ROLE_USER) // ADMIN 或 USER 均可  .antMatchers(&amp;#34;/user/role/admin&amp;#34;).hasAnyRole(ROLE_ADMIN) // 仅 ADMIN 可访问  .antMatchers(&amp;#34;/user/role/all&amp;#34;).authenticated() // 登录用户均可访问  .anyRequest().permitAll() // 所有用户均可  .and().formLogin(); // H2 正常连接  http.authorizeRequests().antMatchers(&amp;#34;/h2-console/**&amp;#34;).permitAll(); http.csrf().ignoringAntMatchers(&amp;#34;/h2-console/**&amp;#34;); http.headers().frameOptions().sameOrigin(); } @Override protected void configure(AuthenticationManagerBuilder auth) throws Exception { // auth.jdbc  auth.jdbcAuthentication() // 指定加密方式  .passwordEncoder(new BCryptPasswordEncoder()) .dataSource(dataSource) .usersByUsernameQuery(&amp;#34;select username,password,enabled from users where username= ?&amp;#34;) .authoritiesByUsernameQuery(&amp;#34;select username,authority from authorities where username= ?&amp;#34;) ; } } H2DataSourceConfig
-@Configuration public class H2DataSourceConfig { @Value(&amp;#34;${spring.datasource.url:}&amp;#34;) private String sourceUrl; @Value(&amp;#34;${spring.datasource.username:}&amp;#34;) private String sourceUsername; @Value(&amp;#34;${spring.datasource.password:}&amp;#34;) private String sourcePassword; // 注册 H2 数据库连接，供配置验证时访问  @Bean public DataSource initH2DataSource() { JdbcDataSource dataSource = new JdbcDataSource(); dataSource.setURL(sourceUrl); dataSource.setUser(sourceUsername); dataSource.setPassword(sourcePassword); return dataSource; } } Invoke     Interface Anonymous User Admin     /user/role/admin HTTP.403 HTTP.403 HTTP.200   /user/role/user HTTP.403 HTTP.200 HTTP.200   /user/role/all HTTP.200 HTTP.200 HTTP.200    Authorization-Custom Authorization-Keep 异常 org.h2.jdbcx.JdbcDataSource 未找到 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.h2database&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;h2&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.4.197&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;runtime&amp;lt;/scope&amp;gt; &amp;lt;/dependency&amp;gt; 将 scope 移除，或手动更新为默认的 compile No suitable driver found for 断点发现读取获取文件均为空 将 target 删除，重新运行即可
-HasAnyRole 无法正常过滤，返回403 http.authorizeRequests().antMatchers(&amp;#34;/user/role/user&amp;#34;).hasAnyRole(ROLE_ADMIN, ROLE_USER) insert into authorities (username,authority) values(&amp;#39;admin&amp;#39;,&amp;#39;ROLE_ADMIN&amp;#39;); ExpressionUrlAuthorizationConfigurer.java private static String hasAnyRole(String... authorities) { String anyAuthorities = StringUtils.arrayToDelimitedString(authorities, &amp;#34;&amp;#39;,&amp;#39;ROLE_&amp;#34;); return &amp;#34;hasAnyRole(&amp;#39;ROLE_&amp;#34; &#43; anyAuthorities &#43; &amp;#34;&amp;#39;)&amp;#34;; } OAuth2 实现 配置资源服务器 配置认证服务器 配置spring security
-OAuth2 模式 授权码模式 - authorization code 简化模式 - implicit 密码模式 - resource owner password credentials 客户端模式 - client credentials
-名词解析  CSRF  Cross Site Request Forgery 跨站请求伪造  挟制用户在当前已登录的Web应用程序上执行非本意的操作的攻击方法   CORS
- Cross-Origin Resource Sharing 跨域资源共享  允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制   LDAP
- Lightweight Directory Access Protocol 轻量目录访问协议
- 在公司计算机上登录一次，便可以自动在公司内部网上登录 在多个服务中使用同一个密码
-参考 官方   Spring Security Reference - 5.0.5
- Spring Security
- Spring Security Reference - 5.1.2
- /spring-session/docs
- H2.Features
- []()
-  补充  理解OAuth 2.0 spring boot集成h2指南 Spring Data JPA(二)：SpringBoot集成H2 []() []()  异常  There is no PasswordEncoder mapped for the id &amp;ldquo;null&amp;rdquo; Why I can&amp;rsquo;t get the org.h2.Driver? I use maven  将 H2.scope 由 test 更新为 runtime  springboot配置内存数据库H2  数据插入，但无法正常查询  H2 Database Console  H2.Console 连接 403  H2 in-memory database. Table not found JdbcDaoImpl  sql.init  []() []()  代码  4. Samples and Guides  Hello Spring Security Hello Spring Security Boot Hello Spring Security XML Hello Spring MVC Security Custom Login Form OAuth 2.0 Login  []() []() []() []()  </content>
     </entry>
     
      <entry>
