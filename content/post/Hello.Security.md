@@ -16,10 +16,10 @@ toc: true
 - 便捷性
 - 支持跨浏览器
 
-## 流程
+### 流程
 - ![HTTP.png](http://doc.yqjdcyy.com/97a23896-4dc0-41fd-aecb-862e95771877.png)
 
-## 注意事项
+### 注意事项
 - 账号密码暴露，建议使用 HTTPS
 
 ## Session
@@ -27,11 +27,11 @@ toc: true
 ### 适用场景
 - 浏览器自动支持，实现简便
 
-## 流程
+### 流程
 - ![Session.png](http://doc.yqjdcyy.com/c8195bab-bf09-402d-95fd-7d45ce141e7c.png)
 
 
-## 注意事项
+### 注意事项
 - 会话劫持攻击
 
 ## Token
@@ -40,10 +40,10 @@ toc: true
 - 单页面应用
 - 微服务
 
-## 流程
+### 流程
 - ![Token.png](http://doc.yqjdcyy.com/1cb6c437-0535-4402-b374-49363df56639.png)
 
-## 注意事项
+### 注意事项
 - token 认证为无状态
     - 区别于 session，于服务器内存或 redis 中存在着值以标识该用户的状态
 - JWT 为其中基于 Web 标准的一种 Token 认证实现
@@ -60,12 +60,12 @@ toc: true
 
 ### 模式
 
-| 模式                                        | 适用场景                                       | 授权类型            |
-|-------------------------------------------|--------------------------------------------|---------------------|
-| 授权码<br>authorization code                | 通用第三方授权场景                             | response_type=code  |
-| 简化<br>implicit                            | 移动**客户端**<br>网页客户端                   | response_type=token |
-| 密码<br>resource owner password credentials | 客户端受用户信息场景<br>服务商或桌面操作通讯员 |                     |
-| 客户端<br>client credentials                | 后端 API 相关操作                              |                     |
+| 模式                                        | 适用场景                                     | 授权类型            |
+|-------------------------------------------|------------------------------------------|---------------------|
+| 授权码<br>authorization code                | 通用第三方授权场景                           | response_type=code  |
+| 简化<br>implicit                            | 移动**客户端**<br>网页客户端                 | response_type=token |
+| 密码<br>resource owner password credentials | 客户端受用户信任场景<br>服务商或桌面操作系统 |                     |
+| 客户端<br>client credentials                | 后端 API 相关操作                            |                     |
 
 
 ### 流程
