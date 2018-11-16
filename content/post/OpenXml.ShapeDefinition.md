@@ -100,7 +100,7 @@ toc: true
 </p:sp>
 ```
 - shape
-+ ![c3edf16e-1e3d-11e6-9525-a0c49aa8c3fb.png](http://7xsy59.com1.z0.glb.clouddn.com/c3edf16e-1e3d-11e6-9525-a0c49aa8c3fb.png)
++ ![c3edf16e-1e3d-11e6-9525-a0c49aa8c3fb.png](/c3edf16e-1e3d-11e6-9525-a0c49aa8c3fb.png)
 #### Adjusting
 ##### Geometry Guides
 - code
@@ -161,7 +161,7 @@ gdRefY="adj2" minY="-2147483647" maxY="2147483647">
 - item
 #### cxnLst
 - desc: connection point for line and so on, so that when shape move , line is still connected by the shape connected point
-    - ![ca8576cc-20ad-11e6-bf36-a0c49aa8c3fb.png](http://7xsy59.com1.z0.glb.clouddn.com/ca8576cc-20ad-11e6-bf36-a0c49aa8c3fb.png)
+    - ![ca8576cc-20ad-11e6-bf36-a0c49aa8c3fb.png](/ca8576cc-20ad-11e6-bf36-a0c49aa8c3fb.png)
 - param
 - item
 #### rect

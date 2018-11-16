@@ -30,4 +30,4 @@ toc: true
 - 过程：
     - 原始代码：客户端通过直接作用于类对象的方法进行直接引用
     - 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值
-    - ![6d7850fe-bda2-11e6-ab18-0071cc916200.png](http://7xsy59.com1.z0.glb.clouddn.com/6d7850fe-bda2-11e6-ab18-0071cc916200.png)
+    - ![6d7850fe-bda2-11e6-ab18-0071cc916200.png](/6d7850fe-bda2-11e6-ab18-0071cc916200.png)

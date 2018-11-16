@@ -26,9 +26,9 @@ toc: true
 
 ### 缺点
 - 与「文件法」一致，导出图片尺寸过小
-    + [PPT 操作导出 - 79KB 1024x766](http://7xsy59.com1.z0.glb.clouddn.com/50fc4b9a-0e0a-11e7-a1d9-0071cc916200.png)
-    + [api 导出 - 24KB 960x720](http://7xsy59.com1.z0.glb.clouddn.com/57952808-0e0a-11e7-a0ab-0071cc916200.png)
-- 部分 PPT 无缩略图，导出的均为 [PPT 默认图片](http://7xsy59.com1.z0.glb.clouddn.com/2ffdec48-0e10-11e7-96bf-0071cc916200.png)
+    + [PPT 操作导出 - 79KB 1024x766](/50fc4b9a-0e0a-11e7-a1d9-0071cc916200.png)
+    + [api 导出 - 24KB 960x720](/57952808-0e0a-11e7-a0ab-0071cc916200.png)
+- 部分 PPT 无缩略图，导出的均为 [PPT 默认图片](/2ffdec48-0e10-11e7-96bf-0071cc916200.png)
 
 
 ## OpenXML + code

@@ -23,7 +23,7 @@ toc: true
         * 技术
             - Flume：数据高效并行处理
             - MilWhell：互联网级别流处理，优秀的容错机制
-        * ![6998b780-e9df-11e6-b96d-0071cc916200.png](http://7xsy59.com1.z0.glb.clouddn.com/6998b780-e9df-11e6-b96d-0071cc916200.png)
+        * ![6998b780-e9df-11e6-b96d-0071cc916200.png](/6998b780-e9df-11e6-b96d-0071cc916200.png)
 - 介绍
     + 统一编程框架，提供开源、统一的编程模型
 - 特点
@@ -60,7 +60,7 @@ toc: true
         * Aggregating     聚合
         * Composite        复合
     + [W]here in event time
-        * ![bbd89166-e9ea-11e6-aed9-0071cc916200.png](http://7xsy59.com1.z0.glb.clouddn.com/bbd89166-e9ea-11e6-aed9-0071cc916200.png)
+        * ![bbd89166-e9ea-11e6-aed9-0071cc916200.png](/bbd89166-e9ea-11e6-aed9-0071cc916200.png)
     + [W]hen in processing time
         * 使用 Trigger 机制，配合 SDK 中的水位线和触发器进行时机指定
     + [H]ow do refinements relate
