@@ -57,5 +57,5 @@ toc: true
         * epoll 为 Linux 内核的可扩展 I/O 事件通知机制
 
 ### 代码示意图
-- [![83595aa6-fc0b-11e6-8a49-0071cc916200.png](/83595aa6-fc0b-11e6-8a49-0071cc916200.png)](https://pic4.zhimg.com/v2-2651a980c2ff60ea0260260744eeed83_r.png)
-- [![3e4e5d06-fc0f-11e6-8d85-0071cc916200.png](/3e4e5d06-fc0f-11e6-8d85-0071cc916200.png)](https://pic1.zhimg.com/v2-a13d7d010ea9fce68b41c96e1ce31b14_b.png)
+- [![83595aa6-fc0b-11e6-8a49-0071cc916200.png](http://img.yqjdcyy.com/83595aa6-fc0b-11e6-8a49-0071cc916200.png)](https://pic4.zhimg.com/v2-2651a980c2ff60ea0260260744eeed83_r.png)
+- [![3e4e5d06-fc0f-11e6-8d85-0071cc916200.png](http://img.yqjdcyy.com/3e4e5d06-fc0f-11e6-8d85-0071cc916200.png)](https://pic1.zhimg.com/v2-a13d7d010ea9fce68b41c96e1ce31b14_b.png)
