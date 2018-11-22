@@ -1,6 +1,6 @@
 ---
 title: "Hello.Spring.Boot.Security"
-date: "2018-11-16"
+date: "2018-11-22"
 categories:
  - "整理"
 tags:
@@ -9,45 +9,17 @@ tags:
 toc: true
 ---
 
-
-
-# Introduction
-
-providing both authentication and authorization to Java applications.
-
-a comprehensive security solution for Java EE-based enterprise software applications
-
-layers of security  
-    each layer tries to be as secure as possible in its own right
-
-authentication
-    鉴定
-    the process of establishing a principal is who they claim to be
-authorization
-    授权
-    the process of deciding whether a principal is allowed to perform an action within your application
-
-# FAQ
-
-# Architecture
-
-# Code
-
-2.4 Getting Spring Security
-
-2.4.3 Project Modules
-
-5. Java Configuration
-
-# OAuth2
-
-
-
-
-
 # 实现
 
 ## Authentication-Memory
+### TODO
+- 内置用户管理
+- 分接口限制访问
+- 限制角色访问
+    - 非登录情况自动跳转至登录界面
+- 指定密码编码器
+    - 新版本中，不再默认以文本编码器作为默认编码器
+
 ### Maven
 - `pom.xml`
 
@@ -113,13 +85,17 @@ authorization
 - `/user`
     - 跳转至内置登录界面 `/login`
 
-### Upgrade
-- 验证方式自定义
-- 验证持久化
-- 用户数据源配置
-
 
 ## Authorization-Jdbc
+### TODO
+- 更新用户、角色信息来源为数据库
+- 接口限定用户、权限访问
+    - 角色配置时，例如为 `ADMIN`，但实际数据库配置中应加上 `ROLE_` 前缀
+    - 默认表语句可参见 `org/springframework/security/core/userdetails/jdbc/users.ddl`
+    - 若为自建表，需更新 `AuthenticationManagerBuilder.jdbcAuthentication()`
+        - `usersByUsernameQuery`
+        - `authoritiesByUsernameQuery`
+
 
 ### Maven
 - `pom.xml`
@@ -279,36 +255,388 @@ authorization
 
 
 
-## Authorization-Custom
+## Authorization-Redis
+
+### TODO
+- 配置 `Redis` 以缓存 `Spring Session` 信息
+    - 解决服务重启后，已登录的服务端可正常再次访问的情况
+
+### Maven
+- `pom.xml`
+
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-core</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.session</groupId>
+        <artifactId>spring-session-data-redis</artifactId>
+    </dependency>
+    ```
+
+### Properties
+- `application.properties`
+
+    ```properties
+    spring.redis.host= 127.0.0.1
+    ```
+
+### Code
+
+- `Application.java`
+
+    ```java
+    @SpringBootApplication
+    // 配置 Session 的有效期
+    @EnableRedisHttpSession(maxInactiveIntervalInSeconds = 8 * 3600)
+    public class Application {
+
+        public static void main(String[] args) {
+            SpringApplication.run(Application.class, args);
+        }
+    }
+    ```
+- `ConfigInitializer.java`
+
+    ```java
+    @Configuration
+    public class ConfigInitializer {
+
+        // 指定密码加密方式
+        @Bean
+        public PasswordEncoder initPWDEncoder() {
+            return new BCryptPasswordEncoder();
+        }
+
+        @Bean
+        public CookieSerializer cookieSerializer() {
+            DefaultCookieSerializer serializer = new DefaultCookieSerializer();
+            serializer.setCookiePath("/");
+            return serializer;
+        }
+    }
+    ```
+- `SecurityInterceptor.java`
+
+    ```java
+    @Configuration
+    public class SecurityInterceptor implements HandlerInterceptor {
+
+        // 接口调用前，判定是否已登录
+        @Override
+        public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
+
+            HttpSession session = request.getSession();
+
+            if (null != session.getAttribute(SecurityMvcConfig.SESSION_KEY)) {
+                return true;
+            }
+            response.getWriter().write("Login first, please");
+            return false;
+        }
+    }
+    ```
+- `SecurityMvcConfig.java`
+
+    ```java
+    @Configuration
+    public class SecurityMvcConfig implements WebMvcConfigurer {
+
+        public final static String SESSION_KEY = "USER_SESSION";
+
+        @Override
+        public void addInterceptors(InterceptorRegistry registry) {
+
+            // 配置可直接访问的
+            registry
+                    .addInterceptor(new SecurityInterceptor())
+                    .addPathPatterns("/**")
+                    .excludePathPatterns(
+                            "/user/login", "/user/logout",
+                            "/redis/**"
+                    );
+        }
+    }    
+    ```
+- `UserController.java`
+
+    ```java
+    @RestController
+    @RequestMapping("/user")
+    public class UserController {
+
+        @RequestMapping(value = {"", "/"}, method = RequestMethod.GET)
+        public List<String> list(HttpSession session) {
+            return Stream.of(session.getAttribute(SecurityMvcConfig.SESSION_KEY).toString()).collect(Collectors.toList());
+        }
+
+        @RequestMapping(value = "/login", method = RequestMethod.POST)
+        public void login(String username, String password, HttpSession session) {
+            session.setAttribute(SecurityMvcConfig.SESSION_KEY, 1);
+        }
+
+        @RequestMapping(value = "/logout", method = RequestMethod.PUT)
+        public void login(HttpSession session) {
+            session.removeAttribute(SecurityMvcConfig.SESSION_KEY);
+        }
+    }
+    ```
 
 
-## Authorization-Keep
+
+## Authorization-OAuth
+
+### TODO
+- 支持 OAuth 模式
+    - 客户端模式
+    - 密码模式
+
+### Maven
+- `pom.xml`
+
+    ```xml
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.security.oauth</groupId>
+        <artifactId>spring-security-oauth2</artifactId>
+        <version>2.3.3.RELEASE</version>
+    </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-data-redis</artifactId>
+    </dependency>
+    ```
+
+### Properties
+- `application.properties`
+
+    ```yml
+    spring.redis.host= 127.0.0.1
+    ```
+
+### Code
+- `ConfigInitializer.java`
+
+    ```java
+    @Configuration
+    public class ConfigInitializer {
+
+        @Bean
+        public PasswordEncoder initPWDEncoder() {
+            return new BCryptPasswordEncoder();
+        }
+    }
+    ```
+- `OAuth2Config.java`
+
+    ```java
+    @Configuration
+    public class OAuth2Config {
+
+        private static final String OAUTH_RESOURCE = "resource";
+        private static final String AUTH_USER_CLIENT = "client";
+        private static final String AUTH_USER_PWD = "password";
+
+        @Configuration
+        @EnableResourceServer
+        protected static class ResourceServiceConfiguration extends ResourceServerConfigurerAdapter {
+            @Override
+            public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+                resources.resourceId(OAUTH_RESOURCE).stateless(true);
+            }
+
+            // 仅配置 /user 下的接口，于鉴权情况下可供访问
+            @Override
+            public void configure(HttpSecurity http) throws Exception {
+                http
+                        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED)
+                        .and().requestMatchers().anyRequest()
+                        .and().anonymous()
+                        .and().authorizeRequests().antMatchers("/user/**").authenticated();
+            }
+        }
+
+        @Configuration
+        @EnableAuthorizationServer
+        protected static class AuthorizationServerConfiguration extends AuthorizationServerConfigurerAdapter {
+
+            @Autowired
+            AuthenticationManager authenticationManager;
+            @Autowired
+            RedisConnectionFactory redisConnectionFactory;
+            @Autowired
+            PasswordEncoder passwordEncoder;
+
+            @Override
+            public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+
+                // 配置对外分配的应用（名称、授权方式、范围、密码）
+                // 其中密码需使用密码编码器处理过
+                clients.inMemory()
+                        .withClient(AUTH_USER_CLIENT).resourceIds(OAUTH_RESOURCE).authorizedGrantTypes("client_credentials", "refresh_token").scopes("select").authorities("client").secret(passwordEncoder.encode(AUTH_USER_CLIENT))
+                        .and().withClient(AUTH_USER_PWD).resourceIds(OAUTH_RESOURCE).authorizedGrantTypes("password", "refresh_token").scopes("select").authorities("client").secret(passwordEncoder.encode(AUTH_USER_PWD));
+            }
+
+            @Override
+            public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
+                // 允许客户端进行网页形式鉴权
+                security.allowFormAuthenticationForClients();
+            }
+
+            @Override
+            public void configure(AuthorizationServerEndpointsConfigurer endpoints) throws Exception {
+                endpoints
+                        .tokenStore(new RedisTokenStore(redisConnectionFactory))
+                        .authenticationManager(authenticationManager);
+            }
+        }
+    }
+    ```
+- `SecurityConfig.java`
+
+    ```java
+    @Configuration
+    @EnableWebSecurity
+    public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+        @Autowired
+        PasswordEncoder passwordEncoder;
+
+        @Override
+        protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+
+            // 配置内部用户账号
+            auth.inMemoryAuthentication()
+                    .passwordEncoder(passwordEncoder)
+                    .withUser("admin").password(passwordEncoder.encode("admin")).roles("ADMIN")
+                    .and().withUser("user").password(passwordEncoder.encode("user")).roles("USER");
+        }
+
+        @Override
+        protected void configure(HttpSecurity http) throws Exception {
+
+            // 开放鉴权相关接口
+            http
+                    .requestMatchers().anyRequest()
+                    .and().authorizeRequests().antMatchers("/oauth/**").permitAll();
+        }
+
+        @Bean
+        @Override
+        public AuthenticationManager authenticationManagerBean() throws Exception {
+            return super.authenticationManagerBean();
+        }
+    }
+    ```
+- `ResourceController.java`
+
+    ```java
+    @RestController
+    @RequestMapping("/resource")
+    public class ResourceController {
+
+        @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+        public String get(@PathVariable @NotNull Long id) {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            return String.format("Resource[%s]: %s", id, authentication.getName());
+        }
+
+        @RequestMapping(value = "/{id}/detail", method = RequestMethod.GET)
+        public String getDetail(@PathVariable @NotNull Long id) {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            return String.format("Resource[%s].detail: %s", id, authentication.getName());
+        }
+    }
+    ```
+
+- `UserController.java`
+
+    ```java
+    @RestController
+    @RequestMapping("/user")
+    public class UserController {
+
+        @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+        public String get(@PathVariable @NotNull Long id) {
+
+            Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+            return String.format("User[%s]: %s", id, authentication.getName());
+        }
+    }
+    ```
+
+### Invoke
+- 认证
+
+    | 认证模式 | 请求                                                                                                                               | 返回值                                                                                                                                                                                                |
+    |--------|------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+    | 客户端   | /oauth/token?<br>grant_type=client_credentials<br>scope=select<br>client_id=client<br>client_secret=client                          | {<br>"access_token": "93440a4e-3e9c-4a29-8e80-f03730d48fb1",<br>"token_type": "bearer",<br>"expires_in": 23224,<br>"scope": "select"<br>}                                                             |
+    | 密码     | /oauth/token?<br>grant_type=password<br>scope=select<br>client_id=password<br>client_secret=password<br>username=user&password=user | {<br>"access_token": "f225c5f1-7be9-4835-8beb-1d929e6c6376",<br>"token_type": "bearer",<br>"refresh_token": "e0cc074f-8f14-4fd5-8ac3-c3442436bcef",<br>"expires_in": 23142,<br>"scope": "select"<br>} |
+
+- 请求
+    - 场景
+        - 登录状态
+            - `/user/1`
+        - 请求时
+            - `/user/1?access_token=0356302f-d4f1-4f1b-8e3a-c2a8270167a3`
+    - 遍历
+
+        | 接口                     | 未登录状态   | 登录状态                     | 请求时携带token       |
+        |--------------------------|--------------|------------------------------|-----------------------|
+        | `/user/{userId}`         | unauthorized | unauthorized                 | User[1]: `client`     |
+        | `/resource/{resourceId}` | unauthorized | Resource[1]: `anonymousUser` | Resource[1]: `client` |
+
+
 
 
 # 异常
-
-
 ## org.h2.jdbcx.JdbcDataSource 未找到
 
+- 将 `scope` 移除，或手动更新为默认的 `compile`
+
+    ```xml
     <dependency>
         <groupId>com.h2database</groupId>
         <artifactId>h2</artifactId>
         <version>1.4.197</version>
         <scope>runtime</scope>
     </dependency>
+    ```
 
-    将 scope 移除，或手动更新为默认的 compile
+    
 
 
 ## No suitable driver found for
 
-断点发现读取获取文件均为空
-将 target 删除，重新运行即可
+- 断点发现读取获取文件均为空
+    - 将 `target` 目录删除，重新运行即可
 
 ## HasAnyRole 无法正常过滤，返回403
 
+- 角色关联时，会自动添加 `ROLE_` 前缀，因为配置时需一致
+
+    ```java
     http.authorizeRequests().antMatchers("/user/role/user").hasAnyRole(ROLE_ADMIN, ROLE_USER)
-    
     insert into authorities (username,authority) values('admin','ROLE_ADMIN');
 
     ExpressionUrlAuthorizationConfigurer.java
@@ -316,23 +644,8 @@ authorization
             String anyAuthorities = StringUtils.arrayToDelimitedString(authorities, "','ROLE_");
             return "hasAnyRole('ROLE_" + anyAuthorities + "')";
         }
+    ```
 
-
-
-## OAuth2 实现
-配置资源服务器
-配置认证服务器
-配置spring security
-
-## OAuth2 模式
-授权码模式
-    - authorization code
-简化模式
-    - implicit
-密码模式
-    - resource owner password credentials
-客户端模式
-    - client credentials
 
 # 名词解析
 - CSRF
@@ -348,6 +661,7 @@ authorization
     - 轻量目录访问协议
         - 在公司计算机上登录一次，便可以自动在公司内部网上登录
         - 在多个服务中使用同一个密码
+
 # 参考
 ## 官方
 - [Spring Security Reference - 5.0.5](https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/)
@@ -355,14 +669,12 @@ authorization
 - [Spring Security Reference - 5.1.2](https://docs.spring.io/spring-security/site/docs/5.1.2.BUILD-SNAPSHOT/reference/htmlsingle/#community)
 - [/spring-session/docs](https://docs.spring.io/spring-session/docs/)
 - [H2.Features](http://www.h2database.com/html/features.html)
-- []()
+- [从零开始的Spring Security Oauth2（一）](http://blog.didispace.com/spring-security-oauth2-xjf-1/)
 
 ## 补充
 - [理解OAuth 2.0](http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html)
 - [spring boot集成h2指南](https://segmentfault.com/a/1190000007002140)
 - [Spring Data JPA(二)：SpringBoot集成H2](https://juejin.im/post/5ab4b339f265da238c3a9d0a)
-- []()
-- []()
 
 ## 异常
 - [There is no PasswordEncoder mapped for the id "null"](https://blog.csdn.net/dream_an/article/details/79381459)
@@ -375,13 +687,10 @@ authorization
 - [H2 in-memory database. Table not found](https://stackoverflow.com/questions/5763747/h2-in-memory-database-table-not-found)
 - [JdbcDaoImpl](https://docs.spring.io/spring-security/site/docs/4.2.5.RELEASE/apidocs/org/springframework/security/core/userdetails/jdbc/JdbcDaoImpl.html)
     - sql.init
-- []()
-- []()
-
-
 
 
 ## 代码
+- [yqjdcyy/Hello_Spring_Boot](https://github.com/yqjdcyy/Hello_Spring_Boot)
 - [4. Samples and Guides](https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/#samples)
     - [Hello Spring Security](https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/javaconfig/helloworld)
     - [Hello Spring Security Boot](https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/boot/helloworld)
@@ -389,7 +698,3 @@ authorization
     - [Hello Spring MVC Security](https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/javaconfig/hellomvc)
     - [Custom Login Form](https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/javaconfig/form)
     - [OAuth 2.0 Login](https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/boot/oauth2login)
-- []()
-- []()
-- []()
-- []()
