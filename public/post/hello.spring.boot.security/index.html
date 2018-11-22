@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-16">
-    2018-11-16
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-22">
+    2018-11-22
 </time>
 </span> 
       
@@ -155,48 +155,33 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1133 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1922 字 ~4分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="introduction">Introduction</h1>
-
-<p>providing both authentication and authorization to Java applications.</p>
-
-<p>a comprehensive security solution for Java EE-based enterprise software applications</p>
-
-<p>layers of security<br />
-    each layer tries to be as secure as possible in its own right</p>
-
-<p>authentication
-    鉴定
-    the process of establishing a principal is who they claim to be
-authorization
-    授权
-    the process of deciding whether a principal is allowed to perform an action within your application</p>
-
-<h1 id="faq">FAQ</h1>
-
-<h1 id="architecture">Architecture</h1>
-
-<h1 id="code">Code</h1>
-
-<p>2.4 Getting Spring Security</p>
-
-<p>2.4.3 Project Modules</p>
-
-<ol>
-<li>Java Configuration</li>
-</ol>
-
-<h1 id="oauth2">OAuth2</h1>
-
 <h1 id="实现">实现</h1>
 
 <h2 id="authentication-memory">Authentication-Memory</h2>
+
+<h3 id="todo">TODO</h3>
+
+<ul>
+<li>内置用户管理</li>
+<li>分接口限制访问</li>
+<li>限制角色访问
+
+<ul>
+<li>非登录情况自动跳转至登录界面</li>
+</ul></li>
+<li>指定密码编码器
+
+<ul>
+<li>新版本中，不再默认以文本编码器作为默认编码器</li>
+</ul></li>
+</ul>
 
 <h3 id="maven">Maven</h3>
 
@@ -214,7 +199,7 @@ authorization
     <span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
 </ul>
 
-<h3 id="code-1">Code</h3>
+<h3 id="code">Code</h3>
 
 <ul>
 <li><p><code>Application</code></p>
@@ -269,15 +254,25 @@ authorization
 </ul></li>
 </ul>
 
-<h3 id="upgrade">Upgrade</h3>
+<h2 id="authorization-jdbc">Authorization-Jdbc</h2>
+
+<h3 id="todo-1">TODO</h3>
 
 <ul>
-<li>验证方式自定义</li>
-<li>验证持久化</li>
-<li>用户数据源配置</li>
-</ul>
+<li>更新用户、角色信息来源为数据库</li>
+<li>接口限定用户、权限访问
 
-<h2 id="authorization-jdbc">Authorization-Jdbc</h2>
+<ul>
+<li>角色配置时，例如为 <code>ADMIN</code>，但实际数据库配置中应加上 <code>ROLE_</code> 前缀</li>
+<li>默认表语句可参见 <code>org/springframework/security/core/userdetails/jdbc/users.ddl</code></li>
+<li>若为自建表，需更新 <code>AuthenticationManagerBuilder.jdbcAuthentication()</code>
+
+<ul>
+<li><code>usersByUsernameQuery</code></li>
+<li><code>authoritiesByUsernameQuery</code></li>
+</ul></li>
+</ul></li>
+</ul>
 
 <h3 id="maven-1">Maven</h3>
 
@@ -353,7 +348,7 @@ authorization
 <span style="color:#66d9ef">insert</span> <span style="color:#66d9ef">into</span> authorities (username,authority) <span style="color:#66d9ef">values</span>(<span style="color:#e6db74">&#39;user&#39;</span>,<span style="color:#e6db74">&#39;ROLE_USER&#39;</span>);</code></pre></div></li>
 </ul>
 
-<h3 id="code-2">Code</h3>
+<h3 id="code-1">Code</h3>
 
 <ul>
 <li><p><code>SecurityConfig</code></p>
@@ -455,52 +450,443 @@ authorization
 </tbody>
 </table>
 
-<h2 id="authorization-custom">Authorization-Custom</h2>
+<h2 id="authorization-redis">Authorization-Redis</h2>
 
-<h2 id="authorization-keep">Authorization-Keep</h2>
+<h3 id="todo-2">TODO</h3>
+
+<ul>
+<li>配置 <code>Redis</code> 以缓存 <code>Spring Session</code> 信息
+
+<ul>
+<li>解决服务重启后，已登录的服务端可正常再次访问的情况</li>
+</ul></li>
+</ul>
+
+<h3 id="maven-2">Maven</h3>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-data-redis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.security<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-security-core<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.session<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-session<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.session<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-session-data-redis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h3 id="properties-1">Properties</h3>
+
+<ul>
+<li><p><code>application.properties</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-properties" data-lang="properties">spring.redis.host= 127.0.0.1</code></pre></div></li>
+</ul>
+
+<h3 id="code-2">Code</h3>
+
+<ul>
+<li><p><code>Application.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@SpringBootApplication</span>
+<span style="color:#75715e">// 配置 Session 的有效期
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">@EnableRedisHttpSession</span><span style="color:#f92672">(</span>maxInactiveIntervalInSeconds <span style="color:#f92672">=</span> 8 <span style="color:#f92672">*</span> 3600<span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Application</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        SpringApplication<span style="color:#f92672">.</span><span style="color:#a6e22e">run</span><span style="color:#f92672">(</span>Application<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> args<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>ConfigInitializer.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConfigInitializer</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 指定密码加密方式
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> PasswordEncoder <span style="color:#a6e22e">initPWDEncoder</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BCryptPasswordEncoder<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> CookieSerializer <span style="color:#a6e22e">cookieSerializer</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        DefaultCookieSerializer serializer <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DefaultCookieSerializer<span style="color:#f92672">();</span>
+        serializer<span style="color:#f92672">.</span><span style="color:#a6e22e">setCookiePath</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> serializer<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>SecurityInterceptor.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityInterceptor</span> <span style="color:#66d9ef">implements</span> HandlerInterceptor <span style="color:#f92672">{</span>
+
+    <span style="color:#75715e">// 接口调用前，判定是否已登录
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">preHandle</span><span style="color:#f92672">(</span>HttpServletRequest request<span style="color:#f92672">,</span> HttpServletResponse response<span style="color:#f92672">,</span> Object handler<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+        HttpSession session <span style="color:#f92672">=</span> request<span style="color:#f92672">.</span><span style="color:#a6e22e">getSession</span><span style="color:#f92672">();</span>
+
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">null</span> <span style="color:#f92672">!=</span> session<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>SecurityMvcConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">SESSION_KEY</span><span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        response<span style="color:#f92672">.</span><span style="color:#a6e22e">getWriter</span><span style="color:#f92672">().</span><span style="color:#a6e22e">write</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Login first, please&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>SecurityMvcConfig.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityMvcConfig</span> <span style="color:#66d9ef">implements</span> WebMvcConfigurer <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">static</span> String SESSION_KEY <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;USER_SESSION&#34;</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">addInterceptors</span><span style="color:#f92672">(</span>InterceptorRegistry registry<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// 配置可直接访问的
+</span><span style="color:#75715e"></span>        registry
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">addInterceptor</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> SecurityInterceptor<span style="color:#f92672">())</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">addPathPatterns</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/**&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">excludePathPatterns</span><span style="color:#f92672">(</span>
+                        <span style="color:#e6db74">&#34;/user/login&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/user/logout&#34;</span><span style="color:#f92672">,</span>
+                        <span style="color:#e6db74">&#34;/redis/**&#34;</span>
+                <span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>    </code></pre></div></li>
+
+<li><p><code>UserController.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#f92672">{</span><span style="color:#e6db74">&#34;&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;/&#34;</span><span style="color:#f92672">},</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> List<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">list</span><span style="color:#f92672">(</span>HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> Stream<span style="color:#f92672">.</span><span style="color:#a6e22e">of</span><span style="color:#f92672">(</span>session<span style="color:#f92672">.</span><span style="color:#a6e22e">getAttribute</span><span style="color:#f92672">(</span>SecurityMvcConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">SESSION_KEY</span><span style="color:#f92672">).</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">()).</span><span style="color:#a6e22e">collect</span><span style="color:#f92672">(</span>Collectors<span style="color:#f92672">.</span><span style="color:#a6e22e">toList</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/login&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">POST</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">login</span><span style="color:#f92672">(</span>String username<span style="color:#f92672">,</span> String password<span style="color:#f92672">,</span> HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        session<span style="color:#f92672">.</span><span style="color:#a6e22e">setAttribute</span><span style="color:#f92672">(</span>SecurityMvcConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">SESSION_KEY</span><span style="color:#f92672">,</span> 1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/logout&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">PUT</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">login</span><span style="color:#f92672">(</span>HttpSession session<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        session<span style="color:#f92672">.</span><span style="color:#a6e22e">removeAttribute</span><span style="color:#f92672">(</span>SecurityMvcConfig<span style="color:#f92672">.</span><span style="color:#a6e22e">SESSION_KEY</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h2 id="authorization-oauth">Authorization-OAuth</h2>
+
+<h3 id="todo-3">TODO</h3>
+
+<ul>
+<li>支持 OAuth 模式
+
+<ul>
+<li>客户端模式</li>
+<li>密码模式</li>
+</ul></li>
+</ul>
+
+<h3 id="maven-3">Maven</h3>
+
+<ul>
+<li><p><code>pom.xml</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-web<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-security<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.security.oauth<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-security-oauth2<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>2.3.3.RELEASE<span style="color:#f92672">&lt;/version&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span>
+<span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>org.springframework.boot<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>spring-boot-starter-data-redis<span style="color:#f92672">&lt;/artifactId&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
+<h3 id="properties-2">Properties</h3>
+
+<ul>
+<li><p><code>application.properties</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yml" data-lang="yml">spring.redis.host= 127.0.0.1</code></pre></div></li>
+</ul>
+
+<h3 id="code-3">Code</h3>
+
+<ul>
+<li><p><code>ConfigInitializer.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ConfigInitializer</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#66d9ef">public</span> PasswordEncoder <span style="color:#a6e22e">initPWDEncoder</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> BCryptPasswordEncoder<span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>OAuth2Config.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">OAuth2Config</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String OAUTH_RESOURCE <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;resource&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String AUTH_USER_CLIENT <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;client&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String AUTH_USER_PWD <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Configuration</span>
+    <span style="color:#a6e22e">@EnableResourceServer</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResourceServiceConfiguration</span> <span style="color:#66d9ef">extends</span> ResourceServerConfigurerAdapter <span style="color:#f92672">{</span>
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>ResourceServerSecurityConfigurer resources<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+            resources<span style="color:#f92672">.</span><span style="color:#a6e22e">resourceId</span><span style="color:#f92672">(</span>OAUTH_RESOURCE<span style="color:#f92672">).</span><span style="color:#a6e22e">stateless</span><span style="color:#f92672">(</span><span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#75715e">// 仅配置 /user 下的接口，于鉴权情况下可供访问
+</span><span style="color:#75715e"></span>        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>HttpSecurity http<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+            http
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">sessionManagement</span><span style="color:#f92672">().</span><span style="color:#a6e22e">sessionCreationPolicy</span><span style="color:#f92672">(</span>SessionCreationPolicy<span style="color:#f92672">.</span><span style="color:#a6e22e">IF_REQUIRED</span><span style="color:#f92672">)</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">requestMatchers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">anyRequest</span><span style="color:#f92672">()</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">anonymous</span><span style="color:#f92672">()</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">authorizeRequests</span><span style="color:#f92672">().</span><span style="color:#a6e22e">antMatchers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user/**&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">authenticated</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Configuration</span>
+    <span style="color:#a6e22e">@EnableAuthorizationServer</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">AuthorizationServerConfiguration</span> <span style="color:#66d9ef">extends</span> AuthorizationServerConfigurerAdapter <span style="color:#f92672">{</span>
+
+        <span style="color:#a6e22e">@Autowired</span>
+        AuthenticationManager authenticationManager<span style="color:#f92672">;</span>
+        <span style="color:#a6e22e">@Autowired</span>
+        RedisConnectionFactory redisConnectionFactory<span style="color:#f92672">;</span>
+        <span style="color:#a6e22e">@Autowired</span>
+        PasswordEncoder passwordEncoder<span style="color:#f92672">;</span>
+
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>ClientDetailsServiceConfigurer clients<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+            <span style="color:#75715e">// 配置对外分配的应用（名称、授权方式、范围、密码）
+</span><span style="color:#75715e"></span>            <span style="color:#75715e">// 其中密码需使用密码编码器处理过
+</span><span style="color:#75715e"></span>            clients<span style="color:#f92672">.</span><span style="color:#a6e22e">inMemory</span><span style="color:#f92672">()</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">withClient</span><span style="color:#f92672">(</span>AUTH_USER_CLIENT<span style="color:#f92672">).</span><span style="color:#a6e22e">resourceIds</span><span style="color:#f92672">(</span>OAUTH_RESOURCE<span style="color:#f92672">).</span><span style="color:#a6e22e">authorizedGrantTypes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;client_credentials&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;refresh_token&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">scopes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">authorities</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;client&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">secret</span><span style="color:#f92672">(</span>passwordEncoder<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span>AUTH_USER_CLIENT<span style="color:#f92672">))</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">withClient</span><span style="color:#f92672">(</span>AUTH_USER_PWD<span style="color:#f92672">).</span><span style="color:#a6e22e">resourceIds</span><span style="color:#f92672">(</span>OAUTH_RESOURCE<span style="color:#f92672">).</span><span style="color:#a6e22e">authorizedGrantTypes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;refresh_token&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">scopes</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;select&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">authorities</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;client&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">secret</span><span style="color:#f92672">(</span>passwordEncoder<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span>AUTH_USER_PWD<span style="color:#f92672">));</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>AuthorizationServerSecurityConfigurer security<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+            <span style="color:#75715e">// 允许客户端进行网页形式鉴权
+</span><span style="color:#75715e"></span>            security<span style="color:#f92672">.</span><span style="color:#a6e22e">allowFormAuthenticationForClients</span><span style="color:#f92672">();</span>
+        <span style="color:#f92672">}</span>
+
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>AuthorizationServerEndpointsConfigurer endpoints<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+            endpoints
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">tokenStore</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> RedisTokenStore<span style="color:#f92672">(</span>redisConnectionFactory<span style="color:#f92672">))</span>
+                    <span style="color:#f92672">.</span><span style="color:#a6e22e">authenticationManager</span><span style="color:#f92672">(</span>authenticationManager<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>SecurityConfig.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Configuration</span>
+<span style="color:#a6e22e">@EnableWebSecurity</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SecurityConfig</span> <span style="color:#66d9ef">extends</span> WebSecurityConfigurerAdapter <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@Autowired</span>
+    PasswordEncoder passwordEncoder<span style="color:#f92672">;</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>AuthenticationManagerBuilder auth<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// 配置内部用户账号
+</span><span style="color:#75715e"></span>        auth<span style="color:#f92672">.</span><span style="color:#a6e22e">inMemoryAuthentication</span><span style="color:#f92672">()</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">passwordEncoder</span><span style="color:#f92672">(</span>passwordEncoder<span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">withUser</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">password</span><span style="color:#f92672">(</span>passwordEncoder<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;admin&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">roles</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;ADMIN&#34;</span><span style="color:#f92672">)</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">withUser</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">password</span><span style="color:#f92672">(</span>passwordEncoder<span style="color:#f92672">.</span><span style="color:#a6e22e">encode</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;user&#34;</span><span style="color:#f92672">)).</span><span style="color:#a6e22e">roles</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;USER&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">protected</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">configure</span><span style="color:#f92672">(</span>HttpSecurity http<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+
+        <span style="color:#75715e">// 开放鉴权相关接口
+</span><span style="color:#75715e"></span>        http
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">requestMatchers</span><span style="color:#f92672">().</span><span style="color:#a6e22e">anyRequest</span><span style="color:#f92672">()</span>
+                <span style="color:#f92672">.</span><span style="color:#a6e22e">and</span><span style="color:#f92672">().</span><span style="color:#a6e22e">authorizeRequests</span><span style="color:#f92672">().</span><span style="color:#a6e22e">antMatchers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/oauth/**&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">permitAll</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@Bean</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> AuthenticationManager <span style="color:#a6e22e">authenticationManagerBean</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">super</span><span style="color:#f92672">.</span><span style="color:#a6e22e">authenticationManagerBean</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>ResourceController.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/resource&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ResourceController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#a6e22e">@NotNull</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        Authentication authentication <span style="color:#f92672">=</span> SecurityContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAuthentication</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Resource[%s]: %s&#34;</span><span style="color:#f92672">,</span> id<span style="color:#f92672">,</span> authentication<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}/detail&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">getDetail</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#a6e22e">@NotNull</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        Authentication authentication <span style="color:#f92672">=</span> SecurityContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAuthentication</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Resource[%s].detail: %s&#34;</span><span style="color:#f92672">,</span> id<span style="color:#f92672">,</span> authentication<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>UserController.java</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@RestController</span>
+<span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user&#34;</span><span style="color:#f92672">)</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserController</span> <span style="color:#f92672">{</span>
+
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;/{id}&#34;</span><span style="color:#f92672">,</span> method <span style="color:#f92672">=</span> RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#a6e22e">@NotNull</span> Long id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+        Authentication authentication <span style="color:#f92672">=</span> SecurityContextHolder<span style="color:#f92672">.</span><span style="color:#a6e22e">getContext</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getAuthentication</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> String<span style="color:#f92672">.</span><span style="color:#a6e22e">format</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;User[%s]: %s&#34;</span><span style="color:#f92672">,</span> id<span style="color:#f92672">,</span> authentication<span style="color:#f92672">.</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
+
+<h3 id="invoke-2">Invoke</h3>
+
+<ul>
+<li><p>认证</p>
+
+<table>
+<thead>
+<tr>
+<th>认证模式</th>
+<th>请求</th>
+<th>返回值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>客户端</td>
+<td>/oauth/token?<br>grant_type=client_credentials<br>scope=select<br>client_id=client<br>client_secret=client</td>
+<td>{<br>&ldquo;access_token&rdquo;: &ldquo;93440a4e-3e9c-4a29-8e80-f03730d48fb1&rdquo;,<br>&ldquo;token_type&rdquo;: &ldquo;bearer&rdquo;,<br>&ldquo;expires_in&rdquo;: 23224,<br>&ldquo;scope&rdquo;: &ldquo;select&rdquo;<br>}</td>
+</tr>
+
+<tr>
+<td>密码</td>
+<td>/oauth/token?<br>grant_type=password<br>scope=select<br>client_id=password<br>client_secret=password<br>username=user&amp;password=user</td>
+<td>{<br>&ldquo;access_token&rdquo;: &ldquo;f225c5f1-7be9-4835-8beb-1d929e6c6376&rdquo;,<br>&ldquo;token_type&rdquo;: &ldquo;bearer&rdquo;,<br>&ldquo;refresh_token&rdquo;: &ldquo;e0cc074f-8f14-4fd5-8ac3-c3442436bcef&rdquo;,<br>&ldquo;expires_in&rdquo;: 23142,<br>&ldquo;scope&rdquo;: &ldquo;select&rdquo;<br>}</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>请求</p>
+
+<ul>
+<li>场景
+
+<ul>
+<li>登录状态
+
+<ul>
+<li><code>/user/1</code></li>
+</ul></li>
+<li>请求时
+
+<ul>
+<li><code>/user/1?access_token=0356302f-d4f1-4f1b-8e3a-c2a8270167a3</code></li>
+</ul></li>
+</ul></li>
+
+<li><p>遍历</p>
+
+<table>
+<thead>
+<tr>
+<th>接口</th>
+<th>未登录状态</th>
+<th>登录状态</th>
+<th>请求时携带token</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>/user/{userId}</code></td>
+<td>unauthorized</td>
+<td>unauthorized</td>
+<td>User[1]: <code>client</code></td>
+</tr>
+
+<tr>
+<td><code>/resource/{resourceId}</code></td>
+<td>unauthorized</td>
+<td>Resource[1]: <code>anonymousUser</code></td>
+<td>Resource[1]: <code>client</code></td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul>
 
 <h1 id="异常">异常</h1>
 
 <h2 id="org-h2-jdbcx-jdbcdatasource-未找到">org.h2.jdbcx.JdbcDataSource 未找到</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">&lt;dependency&gt;
-    &lt;groupId&gt;com.h2database&lt;/groupId&gt;
-    &lt;artifactId&gt;h2&lt;/artifactId&gt;
-    &lt;version&gt;1.4.197&lt;/version&gt;
-    &lt;scope&gt;runtime&lt;/scope&gt;
-&lt;/dependency&gt;
 
-将 scope 移除，或手动更新为默认的 compile</pre></div>
+<ul>
+<li><p>将 <code>scope</code> 移除，或手动更新为默认的 <code>compile</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;dependency&gt;</span>
+    <span style="color:#f92672">&lt;groupId&gt;</span>com.h2database<span style="color:#f92672">&lt;/groupId&gt;</span>
+    <span style="color:#f92672">&lt;artifactId&gt;</span>h2<span style="color:#f92672">&lt;/artifactId&gt;</span>
+    <span style="color:#f92672">&lt;version&gt;</span>1.4.197<span style="color:#f92672">&lt;/version&gt;</span>
+    <span style="color:#f92672">&lt;scope&gt;</span>runtime<span style="color:#f92672">&lt;/scope&gt;</span>
+<span style="color:#f92672">&lt;/dependency&gt;</span></code></pre></div></li>
+</ul>
+
 <h2 id="no-suitable-driver-found-for">No suitable driver found for</h2>
 
-<p>断点发现读取获取文件均为空
-将 target 删除，重新运行即可</p>
+<ul>
+<li>断点发现读取获取文件均为空
+
+<ul>
+<li>将 <code>target</code> 目录删除，重新运行即可</li>
+</ul></li>
+</ul>
 
 <h2 id="hasanyrole-无法正常过滤-返回403">HasAnyRole 无法正常过滤，返回403</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">http.authorizeRequests().antMatchers(&#34;/user/role/user&#34;).hasAnyRole(ROLE_ADMIN, ROLE_USER)
 
-insert into authorities (username,authority) values(&#39;admin&#39;,&#39;ROLE_ADMIN&#39;);
+<ul>
+<li><p>角色关联时，会自动添加 <code>ROLE_</code> 前缀，因为配置时需一致</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">http<span style="color:#f92672">.</span><span style="color:#a6e22e">authorizeRequests</span><span style="color:#f92672">().</span><span style="color:#a6e22e">antMatchers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/user/role/user&#34;</span><span style="color:#f92672">).</span><span style="color:#a6e22e">hasAnyRole</span><span style="color:#f92672">(</span>ROLE_ADMIN<span style="color:#f92672">,</span> ROLE_USER<span style="color:#f92672">)</span>
+insert into <span style="color:#a6e22e">authorities</span> <span style="color:#f92672">(</span>username<span style="color:#f92672">,</span>authority<span style="color:#f92672">)</span> values<span style="color:#f92672">(</span><span style="color:#960050;background-color:#1e0010">&#39;</span>admin<span style="color:#e6db74">&#39;,&#39;</span>ROLE_ADMIN<span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#f92672">);</span>
 
-ExpressionUrlAuthorizationConfigurer.java
-    private static String hasAnyRole(String... authorities) {
-        String anyAuthorities = StringUtils.arrayToDelimitedString(authorities, &#34;&#39;,&#39;ROLE_&#34;);
-        return &#34;hasAnyRole(&#39;ROLE_&#34; + anyAuthorities + &#34;&#39;)&#34;;
-    }</pre></div>
-<h2 id="oauth2-实现">OAuth2 实现</h2>
-
-<p>配置资源服务器
-配置认证服务器
-配置spring security</p>
-
-<h2 id="oauth2-模式">OAuth2 模式</h2>
-
-<p>授权码模式
-    - authorization code
-简化模式
-    - implicit
-密码模式
-    - resource owner password credentials
-客户端模式
-    - client credentials</p>
+ExpressionUrlAuthorizationConfigurer<span style="color:#f92672">.</span><span style="color:#a6e22e">java</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> String <span style="color:#a6e22e">hasAnyRole</span><span style="color:#f92672">(</span>String<span style="color:#f92672">...</span> authorities<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        String anyAuthorities <span style="color:#f92672">=</span> StringUtils<span style="color:#f92672">.</span><span style="color:#a6e22e">arrayToDelimitedString</span><span style="color:#f92672">(</span>authorities<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;&#39;,&#39;ROLE_&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#34;hasAnyRole(&#39;ROLE_&#34;</span> <span style="color:#f92672">+</span> anyAuthorities <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34;&#39;)&#34;</span><span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span></code></pre></div></li>
+</ul>
 
 <h1 id="名词解析">名词解析</h1>
 
@@ -525,36 +911,30 @@ ExpressionUrlAuthorizationConfigurer.java
 <li>允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能同源使用的限制</li>
 </ul></li>
 </ul></li>
-
-<li><p>LDAP</p>
+<li>LDAP
 
 <ul>
 <li>Lightweight Directory Access Protocol</li>
-
-<li><p>轻量目录访问协议</p>
+<li>轻量目录访问协议
 
 <ul>
 <li>在公司计算机上登录一次，便可以自动在公司内部网上登录</li>
-
-<li><p>在多个服务中使用同一个密码</p>
+<li>在多个服务中使用同一个密码</li>
+</ul></li>
+</ul></li>
+</ul>
 
 <h1 id="参考">参考</h1>
 
-<h2 id="官方">官方</h2></li>
-</ul></li>
-</ul></li>
+<h2 id="官方">官方</h2>
 
-<li><p><a href="https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/">Spring Security Reference - 5.0.5</a></p></li>
-
-<li><p><a href="https://spring.io/projects/spring-security">Spring Security</a></p></li>
-
-<li><p><a href="https://docs.spring.io/spring-security/site/docs/5.1.2.BUILD-SNAPSHOT/reference/htmlsingle/#community">Spring Security Reference - 5.1.2</a></p></li>
-
-<li><p><a href="https://docs.spring.io/spring-session/docs/">/spring-session/docs</a></p></li>
-
-<li><p><a href="http://www.h2database.com/html/features.html">H2.Features</a></p></li>
-
-<li><p>[]()</p></li>
+<ul>
+<li><a href="https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/">Spring Security Reference - 5.0.5</a></li>
+<li><a href="https://spring.io/projects/spring-security">Spring Security</a></li>
+<li><a href="https://docs.spring.io/spring-security/site/docs/5.1.2.BUILD-SNAPSHOT/reference/htmlsingle/#community">Spring Security Reference - 5.1.2</a></li>
+<li><a href="https://docs.spring.io/spring-session/docs/">/spring-session/docs</a></li>
+<li><a href="http://www.h2database.com/html/features.html">H2.Features</a></li>
+<li><a href="http://blog.didispace.com/spring-security-oauth2-xjf-1/">从零开始的Spring Security Oauth2（一）</a></li>
 </ul>
 
 <h2 id="补充">补充</h2>
@@ -563,8 +943,6 @@ ExpressionUrlAuthorizationConfigurer.java
 <li><a href="http://www.ruanyifeng.com/blog/2014/05/oauth_2_0.html">理解OAuth 2.0</a></li>
 <li><a href="https://segmentfault.com/a/1190000007002140">spring boot集成h2指南</a></li>
 <li><a href="https://juejin.im/post/5ab4b339f265da238c3a9d0a">Spring Data JPA(二)：SpringBoot集成H2</a></li>
-<li>[]()</li>
-<li>[]()</li>
 </ul>
 
 <h2 id="异常-1">异常</h2>
@@ -592,13 +970,12 @@ ExpressionUrlAuthorizationConfigurer.java
 <ul>
 <li>sql.init</li>
 </ul></li>
-<li>[]()</li>
-<li>[]()</li>
 </ul>
 
 <h2 id="代码">代码</h2>
 
 <ul>
+<li><a href="https://github.com/yqjdcyy/Hello_Spring_Boot">yqjdcyy/Hello_Spring_Boot</a></li>
 <li><a href="https://docs.spring.io/spring-security/site/docs/5.0.5.RELEASE/reference/htmlsingle/#samples">4. Samples and Guides</a>
 
 <ul>
@@ -609,10 +986,6 @@ ExpressionUrlAuthorizationConfigurer.java
 <li><a href="https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/javaconfig/form">Custom Login Form</a></li>
 <li><a href="https://github.com/spring-projects/spring-security/tree/5.0.5.RELEASE/samples/boot/oauth2login">OAuth 2.0 Login</a></li>
 </ul></li>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
-<li>[]()</li>
 </ul>
 
     </div>
@@ -632,17 +1005,13 @@ ExpressionUrlAuthorizationConfigurer.java
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/servlet/" rel="next" title="Hello.Servlet">
-        <i class="fa fa-chevron-left"></i> Hello.Servlet
+        <a href="http://domain.yqjdcyy.com/post/hello.security/" rel="next" title="Hello.Security">
+        <i class="fa fa-chevron-left"></i> Hello.Security
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/hello.security/" rel="prev" title="Hello.Security">
-        Hello.Security <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -705,7 +1074,7 @@ ExpressionUrlAuthorizationConfigurer.java
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">255</span>
+        <span class="site-state-item-count">254</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -752,37 +1121,44 @@ ExpressionUrlAuthorizationConfigurer.java
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#architecture">Architecture</a></li>
-<li><a href="#code">Code</a></li>
-<li><a href="#oauth2">OAuth2</a></li>
 <li><a href="#实现">实现</a>
 <ul>
 <li><a href="#authentication-memory">Authentication-Memory</a>
 <ul>
+<li><a href="#todo">TODO</a></li>
 <li><a href="#maven">Maven</a></li>
-<li><a href="#code-1">Code</a></li>
+<li><a href="#code">Code</a></li>
 <li><a href="#invoke">Invoke</a></li>
-<li><a href="#upgrade">Upgrade</a></li>
 </ul></li>
 <li><a href="#authorization-jdbc">Authorization-Jdbc</a>
 <ul>
+<li><a href="#todo-1">TODO</a></li>
 <li><a href="#maven-1">Maven</a></li>
 <li><a href="#properties">Properties</a></li>
-<li><a href="#code-2">Code</a></li>
+<li><a href="#code-1">Code</a></li>
 <li><a href="#invoke-1">Invoke</a></li>
 </ul></li>
-<li><a href="#authorization-custom">Authorization-Custom</a></li>
-<li><a href="#authorization-keep">Authorization-Keep</a></li>
+<li><a href="#authorization-redis">Authorization-Redis</a>
+<ul>
+<li><a href="#todo-2">TODO</a></li>
+<li><a href="#maven-2">Maven</a></li>
+<li><a href="#properties-1">Properties</a></li>
+<li><a href="#code-2">Code</a></li>
+</ul></li>
+<li><a href="#authorization-oauth">Authorization-OAuth</a>
+<ul>
+<li><a href="#todo-3">TODO</a></li>
+<li><a href="#maven-3">Maven</a></li>
+<li><a href="#properties-2">Properties</a></li>
+<li><a href="#code-3">Code</a></li>
+<li><a href="#invoke-2">Invoke</a></li>
+</ul></li>
 </ul></li>
 <li><a href="#异常">异常</a>
 <ul>
 <li><a href="#org-h2-jdbcx-jdbcdatasource-未找到">org.h2.jdbcx.JdbcDataSource 未找到</a></li>
 <li><a href="#no-suitable-driver-found-for">No suitable driver found for</a></li>
 <li><a href="#hasanyrole-无法正常过滤-返回403">HasAnyRole 无法正常过滤，返回403</a></li>
-<li><a href="#oauth2-实现">OAuth2 实现</a></li>
-<li><a href="#oauth2-模式">OAuth2 模式</a></li>
 </ul></li>
 <li><a href="#名词解析">名词解析</a></li>
 <li><a href="#参考">参考</a>

@@ -6,10 +6,19 @@
     <description>Recent content in Security on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Boot.Security</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</guid>
+      <description>实现 Authentication-Memory TODO 内置用户管理 分接口限制访问 限制角色访问 非登录情况自动跳转至登录界面 指定密码编码器 新版本中，不再默认以文本编码器作为默认编码器 Maven pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt;</description>
+    </item>
     
     <item>
       <title>Hello.Security</title>
@@ -18,15 +27,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/hello.security/</guid>
       <description>常见类型 HTTP 适用场景 便捷性 支持跨浏览器 流程 注意事项 账号密码暴露，建议使用 HTTPS Session 适用场景 浏览器自动支持，实现简便 流程 注意事项 会话劫持攻击 Token 适用场景</description>
-    </item>
-    
-    <item>
-      <title>Hello.Spring.Boot.Security</title>
-      <link>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</guid>
-      <description>Introduction providing both authentication and authorization to Java applications. a comprehensive security solution for Java EE-based enterprise software applications layers of security each layer tries to be as secure as possible in its own right authentication 鉴定 the process of establishing a principal is who they claim to be authorization 授权 the process of deciding whether a principal is allowed to perform an action within your application FAQ</description>
     </item>
     
     <item>

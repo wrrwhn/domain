@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 16 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Spring.Boot.Security</title>
+      <link>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</link>
+      <pubDate>Thu, 22 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</guid>
+      <description>实现 Authentication-Memory TODO 内置用户管理 分接口限制访问 限制角色访问 非登录情况自动跳转至登录界面 指定密码编码器 新版本中，不再默认以文本编码器作为默认编码器 Maven pom.xml &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.security&amp;lt;/groupId&amp;gt;</description>
+    </item>
     
     <item>
       <title>Hello.Security</title>
@@ -18,15 +27,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/hello.security/</guid>
       <description>常见类型 HTTP 适用场景 便捷性 支持跨浏览器 流程 注意事项 账号密码暴露，建议使用 HTTPS Session 适用场景 浏览器自动支持，实现简便 流程 注意事项 会话劫持攻击 Token 适用场景</description>
-    </item>
-    
-    <item>
-      <title>Hello.Spring.Boot.Security</title>
-      <link>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</link>
-      <pubDate>Fri, 16 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.spring.boot.security/</guid>
-      <description>Introduction providing both authentication and authorization to Java applications. a comprehensive security solution for Java EE-based enterprise software applications layers of security each layer tries to be as secure as possible in its own right authentication 鉴定 the process of establishing a principal is who they claim to be authorization 授权 the process of deciding whether a principal is allowed to perform an action within your application FAQ</description>
     </item>
     
     <item>
@@ -2265,16 +2265,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
  20.5 万  欣赏
  []()
    </description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>http://domain.yqjdcyy.com/post/hello.spring.cloud.security/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.spring.cloud.security/</guid>
-      <description> 细节 client模式，没有用户的概念，直接与认证服务器交互，用配置中的客户端信息去申请accessToken，客户端有自己的client_id,client_secret对应于用户的username,password，而客户端也拥有自己的authorities，当采取client模式认证时，对应的权限也就是客户端自己的authorities。 password模式，自己本身有一套用户体系，在认证时需要带上自己的用户名和密码，以及客户端的client_id,client_secret。此时，accessToken所包含的权限是用户本身的权限，而不是客户端的权限。
-异常 InsufficientAuthenticationException: User must be authenticated with Spring Security before authorization can be completed. </description>
     </item>
     
     <item>
