@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.持久化</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
+      <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 时机</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Boot.Security</title>
