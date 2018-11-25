@@ -15,6 +15,14 @@ toc: true
 - 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态
 - 针对超过20字节文本，会使用 LZF 编码形式进行压缩
 
+### 原理
+- COW
+    - copy on write
+    - linux.kernel 上支持
+    - 多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见
+        - 保障线程案例，父进程的修改，不会影响到子进程的数量
+        - 类似于 java 的 string 对象
+
 ### 时机
 - 由系统定时任务 `serverCron` 周期性检查是否满足条件，以调用 `bgsave`
     - 条件为 `config get save` 中所列项
@@ -329,3 +337,4 @@ toc: true
 - [CONFIG SET parameter value](https://redis.io/commands/config-set)
 - [Redis原理详解](http://blog.51cto.com/gudaoqing/1601114)
 - [redis持久化——RDB、AOF](https://lanjingling.github.io/2015/11/16/redis-chijiuhua/)
+- [redis原理](https://juejin.im/post/5b7cbbace51d4538850307dd)
