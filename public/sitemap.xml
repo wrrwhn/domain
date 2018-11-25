@@ -10,7 +10,7 @@
         <tags>
           <tag>Redis</tag>
         </tags>
-        <content type="html">  持久化 RDB 形式  运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩  时机  由系统定时任务 serverCron 周期性检查是否满足条件，以调用 bgsave  条件为 config get save 中所列项  而 save 操作将由用户手动触发  保存  SAVE  调用 rdbSave，阻塞 redis 主线程  保存完毕之前，服务器无法处理请求 需先检查 BGSAVE 是否正在执行，否则报错以告知   BGSAVE  fork 一个 子进程 来调用 rdbSave  待保存完毕后，向主进程发送信号    载入  rdbLoad  启动时执行，读取 RDB 文件并载入内存中  每载入 1000 个键，就处理一次所有已到达的请求 期间仅如下指令可被处理  PUBLISH SUBSCRIBE PSUBSCRIBE UNSUBSCRIBE PUNSUBSCRIBE   若服务启动时，打开 AOF 功能，则优先使用 AOF 文件来还原   文件结构  文件结构
+        <content type="html">  持久化 RDB 形式  运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩  原理  COW  copy on write linux.kernel 上支持 多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见  保障线程案例，父进程的修改，不会影响到子进程的数量 类似于 java 的 string 对象    时机  由系统定时任务 serverCron 周期性检查是否满足条件，以调用 bgsave  条件为 config get save 中所列项  而 save 操作将由用户手动触发  保存  SAVE  调用 rdbSave，阻塞 redis 主线程  保存完毕之前，服务器无法处理请求 需先检查 BGSAVE 是否正在执行，否则报错以告知   BGSAVE  fork 一个 子进程 来调用 rdbSave  待保存完毕后，向主进程发送信号    载入  rdbLoad  启动时执行，读取 RDB 文件并载入内存中  每载入 1000 个键，就处理一次所有已到达的请求 期间仅如下指令可被处理  PUBLISH SUBSCRIBE PSUBSCRIBE UNSUBSCRIBE PUNSUBSCRIBE   若服务启动时，打开 AOF 功能，则优先使用 AOF 文件来还原   文件结构  文件结构
    REDIS RDB-VERSION SELECT-DB KEY-VALUE-PAIRS EOF CHECK-SUM     &amp;ldquo;REDIS&amp;rdquo; 四字节 RDB 版本号
 如当前版本为 0006 数据所属数据库号码 键值对数据 内容结尾
 rdb.h/EDIS_RDB_OPCODE_EOF
@@ -63,7 +63,7 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
  length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而入排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分
  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作  查询
  CONFIG GET (SAVE|APPENDFSYNC)  开启|关闭
- RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF  </content>
+ RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理  </content>
     </entry>
     
      <entry>
