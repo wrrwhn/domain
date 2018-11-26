@@ -338,3 +338,5 @@ toc: true
 - [Redis原理详解](http://blog.51cto.com/gudaoqing/1601114)
 - [redis持久化——RDB、AOF](https://lanjingling.github.io/2015/11/16/redis-chijiuhua/)
 - [redis原理](https://juejin.im/post/5b7cbbace51d4538850307dd)
+- [redis原理](https://juejin.im/post/5b7cbbace51d4538850307dd)
+- [fork()后copy on write的一些特性](https://zhoujianshi.github.io/articles/2017/fork()%E5%90%8Ecopy%20on%20write%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/index.html)
