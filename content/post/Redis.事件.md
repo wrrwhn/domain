@@ -1,5 +1,5 @@
 ---
-title: "Redis.持久化"
+title: "Redis.事件"
 date: "2018-11-25"
 categories:
  - "整理"
