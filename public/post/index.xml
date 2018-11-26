@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 25 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.服务器</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <pubDate>Mon, 26 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <description>初始化 初始化全局状态 数据库列表 命令表 执行命令时，映射命令字符对应的实现函数 网络连接 套接字地址 端口 套接字描述符 连接的客户端列表 Lua 脚本运行环境 订</description>
+    </item>
+    
+    <item>
+      <title>Redis.持久化</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E4%BB%B6/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E4%BB%B6/</guid>
+      <description>概览 类型 文件事件 时间事件 优先级 文件事件&amp;gt; 时间事件 调用 文件事件和时间事件依次进行 文件事件优先（命令读取、返回）于时间事件 导致后者执行时间</description>
+    </item>
     
     <item>
       <title>Redis.持久化</title>

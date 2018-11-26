@@ -2,6 +2,44 @@
 <search>
     
      <entry>
+        <title>Redis.服务器</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  初始化 初始化全局状态  数据库列表 命令表  执行命令时，映射命令字符对应的实现函数  网络连接  套接字地址 端口 套接字描述符  连接的客户端列表 Lua 脚本运行环境 订阅与发布 日志与慢日志 数据持久化 服务器配置  数据库数量 是否以守护进程运行 最大连接客户端数量  统计信息  运行时间 内存占用 键值命中情况   载入配置文件  配置内容
+ 套接字端口 数据库数量 内存限制 内存回收策略 持久化策略  调整方式
+ 配置文件 显式选项  覆盖配置文件的值    创建守护进程 初始化功能模块  流程
+ 为服务变量的数据结构分配内存 初始化数据结构  完成数据结构的初始化，相关于完成相应功能的初始化 如完成订阅与发布所需的链表的内存分配后，该功能即准备就绪，可供服务使用  步骤一相关于定义变量名，而此处为实例化变量  功能
+ 信号 日志 客户端 共享 事件 数据库 网络连接 订阅与发布 统计变量 定时任务 AOF 读取 内存限制 Lua 环境 慢查询 后台  完成标志
+ 界面输出 Redis 的码 Logo、版本信息   载入数据  操作  读取 RDB|AOF 文件 加载至内存  完成标志  [6717] 22 Feb 11:59:14.830 * DB loaded from disk: 0.068 seconds   事件循环  操作  开启事件循环  完成标志  [6717] 22 Feb 11:59:14.830 * The server is now ready to accept connections on port 6379   组成  Share Objects Command Table Lua Environment Databases  DB1&amp;hellip;DBn  Clients  C1&amp;hellip;Cn  AOF|RDB Event Handler  File Time   客户端请求 连接 流程  端通过文件事件，无阻塞地响应客户端的连接，并返回套接字描述符 fd 为 fd 创建 redisClient 结构实例，并添加至客户端链表 在事件处理中，为该 fd 关联文件事件  RedisClient 结构  数据  套接字描述符 当前连接的数据库号码和指针 指向命令函数的指针 当前状态  缓存  查询 回复  数据结构  事务，如 MULTI 和 WATCH 阻塞，如 BLPOP 和 BPROPLPUSH 订阅与发布，如 PUBLISH 和 SUBSCRIBE  统计  创建时间 最后交互时间 缓存大小   调用    参考  服务器与客户端  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.持久化</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E4%BB%B6/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  概览  类型
+ 文件事件 时间事件  优先级
+ 文件事件&amp;gt; 时间事件  调用
+ 文件事件和时间事件依次进行 文件事件优先（命令读取、返回）于时间事件  导致后者执行时间，较预定时间晚一些
+ 文件事件和时间事件不进行抢占操作    详解 文件事件 定义  对套接字的多路复用而产生的事件  对照    事件类型 作用 生命周期 状态     读事件 客户端进行命令请求 连接时绑定，断开时才移除 等待：等待客户端发起请求
+就绪：请求已发送，并已到达   写事件 服务端返回命令结果 服务器完成时发起，传送完毕后移除 等待：等候服务器处理命令
+已就绪：返回命令结果，等待客户端接收    注意  读事件周期优先于写事件周期  存在读事件和写事件同时就绪的情况，此时优先处理读事件  时间事件执行时，将遍历所有链表，检查 when 是否触发  时间事件 描述  在指定时间点运行的事件，以无序鍡的形式保存于服务器 属性
+   属性 含义     when 事件执行时间点
+UNIX 时间戳的毫秒格式   timeProc 事件处理函数
+可分为单次和循环执行类型，后者将于完成时更新 when 属性值以继续运行   next 指向下一事件     调用  由 redis.c/serverCron 实现  实现场景  更新统计信息，如时间、内存占用等 清理过期键值对 关闭和清理已失效的客户端 RDB|AOF 持久化操作 主从备份 集群同步  参考  事件  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.持久化</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</url>
         <categories>
@@ -63,7 +101,7 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
  length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而入排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分
  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作  查询
  CONFIG GET (SAVE|APPENDFSYNC)  开启|关闭
- RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理  </content>
+ RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性  </content>
     </entry>
     
      <entry>
