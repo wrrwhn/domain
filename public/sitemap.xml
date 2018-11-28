@@ -2,6 +2,35 @@
 <search>
     
      <entry>
+        <title>Redis.数据结构.字典</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag><tag>数据结构</tag>
+        </tags>
+        <content type="html">  结构 定义    结构 字段 作用     dict      dictType *type 类型处理函数    void *privdata 类型处理函数时的数据    dictht ht[2] 哈希表 dictht 数组
+ht[0]默认存储数据，ht[1]于实现渐近式 rehash 时使用    int rehashidx rehash ht[0]的渐近处理进度    int iterators 正在安全运行的迭代器数量
+为0时才允许进行 rehash 操作   dictht      dictEntry **table 哈希表节点指针数组    unsigned long size 指针数组大小    unsigned long sizemask 数组大小掩码，= size-1
+用于计算索引值    unsigned long used 当前表中包含节点数量   dictEntry      void *key 键；void *表示任何类型    union {void *val;uint64_t u64;int64_t s64;} v 值    struct dictEntry *next 下一节点指针    结构    添加  判断点
+ 是否存在该键  碰撞算法为 链接法  Ht[0] 是否已初始化 Ht[0] 是否需要 ReHash 是否正在执行 ReHash  流程
+    碰撞算法 开放寻址法  流程
+ 计算键的哈希值，并与数组长度取余得到存放的数组下标值  array.idx = hash(key)% array.size  如若数组对应位置处为空，将数值保存到此即可 如若数组对应位置已存放数值，则一直下称光标，直到找到未存放数值的位置  图示
+    二次探测法  描述
+ 开放寻址法的升级版本 在检测到对应位置上已存放数值的情况，先行向下循环移动当前下标的平方值的格数  [hash(key)&#43; array.idx^ 2]% array.size   图示
+    链接法  流程
+ 获取键的计算下标后，直接将值加入当前数组下标所指向的键值对象链表即可  默认添加在链表首部  减少尾部偏移时间 Redis 所选择的算法    图示
+    扩容 前置  主要判断比率，哈希表大小和节点数量  当数值为 1: 1时，说明基本可以通过 hash(key) 一次定位到对应值 当数值远小于1时，则相当于在多个链表中查询    条件  radio= ht[0].uesd/ ht[0].size     场景 条件 备注     自然 ReHash radio&amp;gt; 1 &amp;amp; dict_can_resize dict_can_resize 主要于持久化时暂时关闭   强制 ReHash radio&amp;gt; dict_force_resize_ratio dict_force_resize_ratio 默认为 5    过程  初始化 ht[1].table 大小大于 ht[0].size  ht[1].size&amp;gt;= 2* ht[0].used  将 ht[0].table 的键渐近式地迁移至 ht[1].table  dict.rehashidx&#43;&#43; ht[0].used&amp;ndash; ht[1].used&#43;&#43;  ht[0]中所有数据清空后，将 ht[1] 替换为 ht[0]  ht[0] clear ht[0]= ht[1] dict.rehashidx= -1   流程  初始状态
+   rehashing
+   结束状态
+    调用函数  _dictRehashStep
+ rehashing 情况下执行，将 ht[0].table 第一个非空索引上的链表均迁移到 ht[1].table 上  dictRehashMilliseconds
+ 指定毫秒内对字典进行 rehash 操作 由 ServerCron 调用执行   收缩 时机  当 ht[0].used* 100/ ht[0].size &amp;lt; REDIS_HT_MINFILL 时触发  REDIS_HT_MINFILL 默认为 10 即实际使用率小于 10% 时触发   与扩容的差异  流程类似扩容，差异于初始化 Ht[1].table 时，大小为 ht[0].used
+int dictResize(dict *d) { int minimal; if (!dict_can_resize || dictIsRehashing(d)) return DICT_ERR; minimal = d-&amp;gt;ht[0].used; if (minimal &amp;lt; DICT_HT_INITIAL_SIZE) // DICT_HT_INITIAL_SIZE= 4  minimal = DICT_HT_INITIAL_SIZE; return dictExpand(d, minimal); }  参考  字典 深入理解哈希表 HASH表的实现（拉链法） 散列表-链接法和开放寻址法 线性探查 构造哈希表之二次探测法 redis数据结构之dict详解 Redis字典的实现  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.服务器</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
         <categories>
@@ -102,6 +131,28 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作  查询
  CONFIG GET (SAVE|APPENDFSYNC)  开启|关闭
  RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.数据库</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E5%BA%93/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  结构  属性
+   变量 作用     id 数据库编码   *dict 键值对数据   *expires 键值过期情况   *blocking_keys 阻塞命令所需   *ready_keys 阻塞命令所需   *watched_keys 配合 WATCH 命令实现事务    图示
+    数据库号码  redisDB.id 值即为当前数据库在 redisServer.DB 列表中的下标值  如 SELECT 0 时即选中 redisServer.DB[0] 而在内部使用中，将通过遍历 redisServer.DB 队列，判断与持有的当前使用数据库的指针一致，以获取所使用的数据库 ID   键空间  字典结构 除实现键值的增删改查，还维护命中率、LRU-最近最少使用、过期、事务和数据同步  键值过期  结构
+ 字典数据结构 其中键值为 dict.key 的位置指针，而值为实际的到期时间  单位为 以毫秒为单位的 UNIX 时间戳   过期判定
+   命令
+   类型 命令 描述     设置      EXPIRE 设置剩余有效时间，单位为秒    PEXPIRE 作用同上，但单位为 毫秒    EXPIREAT 设置键将于指定时间后过期，参数为以秒为单位的 UNIX 时间戳    PEXPIREAT 作用同上，参数为以毫秒为单位的 UNIX 时间戳   查询      TTL 查询键舉的剩余有效时间，单位为秒    PTTL 作用同上，单位为毫秒    策略
+ Redis 使用的策略为 惰性删除&#43; 定期删除     策略 描述 优势 缺陷     定时删除 设置过期时间时，同步创建定时事件，以按时自动执行键的删除 内存友好 占用CPU
+遍历事件的无序链表，时间复杂度为 O(N)   惰性删除 当获取键值时，判断键值是否过期，如果过期就删除 CPU友好 内存最不友好
+若未被访问则无法删除   定期删除 每隔一段时间进行检查，移除所有过期的键值 折中 折中    影响
+   功能 是否影响 原因     RDB No 创建RDB文件时，会对键的过期时间进行过滤筛选   AOF NO 过期删除后，程序会追加删除命令   AOF 重写 NO 重写时，会过滤过期的键   复制 NO 主节点于删除后，同步发送删除命令
+附属节点判断键值过期返回信息，并向主节点申报键过期；待主节点确认后同步发送了删除命令，再删除     收缩&amp;amp;扩容  参见 字典.扩容  参考  antirez/redis 数据库 redis的事务和watch 数据库键空间 PEXPIRE  </content>
     </entry>
     
      <entry>

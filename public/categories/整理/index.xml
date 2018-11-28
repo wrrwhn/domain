@@ -6,10 +6,19 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 26 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.数据结构.字典</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</link>
+      <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</guid>
+      <description>结构 定义 结构 字段 作用 dict dictType *type 类型处理函数 void *privdata 类型处理函数时的数据 dictht ht[2] 哈希表 dictht 数组 ht[0]默认存储数据，ht[1]于实现渐近式 rehash 时使用 int rehashidx rehash h</description>
+    </item>
     
     <item>
       <title>Redis.服务器</title>
@@ -36,6 +45,15 @@
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
       <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理</description>
+    </item>
+    
+    <item>
+      <title>Redis.数据库</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E5%BA%93/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E5%BA%93/</guid>
+      <description>结构 属性 变量 作用 id 数据库编码 *dict 键值对数据 *expires 键值过期情况 *blocking_keys 阻塞命令所需 *ready_keys 阻塞命令所需 *watched_keys 配合 WATCH 命令实现事务 图示 数据库号码 redisDB.id 值即为当前数据库在 redisServer.DB 列</description>
     </item>
     
     <item>
