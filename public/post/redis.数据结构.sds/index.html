@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Java.ImportStatic - 好久不见</title>
+    <title>Redis.数据结构.SDS - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Java.ImportStatic">
+    <meta property="og:title" content="Redis.数据结构.SDS">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Java.ImportStatic - 好久不见" />
+    <meta name="title" content="Redis.数据结构.SDS - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.importstatic/" itemprop="url">
-        Java.ImportStatic
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.sds/" itemprop="url">
+        Redis.数据结构.SDS
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-05-23">
-    2018-05-23
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-25">
+    2018-11-25
 </time>
 </span> 
       
@@ -155,85 +155,185 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">201 字 ~1分钟</span>
+<span class="leancloud-visitors-count">339 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="describe">DESCRIBE</h1>
-
-<h2 id="发布">发布</h2>
+<h1 id="描述">描述</h1>
 
 <ul>
-<li><p>JDK 1.5 新特性</p>
-
-<h2 id="对比">对比</h2></li>
-
-<li><p><code>import</code></p>
+<li><p>解析</p>
 
 <ul>
-<li>从包中引入类，允许不添加类前缀的方式进行调用
-
-<ul>
-<li><code>imports classes from packages, allowing them to be used without package qualification</code></li>
-</ul></li>
+<li>Simple Dynamic String</li>
+<li>简单动态字符串</li>
 </ul></li>
 
-<li><p><code>static import</code></p>
+<li><p>作用</p>
 
 <ul>
-<li>声明从类中引入静态成员，以允许它们在该类中直接使用，而不需要添加类前缀
+<li>实现字符串对象（StringObject）</li>
+<li><strong>内部用于替换 <code>char*</code></strong>
 
 <ul>
-<li><code>declaration imports static members from classes, allowing them to be used without class qualification.</code></li>
+<li>支持<strong>长度</strong>计算
+
+<ul>
+<li>计算复杂度为 <code>θ(N)</code></li>
+</ul></li>
+<li>支持<strong>追加</strong>操作
+
+<ul>
+<li>每次追加均需要进行<strong>内存</strong>的重新<strong>分配</strong></li>
+</ul></li>
+<li>确保<strong>二进制安全</strong>
+
+<ul>
+<li>C语言中，字符串可用 <code>\0</code> 的 <code>char</code> 数组表示
+
+<ul>
+<li>例如 <code>hello\0</code></li>
+</ul></li>
+<li>导致无法正确地存储和读取 <code>hell\0999\0</code> 形式的数据</li>
 </ul></li>
 </ul></li>
+</ul></li>
 </ul>
 
-<h1 id="使用">使用</h1>
+<h1 id="定义">定义</h1>
+
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>sdshdr</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>int len</td>
+<td>字符长度</td>
+</tr>
+
+<tr>
+<td></td>
+<td>int free</td>
+<td>字符数组剩余长度</td>
+</tr>
+
+<tr>
+<td></td>
+<td>char buf[]</td>
+<td>字符数组，存放字符串<br>实际长度= len+1，多出来的用于存储 &lsquo;\0&rsquo;</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="追加">追加</h1>
+
+<h2 id="内存分配逻辑">内存分配逻辑</h2>
 
 <ul>
-<li><code>import class.[*|method]</code></li>
+<li>追加超出范围后，为 buf 重新分配内存
+
+<ul>
+<li>newlen= sdshdr.len+ append.len</li>
+<li>判断 <code>newlen&lt; SDS_MAX_PREALLOC</code>
+
+<ul>
+<li>符合时，<code>newlen*= 2</code></li>
+<li>不符合时，<code>newlen+= SDS_MAX_PREALLOC</code></li>
+</ul></li>
+<li><code>SDS_MAX_PREALLOC</code> 默认为 <code>1024* 1024</code>= <code>1MB</code></li>
+<li><code>buf.size= newlen+ 1</code>
+
+<ul>
+<li>多出来的一位，用于存储 <code>\0</code> 标志位</li>
+</ul></li>
+</ul></li>
+<li>优势在于减少内存分配的次数</li>
+<li>缺陷在于多占用内存，而且不会主动释放<br /></li>
 </ul>
 
-<h1 id="示例">示例</h1>
+<h2 id="示例">示例</h2>
 
-<h2 id="origin">Origin</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">double r = Math.cos(Math.PI * theta);</pre></div>
-<h2 id="static-import">Static Import</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">import static java.lang.Math.*;
-double r = cos(PI * theta);</pre></div>
-<h1 id="时机">时机</h1>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>属性</th>
+<th>数值</th>
+</tr>
+</thead>
 
-<h2 id="态度">态度</h2>
+<tbody>
+<tr>
+<td>设置 &ldquo;hello&rdquo;</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>len</td>
+<td>5</td>
+</tr>
+
+<tr>
+<td></td>
+<td>free</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td></td>
+<td>buf[]</td>
+<td>&ldquo;hello\0&rdquo;</td>
+</tr>
+
+<tr>
+<td>追加 &ldquo; world&rdquo;</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>len</td>
+<td>11</td>
+</tr>
+
+<tr>
+<td></td>
+<td>free</td>
+<td>11</td>
+</tr>
+
+<tr>
+<td></td>
+<td>buf[]</td>
+<td>&ldquo;hello workd\0           &ldquo;</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="参考">参考</h1>
 
 <ul>
-<li><strong>保守</strong>地使用</li>
-<li>仅当需频繁的访问一两个类中的静态成员</li>
-</ul>
-
-<h2 id="缺点">缺点</h2>
-
-<ul>
-<li>增加可读复杂度</li>
-<li>增加维护成本</li>
-</ul>
-
-<h1 id="reference">REFERENCE</h1>
-
-<h2 id="官方">官方</h2>
-
-<ul>
-<li><a href="https://docs.oracle.com/javase/1.5.0/docs/guide/language/static-import.html">Static Import</a></li>
-</ul>
-
-<h2 id="对比-1">对比</h2>
-
-<ul>
-<li><a href="http://blog.sina.com.cn/s/blog_625651900100kwul.html">import static和import的区别</a></li>
-<li><a href="https://www.jianshu.com/p/d4468cdd1ef3">java中import static和import的区别</a></li>
+<li><a href="https://redisbook.readthedocs.io/en/latest/internal-datastruct/sds.html">简单动态字符串</a></li>
+<li><a href="https://blog.csdn.net/u011489043/article/details/78738374">分布式缓存Redis之二进制安全</a></li>
 </ul>
 
     </div>
@@ -242,7 +342,9 @@ double r = cos(PI * theta);</pre></div>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java">#Java#</a>
+    <a href="http://domain.yqjdcyy.com/tags/redis" rel="tag" title="Redis">#Redis#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/%e6%95%b0%e6%8d%ae%e7%bb%93%e6%9e%84" rel="tag" title="数据结构">#数据结构#</a>
     
 </div>
 
@@ -251,16 +353,16 @@ double r = cos(PI * theta);</pre></div>
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/spring.jpa.fetch/" rel="next" title="Spring.JPA.Fetch">
-        <i class="fa fa-chevron-left"></i> Spring.JPA.Fetch
+        <a href="http://domain.yqjdcyy.com/post/hello.spring.boot.security/" rel="next" title="Hello.Spring.Boot.Security">
+        <i class="fa fa-chevron-left"></i> Hello.Spring.Boot.Security
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E6%88%91%E4%BB%AC%E7%9A%84%E5%AD%A9%E5%AD%90/" rel="prev" title="我们的孩子">
-        我们的孩子 <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="prev" title="Redis.数据库">
+        Redis.数据库 <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -270,7 +372,7 @@ double r = cos(PI * theta);</pre></div>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Java.ImportStatic
+                标题：Redis.数据结构.SDS
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -371,27 +473,14 @@ double r = cos(PI * theta);</pre></div>
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#describe">DESCRIBE</a>
+<li><a href="#描述">描述</a></li>
+<li><a href="#定义">定义</a></li>
+<li><a href="#追加">追加</a>
 <ul>
-<li><a href="#发布">发布</a></li>
-<li><a href="#对比">对比</a></li>
+<li><a href="#内存分配逻辑">内存分配逻辑</a></li>
+<li><a href="#示例">示例</a></li>
 </ul></li>
-<li><a href="#使用">使用</a></li>
-<li><a href="#示例">示例</a>
-<ul>
-<li><a href="#origin">Origin</a></li>
-<li><a href="#static-import">Static Import</a></li>
-</ul></li>
-<li><a href="#时机">时机</a>
-<ul>
-<li><a href="#态度">态度</a></li>
-<li><a href="#缺点">缺点</a></li>
-</ul></li>
-<li><a href="#reference">REFERENCE</a>
-<ul>
-<li><a href="#官方">官方</a></li>
-<li><a href="#对比-1">对比</a></li>
-</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>

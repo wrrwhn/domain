@@ -20,5 +20,14 @@
       <description>结构 定义 结构 字段 作用 dict dictType *type 类型处理函数 void *privdata 类型处理函数时的数据 dictht ht[2] 哈希表 dictht 数组 ht[0]默认存储数据，ht[1]于实现渐近式 rehash 时使用 int rehashidx rehash h</description>
     </item>
     
+    <item>
+      <title>Redis.数据结构.SDS</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.sds/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.sds/</guid>
+      <description>描述 解析 Simple Dynamic String 简单动态字符串 作用 实现字符串对象（StringObject） 内部用于替换 char* 支持长度计算 计算复杂度为 θ(N) 支持追加操作 每次追加</description>
+    </item>
+    
   </channel>
 </rss>

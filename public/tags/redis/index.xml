@@ -57,6 +57,15 @@
     </item>
     
     <item>
+      <title>Redis.数据结构.SDS</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.sds/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.sds/</guid>
+      <description>描述 解析 Simple Dynamic String 简单动态字符串 作用 实现字符串对象（StringObject） 内部用于替换 char* 支持长度计算 计算复杂度为 θ(N) 支持追加操作 每次追加</description>
+    </item>
+    
+    <item>
       <title>Redis.使用</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E4%BD%BF%E7%94%A8/</link>
       <pubDate>Wed, 15 Nov 2017 00:00:00 +0000</pubDate>
