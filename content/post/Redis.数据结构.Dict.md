@@ -1,5 +1,5 @@
 ---
-title: "Redis.数据结构.字典"
+title: "Redis.数据结构.Dict"
 date: "2018-11-28"
 categories:
  - "整理"
