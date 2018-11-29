@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 28 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.数据结构.List</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.list/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.list/</guid>
+      <description>结构 类 属性 作用 List listNode *head 链头指针 listNode *tail 表尾指针 unsigned long len 链表项数量 void *(*dup)(void *ptr) 复制函数 value = copy-&amp;gt;dup(node-&amp;gt;value) void (*free)(void *ptr) 删除函数 int (*match)(void *ptr, void *key) 匹配函数 ListNode struct listNode *prev 前一节点指针 struct listNode *next 后一节</description>
+    </item>
+    
+    <item>
+      <title>Redis.数据结构.SkipList</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.skiplist/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.skiplist/</guid>
+      <description>结构 类 属性 作用 zskiplist zskiplistNode *header 头结点 zskiplistNode *tail 尾结点 long length 链表结点数量 int level 链表内节点的最大层数 zskiplistNode robj *obj 成员对象 RedisObject 类型，Redis 的通用类型 double score 分值 zskiplistNode *backward 后退节点指</description>
+    </item>
     
     <item>
       <title>Redis.数据结构.字典</title>

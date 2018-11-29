@@ -2,6 +2,37 @@
 <search>
     
      <entry>
+        <title>Redis.数据结构.List</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.list/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag><tag>数据结构</tag>
+        </tags>
+        <content type="html">  结构    类 属性 作用     List      listNode *head 链头指针    listNode *tail 表尾指针    unsigned long len 链表项数量    void *(*dup)(void *ptr) 复制函数
+value = copy-&amp;gt;dup(node-&amp;gt;value)    void (*free)(void *ptr) 删除函数    int (*match)(void *ptr, void *key) 匹配函数   ListNode      struct listNode *prev 前一节点指针    struct listNode *next 后一节点指针    void *value 数值    图示    使用原则  优先使用压缩列表，优化内存占用  使用场景  事务模块中的命令、时间事件保存 服务器中客户端的保存 订阅/发送模块中存储订阅模式中的客户端列表  迭代器  结构
+   类 属性 作用     listIter      listNode *next 下一指针    int direction 迭代方向
+AL_START_HEAD=0，正序
+AL_START_TAIL=1，倒序     参考  双端链表 redis/src/adlist.c  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.数据结构.SkipList</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.skiplist/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag><tag>数据结构</tag>
+        </tags>
+        <content type="html">  结构    类 属性 作用     zskiplist      zskiplistNode *header 头结点    zskiplistNode *tail 尾结点    long length 链表结点数量    int level 链表内节点的最大层数   zskiplistNode      robj *obj 成员对象
+RedisObject 类型，Redis 的通用类型    double score 分值    zskiplistNode *backward 后退节点指针    *zskiplistLevel level 关联层列表   zskiplistLevel      zskiplistNode *forward 前进节点指针    unsigned int span 当前层的节点总数    囷示    Redis 实现 场景  用于实现有序集数据结构  自定义  允许重复的 Score 值 比较时，需同时比对 Member 值和 Score 值 定时时，创建有单层级的后退指针  层级限制  随机生成当前层级，由下往上，每次通过的机会为 50%
+int zslRandomLevel(void) { int level = 1; while ((random()&amp;amp;0xFFFF) &amp;lt; (ZSKIPLIST_P * 0xFFFF)) level &#43;= 1; return (level&amp;lt;ZSKIPLIST_MAXLEVEL) ? level : ZSKIPLIST_MAXLEVEL; } 默认值为 ZSKIPLIST_MAXLEVEL= 64
+  查找    新增    参考  跳跃表 什么是跳跃表  建立跳跃表概念  redis/src/t_zset.c  表操作  Redis内部数据结构详解(3)——robj 浅析SkipList跳跃表原理及代码实现  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.数据结构.字典</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</url>
         <categories>
@@ -167,8 +198,7 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
         <content type="html">  描述  解析
  Simple Dynamic String 简单动态字符串  作用
  实现字符串对象（StringObject） 内部用于替换 char*  支持长度计算  计算复杂度为 θ(N)  支持追加操作  每次追加均需要进行内存的重新分配  确保二进制安全  C语言中，字符串可用 \0 的 char 数组表示  例如 hello\0  导致无法正确地存储和读取 hell\0999\0 形式的数据     定义    类 属性 作用     sdshdr      int len 字符长度    int free 字符数组剩余长度    char buf[] 字符数组，存放字符串
-实际长度= len&#43;1，多出来的用于存储 &amp;lsquo;\0&amp;rsquo;    追加 内存分配逻辑  追加超出范围后，为 buf 重新分配内存  newlen= sdshdr.len&#43; append.len 判断 newlen&amp;lt; SDS_MAX_PREALLOC  符合时，newlen*= 2 不符合时，newlen&#43;= SDS_MAX_PREALLOC  SDS_MAX_PREALLOC 默认为 1024* 1024= 1MB buf.size= newlen&#43; 1  多出来的一位，用于存储 \0 标志位   优势在于减少内存分配的次数 缺陷在于多占用内存，而且不会主动释放
-  示例    阶段 属性 数值     设置 &amp;ldquo;hello&amp;rdquo;      len 5    free 0    buf[] &amp;ldquo;hello\0&amp;rdquo;   追加 &amp;ldquo; world&amp;rdquo;      len 11    free 11    buf[] &amp;ldquo;hello workd\0 &amp;ldquo;    参考  简单动态字符串 分布式缓存Redis之二进制安全  </content>
+实际长度= len&#43;1，多出来的用于存储 &amp;lsquo;\0&amp;rsquo;    追加 内存分配逻辑  追加超出范围后，为 buf 重新分配内存  newlen= sdshdr.len&#43; append.len 判断 newlen&amp;lt; SDS_MAX_PREALLOC  符合时，newlen*= 2 不符合时，newlen&#43;= SDS_MAX_PREALLOC  SDS_MAX_PREALLOC 默认为 1024* 1024= 1MB buf.size= newlen&#43; 1  多出来的一位，用于存储 \0 标志位   优势在于减少内存分配的次数 缺陷在于多占用内存，而且不会主动释放  示例    阶段 属性 数值     设置 &amp;ldquo;hello&amp;rdquo;      len 5    free 0    buf[] &amp;ldquo;hello\0&amp;rdquo;   追加 &amp;ldquo; world&amp;rdquo;      len 11    free 11    buf[] &amp;ldquo;hello workd\0 &amp;ldquo;    参考  简单动态字符串 分布式缓存Redis之二进制安全  </content>
     </entry>
     
      <entry>
