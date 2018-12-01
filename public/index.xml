@@ -6,10 +6,28 @@
     <description>Recent content on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 29 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.内存映射数据结构.ZipList</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.ziplist/</link>
+      <pubDate>Fri, 30 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.ziplist/</guid>
+      <description>描述 由一系列特殊编码的内存块构成的列表 适用 Hash.Node List.Node SortSet.key 结构 定义域 属性 占用大小 描述 Header zlbytes 4B ziplist 整体所占用的内存字节数 供内存分配、快速定位使用 zltail 4B 相对到表</description>
+    </item>
+    
+    <item>
+      <title>Redis.内存映射数据结构.INTSET</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.intset/</link>
+      <pubDate>Thu, 29 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.intset/</guid>
+      <description>前置 内存映射数据结构 经过特殊编码的字节序列 内存消耗较内部数据结构少得多 适用于元素本身体积较小的情况 定义 有序、无重复保存的整数集合 集合保存时，</description>
+    </item>
     
     <item>
       <title>Redis.数据结构.List</title>
@@ -30,11 +48,11 @@
     </item>
     
     <item>
-      <title>Redis.数据结构.字典</title>
-      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</link>
+      <title>Redis.数据结构.Dict</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.dict/</link>
       <pubDate>Wed, 28 Nov 2018 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</guid>
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.dict/</guid>
       <description>结构 定义 结构 字段 作用 dict dictType *type 类型处理函数 void *privdata 类型处理函数时的数据 dictht ht[2] 哈希表 dictht 数组 ht[0]默认存储数据，ht[1]于实现渐近式 rehash 时使用 int rehashidx rehash h</description>
     </item>
     

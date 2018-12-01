@@ -2,6 +2,52 @@
 <search>
     
      <entry>
+        <title>Redis.内存映射数据结构.ZipList</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.ziplist/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag><tag>数据结构</tag><tag>内存映射</tag>
+        </tags>
+        <content type="html">  描述  由一系列特殊编码的内存块构成的列表  适用  Hash.Node List.Node SortSet.key  结构    定义域 属性 占用大小 描述     Header       zlbytes 4B ziplist 整体所占用的内存字节数
+供内存分配、快速定位使用    zltail 4B 相对到表尾节点的偏移字节数    zllen 2B 内部存储的节点数量
+当元素数量超过 2^16 时，需遍历获得   Entry[]       pre_entry_length 1/5B 计算前一节点的长度（encoding&#43; length&#43; content)
+1B：节点长度小于 254 的情况
+5B：首节点值为 254，剩余四个字节保存实际长度    encoding 2b 00/01/10 代表不同 length 的字符数组
+11 代表保存的为整数    length 6/14/40b 详见数据类型    content     End       zlend 1B 固定标识
+值为 255 的二进制值 1111 1111    数据类型  类型遍历     Encoding Length 占用内存 存储内存值     00 bbbbbb 1B char[]
+长度小于 2^6   01 bbbbbb bbbbbbbb 2B char[]
+长度小于 2^14   10 ______ bbbbbbbb bbbbbbbb bbbbbbbb bbbbbbbb 5B char[]
+长度小于 2^40   11 00 0000 1B int16_t
+int 16bit 有符号    01 0000 1B int32_t
+int 32bit 有符号    10 0000 1B int64_t
+int 64bit 有符号    11 0000 1B int 24bit 有符号    11 1110 1B int 8bit 有符号    11 bbbb 1B int 4bit 无符号     符号含义     符号 含义     0 二进制 0   1 二进制 1   _ 空位   b 实际二进制数值    操作 追加  获取 zlbytes 值 根据追加值，计算所需空间大小，并为 ziplist 重新分配内存 设置新 entry 的各属性值 更新 zlbytes、zltail 和 zllen 值  插入  与「追加」有异的情况  图示位置  |prev|new|next|&amp;hellip;|  当 prev 长度与 new 长度不一致时，需要级联更正 next 及后续节点的 pre_entry_length 信息  操作复杂度为 O(N^2) 所有节点的长度均接近 254 的极小概率情况    删除  与插入一样，有可能导致 next 及后面的节点连琐更新  示例    操作 字段 内存大小 内容值     初始化       zlbytes 4B 00010000    zltail 4B 00001010    zllen 2B 0    zlend 1B 11111111   添加 &amp;ldquo;Hello&amp;rdquo;       zlbytes 4B 00010010
+更新整体长度    zltail 4B 00001010
+仅一元素，不需要更新    zllen 2B 1
+更新元素个数    entry      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pre_entry_length 1B 00000000    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;encoding 2b 00    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;length 6b 000101    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;content 5B Hello    zlend 1B 11111111   表头插入 “world”       zlbytes 4B 00011001
+更新整体长度    zltail 4B 00010001
+更新至末尾元素的偏移量    zllen 2B 2
+更新元素个数    entry      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pre_entry_length 1B 00000000    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;encoding 2b 00    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;length 6b 000101    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;content 5B world    entry      &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;pre_entry_length 1B 00000110
+更新前一元素的占用大小    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;encoding 2b 00    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;length 6b 000101    &amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;content 5B Hello    zlend 1B 11111111    遍历  通过 pre_entry_length 实现向前、向右遍历  参考  压缩列表 定宽整数类型  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.内存映射数据结构.INTSET</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.intset/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag><tag>数据结构</tag><tag>内存映射</tag>
+        </tags>
+        <content type="html">  前置  内存映射数据结构  经过特殊编码的字节序列 内存消耗较内部数据结构少得多 适用于元素本身体积较小的情况   定义  有序、无重复保存的整数集合 集合保存时，使用所存数值的类型  当前类型为16位，而新数值为32位时 先把已有数据类型都先升级至32位 再插入新数值   特性  元素不重复 元素排列由小到大  适用场景  元素均为整数 元素数量不多  结构    类 属性 作用     intset uint32_t encoding 保存元素的类型长度    uint32_t length 存放的元素个数    int8_t contents[] 元素保存数组
+int8_t 仅占位    插入 流程    示例    动作 属性 值     初始化      encoding INTSET_ENC_INT16    length 0    content 未分配   添加 1      encoding INTSET_ENC_INT16    length 1    content [1]   添加 65535      encoding INTSET_ENC_INT32
+升级    length 2    content [1,65535]   添加 4294967295      encoding INTSET_ENC_INT64
+升级    length 3    content [1, 65535, 70000, 4294967295]    升级|扩容 流程  以上式添加 65535 为例  检查插入值的类型范围是否超过当前类型值 inset.encoding 范围 如果超过，则更新当前的类型值，并以此重新分配内存= intset.encoding * (intset.length&#43; 1) 由后往前，将对应数值转换为 inset.encoding 类型数据，并列于预留位置 将 65535 插入到数组中   图示    注意  inset.encoding 由元素中最大值决定 不支持降级操作  大数值向小数值的转换是有损的  个数限制为 REDIS_SET_MAX_INTSET_ENTRIES  REDIS_SET_MAX_INTSET_ENTRIES 默认为 512   参考  整数集合 redis/src/intset.c  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.数据结构.List</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.list/</url>
         <categories>
@@ -33,8 +79,8 @@ int zslRandomLevel(void) { int level = 1; while ((random()&amp;amp;0xFFFF) &amp;
     </entry>
     
      <entry>
-        <title>Redis.数据结构.字典</title>
-        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.%E5%AD%97%E5%85%B8/</url>
+        <title>Redis.数据结构.Dict</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.dict/</url>
         <categories>
           <category>整理</category>
         </categories>
