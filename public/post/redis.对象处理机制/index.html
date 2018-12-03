@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Linux.Lsof - 好久不见</title>
+    <title>Redis.对象处理机制 - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Linux.Lsof">
+    <meta property="og:title" content="Redis.对象处理机制">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Linux.Lsof - 好久不见" />
+    <meta name="title" content="Redis.对象处理机制 - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/linux.lsof/" itemprop="url">
-        Linux.Lsof
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" itemprop="url">
+        Redis.对象处理机制
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2017-12-11">
-    2017-12-11
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-25">
+    2018-11-25
 </time>
 </span> 
       
@@ -155,387 +155,514 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">953 字 ~2分钟</span>
+<span class="leancloud-visitors-count">868 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h2 id="参考">参考</h2>
+<h1 id="机制">机制</h1>
 
 <ul>
-<li><a href="http://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/lsof.html">lsof 一切皆文件</a></li>
+<li>使用 <code>RedisObject</code> 类型对象支持</li>
+<li>支持进行类型检测</li>
+<li>执行相同命令时，支持针对键所对应值类型进行多态处理
+
+<ul>
+<li>集合存在 <code>LinkedList</code> 和 <code>ZipList</code> 两种形式实现，但执行 <code>ZADD</code> 命令时，不需要关心具体使用的编码</li>
+</ul></li>
+<li>通过 <code>refcount</code> 变量以支持共享和销毁</li>
 </ul>
 
-<h2 id="功能">功能</h2>
-
-<ul>
-<li>查看当前系统文件的工具</li>
-<li>支持文件类型
-
-<ul>
-<li>普通文件</li>
-<li>目录</li>
-<li>网络文件系统的文件</li>
-<li>字符或设备文件</li>
-<li>函数共享库</li>
-<li>管道、命名管道</li>
-<li>符号链接</li>
-<li>网络文件（NFS、Socket）</li>
-</ul></li>
-</ul>
-
-<h2 id="参数">参数</h2>
-
-<ul>
-<li><code>-a</code>
-
-<ul>
-<li>列出打开文件存在的<code>进程</code></li>
-</ul></li>
-<li><code>-c &lt;进程名&gt;</code>
-
-<ul>
-<li>列出指定<code>进程所打开的文件</code></li>
-</ul></li>
-<li><code>-g</code>
-
-<ul>
-<li>列出GID号进程详情</li>
-</ul></li>
-<li><code>-d &lt;文件号&gt;</code>
-
-<ul>
-<li>列出<code>占用该文件号</code>的<code>进程</code></li>
-</ul></li>
-<li><code>+d &lt;目录&gt;</code>
-
-<ul>
-<li>列出目录下被打开的文件</li>
-</ul></li>
-<li><code>+D &lt;目录&gt;</code>
-
-<ul>
-<li>递归列出目录下被打开的文件</li>
-</ul></li>
-<li><code>-n &lt;目录&gt;</code>
-
-<ul>
-<li>列出使用NFS的文件</li>
-</ul></li>
-<li><code>-i &lt;条件&gt;</code>
-
-<ul>
-<li>列出符合条件的进程。（4、6、协议、:端口、 @ip）</li>
-</ul></li>
-<li><code>-p &lt;进程号&gt;</code>
-
-<ul>
-<li>列出指定<code>进程号所打开的文件</code></li>
-</ul></li>
-<li><code>-u</code>
-
-<ul>
-<li>列出UID号进程详情</li>
-</ul></li>
-<li><code>-h</code>
-
-<ul>
-<li>显示帮助信息</li>
-</ul></li>
-<li><code>-v</code>
-
-<ul>
-<li>显示版本信息</li>
-</ul></li>
-</ul>
-
-<h2 id="示例">示例</h2>
-
-<ul>
-<li><p><code>lsof | more</code></p>
-
-<ul>
-<li><p>Result</p>
+<h1 id="结构">结构</h1>
 
 <table>
 <thead>
 <tr>
-<th>COMMAND</th>
-<th>PID</th>
-<th>TID</th>
-<th>USER</th>
-<th>FD</th>
-<th>TYPE</th>
-<th>DEVICE</th>
-<th>SIZE/OFF</th>
-<th>NODE</th>
-<th>NAME</th>
+<th>对象</th>
+<th>字段</th>
+<th>描述</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>进程名称</td>
-<td>进程标识符</td>
+<td>redisObject</td>
 <td></td>
-<td>进程所有者</td>
-<td>文件描述符</td>
-<td>文件类型</td>
-<td>指定磁盘</td>
-<td>文件大小</td>
-<td>索引节点</td>
-<td>打开文件的确切名称</td>
+<td></td>
 </tr>
 
 <tr>
-<td>systemd</td>
+<td></td>
+<td>unsigned type</td>
+<td>存储的数据类型</td>
+</tr>
+
+<tr>
+<td></td>
+<td>unsigned notused</td>
+<td>对齐位</td>
+</tr>
+
+<tr>
+<td></td>
+<td>unsigned encoding</td>
+<td>当前使用的编码值</td>
+</tr>
+
+<tr>
+<td></td>
+<td>unsigned lru</td>
+<td>Least Recentyly Used<br>最近最少使用<br>用于内存不足时的回收算法</td>
+</tr>
+
+<tr>
+<td></td>
+<td>int refcount</td>
+<td>引用计数<br>负责维持和销毁对象</td>
+</tr>
+
+<tr>
+<td></td>
+<td>void *ptr</td>
+<td>关联对象指针<br>根据 <code>type</code> 和 <code>encoding</code> 指向实际存储的数据结构</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="枚举">枚举</h1>
+
+<h2 id="类型">类型</h2>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>REDIS_STRING</td>
+<td>0</td>
+<td>字符串</td>
+</tr>
+
+<tr>
+<td>REDIS_LIST</td>
+<td>1</td>
+<td>列表</td>
+</tr>
+
+<tr>
+<td>REDIS_SET</td>
+<td>2</td>
+<td>集合</td>
+</tr>
+
+<tr>
+<td>REDIS_ZSET</td>
+<td>3</td>
+<td>有序集</td>
+</tr>
+
+<tr>
+<td>REDIS_HASH</td>
+<td>4</td>
+<td>哈希表</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="编码">编码</h2>
+
+<table>
+<thead>
+<tr>
+<th>编码</th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>REDIS_ENCODING_RAW</td>
+<td>0</td>
+<td>字符串</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_INT</td>
+<td>1</td>
+<td>整数</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_HT</td>
+<td>2</td>
+<td>哈希表</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_ZIPMAP</td>
+<td>3</td>
+<td>zipmap</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_LINKEDLIST</td>
+<td>4</td>
+<td>双端链表</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_ZIPLIST</td>
+<td>5</td>
+<td>压缩列表</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_INTSET</td>
+<td>6</td>
+<td>整数集合</td>
+</tr>
+
+<tr>
+<td>REDIS_ENCODING_SKIPLIST</td>
+<td>7</td>
+<td>跳跃表</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="实现">实现</h1>
+
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>编码类型</th>
+<th>补充</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>REDIS_STRING</td>
+<td>REDIS_ENCODING_INT</td>
+<td>Long 型整数</td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_EMBSTR</td>
+<td>使用 <code>embstr</code> 编码<br></td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_RAW</td>
+<td>SDS-简单动态字符串</td>
+</tr>
+
+<tr>
+<td>REDIS_LIST</td>
+<td>REDIS_ENCODING_LINKEDLIST</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_ZIPLIST</td>
+<td>元素内容长度小于 64B<br>无数数量少于 512</td>
+</tr>
+
+<tr>
+<td>REDIS_SET</td>
+<td>REDIS_ENCODING_HT</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_INTSET</td>
+<td>所有元素无语为整数<br>元素数量不超过512<br>512为 CPU/内存 权衡值</td>
+</tr>
+
+<tr>
+<td>REDIS_ZSET</td>
+<td>REDIS_ENCODING_SKIPLIST</td>
+<td>由 Dict + ZSkipList 实现<br>前者保证查询快速定位，后者保证排序</td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_ZIPLIST</td>
+<td>元素数量少于 128 个<br>元素内存长度均小于 64 B</td>
+</tr>
+
+<tr>
+<td>REDIS_HASH</td>
+<td>REDIS_ENCODING_ZIPLIST</td>
+<td>键与值的长度小于4B<br>键值对数量少于512</td>
+</tr>
+
+<tr>
+<td></td>
+<td>REDIS_ENCODING_HT</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="多态调用">多态调用</h1>
+
+<h2 id="注意点">注意点</h2>
+
+<ul>
+<li>类型判断</li>
+<li>多态调用</li>
+</ul>
+
+<h2 id="流程">流程</h2>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/d736d3bc-c781-4cb9-a7a4-b896743b4dce.png" alt="REDIS-OBJECT-INVOKE.png" /></li>
+</ul>
+
+<h1 id="共享对象">共享对象</h1>
+
+<h2 id="原因">原因</h2>
+
+<ul>
+<li>预先为常见值对象创建、分配，减少频繁重复分配</li>
+</ul>
+
+<h2 id="实现-1">实现</h2>
+
+<ul>
+<li>使用享元模式实现</li>
+</ul>
+
+<h2 id="适用对象">适用对象</h2>
+
+<ul>
+<li><p>命令返回值</p>
+
+<ul>
+<li>成功时的 <code>OK</code></li>
+<li>错误时的 <code>ERROR</code></li>
+<li>类型错误时的 <code>WRONGTYPE</code></li>
+<li>事务返回时的 <code>QUEUED</code></li>
+<li>&hellip;</li>
+</ul></li>
+
+<li><p>小于 <code>REDIS_SHARED_INTEGERS</code> 的所有整数</p>
+
+<ul>
+<li><code>REDIS_SHARED_INTEGERS</code> 默认为 <code>10000</code></li>
+</ul></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="embstr-为什么限制-39-字节">EMBSTR 为什么限制 39 字节</h2>
+
+<ul>
+<li>embstr 类型由 redisObject 和 sdshdr 组合而成</li>
+
+<li><p>各元素占位情况
+= 25B+ ？</p>
+
+<table>
+<thead>
+<tr>
+<th>结构</th>
+<th>属性</th>
+<th>类型</th>
+<th>大小</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>redisObject</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>type</td>
+<td>unsigned</td>
+<td>4b</td>
+<td>定义时指定</td>
+</tr>
+
+<tr>
+<td></td>
+<td>notused</td>
+<td>unsigned</td>
+<td>2b</td>
+<td>定义时指定</td>
+</tr>
+
+<tr>
+<td></td>
+<td>encoding</td>
+<td>unsigned</td>
+<td>4b</td>
+<td>定义时指定</td>
+</tr>
+
+<tr>
+<td></td>
+<td>lru</td>
+<td>unsigned</td>
+<td>22b</td>
+<td>定义时指定</td>
+</tr>
+
+<tr>
+<td></td>
+<td>refcount</td>
+<td>int</td>
+<td>4B</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>*ptr</td>
+<td>void</td>
+<td>8B</td>
+<td>此外为 64 为操作系统</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>=16B</td>
+<td></td>
+</tr>
+
+<tr>
+<td>sdshdr</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>len</td>
+<td>unsigned int</td>
+<td>4</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>free</td>
+<td></td>
+<td>4</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>buf</td>
+<td>char[]</td>
+<td>?</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>\0</code></td>
+<td>char</td>
 <td>1</td>
 <td></td>
-<td>root</td>
-<td>cwd</td>
-<td>unknown</td>
+</tr>
+
+<tr>
 <td></td>
 <td></td>
 <td></td>
-<td>/proc/1/cwd(readlink: Permission denied)</td>
+<td>=9B+ ?</td>
+<td></td>
 </tr>
 </tbody>
 </table></li>
 
-<li><p>FD</p>
+<li><p>v2.4+，使用 jemalloc 分配内存，大小为 8B，16B，32B和 64B</p>
 
 <ul>
-<li><code>cwd</code>
+<li>分配最大额度内存 64B 情况下，剩余可存储空间大小为 <code>39B</code></li>
+<li>当超过时，将使用不同内存页存储，读取效率将下降
 
 <ul>
-<li>表示<code>current work dirctory</code>，即应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改</li>
+<li>个人理解，无实际文档支持</li>
 </ul></li>
-<li><code>txt</code>
+</ul></li>
+</ul>
+
+<h2 id="embstr-相较-raw-的优势">EMBSTR 相较 RAW 的优势</h2>
 
 <ul>
-<li>该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序</li>
-</ul></li>
-<li><code>lnn</code>
+<li>两种编码的区别，在于其 <code>redisObject</code> 结构与 <code>sdshdr</code> 结构是否<strong>内存连续</strong></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>比较项</th>
+<th>EMBSTR</th>
+<th>RAW</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>内存分配</td>
+<td><code>1 次</code></td>
+<td>2 次<br>分别用于申请 redisObject 和 sdshdr</td>
+</tr>
+
+<tr>
+<td>内存释放</td>
+<td><code>1 次</code></td>
+<td>2 次<br>分别释放 redisObject 和 sdshdr</td>
+</tr>
+
+<tr>
+<td>缓存</td>
+<td><code>连续内存</code>，便于利用缓存</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="参考">参考</h1>
 
 <ul>
-<li>library references (AIX);</li>
-</ul></li>
-<li><code>er</code>
-
-<ul>
-<li>FD information error (see NAME column);</li>
-</ul></li>
-<li><code>jld</code>
-
-<ul>
-<li>jail directory (FreeBSD);</li>
-</ul></li>
-<li><code>ltx</code>
-
-<ul>
-<li>shared library text (code and data);</li>
-</ul></li>
-<li><code>mxx</code>
-
-<ul>
-<li>hex memory-mapped type number xx.</li>
-</ul></li>
-<li><code>m86</code>
-
-<ul>
-<li>DOS Merge mapped file;</li>
-</ul></li>
-<li><code>mem</code>
-
-<ul>
-<li>memory-mapped file;</li>
-</ul></li>
-<li><code>mmap</code>
-
-<ul>
-<li>memory-mapped device;</li>
-</ul></li>
-<li><code>pd</code>
-
-<ul>
-<li>parent directory;</li>
-</ul></li>
-<li><code>rtd</code>
-
-<ul>
-<li>root directory;</li>
-</ul></li>
-<li><code>tr</code>
-
-<ul>
-<li>kernel trace file (OpenBSD);</li>
-</ul></li>
-<li>`v86  VP/ix mapped file;</li>
-<li><code>0</code>
-
-<ul>
-<li>表示标准输入</li>
-</ul></li>
-<li><code>1</code>
-
-<ul>
-<li>表示标准输出</li>
-</ul></li>
-<li><code>2</code>
-
-<ul>
-<li>表示标准错误一般在标准输出、标准错误、标准输入后还跟着文件状态模式<code>- r、w、u</code>等</li>
-</ul></li>
-<li><code>u</code>
-
-<ul>
-<li>表示该文件被打开并处于<code>读取/写入模式</code></li>
-</ul></li>
-<li><code>r</code>
-
-<ul>
-<li>表示该文件被打开并处于<code>只读模式</code></li>
-</ul></li>
-<li><code>w</code>
-
-<ul>
-<li>表示该文件被打开并处于<code>只写模式</code></li>
-</ul></li>
-<li><code>空格</code>
-
-<ul>
-<li>表示该文件的状态模式为<code>unknow</code>，且<code>未被锁定</code></li>
-</ul></li>
-<li><code>-</code>
-
-<ul>
-<li>表示该文件的状态模式为<code>unknow</code>，且<code>被锁定</code>,同时在文件状态模式后面，还跟着相关的锁</li>
-</ul></li>
-<li><code>N</code>
-
-<ul>
-<li>for a Solaris NFS lock of unknown type;</li>
-</ul></li>
-<li><code>r</code>
-
-<ul>
-<li>for read lock on part of the file;</li>
-</ul></li>
-<li><code>R</code>
-
-<ul>
-<li>for a read lock on the entire file;</li>
-</ul></li>
-<li><code>w</code>
-
-<ul>
-<li>for a write lock on part of the file;（文件的部分写锁）</li>
-</ul></li>
-<li><code>W</code>
-
-<ul>
-<li>for a write lock on the entire file;（整个文件的写锁）</li>
-</ul></li>
-<li><code>u</code>
-
-<ul>
-<li>for a read and write lock of any length;</li>
-</ul></li>
-<li><code>U</code>
-
-<ul>
-<li>for a lock of unknown type;</li>
-</ul></li>
-<li><code>x</code>
-
-<ul>
-<li>for an SCO OpenServer Xenix lock on part      of the file;</li>
-</ul></li>
-<li><code>X</code>
-
-<ul>
-<li>for an SCO OpenServer Xenix lock on the      entire file;</li>
-</ul></li>
-<li><code>space</code>
-
-<ul>
-<li>if there is no lock.</li>
-</ul></li>
-</ul></li>
-
-<li><p>TYPE</p>
-
-<ul>
-<li><code>DIR</code>
-
-<ul>
-<li>表示目录</li>
-</ul></li>
-<li><code>CHR</code>
-
-<ul>
-<li>表示字符类型</li>
-</ul></li>
-<li><code>BLK</code>
-
-<ul>
-<li>块设备类型</li>
-</ul></li>
-<li><code>UNIX</code>
-
-<ul>
-<li>UNIX 域套接字</li>
-</ul></li>
-<li><code>FIFO</code>
-
-<ul>
-<li>先进先出 (FIFO) 队列</li>
-</ul></li>
-<li><code>IPv4</code>
-
-<ul>
-<li>网际协议 (IP) 套接字</li>
-</ul></li>
-</ul></li>
-</ul></li>
-
-<li><p><code>lsof -i :6666 -r 3</code></p>
-
-<ul>
-<li><code>每三秒</code>查看<code>端口占用</code>情况</li>
-</ul></li>
-
-<li><p><code>lsof error.log</code></p>
-
-<ul>
-<li>查看指定<code>文件的相关进程</code></li>
-</ul></li>
-
-<li><p><code>lsof -u appuser | more</code></p>
-
-<ul>
-<li>查看用户 appuser 打开的文件列表</li>
-</ul></li>
-
-<li><p><code>lsof -c java | more</code></p>
-
-<ul>
-<li>查看 Java <code>进程所打开</code>的文件</li>
-</ul></li>
-
-<li><p><code>lsof -p 12617 | more</code></p>
-
-<ul>
-<li>查看 12617 <code>进程所打开</code>的文件</li>
-</ul></li>
-
-<li><p><code>lsof -n -i tcp | grep LISTEN | less</code></p>
-
-<ul>
-<li>查看处于<code>连接状态的 TCP</code> 连接</li>
-</ul></li>
+<li><a href="https://redisbook.readthedocs.io/en/latest/datatype/object.html">对象处理机制</a></li>
+<li><a href="http://redisbook.com/preview/object/object.html">对象的类型与编码</a></li>
+<li><a href="http://redisbook.com/preview/object/hash.html">哈希对象</a></li>
+<li><a href="http://redisbook.com/preview/object/string.html">字符串对象</a></li>
+<li><a href="http://redisbook.com/preview/object/sorted_set.html">有序集合对象</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/34133067">LRU原理和Redis实现</a></li>
+<li><a href="https://nullcc.github.io/2018/01/23/Redis%E4%B8%AD%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%86%85%E9%83%A8%E7%BC%96%E7%A0%81%E7%9A%84%E5%85%B3%E7%B3%BB/">Redis中数据类型和内部编码的关系</a></li>
+<li><a href="https://segmentfault.com/q/1010000002388947/a-1020000003509960">关于 Redis 字符串小于 39 字节的疑惑</a></li>
 </ul>
 
     </div>
@@ -544,7 +671,7 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/linux" rel="tag" title="Linux">#Linux#</a>
+    <a href="http://domain.yqjdcyy.com/tags/redis" rel="tag" title="Redis">#Redis#</a>
     
 </div>
 
@@ -553,16 +680,16 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/" rel="next" title="网络.七层协议">
-        <i class="fa fa-chevron-left"></i> 网络.七层协议
+        <a href="http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/" rel="next" title="Redis.持久化">
+        <i class="fa fa-chevron-left"></i> Redis.持久化
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/uml/" rel="prev" title="Hello.UML">
-        Hello.UML <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E4%BB%B6/" rel="prev" title="Redis.事件">
+        Redis.事件 <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -572,7 +699,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Linux.Lsof
+                标题：Redis.对象处理机制
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -673,13 +800,31 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li>
+<li><a href="#机制">机制</a></li>
+<li><a href="#结构">结构</a></li>
+<li><a href="#枚举">枚举</a>
 <ul>
-<li><a href="#参考">参考</a></li>
-<li><a href="#功能">功能</a></li>
-<li><a href="#参数">参数</a></li>
-<li><a href="#示例">示例</a></li>
+<li><a href="#类型">类型</a></li>
+<li><a href="#编码">编码</a></li>
 </ul></li>
+<li><a href="#实现">实现</a></li>
+<li><a href="#多态调用">多态调用</a>
+<ul>
+<li><a href="#注意点">注意点</a></li>
+<li><a href="#流程">流程</a></li>
+</ul></li>
+<li><a href="#共享对象">共享对象</a>
+<ul>
+<li><a href="#原因">原因</a></li>
+<li><a href="#实现-1">实现</a></li>
+<li><a href="#适用对象">适用对象</a></li>
+</ul></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#embstr-为什么限制-39-字节">EMBSTR 为什么限制 39 字节</a></li>
+<li><a href="#embstr-相较-raw-的优势">EMBSTR 相较 RAW 的优势</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>

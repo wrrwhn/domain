@@ -75,6 +75,15 @@
     </item>
     
     <item>
+      <title>Redis.对象处理机制</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+      <description>机制 使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理 集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关</description>
+    </item>
+    
+    <item>
       <title>Redis.持久化</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</link>
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
