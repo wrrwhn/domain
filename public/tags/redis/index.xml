@@ -84,6 +84,15 @@
     </item>
     
     <item>
+      <title>Redis.事务</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E5%8A%A1/</link>
+      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E5%8A%A1/</guid>
+      <description>描述 服务器异步接收、存储所要执行的命令，最后阻塞、按顺序、执行所有的命令 事务状态下，服务器将客户端的请求请求存入事务队列后，即返回 QUEUED 告知已入</description>
+    </item>
+    
+    <item>
       <title>Redis.持久化</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</link>
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>

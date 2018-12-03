@@ -175,6 +175,37 @@ UNIX 时间戳的毫秒格式   timeProc 事件处理函数
     </entry>
     
      <entry>
+        <title>Redis.事务</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E5%8A%A1/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  描述  服务器异步接收、存储所要执行的命令，最后阻塞、按顺序、执行所有的命令 事务状态下，服务器将客户端的请求请求存入事务队列后，即返回 QUEUED 告知已入队  请求的命令信息包括命令、参数、参数个数   结构    结构 属性 类型 描述     redisClient       mstate multiState 事务状态   multiState       commands multiCmd * 事务队列
+FIFO    count int 命令数量   multiCmd       cmd redisCommand * 命令指针    argv robj ** 参数    argc int 参数个数    命令    命令 作用 描述     MULTI 开启事务 已开启事务状态下，重复发送，仅通知操作有误，不影响事务的继续执行   DISCARD 取消事务 清空事务队列
+将客户端取消事务状态   EXEC 执行事务 服务器阻塞、顺序执行所有缓存命令，并返回所有命令的结果
+清除命令缓存、watch_keys 中该客户端的相关记录   WATCH 监测键值变化 于进入事务状态前执行
+在 EXEC 调用时，若监测键有变化，则该事务不执行，直接返回失败
+WATCH 值有变化时，将更新客户端的 REDIS_DIRTY_CAS 值
+监测后，将一直持续到 EXEC 执行    示例 事务流程 redis&amp;gt; MULTI OK redis&amp;gt; SET &amp;#34;name&amp;#34; &amp;#34;Practical Common Lisp&amp;#34; QUEUED redis&amp;gt; GET &amp;#34;name&amp;#34; QUEUED redis&amp;gt; SET &amp;#34;author&amp;#34; &amp;#34;Peter Seibel&amp;#34; QUEUED redis&amp;gt; GET &amp;#34;author&amp;#34; QUEUED redis&amp;gt; EXEC 1) OK 2) &amp;#34;Practical Common Lisp&amp;#34; 3) OK 4) &amp;#34;Peter Seibel&amp;#34; 原子操作 redis&amp;gt; WATCH mykey redis&amp;gt; val = GET mykey redis&amp;gt; val = val &#43; 1 redis&amp;gt; MULTI redis&amp;gt; SET mykey $val redis&amp;gt; EXEC 补充 ACID    特性 解析 Redis 是否支持     A
+Atomicity 原子性
+事务中的所有指令能全执行或全不执行
+失败时可回滚至事务初始状态 NO
+事务因宕机等情况影响而执行失败，无重试或回滚操作   C
+Consistency 一致性
+事务前后，数据库的完整性不会被破坏 YES   I
+Isolation 隔离性
+允许多个事务交叉执行 YES
+单进程   D
+Durability 持久性
+事务执行后，修改将永久保存
+系统故障也不会丢失 NO
+不存在持久化或异步实现    参考  事务 ACID redis的事务和watch 事务的实现  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.持久化</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</url>
         <categories>
