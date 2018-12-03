@@ -6,10 +6,19 @@
     <description>Recent content in Redis on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 30 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.对象处理机制</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
+      <pubDate>Sun, 02 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
+      <description>机制 使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理 集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关</description>
+    </item>
     
     <item>
       <title>Redis.内存映射数据结构.ZipList</title>
@@ -72,15 +81,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E4%BB%B6/</guid>
       <description>概览 类型 文件事件 时间事件 优先级 文件事件&amp;gt; 时间事件 调用 文件事件和时间事件依次进行 文件事件优先（命令读取、返回）于时间事件 导致后者执行时间</description>
-    </item>
-    
-    <item>
-      <title>Redis.对象处理机制</title>
-      <link>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</link>
-      <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/</guid>
-      <description>机制 使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理 集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关</description>
     </item>
     
     <item>
