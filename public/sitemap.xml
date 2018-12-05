@@ -2,6 +2,45 @@
 <search>
     
      <entry>
+        <title>Redis.慢日志</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E6%85%A2%E6%97%A5%E5%BF%97/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  描述  用于记录执行时间超出限制的、有限的命令日志  执行时间单为该命令的执行时间，不包括网络响应、IO延迟   结构    结构 字段 类型 描述     redisServer       slowlog list * 慢日志存储链表    slowlog_entry_id long long 当前记录的慢日志的 ID    slowlog_log_slower_than long long 慢日志的时限值    slowlog_max_len unsigned long 慢日志的记录数上限   slowlogEntry       argv robj** 执行命令，以空格等间隔开    argc int 命令参数的数量    long id long 唯一标识 ID    long duration long 命令执行所耗时长
+单位为纳纱    time time_t 命令执行的时间
+单位为 Unix 时间戳    命令    命令 作用 示例     slowlog get 获取慢日志记录 slowlog get: 获取所有的慢日志记录
+slowlog get : 获取指定数量的慢日志记录   slowlog len 获取慢日志记录的存储数量    slowlog reset 清空慢日志记录     示例 127.0.0.1:37652&amp;gt; slowlog get 1 1) 1) (integer) 448 // ID  2) (integer) 1543825754 // 命令执行的时间点  3) (integer) 17381 // 命令执行的消耗时长  4) 1) &amp;#34;SSCAN&amp;#34; // 执行命令的数组形式  2) &amp;#34;operation:user:list&amp;#34; 3) &amp;#34;0&amp;#34; 4) &amp;#34;COUNT&amp;#34; 5) &amp;#34;10000&amp;#34; 127.0.0.1:37652&amp;gt; slowlog len (integer) 128 127.0.0.1:37652&amp;gt; slowlog reset OK 127.0.0.1:37652&amp;gt; config get slowlog-log-slower-than 1) &amp;#34;slowlog-log-slower-than&amp;#34; 2) &amp;#34;10000&amp;#34; 127.0.0.1:37652&amp;gt; config get slowlog-max-len 1) &amp;#34;slowlog-max-len&amp;#34; 2) &amp;#34;128&amp;#34; 参考  慢查询日志 查看并 redis慢日志 SLOWLOG  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.发布订阅</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  描述  支持客户端通过 Redis 实现消息的订阅和发布  支持按频道和按模式  消息发布时，将发送到指定渠道和匹配得上的模式  结构    结构 字段 类型 描述     redisServer       pubsub_channels dict * 频道订阅记录    pubsub_patterns list * 模式订阅记录   pubsubPattern       client redisClient * 订阅该模式的客户端列表    pattern robj * 订阅的模式    命令    命令 描述 事例     subscribe 订阅相关频道 subscribe channel [channel&amp;hellip;]   psubscribe 订阅指定模式的频道 psubscribe pattern [pattern&amp;hellip;]   publish 将消息发送至指定频道 publish channel message    示例    操作 Publisher Subscriber-dev.user Subscriber-dev.*     subscribe  subscribe dev.user psubscribe dev.*     1) &amp;ldquo;subscribe&amp;rdquo;
+2) &amp;ldquo;dev.user&amp;rdquo;
+3) (integer) &amp;ldquo;1&amp;rdquo; 1) &amp;ldquo;psubscribe&amp;rdquo;
+2) &amp;ldquo;dev.*&amp;rdquo;
+3) (integer) &amp;ldquo;1&amp;rdquo;   publish publish dev.user &amp;ldquo;user&amp;rdquo; 渠道匹配 模式匹配    (integer) 2 1) &amp;ldquo;message&amp;rdquo;
+2) &amp;ldquo;dev.user&amp;rdquo;
+3) &amp;ldquo;user&amp;rdquo; 1) &amp;ldquo;pmessage&amp;rdquo;
+2) &amp;ldquo;dev.*&amp;rdquo;
+3) &amp;ldquo;dev.user&amp;rdquo;
+4) &amp;ldquo;user&amp;rdquo;   publish publish dev.book &amp;ldquo;c&#43;&#43;&amp;rdquo;  模式匹配    (integer) 1  1) &amp;ldquo;pmessage&amp;rdquo;
+2) &amp;ldquo;dev.*&amp;rdquo;
+3) &amp;ldquo;dev.book&amp;rdquo;
+4) &amp;ldquo;c&#43;&#43;&amp;rdquo;    参考  订阅与发布 发布/订阅  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.事务</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E4%BA%8B%E5%8A%A1/</url>
         <categories>

@@ -6,10 +6,28 @@
     <description>Recent content in Redis on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 02 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 04 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/redis/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Redis.慢日志</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E6%85%A2%E6%97%A5%E5%BF%97/</link>
+      <pubDate>Tue, 04 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E6%85%A2%E6%97%A5%E5%BF%97/</guid>
+      <description>描述 用于记录执行时间超出限制的、有限的命令日志 执行时间单为该命令的执行时间，不包括网络响应、IO延迟 结构 结构 字段 类型 描述 redisServer slowlog list * 慢日志存储链</description>
+    </item>
+    
+    <item>
+      <title>Redis.发布订阅</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/</link>
+      <pubDate>Mon, 03 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85/</guid>
+      <description>描述 支持客户端通过 Redis 实现消息的订阅和发布 支持按频道和按模式 消息发布时，将发送到指定渠道和匹配得上的模式 结构 结构 字段 类型 描述 redisServer pubsub_channels dict * 频道订阅记</description>
+    </item>
     
     <item>
       <title>Redis.事务</title>

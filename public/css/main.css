@@ -452,7 +452,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -464,7 +464,7 @@ body {
 }
 .main-inner {
   margin: 0 auto;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .main-inner {
@@ -481,7 +481,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  width: 700px;
+  width: 900px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -2012,7 +2012,7 @@ a.search-result {
   position: fixed;
   top: 10%;
   left: 50%;
-  width: 700px;
+  width: 900px;
   height: 80%;
   margin-left: -350px;
   padding: 3px 0 0 10px;
@@ -2340,9 +2340,9 @@ body {
   float: right;
   box-sizing: border-box;
   padding: 40px;
-  width: 700px;
+  width: 900px;
   background: #fff;
-  min-height: 700px;
+  min-height: 900px;
 }
 @media (min-width: 768px) and (max-width: 991px) {
   .content-wrap {
