@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Spring.Cache - 好久不见</title>
+    <title>正则表达式 - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Spring.Cache">
+    <meta property="og:title" content="正则表达式">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Spring.Cache - 好久不见" />
+    <meta name="title" content="正则表达式 - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
-    
+    <link rel="alternate" href="http://domain.yqjdcyy.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.xml" title="好久不见" type="application/rss+xml" />
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
     <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
     <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
     <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    
     <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
     <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" id="hexo.configuration">
@@ -25,13 +25,13 @@
   var CONFIG = {
     scheme: 'Pisces',
     sidebar: {"position":"left","display":"post"},
-     fancybox: true, 
+    fancybox: false, 
     motion: true
   };
 </script>
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
-<div class="container one-collumn sidebar-position-left page-home  ">
+<div class="container one-collumn sidebar-position-left   ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -112,149 +112,68 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-<section id="posts" class="posts-expand">
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+<section id="posts" class="posts-collapse">
+<div class="collection-title">
+    <h2 >正则表达式
+    <small>标签</small>
+    </h2>
+</div>
+
+<div class="collection-title">
+  <h2 class="archive-year motion-element" id="archive-year-2016">2016</h2>
+</div>
+
+  <article class="post post-type-normal }}" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/spring.cache/" itemprop="url">
-        Spring.Cache
+      <h1 class="post-title">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f/" itemprop="url">
+            <span itemprop="name">正则表达式</span>
         </a>
       </h1>
+
       <div class="post-meta">
-      <span class="post-time">
-<span class="post-meta-item-icon">
-    <i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2016-12-08">
-    2016-12-08
-</time>
-</span> 
-      
-
-  <span class="post-category" >
-  &nbsp; | &nbsp;
-  <span class="post-meta-item-icon">
-    <i class="fa fa-folder-o"></i>
-  </span>
-  <span class="post-meta-item-text">分类：</span>
-  
-    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
-        <span itemprop="name">整理</span>
-      </a>
-      &nbsp; 
-    </span>
-  
-</span>
-
-
-       <span>
-&nbsp; | &nbsp;
-<span class="post-meta-item-icon">
-    <i class="fa fa-eye"></i>
-</span>
-<span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">682 字 ~2分钟</span>
-</span>
+        <time class="post-time" itemprop="dateCreated"
+              datetime="2016-12-08"
+              content="12-08" >
+          12-08
+        </time>
       </div>
     </header>
-    <div class="post-body" itemprop="articleBody">
-    
-
-<h2 id="参考链接">参考链接</h2>
-
-<ul>
-<li><a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a></li>
-</ul>
-
-<h2 id="特点">特点</h2>
-
-<ul>
-<li>通过少量的配置 annotation 注释即可使得既有代码支持缓存</li>
-<li>支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存</li>
-<li>支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition</li>
-<li>支持 AspectJ，并通过其实现任何方法的缓存支持</li>
-<li>支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展</li>
-</ul>
-
-<h2 id="注释标签">注释标签</h2>
-
-<ul>
-<li>@Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;])</li>
-<li>@CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;])</li>
-<li>@CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用</li>
-</ul>
-
-<h2 id="基本原理">基本原理</h2>
-
-<ul>
-<li>关键：Spring AOP</li>
-<li>过程：
-
-<ul>
-<li>原始代码：客户端通过直接作用于类对象的方法进行直接引用</li>
-<li>调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值</li>
-<li><img src="http://img.yqjdcyy.com/6d7850fe-bda2-11e6-ab18-0071cc916200.png" alt="6d7850fe-bda2-11e6-ab18-0071cc916200.png" /></li>
-</ul></li>
-</ul>
-
-    </div>
-    <footer class="post-footer">
-     
- 
-<div class="post-tags">     
-     
-    <a href="http://domain.yqjdcyy.com/tags/spring" rel="tag" title="Spring">#Spring#</a>
-    
-    <a href="http://domain.yqjdcyy.com/tags/cache" rel="tag" title="Cache">#Cache#</a>
-    
-</div>
-
-
-
-     <div class="post-nav">
-    <div class="post-nav-next post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="正则表达式">
-        <i class="fa fa-chevron-left"></i> 正则表达式
-        </a>
-    
-    </div>
-
-    <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/dwr/" rel="prev" title="DWR">
-        DWR <i class="fa fa-chevron-right"></i>
-        </a>
-    
-    </div>
-</div>
-      
-     <div class="post-nav">
-    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
-        <div>
-            <p style="margin-top:0px;">
-                标题：Spring.Cache
-                <br />作者：
-                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
-                <br />关注：好久不见
-                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
-            </p>
-        </div>
-    </div>
-    <div class="clear"></div>
-</div>
-     
-     
-     
-
-
-
-
-    </footer>
   </article>
-</section>
+
+
+ </section>
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+<nav class="pagination">
+    
+    
+        
+        
+          <span class="page-number current">1</span>
+        
+        
+    
+    
+</nav>
+
 
           </div>
         </div>
@@ -268,16 +187,7 @@
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-  <ul class="sidebar-nav motion-element">
-    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-      文章目录
-    </li>
-    <li class="sidebar-nav-overview" data-target="site-overview">
-      站点概览
-    </li>
-  </ul>
-
-    <section class="site-overview sidebar-panel ">
+    <section class="site-overview sidebar-panel  sidebar-panel-active ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/profile-image.png"
@@ -313,6 +223,13 @@
     </div>
 </nav>
       
+<div class="feed-link motion-element">
+<a href="http://domain.yqjdcyy.com/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/index.xml" rel="alternate" type="application/rss+xml" target="_blank">
+    <i class="fa fa-rss"></i>
+    RSS 订阅
+</a>
+</div>
+
       
 <div class="links-of-author motion-element">
     
@@ -332,22 +249,6 @@
 </div>
     </section>
     
-<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-    <div class="post-toc">
-        <div class="post-toc-content"><nav id="TableOfContents">
-<ul>
-<li>
-<ul>
-<li><a href="#参考链接">参考链接</a></li>
-<li><a href="#特点">特点</a></li>
-<li><a href="#注释标签">注释标签</a></li>
-<li><a href="#基本原理">基本原理</a></li>
-</ul></li>
-</ul>
-</nav></div>
-    </div>
-</section>
-
   </div>
 </aside>
 
@@ -394,18 +295,16 @@
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
 <script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
 
-<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
-
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
 
-<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
-<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
-<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
-
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" id="motion.page.archive">
+  $('.archive-year').velocity('transition.slideLeftIn');
+</script>
 
 <script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
 </body>

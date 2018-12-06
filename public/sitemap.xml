@@ -5568,18 +5568,6 @@ Site Lifecycle pre-site executes processes needed prior to the actual project si
     </entry>
     
      <entry>
-        <title>Regex</title>
-        <url>http://domain.yqjdcyy.com/post/regex/</url>
-        <categories>
-          <category>整理</category>
-        </categories>
-        <tags>
-          <tag>Regex</tag>
-        </tags>
-        <content type="html">  元字符  . 匹配除换行符以外的任意字符 \w 匹配字母或数字或下划线或汉字 \s 匹配任意的空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束  字符转义  想查找元字符本身的话，使用\来取消这些字符的特殊意义  重复  * 重复零次或更多次 &#43; 重复一次或更多次 ? 重复零次或一次 {n} 重复n次 {n,} 重复n次或更多次 {n,m} 重复n到m次  字符类  [aeiou] 就匹配任何一个英文元音字母 [.?!] 匹配标点符号(.或?或!) [a-z0-9A-Z_]  分枝条件  \d{5}-\d{4}|\d{5} 5-4或5位数值  分组  以小括号指定的即为分组 ((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)  反义  \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符  零宽断言  查找在某些内容(但并不包括这些内容)之前或之后的东西，也就是说它们像\b,^,$那样用于指定一个位置，这个位置应该满足一定的条件(即断言)，因此它们也被称为零宽断言  (?=exp)也叫零宽度正预测先行断言，它断言自身出现的位置的后面能匹配表达式exp。比如\b\w&#43;(?=ing\b)，匹配以ing结尾的单词的前面部分(除了ing以外的部分)，如查找I&amp;rsquo;m singing while you&amp;rsquo;re dancing.时，它会匹配sing和danc。 (?&amp;lt;=exp)也叫零宽度正回顾后发断言，它断言自身出现的位置的前面能匹配表达式exp。比如(?&amp;lt;=\bre)\w&#43;\b会匹配以re开头的单词的后半部分(除了re以外的部分)，例如在查找reading a book时，它匹配ading。   负向零宽断言  零宽度负预测先行断言(?!exp)，断言此位置的后面不能匹配表达式exp。例如：\d{3}(?!\d)匹配三位数字，而且这三位数字的后面不能是数字；\b((?!abc)\w)&#43;\b匹配不包含连续字符串abc的单词。 &#43;(?&amp;lt;=&amp;lt;(\w&#43;)&amp;gt;).*(?=&amp;lt;\/\1&amp;gt;)匹配不包含属性的简单HTML标签内里的内容。(?&amp;lt;=&amp;lt;(\w&#43;)&amp;gt;)指定了这样的前缀：被尖括号括起来的单词(比如可能是)，然后是.*(任意的字符串),最后是一个后缀(?=&amp;lt;\/\1&amp;gt;)。 * 注意后缀里的\/，它用到了前面提过的字符转义；\1则是一个反向引用，引用的正是捕获的第一组，前面的(\w&#43;)匹配的内容，这样如果前缀实际上是&amp;lt;b&amp;gt;的话，后缀就是&amp;lt;/b&amp;gt;了。整个表达式匹配的是&amp;lt;b&amp;gt;和&amp;lt;/b&amp;gt;之间的内容(再次提醒，不包括前缀和后缀本身)。  注释  通过语法(?#comment)来包含注释 2[0-4]\d(?#200-249)|25[0-5](?#250-255)|[01]?\d\d?(?#0-199)  贪婪与懒惰  贪婪：匹配尽可能多的字符，如a.*b，它将会匹配最长的以a开始，以b结束的字符串。如果用它来搜索aabab的话，它会匹配整个字符串aabab。 懒惰：匹配尽可能少的字符，a.*?b匹配最短的，以a开始，以b结束的字符串。如果把它应用于aabab的话，它会匹配aab（第一到第三个字符）和ab（第四到第五个字符）。  其中懒惰例子中第一个不是ab是由于最先开始匹配的拥有最高的优先权   处理选项  IgnoreCase(忽略大小写) 匹配时不区分大小写。 Multiline(多行模式) 更改^和$的含义，使它们分别在任意一行的行首和行尾匹配，而不仅仅在整个字符串的开头和结尾匹配。(在此模式下,$的精确含意是:匹配\n之前的位置以及字符串结束前的位置.) Singleline(单行模式) 更改.的含义，使它与每一个字符匹配（包括换行符\n）。 IgnorePatternWhitespace(忽略空白) 忽略表达式中的非转义空白并启用由#标记的注释。 ExplicitCapture(显式捕获) 仅捕获已被显式命名的组。  平衡组/递归匹配 概念：  (?&#39;group&#39;) 把捕获的内容命名为group,并压入堆栈(Stack) (?&#39;-group&#39;) 从堆栈上弹出最后压入堆栈的名为group的捕获内容，如果堆栈本来为空，则本分组的匹配失败 (?(group)yes|no) 如果堆栈上存在以名为group的捕获内容的话，继续匹配yes部分的表达式，否则继续匹配no部分 (?!) 零宽负向先行断言，由于没有后缀表达式，试图匹配总是失败  事例： &amp;lt; #最外层的左括号 [^&amp;lt;&amp;gt;]* #最外层的左括号后面的不是括号的内容 ( ( (?&amp;#39;Open&amp;#39;&amp;lt;) #碰到了左括号，在黑板上写一个&amp;#34;Open&amp;#34; [^&amp;lt;&amp;gt;]* #匹配左括号后面的不是括号的内容 )&#43; ( (?&amp;#39;-Open&amp;#39;&amp;gt;) #碰到了右括号，擦掉一个&amp;#34;Open&amp;#34; [^&amp;lt;&amp;gt;]* #匹配右括号后面不是括号的内容 )&#43; )* (?(Open)(?!)) #在遇到最外层的右括号前面，判断黑板上还有没有没擦掉的&amp;#34;Open&amp;#34;；如果还有，则匹配失败 &amp;gt; #最外层的右括号 补充语法  \a 报警字符(打印它的效果是电脑嘀一声) \b 通常是单词分界位置，但如果在字符类里使用代表退格 \t 制表符，Tab \r 回车 \v 竖向制表符 \f 换页符 \n 换行符 \e Escape \0nn ASCII代码中八进制代码为nn的字符 \xnn ASCII代码中十六进制代码为nn的字符 \unnnn Unicode代码中十六进制代码为nnnn的字符 \cN ASCII控制字符。比如\cC代表Ctrl&#43;C \A 字符串开头(类似^，但不受处理多行选项的影响) \Z 字符串结尾或行尾(不受处理多行选项的影响) \z 字符串结尾(类似$，但不受处理多行选项的影响) \G 当前搜索的开头 \p{name} Unicode中命名为name的字符类，例如\p{IsGreek} (?&amp;gt;exp) 贪婪子表达式 (?&amp;lt;x&amp;gt;-&amp;lt;y&amp;gt;exp) 平衡组 (?im-nsx:exp) 在子表达式exp中改变处理选项 (?im-nsx) 为表达式后面的部分改变处理选项 (?(exp)yes|no) 把exp当作零宽正向先行断言，如果在这个位置能匹配，使用yes作为此组的表达式；否`则使用no (?(exp)yes) 同上，只是使用空表达式作为no (?(name)yes|no) 如果命名为name的组捕获到了内容，使用yes作为表达式；否则使用no (?(name)yes) 同上，只是使用空表达式作为no  </content>
-    </entry>
-    
-     <entry>
         <title>Spring.Cache</title>
         <url>http://domain.yqjdcyy.com/post/spring.cache/</url>
         <categories>
@@ -5589,6 +5577,36 @@ Site Lifecycle pre-site executes processes needed prior to the actual project si
           <tag>Spring</tag><tag>Cache</tag>
         </tags>
         <content type="html">  参考链接  http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/  特点  通过少量的配置 annotation 注释即可使得既有代码支持缓存 支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存 支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition 支持 AspectJ，并通过其实现任何方法的缓存支持 支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展  注释标签  @Cacheable(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo;[, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;]) @CachEvict(value=&amp;ldquo;缓存名称，如a/{b, c}&amp;rdquo; [, key=&amp;ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&amp;rdquo;] [, condition=&amp;ldquo;可使用SqEL表达式编写，为true时进行缓存&amp;rdquo;] [, allEntries=&amp;ldquo;true时表示清空所有缓存内容&amp;rdquo;] [, beforeInvocation=&amp;ldquo;true时表示在方法执行前清空&amp;rdquo;]) @CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用  基本原理  关键：Spring AOP 过程：  原始代码：客户端通过直接作用于类对象的方法进行直接引用 调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值    </content>
+    </entry>
+    
+     <entry>
+        <title>正则表达式</title>
+        <url>http://domain.yqjdcyy.com/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>正则表达式</tag>
+        </tags>
+        <content type="html">  整理    类型 符号 含义 示例     元字符       . 匹配除换行符以外的任意字符     \w 匹配字母或数字或下划线或汉字     \s 匹配任意的空白符     \d 匹配数字     \b 匹配单词的开始或结束     ^ 匹配字符串的开始     $ 匹配字符串的结束    字符转义       \ 取消特殊字符含义，仅作文本表示 \&#43;
+\*   重复       * 重复零次或更多次     &#43; 重复一次或更多次     ? 重复零次或一次     {n} 重复n次     {n,} 重复n次或更多次     {n,m} 重复n到m次    范围       [.?!] 匹配标点符号.或?或!     [a-z0-9A-Z_] 匹配数字或字母中的一个字符     y(ao｜u) 匹配 yao 或 yu    反义       \W 匹配任意不是字母，数字，下划线，汉字的字符     \S 匹配任意不是空白符的字符     \D 匹配任意非数字的字符     \B 匹配不是单词开头或结束的位置     [^x] 匹配除了x以外的任意字符     [^aeiou] 匹配除了aeiou这几个字母以外的任意字符    贪婪/懒惰   匹配 aabab    a.*b 贪婪
+匹配尽可能多的字符
+默认配置 aabab    a.*?b 懒惰
+匹配尽可能少的字符
+可匹配「重复」模块标识使用 aab
+ab   断言   如下均以匹配
+&#43;win7
+-win8
+*win10    win(?:7) ?:
+视同范围用法 win7
+win8    win(?=7) 正向零宽断言/预查
+匹配后续接有断言内容的正则数据，且预查部分不作为查询结果 win    win(?!7) 正向零宽否定断言/预查
+匹配后续未接有断言内容的正则，同预查部分不作为查询结果 win
+win    (?&amp;lt;=\&#43;)win\d* 反向零宽断言/预查
+匹配前面为断言内容的正则数据，且预查部分不作为查询结果 win7    (?&amp;lt;!\&#43;)win\d* 反向零宽否定断言/预查
+匹配前面不为断言内容的正则数据，且预查部分不作为查询结果 win8
+win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即为每对括号所包含的部分
+其中 \1 表示为第一个组的匹配内容     参考  正则表达式30分钟入门教程 表达式全集  </content>
     </entry>
     
      <entry>

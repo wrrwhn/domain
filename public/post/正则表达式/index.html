@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Spring.Cache - 好久不见</title>
+    <title>正则表达式 - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Spring.Cache">
+    <meta property="og:title" content="正则表达式">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Spring.Cache - 好久不见" />
+    <meta name="title" content="正则表达式 - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/spring.cache/" itemprop="url">
-        Spring.Cache
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" itemprop="url">
+        正则表达式
         </a>
       </h1>
       <div class="post-meta">
@@ -155,48 +155,306 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">682 字 ~2分钟</span>
+<span class="leancloud-visitors-count">571 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h2 id="参考链接">参考链接</h2>
+<h1 id="整理">整理</h1>
+
+<table>
+<thead>
+<tr>
+<th align="center">类型</th>
+<th align="center">符号</th>
+<th>含义</th>
+<th>示例</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="center">元字符</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>.</code></td>
+<td>匹配除<strong>换行符</strong>以外的任意字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\w</code></td>
+<td>匹配<strong>字母</strong>或<strong>数字</strong>或<strong>下划线</strong>或<strong>汉字</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\s</code></td>
+<td>匹配任意的<strong>空白符</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\d</code></td>
+<td>匹配数字</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\b</code></td>
+<td>匹配<strong>单词</strong>的开始或结束</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>^</code></td>
+<td>匹配字符串的<strong>开始</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>$</code></td>
+<td>匹配字符串的<strong>结束</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">字符转义</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\</code></td>
+<td>取消特殊字符含义，仅作文本表示</td>
+<td><code>\+</code><br><code>\*</code></td>
+</tr>
+
+<tr>
+<td align="center">重复</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>*</code></td>
+<td>重复<strong>零次</strong>或更多次</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>+</code></td>
+<td>重复<strong>一次</strong>或更多次</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>?</code></td>
+<td>重复<strong>零次</strong>或<strong>一次</strong></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>{n}</code></td>
+<td>重复n次</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>{n,}</code></td>
+<td>重复n次或更多次</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>{n,m}</code></td>
+<td>重复n到m次</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">范围</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>[.?!]</code></td>
+<td>匹配标点符号<code>.</code>或<code>?</code>或<code>!</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>[a-z0-9A-Z_]</code></td>
+<td>匹配数字或字母中的一个字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>y(ao｜u)</code></td>
+<td>匹配 yao 或 yu</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">反义</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\W</code></td>
+<td>匹配任意不是字母，数字，下划线，汉字的字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\S</code></td>
+<td>匹配任意不是空白符的字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\D</code></td>
+<td>匹配任意非数字的字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>\B</code></td>
+<td>匹配不是单词开头或结束的位置</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>[^x]</code></td>
+<td>匹配除了x以外的任意字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>[^aeiou]</code></td>
+<td>匹配除了aeiou这几个字母以外的任意字符</td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center">贪婪/懒惰</td>
+<td align="center"></td>
+<td></td>
+<td>匹配 <code>aabab</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>a.*b</code></td>
+<td><strong>贪婪</strong><br>匹配尽可能<strong>多</strong>的字符<br>默认配置</td>
+<td><code>aabab</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>a.*?b</code></td>
+<td><strong>懒惰</strong><br>匹配尽可能<strong>少</strong>的字符<br>可匹配「重复」模块标识使用</td>
+<td><code>aab</code><br><code>ab</code></td>
+</tr>
+
+<tr>
+<td align="center">断言</td>
+<td align="center"></td>
+<td></td>
+<td>如下均以匹配<br><code>+win7</code><br><code>-win8</code><br><code>*win10</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>win(?:7)</code></td>
+<td><code>?:</code><br>视同范围用法</td>
+<td><code>win7</code><br><code>win8</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>win(?=7)</code></td>
+<td><strong>正向零宽断言/预查</strong><br>匹配后续接有断言内容的正则数据，且预查部分不作为查询结果</td>
+<td><code>win</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>win(?!7)</code></td>
+<td><strong>正向零宽否定断言/预查</strong><br>匹配后续<strong>未接</strong>有断言内容的正则，同预查部分不作为查询结果</td>
+<td><code>win</code><br><code>win</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>(?&lt;=\+)win\d*</code></td>
+<td><strong>反向零宽断言/预查</strong><br>匹配<strong>前面</strong>为断言内容的正则数据，且预查部分不作为查询结果</td>
+<td><code>win7</code></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>(?&lt;!\+)win\d*</code></td>
+<td><strong>反向零宽否定断言/预查</strong><br>匹配<strong>前面不为</strong>断言内容的正则数据，且预查部分不作为查询结果</td>
+<td><code>win8</code><br><code>win10</code></td>
+</tr>
+
+<tr>
+<td align="center">组</td>
+<td align="center"></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td align="center"></td>
+<td align="center"><code>&lt;([a-z]*)&gt;&lt;/\1&gt;(?=&lt;)</code></td>
+<td>组即为每对括号所包含的部分<br>其中 <code>\1</code> 表示为第一个组的匹配内容</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/">http://www.ibm.com/developerworks/cn/opensource/os-cn-spring-cache/</a></li>
-</ul>
-
-<h2 id="特点">特点</h2>
-
-<ul>
-<li>通过少量的配置 annotation 注释即可使得既有代码支持缓存</li>
-<li>支持开箱即用 Out-Of-The-Box，即不用安装和部署额外第三方组件即可使用缓存</li>
-<li>支持 Spring Express Language，能使用对象的任何属性或者方法来定义缓存的 key 和 condition</li>
-<li>支持 AspectJ，并通过其实现任何方法的缓存支持</li>
-<li>支持自定义 key和自定义缓存管理者，具有相当的灵活性和扩展</li>
-</ul>
-
-<h2 id="注释标签">注释标签</h2>
-
-<ul>
-<li>@Cacheable(value=&ldquo;缓存名称，如a/{b, c}&rdquo;[, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;])</li>
-<li>@CachEvict(value=&ldquo;缓存名称，如a/{b, c}&rdquo; [, key=&ldquo;可使用SqEL获取方法参数如#userName，其中缺少按照方法所有参数进行组合&rdquo;] [, condition=&ldquo;可使用SqEL表达式编写，为true时进行缓存&rdquo;] [, allEntries=&ldquo;true时表示清空所有缓存内容&rdquo;] [, beforeInvocation=&ldquo;true时表示在方法执行前清空&rdquo;])</li>
-<li>@CachePut调用方式同@Cacheable，区别于每次都会触发真实方法调用</li>
-</ul>
-
-<h2 id="基本原理">基本原理</h2>
-
-<ul>
-<li>关键：Spring AOP</li>
-<li>过程：
-
-<ul>
-<li>原始代码：客户端通过直接作用于类对象的方法进行直接引用</li>
-<li>调整实现：客户端申请调用时，所拥有的为代码的引用。proxy控制实际pojo.foo()方法的入参和返回值</li>
-<li><img src="http://img.yqjdcyy.com/6d7850fe-bda2-11e6-ab18-0071cc916200.png" alt="6d7850fe-bda2-11e6-ab18-0071cc916200.png" /></li>
-</ul></li>
+<li><a href="https://deerchao.net/tutorials/regex/regex.htm">正则表达式30分钟入门教程</a></li>
+<li><a href="http://tool.oschina.net/uploads/apidocs/jquery/regexp.html">表达式全集</a></li>
 </ul>
 
     </div>
@@ -205,9 +463,7 @@
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/spring" rel="tag" title="Spring">#Spring#</a>
-    
-    <a href="http://domain.yqjdcyy.com/tags/cache" rel="tag" title="Cache">#Cache#</a>
+    <a href="http://domain.yqjdcyy.com/tags/%e6%ad%a3%e5%88%99%e8%a1%a8%e8%be%be%e5%bc%8f" rel="tag" title="正则表达式">#正则表达式#</a>
     
 </div>
 
@@ -216,16 +472,16 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="正则表达式">
-        <i class="fa fa-chevron-left"></i> 正则表达式
+        <a href="http://domain.yqjdcyy.com/post/ducati/" rel="next" title="">
+        <i class="fa fa-chevron-left"></i> 
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/dwr/" rel="prev" title="DWR">
-        DWR <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/spring.cache/" rel="prev" title="Spring.Cache">
+        Spring.Cache <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -235,7 +491,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Spring.Cache
+                标题：正则表达式
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -336,13 +592,8 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li>
-<ul>
-<li><a href="#参考链接">参考链接</a></li>
-<li><a href="#特点">特点</a></li>
-<li><a href="#注释标签">注释标签</a></li>
-<li><a href="#基本原理">基本原理</a></li>
-</ul></li>
+<li><a href="#整理">整理</a></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>
