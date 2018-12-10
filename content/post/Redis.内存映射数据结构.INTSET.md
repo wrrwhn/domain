@@ -73,7 +73,7 @@ toc: true
 ## 流程
 - 以上式添加 `65535` 为例
     - 检查插入值的类型范围是否超过当前类型值 `inset.encoding` 范围
-    - 如果超过，则更新当前的类型值，并以此重新分配内存= `intset.encoding` * (`intset.length`+ 1)
+    - 如果超过，则更新当前的类型值，并以此重新分配内存= 4+ 4+ `intset.encoding` * (`intset.length`+ 1)
     - 由后往前，将对应数值转换为 `inset.encoding` 类型数据，并列于预留位置
     - 将 `65535` 插入到数组中
 

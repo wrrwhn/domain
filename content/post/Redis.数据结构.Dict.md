@@ -102,7 +102,7 @@ toc: true
 ## 过程
 
 - 初始化 ht[1].table 大小大于 ht[0].size
-    - ht[1].size>= `2`* `ht[0].used`
+    - ht[1].size 为大于 `DICT_HT_INITIAL_SIZE`* 2^n，且大于 `2`* `ht[0].used`
 - 将 ht[0].table 的键渐近式地迁移至 ht[1].table
     - dict.rehashidx++
     - ht[0].used--
@@ -143,18 +143,24 @@ toc: true
     - 即实际使用率小于 10% 时触发
 
 ## 与扩容的差异
-- 流程类似扩容，差异于初始化 Ht[1].table 时，大小为 `ht[0].used`
+- 流程类似扩容，差异于初始化 Ht[1].table 时，大小为 `DICT_HT_INITIAL_SIZE* 2^n`，且大于 `ht[0].used`
 
     ```c
-    int dictResize(dict *d)
-    {
-        int minimal;
+    // 调用
+    return dictExpand(d, d->ht[0].used*2)
+    return dictExpand(d, minimal = d->ht[0].used);
 
-        if (!dict_can_resize || dictIsRehashing(d)) return DICT_ERR;
-        minimal = d->ht[0].used;
-        if (minimal < DICT_HT_INITIAL_SIZE)     // DICT_HT_INITIAL_SIZE= 4
-            minimal = DICT_HT_INITIAL_SIZE;
-        return dictExpand(d, minimal);
+    // 实现
+    static unsigned long _dictNextPower(unsigned long size)
+    {
+        unsigned long i = DICT_HT_INITIAL_SIZE;
+
+        if (size >= LONG_MAX) return LONG_MAX + 1LU;
+        while(1) {
+            if (i >= size)
+                return i;
+            i *= 2;
+        }
     }
     ```
 

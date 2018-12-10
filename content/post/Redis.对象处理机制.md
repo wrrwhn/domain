@@ -18,15 +18,15 @@ toc: true
 
 # 结构
 
-| 对象        | 字段              | 描述                                                             |
-|-------------|-------------------|------------------------------------------------------------------|
-| redisObject |                   |                                                                  |
-|             | unsigned type     | 存储的数据类型                                                   |
-|             | unsigned notused  | 对齐位                                                           |
-|             | unsigned encoding | 当前使用的编码值                                                 |
-|             | unsigned lru      | Least Recentyly Used<br>最近最少使用<br>用于内存不足时的回收算法 |
-|             | int refcount      | 引用计数<br>负责维持和销毁对象                                   |
-|             | void *ptr         | 关联对象指针<br>根据 `type` 和 `encoding` 指向实际存储的数据结构 |
+| 对象        | 字段              | 描述                                                                    |
+|-------------|-------------------|-------------------------------------------------------------------------|
+| redisObject |                   |                                                                         |
+|             | unsigned type     | 存储的数据类型<br>4b                                                    |
+|             | unsigned notused  | 对齐位<br>2b                                                            |
+|             | unsigned encoding | 当前使用的编码值<br>4b                                                  |
+|             | unsigned lru      | Least Recentyly Used<br>最近最少使用<br>22b<br>用于内存不足时的回收算法 |
+|             | int refcount      | 引用计数<br>负责维持和销毁对象                                          |
+|             | void *ptr         | 关联对象指针<br>根据 `type` 和 `encoding` 指向实际存储的数据结构        |
 
 
 # 枚举
@@ -113,10 +113,10 @@ toc: true
     |             | *ptr     | void         | 8B     | 此外为 64 为操作系统 |
     |             |          |              | =16B   |                      |
     | sdshdr      |          |              |        |                      |
-    |             | len      | unsigned int | 4      |                      |
-    |             | free     |              | 4      |                      |
+    |             | len      | unsigned int | 4B     |                      |
+    |             | free     |              | 4B     |                      |
     |             | buf      | char[]       | ?      |                      |
-    |             | `\0`     | char         | 1      |                      |
+    |             | `\0`     | char         | 1B     |                      |
     |             |          |              | =9B+ ? |                      |
 
 - v2.4+，使用 jemalloc 分配内存，大小为 8B，16B，32B和 64B
