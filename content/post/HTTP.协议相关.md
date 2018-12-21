@@ -20,11 +20,14 @@ toc: true
 ## Http.detail
 - Message Body 消息体
 - Request  请求头
-- ```
+
+```
 POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1
 ```
+
 - Header  头文件
-- ```
+
+```
 Accept: application/json, text/plain, */*
 Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a
 Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas
@@ -37,13 +40,16 @@ Connection: Keep-Alive
 Pragma: no-cache
 Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017
 ```
+
 - Empty line
 - Body  消息体
-- ```
+
+```
 -----------------------------7e016f3be0a4a
 Content-Disposition: form-data; name="file"; filename="B2283659A4B9302BE09FE2EC97690382.pptx"
 Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation
 ```
+
 - Method
 - GET
 - Data.length.limit

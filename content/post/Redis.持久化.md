@@ -12,7 +12,7 @@ toc: true
 ## RDB
 
 ### 形式
-- 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态
+- 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态
 - 针对超过20字节文本，会使用 LZF 编码形式进行压缩
 
 ### 原理
@@ -20,7 +20,7 @@ toc: true
     - copy on write
     - linux.kernel 上支持
     - 多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见
-        - 保障线程案例，父进程的修改，不会影响到子进程的数量
+        - 保障线程安全，父进程的修改，不会影响到子进程的数量
         - 类似于 java 的 string 对象
 
 ### 时机
@@ -141,7 +141,7 @@ toc: true
 
 - 操作
     - WRITE
-        - 将 `aof_buf` 的缓存写入至 AOF 文件
+        - 将 `aof_buf` 的缓存写入至 AOF 文件的内存缓冲区
     - SAVE
         - 调用 `fsync`| `fdatasync` 将 AOF 文件写入磁盘
 
@@ -226,9 +226,36 @@ toc: true
 
 - B-Tree 实现，**实验**阶段
 
-# 指令
-## 关闭|开启策略
 
+
+# 对比
+
+|  对比项  | RDB | AOF  |
+|----------|-----|------|
+| 文件大小 | 小  |      |
+| 读取速度 | 快  |      |
+| 生成速度 | 快  |      |
+| 加载优先 |     | 优先 |
+| 数据丢失 | 多  |      |
+
+
+# 指令
+
+## 查询
+- `CONFIG GET (SAVE|APPENDFSYNC)`
+
+## 开启|关闭
+- RDB
+    - `CONFIG SET SAVE ""`
+        - 关闭 RDB 功能
+    - `CONFIG SET SAVE "900 1 300 10"`
+        - 开启 RDB 功能
+        - **900s** 内若至少有 **1次** 变更，或 **300s** 内至少 **10次** 变更，则调用 SAVE 命令
+- AOF
+    - `CONFIG SET APPENDFSYNC NO`
+        - 关闭 AOF 功能
+    - `CONFIG SET APPENDFSYNC YES`
+        - 开启 AOF 功能
 
 # 主从复制
 
@@ -294,7 +321,7 @@ toc: true
     - `Unix` 和 `Linux` 上的实现方式
     - 向文件写数据时
         - 优先复制到`缓冲`区
-        - 而入排入`队列`
+        - 而后排入`队列`
         - 最后再同步写入至`磁盘`
 
 #### Sync
@@ -313,21 +340,6 @@ toc: true
 
 
 
-- 查询
-    - `CONFIG GET (SAVE|APPENDFSYNC)`
-
-- 开启|关闭
-    - RDB
-        - `CONFIG SET SAVE ""`
-            - 关闭 RDB 功能
-        - `CONFIG SET SAVE "900 1 300 10"`
-            - 开启 RDB 功能
-            - **900s** 内若至少有 **1次** 变更，或 **300s** 内至少 **10次** 变更，则调用 SAVE 命令
-    - AOF
-        - `CONFIG SET APPENDFSYNC NO`
-            - 关闭 AOF 功能
-        - `CONFIG SET APPENDFSYNC YES`
-            - 开启 AOF 功能
 
 # 参考
 - [RDB](https://redisbook.readthedocs.io/en/latest/internal/rdb.html)
@@ -340,3 +352,5 @@ toc: true
 - [redis原理](https://juejin.im/post/5b7cbbace51d4538850307dd)
 - [redis原理](https://juejin.im/post/5b7cbbace51d4538850307dd)
 - [fork()后copy on write的一些特性](https://zhoujianshi.github.io/articles/2017/fork()%E5%90%8Ecopy%20on%20write%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/index.html)
+- [redis持久化RDB和AOF](https://my.oschina.net/davehe/blog/174662)
+- []()
