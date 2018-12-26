@@ -1,0 +1,1328 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Java.JVM.内存结构 - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Java.JVM.内存结构">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Java.JVM.内存结构 - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/" itemprop="url">
+        Java.JVM.内存结构
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-12-26">
+    2018-12-26
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">1873 字 ~4分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="作用">作用</h1>
+
+<ul>
+<li>通过了解 JVM 内存情况，便于快速定位、解决服务器性能问题</li>
+<li>便于串联、理解 Java 运行的整体流程</li>
+</ul>
+
+<h1 id="结构">结构</h1>
+
+<h2 id="jdk-1-6-1-7">JDK 1.<sup>6</sup>&frasl;<sub>1</sub>.7</h2>
+
+<ul>
+<li>精简版
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/efc12233-95aa-4956-a369-975ebe6872c5.png" alt="JMM-v1.png" /></li>
+</ul></li>
+<li>细划版
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/479b5392-a40b-4846-8393-715224f42ee5.png" alt="JMM-v2.png" /></li>
+</ul></li>
+<li>精确版
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/af547473-a667-4c7a-86c9-c4039900e031.png" alt="JVM-v3.png" /></li>
+</ul></li>
+</ul>
+
+<h2 id="jdk-1-8">JDK 1.8</h2>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/0ad7c720-362e-4e9b-9172-93e5b97e491f.png" alt="JVM-1.8.png" /></li>
+</ul>
+
+<h1 id="作用-1">作用</h1>
+
+<table>
+<thead>
+<tr>
+<th>分区</th>
+<th>分块</th>
+<th>底层</th>
+<th>细节</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Heap</td>
+<td></td>
+<td></td>
+<td>随 VM 启动时创建，不需连续<br><strong>所有线程共享</strong><br>用于创建<strong>对象实例</strong>、分配<strong>数组</strong></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Young Generation</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Eden Generation</td>
+<td>新创建的对象</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>From<br>Survivor 0</td>
+<td>上一轮 Minor GC 存活下来的对象</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>To<br>Survivor 1</td>
+<td>无数据空间，用于下一轮 Young GC 时存放未被回收的数据</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Virtual</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Old Generation</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Tenured</td>
+<td>存放经过一定生命周期仍然存在的对象<br>大对象（新生代分配不了）</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Virtual</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Method Area</td>
+<td></td>
+<td></td>
+<td>随 VM 启动时创建，大小可根据需要进行扩容、收缩，不需连续</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Permanent Generation</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Runtime Constant Pool</td>
+<td>常量<br>编译时的数值、文字，运行时的方法与字段的引用</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Filed &amp; Method Data</td>
+<td>类信息、静态变量</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Code</td>
+<td>即时编译的代码</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Virtual</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Native Area</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Code Cache</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Thread.PC<br>Program Pointer Counter</td>
+<td>记录当前线程所<strong>执行的字节码的行号</strong><br>字节码解释器通过更新该值以获取下一条要执行的指令；分支、循环、跳转、异常和线程恢复均依赖计数器<br>执行 Native 方法时，计数值为 Undefined</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Thread.Stack</td>
+<td>方法执行时创建、入栈，完成时出栈<br><strong>栈帧</strong>由局部变量表、操作数栈、动态链接和方法出口、分发异常、运行时常量池入口组成</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Thread.Native Methos Stack</td>
+<td>存储虚拟机使用到的 Native 方法服务<br>如若 JVM 实现不支持加载本地方法，或不依赖于传统栈的，则无需提醒</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Compile</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Native</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Virtual</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="异常">异常</h1>
+
+<table>
+<thead>
+<tr>
+<th>异常</th>
+<th>可能发生区域</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>StackOverflowError</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Native Method Stacks</td>
+</tr>
+
+<tr>
+<td>OutOfMemoryError</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Heap</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Method Area</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Run-Time Constant Pool</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Native Method Stacks</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="流程">流程</h1>
+
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>动作</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>创建对象</td>
+<td>在 Edgn Space 创建用户</td>
+</tr>
+
+<tr>
+<td>Eden Space 空间已满</td>
+<td>Minor GC/ Young GC<br>将 Eden/ From Survivor 空间不能被回收的移动到 To Survivor<br>To Survivor 对象的 age ++<br>将 From/To 标识更新，保证 To Survivor 为空</td>
+</tr>
+
+<tr>
+<td>Old Space 空间已满</td>
+<td>Major GC/ Full GC<br>对整个 Heap 空间进行扫描、回收</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="默认值-调整">默认值|调整</h1>
+
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>默认值</th>
+<th>情况</th>
+<th>调整值</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Heap</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Memory/ 64</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Heap.free&lt; <code>MinHeapFreeRatio: 40&gt;</code>%</td>
+<td>Heap.size+ ？&lt;= <code>Xmx</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Heap.Used&gt; <code>XX:MaxHeapFreeRatio: 70</code>%</td>
+<td>Heap.size- ?&gt;= <code>Xms</code></td>
+</tr>
+
+<tr>
+<td>Permanent</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Memory/ 64</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Code/ Native</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>30m/client<br>48m/server</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="示例">示例</h1>
+
+<h2 id="触发-minor-gc">触发 Minor GC</h2>
+
+<ul>
+<li><p>Code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">final</span> <span style="color:#66d9ef">int</span> M <span style="color:#f92672">=</span> 1024<span style="color:#f92672">*</span> 1024<span style="color:#f92672">;</span>
+
+<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> b0<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>2<span style="color:#f92672">*</span> M<span style="color:#f92672">];</span>
+<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> b1<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>2<span style="color:#f92672">*</span> M<span style="color:#f92672">];</span>
+<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> b2<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>2<span style="color:#f92672">*</span> M<span style="color:#f92672">];</span>
+<span style="color:#66d9ef">byte</span><span style="color:#f92672">[]</span> b3<span style="color:#f92672">=</span><span style="color:#66d9ef">new</span> <span style="color:#66d9ef">byte</span><span style="color:#f92672">[</span>4<span style="color:#f92672">*</span> M<span style="color:#f92672">];</span></code></pre></div></li>
+
+<li><p>VM args</p>
+
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-XX:+UseSerialGC</code></td>
+<td>使用串行垃圾回收器</td>
+</tr>
+
+<tr>
+<td><code>-verbose:gc</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>-XX:+PrintGCDetails</code></td>
+<td>打印 GC 明细信息</td>
+</tr>
+
+<tr>
+<td><code>-Xms20M</code></td>
+<td>新生代最小内存为 20M</td>
+</tr>
+
+<tr>
+<td><code>-Xmx20M</code></td>
+<td>新生代最大内存为20M</td>
+</tr>
+
+<tr>
+<td><code>-Xmn10M</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td><code>-XX:SurvivorRatio=8</code></td>
+<td>eden/ survivor= 8</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>Log</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-log" data-lang="log">[GC (Allocation Failure) [DefNew: 6817K-&gt;848K(9216K), 0.0043662 secs] 6817K-&gt;4945K(19456K), 0.0044138 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] 
+Heap
+ def new generation   total 9216K, used 7201K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000)
+  eden space 8192K,  77% used [0x00000000fec00000, 0x00000000ff2343d0, 0x00000000ff400000)
+  from space 1024K,  82% used [0x00000000ff500000, 0x00000000ff5d43f0, 0x00000000ff600000)
+  to   space 1024K,   0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000)
+ tenured generation   total 10240K, used 4096K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000)
+   the space 10240K,  40% used [0x00000000ff600000, 0x00000000ffa00020, 0x00000000ffa00200, 0x0000000100000000)
+ Metaspace       used 3284K, capacity 4496K, committed 4864K, reserved 1056768K
+  class space    used 357K, capacity 388K, committed 512K, reserved 1048576K</code></pre></div></li>
+
+<li><p>解析</p>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>解析</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>GC</td>
+<td>GC类型</td>
+</tr>
+
+<tr>
+<td>Allocation Failure</td>
+<td>触发GC的原因</td>
+</tr>
+
+<tr>
+<td>DefNew</td>
+<td>触发的垃圾回收器<br>此值表示使用了<strong>串行回收收集器</strong></td>
+</tr>
+
+<tr>
+<td>6817K-&gt;848K</td>
+<td><strong>年轻代</strong>内存使用值的变化情况</td>
+</tr>
+
+<tr>
+<td>(9216K)</td>
+<td>年轻代内存大小</td>
+</tr>
+
+<tr>
+<td>6817K-&gt;4945K</td>
+<td><strong>堆</strong>内存使用的情况变化</td>
+</tr>
+
+<tr>
+<td>(19456K)</td>
+<td>堆内存大小</td>
+</tr>
+
+<tr>
+<td>Times.user</td>
+<td>垃圾回收<strong>线程</strong>消耗的 CPU 时间</td>
+</tr>
+
+<tr>
+<td>Times.sys</td>
+<td><strong>系统</strong>调用和等待事件的时间</td>
+</tr>
+
+<tr>
+<td>Times.real</td>
+<td>应用程序暂停的时间</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h1 id="参数">参数</h1>
+
+<h2 id="格式">格式</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">|           格式           |                      含义                      |
+|--------------------------|------------------------------------------------|
+| `-XX:+/-&lt;option&gt;`        | 是否开启                                       |
+| `-XX:&lt;option&gt;=&lt;number&gt;`  | 设置数值，可使用 M/K/G 等单位&lt;br&gt;如 32k= 32768 |
+| `-XX:&lt;option&gt;=&lt;string&gt;,` | 设置文本，用于指定文件、路径或命令列表         |</pre></div>
+<h2 id="常用">常用</h2>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>分配</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-Xms</code></td>
+<td>堆的最小空间大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-Xmx</code></td>
+<td>堆的最大空间大小<br>建议与 <code>-Xms</code> 一致避免收缩、增大带来的性能问题</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-Xmn</code><br><code>-XX:NewSize</code></td>
+<td>新生代最小空间大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:MaxNewSize</code></td>
+<td>新生代最大空间大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:PermSize</code></td>
+<td>永久代最小空间大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:MaxPermSize</code></td>
+<td>永久代最大空间大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-Xss</code></td>
+<td>每个线程的堆栈大小</td>
+</tr>
+
+<tr>
+<td>行为</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-UseParallelGC</code></td>
+<td>使用并行垃圾回收器</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-UseParallelOldGC</code></td>
+<td>Full GC 时使用并行垃圾回收器</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-UseSerialGC</code></td>
+<td>使用串行垃圾回收器</td>
+</tr>
+
+<tr>
+<td>G1 回收器<br>Garbage First</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:+UseG1GC</code></td>
+<td>使用 G1 收集器<br>将堆切分为大小一</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:InitiatingHeapOccupancyPercent=45</code></td>
+<td>触发 Gc 的 Heap 占用比例</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:NewRatio=2</code></td>
+<td>old/ new</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:SurvivorRatio=8</code></td>
+<td>eden/ survivor</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:G1ReservePercent=10</code></td>
+<td>保留堆比例值<br>减少分配分配的可能性</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:G1HeapRegionSize={1M,32M}</code></td>
+<td>堆的切分大小值</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:MaxTenuringThreshold=15</code></td>
+<td>指定经过过多少次 Young GC 后才转到老生代</td>
+</tr>
+
+<tr>
+<td>性能</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:LargePageSizeInBytes=4m</code></td>
+<td>配合 <code>-XX:+UseLargePages</code> 使用</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:MaxHeapFreeRatio=70</code></td>
+<td>GC 后的堆空闲的最大比例<br>避免收缩</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:NewRatio=2</code></td>
+<td>old/ new</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:SurvivorRatio=8</code></td>
+<td>eden/ survivor</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:NewSize=2m</code></td>
+<td>新生代默认大小</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:MaxPermSize=64m</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:TargetSurvivorRatio=50</code></td>
+<td>清除后的幸存区使用比例</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:ThreadStackSize=512</code></td>
+<td>线程栈的大小</td>
+</tr>
+
+<tr>
+<td>调试</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-CITime</code></td>
+<td>打印 JIT 编译器花费的时间</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:ErrorFile=&lt;path&gt;</code></td>
+<td>异常打印至指定文件</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-HeapDumpOnOutOfMemoryError</code></td>
+<td>内存不足时自动 dump</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:HeapDumpPath&lt;path&gt;</code></td>
+<td>堆 dump 保存对指定文件</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-PrintClassHistogram</code></td>
+<td>打印类的直方图</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-PrintConcurrentLocks</code></td>
+<td>打印 Dump 中的并发锁信息</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-PrintGC</code></td>
+<td>打印垃圾回收的信息</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-PrintGCDetails</code></td>
+<td>打印垃圾回收的细节信息</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-PrintTenuringDistribution</code></td>
+<td>打印老年代的年龄段分布情况</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-TraceClassLoading</code></td>
+<td>追踪类的加载</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-TraceClassLoadingPreorder</code></td>
+<td>追踪所有类的加载顺序</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-TraceClassResolution</code></td>
+<td>追踪常量池的情况</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-TraceClassUnloading</code></td>
+<td>追踪类的卸载</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:-TraceLoaderConstraints</code></td>
+<td>追踪加载器约束记录</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:ParallelGCThreads=n</code></td>
+<td>配置 Heap 分布执行 GC 的线程数</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-XX:+UseCompressedOops</code></td>
+<td>使用压缩的 Oops</td>
+</tr>
+
+<tr>
+<td></td>
+<td><code>-Xloggc:&lt;filename&gt;</code></td>
+<td>输出 GC 的详细信息至指定文件</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="补充">补充</h1>
+
+<ul>
+<li><p>JDK 1.8 使用 MetaSpace 代替 Permanent Generation</p>
+
+<ul>
+<li>原因
+
+<ul>
+<li>使用内存管理，减少内存溢出</li>
+<li>促进与 JRockit VM 的事例</li>
+</ul></li>
+<li>操作
+
+<ul>
+<li>PermGen 移除</li>
+<li>File &amp; Class 与 Code 移动至 metaSpace</li>
+<li>Class Constatnt Pool 移动至 Java.Heap</li>
+</ul></li>
+</ul></li>
+
+<li><p>比例</p>
+
+<ul>
+<li>EdenSpace: FromSpace: ToSpace= 8: 1: 1</li>
+</ul></li>
+
+<li><p>别名</p>
+
+<ul>
+<li>Heap
+
+<ul>
+<li>GC 堆</li>
+</ul></li>
+<li>Method Area
+
+<ul>
+<li>Non-heap</li>
+<li>永久层</li>
+</ul></li>
+<li>Thread.Native Methos Stack
+C 栈</li>
+</ul></li>
+
+<li><p>GC</p>
+
+<ul>
+<li>Heap
+
+<ul>
+<li>对象</li>
+</ul></li>
+<li>Method Area
+
+<ul>
+<li>常量池</li>
+<li>类型卸载</li>
+</ul></li>
+</ul></li>
+
+<li><p>基本数据类型</p>
+
+<ul>
+<li>boolean</li>
+<li>byte</li>
+<li>char</li>
+<li>short</li>
+<li>int</li>
+<li>long</li>
+<li>float</li>
+<li>double</li>
+</ul></li>
+
+<li><p>局部变量表</p>
+
+<ul>
+<li>基本数据类型</li>
+<li>对象引用</li>
+<li>returnAddress(下一字节码指令地址)</li>
+</ul></li>
+
+<li><p>操作数栈</p>
+
+<ul>
+<li>FIFO 栈</li>
+<li>最大深度于编译时确定，并于方法和栈帧关联时提供</li>
+<li>数值来源为常量、本地参数值或字段
+
+<ul>
+<li>亦保存操作结果至栈顶</li>
+<li>递归方法调用</li>
+</ul></li>
+</ul></li>
+
+<li><p>动态链接</p>
+
+<ul>
+<li>于栈帧中，由运行时常量池的引用，作为当前方法用于提供方法代码的动态链接的类型</li>
+<li>方法的类文件代码，引用要执行的方法，并通过符号引用来访问变量
+
+<ul>
+<li>动态链接将符号方法引用至具体的方法引用，将变量定位至存储处的指定偏移位置</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://www.cnblogs.com/ityouknow/p/5610232.html">JVM内存结构</a>
+
+<ul>
+<li>结构配图清晰明了</li>
+</ul></li>
+<li><a href="https://docs.oracle.com/javase/specs/jvms/se8/html/jvms-2.html">The Structure of the Java Virtual Machine</a></li>
+<li><a href="http://ifeve.com/under-the-hood-runtime-data-areas-javas-memory-model/">JAVA的内存模型及结构</a></li>
+<li><a href="https://blog.csdn.net/shiyong1949/article/details/52585256">JVM内存区域详解</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-jvm-optimize-experience/index.html">JVM 优化经验总结</a>
+
+<ul>
+<li>JVM 参数入门</li>
+</ul></li>
+<li><a href="https://blueswind8306.iteye.com/blog/1194438">某应用的GC调优总结</a></li>
+<li><a href="https://blog.csdn.net/renfufei/article/details/49230943">快速解读GC日志</a>
+
+<ul>
+<li>针对 GC 日志各字段进行解析</li>
+</ul></li>
+<li><a href="https://www.oracle.com/technetwork/articles/java/vmoptions-jsp-140102.html">Java HotSpot VM Options</a></li>
+<li><a href="http://www.51testing.com/html/38/225738-213696.html">JVM参数设置详解</a></li>
+<li><a href="https://www.sczyh30.com/posts/Java/jvm-metaspace/">深入探究 JVM | 探秘 Metaspace</a>
+
+<ul>
+<li>JDK 由 MetaSpace 代替 PermGen 的原因</li>
+</ul></li>
+<li><a href="http://openjdk.java.net/jeps/122">JEP 122: Remove the Permanent Generation</a>
+
+<ul>
+<li>官方回答</li>
+</ul></li>
+<li><a href="http://ifeve.com/a-simple-example-demo-jvm-allocation-and-gc/">最简单例子图解JVM内存分配和回收</a></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java">#Java#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/jvm" rel="tag" title="JVM">#JVM#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/java.thread.unsafe/" rel="next" title="Java.Thread.Unsafe">
+        <i class="fa fa-chevron-left"></i> Java.Thread.Unsafe
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Java.JVM.内存结构
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">277</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">127</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#结构">结构</a>
+<ul>
+<li><a href="#jdk-1-6-1-7">JDK 1.<sup>6</sup>&frasl;<sub>1</sub>.7</a></li>
+<li><a href="#jdk-1-8">JDK 1.8</a></li>
+</ul></li>
+<li><a href="#作用-1">作用</a></li>
+<li><a href="#异常">异常</a></li>
+<li><a href="#流程">流程</a></li>
+<li><a href="#默认值-调整">默认值|调整</a></li>
+<li><a href="#示例">示例</a>
+<ul>
+<li><a href="#触发-minor-gc">触发 Minor GC</a></li>
+</ul></li>
+<li><a href="#参数">参数</a>
+<ul>
+<li><a href="#格式">格式</a></li>
+<li><a href="#常用">常用</a></li>
+</ul></li>
+<li><a href="#补充">补充</a></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>

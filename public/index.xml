@@ -6,10 +6,37 @@
     <description>Recent content on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.内存结构</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</guid>
+      <description>作用 通过了解 JVM 内存情况，便于快速定位、解决服务器性能问题 便于串联、理解 Java 运行的整体流程 结构 JDK 1.6&amp;frasl;1.7 精简版 细划版 精确版 JDK 1.8 作用 分区 分块 底层 细节 Heap 随</description>
+    </item>
+    
+    <item>
+      <title>Java.Thread.Unsafe</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread.unsafe/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread.unsafe/</guid>
+      <description>描述 通过 native 实现 实现通过本地内存进行变量的读取、操作 并提供以线程低层次控制 高并发功能的实现基础 支持 CAS，即 Compare-and-swap java 中不推荐 sun 包不包含于 Java 标准，与</description>
+    </item>
+    
+    <item>
+      <title>Redis.持久化</title>
+      <link>http://domain.yqjdcyy.com/post/java.security/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.security/</guid>
+      <description>介绍 类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经</description>
+    </item>
     
     <item>
       <title>Redis.集群</title>
@@ -134,7 +161,7 @@
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
-      <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理</description>
+      <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理</description>
     </item>
     
     <item>
@@ -1277,7 +1304,7 @@
       <pubDate>Fri, 08 Dec 2017 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/%E7%BD%91%E7%BB%9C-%E4%B8%83%E5%B1%82%E5%8D%8F%E8%AE%AE/</guid>
-      <description>参考 深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 网络七层协议 定义 网络七层协议，理论模型 OSI（Open System Interconnectio</description>
+      <description>定义 网络七层协议，理论模型 OSI（Open System Interconnection） 分层 应用层 直接为应用进程提供服务 根据提供的特性分组，称为服务元素</description>
     </item>
     
     <item>
@@ -2254,11 +2281,11 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     </item>
     
     <item>
-      <title>Git.命令小结</title>
-      <link>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
+      <title>Git.Command</title>
+      <link>http://domain.yqjdcyy.com/post/git.command/</link>
       <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
+      <guid>http://domain.yqjdcyy.com/post/git.command/</guid>
       <description>查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到</description>
     </item>
     
@@ -2431,6 +2458,43 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword.volatile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword.volatile/</guid>
+      <description>作用 store-store store-load
+参考 http://ifeve.com/juc-atomic-class-lazyset-que/ http://g.oswego.edu/dl/jmm/cookbook.html https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6275329</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/java.reflection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.reflection/</guid>
+      <description> []() 深入解析Java反射-基础 []() []() []() []() []() []()  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/java.thread/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread/</guid>
+      <description>关键字
+volatile
+synchronized
+lock
+Thread
+Unsafe
+工具
+Atomic
+原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 线程池
+ []() []() []() []() []() []() []() []()  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/pyqt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2441,6 +2505,21 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
  PyQt5
  PyQt5学习与交流
   </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/redis.full/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.full/</guid>
+      <description>数据结构  SDS
+ len/ free/ char[] SDS_MAX_PREALLOC= 1024* 1024  List
+ List  *ListNode head, tail int len void * dup/ free/ match  ListNode  *ListNode prev, next void *value   Dict
+ Dict  dickht ht[2] int rehashidx int iterators  DictHt  dictEntry **table unsigned long size/ sizemask/ used  DictEntry
+ void *key void *val DictEntry *next  链接法
+ 开放寻址
+ 干净探测法</description>
     </item>
     
     <item>

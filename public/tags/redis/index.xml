@@ -12,6 +12,15 @@
     
     
     <item>
+      <title>Redis.持久化</title>
+      <link>http://domain.yqjdcyy.com/post/java.security/</link>
+      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.security/</guid>
+      <description>介绍 类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经</description>
+    </item>
+    
+    <item>
       <title>Redis.集群</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E9%9B%86%E7%BE%A4/</link>
       <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
@@ -134,7 +143,7 @@
       <pubDate>Sun, 25 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/</guid>
-      <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理</description>
+      <description>持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理</description>
     </item>
     
     <item>

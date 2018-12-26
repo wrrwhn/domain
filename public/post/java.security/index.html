@@ -1,0 +1,1228 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Redis.持久化 - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Redis.持久化">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Redis.持久化 - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.security/" itemprop="url">
+        Redis.持久化
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-12-07">
+    2018-12-07
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">2034 字 ~5分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="介绍">介绍</h1>
+
+<ul>
+<li>类型安全</li>
+<li>垃圾回收机制</li>
+<li>包括 API、工具和广范使用的算法、机制和协议</li>
+<li>密码学和公钥基础架构接口，安全应用开发的基础</li>
+<li>认证和访问控制，防止资源不经验证地访问</li>
+<li>通过标准接口接入<code>提供商</code>，便于应用简单获安全服务，而不需要了解其实现
+
+<ul>
+<li>集中精力于集成安全到自己的应用，而无需实现复杂的安全机制</li>
+</ul></li>
+</ul>
+
+<h1 id="java-语言安全和字节码验证">Java 语言安全和字节码验证</h1>
+
+<h2 id="java-语言">Java 语言</h2>
+
+<ul>
+<li>类型安全</li>
+<li>易用
+
+<ul>
+<li>内存的自动管理</li>
+<li>垃圾回收</li>
+<li>数组的范围检查</li>
+</ul></li>
+</ul>
+
+<h2 id="类型安全">类型安全</h2>
+
+<ul>
+<li><p>针对类、方法、字段，定义以严格的访问限制</p>
+
+<table>
+<thead>
+<tr>
+<th>访问等级</th>
+<th>访问限制</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>private</td>
+<td>仅当前类可用</td>
+</tr>
+
+<tr>
+<td><code>[package]</code></td>
+<td>仅同个包下的类可访问</td>
+</tr>
+
+<tr>
+<td>protected</td>
+<td>同个包下，和其子类</td>
+</tr>
+
+<tr>
+<td>public</td>
+<td>无限制</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="字节码验证">字节码验证</h2>
+
+<ul>
+<li>编译器将 Java 代码编译为与机器无关的字节码形式</li>
+<li><code>字节码校验器</code>用于确保 java 运行环境<code>只执行合法</code>的字节码数据
+
+<ul>
+<li>符合 Java 语言规范</li>
+<li>不违背 Java 语言规则和命名空间限制</li>
+<li>检查内存管理违规操作、堆栈溢出和非法的数据类型转换</li>
+</ul></li>
+</ul>
+
+<h1 id="基础的安全体系架构">基础的安全体系架构</h1>
+
+<h2 id="组成">组成</h2>
+
+<ul>
+<li>密码学</li>
+<li>公钥基础架构接口</li>
+<li>验证</li>
+<li>安全通信</li>
+<li>访问控制</li>
+</ul>
+
+<h2 id="原则">原则</h2>
+
+<ul>
+<li><p>实现独立</p>
+
+<ul>
+<li>应用可以不需要实现安全功能</li>
+<li>可以通过依赖多个独立的提供商以支持
+
+<ul>
+<li>提供商实现了安全功能</li>
+</ul></li>
+</ul></li>
+
+<li><p>实现互操作</p>
+
+<ul>
+<li>提供商可于应用互相操作</li>
+<li>提供商与应用不会互相绑定</li>
+</ul></li>
+
+<li><p>算法可扩展</p>
+
+<ul>
+<li>支持依赖于未实现的新兴标准、专用服务
+
+<ul>
+<li>支持自定义提供商</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="安全服务提供商">安全服务提供商</h2>
+
+<ul>
+<li><code>java.security.Provider</code> 指定了提供商的名称及其所实现的安全服务</li>
+<li>按首选项设置被选择时的优先级</li>
+<li>可指定服务提供商的名称</li>
+</ul>
+
+<h3 id="示例">示例</h3>
+
+<ul>
+<li><p><code>MessageDigest.getInstance</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Object<span style="color:#f92672">[]</span> objs <span style="color:#f92672">=</span> Security<span style="color:#f92672">.</span><span style="color:#a6e22e">getImpl</span><span style="color:#f92672">(</span>algorithm<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;MessageDigest&#34;</span><span style="color:#f92672">,</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span><span style="color:#66d9ef">null</span><span style="color:#f92672">);</span>
+    <span style="color:#66d9ef">return</span> GetInstance<span style="color:#f92672">.</span><span style="color:#a6e22e">getInstance</span><span style="color:#f92672">(</span>type<span style="color:#f92672">,</span> getSpiClass<span style="color:#f92672">(</span>type<span style="color:#f92672">),</span> algorithm<span style="color:#f92672">).</span><span style="color:#a6e22e">toArray</span><span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">return</span> getInstance<span style="color:#f92672">(</span>Providers<span style="color:#f92672">.</span><span style="color:#a6e22e">getProviderList</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getService</span><span style="color:#f92672">(</span>type<span style="color:#f92672">,</span> algorithm<span style="color:#f92672">),</span> type<span style="color:#f92672">.</span><span style="color:#a6e22e">spi</span><span style="color:#f92672">);</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> GetInstance<span style="color:#f92672">.</span><span style="color:#a6e22e">Instance</span><span style="color:#f92672">(</span>service<span style="color:#f92672">.</span><span style="color:#a6e22e">getProvider</span><span style="color:#f92672">(),</span> service<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">());</span>
+                <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">,</span>EngineDescription<span style="color:#f92672">&gt;</span>knownEngines<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>type<span style="color:#f92672">)</span>
+                    Class<span style="color:#f92672">&lt;?&gt;</span> clazz <span style="color:#f92672">=</span> getImplClass<span style="color:#f92672">();</span>
+                    Constructor<span style="color:#f92672">&lt;?&gt;</span> cons <span style="color:#f92672">=</span> clazz<span style="color:#f92672">.</span><span style="color:#a6e22e">getConstructor</span><span style="color:#f92672">(</span>paramClass<span style="color:#f92672">);</span>
+                    <span style="color:#66d9ef">return</span> cons<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">(</span>constructorParameter<span style="color:#f92672">);</span></code></pre></div></li>
+
+<li><p><code>DatatypeFactory.newInstance()</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#75715e">// CoreXMLDeserializers
+</span><span style="color:#75715e"></span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">newInstance</span><span style="color:#f92672">()</span>
+
+    <span style="color:#75715e">// DatatypeFactory
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> FactoryFinder<span style="color:#f92672">.</span><span style="color:#a6e22e">find</span><span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> DATATYPEFACTORY_IMPLEMENTATION_CLASS<span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">// FactoryFinder
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// System.properties
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>ss<span style="color:#f92672">.</span><span style="color:#a6e22e">getSystemProperty</span><span style="color:#f92672">(</span>factoryId<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> newInstance<span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> systemProp<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">// File.properties
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>ss<span style="color:#f92672">.</span><span style="color:#a6e22e">doesFileExist</span><span style="color:#f92672">(</span>$java<span style="color:#f92672">.</span><span style="color:#a6e22e">home</span><span style="color:#f92672">/</span>lib<span style="color:#f92672">/</span>jaxp<span style="color:#f92672">.</span><span style="color:#a6e22e">properties</span><span style="color:#f92672">))</span>
+            cacheProps<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>ss<span style="color:#f92672">.</span><span style="color:#a6e22e">getFileInputStream</span><span style="color:#f92672">(</span>$java<span style="color:#f92672">.</span><span style="color:#a6e22e">home</span><span style="color:#f92672">/</span>lib<span style="color:#f92672">/</span>jaxp<span style="color:#f92672">.</span><span style="color:#a6e22e">properties</span><span style="color:#f92672">));</span>
+            <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>cacheProps<span style="color:#f92672">.</span><span style="color:#a6e22e">getProperty</span><span style="color:#f92672">(</span>factoryId<span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+                <span style="color:#66d9ef">return</span> newInstance<span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> factoryClassName<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+        <span style="color:#75715e">// Provider.exist
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">if</span><span style="color:#f92672">(</span>findServiceProvider<span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span> <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">return</span> findServiceProvider<span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">)</span>
+
+        <span style="color:#75715e">// Provider.default
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> newInstance<span style="color:#f92672">(</span>DatatypeFactory<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">,</span> DATATYPEFACTORY_IMPLEMENTATION_CLASS<span style="color:#f92672">,</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
+
+            <span style="color:#75715e">// Class
+</span><span style="color:#75715e"></span>            type<span style="color:#f92672">.</span><span style="color:#a6e22e">cast</span><span style="color:#f92672">(</span>getProviderClass<span style="color:#f92672">(</span>DATATYPEFACTORY_IMPLEMENTATION_CLASS<span style="color:#f92672">,</span> cl<span style="color:#f92672">,</span> doFallback<span style="color:#f92672">,</span> useBSClsLoader<span style="color:#f92672">);</span></code></pre></div></li>
+
+<li><p>SPI.custom</p>
+
+<ul>
+<li><p>principles</p>
+
+<ul>
+<li>接口实现时，必须支持无参构造函数</li>
+<li><code>META-INF/services/</code> 目录下创建接口全路径名称文件
+
+<ul>
+<li>内容为具体实现类的<code>全路径名</code>称</li>
+<li>文件编码限定为 <code>UTF-8</code></li>
+</ul></li>
+<li>实现类为 jar 包形式，则需置于当前程序的 classpath 下</li>
+<li>使用 <code>ServiceLoader.load</code> 进行动态加载</li>
+</ul></li>
+
+<li><p>code</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">com<span style="color:#f92672">.</span><span style="color:#a6e22e">yao</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SPI</span><span style="color:#f92672">.</span><span style="color:#a6e22e">service</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">SoundService</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">introduce</span><span style="color:#f92672">();</span>
+    <span style="color:#f92672">}</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ServiceProvider</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+
+            ServiceLoader<span style="color:#f92672">&lt;</span>SoundService<span style="color:#f92672">&gt;</span> services <span style="color:#f92672">=</span> ServiceLoader<span style="color:#f92672">.</span><span style="color:#a6e22e">load</span><span style="color:#f92672">(</span>SoundService<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+            Iterator<span style="color:#f92672">&lt;</span>SoundService<span style="color:#f92672">&gt;</span> it <span style="color:#f92672">=</span> services<span style="color:#f92672">.</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span>
+            <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">null</span> <span style="color:#f92672">!=</span> it <span style="color:#f92672">&amp;&amp;</span> it<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">())</span> <span style="color:#f92672">{</span>
+                SoundService service <span style="color:#f92672">=</span> it<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+                System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;\n%s: \n\t&#34;</span><span style="color:#f92672">,</span> service<span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getName</span><span style="color:#f92672">());</span>
+                service<span style="color:#f92672">.</span><span style="color:#a6e22e">introduce</span><span style="color:#f92672">();</span>
+            <span style="color:#f92672">}</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+com<span style="color:#f92672">.</span><span style="color:#a6e22e">yao</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SPI</span><span style="color:#f92672">.</span><span style="color:#a6e22e">service</span><span style="color:#f92672">.</span><span style="color:#a6e22e">impl</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">USSoundServiceImpl</span> <span style="color:#66d9ef">implements</span> SoundService <span style="color:#f92672">{</span>
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">introduce</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Hello, Earth-Man&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ZHSoundServiceImpl</span> <span style="color:#66d9ef">implements</span> SoundService <span style="color:#f92672">{</span>
+        <span style="color:#a6e22e">@Override</span>
+        <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">introduce</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;你好，地球人！&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+
+resource<span style="color:#f92672">/</span>META<span style="color:#f92672">-</span>INF<span style="color:#f92672">/</span>services
+    com<span style="color:#f92672">.</span><span style="color:#a6e22e">yao</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SPI</span><span style="color:#f92672">.</span><span style="color:#a6e22e">service</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SoundService</span>
+        <span style="color:#960050;background-color:#1e0010">#</span> 中文版本
+        com<span style="color:#f92672">.</span><span style="color:#a6e22e">yao</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SPI</span><span style="color:#f92672">.</span><span style="color:#a6e22e">service</span><span style="color:#f92672">.</span><span style="color:#a6e22e">impl</span><span style="color:#f92672">.</span><span style="color:#a6e22e">ZHSoundServiceImpl</span>
+        <span style="color:#960050;background-color:#1e0010">#</span> 英文版本
+        com<span style="color:#f92672">.</span><span style="color:#a6e22e">yao</span><span style="color:#f92672">.</span><span style="color:#a6e22e">pattern</span><span style="color:#f92672">.</span><span style="color:#a6e22e">SPI</span><span style="color:#f92672">.</span><span style="color:#a6e22e">service</span><span style="color:#f92672">.</span><span style="color:#a6e22e">impl</span><span style="color:#f92672">.</span><span style="color:#a6e22e">USSoundServiceImpl</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h1 id="密码学">密码学</h1>
+
+<h2 id="支持类型">支持类型</h2>
+
+<table>
+<thead>
+<tr>
+<th>全称</th>
+<th>简称</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Message digest algorithms</td>
+<td></td>
+<td>信息摘要<br>输出长度固定<br>常见如 MD5/ SHA-1</td>
+</tr>
+
+<tr>
+<td>Digital signature algorithms</td>
+<td>DSA</td>
+<td>数字签名</td>
+</tr>
+
+<tr>
+<td>Symmetric bulk encryption</td>
+<td></td>
+<td>对称块加密<br>常见如 DES</td>
+</tr>
+
+<tr>
+<td>Symmetric stream encryption</td>
+<td></td>
+<td>对称流加密<br>常见如 RC4</td>
+</tr>
+
+<tr>
+<td>Asymmetric encryption</td>
+<td></td>
+<td>非对称加密<br>常见如 RSA</td>
+</tr>
+
+<tr>
+<td>Password-based encryption</td>
+<td>PBE</td>
+<td>密码加密</td>
+</tr>
+
+<tr>
+<td>Elliptic Curve Cryptography</td>
+<td>ECC</td>
+<td>椭圆曲线加密<br>常见如 ECDSA</td>
+</tr>
+
+<tr>
+<td>Key agreement algorithms</td>
+<td></td>
+<td>键值协议算法</td>
+</tr>
+
+<tr>
+<td>Key generators</td>
+<td></td>
+<td>键值生成器</td>
+</tr>
+
+<tr>
+<td>Message Authentication Codes</td>
+<td>MACs</td>
+<td>消息认证码</td>
+</tr>
+
+<tr>
+<td>(Pseudo-)random number generators</td>
+<td></td>
+<td>伪随机数生成器</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="用途">用途</h2>
+
+<ul>
+<li>信息完整性校验</li>
+<li>数字签名</li>
+<li>SSL 数字证书</li>
+</ul>
+
+<h2 id="图示">图示</h2>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/630f3ee3-2491-4571-98fb-fe07de4babd7.png" alt="RSA.png" /></li>
+<li><img src="http://doc.yqjdcyy.com/024eaebd-87fe-4ac0-93c6-e0cd146e9308.png" alt="DSA.png" /></li>
+</ul>
+
+<h1 id="公钥基础设施">公钥基础设施</h1>
+
+<ul>
+<li>支持在公钥加密情况下，安全地进行信息的传递</li>
+<li>支持身份（个人、组织等）与数字证书的绑定、验证</li>
+<li>由密钥、证书、公钥加密及生成数字签名证书的认证机构组成</li>
+</ul>
+
+<h2 id="密钥和证书存储">密钥和证书存储</h2>
+
+<ul>
+<li><p>支持密钥和证书的长期存储</p>
+
+<table>
+<thead>
+<tr>
+<th>类</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>java.security.KeyStore</td>
+<td>密钥<br>受信任的证书</td>
+</tr>
+
+<tr>
+<td>java.security.cert.CertStore</td>
+<td>无关的、非受信的证书<br>注销的证书</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="pki-工具">PKI 工具</h2>
+
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>keytool.exe<br>密钥和证书管理工具</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>生成密钥对</td>
+</tr>
+
+<tr>
+<td></td>
+<td>生成证书<br>根据证书请求生成<br>自签名</td>
+</tr>
+
+<tr>
+<td></td>
+<td>导入<br>证书<br>证书回复</td>
+</tr>
+
+<tr>
+<td>jarsigner.exe</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>为 jar 文件签名</td>
+</tr>
+
+<tr>
+<td></td>
+<td>验证已签名的 jar 文件</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="身份验证">身份验证</h1>
+
+<ul>
+<li>可通过插件式登录模块进行用户的身份验证
+
+<ul>
+<li>调用 LoginContext 反向引用配置，以生成具体的 LoginModule.spi 实现类来执行验证</li>
+</ul></li>
+
+<li><p>没有注册为 Security Provider，而是由各自的配置所管理</p>
+
+<table>
+<thead>
+<tr>
+<th>实现类</th>
+<th>适用场景</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Krb5LoginModule</td>
+<td>基于 Kerberos 协议</td>
+</tr>
+
+<tr>
+<td>JndiLoginModule</td>
+<td>基于 LDAP/ NIS 数据的用户名、密码验证</td>
+</tr>
+
+<tr>
+<td>KeyStoreLoginModule</td>
+<td>可登录至任意类型密钥存储</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h1 id="安全通信">安全通信</h1>
+
+<ul>
+<li>数据于网络传输过程中，可能被非预期的接收者访问
+
+<ul>
+<li>保证私人信息的安全性
+
+<ul>
+<li>非验证方无法读取</li>
+<li>传输过程中数据未被修改</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="ssl-tls">SSL/TLS</h2>
+
+<ul>
+<li><p>功能</p>
+
+<ul>
+<li>数据加密</li>
+<li>信息校验</li>
+<li>服务端身份验证</li>
+<li>客户端身份验证
+
+<ul>
+<li>可选</li>
+</ul></li>
+</ul></li>
+
+<li><p>工具类</p>
+
+<ul>
+<li>SSLSocket
+
+<ul>
+<li>于 Socket 之上封装 SSL/TLS 协议</li>
+</ul></li>
+<li>SSLEngine
+
+<ul>
+<li>可用于生产和消费 SSL/TLS 数据包</li>
+</ul></li>
+<li>KeyManager
+
+<ul>
+<li>用于管理用于验证的密钥</li>
+</ul></li>
+<li>TrustManager
+
+<ul>
+<li>通过所管理的密钥中的证书，来判断是否可以信息</li>
+</ul></li>
+</ul></li>
+
+<li><p>协议</p>
+
+<ul>
+<li>SSLv3</li>
+<li>TLSv1</li>
+<li>TLSv1.1</li>
+<li>TLSv1.2</li>
+</ul></li>
+</ul>
+
+<h2 id="sasl">SASL</h2>
+
+<h3 id="介绍-1">介绍</h3>
+
+<ul>
+<li>Simple Authentication and Security Layer</li>
+<li>简单认证和安全层</li>
+<li>使用账号和密码进行用户身份认证的机制，但为保障安全，对密码进行指定编码的加密</li>
+</ul>
+
+<h3 id="功能">功能</h3>
+
+<ul>
+<li>认证</li>
+<li>数据加密</li>
+</ul>
+
+<h3 id="工具类">工具类</h3>
+
+<ul>
+<li>Sasl
+
+<ul>
+<li>创建客户端和服务端对象</li>
+</ul></li>
+</ul>
+
+<h3 id="机制">机制</h3>
+
+<table>
+<thead>
+<tr>
+<th>端</th>
+<th>机制</th>
+<th>补充</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>客户端</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>CRAM-MD5</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>DIGEST-MD5</td>
+<td>共享密钥，加密密码后传递比较</td>
+</tr>
+
+<tr>
+<td></td>
+<td>EXTERNAL</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>GSSAPI</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>NTLM</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>PLAIN</td>
+<td>密码明文</td>
+</tr>
+
+<tr>
+<td>服务端</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>CRAM-MD5</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>DIGEST-MD5</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>GSSAPI</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>NTLM</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="gss-api">GSS-API</h2>
+
+<h3 id="介绍-2">介绍</h3>
+
+<ul>
+<li>Generic Security Service Application Programming Interface</li>
+<li>通用安全服务应用程序接口</li>
+<li>基于 Kerberos v5 机制</li>
+<li>通过 <code>org.ietf.jgss.GSSContext</code> 对象来建立和维护建立安全上下文所需的共享信息</li>
+</ul>
+
+<h3 id="工具类-1">工具类</h3>
+
+<ul>
+<li>kerberos
+
+<ul>
+<li>KerberosPrincipal</li>
+<li>KerberosTicket</li>
+<li>KerberosKey</li>
+</ul></li>
+</ul>
+
+<h1 id="访问控制">访问控制</h1>
+
+<h2 id="介绍-3">介绍</h2>
+
+<ul>
+<li>用于保护敏感资源（本地文件），或敏感的应用程序代码</li>
+<li>由 SecurityManager 判断是否有权访问
+
+<ul>
+<li>须安装至运行时，以激活访问控制检测
+
+<ul>
+<li>其中 Applet 和 Java Web Start 程序均自动</li>
+<li>本地应用程序默认不运行</li>
+<li>但可程序中调用 setSecurityManager 方法，或于命令行中补充 -Djava.security.manager</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="权限">权限</h2>
+
+<ul>
+<li><p>加载后的关联信息</p>
+
+<ul>
+<li>代码的加载来源</li>
+<li>代码的签名者</li>
+<li>默认的代码权限
+
+<ul>
+<li>可与源主机的网络连接
+
+<ul>
+<li>针对下载来的代码</li>
+</ul></li>
+<li>当前及其子目录的访问</li>
+</ul></li>
+</ul></li>
+
+<li><p>加载与用户验证是分离的</p>
+
+<ul>
+<li>但可通过 Subject.doAs 动态关联用户与被执行的代码</li>
+</ul></li>
+</ul>
+
+<h2 id="策略">策略</h2>
+
+<ul>
+<li>于类加载时，由类加载器授予</li>
+<li>运行时，有且仅有一个 Policy 对象被加载</li>
+<li>默认策略
+
+<ul>
+<li>读取本地的 ASCII/UTF-8 文件读取安全配置</li>
+<li>可通过 Policy Tool 生成</li>
+</ul></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<ul>
+<li><p>CA</p>
+
+<ul>
+<li>Certificate Authority</li>
+<li>数字证书认证机构</li>
+</ul></li>
+
+<li><p>PKI</p>
+
+<ul>
+<li>Publish Key Infrastructure</li>
+<li>公钥基础设施</li>
+</ul></li>
+
+<li><p>CRLs</p>
+
+<ul>
+<li>Certificate Revocation Lists</li>
+<li>证书注销列表</li>
+</ul></li>
+
+<li><p>LDAP</p>
+
+<ul>
+<li>Lighweight Directory Access Protocol</li>
+<li>轻量目录访问协议</li>
+</ul></li>
+
+<li><p>NIS</p>
+
+<ul>
+<li>Network Infomation Service</li>
+<li>网络数据服务协议</li>
+</ul></li>
+
+<li><p>SSL</p>
+
+<ul>
+<li>Secure Sockets Layer</li>
+<li>安全套接层</li>
+</ul></li>
+
+<li><p>TLS</p>
+
+<ul>
+<li>Transport Layer Security</li>
+<li>传输层安全</li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<h2 id="文档">文档</h2>
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/overview/jsoverview.html">Java™ Security Overview</a></li>
+<li><a href="https://joshuasabrina.iteye.com/blog/1798245">Java Security 总纲</a></li>
+</ul>
+
+<h2 id="spi">SPI</h2>
+
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/20295483">Service Provider 机制</a></li>
+<li><a href="https://blog.csdn.net/top_code/article/details/51934459">Java SPI</a></li>
+<li><a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/SunProviders.html#SunPKCS11Provider">Java Cryptography Architecture Oracle Providers Documentation for JDK 8</a></li>
+</ul>
+
+<h2 id="密码学-1">密码学</h2>
+
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/33195438">数字签名算法介绍和区别</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html">数字签名是什么</a></li>
+<li><a href="https://www.barretlee.com/blog/2015/10/05/how-to-build-a-https-server/">HTTPS证书生成原理和部署细节</a></li>
+</ul>
+
+<h2 id="安全通信-1">安全通信</h2>
+
+<ul>
+<li><a href="https://blog.csdn.net/qq_21383435/article/details/80056186">SASL讲解，以及在Spark中的应用</a></li>
+</ul>
+
+<h2 id="安全访问">安全访问</h2>
+
+<ul>
+<li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/PolicyFiles.html">Default Policy Implementation and Policy File Syntax</a></li>
+<li><a href="https://docs.oracle.com/javase/7/docs/technotes/guides/security/spec/security-spec.doc3.html">Permissions and Security Policy</a></li>
+<li><a href="https://blog.csdn.net/xtayfjpk/article/details/45872161">Java安全之认证与授权</a></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/redis" rel="tag" title="Redis">#Redis#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/redis.%E9%9B%86%E7%BE%A4/" rel="next" title="Redis.集群">
+        <i class="fa fa-chevron-left"></i> Redis.集群
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/java.thread.unsafe/" rel="prev" title="Java.Thread.Unsafe">
+        Java.Thread.Unsafe <i class="fa fa-chevron-right"></i>
+        </a>
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Redis.持久化
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">277</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">127</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#介绍">介绍</a></li>
+<li><a href="#java-语言安全和字节码验证">Java 语言安全和字节码验证</a>
+<ul>
+<li><a href="#java-语言">Java 语言</a></li>
+<li><a href="#类型安全">类型安全</a></li>
+<li><a href="#字节码验证">字节码验证</a></li>
+</ul></li>
+<li><a href="#基础的安全体系架构">基础的安全体系架构</a>
+<ul>
+<li><a href="#组成">组成</a></li>
+<li><a href="#原则">原则</a></li>
+<li><a href="#安全服务提供商">安全服务提供商</a>
+<ul>
+<li><a href="#示例">示例</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#密码学">密码学</a>
+<ul>
+<li><a href="#支持类型">支持类型</a></li>
+<li><a href="#用途">用途</a></li>
+<li><a href="#图示">图示</a></li>
+</ul></li>
+<li><a href="#公钥基础设施">公钥基础设施</a>
+<ul>
+<li><a href="#密钥和证书存储">密钥和证书存储</a></li>
+<li><a href="#pki-工具">PKI 工具</a></li>
+</ul></li>
+<li><a href="#身份验证">身份验证</a></li>
+<li><a href="#安全通信">安全通信</a>
+<ul>
+<li><a href="#ssl-tls">SSL/TLS</a></li>
+<li><a href="#sasl">SASL</a>
+<ul>
+<li><a href="#介绍-1">介绍</a></li>
+<li><a href="#功能">功能</a></li>
+<li><a href="#工具类">工具类</a></li>
+<li><a href="#机制">机制</a></li>
+</ul></li>
+<li><a href="#gss-api">GSS-API</a>
+<ul>
+<li><a href="#介绍-2">介绍</a></li>
+<li><a href="#工具类-1">工具类</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#访问控制">访问控制</a>
+<ul>
+<li><a href="#介绍-3">介绍</a></li>
+<li><a href="#权限">权限</a></li>
+<li><a href="#策略">策略</a></li>
+</ul></li>
+<li><a href="#补充">补充</a></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#文档">文档</a></li>
+<li><a href="#spi">SPI</a></li>
+<li><a href="#密码学-1">密码学</a></li>
+<li><a href="#安全通信-1">安全通信</a></li>
+<li><a href="#安全访问">安全访问</a></li>
+</ul></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2018</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>

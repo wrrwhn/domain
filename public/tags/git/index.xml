@@ -39,11 +39,11 @@
     </item>
     
     <item>
-      <title>Git.命令小结</title>
-      <link>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</link>
+      <title>Git.Command</title>
+      <link>http://domain.yqjdcyy.com/post/git.command/</link>
       <pubDate>Sun, 11 Dec 2016 00:00:00 +0000</pubDate>
       
-      <guid>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</guid>
+      <guid>http://domain.yqjdcyy.com/post/git.command/</guid>
       <description>查看 分支状态 git status git branch 分支列表 &amp;ndash;merged：查看哪些分支被合并到当前分支 &amp;ndash;no-merged：查看哪些分支未并合并到</description>
     </item>
     

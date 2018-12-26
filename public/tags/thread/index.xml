@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Thread on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/thread/</link>
+    <description>Recent content in Thread on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Sun, 23 Dec 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/thread/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java.Thread.Unsafe</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread.unsafe/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread.unsafe/</guid>
+      <description>描述 通过 native 实现 实现通过本地内存进行变量的读取、操作 并提供以线程低层次控制 高并发功能的实现基础 支持 CAS，即 Compare-and-swap java 中不推荐 sun 包不包含于 Java 标准，与</description>
+    </item>
+    
+  </channel>
+</rss>

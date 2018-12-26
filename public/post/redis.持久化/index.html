@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">2170 字 ~5分钟</span>
+<span class="leancloud-visitors-count">2218 字 ~5分钟</span>
 </span>
       </div>
     </header>
@@ -169,7 +169,7 @@
 <h3 id="形式">形式</h3>
 
 <ul>
-<li>运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态</li>
+<li>运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态</li>
 <li>针对超过20字节文本，会使用 LZF 编码形式进行压缩</li>
 </ul>
 
@@ -184,7 +184,7 @@
 <li>多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见
 
 <ul>
-<li>保障线程案例，父进程的修改，不会影响到子进程的数量</li>
+<li>保障线程安全，父进程的修改，不会影响到子进程的数量</li>
 <li>类似于 java 的 string 对象</li>
 </ul></li>
 </ul></li>
@@ -533,7 +533,7 @@
 <li>WRITE
 
 <ul>
-<li>将 <code>aof_buf</code> 的缓存写入至 AOF 文件</li>
+<li>将 <code>aof_buf</code> 的缓存写入至 AOF 文件的内存缓冲区</li>
 </ul></li>
 <li>SAVE
 
@@ -717,9 +717,91 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
 <li>B-Tree 实现，<strong>实验</strong>阶段</li>
 </ul>
 
+<h1 id="对比">对比</h1>
+
+<table>
+<thead>
+<tr>
+<th>对比项</th>
+<th>RDB</th>
+<th>AOF</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>文件大小</td>
+<td>小</td>
+<td></td>
+</tr>
+
+<tr>
+<td>读取速度</td>
+<td>快</td>
+<td></td>
+</tr>
+
+<tr>
+<td>生成速度</td>
+<td>快</td>
+<td></td>
+</tr>
+
+<tr>
+<td>加载优先</td>
+<td></td>
+<td>优先</td>
+</tr>
+
+<tr>
+<td>数据丢失</td>
+<td>多</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
 <h1 id="指令">指令</h1>
 
-<h2 id="关闭-开启策略">关闭|开启策略</h2>
+<h2 id="查询">查询</h2>
+
+<ul>
+<li><code>CONFIG GET (SAVE|APPENDFSYNC)</code></li>
+</ul>
+
+<h2 id="开启-关闭">开启|关闭</h2>
+
+<ul>
+<li>RDB
+
+<ul>
+<li><code>CONFIG SET SAVE &quot;&quot;</code>
+
+<ul>
+<li>关闭 RDB 功能</li>
+</ul></li>
+<li><code>CONFIG SET SAVE &quot;900 1 300 10&quot;</code>
+
+<ul>
+<li>开启 RDB 功能</li>
+<li><strong>900s</strong> 内若至少有 <strong>1次</strong> 变更，或 <strong>300s</strong> 内至少 <strong>10次</strong> 变更，则调用 SAVE 命令</li>
+</ul></li>
+</ul></li>
+<li>AOF
+
+<ul>
+<li><code>CONFIG SET APPENDFSYNC NO</code>
+
+<ul>
+<li>关闭 AOF 功能</li>
+</ul></li>
+<li><code>CONFIG SET APPENDFSYNC YES</code>
+
+<ul>
+<li>开启 AOF 功能</li>
+</ul></li>
+</ul></li>
+</ul>
 
 <h1 id="主从复制">主从复制</h1>
 
@@ -867,7 +949,7 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
 
 <ul>
 <li>优先复制到<code>缓冲</code>区</li>
-<li>而入排入<code>队列</code></li>
+<li>而后排入<code>队列</code></li>
 <li>最后再同步写入至<code>磁盘</code></li>
 </ul></li>
 </ul></li>
@@ -897,51 +979,11 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
 <h3 id="fdatasync">FDataSync</h3>
 
 <ul>
-<li><p>相较 <code>Fsync</code>，仅更新文件的数据部分</p>
+<li>相较 <code>Fsync</code>，仅更新文件的数据部分
 
 <ul>
 <li>文件的数据和信息（尺寸、访问时间、更新时间）分处于<strong>不同文件</strong></li>
 <li>因此 <code>FDataSync</code> 仅需要进行<strong>一次</strong> IO 操作，而 <code>Fsync</code> 需要进行<strong>两次</strong> IO 操作</li>
-</ul></li>
-
-<li><p>查询</p>
-
-<ul>
-<li><code>CONFIG GET (SAVE|APPENDFSYNC)</code></li>
-</ul></li>
-
-<li><p>开启|关闭</p>
-
-<ul>
-<li>RDB
-
-<ul>
-<li><code>CONFIG SET SAVE &quot;&quot;</code>
-
-<ul>
-<li>关闭 RDB 功能</li>
-</ul></li>
-<li><code>CONFIG SET SAVE &quot;900 1 300 10&quot;</code>
-
-<ul>
-<li>开启 RDB 功能</li>
-<li><strong>900s</strong> 内若至少有 <strong>1次</strong> 变更，或 <strong>300s</strong> 内至少 <strong>10次</strong> 变更，则调用 SAVE 命令</li>
-</ul></li>
-</ul></li>
-<li>AOF
-
-<ul>
-<li><code>CONFIG SET APPENDFSYNC NO</code>
-
-<ul>
-<li>关闭 AOF 功能</li>
-</ul></li>
-<li><code>CONFIG SET APPENDFSYNC YES</code>
-
-<ul>
-<li>开启 AOF 功能</li>
-</ul></li>
-</ul></li>
 </ul></li>
 </ul>
 
@@ -958,6 +1000,8 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
 <li><a href="https://juejin.im/post/5b7cbbace51d4538850307dd">redis原理</a></li>
 <li><a href="https://juejin.im/post/5b7cbbace51d4538850307dd">redis原理</a></li>
 <li><a href="https://zhoujianshi.github.io/articles/2017/fork()%E5%90%8Ecopy%20on%20write%E7%9A%84%E4%B8%80%E4%BA%9B%E7%89%B9%E6%80%A7/index.html">fork()后copy on write的一些特性</a></li>
+<li><a href="https://my.oschina.net/davehe/blog/174662">redis持久化RDB和AOF</a></li>
+<li>[]()</li>
 </ul>
 
     </div>
@@ -1048,7 +1092,7 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">270</span>
+        <span class="site-state-item-count">277</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -1065,7 +1109,7 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">125</span>
+        <span class="site-state-item-count">127</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -1122,9 +1166,11 @@ LPUSH list 1            // [1, 2, 3]</code></pre></div></li>
 <li><a href="#vm">VM</a></li>
 <li><a href="#diskstore">Diskstore</a></li>
 </ul></li>
+<li><a href="#对比">对比</a></li>
 <li><a href="#指令">指令</a>
 <ul>
-<li><a href="#关闭-开启策略">关闭|开启策略</a></li>
+<li><a href="#查询">查询</a></li>
+<li><a href="#开启-关闭">开启|关闭</a></li>
 </ul></li>
 <li><a href="#主从复制">主从复制</a></li>
 <li><a href="#原理-1">原理</a>

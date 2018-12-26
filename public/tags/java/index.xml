@@ -6,10 +6,28 @@
     <description>Recent content in Java on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 07 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.内存结构</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</guid>
+      <description>作用 通过了解 JVM 内存情况，便于快速定位、解决服务器性能问题 便于串联、理解 Java 运行的整体流程 结构 JDK 1.6&amp;frasl;1.7 精简版 细划版 精确版 JDK 1.8 作用 分区 分块 底层 细节 Heap 随</description>
+    </item>
+    
+    <item>
+      <title>Java.Thread.Unsafe</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread.unsafe/</link>
+      <pubDate>Sun, 23 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread.unsafe/</guid>
+      <description>描述 通过 native 实现 实现通过本地内存进行变量的读取、操作 并提供以线程低层次控制 高并发功能的实现基础 支持 CAS，即 Compare-and-swap java 中不推荐 sun 包不包含于 Java 标准，与</description>
+    </item>
     
     <item>
       <title>Hello.Servlet</title>

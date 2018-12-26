@@ -2,6 +2,148 @@
 <search>
     
      <entry>
+        <title>Java.JVM.内存结构</title>
+        <url>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E7%BB%93%E6%9E%84/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>JVM</tag>
+        </tags>
+        <content type="html">  作用  通过了解 JVM 内存情况，便于快速定位、解决服务器性能问题 便于串联、理解 Java 运行的整体流程  结构 JDK 1.6&amp;frasl;1.7  精简版    细划版    精确版     JDK 1.8    作用    分区 分块 底层 细节     Heap   随 VM 启动时创建，不需连续
+所有线程共享
+用于创建对象实例、分配数组    Young Generation       Eden Generation 新创建的对象     From
+Survivor 0 上一轮 Minor GC 存活下来的对象     To
+Survivor 1 无数据空间，用于下一轮 Young GC 时存放未被回收的数据     Virtual     Old Generation       Tenured 存放经过一定生命周期仍然存在的对象
+大对象（新生代分配不了）     Virtual    Method Area   随 VM 启动时创建，大小可根据需要进行扩容、收缩，不需连续    Permanent Generation       Runtime Constant Pool 常量
+编译时的数值、文字，运行时的方法与字段的引用     Filed &amp;amp; Method Data 类信息、静态变量     Code 即时编译的代码     Virtual    Native Area       Code Cache       Thread.PC
+Program Pointer Counter 记录当前线程所执行的字节码的行号
+字节码解释器通过更新该值以获取下一条要执行的指令；分支、循环、跳转、异常和线程恢复均依赖计数器
+执行 Native 方法时，计数值为 Undefined     Thread.Stack 方法执行时创建、入栈，完成时出栈
+栈帧由局部变量表、操作数栈、动态链接和方法出口、分发异常、运行时常量池入口组成     Thread.Native Methos Stack 存储虚拟机使用到的 Native 方法服务
+如若 JVM 实现不支持加载本地方法，或不依赖于传统栈的，则无需提醒     Compile      Native      Virtual     异常    异常 可能发生区域     StackOverflowError     Native Method Stacks   OutOfMemoryError     Heap    Method Area    Run-Time Constant Pool    Native Method Stacks    流程    阶段 动作     创建对象 在 Edgn Space 创建用户   Eden Space 空间已满 Minor GC/ Young GC
+将 Eden/ From Survivor 空间不能被回收的移动到 To Survivor
+To Survivor 对象的 age &#43;&#43;
+将 From/To 标识更新，保证 To Survivor 为空   Old Space 空间已满 Major GC/ Full GC
+对整个 Heap 空间进行扫描、回收    默认值|调整    模块 默认值 情况 调整值     Heap       Memory/ 64       Heap.free&amp;lt; MinHeapFreeRatio: 40&amp;gt;% Heap.size&#43; ？&amp;lt;= Xmx     Heap.Used&amp;gt; XX:MaxHeapFreeRatio: 70% Heap.size- ?&amp;gt;= Xms   Permanent       Memory/ 64     Code/ Native       30m/client
+48m/server      示例 触发 Minor GC  Code
+final int M = 1024* 1024; byte[] b0=new byte[2* M]; byte[] b1=new byte[2* M]; byte[] b2=new byte[2* M]; byte[] b3=new byte[4* M]; VM args
+   参数 作用     -XX:&#43;UseSerialGC 使用串行垃圾回收器   -verbose:gc    -XX:&#43;PrintGCDetails 打印 GC 明细信息   -Xms20M 新生代最小内存为 20M   -Xmx20M 新生代最大内存为20M   -Xmn10M    -XX:SurvivorRatio=8 eden/ survivor= 8    Log
+[GC (Allocation Failure) [DefNew: 6817K-&amp;gt;848K(9216K), 0.0043662 secs] 6817K-&amp;gt;4945K(19456K), 0.0044138 secs] [Times: user=0.00 sys=0.00, real=0.00 secs] Heap def new generation total 9216K, used 7201K [0x00000000fec00000, 0x00000000ff600000, 0x00000000ff600000) eden space 8192K, 77% used [0x00000000fec00000, 0x00000000ff2343d0, 0x00000000ff400000) from space 1024K, 82% used [0x00000000ff500000, 0x00000000ff5d43f0, 0x00000000ff600000) to space 1024K, 0% used [0x00000000ff400000, 0x00000000ff400000, 0x00000000ff500000) tenured generation total 10240K, used 4096K [0x00000000ff600000, 0x0000000100000000, 0x0000000100000000) the space 10240K, 40% used [0x00000000ff600000, 0x00000000ffa00020, 0x00000000ffa00200, 0x0000000100000000) Metaspace used 3284K, capacity 4496K, committed 4864K, reserved 1056768K class space used 357K, capacity 388K, committed 512K, reserved 1048576K 解析
+   字段 解析     GC GC类型   Allocation Failure 触发GC的原因   DefNew 触发的垃圾回收器
+此值表示使用了串行回收收集器   6817K-&amp;gt;848K 年轻代内存使用值的变化情况   (9216K) 年轻代内存大小   6817K-&amp;gt;4945K 堆内存使用的情况变化   (19456K) 堆内存大小   Times.user 垃圾回收线程消耗的 CPU 时间   Times.sys 系统调用和等待事件的时间   Times.real 应用程序暂停的时间     参数 格式 | 格式 | 含义 | |--------------------------|------------------------------------------------| | `-XX:&#43;/-&amp;lt;option&amp;gt;` | 是否开启 | | `-XX:&amp;lt;option&amp;gt;=&amp;lt;number&amp;gt;` | 设置数值，可使用 M/K/G 等单位&amp;lt;br&amp;gt;如 32k= 32768 | | `-XX:&amp;lt;option&amp;gt;=&amp;lt;string&amp;gt;,` | 设置文本，用于指定文件、路径或命令列表 | 常用    类型 参数 描述     分配      -Xms 堆的最小空间大小    -Xmx 堆的最大空间大小
+建议与 -Xms 一致避免收缩、增大带来的性能问题    -Xmn
+-XX:NewSize 新生代最小空间大小    -XX:MaxNewSize 新生代最大空间大小    -XX:PermSize 永久代最小空间大小    -XX:MaxPermSize 永久代最大空间大小    -Xss 每个线程的堆栈大小   行为      -XX:-UseParallelGC 使用并行垃圾回收器    -XX:-UseParallelOldGC Full GC 时使用并行垃圾回收器    -XX:-UseSerialGC 使用串行垃圾回收器   G1 回收器
+Garbage First      -XX:&#43;UseG1GC 使用 G1 收集器
+将堆切分为大小一    -XX:InitiatingHeapOccupancyPercent=45 触发 Gc 的 Heap 占用比例    -XX:NewRatio=2 old/ new    -XX:SurvivorRatio=8 eden/ survivor    -XX:G1ReservePercent=10 保留堆比例值
+减少分配分配的可能性    -XX:G1HeapRegionSize={1M,32M} 堆的切分大小值    -XX:MaxTenuringThreshold=15 指定经过过多少次 Young GC 后才转到老生代   性能      -XX:LargePageSizeInBytes=4m 配合 -XX:&#43;UseLargePages 使用    -XX:MaxHeapFreeRatio=70 GC 后的堆空闲的最大比例
+避免收缩    -XX:NewRatio=2 old/ new    -XX:SurvivorRatio=8 eden/ survivor    -XX:NewSize=2m 新生代默认大小    -XX:MaxPermSize=64m     -XX:TargetSurvivorRatio=50 清除后的幸存区使用比例    -XX:ThreadStackSize=512 线程栈的大小   调试      -XX:-CITime 打印 JIT 编译器花费的时间    -XX:ErrorFile=&amp;lt;path&amp;gt; 异常打印至指定文件    -XX:-HeapDumpOnOutOfMemoryError 内存不足时自动 dump    -XX:HeapDumpPath&amp;lt;path&amp;gt; 堆 dump 保存对指定文件    -XX:-PrintClassHistogram 打印类的直方图    -XX:-PrintConcurrentLocks 打印 Dump 中的并发锁信息    -XX:-PrintGC 打印垃圾回收的信息    -XX:-PrintGCDetails 打印垃圾回收的细节信息    -XX:-PrintTenuringDistribution 打印老年代的年龄段分布情况    -XX:-TraceClassLoading 追踪类的加载    -XX:-TraceClassLoadingPreorder 追踪所有类的加载顺序    -XX:-TraceClassResolution 追踪常量池的情况    -XX:-TraceClassUnloading 追踪类的卸载    -XX:-TraceLoaderConstraints 追踪加载器约束记录    -XX:ParallelGCThreads=n 配置 Heap 分布执行 GC 的线程数    -XX:&#43;UseCompressedOops 使用压缩的 Oops    -Xloggc:&amp;lt;filename&amp;gt; 输出 GC 的详细信息至指定文件    补充  JDK 1.8 使用 MetaSpace 代替 Permanent Generation
+ 原因  使用内存管理，减少内存溢出 促进与 JRockit VM 的事例  操作  PermGen 移除 File &amp;amp; Class 与 Code 移动至 metaSpace Class Constatnt Pool 移动至 Java.Heap   比例
+ EdenSpace: FromSpace: ToSpace= 8: 1: 1  别名
+ Heap  GC 堆  Method Area  Non-heap 永久层  Thread.Native Methos Stack C 栈  GC
+ Heap  对象  Method Area  常量池 类型卸载   基本数据类型
+ boolean byte char short int long float double  局部变量表
+ 基本数据类型 对象引用 returnAddress(下一字节码指令地址)  操作数栈
+ FIFO 栈 最大深度于编译时确定，并于方法和栈帧关联时提供 数值来源为常量、本地参数值或字段  亦保存操作结果至栈顶 递归方法调用   动态链接
+ 于栈帧中，由运行时常量池的引用，作为当前方法用于提供方法代码的动态链接的类型 方法的类文件代码，引用要执行的方法，并通过符号引用来访问变量  动态链接将符号方法引用至具体的方法引用，将变量定位至存储处的指定偏移位置    参考  JVM内存结构  结构配图清晰明了  The Structure of the Java Virtual Machine JAVA的内存模型及结构 JVM内存区域详解 JVM 优化经验总结  JVM 参数入门  某应用的GC调优总结 快速解读GC日志  针对 GC 日志各字段进行解析  Java HotSpot VM Options JVM参数设置详解 深入探究 JVM | 探秘 Metaspace  JDK 由 MetaSpace 代替 PermGen 的原因  JEP 122: Remove the Permanent Generation  官方回答  最简单例子图解JVM内存分配和回收  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Thread.Unsafe</title>
+        <url>http://domain.yqjdcyy.com/post/java.thread.unsafe/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Thread</tag>
+        </tags>
+        <content type="html">  描述  通过 native 实现 实现通过本地内存进行变量的读取、操作 并提供以线程低层次控制 高并发功能的实现基础  支持 CAS，即 Compare-and-swap  java 中不推荐  sun 包不包含于 Java 标准，与平台相关，且随 JDK 版本而变化 但也没有较好的替代方案   方法    类型 方法 补充     构造      getUnsafe() 仅 Java 信息的代码可代码   内存操作      getType(obj, obj.Filed.offset) 针对于存放于java堆中对象的字段
+Type: Int,Object,Boolean,Byte,Short,Char,Long,Float,Double    put**Type**(obj, obj.Filed.offset, Type.val)     getType(obj.Filed.offset) 针对于C堆中的值
+Type: byte,short,char,int,long,float,double    putType(obj.Filed.offset, type.val)    内存分配      allocateMemory(bytes) 分配指定大小的虚拟内存    reallocateMemory(address, bytes) 重新分配
+超过历史大小的部分未初始化    setMemory(obj, offset, bytes, value) 将对象偏移offset后 bytes 位重置为 byte 位
+byte 常常为0    setMemory(address, bytes, value)     copyMemory(srcObj, orcOffset, dstObj, dstOffset, bytes) 由 srcObj 偏移 srcOffset 处开始拷贝 bytes 位数据至 dstObj 后偏移 dstOffset 处    copyMemory(srcAddress, destAddress, bytes)     freeMemory(address) 释放指定虚拟内存块   随机访问      int fieldOffset(Field) 返回字段的偏移
+并截断至 32 位    long staticFieldOffset(Field) 返回静态的偏移量    long objectFieldOffset(Field) 返回给定静态字段的位置，与 staticFieldBase 结合使用    Object staticFieldBase(Field) 返回给定静态字段的位置，与 staticFieldOffset 结合使用    ensureClassInitialized(Class)     arrayBaseOffset(Class)    指针操作      getAddress(address) 获取内存地址的原生指针    putAddress(address, *ptr)     addressSize() 获取原生指针所在块的大小
+原生指针由 putAddress 指定    pageSize() 获取原生内存页的大小
+大小为 2^n   其它操作      monitorExit(obj) 解锁    tryMonitorEnter(obj) 尝试加锁    monitorEnter(obj) 加锁    Class defineClass(name, b[], off, len, classloader, protectionDomain) 不经过安全检查，直接定义类    Class defineClass(name, b[], off, len) 类加载器和安全校验延用调用类    Object allocateInstance(class) 直接分配内存创建实例，但不调用任何构造函数    getTypeVolatile(obj, offset) 以 volatile 形式获取数据
+type: Object,Int,Boolean,Byte,Short,Char,Long,Float    putTypeVolatile(obj, offset, val)     putOrderedType(obj, offset, Object x) 区别于 putTypeVolatile，不同步通知其它进程
+type: Object,Int,Long    compareAndSwap**Type**(obj, offset, objExpect, objNew) 当 obj.offset 的值与 objExpect 一致时，更新值为 objNew
+type: Object,Int,Long    park(isAbsolute, time) 阻塞当前进程
+继续执行： unpark() 调用，或当前线程被中断，或超过指定时间    unpark(thread) 唤醒指定进程
+需先保障线程存活    getLoadAverage(loadavg[], nelems) 获取系统运行队列中，一定时间内的负载均衡状况
+nelems 用于检索的样本数，可选[1,2,3]，分别代表1/5/15分钟的采样    实现 源码 // final 限定仅可通过 static 方式构造 private static final Unsafe theUnsafe; // 私有构造函数 private Unsafe() {} static { // 添加需监测调用者的类、方法  Reflection.registerMethodsToFilter(Unsafe.class, new String[]{&amp;#34;getUnsafe&amp;#34;}); theUnsafe = new Unsafe(); } // 标注要使用 `Reflection.getCallerClass()`，可靠地发现调用者 // 仅 Java 信任的安全代码可以调用 @CallerSensitive public static Unsafe getUnsafe() { Class var0 = Reflection.getCallerClass(); if (!VM.isSystemDomainLoader(var0.getClassLoader())) { throw new SecurityException(&amp;#34;Unsafe&amp;#34;); } else { return theUnsafe; } } 获取实例 // 使用反射方式获取 // 默认仅供 java 信任的代码获取使用 Field theUnsafe = Unsafe.class.getDeclaredField(&amp;#34;theUnsafe&amp;#34;); theUnsafe.setAccessible(true); return (Unsafe) theUnsafe.get(null); 内存值修改 // 不受 final/ String 等限制 Field field = str.getClass().getDeclaredField(&amp;#34;value&amp;#34;); unsafe.putObject(str, unsafe.objectFieldOffset(field), new char[]{&amp;#39;H&amp;#39;, &amp;#39;i&amp;#39;}); 构建对象 // 不受 JVM 安全检查、类的构建函数、初始值限制 PrivateConstructorVo vo = (PrivateConstructorVo) unsafe.allocateInstance(PrivateConstructorVo.class); 获取对象内存地址 Car car = new Car(100d); Object[] arr = new Object[]{car}; // 固定的数组头部长度 long offset = unsafe.ARRAY_OBJECT_BASE_OFFSET; System.out.printf(&amp;#34;\tArray[0].address=\t%d\n&amp;#34;, unsafe.getLong(arr, offset)); 补充 类的内存形式  组成
+   组件 大小
+32b/64b 补充     header 4B/8B 常量
+0×00000001   klass pointer 4B/8B 指针
+类的内存地址   C&#43;&#43; vtb1 ptr 4B/8B 指针
+对应类的虚函数表   layout_helper 4B 记录实例浅尺寸   super check offset 4B    name 4B/8B    secondary super cache 4B/8B    secondary supers 4B/8B    primary supers 32B/64B    java mirror 4B/8B    super 4B/8B 父类的内存地址   first subklass 4B/8B    next sibling 4B/8B    modifier flags 4B 类的修饰符标志位
+如 public final= 0×00000001\0×00000010= 0×00000011   access flags 4B     modifier flags
+   flag Hex Binary     public 0x 0001 1   protected 0x 0002 10   private 0x 0004 100   static 0x 0008 1000   final 0x 0010 10000   abstrct 0x 0400 100 00000000   strict 0x 0800 1000 00000000    示例
+ 图示
+   组成映射
+     组件 行号 大小 内容 解析     header 0x0000 4B 01 00 00 00 固定为 0x 00000001
+小端排序
+little-endian   klass pointer  4B a8 08 97 38    C&#43;&#43; vtb1 ptr  4B 2c 7a b0 59    layout_helper  4B 18 00 00 00    super check offset 0x0010 4B 28 00 00 00    name  4B d0 a5 3f 04    secondary super cache  4B 00 00 00 00    secondary supers  4B 00 00 f7 37    primary supers 0x0020 32B 00 00 97 38    java mirror 0x0040 4B 40 1f 59 24    super  4B 00 00 97 38    first subklass  4B c0 4c 10 34    next sibling 0x0030 4B 30 3f 10 34    modifier flags  4B 01 00 00 00 0x 00000001= public   access flags  4B 21 00 20 00      尺寸  浅尺寸
+ shallow size 对象本身各字段所占用内存大小  若引用字段，仅计算引用字段的长度   深尺寸
+ deep size 在浅尺寸的基础上，针对引用字段的长度，为引用对象的浅尺寸大小   Oops &amp;amp; CompressedOops  普通对象指针
+ OOP Ordinary Object Pointer Java 堆中的内存地址  指向 JVM 进程的虚拟地址空间上，一段单一、连续的地址范围  32位系统中，OOP 与机器指针一致  压缩的普通对象指针
+ 用 32 位对象偏移指针来表示 64 位字节地址  8 字节对齐&#43; 偏移  CPU 一次性获取的数据为 8bit   可通过 -XX:-UseCompressedOops 关闭   CAS  场景
+ 三个线程分别运行如下代码
+int ori= get(); // 1 int dst= ori&#43; 2; // 2 if(compareAndSet(ori, dst)) return dst; // 3  流程
+ Thread-1 运行到阶段1 时切换  ori= 3  Thread-2 阶段3 完成  ori= 3 dst= 3&#43; 2= 5, return  Thread-1 恢复，并继续执行  compare(ori= 3 &amp;lt;&amp;gt; cpu.ori= 5) and not set ori= get()= 5 if(compare(5, cpu.ori)) set cpu.ori= 5&#43; 2= 7    缺点
+ ABA  Thread-1.get()= A Thread-2.compareAndSet()= B Thread-3.compareAndSet()= A Thread-1.compareAndSet()  实际已经修改过，但无法判断出来   解决办法  AtomicStampedReference    参考  sun.misc.Unsafe的理解 深入解析Java反射-invoke方法 What does the sun.reflect.CallerSensitive annotation mean? JEP 176: Mechanical Checking of Caller-Sensitive Methods  @CallerSensitive 注解的作用  为什么不建议调用sun包，如何通过其他方法确定调用者  sun 包不包含于 Java 标准，与平台相关，且随 JDK 版本而变化  sun.misc.Unsafe 的使用 sun.misc.unsafe类的使用 sun.misc.Unsafe.java  源码！  Memory values with java  解释 native pointer  使用 32-bit 引用来指定 64-bit JVM 堆地址   What is a native pointer and returnAddress? 如何使用Unsafe操作内存中的Java类和对象—Part1 如何使用Unsafe操作内存中的Java类和对象—Part2 如何使用Unsafe操作内存中的Java类和对象—Part3 如何使用Unsafe操作内存中的Java类和对象—Part4 JUC中Atomic class之lazySet的一点疑惑  set 与 lazyset 的差异在于前者使用 vilatile 于线程可见性上添加了 StoreStore 和 StoreLoad 内存屏障，而后者未添加 StoreLoad 这内存屏障中最消耗性能的  java魔法之unsafe
+ 自己测试的场景 long/ lock/ atomicLong/ unsafe 情况与博主情况不一致
+NormalCounter(50000)* 10000= 330691887 in 4625 LockCounter(50000)* 10000= 500000000 in 13848 AtomicCounter(50000)* 10000= 500000000 in 14438 UnsafeCounter(50000)* 10000= 477275360 in 98691   </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.持久化</title>
+        <url>http://domain.yqjdcyy.com/post/java.security/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  介绍  类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经验证地访问 通过标准接口接入提供商，便于应用简单获安全服务，而不需要了解其实现  集中精力于集成安全到自己的应用，而无需实现复杂的安全机制   Java 语言安全和字节码验证 Java 语言  类型安全 易用  内存的自动管理 垃圾回收 数组的范围检查   类型安全  针对类、方法、字段，定义以严格的访问限制
+   访问等级 访问限制     private 仅当前类可用   [package] 仅同个包下的类可访问   protected 同个包下，和其子类   public 无限制     字节码验证  编译器将 Java 代码编译为与机器无关的字节码形式 字节码校验器用于确保 java 运行环境只执行合法的字节码数据  符合 Java 语言规范 不违背 Java 语言规则和命名空间限制 检查内存管理违规操作、堆栈溢出和非法的数据类型转换   基础的安全体系架构 组成  密码学 公钥基础架构接口 验证 安全通信 访问控制  原则  实现独立
+ 应用可以不需要实现安全功能 可以通过依赖多个独立的提供商以支持  提供商实现了安全功能   实现互操作
+ 提供商可于应用互相操作 提供商与应用不会互相绑定  算法可扩展
+ 支持依赖于未实现的新兴标准、专用服务  支持自定义提供商    安全服务提供商  java.security.Provider 指定了提供商的名称及其所实现的安全服务 按首选项设置被选择时的优先级 可指定服务提供商的名称  示例  MessageDigest.getInstance
+Object[] objs = Security.getImpl(algorithm, &amp;#34;MessageDigest&amp;#34;, (String)null); return GetInstance.getInstance(type, getSpiClass(type), algorithm).toArray(); return getInstance(Providers.getProviderList().getService(type, algorithm), type.spi); return new GetInstance.Instance(service.getProvider(), service.newInstance()); static final Map&amp;lt;String,EngineDescription&amp;gt;knownEngines.get(type) Class&amp;lt;?&amp;gt; clazz = getImplClass(); Constructor&amp;lt;?&amp;gt; cons = clazz.getConstructor(paramClass); return cons.newInstance(constructorParameter); DatatypeFactory.newInstance()
+// CoreXMLDeserializers DatatypeFactory.newInstance() // DatatypeFactory  return FactoryFinder.find(DatatypeFactory.class, DATATYPEFACTORY_IMPLEMENTATION_CLASS); // FactoryFinder  // System.properties  if(ss.getSystemProperty(factoryId) != null) return newInstance(DatatypeFactory.class, systemProp, null, true); // File.properties  if(ss.doesFileExist($java.home/lib/jaxp.properties)) cacheProps.load(ss.getFileInputStream($java.home/lib/jaxp.properties)); if(cacheProps.getProperty(factoryId) != null) return newInstance(DatatypeFactory.class, factoryClassName, null, true); // Provider.exist  if(findServiceProvider(DatatypeFactory.class) != null) return findServiceProvider(DatatypeFactory.class) // Provider.default  return newInstance(DatatypeFactory.class, DATATYPEFACTORY_IMPLEMENTATION_CLASS, null, true); // Class  type.cast(getProviderClass(DATATYPEFACTORY_IMPLEMENTATION_CLASS, cl, doFallback, useBSClsLoader); SPI.custom
+ principles
+ 接口实现时，必须支持无参构造函数 META-INF/services/ 目录下创建接口全路径名称文件  内容为具体实现类的全路径名称 文件编码限定为 UTF-8  实现类为 jar 包形式，则需置于当前程序的 classpath 下 使用 ServiceLoader.load 进行动态加载  code
+com.yao.pattern.SPI.service public interface SoundService { void introduce(); } public class ServiceProvider { public static void main(String[] args) { ServiceLoader&amp;lt;SoundService&amp;gt; services = ServiceLoader.load(SoundService.class); Iterator&amp;lt;SoundService&amp;gt; it = services.iterator(); while (null != it &amp;amp;&amp;amp; it.hasNext()) { SoundService service = it.next(); System.out.printf(&amp;#34;\n%s: \n\t&amp;#34;, service.getClass().getName()); service.introduce(); } } } com.yao.pattern.SPI.service.impl public class USSoundServiceImpl implements SoundService { @Override public void introduce() { System.out.println(&amp;#34;Hello, Earth-Man&amp;#34;); } } public class ZHSoundServiceImpl implements SoundService { @Override public void introduce() { System.out.println(&amp;#34;你好，地球人！&amp;#34;); } } resource/META-INF/services com.yao.pattern.SPI.service.SoundService # 中文版本 com.yao.pattern.SPI.service.impl.ZHSoundServiceImpl # 英文版本 com.yao.pattern.SPI.service.impl.USSoundServiceImpl   密码学 支持类型    全称 简称 描述     Message digest algorithms  信息摘要
+输出长度固定
+常见如 MD5/ SHA-1   Digital signature algorithms DSA 数字签名   Symmetric bulk encryption  对称块加密
+常见如 DES   Symmetric stream encryption  对称流加密
+常见如 RC4   Asymmetric encryption  非对称加密
+常见如 RSA   Password-based encryption PBE 密码加密   Elliptic Curve Cryptography ECC 椭圆曲线加密
+常见如 ECDSA   Key agreement algorithms  键值协议算法   Key generators  键值生成器   Message Authentication Codes MACs 消息认证码   (Pseudo-)random number generators  伪随机数生成器    用途  信息完整性校验 数字签名 SSL 数字证书  图示     公钥基础设施  支持在公钥加密情况下，安全地进行信息的传递 支持身份（个人、组织等）与数字证书的绑定、验证 由密钥、证书、公钥加密及生成数字签名证书的认证机构组成  密钥和证书存储  支持密钥和证书的长期存储
+   类 作用     java.security.KeyStore 密钥
+受信任的证书   java.security.cert.CertStore 无关的、非受信的证书
+注销的证书     PKI 工具    工具 作用     keytool.exe
+密钥和证书管理工具     生成密钥对    生成证书
+根据证书请求生成
+自签名    导入
+证书
+证书回复   jarsigner.exe     为 jar 文件签名    验证已签名的 jar 文件    身份验证  可通过插件式登录模块进行用户的身份验证  调用 LoginContext 反向引用配置，以生成具体的 LoginModule.spi 实现类来执行验证  没有注册为 Security Provider，而是由各自的配置所管理
+   实现类 适用场景     Krb5LoginModule 基于 Kerberos 协议   JndiLoginModule 基于 LDAP/ NIS 数据的用户名、密码验证   KeyStoreLoginModule 可登录至任意类型密钥存储     安全通信  数据于网络传输过程中，可能被非预期的接收者访问  保证私人信息的安全性  非验证方无法读取 传输过程中数据未被修改    SSL/TLS  功能
+ 数据加密 信息校验 服务端身份验证 客户端身份验证  可选   工具类
+ SSLSocket  于 Socket 之上封装 SSL/TLS 协议  SSLEngine  可用于生产和消费 SSL/TLS 数据包  KeyManager  用于管理用于验证的密钥  TrustManager  通过所管理的密钥中的证书，来判断是否可以信息   协议
+ SSLv3 TLSv1 TLSv1.1 TLSv1.2   SASL 介绍  Simple Authentication and Security Layer 简单认证和安全层 使用账号和密码进行用户身份认证的机制，但为保障安全，对密码进行指定编码的加密  功能  认证 数据加密  工具类  Sasl  创建客户端和服务端对象   机制    端 机制 补充     客户端      CRAM-MD5     DIGEST-MD5 共享密钥，加密密码后传递比较    EXTERNAL     GSSAPI     NTLM     PLAIN 密码明文   服务端      CRAM-MD5     DIGEST-MD5     GSSAPI     NTLM     GSS-API 介绍  Generic Security Service Application Programming Interface 通用安全服务应用程序接口 基于 Kerberos v5 机制 通过 org.ietf.jgss.GSSContext 对象来建立和维护建立安全上下文所需的共享信息  工具类  kerberos  KerberosPrincipal KerberosTicket KerberosKey   访问控制 介绍  用于保护敏感资源（本地文件），或敏感的应用程序代码 由 SecurityManager 判断是否有权访问  须安装至运行时，以激活访问控制检测  其中 Applet 和 Java Web Start 程序均自动 本地应用程序默认不运行 但可程序中调用 setSecurityManager 方法，或于命令行中补充 -Djava.security.manager    权限  加载后的关联信息
+ 代码的加载来源 代码的签名者 默认的代码权限  可与源主机的网络连接  针对下载来的代码  当前及其子目录的访问   加载与用户验证是分离的
+ 但可通过 Subject.doAs 动态关联用户与被执行的代码   策略  于类加载时，由类加载器授予 运行时，有且仅有一个 Policy 对象被加载 默认策略  读取本地的 ASCII/UTF-8 文件读取安全配置 可通过 Policy Tool 生成   补充  CA
+ Certificate Authority 数字证书认证机构  PKI
+ Publish Key Infrastructure 公钥基础设施  CRLs
+ Certificate Revocation Lists 证书注销列表  LDAP
+ Lighweight Directory Access Protocol 轻量目录访问协议  NIS
+ Network Infomation Service 网络数据服务协议  SSL
+ Secure Sockets Layer 安全套接层  TLS
+ Transport Layer Security 传输层安全   参考 文档  Java™ Security Overview Java Security 总纲  SPI  Service Provider 机制 Java SPI Java Cryptography Architecture Oracle Providers Documentation for JDK 8  密码学  数字签名算法介绍和区别 数字签名是什么 HTTPS证书生成原理和部署细节  安全通信  SASL讲解，以及在Spark中的应用  安全访问  Default Policy Implementation and Policy File Syntax Permissions and Security Policy Java安全之认证与授权  </content>
+    </entry>
+    
+     <entry>
         <title>Redis.集群</title>
         <url>http://domain.yqjdcyy.com/post/redis.%E9%9B%86%E7%BE%A4/</url>
         <categories>
@@ -173,8 +315,12 @@ Durability 持久性
         <tags>
           <tag>Redis</tag>
         </tags>
-        <content type="html">  机制  使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理  集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关心具体使用的编码  通过 refcount 变量以支持共享和销毁  结构    对象 字段 描述     redisObject      unsigned type 存储的数据类型    unsigned notused 对齐位    unsigned encoding 当前使用的编码值    unsigned lru Least Recentyly Used
+        <content type="html">  机制  使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理  集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关心具体使用的编码  通过 refcount 变量以支持共享和销毁  结构    对象 字段 描述     redisObject      unsigned type 存储的数据类型
+4b    unsigned notused 对齐位
+2b    unsigned encoding 当前使用的编码值
+4b    unsigned lru Least Recentyly Used
 最近最少使用
+22b
 用于内存不足时的回收算法    int refcount 引用计数
 负责维持和销毁对象    void *ptr 关联对象指针
 根据 type 和 encoding 指向实际存储的数据结构    枚举 类型    类型 值 描述     REDIS_STRING 0 字符串   REDIS_LIST 1 列表   REDIS_SET 2 集合   REDIS_ZSET 3 有序集   REDIS_HASH 4 哈希表    编码    编码 值 描述     REDIS_ENCODING_RAW 0 字符串   REDIS_ENCODING_INT 1 整数   REDIS_ENCODING_HT 2 哈希表   REDIS_ENCODING_ZIPMAP 3 zipmap   REDIS_ENCODING_LINKEDLIST 4 双端链表   REDIS_ENCODING_ZIPLIST 5 压缩列表   REDIS_ENCODING_INTSET 6 整数集合   REDIS_ENCODING_SKIPLIST 7 跳跃表    实现    数据类型 编码类型 补充     REDIS_STRING REDIS_ENCODING_INT Long 型整数    REDIS_ENCODING_EMBSTR 使用 embstr 编码
@@ -187,7 +333,7 @@ Durability 持久性
 键值对数量少于512    REDIS_ENCODING_HT     多态调用 注意点  类型判断 多态调用  流程    共享对象 原因  预先为常见值对象创建、分配，减少频繁重复分配  实现  使用享元模式实现  适用对象  命令返回值
  成功时的 OK 错误时的 ERROR 类型错误时的 WRONGTYPE 事务返回时的 QUEUED &amp;hellip;  小于 REDIS_SHARED_INTEGERS 的所有整数
  REDIS_SHARED_INTEGERS 默认为 10000   补充 EMBSTR 为什么限制 39 字节  embstr 类型由 redisObject 和 sdshdr 组合而成 各元素占位情况 = 25B&#43; ？
-   结构 属性 类型 大小 描述     redisObject        type unsigned 4b 定义时指定    notused unsigned 2b 定义时指定    encoding unsigned 4b 定义时指定    lru unsigned 22b 定义时指定    refcount int 4B     *ptr void 8B 此外为 64 为操作系统      =16B    sdshdr        len unsigned int 4     free  4     buf char[] ?     \0 char 1       =9B&#43; ?     v2.4&#43;，使用 jemalloc 分配内存，大小为 8B，16B，32B和 64B
+   结构 属性 类型 大小 描述     redisObject        type unsigned 4b 定义时指定    notused unsigned 2b 定义时指定    encoding unsigned 4b 定义时指定    lru unsigned 22b 定义时指定    refcount int 4B     *ptr void 8B 此外为 64 为操作系统      =16B    sdshdr        len unsigned int 4B     free  4B     buf char[] ?     \0 char 1B       =9B&#43; ?     v2.4&#43;，使用 jemalloc 分配内存，大小为 8B，16B，32B和 64B
  分配最大额度内存 64B 情况下，剩余可存储空间大小为 39B 当超过时，将使用不同内存页存储，读取效率将下降  个人理解，无实际文档支持    EMBSTR 相较 RAW 的优势  两种编码的区别，在于其 redisObject 结构与 sdshdr 结构是否内存连续     比较项 EMBSTR RAW     内存分配 1 次 2 次
 分别用于申请 redisObject 和 sdshdr   内存释放 1 次 2 次
 分别释放 redisObject 和 sdshdr   缓存 连续内存，便于利用缓存     参考  对象处理机制 对象的类型与编码 哈希对象 字符串对象 有序集合对象 LRU原理和Redis实现 Redis中数据类型和内部编码的关系 关于 Redis 字符串小于 39 字节的疑惑  </content>
@@ -236,7 +382,7 @@ int 64bit 有符号    11 0000 1B int 24bit 有符号    11 1110 1B int 8bit 有
         <content type="html">  前置  内存映射数据结构  经过特殊编码的字节序列 内存消耗较内部数据结构少得多 适用于元素本身体积较小的情况   定义  有序、无重复保存的整数集合 集合保存时，使用所存数值的类型  当前类型为16位，而新数值为32位时 先把已有数据类型都先升级至32位 再插入新数值   特性  元素不重复 元素排列由小到大  适用场景  元素均为整数 元素数量不多  结构    类 属性 作用     intset uint32_t encoding 保存元素的类型长度    uint32_t length 存放的元素个数    int8_t contents[] 元素保存数组
 int8_t 仅占位    插入 流程    示例    动作 属性 值     初始化      encoding INTSET_ENC_INT16    length 0    content 未分配   添加 1      encoding INTSET_ENC_INT16    length 1    content [1]   添加 65535      encoding INTSET_ENC_INT32
 升级    length 2    content [1,65535]   添加 4294967295      encoding INTSET_ENC_INT64
-升级    length 3    content [1, 65535, 70000, 4294967295]    升级|扩容 流程  以上式添加 65535 为例  检查插入值的类型范围是否超过当前类型值 inset.encoding 范围 如果超过，则更新当前的类型值，并以此重新分配内存= intset.encoding * (intset.length&#43; 1) 由后往前，将对应数值转换为 inset.encoding 类型数据，并列于预留位置 将 65535 插入到数组中   图示    注意  inset.encoding 由元素中最大值决定 不支持降级操作  大数值向小数值的转换是有损的  个数限制为 REDIS_SET_MAX_INTSET_ENTRIES  REDIS_SET_MAX_INTSET_ENTRIES 默认为 512   参考  整数集合 redis/src/intset.c  </content>
+升级    length 3    content [1, 65535, 70000, 4294967295]    升级|扩容 流程  以上式添加 65535 为例  检查插入值的类型范围是否超过当前类型值 inset.encoding 范围 如果超过，则更新当前的类型值，并以此重新分配内存= 4&#43; 4&#43; intset.encoding * (intset.length&#43; 1) 由后往前，将对应数值转换为 inset.encoding 类型数据，并列于预留位置 将 65535 插入到数组中   图示    注意  inset.encoding 由元素中最大值决定 不支持降级操作  大数值向小数值的转换是有损的  个数限制为 REDIS_SET_MAX_INTSET_ENTRIES  REDIS_SET_MAX_INTSET_ENTRIES 默认为 512   参考  整数集合 redis/src/intset.c  </content>
     </entry>
     
      <entry>
@@ -290,13 +436,13 @@ ht[0]默认存储数据，ht[1]于实现渐近式 rehash 时使用    int rehash
  开放寻址法的升级版本 在检测到对应位置上已存放数值的情况，先行向下循环移动当前下标的平方值的格数  [hash(key)&#43; array.idx^ 2]% array.size   图示
     链接法  流程
  获取键的计算下标后，直接将值加入当前数组下标所指向的键值对象链表即可  默认添加在链表首部  减少尾部偏移时间 Redis 所选择的算法    图示
-    扩容 前置  主要判断比率，哈希表大小和节点数量  当数值为 1: 1时，说明基本可以通过 hash(key) 一次定位到对应值 当数值远小于1时，则相当于在多个链表中查询    条件  radio= ht[0].uesd/ ht[0].size     场景 条件 备注     自然 ReHash radio&amp;gt; 1 &amp;amp; dict_can_resize dict_can_resize 主要于持久化时暂时关闭   强制 ReHash radio&amp;gt; dict_force_resize_ratio dict_force_resize_ratio 默认为 5    过程  初始化 ht[1].table 大小大于 ht[0].size  ht[1].size&amp;gt;= 2* ht[0].used  将 ht[0].table 的键渐近式地迁移至 ht[1].table  dict.rehashidx&#43;&#43; ht[0].used&amp;ndash; ht[1].used&#43;&#43;  ht[0]中所有数据清空后，将 ht[1] 替换为 ht[0]  ht[0] clear ht[0]= ht[1] dict.rehashidx= -1   流程  初始状态
+    扩容 前置  主要判断比率，哈希表大小和节点数量  当数值为 1: 1时，说明基本可以通过 hash(key) 一次定位到对应值 当数值远小于1时，则相当于在多个链表中查询    条件  radio= ht[0].uesd/ ht[0].size     场景 条件 备注     自然 ReHash radio&amp;gt; 1 &amp;amp; dict_can_resize dict_can_resize 主要于持久化时暂时关闭   强制 ReHash radio&amp;gt; dict_force_resize_ratio dict_force_resize_ratio 默认为 5    过程  初始化 ht[1].table 大小大于 ht[0].size  ht[1].size 为大于 DICT_HT_INITIAL_SIZE* 2^n，且大于 2* ht[0].used  将 ht[0].table 的键渐近式地迁移至 ht[1].table  dict.rehashidx&#43;&#43; ht[0].used&amp;ndash; ht[1].used&#43;&#43;  ht[0]中所有数据清空后，将 ht[1] 替换为 ht[0]  ht[0] clear ht[0]= ht[1] dict.rehashidx= -1   流程  初始状态
    rehashing
    结束状态
     调用函数  _dictRehashStep
  rehashing 情况下执行，将 ht[0].table 第一个非空索引上的链表均迁移到 ht[1].table 上  dictRehashMilliseconds
- 指定毫秒内对字典进行 rehash 操作 由 ServerCron 调用执行   收缩 时机  当 ht[0].used* 100/ ht[0].size &amp;lt; REDIS_HT_MINFILL 时触发  REDIS_HT_MINFILL 默认为 10 即实际使用率小于 10% 时触发   与扩容的差异  流程类似扩容，差异于初始化 Ht[1].table 时，大小为 ht[0].used
-int dictResize(dict *d) { int minimal; if (!dict_can_resize || dictIsRehashing(d)) return DICT_ERR; minimal = d-&amp;gt;ht[0].used; if (minimal &amp;lt; DICT_HT_INITIAL_SIZE) // DICT_HT_INITIAL_SIZE= 4  minimal = DICT_HT_INITIAL_SIZE; return dictExpand(d, minimal); }  参考  字典 深入理解哈希表 HASH表的实现（拉链法） 散列表-链接法和开放寻址法 线性探查 构造哈希表之二次探测法 redis数据结构之dict详解 Redis字典的实现  </content>
+ 指定毫秒内对字典进行 rehash 操作 由 ServerCron 调用执行   收缩 时机  当 ht[0].used* 100/ ht[0].size &amp;lt; REDIS_HT_MINFILL 时触发  REDIS_HT_MINFILL 默认为 10 即实际使用率小于 10% 时触发   与扩容的差异  流程类似扩容，差异于初始化 Ht[1].table 时，大小为 DICT_HT_INITIAL_SIZE* 2^n，且大于 ht[0].used
+// 调用 return dictExpand(d, d-&amp;gt;ht[0].used*2) return dictExpand(d, minimal = d-&amp;gt;ht[0].used); // 实现 static unsigned long _dictNextPower(unsigned long size) { unsigned long i = DICT_HT_INITIAL_SIZE; if (size &amp;gt;= LONG_MAX) return LONG_MAX &#43; 1LU; while(1) { if (i &amp;gt;= size) return i; i *= 2; } }  参考  字典 深入理解哈希表 HASH表的实现（拉链法） 散列表-链接法和开放寻址法 线性探查 构造哈希表之二次探测法 redis数据结构之dict详解 Redis字典的实现  </content>
     </entry>
     
      <entry>
@@ -331,7 +477,7 @@ int dictResize(dict *d) { int minimal; if (!dict_can_resize || dictIsRehashing(d
  文件事件和时间事件依次进行 文件事件优先（命令读取、返回）于时间事件  导致后者执行时间，较预定时间晚一些
  文件事件和时间事件不进行抢占操作    详解 文件事件 定义  对套接字的多路复用而产生的事件  对照    事件类型 作用 生命周期 状态     读事件 客户端进行命令请求 连接时绑定，断开时才移除 等待：等待客户端发起请求
 就绪：请求已发送，并已到达   写事件 服务端返回命令结果 服务器完成时发起，传送完毕后移除 等待：等候服务器处理命令
-已就绪：返回命令结果，等待客户端接收    注意  读事件周期优先于写事件周期  存在读事件和写事件同时就绪的情况，此时优先处理读事件  时间事件执行时，将遍历所有链表，检查 when 是否触发  时间事件 描述  在指定时间点运行的事件，以无序鍡的形式保存于服务器 属性
+已就绪：返回命令结果，等待客户端接收    注意  读事件周期优先于写事件周期  存在读事件和写事件同时就绪的情况，此时优先处理读事件  时间事件执行时，将遍历所有链表，检查 when 是否触发  时间事件 描述  在指定时间点运行的事件，以无序链表的形式保存于服务器 属性
    属性 含义     when 事件执行时间点
 UNIX 时间戳的毫秒格式   timeProc 事件处理函数
 可分为单次和循环执行类型，后者将于完成时更新 when 属性值以继续运行   next 指向下一事件     调用  由 redis.c/serverCron 实现  实现场景  更新统计信息，如时间、内存占用等 清理过期键值对 关闭和清理已失效的客户端 RDB|AOF 持久化操作 主从备份 集群同步  参考  事件  </content>
@@ -346,7 +492,7 @@ UNIX 时间戳的毫秒格式   timeProc 事件处理函数
         <tags>
           <tag>Redis</tag>
         </tags>
-        <content type="html">  持久化 RDB 形式  运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以不愿数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩  原理  COW  copy on write linux.kernel 上支持 多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见  保障线程案例，父进程的修改，不会影响到子进程的数量 类似于 java 的 string 对象    时机  由系统定时任务 serverCron 周期性检查是否满足条件，以调用 bgsave  条件为 config get save 中所列项  而 save 操作将由用户手动触发  保存  SAVE  调用 rdbSave，阻塞 redis 主线程  保存完毕之前，服务器无法处理请求 需先检查 BGSAVE 是否正在执行，否则报错以告知   BGSAVE  fork 一个 子进程 来调用 rdbSave  待保存完毕后，向主进程发送信号    载入  rdbLoad  启动时执行，读取 RDB 文件并载入内存中  每载入 1000 个键，就处理一次所有已到达的请求 期间仅如下指令可被处理  PUBLISH SUBSCRIBE PSUBSCRIBE UNSUBSCRIBE PUNSUBSCRIBE   若服务启动时，打开 AOF 功能，则优先使用 AOF 文件来还原   文件结构  文件结构
+        <content type="html">  持久化 RDB 形式  运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩  原理  COW  copy on write linux.kernel 上支持 多调用方请求相同资源时，将获得指向相同资源的同一指针；直到某一调用方意图修改时，将针对其复制一份资源出来，单独进行修改；而这对其它调用方不可见  保障线程安全，父进程的修改，不会影响到子进程的数量 类似于 java 的 string 对象    时机  由系统定时任务 serverCron 周期性检查是否满足条件，以调用 bgsave  条件为 config get save 中所列项  而 save 操作将由用户手动触发  保存  SAVE  调用 rdbSave，阻塞 redis 主线程  保存完毕之前，服务器无法处理请求 需先检查 BGSAVE 是否正在执行，否则报错以告知   BGSAVE  fork 一个 子进程 来调用 rdbSave  待保存完毕后，向主进程发送信号    载入  rdbLoad  启动时执行，读取 RDB 文件并载入内存中  每载入 1000 个键，就处理一次所有已到达的请求 期间仅如下指令可被处理  PUBLISH SUBSCRIBE PSUBSCRIBE UNSUBSCRIBE PUNSUBSCRIBE   若服务启动时，打开 AOF 功能，则优先使用 AOF 文件来还原   文件结构  文件结构
    REDIS RDB-VERSION SELECT-DB KEY-VALUE-PAIRS EOF CHECK-SUM     &amp;ldquo;REDIS&amp;rdquo; 四字节 RDB 版本号
 如当前版本为 0006 数据所属数据库号码 键值对数据 内容结尾
 rdb.h/EDIS_RDB_OPCODE_EOF
@@ -366,7 +512,7 @@ LEN&#43;CONTENT    REDIS_ENCODING_RAW REDIS_STRING 8/16/32 bit INT
  AOF 缓存 REPLICATION 缓存  流程
     缓存追加  接收命令（命令&#43; 参数&#43; 使用数据库）信息 将命令行信息生成为协议文本 将协议文本追加至 aof_buf  aof_buf 的结构为 redis.h/redisServer   保存  时机
  任务函数执行 | 事件处理器执行时，调用 aof.c/flushAppendOnlyFile 具体的保存和写操作，视策略而定  操作
- WRITE  将 aof_buf 的缓存写入至 AOF 文件  SAVE  调用 fsync| fdatasync 将 AOF 文件写入磁盘   模式
+ WRITE  将 aof_buf 的缓存写入至 AOF 文件的内存缓冲区  SAVE  调用 fsync| fdatasync 将 AOF 文件写入磁盘   模式
    MODEL WRITE WRITE-BLOCK SAVE SAVE-BLOCK     AOF_FSYNC_NO
 不保存
 由主进程调用 每次触发 BLOCK 仅如下情况触发，会引起主进程阻塞
@@ -385,7 +531,7 @@ SAVE操作执行超过2秒，需等 Save 完成后阻塞进行
 RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LPUSH list 1 // [1, 2, 3] 重写
  RPUSH list 1 2 3   触发时机
  满足如下所有条件  未在执行 BGSAVE 未在执行 BGREWRITEAOF AOF.SIZE&amp;gt; server.aof_rewrite_min_size  server.aof_rewrite_min_size 默认为 1MB  NOW.AOF.SIZE&amp;gt; 1&#43; aof_rewrite_perc* OLD.AOF.SIZE  aof_rewrite_perc 默认为 100%    流程
-    VM  虚拟内存方式 用户空间的数据换入换出的策略 实现效果差，代码复杂、重启慢、复制慢，已弃用  Diskstore  B-Tree 实现，实验阶段  指令 关闭|开启策略 主从复制  流程
+    VM  虚拟内存方式 用户空间的数据换入换出的策略 实现效果差，代码复杂、重启慢、复制慢，已弃用  Diskstore  B-Tree 实现，实验阶段  对比    对比项 RDB AOF     文件大小 小    读取速度 快    生成速度 快    加载优先  优先   数据丢失 多     指令 查询  CONFIG GET (SAVE|APPENDFSYNC)  开启|关闭  RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能    主从复制  流程
    细节
  Slave 发送 sync 命令后，会阻塞等待 Master 的内存快照 Master将于内存快照子进程结束后，将文件发送给 Slave Slave 接收到内存快照后，将保存至本地，清空内存表，并以此重建内存数据结构 后续的数据更新，将通过与 Slave 连接的发送缓存队列，依次发送以便于 Slave 执行、同步   原理 IO 函数 Open  公式
  int open(const char path, ...int oflag );  参数
@@ -396,10 +542,7 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
  *buf  写入的数据  nbytes  要写入数据的数量   注意
  nbytes 与 ssizet 不一致时，说明写入异常   Ftruncate  公式
  int ftruncate(int fd, off_t length);  参数
- length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而入排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分
- 文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作  查询
- CONFIG GET (SAVE|APPENDFSYNC)  开启|关闭
- RDB  CONFIG SET SAVE &amp;quot;&amp;quot;  关闭 RDB 功能  CONFIG SET SAVE &amp;quot;900 1 300 10&amp;quot;  开启 RDB 功能 900s 内若至少有 1次 变更，或 300s 内至少 10次 变更，则调用 SAVE 命令   AOF  CONFIG SET APPENDFSYNC NO  关闭 AOF 功能  CONFIG SET APPENDFSYNC YES  开启 AOF 功能     参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性  </content>
+ length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而后排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作   参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性 redis持久化RDB和AOF []()  </content>
     </entry>
     
      <entry>
@@ -3159,7 +3302,14 @@ SPAWN    -re
         <tags>
           <tag>网络</tag><tag>OSI</tag>
         </tags>
-        <content type="html">  参考  深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 网络七层协议  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.3   理解  应用层  入口 如动车站购票点、网上购票  表示层  定义编码、通用协议 如各国人购票（无座、二等座、一等座）  会话层  IP 映射&amp;amp; 会话 如动车站  传输层  缓冲 如动车站、安检  网络层  寻址&amp;amp;路由 如列车长  数据链路层  传输、分发、流量控制 如站点  物理层  实际路线 如铁轨   </content>
+        <content type="html">  定义  网络七层协议，理论模型 OSI（Open System Interconnection）    分层 应用层  直接为应用进程提供服务  根据提供的特性分组，称为服务元素  公共应用服务元素 CASE  所有用户可用，主要为应用进程通信，分页系统的基本控制机制  特定应用有服务元素 SASE  特定服务，如文卷传送、访问管理、银行业务等    示例  HTTP FTP SMTP/ POP3/ IMAP4 TELNET   表示层  定义数据格式、加密  如 FTP 下可选择以二进制或 ASCII 格式传输  懂中机通信的公共语言  IBM 主机使用 EBCDIC 编码 通用 PC 机采用 ASCII 码 转换以保证一致的数据形式  示例  ASCII EBCDIC  解决不同系统间的通信  LPP NBSSN   会话层  如何开始、同步和结束一个会话  使用校验点来保证通信失效后，由该校验点进行通信恢复 将会话地址映射为 IP 地址  示例  RPC SQL SSL TLS DAP   传输层  选择[无]差错恢复协议，在同一主机上对不同应用的数据流复用  对接收顺序有误的数据包排序  端对端数据的缓存层 面对会画层的界面端口 示例  TCP UDP SPX  端口通信    网络层  定义端对端的包传输 定义所有结点的逻辑地址，进行 路由|寻址 定义如何将包分解成更小的包的分段方法 示例  IP/ IPv6 EGP AHH/ ESP   数据链路层  定义在单个链路上如何传输、拆解包 每次通信时，建立起来的数据收发关系  链路连接的建立、拆除和分享 帧定界、同步 差错检测和恢复 链路标识、流量控制  示例  PPTP/ L2TP/ L2F/ ATMP ARP/ RARP  产品  网卡 网桥   物理层  为通信的两个数据终端设备提供连接，形成通路  将信息编码转换为电流脉冲或其它信号形式进行传输 方式  点对点 单点对多点 串行|并行 半双工|全双工 同步|异步   与传输介质有关  涉及连接头、帧、帧的使用、电流、编码、光调制等  示例  Rj45 将数据转换成 0|1 802.3   整理    分层 协议 阶段     物理层 803.2 数电转换
+轨道建设   数据链路层  物理寻址、传输、分发、流量控制
+通过枢纽一站站递过去   网络层 IP/ IPV6 网络路由
+指定到达地点   传输层 TCP/ UDP 数据拆分、确认、缓冲
+车厢安排、安检   会话层 SQL/ RPC/ SSL/ TLS 会议建立、维护
+发车请求   表示层 ASCII 数据展示形式
+座位（一等、二等、无座）   应用层 HTTP/ FTP/ SMTP 应用程序协议
+网络购票    参考  深入浅出－网络七层模型&amp;amp;&amp;amp;网络数据包 网络七层协议 如何生动形象、切中要点地讲解 OSI 七层模型和两主机传输过程  </content>
     </entry>
     
      <entry>
@@ -5048,8 +5198,8 @@ password 属性长度必须为 8 位 &amp;lt;xs:element name=&amp;#34;password&a
     </entry>
     
      <entry>
-        <title>Git.命令小结</title>
-        <url>http://domain.yqjdcyy.com/post/git.%E5%91%BD%E4%BB%A4%E5%B0%8F%E7%BB%93/</url>
+        <title>Git.Command</title>
+        <url>http://domain.yqjdcyy.com/post/git.command/</url>
         <categories>
           <category>整理</category>
         </categories>
@@ -5063,37 +5213,43 @@ password 属性长度必须为 8 位 &amp;lt;xs:element name=&amp;#34;password&a
 标签  git tag
  &amp;lt;&amp;gt;：查看当前分支标签 -l &amp;lsquo;v1.4*&amp;lsquo;：查看所有匹配该正则的标签信息
 文件提交明细  git blame &amp;lt;fileName&amp;gt;：查看文件每行的提交 hash / author/ time
-  提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &amp;lt;branch&amp;gt; ###新增提交 git add -A git commit -m &amp;ldquo;commit content&amp;rdquo; git push origin &amp;lt;branch&amp;gt;
-修改提交 git commit -a -m &amp;ldquo;commit content&amp;rdquo;
+命令历史 git reflog
+ 命令历史，包含回滚记录
+文件各行代码提交人  git blame &amp;lt;file&amp;gt;
+ 列出指定文件每行的提交ID、提交人和时间   提交 首次提交  git init： 将当前目录转换为 Git 仓库 git push -u origin &amp;lt;branch&amp;gt; ###新增提交 git add -A git commit -m &amp;quot;commit content&amp;quot; git push origin &amp;lt;branch&amp;gt;
+修改提交 git commit -a -m &amp;quot;commit content&amp;quot;
  git push origin &amp;lt;branch&amp;gt;
 强制提交 git push -f origin &amp;lt;branch&amp;gt;
 标签 单个
  git push origin &amp;lt;tagname&amp;gt;  所有
- git push &amp;ndash;tags   创建 分支  checkout  git checkout -b &amp;lt;branch&amp;gt; &amp;lt;origin/ dev&amp;gt;： 创建分支 [关联远程分支 dev ]  branch
+ git push --tags   创建 分支  checkout  git checkout -b &amp;lt;branch&amp;gt; &amp;lt;origin/dev&amp;gt;： 创建分支 [关联远程分支 dev ]  branch
  git branch &amp;lt;branch&amp;gt;：创建分支 git checkout &amp;lt;branch&amp;gt;： 切换分支
 标签  git tag
- &amp;lt;tagname&amp;gt;：当前版本上创建标签（轻量标签） &amp;lt;tagname&amp;gt; &amp;lt;commit id&amp;gt;：针对 &amp;lt;commit id&amp;gt; 历史提交打上标签 -a &amp;lt;tagname&amp;gt; -m &amp;ldquo;&amp;lt;more info&amp;gt;&amp;ldquo;：创建附注标签   切换 分支  git checkout &amp;lt;branch&amp;gt;
+ &amp;lt;tagname&amp;gt;  当前版本上创建标签（轻量标签）  &amp;lt;tagname&amp;gt; &amp;lt;commit id&amp;gt;  针对 &amp;lt;commit id&amp;gt; 历史提交打上标签  -a &amp;lt;tagname&amp;gt; -m &amp;lt;more info&amp;gt;  创建附注标签    切换 分支  git checkout &amp;lt;branch&amp;gt;
 标签 git checkout &amp;lt;tagname&amp;gt;
-  关联 关联远程分支  set  git branch &amp;ndash;set-upstream-to=origin/dev git branch -u origin/dev  将当前分支的 upstream 更新为 origin/dev 分支   push &amp;amp; set  git push -u origin master  将 master 分支推送至 origin/master 分支 更新本地 master 分支的 upstream 为 origin/master   set other
+  关联 关联远程分支  set  git branch --set-upstream-to=origin/dev git branch -u origin/dev  将当前分支的 upstream 更新为 origin/dev 分支   push &amp;amp; set  git push -u origin master  将 master 分支推送至 origin/master 分支 更新本地 master 分支的 upstream 为 origin/master   set other
  git push -u origin/dev dev
  将本地 dev 分钟的 upstream 更新为 origin/dev
 取消关联   unset
- git branch &amp;ndash;unset-upstream  unset other
- git branch &amp;ndash;unset-upstream dev   更新 仓库  git clone ssh-url
+ git branch --unset-upstream  unset other
+ git branch --unset-upstream dev   更新 仓库  git clone ssh-url
 所有 git pull
 指定分支 git pull origin branch
-  合并 分支  git merge  git merge &amp;lt;dev&amp;gt;： 将 dev 分支快速合并到当前分支 git merge [ ff | no-ff ] dev：默认使用 ff ，即 fast-forward ， 当删除分支 dev 后，则无法再次查看 dev 分支的日志等  git rebase  当前分支 dev ： 将 dev 分支历次提交转成补丁，并以 master 分支最后一个提交为出发点逐个应用补丁。即使 dev 提交历史成为 master 分支的直接下流。 flow  git rebase master client  将 client 补丁至 master git checkout master git merge client   args  git rebase &amp;ndash;onto master server client  master-&amp;gt;server-&amp;gt; client 跳过 server 直接将 client 补丁至 master  git rebase &amp;ndash;continue：冲突处理后调用，继续完成 git rebase &amp;ndash;abort：放弃 git rebase -i HEAD~2：合并最后两次提交 git rebase &amp;ndash;skip：直接使用分支取代当前分支    提交  git cherry-pick  &amp;lt;commit id&amp;gt;：将其它分支指定提交合并至当前分支，适用于通用分支 bug 的修复 注：会引起冲突！  git merge &amp;lt;commit id&amp;gt;  回滚 按版本  git reset &amp;ndash;hard
- commitId HEAD：当前分支最新版本 HEAD^：上一版本 HEAD^^：上上版本 HEAD~10：上第十个版本
-按文件  git checkout
- &amp;ndash; files： 如 git checkout &amp;ndash; /src/*
-按提交  git revert &amp;lt;commit id&amp;gt;：撤消指定提交
- -m parent-number: 指定回滚时的指定主分支  -m 1：默认当前分支 -m 2: 清除但保留主分支内容    删除 文件  git rm files git commit -m &amp;ldquo;commit content&amp;rdquo;
+  合并 分支  git merge  git merge &amp;lt;dev&amp;gt;  将 dev 分支快速合并到当前分支  git merge [ ff | no-ff ] dev  默认使用 ff ，即 fast-forward ， 当删除分支 dev 后，则无法再次查看 dev 分支的日志等   git rebase  当前分支 dev ： 将 dev 分支历次提交转成补丁，并以 master 分支最后一个提交为出发点逐个应用补丁。即使 dev 提交历史成为 master 分支的直接下流。 flow  git rebase master client  将 client 补丁至 master git checkout master git merge client   args  git rebase --onto master server client  master-&amp;gt; server-&amp;gt; client 跳过 server 直接将 client 补丁至 master  git rebase --continue  冲突处理后调用，继续完成  git rebase --abort  放弃  git rebase -i HEAD~2  合并最后两次提交  git rebase --skip  直接使用分支取代当前分支     提交  git cherry-pick  &amp;lt;commit id&amp;gt;：将其它分支指定提交合并至当前分支，适用于通用分支 bug 的修复 注：会引起冲突！  git merge &amp;lt;commit id&amp;gt;  回滚 按版本  git reset --hard
+ commitId HEAD  当前分支最新版本  HEAD^  上一版本  HEAD^^  上上版本  HEAD~10
+ 上第十个版本
+按文件   git checkout
+ -- &amp;lt;files&amp;gt;
+ 如 git checkout &amp;ndash; /src/*
+按提交   git revert &amp;lt;commit id&amp;gt;
+ 撤消指定提交 -m parent-number  指定回滚时的指定主分支 -m 1  默认当前分支  -m 2  清除但保留主分支内容     删除 文件  git rm files git commit -m &amp;quot;commit content&amp;quot;
 分支 git branch
- -d branch： 删除分支 -D branch：强制删除分支，放弃修改   暂存  git stash  将当前代码暂存起来，便于切换到其它分支 list：显示当前分支下所有列表 drop：删除暂存内容 pop：恢复，并删除暂存内容   维护 性能  git gc： 压缩历史命令
-可靠性 git fsck：系统文件检查
- &amp;ndash;lost-found：显示丢弃提交  git show &amp;lt;commit id&amp;gt;：显示该提交的改变内容
- git merge&amp;lt;commit id&amp;gt;：恢复到之前提交
- 注：有可能会有冲突   报错 push时遇到unpack failed: error Missing tree错误  本地索引损坏，需重新构建  git gc git pull &amp;ndash;rebase   </content>
+ -d branch  删除分支  -D branch  强制删除分支，放弃修改    暂存  git stash  将当前代码暂存起来，便于切换到其它分支 list  显示当前分支下所有列表  drop  删除暂存内容  pop  恢复，并删除暂存内容    维护 性能  git gc
+ 压缩历史命令
+可靠性  git fsck
+ 系统文件检查 --lost-found  显示丢弃提交   git show &amp;lt;commit id&amp;gt;
+ 显示该提交的改变内容  git merge &amp;lt;commit id&amp;gt;
+ 恢复到之前提交 注：有可能会有冲突   报错 push时遇到unpack failed: error Missing tree错误  本地索引损坏，需重新构建  git gc git pull &amp;ndash;rebase   </content>
     </entry>
     
      <entry>
@@ -5105,7 +5261,7 @@ password 属性长度必须为 8 位 &amp;lt;xs:element name=&amp;#34;password&a
         <tags>
           <tag>HTTP</tag>
         </tags>
-        <content type="html">  参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1  Header 头文件  Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  -----------------------------7e016f3be0a4a Content-Disposition: form-data; name=&amp;quot;file&amp;quot;; filename=&amp;quot;B2283659A4B9302BE09FE2EC97690382.pptx&amp;quot; Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation  Method GET Data.length.limit Browser IE: 2083B= 2KB&#43; 35B
+        <content type="html">  参考  Http 协议详解 HTTP headers Hypertext Transfer Protocol &amp;ndash; HTTP/1.1 四种常见的 POST 提交数据方式 Http.vary  Http.detail  Message Body 消息体 Request 请求头  POST http://dev-p.yunkai.com/api/resource/upload HTTP/1.1  Header 头文件  Accept: application/json, text/plain, */* Content-Type: multipart/form-data; boundary=---------------------------7e016f3be0a4a Referer: http://dev-p.yunkai.com/admin/index.html#/meetings/98/update/agendas Accept-Language: zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3 Accept-Encoding: gzip, deflate User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; rv:11.0) like Gecko Content-Length: 4708261 Host: dev-p.yunkai.com Connection: Keep-Alive Pragma: no-cache Cookie: SESSION=82526c96-4740-4d52-b3c1-757384ba3017  Empty line Body 消息体  -----------------------------7e016f3be0a4a Content-Disposition: form-data; name=&amp;#34;file&amp;#34;; filename=&amp;#34;B2283659A4B9302BE09FE2EC97690382.pptx&amp;#34; Content-Type: application/vnd.openxmlformats-officedocument.presentationml.presentation  Method GET Data.length.limit Browser IE: 2083B= 2KB&#43; 35B
  Firefox: 65,536 Char -&amp;gt; 1 Char= 2B Safari: 80,000 Char Opera: 190,000 Char Chrome: 8,182 Char Server Apache: 8,192 Char IIS: 16,384 Char POST Data.length.limit Http not set the limit Apache.Tomcat.default.maxPostSize= 2M HEAD TRACE PUT DELETE OPTION CONNECT  Status Code Http Status code  参考 http://www.cnblogs.com/DeasonGuan/articles/Hanami.html http://www.cnblogs.com/shanyou/archive/2012/05/06/2486134.html
  1XX - Informational
  define: provisional response, consisting only of the status-line and optional headers, and is terminated by an empty line. expect for proxy
@@ -5733,6 +5889,53 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
     
      <entry>
         <title></title>
+        <url>http://domain.yqjdcyy.com/post/java.keyword.volatile/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  作用 store-store store-load
+参考 http://ifeve.com/juc-atomic-class-lazyset-que/ http://g.oswego.edu/dl/jmm/cookbook.html https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6275329
+</content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/java.reflection/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  []() 深入解析Java反射-基础 []() []() []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/java.thread/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html"> 关键字
+volatile
+synchronized
+lock
+Thread
+Unsafe
+工具
+Atomic
+原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 线程池
+ []() []() []() []() []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
         <url>http://domain.yqjdcyy.com/post/pyqt/</url>
         <categories>
           
@@ -5746,6 +5949,57 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
  PyQt5
  PyQt5学习与交流
   </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/redis.full/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  数据结构  SDS
+ len/ free/ char[] SDS_MAX_PREALLOC= 1024* 1024  List
+ List  *ListNode head, tail int len void * dup/ free/ match  ListNode  *ListNode prev, next void *value   Dict
+ Dict  dickht ht[2] int rehashidx int iterators  DictHt  dictEntry **table unsigned long size/ sizemask/ used  DictEntry
+ void *key void *val DictEntry *next  链接法
+ 开放寻址
+ 干净探测法
+ resize
+ dict_can_resize 扩容  1 5 &amp;gt;= 2* ht[0].used  缩容  1&amp;frasl;10 &amp;gt;= ht[0].used    SkipList
+ ZSkipList  ZSkipListNode *head, tail long length int level &amp;lt; 10  ZSkipListNode  robj *obj double score ZSkipListNode *back *ZSkipListLevel level  ZSkipListLevel  ZSkipListLevel *forward unsigned int span   IntSet
+ set/ order/ long IntSet  uint32_t encoding, length int8_t contents[]  扩容  不支持降级  512 限制  ZipList
+ ZipList  zlbytes 4B zltail 4B zllen 2B Entry[] end 1B  Entry  pre_entry_length 1/5B encoding 2b length 6/14/32b content    对象  RedisObject
+ unsigned type, notuesd, encoding, lru int refcount void *ptr  REDIS_STRING
+ REDIS_ENCODING_INT REDIS_ENCODING_EMBSTR REDIS_ENCODING_RAW  REDIS_LIST
+ REDIS_ENCODING_LINKEDLIST REDIS_ENCODING_ZIPLIST  REDIS_SET
+ REDIS_ENCODING_HT REDIS_ENCODING_INTSET  REDIS_ZSET
+ REDIS_ENCODING_SKIPLIST REDIS_ENCODING_ZIPLIST  REDIS_HASH
+ REDIS_ENCODING_ZIPLIST REDIS_ENCODING_HT   Server  point
+ var load.config daemon init load.db event  component
+ clients dbs aof|rdb command table event  Client
+ data  net *db *command  cache  request response  stattistic  create-time last-time cache   Event
+ File&amp;gt; Time(delay) File  read 优先 write  Time
+ when proc next
+ statistic/ rdb/ expire/ copy
+    DB  dict expires  定时：过期时间事件 惰性：查询时判断 定期：定期  watched_keys  持久化  COW RDB
+ SAVE BGSAVE  900 1 300 10  LOAD
+ 1000 keys  File
+ &amp;ldquo;redis&amp;rdquo; 0006 db.idx key-value*  LZF  EOF CHECK   AOF
+ RESP Cache/ Memory/ AOF.IO MODEL  AOF_FSYNC_NO BLOCK AOF_FSYNC_EVERYSEC NO_BLOCK AOF_FSYNC_ALWAYS BLOCK    事务   multiCmd   *redisCommand *8robj argv int argc  MULTI
+ DISCARD
+ EXEC
+ WATCH
+ ACID
+  发布订阅  subscribe psubscribe publish  集群  slot= 2^14 CAP.AP
+ redis-trib.rb
+ cluster
+ 无中心&#43; PING-PONG
+ 一致性哈希 2^32
+ upgrade
+  copy  runid&#43; offset backlog= 1M  </content>
     </entry>
     
      <entry>
