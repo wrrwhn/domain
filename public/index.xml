@@ -6,10 +6,28 @@
     <description>Recent content on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 26 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.对象模型</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java.JVM.内存模型</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</guid>
+      <description>前置 CPU 和缓存一致性 发展 CPU 的执行速度远超内存读取 通过增加更快的多级缓存以缓解 运行时将所需要数据复制至 CPU 的调整缓存，待运算完成后再刷新至主存 通过</description>
+    </item>
     
     <item>
       <title>Java.JVM.内存结构</title>
@@ -224,7 +242,7 @@
       <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</guid>
-      <description>关于 TODO 与简历一并更新</description>
+      <description>技术栈 不间断的 Java 开发经验，了解 JVM，掌握分析调优和程序优化的基础技术 熟练掌握 SpringBoot、Spring cloud、 Mybatis 等开源架构 熟练</description>
     </item>
     
     <item>
