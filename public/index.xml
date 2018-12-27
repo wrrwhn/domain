@@ -21,6 +21,15 @@
     </item>
     
     <item>
+      <title>关于</title>
+      <link>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</guid>
+      <description>技术栈 不间断的 Java 开发经验，了解 JVM，掌握分析调优和程序优化的基础技术 熟练掌握 SpringBoot、Spring cloud、 Mybatis 等开源架构 熟练</description>
+    </item>
+    
+    <item>
       <title>Java.JVM.内存模型</title>
       <link>http://domain.yqjdcyy.com/post/java.jvm.%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Wed, 26 Dec 2018 00:00:00 +0000</pubDate>
@@ -234,15 +243,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/%E5%90%89%E4%BB%96%E5%85%A5%E9%97%A8/</guid>
       <description>入门 调音 辅助工具 调音器 app | 在线调音乐 识谱 文字谱 E---------------3-0--------------------|| B-------------------3-0----------------|| G---7-7-7---------------2-0------------|| D-2-7-7-7-7-7-7------------------------|| A-2-5-5-5-7-7-7------------------------|| E-0-------5-5-5------------------------|| 图谱 解析 弦 图谱由上到下，对照琴弦由细到粗 同一垂直线上，表示了该次弹奏需要同时按压的</description>
-    </item>
-    
-    <item>
-      <title>关于</title>
-      <link>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</link>
-      <pubDate>Tue, 06 Nov 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</guid>
-      <description>技术栈 不间断的 Java 开发经验，了解 JVM，掌握分析调优和程序优化的基础技术 熟练掌握 SpringBoot、Spring cloud、 Mybatis 等开源架构 熟练</description>
     </item>
     
     <item>
