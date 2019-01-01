@@ -1,0 +1,3 @@
+
+
+字段被声明为final，则JVM会在初始化final变量后插入一个sfence。

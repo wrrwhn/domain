@@ -81,7 +81,6 @@ toc: true
 		- hb(a,b) & hb(b,c)= hb(a,cgg)
 	- 判断数据是否存在竞争、线程是否安全
 
-
 # 参考
 - [再有人问你Java内存模型是什么，就把这篇文章发给他。](https://www.hollischuang.com/archives/2550)		
 - [JSR-133：JavaTM内存模型与线程规范](http://ifeve.com/wp-content/uploads/2014/03/JSR133%E4%B8%AD%E6%96%87%E7%89%881.pdf)		
