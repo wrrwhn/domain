@@ -6,10 +6,19 @@
     <description>Recent content in Jvm on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 30 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.Monitor</title>
+      <link>http://domain.yqjdcyy.com/post/java.monitor/</link>
+      <pubDate>Sun, 30 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.monitor/</guid>
+      <description>文档 monitor 描述 原文 Synchronizationis built around an internal entity known as the intrinsic lock or monitor lock. (The API specification often refers to this entity simplyas a “monitor.”)， Every object has an intrinsic lock associated with it. By convention, a thread that needs exclusive and consistent access to an object</description>
+    </item>
     
     <item>
       <title>Java.JVM.对象模型</title>

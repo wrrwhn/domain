@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Keyword on 好久不见</title>
+    <link>http://domain.yqjdcyy.com/tags/keyword/</link>
+    <description>Recent content in Keyword on 好久不见</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://domain.yqjdcyy.com/tags/keyword/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java.Keyword.Synchronized</title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword.synchronized/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword.synchronized/</guid>
+      <description>文档 synchronized 原文 The Java Virtual Machine supports synchronization of both methods and sequences of instructions within a method by a single synchronization construct: the monitor. Method-level synchronization is performed implicitly, as part of method invocation and return (§2.11.8). A synchronized method is distinguished in the run-time constant pool&amp;#39;s method_info structure (§4.6) by the</description>
+    </item>
+    
+    <item>
+      <title>Java.Keyword.Volatile</title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword.volatile/</link>
+      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword.volatile/</guid>
+      <description>作用 原子性 对修饰变量的单次读/ 写操作支持 double/ long 数据由高低32位组成，导致操作非原子性 不保证 i++ 等操作的原子性 本质是读+写两次操作 可见性 支持 JMM 中的</description>
+    </item>
+    
+  </channel>
+</rss>

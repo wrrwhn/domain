@@ -2,6 +2,89 @@
 <search>
     
      <entry>
+        <title>Java.Keyword.Synchronized</title>
+        <url>http://domain.yqjdcyy.com/post/java.keyword.synchronized/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Thread</tag><tag>Keyword</tag>
+        </tags>
+        <content type="html">  文档 synchronized  原文
+The Java Virtual Machine supports synchronization of both methods and sequences of instructions within a method by a single synchronization construct: the monitor. Method-level synchronization is performed implicitly, as part of method invocation and return (§2.11.8). A synchronized method is distinguished in the run-time constant pool&amp;#39;s method_info structure (§4.6) by the ACC_SYNCHRONIZED flag, which is checked by the method invocation instructions. When invoking a method for which ACC_SYNCHRONIZED is set, the executing thread enters a monitor, invokes the method itself, and exits the monitor whether the method invocation completes normally or abruptly. During the time the executing thread owns the monitor, no other thread may enter it. If an exception is thrown during invocation of the synchronized method and the synchronized method does not handle the exception, the monitor for the method is automatically exited before the exception is rethrown out of the synchronized method. Synchronization of sequences of instructions is typically used to encode the synchronized block of the Java programming language. The Java Virtual Machine supplies the monitorenter and monitorexit instructions to support such language constructs. Proper implementation of synchronized blocks requires cooperation from a compiler targeting the Java Virtual Machine (§3.14). Structured locking is the situation when, during a method invocation, every exit on a given monitor matches a preceding entry on that monitor. Since there is no assurance that all code submitted to the Java Virtual Machine will perform structured locking, implementations of the Java Virtual Machine are permitted but not required to enforce both of the following two rules guaranteeing structured locking. Let T be a thread and M be a monitor. Then: The number of monitor entries performed by T on M during a method invocation must equal the number of monitor exits performed by T on M during the method invocation whether the method invocation completes normally or abruptly. At no point during a method invocation may the number of monitor exits performed by T on M since the method invocation exceed the number of monitor entries performed by T on M since the method invocation. Note that the monitor entry and exit automatically performed by the Java Virtual Machine when invoking a synchronized method are considered to occur during the calling method&amp;#39;s invocation. 理解
+ synchronized 结构通过 monitor 支持方法和块的同步的实现 方法级同步  于调用和返回时隐性支持 存储于运行时静态池的 method_info 时，会添加以 ACC_SYNCHRONIZED 标志  方法调用时，检测到有 ACC_SYNCHRONIZED 标志时，将让执行线程进入 monitor，并于调用结束或异常抛出前退出 monitor 而当该线程拥有此 monitor时，其它线程将无法进入   块级同步  JVM 通过 monitorenter 和 monitorexit 来支持块的同步  两个指令需要数量匹配     示例 同步方法  SynchronizedTest.java
+public synchronized void print() { System.out.println(&amp;#34;synchronized method&amp;#34;); } javap -verbose SynchronizedTest.class
+public synchronized void print(); descriptor: ()V flags: ACC_PUBLIC, ACC_SYNCHRONIZED Code: stack=2, locals=1, args_size=1 0: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream;  3: ldc #3 // String synchronized method  5: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V  8: return LineNumberTable: line 12: 0 line 13: 8  同步块  SynchronizedTest.java
+public void say() { synchronized (this) { System.out.println(&amp;#34;synchronized block&amp;#34;); } } javap -verbose SynchronizedTest.class
+public void say(); descriptor: ()V flags: ACC_PUBLIC Code: stack=2, locals=3, args_size=1 0: aload_0 1: dup 2: astore_1 3: monitorenter 4: getstatic #2 // Field java/lang/System.out:Ljava/io/PrintStream;  7: ldc #5 // String synchronized block  9: invokevirtual #4 // Method java/io/PrintStream.println:(Ljava/lang/String;)V  12: aload_1 13: monitorexit 14: goto 22 17: astore_2 18: aload_1 19: monitorexit 20: aload_2 21: athrow 22: return  补充 JVM.Object    存储位置 内容 明细     Heap      Object.Instance      HotSpot.Header
+头信息     Instance.Data
+实例数据
+相同宽度的分配在一起     对齐填充数据
+JVM 要求对象大小必须是 8B 的整数倍    HotSpot.Header 通用版本    组成 字段 描述     标记字段
+Mark word  size= JVM.bits(32&amp;frasl;64)    *Stack.Lock 指向锁记录的指针    Stack.Lock.statuc 锁状态标志    *Object.Monitor 指向重量级锁的指针    HashCode 哈希码值    Age GC 分代年龄    Thread.ID 偏向线程 ID    epoch    类型指针
+Klass Pointer  可通过句柄访问或直接访问    官方版本    锁版本  此处以「官方版本」的 32bits 为例
+    Header.Lock 锁状态    名称 锁标志 偏向锁标志 描述     无锁状态 01 0    轻量级锁 00     重量级锁 10  多个线程竞争锁
+线程通过自旋以循环获取锁   GC 标记 11     偏向锁 01 1 单进程同步时使用
+减少不必要的轻量级锁依赖
+相对节省多次 CAS 原子操作    升级  单向 次序  无锁 偏向锁 轻量锁 重量锁   流程  「轻量级锁-重量级锁」升级过程
+ Record.Lock  代码开始同步时，若同步对象为无锁状态，则 VM 将于当前线程建立锁记录 Lock Record 锁记录中存储对象的 Mark word 的拷贝，又名 Displaced Mark Word  COPY  将对象实现状况的 Mark Word 拷贝至栈帧的锁记录中  CAS  VM 尝试使用 CAS 将对象实例的 Mark Word 更新指向锁记录，并将锁记录的 owner 指针指向对象实例的 Mark Word  CAS.Success  将锁状态更新为轻量级锁  CAs.Fail  首先检查是否对象实例的 Mark Word 是否已经指向栈帧  如果是，则说明已经拥有该对象的锁，开始同步操作  确认为多线程竞争，膨胀为重量级锁，并将 Mark Word 指向 Object.Monitor   「无锁-偏向锁-轻量级锁」升级过程
+ Biased_Lock  前置条件 判断 Mark Word 中的偏向锁标志是否开启  Biased.Lock== 1 and Thread.ID== this.iD  若可偏向，且偏向进程 ID 为当前进程 ID，则竞选结束，继续执行同步代码  CAS  通过 CAS 操作竞争锁  CAS.Success  将 Mark Word 中的进程 ID 更新为当前进程 ID 继续执行同步代码  CAS.Fail  判断有多个进程在竞争 升级为轻量级锁  时机  为全局安全点  SafePoint 无字节码正在执行   操作  挂起获得偏向锁的进程 偏向锁升级为轻量级锁 阻塞线程继续执行同步代码      图示  偏向锁版本
+   完整版本
+    自旋锁  描述
+ 互斥情况下，线程 A 获得锁后，线程 B 申请，则 B 阻塞等待 而如若线程上下文的切换成本，较之锁竞争的成本更高，则可让 B 不放弃 CPU 原地等待持有者 A 释放锁  问题
+ 占据 CPU 时长过度 死锁 ABA 异常  场景
+public class SpinLock { private AtomicReference&amp;lt;Thread&amp;gt; sign =new AtomicReference&amp;lt;&amp;gt;(); public void lock(){ Thread current = Thread.currentThread(); while(!sign .compareAndSet(null, current)){ } } public void unlock (){ Thread current = Thread.currentThread(); sign .compareAndSet(current, null); } }  参考  Synchronized的实现原理 2.11.10. Synchronization 从jvm源码看synchronized Java对象的创建、内存布局、访问定位  详细描述对象访问的定位方式  What is in java object header 不得不了解的对象头  详细描述了锁状态的转换  SynchronizedTest.txt  反编译的内容  java自旋锁  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Keyword.Volatile</title>
+        <url>http://domain.yqjdcyy.com/post/java.keyword.volatile/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Thread</tag><tag>Keyword</tag>
+        </tags>
+        <content type="html">  作用  原子性
+ 对修饰变量的单次读/ 写操作支持  double/ long 数据由高低32位组成，导致操作非原子性  不保证 i&#43;&#43; 等操作的原子性  本质是读&#43;写两次操作   可见性
+ 支持 JMM 中的可见性  多线程时对同一变量进行操作，某一进程对其所做的修改，都应立马被其它线程可见   有序性
+ 针对单例模式情况下，对单例对象添加修饰以保障执行顺序正常   原理 可见性  线程使用的数据来自于主存，缓存于线程内存中  修改后，将线程内存值刷新至主存 更新引用该值的其它线程的，线程内存中的该值无效   有序性  针对处理器排序，使用内存屏障保障执行结果的正确  写之后插入 storestore 屏障 读之前插入 loadload 屏障  针对 JIT 编译重排序，根据 happen-before 规则进行优化  适合场景  状态位  多线程的逻辑状态判断位  双重检查  单例模式  低开销读写锁
+private volatile int value; public synchronized int getValue(){return value;}  补充 Happen-Before  规则
+ 官方版本
+Each action in a thread happens before every subsequent action in that thread. An unlock on a monitor happens before every subsequent lock on that monitor. A write to a volatile field happens before every subsequent read of that volatile. A call to start() on a thread happens before any actions in the started thread. All actions in a thread happen before any other thread successfully returns from a join() on that thread. If an action a happens before an action b, and b happens before an action c, then a happens before c. 理解
+ 保障同一线程内动作执行的顺序 针对同一 monitor，解锁前动作先于加锁动作 针对 volatile 所修饰的字段，写操作先于之后的任意读操作 线程的 start() 的执行先于该线程内的任一动作 线程操作先于通过 join() 方式加入的其它线程 优先顺序具有传递性，如 a&amp;lt; b, b&amp;lt; c 则 a&amp;lt; c    as-if-serial  不管编译器或处理器如何重排，都不能影响程序执行结果的正确性  内存屏障  作用
+ 用于避免 CPU 重排序对执行结果正确性的影响  类型
+   类型 示例 描述     LoadLoad
+lfence load-A;LoadLoad;Load-B 确保在B 加载之前，A能先加载完成   StoreStore
+sfence Store-A;StoreStore;Store-B    LoadStore Load-A;LoadStore;Store-B    StoreLoad
+mfence Store-A;StoreLoad;Load-B 开销最大
+兼具前三者功能，又名全能屏障    规则
+ JSR-133 排序规则    参考  JVM内存模型、指令重排、内存屏障概念解析 一文解决内存屏障 谈乱序执行和内存屏障  as-if-serial 原则  Java内存模型Cookbook（二）内存屏障  内存屏障的事例 补充有原子操作情况下的屏障事例  Java 并发编程：volatile的使用及其原理 深入分析volatile的实现原理 全面理解Java内存模型(JMM)及volatile关键字  重排序等事例详尽  正确使用 Volatile 变量  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.JVM.Monitor</title>
+        <url>http://domain.yqjdcyy.com/post/java.monitor/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>JVM</tag><tag>Thread</tag>
+        </tags>
+        <content type="html">  文档 monitor  描述
+ 原文
+Synchronizationis built around an internal entity known as the intrinsic lock or monitor lock. (The API specification often refers to this entity simplyas a “monitor.”)， Every object has an intrinsic lock associated with it. By convention, a thread that needs exclusive and consistent access to an object’s fields has to acquire the object’s intrinsic lock before accessing them, and then release the intrinsic lock when it’s done with them. 理解
+ 每个对象都拥有一内部事务锁 当进程要访问字段前，需先排他性地获得该内部锁，并于操作完成后释放该锁    monitorenter  原文
+Each object is associated with a monitor. A monitor is locked if and only if it has an owner. The thread that executes monitorenter attempts to gain ownership of the monitor associated with objectref, as follows: If the entry count of the monitor associated with objectref is zero, the thread enters the monitor and sets its entry count to one. The thread is then the owner of the monitor. If the thread already owns the monitor associated with objectref, it reenters the monitor, incrementing its entry count. If another thread already owns the monitor associated with objectref, the thread blocks until the monitor&amp;#39;s entry count is zero, then tries again to gain ownership. A monitorenter instruction may be used with one or more monitorexit instructions (§monitorexit) to implement a synchronized statement in the Java programming language (§3.14). The monitorenter and monitorexit instructions are not used in the implementation of synchronized methods, although they can be used to provide equivalent locking semantics. Monitor entry on invocation of a synchronized method, and monitor exit on its return, are handled implicitly by the Java Virtual Machine&amp;#39;s method invocation and return instructions, as if monitorenter and monitorexit were used. The association of a monitor with an object may be managed in various ways that are beyond the scope of this specification. For instance, the monitor may be allocated and deallocated at the same time as the object. Alternatively, it may be dynamically allocated at the time when a thread attempts to gain exclusive access to the object and freed at some later time when no thread remains in the monitor for the object. The synchronization constructs of the Java programming language require support for operations on monitors besides entry and exit. These include waiting on a monitor (Object.wait) and notifying other threads waiting on a monitor (Object.notifyAll and Object.notify). These operations are supported in the standard package java.lang supplied with the Java Virtual Machine. No explicit support for these operations appears in the instruction set of the Java Virtual Machine. 理解
+ 每个对象都关联一个 monitor，当其拥有所有者时， monitor 将被锁定  当对象引用的 monitor 的持有者为空（进入的数量为0）时，线程才能拥有该 monitor 并将其进入数更新为 1 当拥有 monitor 的持有者重复进入，则将进入数自增 当 monitor 有拥有者时，其它进程必须阻塞以等待拥有者退出，进入数重置为 0  对象与 monitor 同时分配、释放 java.lang.Object 对象通过 wait 和 notifyAll 隐性支持了 monitor 的 进入和退出   monitorexit  原文
+The objectref must be of type reference. The thread that executes monitorexit must be the owner of the monitor associated with the instance referenced by objectref. The thread decrements the entry count of the monitor associated with objectref. If as a result the value of the entry count is zero, the thread exits the monitor and is no longer its owner. Other threads that are blocking to enter the monitor are allowed to attempt to do so. One or more monitorexit instructions may be used with a monitorenter instruction (§monitorenter) to implement a synchronized statement in the Java programming language (§3.14). The monitorenter and monitorexit instructions are not used in the implementation of synchronized methods, although they can be used to provide equivalent locking semantics. The Java Virtual Machine supports exceptions thrown within synchronized methods and synchronized statements differently: Monitor exit on normal synchronized method completion is handled by the Java Virtual Machine&amp;#39;s return instructions. Monitor exit on abrupt synchronized method completion is handled implicitly by the Java Virtual Machine&amp;#39;s athrow instruction. When an exception is thrown from within a synchronized statement, exit from the monitor entered prior to the execution of the synchronized statement is achieved using the Java Virtual Machine&amp;#39;s exception handling mechanism (§3.14). 理解
+ 调用 monitorexit 的线程仅可为拥有其 monitor 的对象引用所关联的实例 线程调用 monitorexit 时，将减少其关联的 monitor 的进入数，并当进入数减少为 0 时，失去对该对象的所有权 异常处理机制  同步方法将由 JVM 的 athrow 指令隐性处理 同步块则由 JVM 的异常处理机制接收    实现 ObjectMonitor 结构  HotSpot.ObjectMonitor     字段 作用     _owner 持有线程   _recursions 持有线程的进入次数   _cxq 多线程竞争锁时使用
+单向链表   _EntryList 待竞选线程池
+双向循环链表   _WaitSet 等待线程池
+双向循环链表    流程    参考  monitorenter monitorexit markOop.hpp  object-monitor 源码  从jvm源码看synchronized  </content>
+    </entry>
+    
+     <entry>
         <title>Java.JVM.对象模型</title>
         <url>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</url>
         <categories>
@@ -5919,15 +6002,14 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
     
      <entry>
         <title></title>
-        <url>http://domain.yqjdcyy.com/post/java.keyword.volatile/</url>
+        <url>http://domain.yqjdcyy.com/post/java.keyword.final/</url>
         <categories>
           
         </categories>
         <tags>
           
         </tags>
-        <content type="html">  作用 store-store store-load
-参考 http://ifeve.com/juc-atomic-class-lazyset-que/ http://g.oswego.edu/dl/jmm/cookbook.html https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6275329
+        <content type="html"> 字段被声明为final，则JVM会在初始化final变量后插入一个sfence。
 </content>
     </entry>
     
@@ -5952,16 +6034,29 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
         <tags>
           
         </tags>
-        <content type="html"> 关键字
-volatile
+        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   monitor
 synchronized
+final
 lock
 Thread
-Unsafe
-工具
-Atomic
-原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 线程池
- []() []() []() []() []() []() []() []()  </content>
+工具 进程  调用
+ Runtime
+Process exec(*) ProcessBuilder
+new ProcessBuilder(...).start()  底层
+ ProcessImpl
+ JVM.native method      方法名 Windows API     create CreateProcess
+CreatePipe   close CloseHandle   waitfor WaitForMultipleObject   destroy TerminateProcess   exitValue GetExitCodeProcess     注意事项
+ 管道容量有限，需及时读取  否则会导致进程挂起、死锁  windows 环境下调用，需要运行 windows 的命令解释器  cmd /c start cmd.exe  Linux 的管道操作 | 和 Windows 环境下的重定向 &amp;gt; 等均无法通过命令参数实现   线程  调用
+ Thread
+class YaoThread extends Thread { @Override public void run() { System.out.println(&amp;#34;Yao.Thread running&amp;#34;); } } Runnable
+class YaoRunnable implements Runnable { @Override public void run() { System.out.println(&amp;#34;Yao.Runnable running&amp;#34;); } }  底层
+ static {registerNatives();} 以注册本地方法供 Thread 方法调用
+   Native 调用方法     start0 &amp;amp;JVM_StartThread   stop0 &amp;amp;JVM_StopThread   isAlive &amp;amp;JVM_IsThreadAlive   suspend0 &amp;amp;JVM_SuspendThread   resume0 &amp;amp;JVM_ResumeThread   setPriority0 &amp;amp;JVM_SetThreadPriority   yield &amp;amp;JVM_Yield   sleep &amp;amp;JVM_Sleep   currentThread &amp;amp;JVM_CurrentThread   countStackFrames &amp;amp;JVM_CountStackFrames   interrupt0 &amp;amp;JVM_Interrupt   isInterrupted &amp;amp;JVM_IsInterrupted   holdsLock &amp;amp;JVM_HoldsLock   getThreads &amp;amp;JVM_GetAllThreads   dumpThreads &amp;amp;JVM_DumpThreads    调用流程
+ Thread.start  JVM_StartThread =&amp;gt; 创建本地线程 thread_entry  new JavaThread(&amp;amp;thread_entry, sz)  vmSymbolHandles::run_method_name()  template(run_method_name,&amp;quot;run&amp;quot;) =&amp;gt; 调用Thread.run() 方法      java.lang.Thread 在系统本地线程的基础上，进行了封装
+ 但屏蔽了相关实现细节
+   细项 描述     线程返回值 Java 未提供
+一般用于检测线程是否正常退出   同步 join() 于循环调用时不可控   ID 自定义的计数 ID，与操作系统的线程 ID 无关   运行时间统计 统计值不准确
+因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间       Concurrent Atomic 原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 线程池 参考  进程 线程 协程 管程 纤程 概念对比理解 Java 中的进程与线程 []() []() []() []() []() []()  </content>
     </entry>
     
      <entry>

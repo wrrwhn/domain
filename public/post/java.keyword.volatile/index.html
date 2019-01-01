@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title> - 好久不见</title>
+    <title>Java.Keyword.Volatile - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="">
+    <meta property="og:title" content="Java.Keyword.Volatile">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content=" - 好久不见" />
+    <meta name="title" content="Java.Keyword.Volatile - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.keyword.volatile/" itemprop="url">
-        
+        Java.Keyword.Volatile
         </a>
       </h1>
       <div class="post-meta">
@@ -126,18 +126,36 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
-    0001-01-01
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-12-31">
+    2018-12-31
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">7 字 ~1分钟</span>
+<span class="leancloud-visitors-count">808 字 ~2分钟</span>
 </span>
       </div>
     </header>
@@ -146,32 +164,228 @@
 
 <h1 id="作用">作用</h1>
 
-<p>store-store
-store-load</p>
+<ul>
+<li><p>原子性</p>
+
+<ul>
+<li>对修饰变量的单次读/ 写操作支持
+
+<ul>
+<li>double/ long 数据由高低32位组成，导致操作非原子性</li>
+</ul></li>
+<li>不保证 <code>i++</code> 等操作的原子性
+
+<ul>
+<li>本质是读+写两次操作</li>
+</ul></li>
+</ul></li>
+
+<li><p>可见性</p>
+
+<ul>
+<li>支持 JMM 中的可见性
+
+<ul>
+<li>多线程时对同一变量进行操作，某一进程对其所做的修改，都应立马被其它线程可见</li>
+</ul></li>
+</ul></li>
+
+<li><p>有序性</p>
+
+<ul>
+<li>针对单例模式情况下，对单例对象添加修饰以保障执行顺序正常</li>
+</ul></li>
+</ul>
+
+<h1 id="原理">原理</h1>
+
+<h2 id="可见性">可见性</h2>
+
+<ul>
+<li>线程使用的数据来自于主存，缓存于线程内存中
+
+<ul>
+<li>修改后，将线程内存值<strong>刷新至主存</strong></li>
+<li>更新引用该值的<strong>其它线程</strong>的，线程内存中的该值<strong>无效</strong></li>
+</ul></li>
+</ul>
+
+<h2 id="有序性">有序性</h2>
+
+<ul>
+<li>针对处理器排序，使用内存屏障保障执行结果的正确
+
+<ul>
+<li><strong>写之后插入 storestore 屏障</strong></li>
+<li><strong>读之前插入 loadload 屏障</strong></li>
+</ul></li>
+<li>针对 JIT 编译重排序，根据 <strong>happen-before</strong> 规则进行优化</li>
+</ul>
+
+<h1 id="适合场景">适合场景</h1>
+
+<ul>
+<li>状态位
+
+<ul>
+<li>多线程的逻辑状态判断位</li>
+</ul></li>
+<li>双重检查
+
+<ul>
+<li>单例模式</li>
+</ul></li>
+
+<li><p>低开销读写锁</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">volatile</span> <span style="color:#66d9ef">int</span> value<span style="color:#f92672">;</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">synchronized</span> <span style="color:#66d9ef">int</span> <span style="color:#a6e22e">getValue</span><span style="color:#f92672">(){</span><span style="color:#66d9ef">return</span> value<span style="color:#f92672">;}</span></code></pre></div></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="happen-before">Happen-Before</h2>
+
+<ul>
+<li><p>规则</p>
+
+<ul>
+<li><p>官方版本</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Each action in a thread happens before every subsequent action in that thread. 
+An unlock on a monitor happens before every subsequent lock on that monitor. 
+A write to a volatile field happens before every subsequent read of that volatile. 
+A call to start() on a thread happens before any actions in the started thread. 
+All actions in a thread happen before any other thread successfully returns from a join() on that thread. 
+If an action a happens before an action b, and b happens before an action c, then a happens before c.</pre></div></li>
+
+<li><p>理解</p>
+
+<ul>
+<li>保障<strong>同一线程</strong>内动作执行的顺序</li>
+<li>针对<strong>同一 monitor</strong>，解锁前动作先于加锁动作</li>
+<li>针对 <strong>volatile</strong> 所修饰的字段，写操作先于之后的任意读操作</li>
+<li>线程的 <strong>start()</strong> 的执行先于该线程内的任一动作</li>
+<li>线程操作先于通过 <strong>join()</strong> 方式加入的其它线程</li>
+<li>优先顺序具有<strong>传递性</strong>，如 a&lt; b, b&lt; c 则 a&lt; c</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="as-if-serial">as-if-serial</h2>
+
+<ul>
+<li>不管编译器或处理器如何重排，都不能影响程序执行结果的正确性</li>
+</ul>
+
+<h2 id="内存屏障">内存屏障</h2>
+
+<ul>
+<li><p>作用</p>
+
+<ul>
+<li>用于避免 CPU 重排序对执行结果正确性的影响</li>
+</ul></li>
+
+<li><p>类型</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>LoadLoad<br>lfence</td>
+<td>load-A;LoadLoad;Load-B</td>
+<td>确保在B 加载之前，A能先加载完成</td>
+</tr>
+
+<tr>
+<td>StoreStore<br>sfence</td>
+<td>Store-A;StoreStore;Store-B</td>
+<td></td>
+</tr>
+
+<tr>
+<td>LoadStore</td>
+<td>Load-A;LoadStore;Store-B</td>
+<td></td>
+</tr>
+
+<tr>
+<td>StoreLoad<br>mfence</td>
+<td>Store-A;StoreLoad;Load-B</td>
+<td><strong>开销最大</strong><br>兼具前三者功能，又名全能屏障</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>规则</p>
+
+<ul>
+<li>JSR-133 排序规则</li>
+<li><img src="http://doc.yqjdcyy.com/17e1f29a-9ceb-4fba-9ac4-2808dca57af2.png" alt="CPU-Fence.png" /></li>
+</ul></li>
+</ul>
 
 <h1 id="参考">参考</h1>
 
-<p><a href="http://ifeve.com/juc-atomic-class-lazyset-que/">http://ifeve.com/juc-atomic-class-lazyset-que/</a>
-<a href="http://g.oswego.edu/dl/jmm/cookbook.html">http://g.oswego.edu/dl/jmm/cookbook.html</a>
-<a href="https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6275329">https://bugs.java.com/bugdatabase/view_bug.do?bug_id=6275329</a></p>
+<ul>
+<li><a href="https://www.cnblogs.com/chenyangyao/p/5269622.html">JVM内存模型、指令重排、内存屏障概念解析</a></li>
+<li><a href="https://monkeysayhi.github.io/2017/12/28/%E4%B8%80%E6%96%87%E8%A7%A3%E5%86%B3%E5%86%85%E5%AD%98%E5%B1%8F%E9%9A%9C/">一文解决内存屏障</a></li>
+<li><a href="https://blog.csdn.net/dd864140130/article/details/56494925">谈乱序执行和内存屏障</a>
+
+<ul>
+<li><code>as-if-serial</code> 原则</li>
+</ul></li>
+<li><a href="http://ifeve.com/jmm-cookbook-mb/">Java内存模型Cookbook（二）内存屏障</a>
+
+<ul>
+<li>内存屏障的事例</li>
+<li>补充有原子操作情况下的屏障事例</li>
+</ul></li>
+<li><a href="http://www.cnblogs.com/paddix/p/5428507.html">Java 并发编程：volatile的使用及其原理</a></li>
+<li><a href="http://cmsblogs.com/?p=2092">深入分析volatile的实现原理</a></li>
+<li><a href="https://blog.csdn.net/javazejian/article/details/72772461">全面理解Java内存模型(JMM)及volatile关键字</a>
+
+<ul>
+<li>重排序等事例详尽</li>
+</ul></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-jtp06197.html">正确使用 Volatile 变量</a></li>
+</ul>
 
     </div>
     <footer class="post-footer">
      
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/java" rel="tag" title="Java">#Java#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/thread" rel="tag" title="Thread">#Thread#</a>
+    
+    <a href="http://domain.yqjdcyy.com/tags/keyword" rel="tag" title="Keyword">#Keyword#</a>
+    
+</div>
+
+
 
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/java.reflection/" rel="next" title="">
-        <i class="fa fa-chevron-left"></i> 
+        <a href="http://domain.yqjdcyy.com/post/java.monitor/" rel="next" title="Java.JVM.Monitor">
+        <i class="fa fa-chevron-left"></i> Java.JVM.Monitor
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/hello.docker.data/" rel="prev" title="">
-         <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/java.keyword.synchronized/" rel="prev" title="Java.Keyword.Synchronized">
+        Java.Keyword.Synchronized <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -181,7 +395,7 @@ store-load</p>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：
+                标题：Java.Keyword.Volatile
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -214,7 +428,16 @@ store-load</p>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/profile-image.png"
@@ -226,7 +449,7 @@ store-load</p>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">279</span>
+        <span class="site-state-item-count">282</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -243,7 +466,7 @@ store-load</p>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">127</span>
+        <span class="site-state-item-count">128</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -269,6 +492,29 @@ store-load</p>
 </div>
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#作用">作用</a></li>
+<li><a href="#原理">原理</a>
+<ul>
+<li><a href="#可见性">可见性</a></li>
+<li><a href="#有序性">有序性</a></li>
+</ul></li>
+<li><a href="#适合场景">适合场景</a></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#happen-before">Happen-Before</a></li>
+<li><a href="#as-if-serial">as-if-serial</a></li>
+<li><a href="#内存屏障">内存屏障</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 
@@ -279,7 +525,7 @@ store-load</p>
       <div class="footer-inner">
         <div class="copyright" >
   <span itemprop="copyrightYear">  &copy; 
-  2009 - 2018</span>
+  2009 - 2019</span>
   <span class="with-love"><i class="fa fa-heart"></i></span>
   <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>

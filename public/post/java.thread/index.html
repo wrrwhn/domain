@@ -137,38 +137,361 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">25 字 ~1分钟</span>
+<span class="leancloud-visitors-count">212 字 ~1分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
-    <p>关键字</p>
+    
 
-<p>volatile</p>
+<h1 id="概念">概念</h1>
+
+<h2 id="进程">进程</h2>
+
+<ul>
+<li>操作系统中能独立运行、分配资源的基本单位</li>
+<li>= <code>程序</code>= <code>机器指令+ 数据+ 堆栈</code></li>
+</ul>
+
+<h2 id="线程">线程</h2>
+
+<ul>
+<li>独立运行、调度的基本单位</li>
+<li>减少调度成本，提高并发性</li>
+<li>同一进程的多个线程可共享进程的资源</li>
+</ul>
+
+<h2 id="协程">协程</h2>
+
+<ul>
+<li>用户模式下，完全由应用程序控制的，轻量级线程
+
+<ul>
+<li>拥有自己的寄存器、栈等结构</li>
+</ul></li>
+<li>一个线程包含一或多个协程</li>
+</ul>
+
+<h2 id="纤程">纤程</h2>
+
+<ul>
+<li>Windows 环境下，协程的叫法</li>
+<li>线程一次只能执行一个纤程的代码</li>
+</ul>
+
+<h2 id="管程">管程</h2>
+
+<ul>
+<li>用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问</li>
+</ul>
+
+<h2 id="并">并*</h2>
+
+<ul>
+<li>并行
+
+<ul>
+<li>多个程序，同一时间只有一个运行</li>
+<li>多个队伍走同一个通道</li>
+</ul></li>
+<li>并发
+
+<ul>
+<li>多个程序同时运行</li>
+<li>多个队伍走多个通道</li>
+</ul></li>
+</ul>
+
+<p>monitor</p>
+
+<!-- Unsafe -->
+
+<!-- volatile -->
 
 <p>synchronized</p>
+
+<p>final</p>
 
 <p>lock</p>
 
 <p>Thread</p>
 
-<p>Unsafe</p>
+<h1 id="工具">工具</h1>
 
-<p>工具</p>
-
-<p>Atomic</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">原子更新
-    基本类型
-    数组
-    引用
-    字段.
-
-使用  Unsage 实现的包装类</pre></div>
-<p>线程池</p>
+<h2 id="进程-1">进程</h2>
 
 <ul>
-<li>[]()</li>
-<li>[]()</li>
+<li><p>调用</p>
+
+<ul>
+<li><p><code>Runtime</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Process <span style="color:#a6e22e">exec</span><span style="color:#f92672">(*)</span></code></pre></div></li>
+
+<li><p><code>ProcessBuilder</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">new</span> ProcessBuilder<span style="color:#f92672">(...).</span><span style="color:#a6e22e">start</span><span style="color:#f92672">()</span></code></pre></div></li>
+</ul></li>
+
+<li><p>底层</p>
+
+<ul>
+<li><p><code>ProcessImpl</code></p>
+
+<ul>
+<li>JVM.native method
+<br /></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>方法名</th>
+<th>Windows API</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>create</td>
+<td>CreateProcess<br>CreatePipe</td>
+</tr>
+
+<tr>
+<td>close</td>
+<td>CloseHandle</td>
+</tr>
+
+<tr>
+<td>waitfor</td>
+<td>WaitForMultipleObject</td>
+</tr>
+
+<tr>
+<td>destroy</td>
+<td>TerminateProcess</td>
+</tr>
+
+<tr>
+<td>exitValue</td>
+<td>GetExitCodeProcess</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+
+<li><p>注意事项</p>
+
+<ul>
+<li>管道容量有限，需及时读取
+
+<ul>
+<li>否则会导致进程挂起、死锁</li>
+</ul></li>
+<li>windows 环境下调用，需要运行 windows 的命令解释器
+
+<ul>
+<li><code>cmd /c start cmd.exe</code></li>
+</ul></li>
+<li>Linux 的管道操作 <code>|</code> 和 Windows 环境下的重定向 <code>&gt;</code> 等均无法通过命令参数实现</li>
+</ul></li>
+</ul>
+
+<h2 id="线程-1">线程</h2>
+
+<ul>
+<li><p>调用</p>
+
+<ul>
+<li><p><code>Thread</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YaoThread</span> <span style="color:#66d9ef">extends</span> Thread <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Yao.Thread running&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+
+<li><p><code>Runnable</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">YaoRunnable</span> <span style="color:#66d9ef">implements</span> Runnable <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@Override</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">run</span><span style="color:#f92672">()</span> <span style="color:#f92672">{</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Yao.Runnable running&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div></li>
+</ul></li>
+
+<li><p>底层</p>
+
+<ul>
+<li><p><code>static {registerNatives();}</code> 以注册本地方法供 Thread 方法调用</p>
+
+<table>
+<thead>
+<tr>
+<th>Native</th>
+<th>调用方法</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><strong>start0</strong></td>
+<td><code>&amp;JVM_StartThread</code></td>
+</tr>
+
+<tr>
+<td><strong>stop0</strong></td>
+<td><code>&amp;JVM_StopThread</code></td>
+</tr>
+
+<tr>
+<td>isAlive</td>
+<td><code>&amp;JVM_IsThreadAlive</code></td>
+</tr>
+
+<tr>
+<td>suspend0</td>
+<td><code>&amp;JVM_SuspendThread</code></td>
+</tr>
+
+<tr>
+<td>resume0</td>
+<td><code>&amp;JVM_ResumeThread</code></td>
+</tr>
+
+<tr>
+<td>setPriority0</td>
+<td><code>&amp;JVM_SetThreadPriority</code></td>
+</tr>
+
+<tr>
+<td><strong>yield</strong></td>
+<td><code>&amp;JVM_Yield</code></td>
+</tr>
+
+<tr>
+<td><strong>sleep</strong></td>
+<td><code>&amp;JVM_Sleep</code></td>
+</tr>
+
+<tr>
+<td><strong>currentThread</strong></td>
+<td><code>&amp;JVM_CurrentThread</code></td>
+</tr>
+
+<tr>
+<td>countStackFrames</td>
+<td><code>&amp;JVM_CountStackFrames</code></td>
+</tr>
+
+<tr>
+<td><strong>interrupt0</strong></td>
+<td><code>&amp;JVM_Interrupt</code></td>
+</tr>
+
+<tr>
+<td>isInterrupted</td>
+<td><code>&amp;JVM_IsInterrupted</code></td>
+</tr>
+
+<tr>
+<td>holdsLock</td>
+<td><code>&amp;JVM_HoldsLock</code></td>
+</tr>
+
+<tr>
+<td>getThreads</td>
+<td><code>&amp;JVM_GetAllThreads</code></td>
+</tr>
+
+<tr>
+<td>dumpThreads</td>
+<td><code>&amp;JVM_DumpThreads</code></td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>调用流程</p>
+
+<ul>
+<li><code>Thread.start</code>
+
+<ul>
+<li><code>JVM_StartThread</code></li>
+<li>=&gt; 创建本地线程 <code>thread_entry</code>
+
+<ul>
+<li><code>new JavaThread(&amp;thread_entry, sz)</code>
+
+<ul>
+<li><code>vmSymbolHandles::run_method_name()</code>
+
+<ul>
+<li><code>template(run_method_name,&quot;run&quot;)</code></li>
+<li>=&gt; 调用<code>Thread.run()</code> 方法</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
+
+<li><p>java.lang.Thread 在系统本地线程的基础上，进行了封装</p>
+
+<ul>
+<li><p>但屏蔽了相关实现细节</p>
+
+<table>
+<thead>
+<tr>
+<th>细项</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>线程返回值</td>
+<td>Java 未提供<br>一般用于检测线程是否正常退出</td>
+</tr>
+
+<tr>
+<td>同步</td>
+<td><code>join()</code> 于循环调用时不可控</td>
+</tr>
+
+<tr>
+<td>ID</td>
+<td>自定义的计数 ID，与操作系统的线程 ID 无关</td>
+</tr>
+
+<tr>
+<td>运行时间统计</td>
+<td>统计值不准确<br>因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间</td>
+</tr>
+</tbody>
+</table></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h1 id="concurrent">Concurrent</h1>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Atomic
+
+
+    原子更新
+        基本类型
+        数组
+        引用
+        字段.
+
+    使用  Unsage 实现的包装类
+
+
+
+线程池</pre></div>
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/26757689">进程 线程 协程 管程 纤程 概念对比理解</a></li>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-processthread/index.html">Java 中的进程与线程</a></li>
 <li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
@@ -248,7 +571,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">279</span>
+        <span class="site-state-item-count">282</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -265,7 +588,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">127</span>
+        <span class="site-state-item-count">128</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -301,7 +624,7 @@
       <div class="footer-inner">
         <div class="copyright" >
   <span itemprop="copyrightYear">  &copy; 
-  2009 - 2018</span>
+  2009 - 2019</span>
   <span class="with-love"><i class="fa fa-heart"></i></span>
   <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>
