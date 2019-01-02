@@ -26,7 +26,7 @@
       <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</guid>
-      <description> TODO </description>
+      <description>OOP-Klass-Model 设计 结构 Level Level Level Level 描述 OOP 普通对象类型 Ordinary Object Pointer InstanceOop Header 对象头 Mark Word 记录锁、GC分代等相关信息 *Klass InstanceKlass 的指针 Data 实例数据 Klass 用于描述 Java 类的 C++ 对等结构 解决 Java 对象的</description>
     </item>
     
     <item>

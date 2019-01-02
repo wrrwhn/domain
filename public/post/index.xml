@@ -44,7 +44,7 @@
       <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</guid>
-      <description> TODO </description>
+      <description>OOP-Klass-Model 设计 结构 Level Level Level Level 描述 OOP 普通对象类型 Ordinary Object Pointer InstanceOop Header 对象头 Mark Word 记录锁、GC分代等相关信息 *Klass InstanceKlass 的指针 Data 实例数据 Klass 用于描述 Java 类的 C++ 对等结构 解决 Java 对象的</description>
     </item>
     
     <item>
@@ -2507,7 +2507,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.reflection/</guid>
-      <description> []() 深入解析Java反射-基础 []() []() []() []() []() []()  </description>
+      <description> 描述 代码 场景  []() 深入解析Java反射-基础 Java反射: 从JDK到JVM全链路详解 []() []() []() []() []()  </description>
     </item>
     
     <item>
@@ -2516,9 +2516,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.thread/</guid>
-      <description>概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   monitor
-synchronized
-final
+      <description>概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   final
 lock
 Thread
 工具 进程  调用

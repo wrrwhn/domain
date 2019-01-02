@@ -155,14 +155,776 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1 字 ~1分钟</span>
+<span class="leancloud-visitors-count">930 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="todo">TODO</h1>
+<h1 id="oop-klass-model">OOP-Klass-Model</h1>
+
+<h2 id="设计">设计</h2>
+
+<h3 id="结构">结构</h3>
+
+<table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Level</th>
+<th>Level</th>
+<th>Level</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>OOP</td>
+<td></td>
+<td></td>
+<td></td>
+<td>普通对象类型<br>Ordinary Object Pointer</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InstanceOop</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Header</td>
+<td></td>
+<td>对象头</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>Mark Word</td>
+<td>记录锁、GC分代等相关信息</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td>*Klass</td>
+<td><code>InstanceKlass</code> 的指针</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>Data</td>
+<td></td>
+<td>实例数据</td>
+</tr>
+
+<tr>
+<td>Klass</td>
+<td></td>
+<td></td>
+<td></td>
+<td>用于描述 Java 类的 C++ 对等结构<br>解决 Java 对象的分发</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InstanceKlass</td>
+<td></td>
+<td></td>
+<td>加载 class 文件时，在方法区创建<br>内容包括常量池、字段和方法等</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="原因">原因</h3>
+
+<ul>
+<li>C++
+
+<ul>
+<li>由虚函数表和数据组成</li>
+<li>虚函数表按声明顺序记录所有的虚函数
+
+<ul>
+<li>编译时，虚函数表的信息将由子类重写的方法替换</li>
+</ul></li>
+</ul></li>
+<li>Java
+
+<ul>
+<li>避免每个对象都包含虚函数表</li>
+<li>将这部分重复的信息保存在统一的表示，<code>类</code>，上</li>
+</ul></li>
+</ul>
+
+<h2 id="oop">OOP</h2>
+
+<h3 id="定义">定义</h3>
+
+<table>
+<thead>
+<tr>
+<th>表</th>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>oopDesc</td>
+<td></td>
+<td>用于代码不同类型在 VM 中的定义</td>
+</tr>
+
+<tr>
+<td></td>
+<td>volatile markOop  _mark</td>
+<td>上例中的 <code>Mark Word</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td>union _metadata {wideKlassOop; narrowOop;} _metadata</td>
+<td>上例中的 <code>*Klass</code></td>
+</tr>
+
+<tr>
+<td></td>
+<td>friend class VMStructs</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>static BarrierSet* _bs;</td>
+<td>内存屏障设置</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="继承">继承</h3>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>继承</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Oop</td>
+<td></td>
+<td>基类</td>
+</tr>
+
+<tr>
+<td>InstanceOop</td>
+<td></td>
+<td>类实例</td>
+</tr>
+
+<tr>
+<td>ArrayOop</td>
+<td></td>
+<td>数据抽象基类</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ObjArrayOop</td>
+<td>对象数组</td>
+</tr>
+
+<tr>
+<td></td>
+<td>TypeArrayOop</td>
+<td>类型数组</td>
+</tr>
+
+<tr>
+<td>MarkOop</td>
+<td></td>
+<td>对象头</td>
+</tr>
+
+<tr>
+<td>ConstantPoolOop</td>
+<td></td>
+<td>常量池</td>
+</tr>
+
+<tr>
+<td>ConstantPoolCacheOop</td>
+<td></td>
+<td>常量池缓冲区</td>
+</tr>
+
+<tr>
+<td>MethodOop</td>
+<td></td>
+<td>方法</td>
+</tr>
+
+<tr>
+<td>KlassOop</td>
+<td></td>
+<td>与 Java 类对等的 C++ 类</td>
+</tr>
+
+<tr>
+<td>ConstMethodOop</td>
+<td></td>
+<td>静态方法</td>
+</tr>
+
+<tr>
+<td>MethodDataOop</td>
+<td></td>
+<td>性能相关</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="klass">Klass</h2>
+
+<h3 id="定义-1">定义</h3>
+
+<table>
+<thead>
+<tr>
+<th>表</th>
+<th>字段</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>InstanceKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>objArrayOop     _methods</td>
+<td>方法列表</td>
+</tr>
+
+<tr>
+<td></td>
+<td>typeArrayOop    _method_ordering</td>
+<td>方法顺序</td>
+</tr>
+
+<tr>
+<td></td>
+<td>objArrayOop     _local_interfaces</td>
+<td>实现接口</td>
+</tr>
+
+<tr>
+<td></td>
+<td>objArrayOop     _transitive_interfaces</td>
+<td>继承的接口</td>
+</tr>
+
+<tr>
+<td></td>
+<td>typeArrayOop    _fields</td>
+<td>域<br>字段</td>
+</tr>
+
+<tr>
+<td></td>
+<td>constantPoolOop _constants</td>
+<td>常量</td>
+</tr>
+
+<tr>
+<td></td>
+<td>oop             _class_loader</td>
+<td>类加载器</td>
+</tr>
+
+<tr>
+<td></td>
+<td>oop             _protection_domain</td>
+<td>保护哉</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="继承-1">继承</h3>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>继承</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Klass_vtbl</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Klass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>InstanceKlass</td>
+<td></td>
+<td>描述 Java 类</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InstanceMirrorKlass</td>
+<td>描述 java.lang.class</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InstanceRefKlass</td>
+<td>代表 java.lang.ref.Reference 子类</td>
+</tr>
+
+<tr>
+<td>KlassKlass</td>
+<td></td>
+<td>描述 instanceKlass 的 Klass</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InstanceKlassKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>ArrayKlassKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>ObjArrayKlassKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>TypeArrayKlassKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td>ArrayKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>ObjArrayKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>TypeArrayKlass</td>
+<td></td>
+</tr>
+
+<tr>
+<td>ConstantPoolKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>ConstantPoolCacheKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>ConstMethodKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>MethodKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>MethodDataKlass</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>CompliedICholderKlass</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="引用">引用</h3>
+
+<ul>
+<li>建立在 Klass 也是一个 Oop 的基础上</li>
+
+<li><p>引用路径</p>
+
+<ul>
+<li>Instance/ OopDesc</li>
+<li>InstanceKlass</li>
+<li>InstanceKlassKlass</li>
+<li>KlassKlass
+<br /></li>
+</ul></li>
+
+<li><p>引用图示</p>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/c3dec71d-b24a-46df-ba99-3e719ee3108d.png" alt="JVM-Klass-OOPS.png" /></li>
+</ul></li>
+</ul>
+
+<h1 id="示例">示例</h1>
+
+<h2 id="代码">代码</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Model</span>
+<span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">int</span> a <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> b<span style="color:#f92672">;</span>
+
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">Model</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">b</span> <span style="color:#f92672">=</span> b<span style="color:#f92672">;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> c <span style="color:#f92672">=</span> 10<span style="color:#f92672">;</span>
+    Model modelA <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Model<span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+    Model modelB <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Model<span style="color:#f92672">(</span>3<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span></code></pre></div>
+<h2 id="内存结构的图示">内存结构的图示</h2>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/0a4aca32-f863-47d3-8dfd-e9d4ec7f60ef.jpg" alt="JVM-OOP-Klass.jpg" /></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="功能分发">功能分发</h2>
+
+<ul>
+<li>Oops 需要使用虚函数时
+
+<ul>
+<li>在 Klass 中包含有 VTable，因此可包含虚函数</li>
+<li>定义 Oops 类上的虚函数
+
+<ul>
+<li>于相关的 Klass 上定义</li>
+<li>Oops 上定义内联的非虚函数，并委托给 klass 是定义的虚函数</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="jdk1-8-后的结构变化">JDK1.8 后的结构变化</h2>
+
+<ul>
+<li><p>1.7-</p>
+
+<ul>
+<li>获得对象，需要知道对套大小时，则需要通过 <code>_klass</code> 获得得 Klass 对象来获取</li>
+<li>Klass 也作为 Oop 对象存储，便于 GC 操作</li>
+
+<li><p>元数据结构</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">union _metadata <span style="color:#f92672">{</span>
+    wideKlassOop    _klass<span style="color:#f92672">;</span>
+    narrowOop       _compressed_klass<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span> _metadata<span style="color:#f92672">;</span></code></pre></div></li>
+</ul></li>
+
+<li><p>1.8+</p>
+
+<ul>
+<li>移除 <code>*KlassKlass</code> 类型
+
+<ul>
+<li>元数据被移动到本地主存中</li>
+</ul></li>
+
+<li><p>元数据结构</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">union _metadata <span style="color:#f92672">{</span>
+    Klass<span style="color:#f92672">*</span>      _klass<span style="color:#f92672">;</span>
+    narrowKlass _compressed_klass<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span> _metadata<span style="color:#f92672">;</span></code></pre></div></li>
+</ul></li>
+</ul>
+
+<h2 id="instanceklass-层级">instanceKlass 层级</h2>
+
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>header</td>
+<td>klassOop</td>
+</tr>
+
+<tr>
+<td>klass pointer</td>
+<td>klassOop</td>
+</tr>
+
+<tr>
+<td>C++ vtbl pointer</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>subtype cache</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>instance size</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>java mirror</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>super</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>access_flags</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>name</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>first subklass</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>next sibling</td>
+<td>Klass</td>
+</tr>
+
+<tr>
+<td>array klasses</td>
+<td></td>
+</tr>
+
+<tr>
+<td>methods</td>
+<td></td>
+</tr>
+
+<tr>
+<td>local interfaces</td>
+<td></td>
+</tr>
+
+<tr>
+<td>transitive interfaces</td>
+<td></td>
+</tr>
+
+<tr>
+<td>number of implementors</td>
+<td></td>
+</tr>
+
+<tr>
+<td>implementors</td>
+<td>klassOop[2</td>
+</tr>
+
+<tr>
+<td>fields</td>
+<td></td>
+</tr>
+
+<tr>
+<td>constants</td>
+<td></td>
+</tr>
+
+<tr>
+<td>class loader</td>
+<td></td>
+</tr>
+
+<tr>
+<td>protection domain</td>
+<td></td>
+</tr>
+
+<tr>
+<td>signers</td>
+<td></td>
+</tr>
+
+<tr>
+<td>source file name</td>
+<td></td>
+</tr>
+
+<tr>
+<td>inner classes</td>
+<td></td>
+</tr>
+
+<tr>
+<td>static field size</td>
+<td></td>
+</tr>
+
+<tr>
+<td>nonstatic field size</td>
+<td></td>
+</tr>
+
+<tr>
+<td>static oop fields size</td>
+<td></td>
+</tr>
+
+<tr>
+<td>nonstatic oop maps size</td>
+<td></td>
+</tr>
+
+<tr>
+<td>has finalize method</td>
+<td></td>
+</tr>
+
+<tr>
+<td>deoptimization mark bit</td>
+<td></td>
+</tr>
+
+<tr>
+<td>initialization state</td>
+<td></td>
+</tr>
+
+<tr>
+<td>initializing thread</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Java vtable length</td>
+<td></td>
+</tr>
+
+<tr>
+<td>oop map cache (stack maps)</td>
+<td></td>
+</tr>
+
+<tr>
+<td>EMBEDDED Java vtable</td>
+<td>size in words = vtable_len</td>
+</tr>
+
+<tr>
+<td>EMBEDDED nonstatic oop-map blocks</td>
+<td>size in words = nonstatic_oop_map_size</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://blog.csdn.net/linxdcn/article/details/73287490">对象在jvm中的表示：OOP-Klass模型</a></li>
+<li><a href="https://www.hollischuang.com/archives/1910">Java的对象模型</a></li>
+<li><a href="https://github.com/openjdk-mirror/jdk7u-hotspot/blob/50bdefc3afe944ca74c3093e7448d6b889cd20d1/src/share/vm/oops/oop.hpp">oop.hpp</a>
+
+<ul>
+<li>源码</li>
+</ul></li>
+<li><a href="https://github.com/openjdk-mirror/jdk7u-hotspot/blob/50bdefc3afe944ca74c3093e7448d6b889cd20d1/src/share/vm/oops/instanceKlass.hpp">instanceKlass.hpp</a>
+
+<ul>
+<li>源码</li>
+</ul></li>
+<li><a href="https://www.hollischuang.com/archives/2509">JVM内存结构 VS Java内存模型 VS Java对象模型</a>
+
+<ul>
+<li>主要区分三层结构</li>
+</ul></li>
+<li><a href="http://openjdk.java.net/jeps/122">JEP 122: Remove the Permanent Generation</a>
+
+<ul>
+<li>移除永生代的相关操作、原因</li>
+</ul></li>
+<li><a href="https://blog.csdn.net/kisimple/article/details/44632443">HotSpotVM 对象机制实现浅析</a>
+
+<ul>
+<li>借用 HotSpot SA 工具了解其实际结构</li>
+</ul></li>
+<li><a href="https://www.sczyh30.com/posts/Java/jvm-klass-oop/">深入探究 JVM | klass-oop对象模型研究</a></li>
+<li><a href="https://www.jianshu.com/p/e2a1cbc4ea13">Java对象模型</a>
+
+<ul>
+<li>补充 handle 类，和 OOP 等相关命名由来</li>
+</ul></li>
+<li>[]()</li>
+</ul>
 
     </div>
     <footer class="post-footer">
@@ -301,7 +1063,37 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#todo">TODO</a></li>
+<li><a href="#oop-klass-model">OOP-Klass-Model</a>
+<ul>
+<li><a href="#设计">设计</a>
+<ul>
+<li><a href="#结构">结构</a></li>
+<li><a href="#原因">原因</a></li>
+</ul></li>
+<li><a href="#oop">OOP</a>
+<ul>
+<li><a href="#定义">定义</a></li>
+<li><a href="#继承">继承</a></li>
+</ul></li>
+<li><a href="#klass">Klass</a>
+<ul>
+<li><a href="#定义-1">定义</a></li>
+<li><a href="#继承-1">继承</a></li>
+<li><a href="#引用">引用</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#示例">示例</a>
+<ul>
+<li><a href="#代码">代码</a></li>
+<li><a href="#内存结构的图示">内存结构的图示</a></li>
+</ul></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#功能分发">功能分发</a></li>
+<li><a href="#jdk1-8-后的结构变化">JDK1.8 后的结构变化</a></li>
+<li><a href="#instanceklass-层级">instanceKlass 层级</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>
