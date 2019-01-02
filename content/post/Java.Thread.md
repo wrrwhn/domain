@@ -39,26 +39,17 @@
 
 # 
 
-monitor
-
-
-
+<!-- monitor -->
 
 <!-- Unsafe -->
 
-
-
-
 <!-- volatile -->
 
-synchronized
+<!-- synchronized -->
 
-final 
+final
 
 lock
-
-
-
 
 Thread
 
@@ -189,9 +180,6 @@ Thread
 # 参考
 - [进程 线程 协程 管程 纤程 概念对比理解](https://zhuanlan.zhihu.com/p/26757689)
 - [Java 中的进程与线程](https://www.ibm.com/developerworks/cn/java/j-lo-processthread/index.html)
-- []()
-- []()
-- []()
 - []()
 - []()
 - []()
