@@ -48,6 +48,15 @@
     </item>
     
     <item>
+      <title>Java.Security</title>
+      <link>http://domain.yqjdcyy.com/post/java.security/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.security/</guid>
+      <description>介绍 类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经</description>
+    </item>
+    
+    <item>
       <title>关于</title>
       <link>http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/</link>
       <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
@@ -81,15 +90,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/java.thread.unsafe/</guid>
       <description>描述 通过 native 实现 实现通过本地内存进行变量的读取、操作 并提供以线程低层次控制 高并发功能的实现基础 支持 CAS，即 Compare-and-swap java 中不推荐 sun 包不包含于 Java 标准，与</description>
-    </item>
-    
-    <item>
-      <title>Redis.持久化</title>
-      <link>http://domain.yqjdcyy.com/post/java.security/</link>
-      <pubDate>Fri, 07 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.security/</guid>
-      <description>介绍 类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经</description>
     </item>
     
     <item>

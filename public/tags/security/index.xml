@@ -6,10 +6,19 @@
     <description>Recent content in Security on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 22 Nov 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 27 Dec 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Security</title>
+      <link>http://domain.yqjdcyy.com/post/java.security/</link>
+      <pubDate>Thu, 27 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.security/</guid>
+      <description>介绍 类型安全 垃圾回收机制 包括 API、工具和广范使用的算法、机制和协议 密码学和公钥基础架构接口，安全应用开发的基础 认证和访问控制，防止资源不经</description>
+    </item>
     
     <item>
       <title>Hello.Spring.Boot.Security</title>
