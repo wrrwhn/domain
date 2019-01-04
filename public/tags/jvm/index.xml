@@ -6,10 +6,19 @@
     <description>Recent content in Jvm on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 02 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/jvm/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.类加载</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/</link>
+      <pubDate>Fri, 04 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/</guid>
+      <description>概念 将 .class 文件读取到内存，并生成对象的过程 读取 .class 文件的二进制流数据 在方法区中生成类的结构 在堆区生成该类的 java.lang.Class 对象 提供访问方法区中类结构的接口 可在</description>
+    </item>
     
     <item>
       <title>Java.JVM.对象模型</title>

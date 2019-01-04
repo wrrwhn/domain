@@ -2,6 +2,46 @@
 <search>
     
      <entry>
+        <title>Java.JVM.类加载</title>
+        <url>http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>JVM</tag>
+        </tags>
+        <content type="html">  概念  将 .class 文件读取到内存，并生成对象的过程
+ 读取 .class 文件的二进制流数据 在方法区中生成类的结构 在堆区生成该类的 java.lang.Class 对象  提供访问方法区中类结构的接口   可在某类被使用前，预先加载
+ 加载类时文件缺失或异常  首次加载时报 LinkageError 错误 若一直未使用，则不报错    流程 过程    阶段 阶段 阶段     加载      加载     连接      验证     准备     解析    初始化    使用     卸载      细节 加载  描述
+ 由加载、验证、准备、解析和初始化组成 除解析各阶段顺序开始  解析可发生于初始化阶段之后 运行时绑定   步骤
+ 加载、连接该类 若父类未初始化，则先初始化父类 依次执行初始化语句（静态代码块）
+  时机
+ 类实例创建 类或接口的静态变量的请求、赋值 类的静态方法调用 反射  Class.forName(&amp;quot;全限定名“)  初始化类的父类 java 启动时指定的主类  注意
+ &amp;lt;clinit&amp;gt; 是线程安全的懒汉单例模式   加载.加载  查找&amp;amp; 加载类的二进制数据  通过全限定名获取二进制流 在方法区，转化静态结构为运行时数据结构 于堆区，生成该类的 java.lang.Class 对象  指向方法区的结构    加载.连接.验证  确保被加载类的正确性
+ 验证文件格式  是否符合 Class 文件格式规范  开头是否为 0xCAFEBABE 版本号是否在当前 VM 支持范围内 常量池中类型是否支持   验证元数据  语义分析，是否符合 Java 语言规范  是否具有父类   验证字节码  数据流&amp;amp;控制流分析，判断语义是否合法  验证符号引用  为之后解析作准备   重要非必须
+ 可通过 -Xverifynone 参数关闭   加载.连接.准备  为类的静态变量分配内存，并初始为默认值
+   修饰符 动作     static 分配内存
+设置值为该类型的默认值，如0/ null/ false
+实际值于初始化阶段填充   final static 分配内存
+填充指定值，且值存储于常量池中     加载.连接.解析  将类中的符号引用转换为直接引用  针对类、接口、字段、类方法、接口方法、接口类型、方法类型、方法句柄和调用点限定符 都是解析过程时无法直接给定直接引用，后续于父类、接口加载完成后，再行替换的操作   加载.初始化  作用  使用静态代码块为静态变量赋值 声明类变量为指定初始值   使用 卸载 图示    类加载器 描述  加载阶段，用于将字节码装载至 JVM 可定制化实现，但会跳出现有的装载流程  分类    名称 实现 针对项     启动项加载器
+Bootstrap ClassLoader Hotspot: C&#43;&#43; JDK\jre\lib
+-Xbootclasspath   扩展类加载器
+ExtClassLoader sun.misc.Launcher$ExtClassLoader JDK\jre\lib\ext
+系统变量java.ext.dirs   应用类加载器
+AppClassLoader sun.misc.Launcher$AppClassLoader ClassPath 用户类路径   自定义类加载器 implement ClassLoader 自动验证数字签名
+从网络等渠道获取 class 文件    机制    机制 描述     全盘负责 一个类加载器加载某类时，该类所依赖和引用的类均将由其加载   父类委托 尝试先由父类加载器尝试加载，加载失败后才从自身类路径中加载   缓存机制 缓存所有加载过的类    方式    方式 描述     命令行标注 javac -Djava.ext.dirs=   Class.forName 会执行类中的 static 块   ClassLoader.loadClass 仅加载类文件
+类实例化时才执行 static 块    模型  双亲委派模型  优点  避免出现多份同样的字节码 保证 Java 的安全稳定  图示      补充 引用  符号引用
+ 描述目标的符号、字面量 如类A中引用了类B，在编译过程中会于类A中使用 CONSTANT_Class_info 符号表示类 B 的地址  直接引用
+   类型 示例     目标指针 类的 Class 对象指针、类变量指针、类方法指针   相对偏移量 相对实例变量、实例方法的直接引用   间接定位的句柄      常量池  位置
+ Heap  运行时常量池 字符串常量池均存储于  jdk 1.7&#43; 版本    存储内容
+ 字面量  Literal 双引号包起来的文本字符串  符号引用  Symbolic References 类和接口的全限定名 字段名称和描述符 方法的名称和描述符   备注
+ HotSpot VM 中的常量池本质是 HashSet&amp;lt;String&amp;gt;  只存储 java.lang.String 实例的引用    参考  java类的加载机制 JVM 类加载机制深入浅出
+ 事例众多，如破坏双亲委派模型的事例  JVM中的直接引用和符号引用  符号引用和直接引用  JVM里的符号引用如何存储？  符号引用示例  Chapter 5. Loading, Linking, and Initializing
+ 官方文档  学习JVM是如何从入门到放弃的？
+ 针对intern() 和常量池有效的图形展示   </content>
+    </entry>
+    
+     <entry>
         <title>Java.JVM.对象模型</title>
         <url>http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/</url>
         <categories>
@@ -665,7 +705,7 @@ RPUSH list 1 2 3 4 // [1, 2, 3, 4] RPOP list // [1, 2, 3] LPOP list // [2, 3] LP
  *buf  写入的数据  nbytes  要写入数据的数量   注意
  nbytes 与 ssizet 不一致时，说明写入异常   Ftruncate  公式
  int ftruncate(int fd, off_t length);  参数
- length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而后排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作   参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性 redis持久化RDB和AOF []()  </content>
+ length  文件截取后的文件大小  相较之前小，则超过 length 长度的数据将无法再访问 相较之较大，则超出部分填充为 0     Sync 注意事项  延迟写  Unix 和 Linux 上的实现方式 向文件写数据时  优先复制到缓冲区 而后排入队列 最后再同步写入至磁盘    Sync  将 所有 数据复制到缓冲区，排入队列后立即返回 update 的系统守护进程以周期地调用 sync 函数写入磁盘  周期一般为 30s   FSync  针对指定的单一文件生效，直至写入磁盘后结束  针对 数据库 场景   FDataSync  相较 Fsync，仅更新文件的数据部分  文件的数据和信息（尺寸、访问时间、更新时间）分处于不同文件 因此 FDataSync 仅需要进行一次 IO 操作，而 Fsync 需要进行两次 IO 操作   参考  RDB AOF 关于Redis的aof持久化的二三事 Linux 内核的文件 Cache 管理机制介绍 CONFIG SET parameter value Redis原理详解 redis持久化——RDB、AOF redis原理 redis原理 fork()后copy on write的一些特性 redis持久化RDB和AOF  </content>
     </entry>
     
      <entry>
@@ -958,9 +998,7 @@ a、将management.metrics.web.server.auto-time-requests=false设置为false,默�
         </tags>
         <content type="html">  作用  保障服务无状态  确保对外服务的安全性，增加服务访问的控制控制 保障集群中 REST API 无状态  保障接口的复用  功能 服务路由  通过 JVM 实现
 均衡负载 权限控制 ZuulFilter
- filterType  pre  pre-routing filtering 请求被路由之前调用  route  routing to an origin 请求路由时调用  post  post-routing filters 调用后，未调用  error  error handling   filterOrder  filterOrder 是必须的 但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序 不需要该顺序值是连续的  shouldFilter  当返回 true 的时候表示执行 run() 方法  run  过滤器实现的核心   流程图
- ![]()
-动态路由 服务迁移 静态响应   实现 转跳 Maven  pom.xml
+ filterType  pre  pre-routing filtering 请求被路由之前调用  route  routing to an origin 请求路由时调用  post  post-routing filters 调用后，未调用  error  error handling   filterOrder  filterOrder 是必须的 但对于非提前执行的过滤器而言是同样的，仅用于指定预先过滤判断的顺序 不需要该顺序值是连续的  shouldFilter  当返回 true 的时候表示执行 run() 方法  run  过滤器实现的核心    动态路由 服务迁移 静态响应 实现 转跳 Maven  pom.xml
 &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;org.springframework.cloud&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;spring-cloud-starter-netflix-zuul&amp;lt;/artifactId&amp;gt; &amp;lt;/dependency&amp;gt;  Properties  bootstrap.yml
 zuul: routes: # v3 other: path: /other/** url: http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/other-service # v2 portal: path: /portal/** serviceId: portal # v1 sns: /sns/** # v0 ## hystrix: ## 默认通过 `http://&amp;lt;ZUUL_HOST&amp;gt;:&amp;lt;ZUUL_PORT&amp;gt;/&amp;lt;Eureka.ServiceId&amp;gt;/** ` 访问  Code  Application
 @EnableEurekaClient @SpringBootApplication @EnableZuulProxy public class Application { public static void main(String[] args) { SpringApplication.run(Application.class, args); } }  Invoke  http://localhost:8302/portal/config  相当于调用 http://localhost:8100/config   过滤 Code  ZuulFilter
@@ -6008,6 +6046,18 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
           
         </tags>
         <content type="html">  Reference  []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/java.jvm.gc/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html"> </content>
     </entry>
     
      <entry>
