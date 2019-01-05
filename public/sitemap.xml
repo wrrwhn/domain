@@ -2,6 +2,89 @@
 <search>
     
      <entry>
+        <title>Java.JVM.GC</title>
+        <url>http://domain.yqjdcyy.com/post/java.jvm.gc/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>JVM</tag>
+        </tags>
+        <content type="html">  存活判断  方式
+   方式 描述 优点 缺点     引用计数 对象持有被引用的计数值，为0时可被回收 简单 无法解决对象相互引用问题   可达性分析 由 GC Roots 开始向下搜索，路径（引用链）中所涉及的即为可达、存活       算法  类型
+   算法 描述     标记-清除
+Mark-Sweep 标记出所有待回收的对象，后再统一回收   复制
+Copying 内存平分两块，一块用完后，将存活对象移动至另一块，后清除上一块   标记-压缩
+Mark-Compact 标记出所有待回收的对象，后将存活对象往一端移动后，清除其它区域内存   分代收集
+Generational Collection 针对新生代和老生代分别设置收集算法    使用精确式GC，构建 OopMap 来存储对象的引用
+ 使用空间换时间 在安全点生成 OopMap 在安全区域上开始 GC   垃圾回收器 简介    回收器 描述 参数 优点 缺点     Serial 收集器 单线程回收
+新生代、老年代串行回收
+新生代复制，老年代标记-压缩 -XX:&#43;UseSerialGC 启用 稳定
+效率高 较长停顿   Serial Old 收集器 Serial 收集器针对老生代的版本
+ -XX:&#43;UseSerialGC 启用     ParNew 收集器 Serial 的多线程版本
+新生代并行，老年代串行
+新生代复制，老年代标记-压缩 -XX:&#43;UseParNewGC 启用
+-XX:ParallelGCThreads 限制线程数     Parallel Scavenge 收集器 类似 ParNew 收集器
+ -XX:&#43;UseParallelGC Parallel&#43; Serial 提高吞吐量    Parallel Old 收集器 Parallel Scavenge 收集器的老年代版本
+JDK1.6后支持
+使用多线程和标记-压缩 -XX:&#43;UseParallelOldGC Parallel&#43; Parallel     CMS 收集器 Concurrent Mark Sweep -XX:&#43;UseConcMarkSweepGC 启用
+-XX:&#43;UseCMSCompactAtFullCollection Full GC后进行一次碎片整理
+-XX:&#43;CMSFullGCsBeforeCompaction 几次 Full GC后进行一次碎片整理
+-XX:&#43;XX:ParallelCMSThreads 设置CMS 线程数（默认CPU数) 最短的回收停顿 大量碎片
+并发时吞吐量降低   G1 收集器 Garbage First
+针对服务器场景（多核&#43;大内存) -XX:&#43;UseG1GC 启用 空间整合
+减少GC停顿
+提高吞吐量     详细 CMS  步骤
+   步骤 描述     初始标记
+CMS initial mark STW
+标记 GC Roots
+速度极快   并发标记
+CMS concurrent mark GC Roots Tracing 时间较长   重新标记
+CMS remark STW
+修复并发标记时变动的数据
+速度快   并发清除
+CMS concurrent sweep 时间较长     G1  特点
+ 使用标记压缩，不产生空间碎片 建立可预测的停顿时间模型，让使用者可指定消耗在垃圾回收的时间 细分堆至多个大小一致的区，模糊新生代和老生代的概念 JDK 9 的默认设置  步骤
+   步骤 描述     标记
+Initial mark STW
+触发 Young GC   根区域扫描
+Roo region scanning 在标记完成之前清空 Survivor 区   并发标记
+Concurrent mark 在整堆中分区并发进行标记
+计算各区对象活性（存活对象比例）   重新标记
+Remark STW
+使用 SATB 算法，较 CMS 快   并发清除
+Copy-ClenUp      适用    代 可用垃圾收集器     年轻代     Serial    ParaNew    Parallel    G1   老年代     Serial Old    Parallel Old    CMS    G1    使用  考量因素
+ 应用程序场景 硬件 吞吐量  场景
+   垃圾回收器 场景描述     Serial 单线程
+低配置机器   Parallel 64bit 服务器默认配置
+不要求吞吐量
+机器性能一般   CMS 以 CPU 和系统资源来换取   G1 针对堆配置大的情况
+JDK 9 默认配置     示例  Parallel GC
+java -Xmx3800m -Xms3800m -Xmn2g -Xss128k -XX:&#43;UseParallelGC -XX:ParallelGCThreads=20 -XX:&#43;UseParallelOldGC -XX:MaxGCPauseMillis=100 -XX:MaxGCPauseMillis=100 CMS GC
+java -Xmx3550m -Xms3550m -Xmn2g -Xss128k -XX:ParallelGCThreads=20 -XX:&#43;UseConcMarkSweepGC -XX:&#43;UseParNewGC -XX:CMSFullGCsBeforeCompaction=5 -XX:&#43;UseCMSCompactAtFullCollection  工具  介绍
+   工具 作用     jps
+JVM Process Status Tool 显示系统内所有 HotSpot 虚拟机进程   jstat
+JVM Statistic Monitoring 监视虚拟机运行状态
+类装载、内存、垃圾收集、JIT编译   jmap
+JVM Memory Map 生成 Heap Dump 文件   jhat
+JVM Heap Analysis Tool 分析 jmap 生成的 dump，并于浏览器中展示   jstack
+JVM Stack Tool 生成虚拟机当前的线程快照   jinfo
+JVM Configiguration Info 查看、调整虚拟机运行参数     补充 GC Roots  作为 GC 可达性遍历的起点 有效对象  线程中 JVM 栈所引用的对象 类的静态属性所引用的对象 常量池所引用的对象 JNI 栈中所引用的对象   引用类型  类型
+   类型 定义 示例      强引用 设置为空，或超出生命周期时才会被回收
+关联 GC Roots Object o=new Object();    弱引用 内存不足时，仅有弱引用指向的对象被回收
+适用于内存敏感的高速缓存 SoftReference
+如浏览器的返回页面    软引用 不管内存空间足够与否，被垃圾回收器发现便会被回收
+弱引用所指向的对象无强引用后，获得的值为 null WeakReference 关联对象
+WeakHashMap 键消息时值可自动清除
+ReferenceQueue记录自动消失的对象    虚引用 有跟没有一样
+仅用于的指向对象被回收后，将自己加入引用对队，通知关联对象已被销毁的事实 PhantomReference&#43; ReferenceQueue 结合使用
+确认销毁，用于大文件加载     生命周期
+   存活/引用 强引用 软引用 弱引用 虚引用     GC Y X X X   回收线程 Y Y &#43;1 X     缩写  STW
+ Stop The Word  SATB
+ snapshot at the beginning   参考  https://segmentfault.com/a/1190000015605327#articleHeader18 jvm知识点总览 【证】:那些可作为GC Roots的对象  验证哪些对象可作为 GC Roots  java的gc为什么要分代 Java GC杂谈之对象的可达分析与回收算法  GC Roots与引用的关联  十分钟理解Java中的弱引用 Java 7之基础 - 强引用、弱引用、软引用、虚引用  代码示例  译文：理解Java中的弱引用 java中的4种reference的差别和使用场景  理论&#43; 代码&#43; 原理  Java Hotspot G1 GC的一些关键技术  详细介绍了 G1 的算法、流程、指令和日志 美团出的文章，技术含量确实~  Java GC 垃圾回收器的分类和优缺点  </content>
+    </entry>
+    
+     <entry>
         <title>Java.JVM.类加载</title>
         <url>http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/</url>
         <categories>
@@ -143,7 +226,7 @@ The objectref must be of type reference. The thread that executes monitorexit mu
  调用 monitorexit 的线程仅可为拥有其 monitor 的对象引用所关联的实例 线程调用 monitorexit 时，将减少其关联的 monitor 的进入数，并当进入数减少为 0 时，失去对该对象的所有权 异常处理机制  同步方法将由 JVM 的 athrow 指令隐性处理 同步块则由 JVM 的异常处理机制接收    实现 ObjectMonitor 结构  HotSpot.ObjectMonitor     字段 作用     _owner 持有线程   _recursions 持有线程的进入次数   _cxq 多线程竞争锁时使用
 单向链表   _EntryList 待竞选线程池
 双向循环链表   _WaitSet 等待线程池
-双向循环链表    流程    参考  monitorenter monitorexit markOop.hpp  object-monitor 源码  从jvm源码看synchronized  </content>
+双向循环链表    流程    参考  monitorenter monitorexit markOop.hpp  object-monitor 源码  从jvm源码看synchronized Java的wait()、notify()学习三部曲之一：JVM源码分析  事例&#43;源码   </content>
     </entry>
     
      <entry>
@@ -6050,18 +6133,6 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
     
      <entry>
         <title></title>
-        <url>http://domain.yqjdcyy.com/post/java.jvm.gc/</url>
-        <categories>
-          
-        </categories>
-        <tags>
-          
-        </tags>
-        <content type="html"> </content>
-    </entry>
-    
-     <entry>
-        <title></title>
         <url>http://domain.yqjdcyy.com/post/java.keyword.final/</url>
         <categories>
           
@@ -6094,10 +6165,7 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
         <tags>
           
         </tags>
-        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   final
-lock
-Thread
-工具 进程  调用
+        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   工具 进程  调用
  Runtime
 Process exec(*) ProcessBuilder
 new ProcessBuilder(...).start()  底层

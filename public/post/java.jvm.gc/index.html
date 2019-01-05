@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Java.JVM.类加载 - 好久不见</title>
+    <title>Java.JVM.GC - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Java.JVM.类加载">
+    <meta property="og:title" content="Java.JVM.GC">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Java.JVM.类加载 - 好久不见" />
+    <meta name="title" content="Java.JVM.GC - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/" itemprop="url">
-        Java.JVM.类加载
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/java.jvm.gc/" itemprop="url">
+        Java.JVM.GC
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2019-01-04">
-    2019-01-04
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2019-01-05">
+    2019-01-05
 </time>
 </span> 
       
@@ -155,518 +155,584 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1377 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1605 字 ~4分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="概念">概念</h1>
+<h1 id="存活判断">存活判断</h1>
 
 <ul>
-<li><p>将 .class 文件读取到内存，并生成对象的过程</p>
-
-<ul>
-<li>读取 .class 文件的二进制流数据</li>
-<li>在方法区中生成类的结构</li>
-<li>在堆区生成该类的 <code>java.lang.Class</code> 对象
-
-<ul>
-<li>提供访问方法区中类结构的<strong>接口</strong></li>
-</ul></li>
-</ul></li>
-
-<li><p>可在某类被使用前，预先加载</p>
-
-<ul>
-<li>加载类时文件缺失或异常
-
-<ul>
-<li>首次加载时报 <code>LinkageError</code> 错误</li>
-<li>若一直未使用，则不报错</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<h1 id="流程">流程</h1>
-
-<h2 id="过程">过程</h2>
-
-<table>
-<thead>
-<tr>
-<th>阶段</th>
-<th>阶段</th>
-<th>阶段</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>加载</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>加载</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td>连接</td>
-<td></td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td>验证</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td>准备</td>
-</tr>
-
-<tr>
-<td></td>
-<td></td>
-<td>解析</td>
-</tr>
-
-<tr>
-<td></td>
-<td>初始化</td>
-<td></td>
-</tr>
-
-<tr>
-<td>使用</td>
-<td></td>
-<td></td>
-</tr>
-
-<tr>
-<td>卸载</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="细节">细节</h2>
-
-<h3 id="加载">加载</h3>
-
-<ul>
-<li><p>描述</p>
-
-<ul>
-<li>由加载、验证、准备、解析和初始化组成</li>
-<li>除解析各阶段顺序开始
-
-<ul>
-<li>解析可发生于初始化阶段之后</li>
-<li>运行时绑定</li>
-</ul></li>
-</ul></li>
-
-<li><p>步骤</p>
-
-<ul>
-<li>加载、连接该类</li>
-<li>若父类未初始化，则先初始化父类</li>
-<li>依次执行初始化语句（静态代码块）<br /></li>
-</ul></li>
-
-<li><p>时机</p>
-
-<ul>
-<li>类实例创建</li>
-<li>类或接口的静态变量的请求、赋值</li>
-<li>类的静态方法调用</li>
-<li>反射
-
-<ul>
-<li><code>Class.forName(&quot;全限定名“)</code></li>
-</ul></li>
-<li>初始化类的父类</li>
-<li><code>java</code> 启动时指定的主类</li>
-</ul></li>
-
-<li><p>注意</p>
-
-<ul>
-<li><code>&lt;clinit&gt;</code> 是线程安全的懒汉单例模式</li>
-</ul></li>
-</ul>
-
-<h3 id="加载-加载">加载.加载</h3>
-
-<ul>
-<li>查找&amp; 加载类的二进制数据
-
-<ul>
-<li>通过<strong>全限定名</strong>获取二进制流</li>
-<li>在方法区，转化静态结构为运行时数据结构</li>
-<li>于堆区，生成该类的 <code>java.lang.Class</code> 对象
-
-<ul>
-<li>指向方法区的结构</li>
-</ul></li>
-</ul></li>
-</ul>
-
-<h3 id="加载-连接-验证">加载.连接.验证</h3>
-
-<ul>
-<li><p>确保被加载类的正确性</p>
-
-<ul>
-<li>验证文件格式
-
-<ul>
-<li>是否符合 Class <strong>文件格式规范</strong>
-
-<ul>
-<li>开头是否为 <code>0xCAFEBABE</code></li>
-<li>版本号是否在当前 VM 支持范围内</li>
-<li>常量池中类型是否支持</li>
-</ul></li>
-</ul></li>
-<li>验证元数据
-
-<ul>
-<li>语义分析，是否符合 Java <strong>语言规范</strong>
-
-<ul>
-<li>是否具有父类</li>
-</ul></li>
-</ul></li>
-<li>验证字节码
-
-<ul>
-<li>数据流&amp;控制流分析，判断<strong>语义是否合法</strong></li>
-</ul></li>
-<li>验证<strong>符号引用</strong>
-
-<ul>
-<li>为之后解析作准备</li>
-</ul></li>
-</ul></li>
-
-<li><p>重要非必须</p>
-
-<ul>
-<li>可通过 <code>-Xverifynone</code> 参数关闭</li>
-</ul></li>
-</ul>
-
-<h3 id="加载-连接-准备">加载.连接.准备</h3>
-
-<ul>
-<li><p>为类的静态变量分配内存，并初始为默认值</p>
-
-<table>
-<thead>
-<tr>
-<th>修饰符</th>
-<th>动作</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>static</td>
-<td>分配内存<br>设置值为该类型的默认值，如0/ null/ false<br>实际值于<strong>初始化阶段填充</strong></td>
-</tr>
-
-<tr>
-<td>final static</td>
-<td>分配内存<br>填充指定值，且值存储于<strong>常量池</strong>中</td>
-</tr>
-</tbody>
-</table></li>
-</ul>
-
-<h3 id="加载-连接-解析">加载.连接.解析</h3>
-
-<ul>
-<li>将类中的<strong>符号引用转换为直接引用</strong>
-
-<ul>
-<li>针对类、接口、字段、类方法、接口方法、接口类型、方法类型、方法句柄和调用点限定符</li>
-<li>都是解析过程时无法直接给定直接引用，后续于父类、接口加载完成后，再行替换的操作</li>
-</ul></li>
-</ul>
-
-<h3 id="加载-初始化">加载.初始化</h3>
-
-<ul>
-<li>作用
-
-<ul>
-<li>使用<strong>静态代码块</strong>为静态变量赋值</li>
-<li>声明<strong>类变量</strong>为指定初始值</li>
-</ul></li>
-</ul>
-
-<h3 id="使用">使用</h3>
-
-<h3 id="卸载">卸载</h3>
-
-<h2 id="图示">图示</h2>
-
-<ul>
-<li><img src="http://doc.yqjdcyy.com/8e0a8f55-21c7-41a5-bbe5-ed2598f5738a.png" alt="JVM-Class-Load.png" /></li>
-</ul>
-
-<h1 id="类加载器">类加载器</h1>
-
-<h2 id="描述">描述</h2>
-
-<ul>
-<li>加载阶段，用于将字节码装载至 JVM</li>
-<li>可定制化实现，但会跳出现有的装载流程</li>
-</ul>
-
-<h2 id="分类">分类</h2>
-
-<table>
-<thead>
-<tr>
-<th>名称</th>
-<th>实现</th>
-<th>针对项</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>启动项加载器<br>Bootstrap ClassLoader</td>
-<td>Hotspot: C++</td>
-<td>JDK\jre\lib<br>-Xbootclasspath</td>
-</tr>
-
-<tr>
-<td>扩展类加载器<br>ExtClassLoader</td>
-<td>sun.misc.Launcher$ExtClassLoader</td>
-<td>JDK\jre\lib\ext<br>系统变量java.ext.dirs</td>
-</tr>
-
-<tr>
-<td>应用类加载器<br>AppClassLoader</td>
-<td>sun.misc.Launcher$AppClassLoader</td>
-<td>ClassPath 用户类路径</td>
-</tr>
-
-<tr>
-<td>自定义类加载器</td>
-<td>implement ClassLoader</td>
-<td>自动验证数字签名<br>从网络等渠道获取 class 文件</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="机制">机制</h2>
-
-<table>
-<thead>
-<tr>
-<th>机制</th>
-<th>描述</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>全盘负责</td>
-<td>一个类加载器加载某类时，该类所依赖和引用的类均将由其加载</td>
-</tr>
-
-<tr>
-<td>父类委托</td>
-<td>尝试先由父类加载器尝试加载，加载失败后才从自身类路径中加载</td>
-</tr>
-
-<tr>
-<td>缓存机制</td>
-<td>缓存所有加载过的类</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="方式">方式</h2>
+<li><p>方式</p>
 
 <table>
 <thead>
 <tr>
 <th>方式</th>
 <th>描述</th>
+<th>优点</th>
+<th>缺点</th>
 </tr>
 </thead>
 
 <tbody>
 <tr>
-<td>命令行标注</td>
-<td><code>javac -Djava.ext.dirs=</code></td>
+<td>引用计数</td>
+<td>对象持有被引用的计数值，为0时可被回收</td>
+<td>简单</td>
+<td>无法解决对象相互引用问题</td>
 </tr>
 
 <tr>
-<td>Class.forName</td>
-<td>会执行类中的 static 块</td>
-</tr>
-
-<tr>
-<td>ClassLoader.loadClass</td>
-<td>仅加载类文件<br>类实例化时才执行 static 块</td>
-</tr>
-</tbody>
-</table>
-
-<h2 id="模型">模型</h2>
-
-<ul>
-<li>双亲委派模型
-
-<ul>
-<li>优点
-
-<ul>
-<li>避免出现多份同样的字节码</li>
-<li>保证 Java 的安全稳定</li>
-</ul></li>
-<li>图示
-
-<ul>
-<li><img src="http://doc.yqjdcyy.com/db25d228-13f2-428e-85dd-40eaecb6a698.png" alt="JVM-ClassLoader.png" /></li>
-</ul></li>
-</ul></li>
-</ul>
-
-<h1 id="补充">补充</h1>
-
-<h2 id="引用">引用</h2>
-
-<ul>
-<li><p>符号引用</p>
-
-<ul>
-<li>描述目标的符号、字面量</li>
-<li>如类A中引用了类B，在编译过程中会于类A中使用 <code>CONSTANT_Class_info</code> 符号表示类 B 的地址</li>
-</ul></li>
-
-<li><p>直接引用</p>
-
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>示例</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-<td>目标指针</td>
-<td>类的 Class 对象指针、类变量指针、类方法指针</td>
-</tr>
-
-<tr>
-<td>相对偏移量</td>
-<td>相对实例变量、实例方法的直接引用</td>
-</tr>
-
-<tr>
-<td>间接定位的句柄</td>
+<td>可达性分析</td>
+<td>由 <code>GC Roots</code> 开始向下搜索，路径（引用链）中所涉及的即为可达、存活</td>
+<td></td>
 <td></td>
 </tr>
 </tbody>
 </table></li>
 </ul>
 
-<h2 id="常量池">常量池</h2>
+<h1 id="算法">算法</h1>
 
 <ul>
-<li><p>位置</p>
+<li><p>类型</p>
+
+<table>
+<thead>
+<tr>
+<th>算法</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标记-清除<br>Mark-Sweep</td>
+<td>标记出所有待回收的对象，后再统一回收</td>
+</tr>
+
+<tr>
+<td>复制<br>Copying</td>
+<td>内存平分两块，一块用完后，将存活对象移动至另一块，后清除上一块</td>
+</tr>
+
+<tr>
+<td>标记-压缩<br>Mark-Compact</td>
+<td>标记出所有待回收的对象，后将存活对象往一端移动后，清除其它区域内存</td>
+</tr>
+
+<tr>
+<td>分代收集<br>Generational Collection</td>
+<td>针对新生代和老生代<code>分别设置</code>收集算法</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>使用精确式GC，构建 <code>OopMap</code> 来存储对象的引用</p>
 
 <ul>
-<li>Heap
-
-<ul>
-<li>运行时常量池</li>
-<li>字符串常量池均存储于
-
-<ul>
-<li>jdk 1.7+ 版本</li>
+<li>使用<code>空间换时间</code></li>
+<li>在<code>安全点</code>生成 <code>OopMap</code></li>
+<li>在<code>安全区域</code>上开始 <code>GC</code></li>
 </ul></li>
-</ul></li>
-</ul></li>
+</ul>
 
-<li><p>存储内容</p>
+<h1 id="垃圾回收器">垃圾回收器</h1>
+
+<h2 id="简介">简介</h2>
+
+<table>
+<thead>
+<tr>
+<th>回收器</th>
+<th>描述</th>
+<th>参数</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Serial 收集器</td>
+<td><code>单线程</code>回收<br>新生代、老年代串行回收<br>新生代复制，老年代标记-压缩</td>
+<td><code>-XX:+UseSerialGC</code> 启用</td>
+<td><code>稳定</code><br><code>效率高</code></td>
+<td><code>较长停顿</code></td>
+</tr>
+
+<tr>
+<td>Serial Old 收集器</td>
+<td>Serial 收集器针对<code>老生代</code>的版本<br></td>
+<td><code>-XX:+UseSerialGC</code> 启用</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>ParNew 收集器</td>
+<td>Serial 的<code>多线程</code>版本<br>新生代并行，老年代串行<br>新生代复制，老年代标记-压缩</td>
+<td><code>-XX:+UseParNewGC</code> 启用<br> <code>-XX:ParallelGCThreads</code> 限制线程数</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Parallel Scavenge 收集器</td>
+<td>类似 ParNew 收集器<br></td>
+<td><code>-XX:+UseParallelGC</code> Parallel+ Serial</td>
+<td><code>提高吞吐量</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td>Parallel Old 收集器</td>
+<td>Parallel Scavenge 收集器的老年代版本<br>JDK1.6后支持<br>使用<code>多线程</code>和<code>标记-压缩</code></td>
+<td><code>-XX:+UseParallelOldGC</code> Parallel+ Parallel</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>CMS 收集器</td>
+<td>Concurrent Mark Sweep</td>
+<td><code>-XX:+UseConcMarkSweepGC</code> 启用<br> <code>-XX:+UseCMSCompactAtFullCollection</code> Full GC后进行一次碎片整理<br><code>-XX:+CMSFullGCsBeforeCompaction</code> 几次 Full GC后进行一次碎片整理<br><code>-XX:+XX:ParallelCMSThreads</code> 设置CMS 线程数（默认CPU数)</td>
+<td><code>最短的回收停顿</code></td>
+<td><code>大量碎片</code><br><code>并发时吞吐量降低</code></td>
+</tr>
+
+<tr>
+<td>G1 收集器</td>
+<td>Garbage First<br>针对服务器场景（多核+大内存)</td>
+<td><code>-XX:+UseG1GC</code> 启用</td>
+<td><code>空间整合</code><br><code>减少GC停顿</code><br><code>提高吞吐量</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="详细">详细</h2>
+
+<h3 id="cms">CMS</h3>
 
 <ul>
-<li>字面量
+<li><p>步骤</p>
+
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>初始标记<br>CMS initial mark</td>
+<td><code>STW</code><br>标记 <code>GC Roots</code><br>速度极快</td>
+</tr>
+
+<tr>
+<td>并发标记<br>CMS concurrent mark</td>
+<td><code>GC Roots Tracing</code> <br>时间较长</td>
+</tr>
+
+<tr>
+<td>重新标记<br>CMS remark</td>
+<td><code>STW</code><br>修复并发标记时变动的数据<br>速度快</td>
+</tr>
+
+<tr>
+<td>并发清除<br>CMS concurrent sweep</td>
+<td>时间较长</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h3 id="g1">G1</h3>
 
 <ul>
-<li>Literal</li>
-<li>双引号包起来的文本字符串</li>
-</ul></li>
-<li>符号引用
+<li><p>特点</p>
 
 <ul>
-<li>Symbolic References</li>
-<li>类和接口的全限定名</li>
-<li>字段名称和描述符</li>
-<li>方法的名称和描述符</li>
-</ul></li>
+<li>使用标记压缩，<strong>不产生空间碎片</strong></li>
+<li>建立可预测的停顿时间模型，让使用者可<strong>指定消耗在垃圾回收的时间</strong></li>
+<li>细分堆至多个大小一致的区，模糊新生代和老生代的概念</li>
+<li><strong>JDK 9 的默认设置</strong></li>
 </ul></li>
 
-<li><p>备注</p>
+<li><p>步骤</p>
+
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>标记<br>Initial mark</td>
+<td><code>STW</code><br>触发 Young GC</td>
+</tr>
+
+<tr>
+<td>根区域扫描<br>Roo region scanning</td>
+<td>在标记完成之前清空 <code>Survivor</code> 区</td>
+</tr>
+
+<tr>
+<td>并发标记<br>Concurrent mark</td>
+<td>在整堆中分区并发进行标记<br>计算各区对象活性（存活对象比例）</td>
+</tr>
+
+<tr>
+<td>重新标记<br>Remark</td>
+<td><code>STW</code><br> 使用 <code>SATB</code> 算法，较 CMS 快</td>
+</tr>
+
+<tr>
+<td>并发清除<br>Copy-ClenUp</td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="适用">适用</h2>
+
+<table>
+<thead>
+<tr>
+<th>代</th>
+<th>可用垃圾收集器</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>年轻代</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Serial</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ParaNew</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Parallel</td>
+</tr>
+
+<tr>
+<td></td>
+<td>G1</td>
+</tr>
+
+<tr>
+<td>老年代</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Serial Old</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Parallel Old</td>
+</tr>
+
+<tr>
+<td></td>
+<td>CMS</td>
+</tr>
+
+<tr>
+<td></td>
+<td>G1</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="使用">使用</h2>
 
 <ul>
-<li>HotSpot VM 中的常量池本质是 <code>HashSet&lt;String&gt;</code>
+<li><p>考量因素</p>
 
 <ul>
-<li>只存储 java.lang.String 实例的<strong>引用</strong></li>
+<li>应用程序<strong>场景</strong></li>
+<li><strong>硬件</strong></li>
+<li><strong>吞吐量</strong></li>
 </ul></li>
+
+<li><p>场景</p>
+
+<table>
+<thead>
+<tr>
+<th>垃圾回收器</th>
+<th>场景描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Serial</td>
+<td>单线程<br>低配置机器</td>
+</tr>
+
+<tr>
+<td>Parallel</td>
+<td><strong>64bit 服务器默认配置</strong><br>不要求吞吐量<br>机器性能一般</td>
+</tr>
+
+<tr>
+<td>CMS</td>
+<td>以 <strong>CPU 和系统资源</strong>来换取</td>
+</tr>
+
+<tr>
+<td>G1</td>
+<td>针对<strong>堆配置大</strong>的情况<br><strong>JDK 9 默认配置</strong></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="示例">示例</h2>
+
+<ul>
+<li><p>Parallel GC</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">java
+    -Xmx3800m
+    -Xms3800m
+    -Xmn2g
+    -Xss128k
+        -XX:+UseParallelGC
+        -XX:ParallelGCThreads=20
+        -XX:+UseParallelOldGC
+        -XX:MaxGCPauseMillis=100
+        -XX:MaxGCPauseMillis=100</pre></div></li>
+
+<li><p>CMS GC</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">java
+    -Xmx3550m
+    -Xms3550m
+    -Xmn2g
+    -Xss128k
+        -XX:ParallelGCThreads=20
+        -XX:+UseConcMarkSweepGC
+        -XX:+UseParNewGC
+        -XX:CMSFullGCsBeforeCompaction=5
+        -XX:+UseCMSCompactAtFullCollection</pre></div></li>
+</ul>
+
+<h1 id="工具">工具</h1>
+
+<ul>
+<li><p>介绍</p>
+
+<table>
+<thead>
+<tr>
+<th>工具</th>
+<th>作用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>jps<br>JVM Process Status Tool</td>
+<td>显示系统内所有 HotSpot <strong>虚拟机进程</strong></td>
+</tr>
+
+<tr>
+<td>jstat<br>JVM Statistic Monitoring</td>
+<td>监视<strong>虚拟机运行状态</strong><br>类装载、内存、垃圾收集、JIT编译</td>
+</tr>
+
+<tr>
+<td>jmap<br>JVM Memory Map</td>
+<td>生成 <strong>Heap Dump</strong> 文件</td>
+</tr>
+
+<tr>
+<td>jhat<br>JVM Heap Analysis Tool</td>
+<td><strong>分析</strong> <code>jmap</code> 生成的 <strong>dump</strong>，并于浏览器中展示</td>
+</tr>
+
+<tr>
+<td>jstack<br>JVM Stack Tool</td>
+<td>生成虚拟机当前的<strong>线程快照</strong></td>
+</tr>
+
+<tr>
+<td>jinfo<br>JVM Configiguration Info</td>
+<td>查看、调整虚拟机<strong>运行参数</strong></td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="gc-roots">GC Roots</h2>
+
+<ul>
+<li>作为 GC 可达性遍历的起点</li>
+<li>有效对象
+
+<ul>
+<li>线程中 <strong>JVM 栈</strong>所引用的对象</li>
+<li>类的<strong>静态属性</strong>所引用的对象</li>
+<li><strong>常量池</strong>所引用的对象</li>
+<li><strong>JNI</strong> 栈中所引用的对象</li>
+</ul></li>
+</ul>
+
+<h2 id="引用类型">引用类型</h2>
+
+<ul>
+<li><p>类型</p>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>定义</th>
+<th>示例</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>强引用</td>
+<td>设置为空，或超出生命周期时才会被回收<br><strong>关联 GC Roots</strong></td>
+<td><code>Object o=new Object();</code></td>
+<td></td>
+</tr>
+
+<tr>
+<td>弱引用</td>
+<td>内存不足时，仅有弱引用指向的对象被回收<br>适用于<strong>内存敏感的高速缓存</strong></td>
+<td><code>SoftReference</code><br>如浏览器的返回页面</td>
+<td></td>
+</tr>
+
+<tr>
+<td>软引用</td>
+<td>不管内存空间足够与否，被垃圾回收器发现便会被回收<br>弱引用所指向的对象无强引用后，获得的值为 null</td>
+<td><code>WeakReference</code> 关联对象<br><code>WeakHashMap</code> 键消息时值可<strong>自动清除</strong><br><code>ReferenceQueue</code>记录自动消失的对象</td>
+<td></td>
+</tr>
+
+<tr>
+<td>虚引用</td>
+<td>有跟没有一样<br>仅用于的指向对象被回收后，将自己加入引用对队，<strong>通知关联对象已被销毁的事实</strong></td>
+<td><code>PhantomReference</code>+  <code>ReferenceQueue</code> 结合使用<br>确认销毁，用于大文件加载</td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p>生命周期</p>
+
+<table>
+<thead>
+<tr>
+<th>存活/引用</th>
+<th>强引用</th>
+<th>软引用</th>
+<th>弱引用</th>
+<th>虚引用</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>GC</td>
+<td>Y</td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+
+<tr>
+<td>回收线程</td>
+<td>Y</td>
+<td>Y</td>
+<td>+1</td>
+<td>X</td>
+</tr>
+</tbody>
+</table></li>
+</ul>
+
+<h2 id="缩写">缩写</h2>
+
+<ul>
+<li><p>STW</p>
+
+<ul>
+<li>Stop The Word</li>
+</ul></li>
+
+<li><p>SATB</p>
+
+<ul>
+<li>snapshot at the beginning</li>
 </ul></li>
 </ul>
 
 <h1 id="参考">参考</h1>
 
 <ul>
-<li><a href="http://www.cnblogs.com/ityouknow/p/5603287.html">java类的加载机制</a></li>
-<li><a href="https://www.jianshu.com/p/3cab74a189de">JVM 类加载机制深入浅出</a><br />
+<li><a href="https://segmentfault.com/a/1190000015605327">https://segmentfault.com/a/1190000015605327#articleHeader18</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25511795">jvm知识点总览</a></li>
+<li><a href="https://blog.csdn.net/u010798968/article/details/72835255">【证】:那些可作为GC Roots的对象</a>
 
 <ul>
-<li>事例众多，如破坏双亲委派模型的事例</li>
+<li>验证哪些对象可作为 GC Roots</li>
 </ul></li>
-<li><a href="https://blog.csdn.net/u014656992/article/details/51107127">JVM中的直接引用和符号引用</a>
+<li><a href="https://www.zhihu.com/question/53613423/answer/135743258">java的gc为什么要分代</a></li>
+<li><a href="https://blog.csdn.net/wnl_csdn/article/details/73865511">Java GC杂谈之对象的可达分析与回收算法</a>
 
 <ul>
-<li>符号引用和直接引用</li>
+<li>GC Roots与引用的关联</li>
 </ul></li>
-<li><a href="https://www.zhihu.com/question/30300585">JVM里的符号引用如何存储？</a>
+<li><a href="http://www.importnew.com/21206.html">十分钟理解Java中的弱引用</a></li>
+<li><a href="https://blog.csdn.net/mazhimazh/article/details/19752475">Java 7之基础 - 强引用、弱引用、软引用、虚引用</a>
 
 <ul>
-<li>符号引用示例</li>
+<li>代码示例</li>
 </ul></li>
-<li><a href="https://docs.oracle.com/javase/specs/jvms/se7/html/jvms-5.html#jvms-5.1">Chapter 5. Loading, Linking, and Initializing</a><br />
+<li><a href="https://droidyue.com/blog/2014/10/12/understanding-weakreference-in-java/">译文：理解Java中的弱引用</a></li>
+<li><a href="https://blog.csdn.net/aitangyong/article/details/39453365">java中的4种reference的差别和使用场景</a>
 
 <ul>
-<li>官方文档</li>
+<li>理论+ 代码+ 原理</li>
 </ul></li>
-<li><a href="https://segmentfault.com/a/1190000015605327">学习JVM是如何从入门到放弃的？</a><br />
+<li><a href="https://tech.meituan.com/g1.html">Java Hotspot G1 GC的一些关键技术</a>
 
 <ul>
-<li>针对intern() 和常量池有效的图形展示</li>
+<li>详细介绍了 G1 的算法、流程、指令和日志</li>
+<li>美团出的文章，技术含量确实~</li>
 </ul></li>
+<li><a href="https://blog.csdn.net/high2011/article/details/80177473">Java GC 垃圾回收器的分类和优缺点</a></li>
 </ul>
 
     </div>
@@ -686,17 +752,13 @@
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/java.jvm.%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B/" rel="next" title="Java.JVM.对象模型">
-        <i class="fa fa-chevron-left"></i> Java.JVM.对象模型
+        <a href="http://domain.yqjdcyy.com/post/java.jvm.%E7%B1%BB%E5%8A%A0%E8%BD%BD/" rel="next" title="Java.JVM.类加载">
+        <i class="fa fa-chevron-left"></i> Java.JVM.类加载
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
-    
-        <a href="http://domain.yqjdcyy.com/post/java.jvm.gc/" rel="prev" title="Java.JVM.GC">
-        Java.JVM.GC <i class="fa fa-chevron-right"></i>
-        </a>
     
     </div>
 </div>
@@ -705,7 +767,7 @@
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Java.JVM.类加载
+                标题：Java.JVM.GC
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -806,35 +868,26 @@
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#概念">概念</a></li>
-<li><a href="#流程">流程</a>
+<li><a href="#存活判断">存活判断</a></li>
+<li><a href="#算法">算法</a></li>
+<li><a href="#垃圾回收器">垃圾回收器</a>
 <ul>
-<li><a href="#过程">过程</a></li>
-<li><a href="#细节">细节</a>
+<li><a href="#简介">简介</a></li>
+<li><a href="#详细">详细</a>
 <ul>
-<li><a href="#加载">加载</a></li>
-<li><a href="#加载-加载">加载.加载</a></li>
-<li><a href="#加载-连接-验证">加载.连接.验证</a></li>
-<li><a href="#加载-连接-准备">加载.连接.准备</a></li>
-<li><a href="#加载-连接-解析">加载.连接.解析</a></li>
-<li><a href="#加载-初始化">加载.初始化</a></li>
+<li><a href="#cms">CMS</a></li>
+<li><a href="#g1">G1</a></li>
+</ul></li>
+<li><a href="#适用">适用</a></li>
 <li><a href="#使用">使用</a></li>
-<li><a href="#卸载">卸载</a></li>
+<li><a href="#示例">示例</a></li>
 </ul></li>
-<li><a href="#图示">图示</a></li>
-</ul></li>
-<li><a href="#类加载器">类加载器</a>
-<ul>
-<li><a href="#描述">描述</a></li>
-<li><a href="#分类">分类</a></li>
-<li><a href="#机制">机制</a></li>
-<li><a href="#方式">方式</a></li>
-<li><a href="#模型">模型</a></li>
-</ul></li>
+<li><a href="#工具">工具</a></li>
 <li><a href="#补充">补充</a>
 <ul>
-<li><a href="#引用">引用</a></li>
-<li><a href="#常量池">常量池</a></li>
+<li><a href="#gc-roots">GC Roots</a></li>
+<li><a href="#引用类型">引用类型</a></li>
+<li><a href="#缩写">缩写</a></li>
 </ul></li>
 <li><a href="#参考">参考</a></li>
 </ul>

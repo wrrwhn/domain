@@ -6,10 +6,19 @@
     <description>Recent content in Java on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/java/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.GC</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.gc/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.gc/</guid>
+      <description>存活判断 方式 方式 描述 优点 缺点 引用计数 对象持有被引用的计数值，为0时可被回收 简单 无法解决对象相互引用问题 可达性分析 由 GC Roots 开始向下搜索，路径（引</description>
+    </item>
     
     <item>
       <title>Java.JVM.类加载</title>

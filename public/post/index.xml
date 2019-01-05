@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 04 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.JVM.GC</title>
+      <link>http://domain.yqjdcyy.com/post/java.jvm.gc/</link>
+      <pubDate>Sat, 05 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.jvm.gc/</guid>
+      <description>存活判断 方式 方式 描述 优点 缺点 引用计数 对象持有被引用的计数值，为0时可被回收 简单 无法解决对象相互引用问题 可达性分析 由 GC Roots 开始向下搜索，路径（引</description>
+    </item>
     
     <item>
       <title>Java.JVM.类加载</title>
@@ -2503,15 +2512,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
-      <link>http://domain.yqjdcyy.com/post/java.jvm.gc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.jvm.gc/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://domain.yqjdcyy.com/post/java.keyword.final/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2534,10 +2534,7 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/java.thread/</guid>
-      <description>概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   final
-lock
-Thread
-工具 进程  调用
+      <description>概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   工具 进程  调用
  Runtime
 Process exec(*) ProcessBuilder
 new ProcessBuilder(...).start()  底层
