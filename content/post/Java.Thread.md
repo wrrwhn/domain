@@ -37,22 +37,6 @@
 	- 多个程序同时运行
 	- 多个队伍走多个通道
 
-# 
-
-<!-- monitor -->
-
-<!-- Unsafe -->
-
-<!-- volatile -->
-
-<!-- synchronized -->
-
-final
-
-lock
-
-Thread
-
 
 # 工具
 
