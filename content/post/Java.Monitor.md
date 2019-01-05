@@ -107,3 +107,5 @@ toc: true
 - [markOop.hpp](http://hg.openjdk.java.net/jdk8/jdk8/hotspot/file/87ee5ee27509/src/share/vm/oops/markOop.hpp)
 	- object-monitor 源码
 - [从jvm源码看synchronized](https://www.cnblogs.com/kundeg/p/8422557.html)
+- [Java的wait()、notify()学习三部曲之一：JVM源码分析](https://blog.csdn.net/boling_cavalry/article/details/77793224)
+	- 事例+源码

@@ -22,7 +22,7 @@ toc: true
 - 细划版
 	- ![JMM-v2.png](http://doc.yqjdcyy.com/479b5392-a40b-4846-8393-715224f42ee5.png)
 - 精确版
-	- ![JVM-v3.png](http://doc.yqjdcyy.com/af547473-a667-4c7a-86c9-c4039900e031.png)
+	- ![JVM-v3.png](http://doc.yqjdcyy.com/d7bedf9a-1e26-43f2-9f23-bce6a4b83b77.png)
 
 ## JDK 1.8
 - ![JVM-1.8.png](http://doc.yqjdcyy.com/0ad7c720-362e-4e9b-9172-93e5b97e491f.png)
