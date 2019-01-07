@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title>Markdown - 好久不见</title>
+    <title>Redis.哨兵 - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="Markdown">
+    <meta property="og:title" content="Redis.哨兵">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content="Markdown - 好久不见" />
+    <meta name="title" content="Redis.哨兵 - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -116,8 +116,8 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/markdown/" itemprop="url">
-        Markdown
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E5%93%A8%E5%85%B5/" itemprop="url">
+        Redis.哨兵
         </a>
       </h1>
       <div class="post-meta">
@@ -126,8 +126,8 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2016-12-11">
-    2016-12-11
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-12-06">
+    2018-12-06
 </time>
 </span> 
       
@@ -155,96 +155,280 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">300 字 ~1分钟</span>
+<span class="leancloud-visitors-count">685 字 ~2分钟</span>
 </span>
       </div>
     </header>
     <div class="post-body" itemprop="articleBody">
     
 
-<h1 id="目录"><strong>目录</strong></h1>
-
-<p>[TOC]</p>
-
-<h1 id="标题">标题</h1>
-
-<h2 id="二级标题">二级标题</h2>
-
-<p>####### 最大支持六级标题</p>
-
-<hr />
-
-<p><strong>注：序号和*号，与内容之间均需要一个空格</strong></p>
-
-<ol>
-<li>列表1</li>
-<li>列表2</li>
-<li>列表3</li>
-</ol>
+<h1 id="描述">描述</h1>
 
 <ul>
-<li>无序列表</li>
-<li>无序列表
-
-<ul>
-<li>无序列表缩进</li>
-</ul></li>
-<li>无序列表</li>
+<li>Redis 2.8 后版本支持</li>
+<li>Sentinel 管理多个 Redis 实例，并实现对其的监控、通知和<strong>故障转移</strong></li>
 </ul>
 
-<hr />
+<h1 id="架构">架构</h1>
 
-<p>字体支持很多样式，比如<strong>加粗</strong>、*斜体*、<del>删除线</del>等特别样式</p>
+<ul>
+<li>描述</li>
+</ul>
 
-<hr />
+<table>
+<thead>
+<tr>
+<th>分类</th>
+<th>实例</th>
+</tr>
+</thead>
 
-<p>当然也可以引用名人名言
-&gt;Markdown 很好用的 —— 阿尔伯特·爱因斯坦</p>
+<tbody>
+<tr>
+<td>监控</td>
+<td></td>
+</tr>
 
-<hr />
+<tr>
+<td></td>
+<td>Sentinel* n<br>n&gt;= 3</td>
+</tr>
 
-<p><a href="www.baidu.com">百度</a></p>
+<tr>
+<td>Redis</td>
+<td></td>
+</tr>
 
-<hr />
+<tr>
+<td></td>
+<td>Master</td>
+</tr>
 
-<p>代码格式表示</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    for(var i= 0; i&lt; count; i++)</pre></div>
-<hr />
+<tr>
+<td></td>
+<td>Slave* n<br>n&gt;=2</td>
+</tr>
+</tbody>
+</table>
 
-<p>表格
-|为知| md|
-|-|-|
-|WizNote|Markdown|</p>
+<ul>
+<li>图示
 
-<hr />
+<ul>
+<li><img src="http://doc.yqjdcyy.com/ad7f2a0a-8b00-4d2d-8d4a-53415d051854.png" alt="REDIS-SENTINEL.png" /></li>
+</ul></li>
+</ul>
 
-<p>公式啊！！！
-$\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$</p>
+<h1 id="命令">命令</h1>
 
-<hr />
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-flow" data-lang="flow">st=&gt;start: Start:&gt;http://www.google.com[blank]
-e=&gt;end:&gt;http://www.google.com
-op1=&gt;operation: My Operation
-sub1=&gt;subroutine: My Subroutine
-cond=&gt;condition: Yes
-or No?:&gt;http://www.google.com
-io=&gt;inputoutput: catch something...
-st-&gt;op1-&gt;cond
-cond(yes)-&gt;io-&gt;e
-cond(no)-&gt;sub1(right)-&gt;op1</code></pre></div>
-<hr />
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sequence" data-lang="sequence">Title:  [教程可以看](http://bramp.github.io/js-sequence-diagrams/)
-A-&gt;B: 【备注演示】
-Note left of A: 此轮回应前\nA 左侧备注
-Note over A: 此轮 A 线上的备注
-Note right of A: 此轮回应前A 右侧备注
-Note over A,B:此轮回应前横跨 AB 两线的备注
-A-&gt;B: 【线型演示】
-A-&gt;B: 实线三角标
-B--&gt;A: 虚线三角标
-A-&gt;&gt;B: 实线角标
-B--&gt;&gt;A: 虚线角标</code></pre></div>
-<hr />
+<table>
+<thead>
+<tr>
+<th>发送</th>
+<th>接收</th>
+<th>命令</th>
+<th>作用</th>
+<th>频率</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Sentinel</td>
+<td>Redis</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>PING</td>
+<td>检查节点状态</td>
+<td>PING/ s</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>INFO</td>
+<td>获取从节点信息</td>
+<td>主节点主观下线时 INFO/ s<br>INFO/ 10s</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>PUBLISH</td>
+<td>监控节点的 <code>__sentinel__:hello</code> 的<code>channel</code><br>推送自身信息<br>推送主节点配置</td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>SUBSCRIBE</td>
+<td>通过 <code>__sentinel__:hello</code> 获取监控服务的其它 <code>Sentinel</code> 节点</td>
+<td></td>
+</tr>
+
+<tr>
+<td>Sentinel</td>
+<td>Sentinel</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>PING</td>
+<td>检查节点状态</td>
+<td>PING/ s</td>
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td>SENTINEL:is-master-down-by-addr</td>
+<td>协商主节点状态<br>如果主节点客观下线，则投票选出新的主节点</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="示例">示例</h1>
+
+<h2 id="配置">配置</h2>
+
+<ul>
+<li><p>Redis-Sentinel.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">port <span style="color:#ae81ff">26379</span>
+
+<span style="color:#75715e"># 工作目录
+</span><span style="color:#75715e"></span>dir .<span style="color:#f92672">/</span>
+
+<span style="color:#75715e"># sentinel monitor &lt;master-name&gt; &lt;ip&gt; &lt;redis-port&gt; &lt;quorum&gt;
+</span><span style="color:#75715e"># quorum 为要求多少个 Sentinel 认定，才可判断 master 客观下线
+</span><span style="color:#75715e"></span>sentinel monitor mymaster <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">6379</span> <span style="color:#ae81ff">2</span>
+
+sentinel auth<span style="color:#f92672">-</span>pass mymaster <span style="color:#ae81ff">123456</span>  
+
+<span style="color:#75715e"># 心跳超期间隔，默认为 30s；超出则判定为主观下线
+</span><span style="color:#75715e"></span>sentinel down<span style="color:#f92672">-</span>after<span style="color:#f92672">-</span>milliseconds mymaster <span style="color:#ae81ff">30000</span>  
+
+<span style="color:#75715e"># 故障转移时，限定可向 master 同步的 slave 数量
+</span><span style="color:#75715e"></span>sentinel parallel<span style="color:#f92672">-</span>syncs mymaster <span style="color:#ae81ff">1</span>  
+
+<span style="color:#75715e"># 故障转移超时时间，默认为 180s 
+</span><span style="color:#75715e"></span>sentinel failover<span style="color:#f92672">-</span>timeout mymaster <span style="color:#ae81ff">180000</span>
+
+<span style="color:#75715e"># 故障时执行脚本，执行上限 60s，重试次数 10次
+</span><span style="color:#75715e"></span>sentinel notification<span style="color:#f92672">-</span>script mymaster <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>redis<span style="color:#f92672">/</span>notify.sh
+
+sentinel client<span style="color:#f92672">-</span>reconfig<span style="color:#f92672">-</span>script mymaster <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>redis<span style="color:#f92672">/</span>reconfig.sh</code></pre></div></li>
+
+<li><p>Redis-Client.conf</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">daemonize yes
+pidfile <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>run<span style="color:#f92672">/</span>redis<span style="color:#f92672">-</span><span style="color:#ae81ff">6379.</span>pid
+logfile <span style="color:#f92672">/</span>var<span style="color:#f92672">/</span>log<span style="color:#f92672">/</span>redis<span style="color:#f92672">/</span>redis<span style="color:#f92672">-</span><span style="color:#ae81ff">6379.</span>log
+port <span style="color:#ae81ff">6379</span>
+bind <span style="color:#ae81ff">0.0.0.0</span>
+timeout <span style="color:#ae81ff">300</span>
+databases <span style="color:#ae81ff">16</span>
+dbfilename dump<span style="color:#f92672">-</span><span style="color:#ae81ff">6379.</span>db
+dir .<span style="color:#f92672">/</span>redis<span style="color:#f92672">-</span>workdir
+masterauth <span style="color:#ae81ff">123456</span>
+requirepass <span style="color:#ae81ff">123456</span>
+
+<span style="color:#75715e">// 从节点配置
+</span><span style="color:#75715e"></span>slaveof <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">16379</span></code></pre></div></li>
+</ul>
+
+<h2 id="启动">启动</h2>
+
+<ul>
+<li><code>redis-server /usr/local/redis-sentinel/redis-16379.conf</code></li>
+<li><code>redis-sentinel sentinel-16380.conf</code></li>
+</ul>
+
+<h2 id="关键日志">关键日志</h2>
+
+<h2 id="故障次数">故障次数</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">+</span>new<span style="color:#f92672">-</span>epoch <span style="color:#ae81ff">1</span></code></pre></div>
+<h2 id="16379-节点主观下线">16379 节点主观下线</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">+</span>sdown master master <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">16379</span></code></pre></div>
+<h2 id="16379-节点被判定客观下线">16379 节点被判定客观下线</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">+</span>odown master master <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">16379</span> <span style="color:#75715e">#quorum 3/2</span></code></pre></div>
+<h2 id="将主节点切换为-26379">将主节点切换为 26379</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#f92672">+</span><span style="color:#66d9ef">switch</span><span style="color:#f92672">-</span>master master <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">16379</span> <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">26379</span>
+
+<span style="color:#f92672">+</span>slave slave <span style="color:#ae81ff">127.0.0.1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">36379</span> <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">36379</span> <span style="color:#960050;background-color:#1e0010">@</span> master <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">26379</span>
+<span style="color:#f92672">+</span>slave slave <span style="color:#ae81ff">127.0.0.1</span><span style="color:#f92672">:</span><span style="color:#ae81ff">16379</span> <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">16379</span> <span style="color:#960050;background-color:#1e0010">@</span> master <span style="color:#ae81ff">127.0.0.1</span> <span style="color:#ae81ff">26379</span></code></pre></div>
+<h1 id="流程">流程</h1>
+
+<ul>
+<li>实例距最后一次 PING 的时间，超过 <code>down-after-milliseconds: 30s</code>，则被认定为<strong>主观下线</strong></li>
+<li>指定数量 <code>quorum: 2</code> 在指定时间内通过该节点下线的判断，则认定为 <strong>客观下线</strong></li>
+<li><code>Sentinel</code> 间协商投票出新的主节点，并通过 <code>INFO</code> 将剩余从节点指向新的主节点，进行数据复制</li>
+</ul>
+
+<h1 id="补充">补充</h1>
+
+<h2 id="高可用方案">高可用方案</h2>
+
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>持久化</td>
+<td>数据备份</td>
+<td></td>
+</tr>
+
+<tr>
+<td>复制</td>
+<td>实现读的负载<br>故障恢复能力</td>
+<td>无法自动恢复<br>写操作无法负载<br>存储无法摆脱单机限制</td>
+</tr>
+
+<tr>
+<td>哨兵</td>
+<td>复制的基础上，实现故障恢复的自动实现</td>
+<td>写操作无法负载<br>存储无法摆脱单机限制</td>
+</tr>
+
+<tr>
+<td>集群</td>
+<td>实现写的负载<br>摆脱存储的单机限制</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="https://juejin.im/post/5b7d226a6fb9a01a1e01ff64">Redis哨兵模式与高可用集群</a>
+
+<ul>
+<li>流程图、示例等相当完整</li>
+</ul></li>
+<li><a href="http://download.redis.io/redis-stable/sentinel.conf">sentinel.conf</a>
+
+<ul>
+<li>完整配置</li>
+</ul></li>
+</ul>
 
     </div>
     <footer class="post-footer">
@@ -252,7 +436,7 @@ B--&gt;&gt;A: 虚线角标</code></pre></div>
  
 <div class="post-tags">     
      
-    <a href="http://domain.yqjdcyy.com/tags/markdown" rel="tag" title="Markdown">#Markdown#</a>
+    <a href="http://domain.yqjdcyy.com/tags/redis" rel="tag" title="Redis">#Redis#</a>
     
 </div>
 
@@ -261,16 +445,16 @@ B--&gt;&gt;A: 虚线角标</code></pre></div>
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/mysql.%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/" rel="next" title="Mysql.开发规范">
-        <i class="fa fa-chevron-left"></i> Mysql.开发规范
+        <a href="http://domain.yqjdcyy.com/post/redis.%E5%A4%8D%E5%88%B6/" rel="next" title="Redis.复制">
+        <i class="fa fa-chevron-left"></i> Redis.复制
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/storm/" rel="prev" title="Hello.Storm">
-        Hello.Storm <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/redis.%E9%9B%86%E7%BE%A4/" rel="prev" title="Redis.集群">
+        Redis.集群 <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -280,7 +464,7 @@ B--&gt;&gt;A: 虚线角标</code></pre></div>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：Markdown
+                标题：Redis.哨兵
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -381,11 +565,25 @@ B--&gt;&gt;A: 虚线角标</code></pre></div>
     <div class="post-toc">
         <div class="post-toc-content"><nav id="TableOfContents">
 <ul>
-<li><a href="#目录"><strong>目录</strong></a></li>
-<li><a href="#标题">标题</a>
+<li><a href="#描述">描述</a></li>
+<li><a href="#架构">架构</a></li>
+<li><a href="#命令">命令</a></li>
+<li><a href="#示例">示例</a>
 <ul>
-<li><a href="#二级标题">二级标题</a></li>
+<li><a href="#配置">配置</a></li>
+<li><a href="#启动">启动</a></li>
+<li><a href="#关键日志">关键日志</a></li>
+<li><a href="#故障次数">故障次数</a></li>
+<li><a href="#16379-节点主观下线">16379 节点主观下线</a></li>
+<li><a href="#16379-节点被判定客观下线">16379 节点被判定客观下线</a></li>
+<li><a href="#将主节点切换为-26379">将主节点切换为 26379</a></li>
 </ul></li>
+<li><a href="#流程">流程</a></li>
+<li><a href="#补充">补充</a>
+<ul>
+<li><a href="#高可用方案">高可用方案</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
 </ul>
 </nav></div>
     </div>

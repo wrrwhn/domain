@@ -119,6 +119,65 @@
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" itemprop="url">
+        Redis.对象处理机制
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-12-02">
+    2018-12-02
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">872 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    机制 使用 RedisObject 类型对象支持 支持进行类型检测 执行相同命令时，支持针对键所对应值类型进行多态处理 集合存在 LinkedList 和 ZipList 两种形式实现，但执行 ZADD 命令时，不需要关
+    </div>
+    
+    <div class="post-more-link text-center">
+    <a class="btn" href="http://domain.yqjdcyy.com/post/redis.%E5%AF%B9%E8%B1%A1%E5%A4%84%E7%90%86%E6%9C%BA%E5%88%B6/" rel="contents">
+      阅读全文 &raquo;
+    </a>
+    </div>
+    
+    <footer class="post-footer"><div class="post-eof"></div></footer>
+  </article>
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E5%86%85%E5%AD%98%E6%98%A0%E5%B0%84%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.ziplist/" itemprop="url">
         Redis.内存映射数据结构.ZipList
         </a>
@@ -529,65 +588,6 @@
     <footer class="post-footer"><div class="post-eof"></div></footer>
   </article>
 
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-      <h1 class="post-title" itemprop="name headline">
-        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/" itemprop="url">
-        Redis.持久化
-        </a>
-      </h1>
-      <div class="post-meta">
-      <span class="post-time">
-<span class="post-meta-item-icon">
-    <i class="fa fa-calendar-o"></i>
-</span>
-<span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2018-11-25">
-    2018-11-25
-</time>
-</span> 
-      
-
-  <span class="post-category" >
-  &nbsp; | &nbsp;
-  <span class="post-meta-item-icon">
-    <i class="fa fa-folder-o"></i>
-  </span>
-  <span class="post-meta-item-text">分类：</span>
-  
-    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
-        <span itemprop="name">整理</span>
-      </a>
-      &nbsp; 
-    </span>
-  
-</span>
-
-
-       <span>
-&nbsp; | &nbsp;
-<span class="post-meta-item-icon">
-    <i class="fa fa-eye"></i>
-</span>
-<span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">2217 字 ~5分钟</span>
-</span>
-      </div>
-    </header>
-    <div class="post-body" itemprop="articleBody">
-    持久化 RDB 形式 运行时，RDB 程序将内存数据快照保存至磁盘中，重启时载入 RDB 文件以还原数据库状态 针对超过20字节文本，会使用 LZF 编码形式进行压缩 原理
-    </div>
-    
-    <div class="post-more-link text-center">
-    <a class="btn" href="http://domain.yqjdcyy.com/post/redis.%E6%8C%81%E4%B9%85%E5%8C%96/" rel="contents">
-      阅读全文 &raquo;
-    </a>
-    </div>
-    
-    <footer class="post-footer"><div class="post-eof"></div></footer>
-  </article>
-
 </section>
 
 
@@ -716,7 +716,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">284</span>
+        <span class="site-state-item-count">285</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>

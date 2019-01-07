@@ -71,9 +71,9 @@ JVM Heap Analysis Tool 分析 jmap 生成的 dump，并于浏览器中展示   j
 JVM Stack Tool 生成虚拟机当前的线程快照   jinfo
 JVM Configiguration Info 查看、调整虚拟机运行参数     补充 GC Roots  作为 GC 可达性遍历的起点 有效对象  线程中 JVM 栈所引用的对象 类的静态属性所引用的对象 常量池所引用的对象 JNI 栈中所引用的对象   引用类型  类型
    类型 定义 示例      强引用 设置为空，或超出生命周期时才会被回收
-关联 GC Roots Object o=new Object();    弱引用 内存不足时，仅有弱引用指向的对象被回收
+关联 GC Roots Object o=new Object();    软引用 内存不足时，仅有弱引用指向的对象被回收
 适用于内存敏感的高速缓存 SoftReference
-如浏览器的返回页面    软引用 不管内存空间足够与否，被垃圾回收器发现便会被回收
+如浏览器的返回页面    弱引用 不管内存空间足够与否，被垃圾回收器发现便会被回收
 弱引用所指向的对象无强引用后，获得的值为 null WeakReference 关联对象
 WeakHashMap 键消息时值可自动清除
 ReferenceQueue记录自动消失的对象    虚引用 有跟没有一样
@@ -464,6 +464,31 @@ Load 针对特定缓冲区，因不同内容被映射而至
  申请从节点的所属主节点已宕机 所有满足条件的从节点中，节点 ID 排序最小 申请从节点运行状态正常  升级方式
  由符合条件的从节点向其它主节点发送授权请求  升级|故障转移
  其它从节点转向该节点进行复制 PONG 方式告知其它节点  当前节点为主节点 当前节点为已升级的从节点 显式广播，加速节点识别  接管原主节点所属的哈希槽 将已下载的主节点标识为 PROMOTED  重新上线后，将转换为现任主节点的从节点    参考  Redis 集群教程 一致性hash算法简介 五分钟理解一致性哈希算法 Redis集群特点 redis集群 数据迁移方式 Hash槽 和 一致性hash对比，优缺点比较 Chord Kademlia redis cluster管理工具redis-trib.rb详解 CLUSTER.* Redis集群节点超时时限 集合 | Cluster redis cluster配置文件和集群状态详解 Redis 3.0.5 集群的命令、使用、维护 Redis Cluster部署、管理和测试  </content>
+    </entry>
+    
+     <entry>
+        <title>Redis.哨兵</title>
+        <url>http://domain.yqjdcyy.com/post/redis.%E5%93%A8%E5%85%B5/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Redis</tag>
+        </tags>
+        <content type="html">  描述  Redis 2.8 后版本支持 Sentinel 管理多个 Redis 实例，并实现对其的监控、通知和故障转移  架构  描述     分类 实例     监控     Sentinel* n
+n&amp;gt;= 3   Redis     Master    Slave* n
+n&amp;gt;=2     图示     命令    发送 接收 命令 作用 频率     Sentinel Redis        PING 检查节点状态 PING/ s     INFO 获取从节点信息 主节点主观下线时 INFO/ s
+INFO/ 10s     PUBLISH 监控节点的 __sentinel__:hello 的channel
+推送自身信息
+推送主节点配置      SUBSCRIBE 通过 __sentinel__:hello 获取监控服务的其它 Sentinel 节点    Sentinel Sentinel        PING 检查节点状态 PING/ s     SENTINEL:is-master-down-by-addr 协商主节点状态
+如果主节点客观下线，则投票选出新的主节点     示例 配置  Redis-Sentinel.conf
+port 26379 # 工作目录 dir ./ # sentinel monitor &amp;lt;master-name&amp;gt; &amp;lt;ip&amp;gt; &amp;lt;redis-port&amp;gt; &amp;lt;quorum&amp;gt; # quorum 为要求多少个 Sentinel 认定，才可判断 master 客观下线 sentinel monitor mymaster 127.0.0.1 6379 2 sentinel auth-pass mymaster 123456 # 心跳超期间隔，默认为 30s；超出则判定为主观下线 sentinel down-after-milliseconds mymaster 30000 # 故障转移时，限定可向 master 同步的 slave 数量 sentinel parallel-syncs mymaster 1 # 故障转移超时时间，默认为 180s sentinel failover-timeout mymaster 180000 # 故障时执行脚本，执行上限 60s，重试次数 10次 sentinel notification-script mymaster /var/redis/notify.sh sentinel client-reconfig-script mymaster /var/redis/reconfig.sh Redis-Client.conf
+daemonize yes pidfile /var/run/redis-6379.pid logfile /var/log/redis/redis-6379.log port 6379 bind 0.0.0.0 timeout 300 databases 16 dbfilename dump-6379.db dir ./redis-workdir masterauth 123456 requirepass 123456 // 从节点配置 slaveof 127.0.0.1 16379  启动  redis-server /usr/local/redis-sentinel/redis-16379.conf redis-sentinel sentinel-16380.conf  关键日志 故障次数 &#43;new-epoch 1 16379 节点主观下线 &#43;sdown master master 127.0.0.1 16379 16379 节点被判定客观下线 &#43;odown master master 127.0.0.1 16379 #quorum 3/2 将主节点切换为 26379 &#43;switch-master master 127.0.0.1 16379 127.0.0.1 26379 &#43;slave slave 127.0.0.1:36379 127.0.0.1 36379 @ master 127.0.0.1 26379 &#43;slave slave 127.0.0.1:16379 127.0.0.1 16379 @ master 127.0.0.1 26379 流程  实例距最后一次 PING 的时间，超过 down-after-milliseconds: 30s，则被认定为主观下线 指定数量 quorum: 2 在指定时间内通过该节点下线的判断，则认定为 客观下线 Sentinel 间协商投票出新的主节点，并通过 INFO 将剩余从节点指向新的主节点，进行数据复制  补充 高可用方案    方案 优点 缺点     持久化 数据备份    复制 实现读的负载
+故障恢复能力 无法自动恢复
+写操作无法负载
+存储无法摆脱单机限制   哨兵 复制的基础上，实现故障恢复的自动实现 写操作无法负载
+存储无法摆脱单机限制   集群 实现写的负载
+摆脱存储的单机限制     参考  Redis哨兵模式与高可用集群  流程图、示例等相当完整  sentinel.conf  完整配置   </content>
     </entry>
     
      <entry>

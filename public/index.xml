@@ -120,6 +120,15 @@
     </item>
     
     <item>
+      <title>Redis.哨兵</title>
+      <link>http://domain.yqjdcyy.com/post/redis.%E5%93%A8%E5%85%B5/</link>
+      <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/redis.%E5%93%A8%E5%85%B5/</guid>
+      <description>描述 Redis 2.8 后版本支持 Sentinel 管理多个 Redis 实例，并实现对其的监控、通知和故障转移 架构 描述 分类 实例 监控 Sentinel* n n&amp;gt;= 3 Redis Master Slave* n n&amp;gt;=2 图示 命令 发送 接收 命令 作用 频率 Sentinel Redis PING</description>
+    </item>
+    
+    <item>
       <title>Redis.复制</title>
       <link>http://domain.yqjdcyy.com/post/redis.%E5%A4%8D%E5%88%B6/</link>
       <pubDate>Thu, 06 Dec 2018 00:00:00 +0000</pubDate>
