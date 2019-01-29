@@ -6,10 +6,19 @@
     <description>Recent content in Keyword on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/keyword/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Keyword.Final</title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword.final/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword.final/</guid>
+      <description>作用 用于声明类、方法、变量名，不允许修改其引用 示例 修饰对象 作用 变量 只读 随类定义存储于方法区(老生代) 基本数据类型将不可再次赋值 引用类型，将不</description>
+    </item>
     
     <item>
       <title>Java.Keyword.Synchronized</title>

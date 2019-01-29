@@ -6,10 +6,28 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 05 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Keyword.Final</title>
+      <link>http://domain.yqjdcyy.com/post/java.keyword.final/</link>
+      <pubDate>Tue, 29 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.keyword.final/</guid>
+      <description>作用 用于声明类、方法、变量名，不允许修改其引用 示例 修饰对象 作用 变量 只读 随类定义存储于方法区(老生代) 基本数据类型将不可再次赋值 引用类型，将不</description>
+    </item>
+    
+    <item>
+      <title>Java.AccessModifier</title>
+      <link>http://domain.yqjdcyy.com/post/java.accessmodifier/</link>
+      <pubDate>Thu, 10 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.accessmodifier/</guid>
+      <description>作用域 修饰符 类内部 同包 子类 跨包 public Y Y Y Y protected Y Y Y X default Y Y X X private Y X X X 示例 文件结构 - access - Access.java - AccessLocal.java - other - AccessSub.java - OutAcess.java 调用情况 Access package access AccessLocal package access AccessSub extends Access OutAccess package access.other public</description>
+    </item>
     
     <item>
       <title>Java.JVM.GC</title>
