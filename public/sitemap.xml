@@ -2,6 +2,18 @@
 <search>
     
      <entry>
+        <title>培训经验分享</title>
+        <url>http://domain.yqjdcyy.com/post/%E5%9F%B9%E8%AE%AD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>思考</tag>
+        </tags>
+        <content type="html">  总体原则  从听众的角度设计培训材料与过程  注意事项 设计开场白  好的开头是成功的一半 开篇对培训内容和目标做概括  让听众对培训有预期   前半阶段  培训重点是 what 和 why，how 是其次 why  需求变化 演化迭代 竞品 背景故事  what  功能 优势 场景  how  功能演示  在演示中串联 what 和 why 的细节  该环节尽量避免过于深入细节的问题  选择性回答，或结合产品画像回答 避免过于深入，打乱节奏，影响后面细节的发挥    后半阶段  细化 how，分析内部原理 分析纬度  逻辑模型  流程 模型 算法 协议  物理模型  文件结构  打开文件，逐行解析底层数据结构，结合流程演示数据的变化  数据  对照逻辑模型，建立整体实现的细节概念     多图少字，面线点结合  图  能更为立体地为听众建立演化过程的概念 图片比文字更好地帮助回想/ 建立记忆 图片的绘制本身就是自己对相关知识的整理过程  字  提炼关键字，避免照本宣科  面线点  材料的组织串联，由浅及里地自行演化 使用费曼学习法，自问自答，帮助更为深刻地理解   语速适中  有条件情况下，可以更快的速度演练  复盘中感受效果，进行专业优化 有流程有套路后，能让自己更有信心   组织条理  体现材料/ 思路的串联方式 让听众了解进度，更为有效地跟随思考  集中时长&amp;lt; 10分钟  关注一开始的十分钟，后面注意力会降低，导致没有代入感时，培训效果不佳  避免代码细节的展示  侧重于帮助听众形成方案的思路和实现的逻辑 避免过于深入，而串联不佳  </content>
+    </entry>
+    
+     <entry>
         <title>Java.Keyword.Final</title>
         <url>http://domain.yqjdcyy.com/post/java.keyword.final/</url>
         <categories>
@@ -21,7 +33,7 @@ private 方法将被隐式指定为 final 方法   类 不允许被继承
 final 类的所有方法将被隐式指定为 final 方法
 慎重使用    优势
  缓存 final 定义变量，提高性能 JVM 对方法、变量和类有一定优化 对多线程共享，减少同步开销   多线程场景优化
- final 可保证创建中的对象不能被其它线程访问  final 域，保证当构建函数退出时，其值对其它线程可见  JVM会在初始化final变量后插入一个sfence  对象创建分为内存分配和各属性初始化，而初始化时间不可控，导致其它线程有可能访问到一个无效或创建中的对象    对比 不可变类  对象一旦衩创建，便不可再被更改 如 String 对象只读，多线程下可安全共享  示例  常量/变量相加
+ final 可保证创建中的对象不能被其它线程访问  final 域，保证当构建函数退出时，其值对其它线程可见  JVM会在初始化final变量后插入一个sfence  对象创建分为内存分配和各属性初始化，而初始化时间不可控，导致其它线程有可能访问到一个无效或创建中的对象    对比 不可变类  对象一旦被创建，便不可再被更改 如 String 对象只读，多线程下可安全共享  示例  常量/变量相加
  代码
 String a = &amp;#34;hello2&amp;#34;; final String b = &amp;#34;hello&amp;#34;; String d = &amp;#34;hello&amp;#34;; String c = b &#43; 2; // 常量相加，数值也存储于常量池中 String e = d &#43; 2; // 对象&#43;常量，生成新的常量值 System.out.println((a == c)); // true System.out.println((a == e)); // false 反编译
 public static void main(java.lang.String[]); Code: 0: ldc #2 // String hello2  2: astore_1 3: ldc #2 // String hello2  5: astore_3 6: getstatic #3 // Field java/lang/System.out:Ljava/io/PrintStream;  9: aload_1 10: aload_3 11: if_acmpne 18 14: iconst_1 15: goto 19 18: iconst_0 19: invokevirtual #4 // Method java/io/PrintStream.println:(Z)V  22: return   补充 匿名类或接口中所声明的变量，均须以 final 修饰  str1&#43; str2&#43; str3
@@ -6193,6 +6205,58 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
     
      <entry>
         <title></title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  描述 适用场景  实时流处理  热闹商品统计 消息预警  海量数据处理  传感器/网络等多种复杂来源监测  数据分析  将复杂数据转化为用户可快速访问/理解的数据   支持  流处理  实时数据流  批处理  历史数据集  事件驱动应用  监控事件的服务   技术要点 Checkpoint  Chandy-Lamport 算法 分布式一致性快照 通过流重放和检查点，实现失败容忍机制  最新检查点之后的事件和状态更新，都将于输入流中重放   State  Value|List|Map|Broadcast 数据流转时，有关联事件的操作被称为有状态的操作 状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问  本地操作，在不需要事务开销的情况下保证一致性   Time  Watermark 机制
+ 乱序数据处理 迟到数据容忍  类型
+   类型 描述     ProcessingTime 事件被处理的时间
+处理机器的时间戳   EventTime 数据本身携带的时间     Window  作用  用于对一定数据的聚合计算  驱动  时间(30s) 数据量(100)  类型  global  永不停止的窗口，需指定触发器  tumbing  滚动窗口，仅需指定窗口时间跨度 窗口不重叠  sliding  滑动窗口，需指定窗口时间跨度和滑动的时长频率 窗口有重叠  session  会话窗口，开始时间和窗口大小可灵活配置 窗口有空隙    API 支持层次 Analytics API  SQL|Table API
+ dynamic tables  示例
+SELECT room, TUMBLE_END(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), AVG(temp) FROM sensors GROUP BY TUMBLE(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), room  Stream|Batch Data Processing  DataStream API
+ streams, windows  示例
+val stats = stream .keyBy(&amp;#34;sensor&amp;#34;) .timeWindow(Time.seconds(5)) .sum((a,b)-&amp;gt; a.add(b))  Event-Driven Application  ProcessFunction
+ events, state, time  示例
+def processElement(event: MyEvent, ctx: Context, out: Collector[Result])= { (event, state.value) match...} out.collect(..) state.update(..) ctx.timeService.registerEventTimeTimer(event.timestamp&#43; 500) }  方法    转换类型 方法名 含义     DataStream*-&amp;gt; DataStream      Map obj{1} map(obj{1})    FlatMap obj* flatMap(obj{1})    Filter 过滤满足条件的元素    Union 可将多个数据流合并成一个数据流    Window Join 合并两个数据流为一个，并通过指定键值生成/ 判断方法过滤，并添加时间窗口进行后续计算    Window CoGroup 数据流合并
+同 window join 操作    Extract Timestamps 提取事件数据的时间戳，供事件时间窗口使用    Iterate DataStream-&amp;gt; IterativeStream-&amp;gt; DataStream   DataStream-&amp;gt; KeyedStream      KeyBy 按 Key 拆分
+keyBy(0) 表示通过第一个元素进行分组
+未重写 hashCode() 方法的 POJO 类和数组均无法作用 key   KeyedStream*-&amp;gt; DataStream      Reduce 合并计算
+仅最终结果值 val&#43;= key    Fold 累计合并计算
+过程值列表 val, val&#43;= key, ...    Aggregations 聚合计算
+结合 sum/ avg/ min/ minBy/ max/ maxBy 使用    Max 返回指定字段的最小数值    MaxBy 返回包含最小数值字段的元素    Interval Join 合并数据流，并指定截取的时间区间，后配合 Process 方法转换数据格式    Process 底层的数据流处理函数
+可视为具有状态和定时器访问权限的 FlatMapFunction   KeyedStream-&amp;gt; WindowedStream      Windows 结合 keyBy 对数据进行分组   DataStream-&amp;gt; AllWindowedStream      WindowAll 对所有数据进行分组   WindowedStream/AllWindowedStream-&amp;gt; DataStream      Apply 支持对所有数据的操作    Reduce 窗口内的合并计算    Fold 窗口内的累计合并计算    Aggregations 窗口内的聚合计算   DataStream*-&amp;gt; ConnectedStreams      Connect 保留数据形式地合并数据流   ConnectedStreams-&amp;gt; DataStream      CoMap 连接流上的 Map 操作    CoFlatMap 连接流上的 FlatMap 操作   DataStream-&amp;gt; SplitStream      Split 将数据打上不同标志，结合 Select 可将数据流分为多路   SplitStream-&amp;gt; DataStream      Select 通过条件过滤出指定类型的数据流    架构 服务分层  Flink.Structure
+ 明细 | 模块 | 细节 | |&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;| | 部署 | | | | 本地运行 | | | 独立集群 | | | YARN
+Mesos | | | Cloud | | 运行 | | | | 分布式流式数据引擎 | | API | | | | DataStream | | | DataSet | | | Table | | | SQL API | | 扩展库 | | | | 机器学习 | | | 图形处理 | | | 复杂事件 |
+  抽象级别    抽象 描述     有状态流 Process.Func(Source*)
+Event-&amp;gt; 复杂计算   DataStream
+DataSet 支持对无/有界数据的转换和计算
+内置方法： map/ flatmap/ windows/ keyby/ sum/ max/ min/ avg/ join   Table API 以表（动态变化）为中心的声明式 DSL
+API： select/ project/ join/ group-by/ aggregate
+支持 DataStream 和 Table API 的混合使用   SQL 以 SQL 查询表达式形式来调用 Table API    数据流结构    名称 描述     Source 数据源
+Collection/ File/ Socket/ Custom
+Custom: Kafka/ Klnesls/ RabbitMQ/ Twitter Streaming/ NiFi/ 自定义   Transformation 数据转换操作
+Map/ FlatMap/ Filter/ Windows/ Apply 等等，详见方法   Sink 接口器
+File/ Printer/ Socket/ Custom Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cassandra/ Hadoop FileSystem/ 自定义    参考 理解  《从0到1学习Flink》—— Apache Flink 介绍 一文了解 Apache Flink 核心技术 Flink学习笔记(4):基本概念 Flink在美团的实践与应用 Flink 原理与实现：Window 机制 Apache Flink 容错机制  示例  5分钟从零构建第一个 Flink 应用 如何计算实时热门商品 Flink DataStream API Programming Guide DataStream API Tutorial []()  官方文档  Operators Windows  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/hello.zookeeper/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  参考  []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
         <url>http://domain.yqjdcyy.com/post/hello.docker.data/</url>
         <categories>
           
@@ -6310,6 +6374,19 @@ class YaoRunnable implements Runnable { @Override public void run() { System.out
  一致性哈希 2^32
  upgrade
   copy  runid&#43; offset backlog= 1M  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/spring.boot.context/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html"> ApplicationContextAware
+</content>
     </entry>
     
      <entry>
