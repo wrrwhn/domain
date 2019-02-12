@@ -6,10 +6,19 @@
     <description>Recent content on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 01 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git.Solution</title>
+      <link>http://domain.yqjdcyy.com/post/git.solution/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/git.solution/</guid>
+      <description>场景 下载 沿用线上内容 git clone git@github.com:user/project.git 使用本地内容 git init git remote add origin git@github.com:user/project.git git remote -v 拉取代码 Fetch 形式 git fetch origin master:temp git diff temp git merge temp git branch -d temp Pull 形式 git pull origin master 提交代码 git add -A git commit -m &amp;quot;commit.content&amp;quot; git push</description>
+    </item>
     
     <item>
       <title>培训经验分享</title>
