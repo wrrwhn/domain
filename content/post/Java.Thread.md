@@ -1,85 +1,14 @@
 
-
-
-
-Thread
-
-    static{
-        static native void registerNatives()
-    }
-
-    long tid
-    volatile char name[]
-    static long threadSeqNumber
-    volatile int threadStatus
-    int priority
-    Runnable target
-
-    volatile Object parkBlocker
-    volatile Interruptible bocker
-    final Object blockerLock
-
-    ThreadGroup group
-    ThreadLocal.ThreadLocalMap threadLocals, inheritableThreadLocals
-
-    boolean single_step
-    boolean daemon
-    boolean stillborn
-    long stackSize
-    long nativeParkEventPointer
-
-    final static int [MIN| NORM| MAX]_PRIORITY= 1| 5| 10
-
-    
-    
-    public Thread(...)
-        init(ThreadGroup, Runnable, ThreadName, stackSize, accessControlContext)
-
-
-    static native Thread currentThread()
-    static native void yield()
-    static native void sleep(long mills[, int nanos])
-    synchronized void start()
-        native void start0()
-    native void run()
-    void interrupt()
-    static boolean interrupted()
-        native boolean isInterrupted(bClearInterrupted)
-    final native boolean isAlive()
-    final void setPriority(priority)
-    static int activeCount()
-    static int enumerate(Thread ar[])
-    final synchronized void join([mills= 0[, nanos]])
-    final void setDaemon(on)
-    static native boolean holdsLock(obj)
-    StatckTraceElement[] getStackTrace()
-
-
-    native static StackTraceElement[][] dumpThreads(Thread[])
-    native static Thread[] getThrads()
-    
-
-
-    enum State{NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED;}
-
-
-    
-.....// TODO
-
-
-
 # 概念
 
 ## 进程
 - 操作系统中能独立运行、分配资源的基本单位
 - = `程序`= `机器指令+ 数据+ 堆栈`
 
-
 ## 线程
 - 独立运行、调度的基本单位
 - 减少调度成本，提高并发性
 - 同一进程的多个线程可共享进程的资源
-
 
 ## 协程
 - 用户模式下，完全由应用程序控制的，轻量级线程
@@ -90,10 +19,8 @@ Thread
 - Windows 环境下，协程的叫法
 - 线程一次只能执行一个纤程的代码
 
-
 ## 管程
 - 用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问
-
 
 ## 并*
 - 并行
@@ -132,7 +59,7 @@ Thread
 		| waitfor   | WaitForMultipleObject       |
 		| destroy   | TerminateProcess            |
 		| exitValue | GetExitCodeProcess          |
-	
+
 - 注意事项
 	- 管道容量有限，需及时读取
 		- 否则会导致进程挂起、死锁
@@ -207,6 +134,30 @@ Thread
 			| 运行时间统计 | 统计值不准确<br>因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间 |
 
 
+# 线程状态
+
+## 描述
+
+| 线程状态      | 描述 |
+|---------------|------|
+| NEW           |      |
+| RUNNABLE      |      |
+| BLOCKED       |      |
+| WAITING       |      |
+| TIMED_WAITING |      |
+| TERMINATED    |      |
+
+## 流程
+
+- 图示
+
+- 节点描述
+
+https://juejin.im/entry/57339fe82e958a0066bf284f
+https://my.oschina.net/mingdongcheng/blog/139263
+https://blog.csdn.net/pange1991/article/details/53860651
+
+
 # Concurrent
 
 	Atomic
@@ -220,6 +171,7 @@ Thread
 
 		使用  Unsage 实现的包装类
 
+	锁
 
 
 	线程池
