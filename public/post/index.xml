@@ -6,10 +6,28 @@
     <description>Recent content in Posts on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 29 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Git.Solution</title>
+      <link>http://domain.yqjdcyy.com/post/git.solution/</link>
+      <pubDate>Tue, 12 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/git.solution/</guid>
+      <description>场景 下载 沿用线上内容 git clone git@github.com:user/project.git 使用本地内容 git init git remote add origin git@github.com:user/project.git git remote -v 拉取代码 Fetch 形式 git fetch origin master:temp git diff temp git merge temp git branch -d temp Pull 形式 git pull origin master 提交代码 git add -A git commit -m &amp;quot;commit.content&amp;quot; git push</description>
+    </item>
+    
+    <item>
+      <title>培训经验分享</title>
+      <link>http://domain.yqjdcyy.com/post/%E5%9F%B9%E8%AE%AD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%9F%B9%E8%AE%AD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/</guid>
+      <description>总体原则 从听众的角度设计培训材料与过程 注意事项 设计开场白 好的开头是成功的一半 开篇对培训内容和目标做概括 让听众对培训有预期 前半阶段 培训重点是 what</description>
+    </item>
     
     <item>
       <title>Java.Keyword.Final</title>
@@ -2530,6 +2548,26 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink/</guid>
+      <description>描述 适用场景  实时流处理  热闹商品统计 消息预警  海量数据处理  传感器/网络等多种复杂来源监测  数据分析  将复杂数据转化为用户可快速访问/理解的数据   支持  流处理  实时数据流  批处理  历史数据集  事件驱动应用  监控事件的服务   技术要点 Checkpoint  Chandy-Lamport 算法 分布式一致性快照 通过流重放和检查点，实现失败容忍机制  最新检查点之后的事件和状态更新，都将于输入流中重放   State  Value|List|Map|Broadcast 数据流转时，有关联事件的操作被称为有状态的操作 状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问  本地操作，在不需要事务开销的情况下保证一致性   Time  Watermark 机制
+ 乱序数据处理 迟到数据容忍  类型
+   类型 描述     ProcessingTime 事件被处理的时间</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.zookeeper/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.zookeeper/</guid>
+      <description> 参考  []() []() []() []()  </description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/hello.docker.data/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2587,6 +2625,15 @@ new ProcessBuilder(...).start()  底层
  void *key void *val DictEntry *next  链接法
  开放寻址
  干净探测法</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/spring.boot.context/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/spring.boot.context/</guid>
+      <description>ApplicationContextAware</description>
     </item>
     
     <item>

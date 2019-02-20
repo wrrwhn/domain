@@ -1,0 +1,622 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Git.Solution - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Git.Solution">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Git.Solution - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/git.solution/" itemprop="url">
+        Git.Solution
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2019-02-12">
+    2019-02-12
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">686 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="场景">场景</h1>
+
+<h2 id="下载">下载</h2>
+
+<h3 id="沿用线上内容">沿用线上内容</h3>
+
+<ul>
+<li><code>git clone git@github.com:user/project.git</code></li>
+</ul>
+
+<h3 id="使用本地内容">使用本地内容</h3>
+
+<ul>
+<li><code>git init</code></li>
+<li><code>git remote add origin git@github.com:user/project.git</code></li>
+<li><code>git remote -v</code></li>
+</ul>
+
+<h2 id="拉取代码">拉取代码</h2>
+
+<h3 id="fetch-形式">Fetch 形式</h3>
+
+<ul>
+<li><code>git fetch origin master:temp</code></li>
+<li><code>git diff temp</code></li>
+<li><code>git merge temp</code></li>
+<li><code>git branch -d temp</code></li>
+</ul>
+
+<h3 id="pull-形式">Pull 形式</h3>
+
+<ul>
+<li><code>git pull origin master</code></li>
+</ul>
+
+<h2 id="提交代码">提交代码</h2>
+
+<ul>
+<li><code>git add -A</code></li>
+<li><code>git commit -m &quot;commit.content&quot;</code></li>
+<li><code>git push origin master</code></li>
+</ul>
+
+<h2 id="切换分支">切换分支</h2>
+
+<h3 id="以当前分支内容为基础">以当前分支内容为基础</h3>
+
+<ul>
+<li><code>git checkout -b &lt;branch&gt;</code></li>
+</ul>
+
+<h3 id="拉取线上分支">拉取线上分支</h3>
+
+<ul>
+<li><code>git checkout -b dev origin/dev</code>
+
+<ul>
+<li>适用于本地没 dev 分支，直接拉取线上 dev 分支内容并切换过去</li>
+<li>若使用上者，刚发现原分支的内容将被合并过来</li>
+</ul></li>
+</ul>
+
+<h2 id="提交分支">提交分支</h2>
+
+<ul>
+<li><code>git checkout -b prod</code></li>
+<li><code>git push origin prod</code></li>
+</ul>
+
+<h2 id="查看日志">查看日志</h2>
+
+<h3 id="提交日志">提交日志</h3>
+
+<ul>
+<li><code>git log</code></li>
+<li><code>git log --pretty=oneline</code>
+
+<ul>
+<li>单行形式展示</li>
+</ul></li>
+</ul>
+
+<h3 id="操作日志">操作日志</h3>
+
+<ul>
+<li><code>git reflog</code></li>
+</ul>
+
+<h3 id="查看代码提交人">查看代码提交人</h3>
+
+<ul>
+<li><code>git blame &lt;file&gt;</code></li>
+</ul>
+
+<h2 id="回滚">回滚</h2>
+
+<h3 id="撤消本地未提交文件修改">撤消本地未提交文件修改</h3>
+
+<ul>
+<li><code>git checkout -- &lt;file&gt;...</code>
+
+<ul>
+<li>针对现有文件的修改</li>
+</ul></li>
+</ul>
+
+<h3 id="撤消暂存区修改">撤消暂存区修改</h3>
+
+<ul>
+<li><code>git reset HEAD &lt;file&gt;...</code>
+
+<ul>
+<li>针对 git add 的文件</li>
+</ul></li>
+</ul>
+
+<h3 id="本地提交回退">本地提交回退</h3>
+
+<ul>
+<li><code>git reset --hard &lt;commit-id&gt;</code>
+
+<ul>
+<li>指定回退到的节点</li>
+</ul></li>
+<li><code>git reset --hard HEAD~n</code>
+
+<ul>
+<li>针对本地提交，但<strong>未推送</strong>至远程分支的情况</li>
+<li>该提交内容直接丢弃</li>
+<li>可结合 git reflog 回滚本地至本处操作节点</li>
+</ul></li>
+<li><code>git reset --soft HEAD~n</code>
+
+<ul>
+<li>回退版本，并将回退的内容<strong>置于工作区</strong></li>
+</ul></li>
+<li><code>git reset --soft HEAD~n</code>
+
+<ul>
+<li>仅回退 commit 记录，<strong>不回退内容</strong>
+<br /></li>
+</ul></li>
+</ul>
+
+<h3 id="拉取代码回退">拉取代码回退</h3>
+
+<ul>
+<li><code>git reset --hard ORIG_HEAD</code>
+
+<ul>
+<li>针对 git pull 合并冲突无法立即修改，而本地又需向前迭代情况</li>
+</ul></li>
+</ul>
+
+<h3 id="线上版本回退">线上版本回退</h3>
+
+<ul>
+<li><code>git revert HEAD~n</code>
+
+<ul>
+<li>回滚倒数第 <code>n+1</code> 个提交记录</li>
+</ul></li>
+<li><code>git revert &lt;commit-id&gt;</code>
+
+<ul>
+<li>指定<strong>回退指定节点</strong></li>
+<li>新的提交，内容与回退内容相反
+
+<ul>
+<li>会<strong>影响到分支再次合并</strong>，该部分内容亦无法重新出现</li>
+</ul></li>
+</ul></li>
+<li><code>git revert &lt;old-commit-id&gt;^..&lt;new-commit-id&gt;</code>
+
+<ul>
+<li>回滚指定 commit 范围内的记录，<strong>前旧后新</strong></li>
+<li>命令执行后，会针对每个 commit 的回滚让你标记相应的 commit 内容</li>
+</ul></li>
+<li><code>git revert &lt;commit-id&gt; -m [1|2]</code>
+
+<ul>
+<li>针对 <strong>merge</strong> 操作的回滚</li>
+<li><code>merge &lt;2&gt; to &lt;1&gt;</code>，其中-m 后面的 <1|2> 用于指定所要保留的分支
+
+<ul>
+<li>如 <code>merge dev to master</code>， <code>-m 1</code> 则表示要<strong>保留 master</strong></li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h2 id="暂存">暂存</h2>
+
+<ul>
+<li><code>git stash</code>
+
+<ul>
+<li>暂存当前修改</li>
+</ul></li>
+<li><code>git stash pop</code>
+
+<ul>
+<li>弹出最近一次的修改内容</li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://www.bootcss.com/p/git-guide/">git - 简易指南</a></li>
+<li><a href="https://www.jianshu.com/p/d265f7763a3a">git中fetch和pull的区别</a></li>
+<li><a href="https://blog.csdn.net/qq_27258799/article/details/53504451">git reset 应用场景示例</a></li>
+<li><a href="https://www.cnblogs.com/hanxianlong/archive/2012/09/10/2678659.html">Git 获取远程分支</a></li>
+<li><a href="https://www.jianshu.com/p/0e1fe709dd97">git中reset与revert的区别</a></li>
+<li><a href="https://blog.csdn.net/hongchangfirst/article/details/80986597">revert多个提交</a></li>
+<li><a href="https://mirrors.edge.kernel.org/pub/software/scm/git/docs/git-revert.html">git-revert</a></li>
+<li><a href="https://www.cnblogs.com/520yang/articles/6732687.html">git revert merge 的commit</a></li>
+<li><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/advanced-topics/rebase">Rebase 代替合并</a>
+
+<ul>
+<li>不推荐使用，会影响提交记录</li>
+<li>将多条线合并成单条线</li>
+</ul></li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/git" rel="tag" title="Git">#Git#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/%E5%9F%B9%E8%AE%AD%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/" rel="next" title="培训经验分享">
+        <i class="fa fa-chevron-left"></i> 培训经验分享
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Git.Solution
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">291</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">128</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#场景">场景</a>
+<ul>
+<li><a href="#下载">下载</a>
+<ul>
+<li><a href="#沿用线上内容">沿用线上内容</a></li>
+<li><a href="#使用本地内容">使用本地内容</a></li>
+</ul></li>
+<li><a href="#拉取代码">拉取代码</a>
+<ul>
+<li><a href="#fetch-形式">Fetch 形式</a></li>
+<li><a href="#pull-形式">Pull 形式</a></li>
+</ul></li>
+<li><a href="#提交代码">提交代码</a></li>
+<li><a href="#切换分支">切换分支</a>
+<ul>
+<li><a href="#以当前分支内容为基础">以当前分支内容为基础</a></li>
+<li><a href="#拉取线上分支">拉取线上分支</a></li>
+</ul></li>
+<li><a href="#提交分支">提交分支</a></li>
+<li><a href="#查看日志">查看日志</a>
+<ul>
+<li><a href="#提交日志">提交日志</a></li>
+<li><a href="#操作日志">操作日志</a></li>
+<li><a href="#查看代码提交人">查看代码提交人</a></li>
+</ul></li>
+<li><a href="#回滚">回滚</a>
+<ul>
+<li><a href="#撤消本地未提交文件修改">撤消本地未提交文件修改</a></li>
+<li><a href="#撤消暂存区修改">撤消暂存区修改</a></li>
+<li><a href="#本地提交回退">本地提交回退</a></li>
+<li><a href="#拉取代码回退">拉取代码回退</a></li>
+<li><a href="#线上版本回退">线上版本回退</a></li>
+</ul></li>
+<li><a href="#暂存">暂存</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2019</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>
