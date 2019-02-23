@@ -191,6 +191,9 @@ Lateness
 event-time windowing
 Elements that arrive after the watermark has passed the end of the window but before it passes the end of the window plus the allowed lateness, are still added to the window. 
 In order to make this work, Flink keeps the state of windows until their allowed lateness expires
+EventTimeTrigger
+    a late but not dropped element may cause the window to fire again
+Flink keeps the state of windows until their allowed lateness expires
 
 
 
