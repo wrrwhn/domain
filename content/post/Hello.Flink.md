@@ -26,11 +26,20 @@
 - 通过流重放和检查点，实现失败容忍机制
     - 最新检查点之后的事件和状态更新，都将于输入流中重放
 
+// TODO
+
 ## State
 - Value|List|Map|Broadcast
 - 数据流转时，有关联事件的操作被称为有状态的操作
 - 状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问
     - 本地操作，在不需要事务开销的情况下保证一致性
+    
+// TODO
+
+per-window state
+use keyed state 
+[global|window]State    [not] scoped to a window
+This feature is helpful if you anticipate multiple firing for the same window, as can happen when you have late firings for data that arrives late or when you have a custom trigger that does speculative early firings.
 
 ## Time
 - Watermark 机制
@@ -39,11 +48,47 @@
 
 - 类型
 
-    | 类型           | 描述                                 |
-    |----------------|------------------------------------|
-    | ProcessingTime | 事件被处理的时间<br>处理机器的时间戳 |
-    | EventTime      | 数据本身携带的时间                   |
+| 类型           | 描述                                 |
+|----------------|--------------------------------------|
+| ProcessingTime | 事件被处理的时间<br>Operator= Source/ Map/ Sink|
+| EventTime      | 数据本身携带的时间                   |
+| IngestionTime  | 事件被 DataSource 读取的时间                                     |
 
+
+https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/times_clocks.svg
+
+App-> MQ-> Flink.DataSource-> Flink.
+EventTime-> MQ-> IngestionTime-> ProcessingTime
+
+
+* 重启服务，无 checkpoint 配置下，昨天的数据是怎样触发时间窗口
+
+watermark 的生成时间
+
+    source
+
+Time Characteristic
+    Note that in order to run this example in event time, 
+        the program needs to either use sources that directly define event time for the data and emit watermarks themselves, 
+        or the program must inject a Timestamp Assigner & Watermark Generator after the sources.
+
+Event Time and Watermarks
+    A Watermark(t) declares that event time has reached time t in that stream, 
+        meaning that there should be no more elements from the stream with a timestamp t’ <= t 
+
+
+![](https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/stream_watermark_out_of_order.svg)
+
+Once a watermark reaches an operator, the operator can advance its internal event time clock to the value of the watermark.
+
+![flink-window-watermark-example.webp](http://doc.yqjdcyy.com/b102ece4-582e-4ddd-b8e3-caf2e12bf0c0.webp)
+
+Watermarks are generated at source functions
+    Each parallel subtask of a source function usually generates its watermarks independently. 
+
+
+
+// TODO
 
 ## Window
 - 作用
@@ -54,6 +99,7 @@
 - 类型
     - global
         - 永不停止的窗口，需指定触发器
+        This windowing scheme is only useful if you also specify a custom trigger
     - tumbing
         - 滚动窗口，仅需指定窗口时间跨度
         - 窗口不重叠
@@ -63,6 +109,99 @@
     - session
         - 会话窗口，开始时间和窗口大小可灵活配置
         - 窗口有空隙
+         Instead a session window closes when it does not receive elements for a certain period of time,
+
+
+tumbling windows, sliding windows, session windows and global windows
+
+extending the WindowAssigner
+
+Time-based windows have a start timestamp (inclusive) and an end timestamp (exclusive) 
+without offsets hourly tumbling windows are aligned with epoch
+
+adjust windows to timezones Time.hours(-8)
+// TODO
+
+window= 1h， 9:15开始
+(9:15, 10:00], (10:00, 11:00]
+
+
+Keyed Windows
+
+stream
+       .keyBy(...)               <-  keyed versus non-keyed windows
+       .window(...)              <-  required: "assigner"
+      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
+      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
+      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
+      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
+       .reduce/aggregate/fold/apply()      <-  required: "function"
+      [.getSideOutput(...)]      <-  optional: "output tag"
+Non-Keyed Windows
+
+stream
+       .windowAll(...)           <-  required: "assigner"
+      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
+      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
+      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
+      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
+       .reduce/aggregate/fold/apply()      <-  required: "function"
+      [.getSideOutput(...)]      <-  optional: "output tag"
+
+Triggers
+    determines when a window (as formed by the window assigner) is ready to be processed by the window function
+
+
+    processing-time window
+        ProcessingTimeTrigger 
+
+    event-time window
+        EventTimeTrigger 
+
+    GlobalWindow 
+        NeverTrigger 
+
+    CountTrigger 
+    PurgingTrigger 
+
+
+Evictors
+    The evictor has the ability to remove elements from a window after the trigger fires and before and/or after the window function is applied.
+
+void evictBefore(Iterable<TimestampedValue<T>> elements, int size, W window, EvictorContext evictorContext);
+    to be applied before the window function
+void evictAfter(Iterable<TimestampedValue<T>> elements, int size, W window, EvictorContext evictorContext);
+    to be applied after the window function
+
+
+CountEvictor
+    discard the number > user.limit
+DeltaEvictor
+    discard the delta.val> theshold
+TimeEvictor
+    discard the ts< max_ts- (windows.end - window.start)
+
+
+ all the elements of a window have to be passed to the evictor before applying the computation.
+ no guarantees about the order of the elements within a window
+
+
+
+Lateness
+event-time windowing
+Elements that arrive after the watermark has passed the end of the window but before it passes the end of the window plus the allowed lateness, are still added to the window. 
+In order to make this work, Flink keeps the state of windows until their allowed lateness expires
+EventTimeTrigger
+    a late but not dropped element may cause the window to fire again
+Flink keeps the state of windows until their allowed lateness expires
+
+
+
+sideOutputLateData
+get a stream of the data that was discarded as late
+
+
+
 
 # API
 
@@ -110,6 +249,12 @@
     ```
 
 ## 方法
+
+
+A windowed transformation with a ProcessWindowFunction cannot be executed as efficiently as the other cases because Flink has to buffer all elements for a window internally before invoking the function. 
+.aggregate(new AverageAggregate(), new MyProcessWindowFunction());
+
+
 
 | 转换类型                                       | 方法名             | 含义                                                                                                          |
 |------------------------------------------------|--------------------|---------------------------------------------------------------------------------------------------------------|
@@ -196,6 +341,46 @@
 | Sink           | 接口器<br>File/ Printer/ Socket/ Custom <br> Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cassandra/ Hadoop FileSystem/ 自定义 |
 
 
+# 示例
+
+## Watermark
+
+### 代码
+
+### 示例
+
+eventtime
+window(time.second(5))
+
+| EventTime | Watermark | Print | Operate |
+|-----------|-----------|-------|---------|
+| 1         | 1         |       | stash   |
+| 5         | 5         | 1     | stash   |
+| 6         | 6         |       | stash   |
+| 4         | 6         |       | discard |
+| 2         | 6         |       | discard |
+| 10        | 10        | 5,6   | stash   |
+| 3         | 10        |       | discard |
+| 15        | 15        | 10    | stash   |
+
+
+eventtime
+window(time.second(5))
+lateness(time.second(2))
+
+| EventTime | Watermark | Print | Operate                         |
+|-----------|-----------|-------|---------------------------------|
+| 1         | 1         |       | stash                           |
+| 5         | 5         | 1     | stash                           |
+| 6         | 6         |       | stash                           |
+| 4         | 6         | 1,4   |                                 |
+| 2         | 6         | 1,4,2 |                                 |
+| 10        | 10        | 5,6   | stash                           |
+| 3         | 10        |       | discard<br>w(10) out of [0~5+2) |
+| 15        | 10        | 10    | stash                           |
+
+
+
 
 # 参考
 
@@ -206,6 +391,15 @@
 - [Flink在美团的实践与应用](http://wuchong.me/blog/2018/08/25/flink-in-meituan-practice/)
 - [Flink 原理与实现：Window 机制](http://wuchong.me/blog/2016/05/25/flink-internals-window-mechanism/)
 - [Apache Flink 容错机制](https://segmentfault.com/a/1190000008129552)
+- [Event Time / Processing Time / Ingestion Time](https://ci.apache.org/projects/flink/flink-docs-stable/dev/event_time.html)
+- [深入理解Flink核心技术](https://zhuanlan.zhihu.com/p/20585530)
+- []()
+- [Flink 原理与实现：Session Window](http://wuchong.me/blog/2016/06/06/flink-internals-session-window/)
+- []()
+- []()
+- []()
+
+
 
 ## 示例
 - [5分钟从零构建第一个 Flink 应用](http://wuchong.me/blog/2018/11/07/5-minutes-build-first-flink-application/)
@@ -217,3 +411,9 @@
 ## 官方文档
 - [Operators](https://ci.apache.org/projects/flink/flink-docs-release-1.7/dev/stream/operators/)
 - [Windows](https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/windows.html)
+
+
+
+
+# 补充
+Flink= JobManager+ TaskManager*+ Client*
