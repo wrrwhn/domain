@@ -30,45 +30,15 @@
 
 ## 执行流程
 
-| 方法                        | 必填 | 描述                                                        |
-|-----------------------------|------|-------------------------------------------------------------|
-| keyBy+ window<br>windowAll  | 是   | 根据键值 Hash 分组或统一处理                                |
-| trigger                     |      | 用于判断窗口是否准备好执行窗口操作函数                      |
-| evictor                     |      | 于触发器触发窗口操作函数执行的前后运行，用于移除窗口内的数据 |
-| allowedLateness             |      |                                                             |
-| sideOutputLateData          |      |                                                             |
-| reduce/aggregate/fold/apply | 是   |                                                             |
-| getSideOutput               |      | 用于处理延迟到达，已被丢弃的数据                             |
-
-
-Lateness
-event-time windowing
-Elements that arrive after the watermark has passed the end of the window but before it passes the end of the window plus the allowed lateness, are still added to the window. 
-In order to make this work, Flink keeps the state of windows until their allowed lateness expires
-EventTimeTrigger
-    a late but not dropped element may cause the window to fire again
-Flink keeps the state of windows until their allowed lateness expires
-
-
-stream
-       .keyBy(...)               <-  keyed versus non-keyed windows
-       .window(...)              <-  required: "assigner"
-      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
-      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
-      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
-      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
-       .reduce/aggregate/fold/apply()      <-  required: "function"
-      [.getSideOutput(...)]      <-  optional: "output tag"
-Non-Keyed Windows
-
-stream
-       .windowAll(...)           <-  required: "assigner"
-      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
-      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
-      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
-      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
-       .reduce/aggregate/fold/apply()      <-  required: "function"
-      [.getSideOutput(...)]      <-  optional: "output tag"
+| 方法                        | 必填 | 描述                                                                                                                                    |
+|-----------------------------|------|-----------------------------------------------------------------------------------------------------------------------------------------|
+| keyBy+ window<br>windowAll  | 是   | 根据键值 Hash 分组或统一处理<br>不同分组将分别维护其时间窗口                                                                                                            |
+| trigger                     |      | 用于判断窗口是否准备好执行窗口操作函数                                                                                                  |
+| evictor                     |      | 于触发器触发窗口操作函数执行的前后运行，用于移除窗口内的数据                                                                             |
+| allowedLateness             |      | 事件时间窗口情况下使用<br>eventTime< windows.endTime+ lateness 时仍将可存入窗口<br>默认使用 EventTimeTrigger，延迟数据将再次触发窗口发送 |
+| sideOutputLateData          |      |                                                                                                                                         |
+| reduce/aggregate/fold/apply | 是   |                                                                                                                                         |
+| getSideOutput               |      | 用于处理延迟到达，已被丢弃的数据                                                                                                         |
 
 ## 
 trigger
@@ -131,6 +101,7 @@ idling
 | 10        | 10        | 5,6   | stash                           |
 | 3         | 10        |       | discard<br>w(10) out of [0~5+2) |
 | 15        | 10        | 10    | stash                           |
+
 
 
 # 参考
