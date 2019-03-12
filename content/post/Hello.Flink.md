@@ -126,79 +126,9 @@ window= 1h， 9:15开始
 (9:15, 10:00], (10:00, 11:00]
 
 
-Keyed Windows
-
-stream
-       .keyBy(...)               <-  keyed versus non-keyed windows
-       .window(...)              <-  required: "assigner"
-      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
-      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
-      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
-      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
-       .reduce/aggregate/fold/apply()      <-  required: "function"
-      [.getSideOutput(...)]      <-  optional: "output tag"
-Non-Keyed Windows
-
-stream
-       .windowAll(...)           <-  required: "assigner"
-      [.trigger(...)]            <-  optional: "trigger" (else default trigger)
-      [.evictor(...)]            <-  optional: "evictor" (else no evictor)
-      [.allowedLateness(...)]    <-  optional: "lateness" (else zero)
-      [.sideOutputLateData(...)] <-  optional: "output tag" (else no side output for late data)
-       .reduce/aggregate/fold/apply()      <-  required: "function"
-      [.getSideOutput(...)]      <-  optional: "output tag"
-
-Triggers
-    determines when a window (as formed by the window assigner) is ready to be processed by the window function
-
-
-    processing-time window
-        ProcessingTimeTrigger 
-
-    event-time window
-        EventTimeTrigger 
-
-    GlobalWindow 
-        NeverTrigger 
-
-    CountTrigger 
-    PurgingTrigger 
-
-
-Evictors
-    The evictor has the ability to remove elements from a window after the trigger fires and before and/or after the window function is applied.
-
-void evictBefore(Iterable<TimestampedValue<T>> elements, int size, W window, EvictorContext evictorContext);
-    to be applied before the window function
-void evictAfter(Iterable<TimestampedValue<T>> elements, int size, W window, EvictorContext evictorContext);
-    to be applied after the window function
-
-
-CountEvictor
-    discard the number > user.limit
-DeltaEvictor
-    discard the delta.val> theshold
-TimeEvictor
-    discard the ts< max_ts- (windows.end - window.start)
-
-
- all the elements of a window have to be passed to the evictor before applying the computation.
- no guarantees about the order of the elements within a window
 
 
 
-Lateness
-event-time windowing
-Elements that arrive after the watermark has passed the end of the window but before it passes the end of the window plus the allowed lateness, are still added to the window. 
-In order to make this work, Flink keeps the state of windows until their allowed lateness expires
-EventTimeTrigger
-    a late but not dropped element may cause the window to fire again
-Flink keeps the state of windows until their allowed lateness expires
-
-
-
-sideOutputLateData
-get a stream of the data that was discarded as late
 
 
 

@@ -1,12 +1,104 @@
 ---
-title: "Maven"
-date: "2016-12-09"
+title: "Hello.Maven"
+date: "2019-03-09"
 categories:
  - "整理"
 tags:
  - "Maven"
 toc: true
 ---
+
+
+
+
+
+# 作用
+> Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+
+- Maven 作为软件项目的**管理**和**帮助理解**的工具。
+- 基于 **`pom.xml`** 文件，Maven 支持进行项目的**建构**/ 上报/ 文档化
+
+
+> Maven, a Yiddish word meaning accumulator of knowledge, was originally started as an attempt to simplify the build processes in the Jakarta Turbine project. There were several projects each with their own Ant build files that were all slightly different and JARs were checked into CVS. We wanted a standard way to build the projects, a clear definition of what the project consisted of, an easy way to publish project information and a way to share JARs across several projects.
+
+- Maven 意为知识的累加器
+- 最初为简化 `Jakarta Turbine` 项目而设计
+    - 项目内各子项目，均有各自的 `Ant` 构建文件，且均略有不同
+    - 我们想要一种标准的方法来简化项目的**定义**/ **发布**和**共享 Jar** 文件
+
+> Maven’s primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time
+>> Making the build process easy
+>> Providing a uniform build system
+>> Providing quality project information
+>> Providing guidelines for best practices development
+>> Allowing transparent migration to new features
+
+| 目标                   | 实现         |
+|----------------------|--------------|
+| 简化构建流程           | 隐藏潜在原理 |
+| 提供统一的构建系统     |通过 pom.plugins 共享所有项目              |
+| 提供高效的项目描述     |交叉引用来源<br>依赖列表<br>单测报告<br>源代码处的变更日志<br>项目管理的邮箱列表              |
+| 新手实践的最佳指导     |              |
+| 允许透明地迁移至新特性 |              |
+
+
+# 概念
+
+
+
+示例
+
+
+# 参考
+- []()
+- []()
+- []()
+- []()
+- []()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ## 部署安装
