@@ -9,10 +9,7 @@ toc: true
 ---
 
 
-
-
-
-# 作用
+# 概述
 > Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
 - Maven 作为软件项目的**管理**和**帮助理解**的工具。
@@ -27,7 +24,7 @@ toc: true
     - 我们想要一种标准的方法来简化项目的**定义**/ **发布**和**共享 Jar** 文件
 
 > Maven’s primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time
->> Making the build process easy
+>- Making the build process easy 
 >> Providing a uniform build system
 >> Providing quality project information
 >> Providing guidelines for best practices development
@@ -38,23 +35,174 @@ toc: true
 | 简化构建流程           | 隐藏潜在原理 |
 | 提供统一的构建系统     |通过 pom.plugins 共享所有项目              |
 | 提供高效的项目描述     |交叉引用来源<br>依赖列表<br>单测报告<br>源代码处的变更日志<br>项目管理的邮箱列表              |
-| 新手实践的最佳指导     |              |
+| 新手实践的最佳指导     |统一文件目录格式<br>独立单测场景，全场景覆盖              |
 | 允许透明地迁移至新特性 |              |
 
 
 # 概念
 
+## 结构
+
+### 项目结构 
+- 可由 `mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes` 生成
+
+    ```
+    /project
+        pom.xml
+        /src
+            /main
+                /java/com/company/app
+                    App.java
+                /resources
+            /test
+                /java/com/company/app
+                    AppTest.java
+                /resources
+    ```
+
+### POM 文件结构
+
+- 示例
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <name>Maven Quick Start Archetype</name>
+  <url>http://maven.apache.org</url>
+  <dependencies>
+    <dependency>
+      <groupId>com.group</groupId>
+      <artifactId>artifact.id</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+      <type>jar</type>
+      <exclusions>
+        <exclusion>
+          <groupId>com.group</groupId>
+          <artifactId>artifact.excluded.id</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+- 节点含义
+
+| 节点                    | ...                  | 描述                                                       |
+|-------------------------|----------------------|------------------------------------------------------------|
+| project                 |                      |                                                            |
+| modelVersion            |                      | 指定 pom.xml 文件所使用的对象模型的版本                    |
+| groupId                 |                      | 项目所属组织或机构的唯一标识                               |
+| artifactId              |                      | 项目的唯一标识名称                                         |
+| packaging               |                      | 指明打包方式<br>JAR(Default)/ WAR/ EAR                     |
+| version                 |                      | 指定生成包的版本                                           |
+| name                    |                      | 指定项目名称<br>常用于生成文档中                           |
+| url                     |                      | 指定项目主页<br>常用于生成文档中                           |
+| description             |                      | 提供项目的基础描述<br>常用于生成文档中                     |
+| parent                  |                      | 指定父类项目<br>默认继承父类项目的配置                     |
+| dependencies.dependency |                      | 指明该项目所依赖的项目信息<br>依此自动下载并构建 classpath |
+|                         | groupId              |                                                            |
+|                         | artifactId           |                                                            |
+|                         | version              |                                                            |
+|                         | type                 | 依赖的类型<br>jar(default)/ war/ ejb-client/ test-jar      |
+|                         | scope                | 作用域<br>compile(default)/ runtime/ test/ system/ provided                                                           |
+|                         | exclusions.exclusion |                                                            |
+| properties              |                      |                                                            |
+| repositories            |                      |                                                            |
+| pluginRepositories      |                      |                                                            |
+| build                   |                      |                                                            |
+| profiles                |                      |                                                            |
+| modules                 |                      |                                                            |
+| prerequisites           |                      |                                                            |
 
 
-示例
+
+
+# 指令
+- `mvn --version`
+
+    ```
+    Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-18T02:33:14+08:00)
+    Maven home: C:\server\maven\apache-maven-3.5.4\bin\..
+    Java version: 1.8.0_191, vendor: Oracle Corporation, runtime: C:\server\java\jre1.8.0_191
+    Default locale: zh_CN, platform encoding: GBK
+    OS name: "windows 10", version: "10.0", arch: "x86", family: "windows"
+    ```
+
+- `mvn archetype:generate`
+
+- `mvn comppile`
+
+
+# 示例
+
+## 模板
+- 通用模板
+    - `Hello_Java`
+        - `mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DparentGroupId=com.yao.java -DparentArtifactId=maven -DgroupId=com.yao.java -DartifactId=maven-archetype -DinteractiveMode=false`
+
+- 自定义模板
+
+    - 模板创建
+        - `Hello_Java`
+            - `move maven-archetype maven`
+
+        - `Hello_Java\maven\maven-archetype`
+            - `mvn archetype:create-from-project`
+
+                ```
+                [INFO] Archetype project created in Hello_Java\maven\maven-archetype\target\generated-sources\archetype
+                ```
+        - `Hello_Java\maven\maven-archetype\target\generated-sources\archetype`
+            - `mvn clean install -DskipTest=true`
+
+                ```
+                [INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ maven-archetype ---
+                [INFO] Installing Hello_Java\maven\maven-archetype\target\generated-sources\archetype\target\maven-archetype-1.0-SNAPSHOT.jar to \.m2\repository\com\yao\java\maven-archetype\1.0-SNAPSHOT\maven-archetype-1.0-SNAPSHOT.jar
+                [INFO] Installing Hello_Java\maven\maven-archetype\target\generated-sources\archetype\pom.xml to \.m2\repository\com\yao\java\maven-archetype\1.0-SNAPSHOT\maven-archetype-1.0-SNAPSHOT.pom
+                [INFO] --- maven-archetype-plugin:3.0.1:update-local-catalog (default-update-local-catalog) @ maven-archetype ---
+                ```
+    - 套用模板
+        - `Hello_Java\maven`
+            - `mvn archetype:generate -DarchetypeCatalog=local`
+                - 手动选择模板
+                - 录入 group/ artifactId/ version 等相关信息即可
+
+        - `Hello_Java\maven`
+            - `mvn archetype:generate -DarchetypeCatalog=local -DarchetypeGroupId=com.yao.java -DarchetypeArtifactId=maven-archetype -DgroupId=com.yao.java -DartifactId=maven-archetype-local-command -DinteractiveMode=false`
+
+
+
+# 补充
+- 依赖传递
+    - 最短优先
+        - `D 1.0`
+            - `A -> B -> C -> D 2.0`
+            - `A -> E -> D 1.0`
 
 
 # 参考
 - []()
 - []()
-- []()
-- []()
-- []()
+- [Maven Getting Started Guide](https://maven.apache.org/guides/getting-started/)
+- [Maven](https://maven.apache.org/ref/3.6.0/maven-model/maven.html)
+    - POM.xml 的完整事例
+- [Dependency Mechanism](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
+    - 依赖的机制
+    - 作用域等各字段的详细解析
+
+- archetype
+    - [创建自己的Maven模板](https://blog.csdn.net/teaey/article/details/24184607)
+    - [Maven 3: Maven in 5 minutes “mvn archetype:generate…” command NOT WORKING](https://stackoverflow.com/questions/20165674/maven-3-maven-in-5-minutes-mvn-archetypegenerate-command-not-working/26351113)
+        - powershell 情况下，参数需用双引号包起来
 
 
 
