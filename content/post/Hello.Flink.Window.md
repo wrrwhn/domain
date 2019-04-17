@@ -195,9 +195,15 @@ AssignerWithPeriodicWatermarks
         定期时长由 getAutoWatermarkInterval 获取 
 
 
+
+根据 keyby.window 进行水印的分开管理
+	internalTimerService.registerEventTimeTimer(window, time)
+
+
+
 # 参考
 - []()
-- []()
+- [Flink EventTime和Watermarks案例分析](https://blog.csdn.net/xu470438000/article/details/83271123)
 - []()
 - []()
 - []()

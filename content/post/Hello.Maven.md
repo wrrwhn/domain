@@ -96,32 +96,33 @@ toc: true
 
 - 节点含义
 
-| 节点                    | ...                  | 描述                                                       |
-|-------------------------|----------------------|------------------------------------------------------------|
-| project                 |                      |                                                            |
-| modelVersion            |                      | 指定 pom.xml 文件所使用的对象模型的版本                    |
-| groupId                 |                      | 项目所属组织或机构的唯一标识                               |
-| artifactId              |                      | 项目的唯一标识名称                                         |
-| packaging               |                      | 指明打包方式<br>JAR(Default)/ WAR/ EAR                     |
-| version                 |                      | 指定生成包的版本                                           |
-| name                    |                      | 指定项目名称<br>常用于生成文档中                           |
-| url                     |                      | 指定项目主页<br>常用于生成文档中                           |
-| description             |                      | 提供项目的基础描述<br>常用于生成文档中                     |
-| parent                  |                      | 指定父类项目<br>默认继承父类项目的配置                     |
-| dependencies.dependency |                      | 指明该项目所依赖的项目信息<br>依此自动下载并构建 classpath |
-|                         | groupId              |                                                            |
-|                         | artifactId           |                                                            |
-|                         | version              |                                                            |
-|                         | type                 | 依赖的类型<br>jar(default)/ war/ ejb-client/ test-jar      |
-|                         | scope                | 作用域<br>compile(default)/ runtime/ test/ system/ provided                                                           |
-|                         | exclusions.exclusion |                                                            |
-| properties              |                      |                                                            |
-| repositories            |                      |                                                            |
-| pluginRepositories      |                      |                                                            |
-| build                   |                      |                                                            |
-| profiles                |                      |                                                            |
-| modules                 |                      |                                                            |
-| prerequisites           |                      |                                                            |
+| 节点                    | ...                  | 描述                                                                |
+|-------------------------|----------------------|---------------------------------------------------------------------|
+| project                 |                      |                                                                     |
+| modelVersion            |                      | 指定 pom.xml 文件所使用的对象模型的版本                             |
+| groupId                 |                      | 项目所属组织或机构的唯一标识                                        |
+| artifactId              |                      | 项目的唯一标识名称                                                  |
+| packaging               |                      | 指明打包方式<br>JAR(Default)/ WAR/ EAR                              |
+| version                 |                      | 指定生成包的版本                                                    |
+| name                    |                      | 指定项目名称<br>常用于生成文档中                                    |
+| url                     |                      | 指定项目主页<br>常用于生成文档中                                    |
+| description             |                      | 提供项目的基础描述<br>常用于生成文档中                              |
+| parent                  |                      | 指定父类项目<br>默认继承父类项目的配置                              |
+| dependencies.dependency |                      | 指明该项目所依赖的项目信息<br>依此自动下载并构建 classpath          |
+|                         | groupId              |                                                                     |
+|                         | artifactId           |                                                                     |
+|                         | version              |                                                                     |
+|                         | type                 | 依赖的类型<br>jar(default)/ war/ ejb-client/ test-jar               |
+|                         | scope                | 作用域<br>compile(default)/ runtime/ test/ system/ provided/ import |
+|                         | exclusions.exclusion |                                                                     |
+| dependencyManagement    |                      | 声明依赖版本，不自动引入<br>子项目可仅标注 group/artifactId 引入     |
+| properties              |                      |                                                                     |
+| repositories            |                      |                                                                     |
+| pluginRepositories      |                      |                                                                     |
+| build                   |                      |                                                                     |
+| profiles                |                      |                                                                     |
+| modules                 |                      |                                                                     |
+| prerequisites           |                      |                                                                     |
 
 
 
@@ -188,6 +189,23 @@ toc: true
             - `A -> B -> C -> D 2.0`
             - `A -> E -> D 1.0`
 
+- 依赖作用域名
+
+|类型|描述|
+|-|-|
+|compile|适用于项目所有的类路径<br>依赖可传递至子项目|
+|provided|由 JDK 或容器提供<br>仅适用于编译和测试类路径<br>不可传递|
+|runtime|指明编译时不需要<br>包含于运行和测试的类路径，但包含于编译类路径|
+|test|指明仅于测试时使用|
+|system|指明已通过 jar 形式提供|
+|import|仅提供于 dependencyManagement 中的 pom 类型依赖<br>|
+
+
+    - 最小作用域覆盖
+        - 同一 jar 于不同依赖中分别标注以 compile 和 runtime，则当前引入的形式为 runtime
+
+
+
 
 # 参考
 - []()
@@ -198,6 +216,14 @@ toc: true
 - [Dependency Mechanism](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)
     - 依赖的机制
     - 作用域等各字段的详细解析
+- [Maven中dependencyManagement作用说明](https://blog.csdn.net/vtopqx/article/details/79034835)
+    - dependencyManagement 声明默认依赖版本
+    - 而 dependencies 声明引用时，可仅指定 groupId 和 artifactId 引用
+        - 而当引用特定版本时，再指定 version 即可
+- []()
+- []()
+- []()
+- []()
 
 - archetype
     - [创建自己的Maven模板](https://blog.csdn.net/teaey/article/details/24184607)
