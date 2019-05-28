@@ -1,3 +1,13 @@
+---
+title: "Hello.Flink.State.Broadcast"
+date: "2019-05-07"
+categories:
+ - "整理"
+tags:
+ - "Flink"
+toc: true
+---
+
 
 # 描述
 ## 作用

@@ -1,4 +1,12 @@
-
+---
+title: "Hello.Flink.Window"
+date: "2019-04-18"
+categories:
+ - "整理"
+tags:
+ - "Flink"
+toc: true
+---
 
 # 描述
 - Flink 根据时间，将无穷的数据截取成一个个窗口，并于窗口时间到达时，将此阶段缓存的数据取出以进行下一步的操作
