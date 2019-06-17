@@ -1,5 +1,13 @@
-<!-- TODO 标题 -->
-
+---
+title: "Java.Serialize"
+date: "2019-06-17"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "Serialize"
+toc: true
+---
 
 # 思考
 - 什么是序列化
@@ -10,8 +18,8 @@
 # 理解 
 ## 什么是序列化
 - 描述
-    - 序列化是将对象的信息提取保存的过程
-    - 反序列化则是在获取信息后，还原出对象的过程
+    - 序列化是转换对象关键信息为字节流
+    - 反序列化则是在获取到字节流后，还原出对象的过程
 
 - 信息内容
     - 全路径类名
@@ -56,19 +64,39 @@
     ```
 
 ## 自定义序列化
-- 实现
-    - 定义 `readObject` 和 `writeObject` 方法
+###  定义 `readObject` 和 `writeObject` 方法
 
-        ```java
-        private void readObject(java.io.ObjectInputStream s){...}
-        private void writeObject(java.io.ObjectOutputStream s){...}
-        ```
+- 实现
+
+    ```java
+    private void readObject(java.io.ObjectInputStream s){...}
+    private void writeObject(java.io.ObjectOutputStream s){...}
+    ```
 
 - 调用
     - `ObjectInput]Stream` 和 `ObjectOutput]Stream` 内部通过反射进行该方法的调用
 
 - 事例
     - 参见 `java.util.ArrayLis`
+
+### 实现 `Externalizable`
+
+- 实现
+
+    ```java
+    public class User implements Externalizable {
+        @Override
+        public void writeExternal(ObjectOutput out){...}
+        @Override
+        public void readExternal(ObjectInput in) {...}
+    }
+    ```
+
+- 补充
+    - 实现时，需要保障有**无参构造函数**
+    - 优先级较 `Serializable` **高**
+        - 同时实现 `Serializable` 和 `Externalizable`，会优先调用 `writeExternal|readExternal` 方法
+
 
 # 注意
 ## 不序列化项

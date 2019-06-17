@@ -1,3 +1,15 @@
+---
+title: "Java.Thread.Interrupt"
+date: "2019-06-06"
+categories:
+ - "整理"
+tags:
+ - "Java"
+ - "Thread"
+toc: true
+---
+
+
 # 重点
 - 线程由**自己决定**是否停止，而不应由其它线程来强制中断或停止
     - 线程可以根据中断检测，来决定终止，等待新任务或继续执行
