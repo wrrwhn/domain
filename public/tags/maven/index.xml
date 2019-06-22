@@ -6,10 +6,28 @@
     <description>Recent content in Maven on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 17 Aug 2017 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Hello.Maven.Repository</title>
+      <link>http://domain.yqjdcyy.com/post/hello.maven.repository/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.maven.repository/</guid>
+      <description>Repository 组成 Local Repository 本地文件夹 默认为 {m2}\repository Remote Repository 中央仓库 http://repo1.maven.org/maven2/ 私服 http://localhost/maven2/ 公用仓库 https://maven.aliyun.com/repository/central 对比 Mirror 作用 mirror 相关于 repository 请求的拦截器 目的 针对访问和下载速度的考量 图示 注意 镜像会完全屏蔽</description>
+    </item>
+    
+    <item>
+      <title>Hello.Maven</title>
+      <link>http://domain.yqjdcyy.com/post/hello.maven/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.maven/</guid>
+      <description>概述 Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project&amp;rsquo;s build, reporting and documentation from a central piece of information. Maven 作为软件项目的管理和帮助理解的工具。 基于 pom.xml 文件，Maven 支持进</description>
+    </item>
     
     <item>
       <title>Linux.Maven</title>
@@ -18,15 +36,6 @@
       
       <guid>http://domain.yqjdcyy.com/post/linux.maven/</guid>
       <description>参考 Installing Apache Maven Maven - 环境配置 apache-maven-3.5.0-bin.zip apache-maven-3.5.0-bin.tar.gz 流程 Java.config check $JAVA_HOME Maven.config UNZIP /data/soft/apache-maven-3.5.0 EXPORT.ADD /etc/profile export M2_HOME=/data/soft/apache-maven-3.5.0 export M2=$M2_HOME/bin export MAVEN_OPTS=&#39;-Xms256m -Xmx512m&#39; export PATH=${PATH}:${M2} EXPORT.SAVE source /etc/profile CHECK mvn -v MAVEN.CONFIG /data/soft/apache-maven-3.5.0/conf/settings.xml &amp;lt;localRepository&amp;gt;/data/soft/apache-maven-3.5.0/repo&amp;lt;/localRepository&amp;gt; 常用指令 clean install -Dmaven.test.skip=true -Dmaven.repo.local=/data/.m2 -X 显示 Debbug 信息</description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>http://domain.yqjdcyy.com/post/maven/</link>
-      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/maven/</guid>
-      <description>部署安装 下载地址 http://maven.apache.org/download.cgi 安装流程 至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量 [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补</description>
     </item>
     
   </channel>

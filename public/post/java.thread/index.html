@@ -137,7 +137,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">204 字 ~1分钟</span>
+<span class="leancloud-visitors-count">242 字 ~2分钟</span>
 </span>
       </div>
     </header>
@@ -202,7 +202,72 @@
 </ul></li>
 </ul>
 
-<h1 id="工具">工具</h1>
+<h1 id="线程状态">线程状态</h1>
+
+<h2 id="描述">描述</h2>
+
+<table>
+<thead>
+<tr>
+<th>线程状态</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>NEW</td>
+<td>新建线程</td>
+</tr>
+
+<tr>
+<td>RUNNABLE</td>
+<td>线程置入线程池，等待调度选中，获取 CPU 使用权</td>
+</tr>
+
+<tr>
+<td>BLOCKED</td>
+<td>阻塞状态，等待锁资源</td>
+</tr>
+
+<tr>
+<td>WAITING</td>
+<td>等待状态，等待其它线程将其唤起</td>
+</tr>
+
+<tr>
+<td>TIMED_WAITING</td>
+<td>超时等待，等待休眠结束或其它关联线程结束</td>
+</tr>
+
+<tr>
+<td>TERMINATED</td>
+<td>线程完成</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="流转">流转</h2>
+
+<ul>
+<li>图示
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/eac1bf44-78f0-49a7-ac41-0a4904520f3c.png" alt="Thread.State.png" /></li>
+</ul></li>
+</ul>
+
+<h1 id="串联">串联</h1>
+
+<ul>
+<li>thread</li>
+<li>cpu</li>
+<li>synchronized</li>
+<li>monitor</li>
+<li>volatite</li>
+</ul>
+
+<h1 id="基础">基础</h1>
 
 <h2 id="进程-1">进程</h2>
 
@@ -458,26 +523,47 @@
 </ul></li>
 </ul>
 
-<h1 id="concurrent">Concurrent</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Atomic
+<h1 id="工具">工具</h1>
 
+<h2 id="threadlocal">ThreadLocal</h2>
 
-    原子更新
-        基本类型
-        数组
-        引用
-        字段.
+<h2 id="atomic">Atomic</h2>
 
-    使用  Unsage 实现的包装类
+<h2 id="lock">Lock</h2>
 
+<h2 id="container">Container</h2>
 
+<ul>
+<li>BlockingQueue</li>
+<li>ConcurrentHashMap</li>
+</ul>
 
-线程池</pre></div>
+<h2 id="factory">Factory</h2>
+
+<ul>
+<li><p>ThreadPoolExecutorgg</p>
+
+<p>Atomic</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">原子更新
+    基本类型
+    数组
+    引用
+    字段.
+
+使用  Unsage 实现的包装类</pre></div>
+<p>锁</p>
+
+<p>线程池</p></li>
+</ul>
+
 <h1 id="参考">参考</h1>
 
 <ul>
 <li><a href="https://zhuanlan.zhihu.com/p/26757689">进程 线程 协程 管程 纤程 概念对比理解</a></li>
 <li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-processthread/index.html">Java 中的进程与线程</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
 <li>[]()</li>
@@ -498,7 +584,7 @@
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/java.reflection/" rel="prev" title="">
+        <a href="http://domain.yqjdcyy.com/post/java.thread.code/" rel="prev" title="">
          <i class="fa fa-chevron-right"></i>
         </a>
     
@@ -554,7 +640,7 @@
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">291</span>
+        <span class="site-state-item-count">303</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -571,7 +657,7 @@
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-count">130</span>
         
         <span class="site-state-item-name">标签</span>
         </a>

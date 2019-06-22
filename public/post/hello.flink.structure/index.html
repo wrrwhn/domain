@@ -1,0 +1,640 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+    <title>Hello.Flink.Structure - 好久不见</title>
+    <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
+    
+    <meta property="og:title" content="Hello.Flink.Structure">
+    <meta property="og:site_name" content="好久不见">
+    <meta property="og:image" content="/img/author.jpg"> 
+    <meta name="title" content="Hello.Flink.Structure - 好久不见" />
+    <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
+    
+    <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://domain.yqjdcyy.com/img/apple-touch-icon.png" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/main.css" rel="stylesheet" type="text/css" />
+    <link href="http://domain.yqjdcyy.com/css/syntax.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+     fancybox: true, 
+    motion: true
+  };
+</script>
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<div class="container one-collumn sidebar-position-left page-home  ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-meta  custom-logo ">
+
+  <div class="custom-logo-site-title">
+    <a href="http://domain.yqjdcyy.com/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">好久不见</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">生之所向</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+    <ul id="menu" class="menu">
+      
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-code"></i> <br />整理
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E9%98%85%E8%AF%BB/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />阅读
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/categories/%E4%B9%90%E8%B6%A3/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-tint"></i> <br />乐趣
+          </a>
+        </li>
+      
+        <li class="menu-item ">
+          <a href="http://domain.yqjdcyy.com/about/%E5%85%B3%E4%BA%8E/" rel="section">
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于
+          </a>
+        </li>
+      
+      <li class="menu-item menu-item-search">
+        <a href="javascript:;" class="popup-trigger"> <i class="menu-item-icon fa fa-search fa-fw"></i> <br /> 搜索</a>
+      </li>
+    </ul>
+    <div class="site-search">
+      <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+    </div>
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+<section id="posts" class="posts-expand">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+      <h1 class="post-title" itemprop="name headline">
+        <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.flink.structure/" itemprop="url">
+        Hello.Flink.Structure
+        </a>
+      </h1>
+      <div class="post-meta">
+      <span class="post-time">
+<span class="post-meta-item-icon">
+    <i class="fa fa-calendar-o"></i>
+</span>
+<span class="post-meta-item-text">时间：</span>
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2019-05-28">
+    2019-05-28
+</time>
+</span> 
+      
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
+       <span>
+&nbsp; | &nbsp;
+<span class="post-meta-item-icon">
+    <i class="fa fa-eye"></i>
+</span>
+<span class="post-meta-item-text">阅读：</span>
+<span class="leancloud-visitors-count">510 字 ~2分钟</span>
+</span>
+      </div>
+    </header>
+    <div class="post-body" itemprop="articleBody">
+    
+
+<h1 id="架构">架构</h1>
+
+<ul>
+<li><p>整体架构</p>
+
+<ul>
+<li><img src="http://img3.tbcdn.cn/5476e8b07b923/TB1ObBnJFXXXXXtXVXXXXXXXXXX" alt="架构图" /></li>
+</ul></li>
+
+<li><p>组件串联</p>
+
+<ul>
+<li><code>Client</code> 将任务提交至 <code>JobManager</code>，尤其分发至各 <code>TaskManager</code> 执行</li>
+</ul></li>
+
+<li><p>组件说明</p></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>模块</th>
+<th>子模块</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Client</td>
+<td></td>
+<td>进行任务的提交/终止<br>提交 Jar 包等资源</td>
+</tr>
+
+<tr>
+<td>JobManager</td>
+<td></td>
+<td>优化执行任务，Job 调度<br> Checkpoint 协调<br>汇总 TaskManager 的心跳和统计信息</td>
+</tr>
+
+<tr>
+<td>TaskManager</td>
+<td></td>
+<td>Slot 容器，运行指派任务（实现代码的序列化）<br>使用 Netty 进行上下节点通信</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Slot</td>
+<td>Slot= JVM= Thread<br>共享 JVM/ TCP 连接/ 心跳</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="图谱">图谱</h1>
+
+<ul>
+<li>分类</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>图谱</th>
+<th>负责节点</th>
+<th>描述</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>StreamGraph</td>
+<td>Client</td>
+<td>Stream API 编码图</td>
+</tr>
+
+<tr>
+<td>JobGraph</td>
+<td>Client</td>
+<td>主要进行节点合并，减少数据流转（减少序列化/传输）</td>
+</tr>
+
+<tr>
+<td>ExecutionGraph</td>
+<td>JobManager</td>
+<td>JobGraph 的并行版本</td>
+</tr>
+
+<tr>
+<td>RunGraph</td>
+<td>TaskManager</td>
+<td>实际运行的各 TaskManager 调度图</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><p>图示</p>
+
+<ul>
+<li><img src="http://img3.tbcdn.cn/5476e8b07b923/TB1tA_GJFXXXXapXFXXXXXXXXXX" alt="图表展现" /></li>
+</ul></li>
+
+<li><p>名词解析</p></li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>StreamGraph</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>StreamNode</td>
+<td>Operator 类，指定有并发度/数据流入和流出</td>
+</tr>
+
+<tr>
+<td></td>
+<td>StreamEdge</td>
+<td>StreamNode 的数据通道</td>
+</tr>
+
+<tr>
+<td>JobGraph</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>JobVertex</td>
+<td>符合条件而合并在一起的一或多个 Operator</td>
+</tr>
+
+<tr>
+<td></td>
+<td>IntermediateDataSet</td>
+<td>JobVertex 的结果输出</td>
+</tr>
+
+<tr>
+<td></td>
+<td>JobEdge</td>
+<td>数据传输通道，由 IntermediateDataSet 输入，并输出至 JobVertex</td>
+</tr>
+
+<tr>
+<td>ExecutionGraph</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>ExecutionJobVertex</td>
+<td>与 JobGraph.JobVertex 对应<br>ExecutionJobVertex 的集合</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ExecutionVertex</td>
+<td>ExecutionJobVertex 的并发子任务，输入为 ExecutionEdge，输出为  IntermediateResultPartition</td>
+</tr>
+
+<tr>
+<td></td>
+<td>IntermediateResult</td>
+<td>与 JobGraph.IntermediateDataSet 对应<br> IntermediateResultPartition 的集合</td>
+</tr>
+
+<tr>
+<td></td>
+<td>IntermediateResultPartition</td>
+<td>IntermediateResult 的并发子任务，输入为 ExecutionVertex，输出至 ExecutionEdge</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ExecutionEdge</td>
+<td>与 JobGraph.JobEdge 对应<br>输入为 IntermediateResultPartition，输出至 ExecutionVertex</td>
+</tr>
+
+<tr>
+<td></td>
+<td>Execution</td>
+<td></td>
+</tr>
+
+<tr>
+<td>RunGraph</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td></td>
+<td>Task</td>
+<td>于 TaskManager.Slot 中执行相应逻辑功能的 Operator</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ResultPartition</td>
+<td>与 ExecutionGraph.IntermediateResult 对应</td>
+</tr>
+
+<tr>
+<td></td>
+<td>ResultSubpartition</td>
+<td>与 ExecutionGraph.IntermediateResultPartition 对应</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InputGate</td>
+<td>与 ExecutionGraph.ExecutionEdge 对应<br> InputChannel 的集合</td>
+</tr>
+
+<tr>
+<td></td>
+<td>InputChannel</td>
+<td>由 InputGate 进行实际的数据传输</td>
+</tr>
+</tbody>
+</table>
+
+<h1 id="扩展">扩展</h1>
+
+<h2 id="槽位">槽位</h2>
+
+<ul>
+<li><p>JobGraph</p>
+
+<ul>
+<li><code>[Source+ Map](6)-&gt; [keyby+ window+ apply](6)-&gt; Sink(1)</code></li>
+</ul></li>
+
+<li><p>RunGraph</p>
+
+<ul>
+<li><img src="http://doc.yqjdcyy.com/99bd3da7-e4a9-4f38-86fb-3dc267459aa6.jpg" alt="ECv5y2.jpg" /></li>
+</ul></li>
+</ul>
+
+<h1 id="参考">参考</h1>
+
+<ul>
+<li><a href="http://wuchong.me/blog/2016/05/03/flink-internals-overview/">Flink 原理与实现：架构和拓扑概览</a></li>
+<li><a href="http://wuchong.me/blog/2016/05/10/flink-internals-how-to-build-jobgraph/">Flink 原理与实现：如何生成 JobGraph</a></li>
+<li>[]()</li>
+<li><a href="http://www.54tianzhisheng.cn/2019/01/14/Flink-parallelism-slot">《从0到1学习Flink》—— Flink parallelism 和 Slot 介绍</a></li>
+<li>[]()</li>
+<li>[]()</li>
+</ul>
+
+    </div>
+    <footer class="post-footer">
+     
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/flink" rel="tag" title="Flink">#Flink#</a>
+    
+</div>
+
+
+
+     <div class="post-nav">
+    <div class="post-nav-next post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/hello.maven.repository/" rel="next" title="Hello.Maven.Repository">
+        <i class="fa fa-chevron-left"></i> Hello.Maven.Repository
+        </a>
+    
+    </div>
+
+    <div class="post-nav-prev post-nav-item">
+    
+        <a href="http://domain.yqjdcyy.com/post/idea.tostring/" rel="prev" title="IDEA.toString 生成覆盖">
+        IDEA.toString 生成覆盖 <i class="fa fa-chevron-right"></i>
+        </a>
+    
+    </div>
+</div>
+      
+     <div class="post-nav">
+    <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
+        <div>
+            <p style="margin-top:0px;">
+                标题：Hello.Flink.Structure
+                <br />作者：
+                <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
+                <br />关注：好久不见
+                <br />声明：自由转载-非商用-非衍生-保持署名（创作共享3.0许可证）
+            </p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+     
+     
+     
+
+
+
+
+    </footer>
+  </article>
+</section>
+
+          </div>
+        </div>
+        <div class="sidebar-toggle">
+  <div class="sidebar-toggle-line-wrap">
+    <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+    <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+  </div>
+</div>
+<aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
+      <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image"
+        src="http://domain.yqjdcyy.com/img/profile-image.png"
+        alt="好久不见" />
+    <p class="site-author-name" itemprop="name">好久不见</p>
+    <p class="site-description motion-element" itemprop="description"> 
+        Have fun~</p>
+</div>
+      <nav class="site-state motion-element">
+    <div class="site-state-item site-state-posts">
+      <a href="http://domain.yqjdcyy.com/post/">
+        <span class="site-state-item-count">303</span>
+        <span class="site-state-item-name">日志</span>
+      </a>
+    </div>
+    <div class="site-state-item site-state-categories">    
+        <a href="http://domain.yqjdcyy.com/categories/">      
+         
+        <span class="site-state-item-count">9</span>
+        
+        <span class="site-state-item-name">分类</span>
+        
+        </a>
+    </div>
+
+    <div class="site-state-item site-state-tags">
+        <a href="http://domain.yqjdcyy.com/tags/">
+         
+        <span class="site-state-item-count">130</span>
+        
+        <span class="site-state-item-name">标签</span>
+        </a>
+    </div>
+</nav>
+      
+      
+<div class="links-of-author motion-element">
+    
+        <span class="links-of-author-item">
+        <a href="https://github.com/yqjdcyy" target="_blank" title="GitHub">
+            <i class="fa fa-fw fa-github"></i>
+            GitHub
+        </a>
+        </span>
+    
+</div>
+
+      
+      <div class="links-of-blogroll motion-element inline">
+    <script type="text/javascript" src="//ra.revolvermaps.com/0/0/8.js?i=04ljtqzk00r&amp;m=0&amp;c=ff0000&amp;cr1=ffffff&amp;f=arial&amp;l=1"
+        async="async"></script>
+</div>
+    </section>
+    
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#架构">架构</a></li>
+<li><a href="#图谱">图谱</a></li>
+<li><a href="#扩展">扩展</a>
+<ul>
+<li><a href="#槽位">槽位</a></li>
+</ul></li>
+<li><a href="#参考">参考</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
+  </div>
+</aside>
+
+      </div>
+    </main>
+   
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span itemprop="copyrightYear">  &copy; 
+  2009 - 2019</span>
+  <span class="with-love"><i class="fa fa-heart"></i></span>
+  <span class="author" itemprop="copyrightHolder">好久不见</span>
+</div>
+<div class="powered-by">
+  Powered by - <a class="theme-link" href="http://gohugo.io" target="_blank" title="hugo" >Hugo v0.30.2</a>
+</div>
+<div class="theme-info">
+  Theme by - <a class="theme-link" href="https://github.com/xtfly/hugo-theme-next" target="_blank"> NexT
+  </a>
+</div>
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+      <span id="scrollpercent"><span>0</span>%</span>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery/index.js?v=2.1.3"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/fastclick/lib/fastclick.min.js?v=1.0.6"></script> 
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.min.js?v=1.2.1"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/vendor/velocity/velocity.ui.min.js?v=1.2.1"></script>
+<script src="http://domain.yqjdcyy.com/js/vendor/ua-parser-js/dist/ua-parser.min.js?v=0.7.9"></script>
+
+<script src="http://domain.yqjdcyy.com/js/vendor/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/utils.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/motion.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/affix.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/schemes/pisces.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/scrollspy.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/post-details.js"></script>
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/toc.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="http://domain.yqjdcyy.com/js/search.js"></script>
+</body>
+</html>

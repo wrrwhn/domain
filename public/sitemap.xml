@@ -2,6 +2,325 @@
 <search>
     
      <entry>
+        <title>Java.Serialize</title>
+        <url>http://domain.yqjdcyy.com/post/java.serialize/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Serialize</tag>
+        </tags>
+        <content type="html">  思考  什么是序列化 如何序列化 为什么实现 Serializable 就能被序列化 自定义序列化  理解 什么是序列化  描述
+ 序列化是转换对象关键信息为字节流 反序列化则是在获取到字节流后，还原出对象的过程  信息内容
+ 全路径类名 成员变量 serialVersionUID  示例
+ 你整理某一同学的描述（地区&#43;姓名/五官特征/身份证）的过程便是序列化，而你同学根据你提供的描述信息而还原出该同学的信息便是反序列化  需要序列化的场景
+ 对象持久化  对象比 JVM 生命周期长（停止运行前将对象序列化&#43;持久化，重启后再行读取&#43;构建出对象）  网络传输/远程调用  编解码透明，不需要关注传输过程（过程均以字节传递）    如何序列化  类实现 java.io.Serializable 接口  作为后序的标识判断  使用 ObjectInputStream 和 ObjectOutputStream 对对象进行序列化和反序列化  为什么实现 Serializable 就能被序列化  在 ObjectOutputStream.writeObject0(Object, boolean) 方法指明，当实现 Serializable 即可默认调用自定义序列化或默认序列化
+if (obj instanceof String) { writeString((String) obj, unshared); } else if (cl.isArray()) { writeArray(obj, desc, unshared); } else if (obj instanceof Enum) { writeEnum((Enum&amp;lt;?&amp;gt;) obj, desc, unshared); } else if (obj instanceof Serializable) { writeOrdinaryObject(obj, desc, unshared); } else { if (extendedDebugInfo) { throw new NotSerializableException( cl.getName() &#43; &amp;#34;\n&amp;#34; &#43; debugInfoStack.toString()); } else { throw new NotSerializableException(cl.getName()); } }  自定义序列化 定义 readObject 和 writeObject 方法  实现
+private void readObject(java.io.ObjectInputStream s){...} private void writeObject(java.io.ObjectOutputStream s){...} 调用
+ ObjectInput]Stream 和 ObjectOutput]Stream 内部通过反射进行该方法的调用  事例
+ 参见 java.util.ArrayLis   实现 Externalizable  实现
+public class User implements Externalizable { @Override public void writeExternal(ObjectOutput out){...} @Override public void readExternal(ObjectInput in) {...} } 补充
+ 实现时，需要保障有无参构造函数 优先级较 Serializable 高  同时实现 Serializable 和 Externalizable，会优先调用 writeExternal|readExternal 方法    注意 不序列化项  static 修饰的属性  反序列化时，以该类型的初始值填充（如int=0，Object=null）  transient 标明不进行序列化的属性  序列化优先级  虚拟机优先尝试调用类所定义的 readObject 和 writeObject 方法 未实现上述方法时，则默认调用 ObjectOutputStream.defaultWriteObject 和 ObjectInputStream.defaultReadObject  父子序列化情况  父类实现序列化接口后，而子类未实现  子类自动实现序列化  子类实现序列化接口，而父类未实现  父类将不被序列化 必须有无参构造函数，否则会抛 InvalidClassException 异常   参考  深入分析Java的序列化与反序列化 Java序列化理解与总结 []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Thread.Interrupt</title>
+        <url>http://domain.yqjdcyy.com/post/java.thread.interrupt/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag><tag>Thread</tag>
+        </tags>
+        <content type="html">  重点  线程由自己决定是否停止，而不应由其它线程来强制中断或停止  线程可以根据中断检测，来决定终止，等待新任务或继续执行 stop/suspend/ resume 因此被废弃   场景  GUI 的取消按钮 任务的超时中断 相同服务执行，一个线程完成时，取消其它任务 服务停止  作用  调用 interrupt()     线程状态 操作     BLOCKED
+WAITING 退出阻塞状态
+抛出 InterruptedException
+抛出完成后立即将中断标记重置为 false   RUNNABLE 仅将线程的中断标志设置为 true    注意  获取锁的过程不可中断  在 synchronized 和 reentrantLock.lock() 时，可能因为无法终止而产生死锁 推荐使用 reentrantLock.tryLock(timeout,unit) 或 reentrantLock.lockInterruptibly() 来保障中断状态的输出  底层业务，不建议捕获 InterruptedException，直接抛出  补充捕获后，中断状态将被清除，导致外层无法判断/中止 当抛出中断异常后，当前线程的中断状态会被重置（参见 Thread.sleep()）  针对流，在实现 interruptibleChannel 接口的基础上，可通过 close() 将资源关闭，放开相应阻塞  写法 中断线程 // 识别中断标识，自行决定中断场景如何操作 while(!Thread.currentThread().isInterrupted() &amp;amp;&amp;amp; ...){ try{ ... } catch(InterruptedException e){ // 针对阻塞场景时，中断阻塞后，更新中断标识  Thread.currentThread().interrupt(); } } 底层中断 // 建议直接抛出  void xxx() throws InterruptedException {...} 参考  Thread的中断机制(interrupt)  内容详尽，推荐！  Java里一个线程调用了Thread.interrupt()到底意味着什么？ 详细分析 Java 中断机制 一文搞懂 Java 线程中断  </content>
+    </entry>
+    
+     <entry>
+        <title>IDEA.toString 生成覆盖</title>
+        <url>http://domain.yqjdcyy.com/post/idea.tostring/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>IDEA</tag>
+        </tags>
+        <content type="html">  前言  业务中常用 Jackson 等工具，进行对象的 Json 格式展示，友好但可能不够高效 而常用的 toString() 方法覆盖中使用 = 连接，没有标准 Json 通用 故考虑通过添加模板来快速生成类的 Json 格式的 toString() 覆盖  流程 使用模板生成 toString  键入 Alt&#43; Insert 并选择 toString() 的生成器 在生成器中选择模板右侧的 Settings 按钮添加模板     添加新模板 Json  切换至 Templates 标签后进行添加     添加模板内容  注意内容中的空格会体现在最后的生成样式中 groovy public java.lang.String toString() { final java.lang.StringBuilder builder = new java.lang.StringBuilder(&amp;quot;{&amp;quot;); #set ($i = 0) #foreach ($member in $members) #if ($i == 0) builder.append(&amp;quot; #else builder.append(&amp;quot;, #end #if ($member.string || $member.date)\&amp;quot;$member.name\&amp;quot;:\&amp;quot;&amp;quot;) #else\&amp;quot;$member.name\&amp;quot;:&amp;quot;) #end #if ($member.primitiveArray || $member.objectArray) .append(java.util.Arrays.toString($member.name)); #elseif ($member.string || $member.date) .append($member.accessor).append(&#39;\&amp;quot;&#39;); #else.append($member.accessor);#end #set ($i = $i &#43; 1) #end builder.append(&#39;}&#39;); return builder.toString(); }   校验  使用刚选择的 Json 模板进行 ToString 生成  @Override public String toString() { final StringBuilder builder = new StringBuilder(&amp;#34;{&amp;#34;); builder.append(&amp;#34; \&amp;#34;id\&amp;#34;:&amp;#34;).append(id); builder.append(&amp;#34;, \&amp;#34;version\&amp;#34;:&amp;#34;).append(version); builder.append(&amp;#39;}&amp;#39;); return builder.toString(); } 参考  IDEA修改toString方法模板为JSON格式  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Flink.Structure</title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink.structure/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Flink</tag>
+        </tags>
+        <content type="html">  架构  整体架构
+   组件串联
+ Client 将任务提交至 JobManager，尤其分发至各 TaskManager 执行  组件说明
+     模块 子模块 说明     Client  进行任务的提交/终止
+提交 Jar 包等资源   JobManager  优化执行任务，Job 调度
+Checkpoint 协调
+汇总 TaskManager 的心跳和统计信息   TaskManager  Slot 容器，运行指派任务（实现代码的序列化）
+使用 Netty 进行上下节点通信    Slot Slot= JVM= Thread
+共享 JVM/ TCP 连接/ 心跳    图谱  分类     图谱 负责节点 描述     StreamGraph Client Stream API 编码图   JobGraph Client 主要进行节点合并，减少数据流转（减少序列化/传输）   ExecutionGraph JobManager JobGraph 的并行版本   RunGraph TaskManager 实际运行的各 TaskManager 调度图     图示
+   名词解析
+     类型 属性 说明     StreamGraph      StreamNode Operator 类，指定有并发度/数据流入和流出    StreamEdge StreamNode 的数据通道   JobGraph      JobVertex 符合条件而合并在一起的一或多个 Operator    IntermediateDataSet JobVertex 的结果输出    JobEdge 数据传输通道，由 IntermediateDataSet 输入，并输出至 JobVertex   ExecutionGraph      ExecutionJobVertex 与 JobGraph.JobVertex 对应
+ExecutionJobVertex 的集合    ExecutionVertex ExecutionJobVertex 的并发子任务，输入为 ExecutionEdge，输出为 IntermediateResultPartition    IntermediateResult 与 JobGraph.IntermediateDataSet 对应
+IntermediateResultPartition 的集合    IntermediateResultPartition IntermediateResult 的并发子任务，输入为 ExecutionVertex，输出至 ExecutionEdge    ExecutionEdge 与 JobGraph.JobEdge 对应
+输入为 IntermediateResultPartition，输出至 ExecutionVertex    Execution    RunGraph      Task 于 TaskManager.Slot 中执行相应逻辑功能的 Operator    ResultPartition 与 ExecutionGraph.IntermediateResult 对应    ResultSubpartition 与 ExecutionGraph.IntermediateResultPartition 对应    InputGate 与 ExecutionGraph.ExecutionEdge 对应
+InputChannel 的集合    InputChannel 由 InputGate 进行实际的数据传输    扩展 槽位  JobGraph
+ [Source&#43; Map](6)-&amp;gt; [keyby&#43; window&#43; apply](6)-&amp;gt; Sink(1)  RunGraph
+    参考  Flink 原理与实现：架构和拓扑概览 Flink 原理与实现：如何生成 JobGraph []() 《从0到1学习Flink》—— Flink parallelism 和 Slot 介绍 []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Maven.Repository</title>
+        <url>http://domain.yqjdcyy.com/post/hello.maven.repository/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Maven</tag>
+        </tags>
+        <content type="html">  Repository 组成  Local Repository  本地文件夹 默认为 {m2}\repository  Remote Repository  中央仓库  http://repo1.maven.org/maven2/  私服  http://localhost/maven2/  公用仓库  https://maven.aliyun.com/repository/central    对比 Mirror  作用  mirror 相关于 repository 请求的拦截器  目的  针对访问和下载速度的考量  图示    注意
+ 镜像会完全屏蔽被镜像仓库，按需开关  如若镜像无法访问，而被镜像仓库可访问，仍会因仅无法读取镜像库而报错  镜像库列表展现，但会按 id/ mirrorOf 的匹配处理  镜像有配置针对的环境，因此可理解为特定环境的备份/容灾  镜像可使用 &amp;lt;mirrorOf&amp;gt; 来匹配多个类型
+   写法 作用     * 拦截所有远程仓库   extenrnal:* 拦截所有非本机的远程仓库
+跳过 localhost 和 file:// 协议   repo1,repo2 同时拦截使用逗号分隔的多个远程仓库   *,!repo1 拦截除 repo1 之外的远程仓库    Maven 会按镜像 ID 对其排序
+ 理解 mirrorOf 均匹配，则会根据 ID 升序查找，仅在上一个无法连接时，继续遍历    应用场景 根据场景指定不同仓库  pom.xml
+&amp;lt;profiles&amp;gt; &amp;lt;profile&amp;gt; &amp;lt;id&amp;gt;dev&amp;lt;/id&amp;gt; &amp;lt;!-- 是否默认启用该配置 --&amp;gt; &amp;lt;activation&amp;gt; &amp;lt;activeByDefault&amp;gt;true&amp;lt;/activeByDefault&amp;gt; &amp;lt;/activation&amp;gt; &amp;lt;!-- 激活环境变量 --&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;env&amp;gt;dev&amp;lt;/env&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;!-- 配置仓库信息 --&amp;gt; &amp;lt;distributionManagement&amp;gt; &amp;lt;repository&amp;gt; &amp;lt;id&amp;gt;nexus-releases&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;releases&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://10.104.114.236:8081/repository/maven-releases/&amp;lt;/url&amp;gt; &amp;lt;/repository&amp;gt; &amp;lt;snapshotRepository&amp;gt; &amp;lt;id&amp;gt;nexus-snapshots&amp;lt;/id&amp;gt; &amp;lt;name&amp;gt;snapshots&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://10.104.114.236:8081/repository/maven-snapshots/&amp;lt;/url&amp;gt; &amp;lt;/snapshotRepository&amp;gt; &amp;lt;/distributionManagement&amp;gt; &amp;lt;/profile&amp;gt; &amp;lt;/profiles&amp;gt; 注意事项
+ 如若配置无误，但仍无法正常切换，需排除一下 &amp;lt;mirror&amp;gt; 配置的干扰   补充 拉取顺序  Local Repository Mirror Remote Repository  疑惑 Mirror.mirrorOf 的默认值  查找各资料无果，不知道是否为 central
+&amp;lt;xs:element minOccurs=&amp;#34;0&amp;#34; name=&amp;#34;mirrorOf&amp;#34; type=&amp;#34;xs:string&amp;#34;&amp;gt; &amp;lt;xs:annotation&amp;gt; &amp;lt;xs:documentation source=&amp;#34;version&amp;#34;&amp;gt;1.0.0&amp;lt;/xs:documentation&amp;gt; &amp;lt;xs:documentation source=&amp;#34;description&amp;#34;&amp;gt; The server ID of the repository being mirrored, eg &amp;#34;central&amp;#34;. This MUST NOT match the mirror id. &amp;lt;/xs:documentation&amp;gt; &amp;lt;/xs:annotation&amp;gt; &amp;lt;/xs:element&amp;gt;  参考  Maven：mirror和 repository 区别 记录settings.xml的配置，理解mirror、repository、profile的关系 Settings Reference Using Mirrors for Repositories Maven settings配置中的mirrorOf  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Object.Named</title>
+        <url>http://domain.yqjdcyy.com/post/object.named/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">  各层级对象命名后缀    层级 对象 描述     数据库 PO Persistant Object 表对象    DAO Data Acess Object 持久化对象，包含数据库操作    Entity 参见 PO    DO Domain Object
+抽象的业务领域集合   业务层 BO Business Object
+业务模型对象    DTO Data Transfer Object
+不同数据层的传输对象   视图层 VO View Object
+展示层对象   其它 POJO Plian Ordinary Java Object
+仅具备GET/SET的JavaBean    </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Flink.State.Broadcast</title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink.state.broadcast/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Flink</tag>
+        </tags>
+        <content type="html">  描述 作用  将变化的数据，以广播的形式通知到关联环节或集群中的任意节点  场景  如业务处理过程中，处理规则以流的形式传入，动态变化  类型 广播元素  通过流连接的方式，将连接流的信息处理后，广播至被连接流中
+ 广播流接收到新数据后，便可再次广播更新 广播流中的元素，被处理并广播后，可且仅被关联流中元素所接收
+广播变量  将 DataSet 格式变量广播至集群中的任意节点
+ 全局仅允许发布一次，后续无法再行变更 广播变量存储于各节点的内存中，不宜太大   细节  Key 和 Operator 的状态，用于帮助分布式系统中各并发任务重启并恢复至最后的状态
+ 广播流中对数据进行接收/处理，而接收或关联的流中，广播值只读
+ 广播内部到各任务的顺序不可控
+ 避免将状态更新，与元素的接收顺序挂钩  各任务检查点保存时，会一并保存广播的状态
+ 避免恢复时，需要阅读同一文件  广播状态均保存在内容中
+ 没有 RocksDB 状态的后端   示例 广播元素  具体事例参见 yqjdcyy/Hello_Flink/array-broadcast-sink  // 需要接收广播的流 DataSource&amp;lt;String&amp;gt; originStream= .... // 1.描述广播流的定义 final MapStateDescriptor&amp;lt;String, Map&amp;lt;Boolean, String&amp;gt;&amp;gt; broadcastDescriptor = new MapStateDescriptor(DESCRIPTOR_BROADCAST, BasicTypeInfo.STRING_TYPE_INFO, TypeInformation.of(Map.class)); // 2.将广播来源的流转化为广播流 BroadcastStream&amp;lt;String&amp;gt; broadcastStream = env.socketTextStream(SOCKET_HOSTNAME, SOCKET_PORT).broadcast(broadcastDescriptor); originSource // 3.将广播流关联至接收流  .connect(broadcastStream) // 4.处理广播流和关联流中的元素  .process(new ProcessFunction(broadcastDescriptor)); // 4.1 根据场景选择处理方式  extends BroadcastProcessFunction/KeyedBroadcastProcessFunction // 4.1.1.获取广播元素后，以此处理接收广播流的流中的数据  processElement(final IN1 value, final ReadOnlyContext ctx, final Collector&amp;lt;OUT&amp;gt; out){ // 获取广播元素  ReadOnlyBroadcastState&amp;lt;String, Map&amp;lt;Boolean, String&amp;gt;&amp;gt; broadcastState = ctx.getBroadcastState(broadcastDescriptor); } // 4.1.2.广播获取新数据后，广播最新的数据  processBroadcastElement(final IN2 value, final Context ctx, final Collector&amp;lt;OUT&amp;gt; out){ // 更新广播元素  ctx.getBroadcastState(broadcastDescriptor).put(KEY_BROADCAST, config) } 广播变量  具体事例参见 凯新的技术社区-广播变量应用案例实战-广播变量  // 输入流 DataSource&amp;lt;String&amp;gt; originStream= .... // 1.需要广播的数据 DataSet&amp;lt;Tuple2&amp;lt;String, Integer&amp;gt;&amp;gt; broadcastSet= ... // 3.各环节中，需要读取广播变量，均需继承 Rich.* 类 data.map(new RichMapFunction&amp;lt;String, String&amp;gt;() { @Override public void open(Configuration parameters) throws Exception { // 4.获取广播变量  getRuntimeContext().getBroadcastVariable(&amp;#34;broadCastMapName&amp;#34;); } }) // 2.将变量以 broadCastMapName 进行广播  .withBroadcastSet(broadcastSet, &amp;#34;broadCastMapName&amp;#34;); 异常  Broadcast variables can only be used in DataSet programs  广播元素与广播变量混淆  getRuntimeContext().getBroadcastVariable(KEY_BROADCAST)    参考 官方文档  The Broadcast State Pattern  代码示例  A Practical Guide to Broadcast State in Apache Flink Flink Broadcast 广播变量应用案例实战 聊聊flink的Broadcast State yqjdcyy/Hello_Flink/array-broadcast-sink  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Flink.Window</title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink.window/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Flink</tag>
+        </tags>
+        <content type="html">  描述  Flink 根据时间，将无穷的数据截取成一个个窗口，并于窗口时间到达时，将此阶段缓存的数据取出以进行下一步的操作  时间 时间类型    类型 描述     ProcessingTime 事件被处理的时间
+Operator= Source/ Map/ Sink   EventTime 数据本身携带的时间   IngestionTime 事件被 DataSource 读取的时间    图示 窗口 窗口类型    类型 特点     global 永不停止的窗口，需指定 Trigger   tumbling 滚动窗口，仅需指定窗口时间跨度
+窗口不重叠   sliding 滑动窗口，需指定窗口时间跨度和滑动的时长频率
+窗口可重叠   session 会话窗口，开始时间和窗口大小可灵活配置
+窗口有空隙    执行流程    方法 必填 描述     keyBy&#43; window
+windowAll 是 根据键值 Hash 分组或统一处理
+不同分组将分别维护其时间窗口   trigger  用于判断窗口是否准备好执行窗口操作函数   evictor  于触发器触发窗口操作函数执行的前后运行，用于移除窗口内的数据   allowedLateness  事件时间窗口情况下使用
+eventTime&amp;lt; windows.endTime&#43; lateness 时仍将可存入窗口
+默认使用 EventTimeTrigger，延迟数据将再次触发窗口发送   sideOutputLateData     reduce/aggregate/fold/apply 是    getSideOutput  用于处理延迟到达，已被丢弃的数据    trigger
+processing-time window ProcessingTimeTrigger event-time window EventTimeTrigger GlobalWindow NeverTrigger CountTrigger PurgingTrigger  evictor CountEvictor discard the number &amp;gt; user.limit DeltaEvictor discard the delta.val&amp;gt; theshold TimeEvictor discard the ts&amp;lt; max_ts- (windows.end - window.start)
+watermark 实际的生命线，正常淹没过的 window 都触发/清空 lateness 表示能在水位线淹过多久时间内，仍然存活 idling
+补充 多线程情况下数据流程 示例 eventtime&#43; window(time.second(5))    EventTime Watermark Print Operate     1 1  stash   5 5 1 stash   6 6  stash   4 6  discard   2 6  discard   10 10 5,6 stash   3 10  discard   15 15 10/ 15 stash    context.timestamp(), context.currentProcessingTime(), context.currentWatermark()
+Sink[1553170264999, 1553170262547, 1553170261000]: (1,1553170261000) Sink[1553170269999, 1553170262548, 1553170266000]: (5,1553170265000) (6,1553170266000) Sink[1553170274999, 1553170262548, 1553170270000]: (10,1553170270000) Sink[1553170279999, 1553170262548, 1553170275000]: (15,1553170275000)
+eventtime&#43; window(time.second(5))&#43; maxOutOfOrderness(time.second(2))    EventTime Watermark Print Operate     1 -1  [0,5)   5 3 1 [0,5)   6 4  [5,10)   4 4  [0,5)   2 4  [0,5)   10 8 1,5,4,2 [10,15)   3 8  X   15 13 10 [15,20)   15 13 10 [15,20)    Sink[1553170264999, 1553170316880, 1553170264000]: (1,1553170261000) (4,1553170264000) (2,1553170262000) Sink[1553170269999, 1553170316881, 1553170268000]: (5,1553170265000) (6,1553170266000) Sink[1553170274999, 1553170316881, 1553170273000]: (10,1553170270000) Sink[1553170279999, 1553170316881, 1553170273000]: (15,1553170275000)
+eventtime&#43; window(time.second(5))&#43; lateness(time.second(2))    EventTime Watermark Print Operate     1 1  stash   5 5 1 stash   6 6  stash   4 6 1,4    2 6 1,4,2    10 10 5,6 stash   3 10  discard
+w(10) out of [0~5&#43;2)   15 10 10 stash    Sink[1553170324999, 1553170375891, 1553170321000]: (1,1553170321000) Sink[1553170324999, 1553170375892, 1553170326000]: (1,1553170321000) (4,1553170324000) Sink[1553170324999, 1553170375892, 1553170326000]: (1,1553170321000) (4,1553170324000) (2,1553170322000) Sink[1553170329999, 1553170375892, 1553170326000]: (5,1553170325000) (6,1553170326000) Sink[1553170334999, 1553170375896, 1553170330000]: (10,1553170330000) Sink[1553170339999, 1553170375896, 1553170335000]: (15,1553170335000)
+eventtime&#43; window(time.second(5))&#43; maxOutOfOrderness(time.second(1))&#43; lateness(time.second(2)) 1L, 7L, 4L, 8L, 4L, 11L, 10L, 3L, 15L
+Sink[1553234344999, 1553234351009, 1553234340000]: (1,1553234341000) Sink[1553234344999, 1553234351010, 1553234346000]: (1,1553234341000) (4,1553234344000) Sink[1553234349999, 1553234351010, 1553234347000]: (7,1553234347000) (8,1553234348000) Sink[1553234354999, 1553234351010, 1553234354000]: (11,1553234351000) (10,1553234350000) Sink[1553234359999, 1553234351010, 1553234354000]: (15,1553234355000)
+窗口触发条件 watermark &amp;gt;= window.endTime windows.data.size&amp;gt; 0
+AssignerWithPunctuatedWatermarks 由特定元素提取后发出水印 AssignerWithPeriodicWatermarks 由系统定期去生成水印 定期时长由 getAutoWatermarkInterval 获取
+根据 keyby.window 进行水印的分开管理 internalTimerService.registerEventTimeTimer(window, time)
+参考  []() Flink EventTime和Watermarks案例分析 []() []() []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Flink</title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Flink</tag>
+        </tags>
+        <content type="html">  描述 适用场景  实时流处理  热闹商品统计 消息预警  海量数据处理  传感器/网络等多种复杂来源监测  数据分析  将复杂数据转化为用户可快速访问/理解的数据   支持  流处理  实时数据流  批处理  历史数据集  事件驱动应用  监控事件的服务   技术要点 Checkpoint  Chandy-Lamport 算法 分布式一致性快照 通过流重放和检查点，实现失败容忍机制  最新检查点之后的事件和状态更新，都将于输入流中重放   // TODO
+State  Value|List|Map|Broadcast 数据流转时，有关联事件的操作被称为有状态的操作 状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问  本地操作，在不需要事务开销的情况下保证一致性    // TODO
+per-window state use keyed state [global|window]State [not] scoped to a window This feature is helpful if you anticipate multiple firing for the same window, as can happen when you have late firings for data that arrives late or when you have a custom trigger that does speculative early firings.
+Time  Watermark 机制
+ 乱序数据处理 迟到数据容忍  类型
+     类型 描述     ProcessingTime 事件被处理的时间
+Operator= Source/ Map/ Sink   EventTime 数据本身携带的时间   IngestionTime 事件被 DataSource 读取的时间    https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/times_clocks.svg
+App-&amp;gt; MQ-&amp;gt; Flink.DataSource-&amp;gt; Flink. EventTime-&amp;gt; MQ-&amp;gt; IngestionTime-&amp;gt; ProcessingTime
+ 重启服务，无 checkpoint 配置下，昨天的数据是怎样触发时间窗口  watermark 的生成时间
+source Time Characteristic Note that in order to run this example in event time, the program needs to either use sources that directly define event time for the data and emit watermarks themselves, or the program must inject a Timestamp Assigner &amp;amp; Watermark Generator after the sources.
+Event Time and Watermarks A Watermark(t) declares that event time has reached time t in that stream, meaning that there should be no more elements from the stream with a timestamp t’ &amp;lt;= t
+Once a watermark reaches an operator, the operator can advance its internal event time clock to the value of the watermark.
+Watermarks are generated at source functions Each parallel subtask of a source function usually generates its watermarks independently.
+// TODO
+Window  作用  用于对一定数据的聚合计算  驱动  时间(30s) 数据量(100)  类型  global  永不停止的窗口，需指定触发器 This windowing scheme is only useful if you also specify a custom trigger  tumbing  滚动窗口，仅需指定窗口时间跨度 窗口不重叠  sliding  滑动窗口，需指定窗口时间跨度和滑动的时长频率 窗口有重叠  session  会话窗口，开始时间和窗口大小可灵活配置 窗口有空隙 Instead a session window closes when it does not receive elements for a certain period of time,    tumbling windows, sliding windows, session windows and global windows
+extending the WindowAssigner
+Time-based windows have a start timestamp (inclusive) and an end timestamp (exclusive) without offsets hourly tumbling windows are aligned with epoch
+adjust windows to timezones Time.hours(-8) // TODO
+window= 1h， 9:15开始 (9:15, 10:00], (10:00, 11:00]
+API 支持层次 Analytics API  SQL|Table API
+ dynamic tables  示例
+SELECT room, TUMBLE_END(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), AVG(temp) FROM sensors GROUP BY TUMBLE(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), room  Stream|Batch Data Processing  DataStream API
+ streams, windows  示例
+val stats = stream .keyBy(&amp;#34;sensor&amp;#34;) .timeWindow(Time.seconds(5)) .sum((a,b)-&amp;gt; a.add(b))  Event-Driven Application  ProcessFunction
+ events, state, time  示例
+def processElement(event: MyEvent, ctx: Context, out: Collector[Result])= { (event, state.value) match...} out.collect(..) state.update(..) ctx.timeService.registerEventTimeTimer(event.timestamp&#43; 500) }  方法 A windowed transformation with a ProcessWindowFunction cannot be executed as efficiently as the other cases because Flink has to buffer all elements for a window internally before invoking the function. .aggregate(new AverageAggregate(), new MyProcessWindowFunction());
+   转换类型 方法名 含义     DataStream*-&amp;gt; DataStream      Map obj{1} map(obj{1})    FlatMap obj* flatMap(obj{1})    Filter 过滤满足条件的元素    Union 可将多个数据流合并成一个数据流    Window Join 合并两个数据流为一个，并通过指定键值生成/ 判断方法过滤，并添加时间窗口进行后续计算    Window CoGroup 数据流合并
+同 window join 操作    Extract Timestamps 提取事件数据的时间戳，供事件时间窗口使用    Iterate DataStream-&amp;gt; IterativeStream-&amp;gt; DataStream   DataStream-&amp;gt; KeyedStream      KeyBy 按 Key 拆分
+keyBy(0) 表示通过第一个元素进行分组
+未重写 hashCode() 方法的 POJO 类和数组均无法作用 key   KeyedStream*-&amp;gt; DataStream      Reduce 合并计算
+仅最终结果值 val&#43;= key    Fold 累计合并计算
+过程值列表 val, val&#43;= key, ...    Aggregations 聚合计算
+结合 sum/ avg/ min/ minBy/ max/ maxBy 使用    Max 返回指定字段的最小数值    MaxBy 返回包含最小数值字段的元素    Interval Join 合并数据流，并指定截取的时间区间，后配合 Process 方法转换数据格式    Process 底层的数据流处理函数
+可视为具有状态和定时器访问权限的 FlatMapFunction   KeyedStream-&amp;gt; WindowedStream      Windows 结合 keyBy 对数据进行分组   DataStream-&amp;gt; AllWindowedStream      WindowAll 对所有数据进行分组   WindowedStream/AllWindowedStream-&amp;gt; DataStream      Apply 支持对所有数据的操作    Reduce 窗口内的合并计算    Fold 窗口内的累计合并计算    Aggregations 窗口内的聚合计算   DataStream*-&amp;gt; ConnectedStreams      Connect 保留数据形式地合并数据流   ConnectedStreams-&amp;gt; DataStream      CoMap 连接流上的 Map 操作    CoFlatMap 连接流上的 FlatMap 操作   DataStream-&amp;gt; SplitStream      Split 将数据打上不同标志，结合 Select 可将数据流分为多路   SplitStream-&amp;gt; DataStream      Select 通过条件过滤出指定类型的数据流    架构 服务分层  Flink.Structure
+ 明细 | 模块 | 细节 | |&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;| | 部署 | | | | 本地运行 | | | 独立集群 | | | YARN
+Mesos | | | Cloud | | 运行 | | | | 分布式流式数据引擎 | | API | | | | DataStream | | | DataSet | | | Table | | | SQL API | | 扩展库 | | | | 机器学习 | | | 图形处理 | | | 复杂事件 |
+  抽象级别    抽象 描述     有状态流 Process.Func(Source*)
+Event-&amp;gt; 复杂计算   DataStream
+DataSet 支持对无/有界数据的转换和计算
+内置方法： map/ flatmap/ windows/ keyby/ sum/ max/ min/ avg/ join   Table API 以表（动态变化）为中心的声明式 DSL
+API： select/ project/ join/ group-by/ aggregate
+支持 DataStream 和 Table API 的混合使用   SQL 以 SQL 查询表达式形式来调用 Table API    数据流结构    名称 描述     Source 数据源
+Collection/ File/ Socket/ Custom
+Custom: Kafka/ Klnesls/ RabbitMQ/ Twitter Streaming/ NiFi/ 自定义   Transformation 数据转换操作
+Map/ FlatMap/ Filter/ Windows/ Apply 等等，详见方法   Sink 接口器
+File/ Printer/ Socket/ Custom Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cassandra/ Hadoop FileSystem/ 自定义    示例 Watermark 代码 示例 eventtime window(time.second(5))
+   EventTime Watermark Print Operate     1 1  stash   5 5 1 stash   6 6  stash   4 6  discard   2 6  discard   10 10 5,6 stash   3 10  discard   15 15 10 stash    eventtime window(time.second(5)) lateness(time.second(2))
+   EventTime Watermark Print Operate     1 1  stash   5 5 1 stash   6 6  stash   4 6 1,4    2 6 1,4,2    10 10 5,6 stash   3 10  discard
+w(10) out of [0~5&#43;2)   15 10 10 stash    参考 理解  《从0到1学习Flink》—— Apache Flink 介绍 一文了解 Apache Flink 核心技术 Flink学习笔记(4):基本概念 Flink在美团的实践与应用 Flink 原理与实现：Window 机制 Apache Flink 容错机制 Event Time / Processing Time / Ingestion Time 深入理解Flink核心技术 []() Flink 原理与实现：Session Window []() []() []()  示例  5分钟从零构建第一个 Flink 应用 如何计算实时热门商品 Flink DataStream API Programming Guide DataStream API Tutorial []()  官方文档  Operators Windows  补充 Flink= JobManager&#43; TaskManager&#43; Client
+</content>
+    </entry>
+    
+     <entry>
+        <title>Hello.Maven</title>
+        <url>http://domain.yqjdcyy.com/post/hello.maven/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Maven</tag>
+        </tags>
+        <content type="html">  概述  Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project&amp;rsquo;s build, reporting and documentation from a central piece of information.
+  Maven 作为软件项目的管理和帮助理解的工具。 基于 pom.xml 文件，Maven 支持进行项目的建构/ 上报/ 文档化   Maven, a Yiddish word meaning accumulator of knowledge, was originally started as an attempt to simplify the build processes in the Jakarta Turbine project. There were several projects each with their own Ant build files that were all slightly different and JARs were checked into CVS. We wanted a standard way to build the projects, a clear definition of what the project consisted of, an easy way to publish project information and a way to share JARs across several projects.
+  Maven 意为知识的累加器 最初为简化 Jakarta Turbine 项目而设计  项目内各子项目，均有各自的 Ant 构建文件，且均略有不同 我们想要一种标准的方法来简化项目的定义/ 发布和共享 Jar 文件    Maven’s primary goal is to allow a developer to comprehend the complete state of a development effort in the shortest period of time - Making the build process easy &amp;gt; Providing a uniform build system &amp;gt; Providing quality project information &amp;gt; Providing guidelines for best practices development &amp;gt; Allowing transparent migration to new features
+    目标 实现     简化构建流程 隐藏潜在原理   提供统一的构建系统 通过 pom.plugins 共享所有项目   提供高效的项目描述 交叉引用来源
+依赖列表
+单测报告
+源代码处的变更日志
+项目管理的邮箱列表   新手实践的最佳指导 统一文件目录格式
+独立单测场景，全场景覆盖   允许透明地迁移至新特性     概念 结构 项目结构  可由 mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes 生成
+/project pom.xml /src /main /java/com/company/app App.java /resources /test /java/com/company/app AppTest.java /resources  POM 文件结构  示例  &amp;lt;project xmlns=&amp;#34;http://maven.apache.org/POM/4.0.0&amp;#34; xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34; xsi:schemaLocation=&amp;#34;http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd&amp;#34;&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;groupId&amp;gt;com.mycompany.app&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;my-app&amp;lt;/artifactId&amp;gt; &amp;lt;packaging&amp;gt;jar&amp;lt;/packaging&amp;gt; &amp;lt;version&amp;gt;1.0-SNAPSHOT&amp;lt;/version&amp;gt; &amp;lt;name&amp;gt;Maven Quick Start Archetype&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;http://maven.apache.org&amp;lt;/url&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.group&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;artifact.id&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.11&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;test&amp;lt;/scope&amp;gt; &amp;lt;type&amp;gt;jar&amp;lt;/type&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;groupId&amp;gt;com.group&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;artifact.excluded.id&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; &amp;lt;/exclusions&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;/project&amp;gt;  节点含义     节点 &amp;hellip; 描述     project     modelVersion  指定 pom.xml 文件所使用的对象模型的版本   groupId  项目所属组织或机构的唯一标识   artifactId  项目的唯一标识名称   packaging  指明打包方式
+JAR(Default)/ WAR/ EAR   version  指定生成包的版本   name  指定项目名称
+常用于生成文档中   url  指定项目主页
+常用于生成文档中   description  提供项目的基础描述
+常用于生成文档中   parent  指定父类项目
+默认继承父类项目的配置   dependencies.dependency  指明该项目所依赖的项目信息
+依此自动下载并构建 classpath    groupId     artifactId     version     type 依赖的类型
+jar(default)/ war/ ejb-client/ test-jar    scope 作用域
+compile(default)/ runtime/ test/ system/ provided/ import    exclusions.exclusion    dependencyManagement  声明依赖版本，不自动引入
+子项目可仅标注 group/artifactId 引入   properties     repositories     pluginRepositories     build     profiles     modules     prerequisites      指令  mvn --version
+Apache Maven 3.5.4 (1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-18T02:33:14&#43;08:00) Maven home: C:\server\maven\apache-maven-3.5.4\bin\.. Java version: 1.8.0_191, vendor: Oracle Corporation, runtime: C:\server\java\jre1.8.0_191 Default locale: zh_CN, platform encoding: GBK OS name: &amp;#34;windows 10&amp;#34;, version: &amp;#34;10.0&amp;#34;, arch: &amp;#34;x86&amp;#34;, family: &amp;#34;windows&amp;#34; mvn archetype:generate
+ mvn comppile
+  示例 模板  通用模板
+ Hello_Java  mvn archetype:generate -DarchetypeGroupId=org.apache.maven.archetypes -DparentGroupId=com.yao.java -DparentArtifactId=maven -DgroupId=com.yao.java -DartifactId=maven-archetype -DinteractiveMode=false   自定义模板
+ 模板创建
+ Hello_Java
+ move maven-archetype maven  Hello_Java\maven\maven-archetype
+ mvn archetype:create-from-project
+[INFO] Archetype project created in Hello_Java\maven\maven-archetype\target\generated-sources\archetype  Hello_Java\maven\maven-archetype\target\generated-sources\archetype
+ mvn clean install -DskipTest=true
+[INFO] --- maven-install-plugin:3.0.0-M1:install (default-install) @ maven-archetype --- [INFO] Installing Hello_Java\maven\maven-archetype\target\generated-sources\archetype\target\maven-archetype-1.0-SNAPSHOT.jar to \.m2\repository\com\yao\java\maven-archetype\1.0-SNAPSHOT\maven-archetype-1.0-SNAPSHOT.jar [INFO] Installing Hello_Java\maven\maven-archetype\target\generated-sources\archetype\pom.xml to \.m2\repository\com\yao\java\maven-archetype\1.0-SNAPSHOT\maven-archetype-1.0-SNAPSHOT.pom [INFO] --- maven-archetype-plugin:3.0.1:update-local-catalog (default-update-local-catalog) @ maven-archetype ---   套用模板
+ Hello_Java\maven
+ mvn archetype:generate -DarchetypeCatalog=local  手动选择模板 录入 group/ artifactId/ version 等相关信息即可   Hello_Java\maven
+ mvn archetype:generate -DarchetypeCatalog=local -DarchetypeGroupId=com.yao.java -DarchetypeArtifactId=maven-archetype -DgroupId=com.yao.java -DartifactId=maven-archetype-local-command -DinteractiveMode=false     补充  依赖传递
+ 最短优先  D 1.0  A -&amp;gt; B -&amp;gt; C -&amp;gt; D 2.0 A -&amp;gt; E -&amp;gt; D 1.0    依赖作用域名
+     类型 描述     compile 适用于项目所有的类路径
+依赖可传递至子项目   provided 由 JDK 或容器提供
+仅适用于编译和测试类路径
+不可传递   runtime 指明编译时不需要
+包含于运行和测试的类路径，但包含于编译类路径   test 指明仅于测试时使用   system 指明已通过 jar 形式提供   import 仅提供于 dependencyManagement 中的 pom 类型依赖
+    - 最小作用域覆盖 - 同一 jar 于不同依赖中分别标注以 compile 和 runtime，则当前引入的形式为 runtime 参考  []() []() Maven Getting Started Guide Maven  POM.xml 的完整事例  Dependency Mechanism  依赖的机制 作用域等各字段的详细解析  Maven中dependencyManagement作用说明  dependencyManagement 声明默认依赖版本 而 dependencies 声明引用时，可仅指定 groupId 和 artifactId 引用  而当引用特定版本时，再指定 version 即可   []() []() []() []()
+ archetype
+ 创建自己的Maven模板 Maven 3: Maven in 5 minutes “mvn archetype:generate…” command NOT WORKING  powershell 情况下，参数需用双引号包起来    部署安装 下载地址  http://maven.apache.org/download.cgi  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
+各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
+ clean remove all files generated by the previous build
+ post-clean executes processes needed to finalize the project cleaning
+Default Lifecycle validate validate the project is correct and all necessary information is available.
+ initialize initialize build state, e.g. set properties or create directories.
+ generate-sources generate any source code for inclusion in compilation.
+ process-sources process the source code, for example to filter any values.
+ generate-resources generate resources for inclusion in the package.
+ process-resources copy and process the resources into the destination directory, ready for packaging.
+ compile compile the source code of the project.
+ process-classes post-process the generated files from compilation, for example to do bytecode enhancement on Java classes.
+ generate-test-sources generate any test source code for inclusion in compilation.
+ process-test-sources process the test source code, for example to filter any values.
+ generate-test-resources create resources for testing.
+ process-test-resources copy and process the resources into the test destination directory.
+ test-compile compile the test source code into the test destination directory
+ process-test-classes post-process the generated files from test compilation, for example to do bytecode enhancement on Java classes. For Maven 2.0.5 and above.
+ test run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
+ prepare-package perform any operations necessary to prepare a package before the actual packaging. This often results in an unpacked, processed version of the package. (Maven 2.1 and above)
+ package take the compiled code and package it in its distributable format, such as a JAR.
+ pre-integration-test perform actions required before integration tests are executed. This may involve things such as setting up the required environment.
+ integration-test process and deploy the package if necessary into an environment where integration tests can be run.
+ post-integration-test perform actions required after integration tests have been executed. This may including cleaning up the environment.
+ verify run any checks to verify the package is valid and meets quality criteria.
+ install install the package into the local repository, for use as a dependency in other projects locally.
+ deploy done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
+Site Lifecycle pre-site executes processes needed prior to the actual project site generation
+ site generates the project&amp;rsquo;s site documentation
+ post-site executes processes needed to finalize the site generation, and to prepare for site deployment
+ site-deploy deploys the generated site documentation to the specified web server
+  调用 如调用deploy(mvn deploy)便会自动调用前面的几个流程步骤 仍可在同一指令中调用多个操作（多模块场景中会自动递归至各子模块），如 mvn clean install 相关指令  Clean Lifecycle Bindings
+ clean clean:clean  Default Lifecycle Bindings - Packaging ejb / ejb3 / jar / par / rar / war
+ process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package ejb:ejb or ejb3:ejb3 or jar:jar or par:par or rar:rar or war:war install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging ear
+ generate-resources ear:generate-application-xml process-resources resources:resources package ear:ear install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging maven-plugin
+ generate-resources plugin:descriptor process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package jar:jar and plugin:addPluginArtifactMetadata install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging pom
+ package site:attach-descriptor install install:install deploy deploy:deploy  Site Lifecycle Bindings
+ site site:site site-deploy site:deploy   初始化 POM文件中补充节点，默认值为jar，可选值为jar/war/ear/pom jar方式流程  process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package jar:jar install install:install deploy deploy:deploy
+使用Plugins来实现各环节的操作步骤，其中若同一环节有多个插件支持，则以POM文件顺序下的第一个进行处理 &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-checkstyle-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${plugin.checkstyle.version}&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;configLocation&amp;gt;${project.basedir}/build/check-style.xml&amp;lt;/configLocation&amp;gt; &amp;lt;includeTestSourceDirectory&amp;gt;false&amp;lt;/includeTestSourceDirectory&amp;gt; &amp;lt;consoleOutput&amp;gt;true&amp;lt;/consoleOutput&amp;gt; &amp;lt;failsOnError&amp;gt;true&amp;lt;/failsOnError&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;phase&amp;gt;verify&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;check&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;  POM.XML详解 作用  描述项目如下内容：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。
+结构 &amp;lt;project&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;!-- 基础设置 --&amp;gt; &amp;lt;groupId&amp;gt;项目或者组织的唯一标志，也将会是配置生成路径&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;项目名称&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;版本&amp;lt;/version&amp;gt; &amp;lt;packaging&amp;gt;打包机制，支持pom,jar,maven-plugin,ejb,war,ear,rar,par&amp;lt;/packaging&amp;gt; &amp;lt;name&amp;gt;用户描述项目名称，可选&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;开发团队网站，可选&amp;lt;/url&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;!-- 依赖 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0&amp;lt;/version&amp;gt; &amp;lt;type&amp;gt;默认 jar，常用类型有 jar,ejb-client,test-jar&amp;lt;/type&amp;gt; &amp;lt;scope&amp;gt; compile 缺省值，适用于所有阶段，会随着项目一起发布。 provided 类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。 runtime 只在运行时使用，如JDBC驱动，适用运行和测试阶段。 test 只在测试时使用，用于编译和运行测试代码。不会随项目发布。 system 类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它。 &amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt; 默认为 false，即子项目默认继承。为 true时则子项目必须显示引入。 &amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba.china.shared&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;alibaba.apollo.webx&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5.0&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;!-- 移除指定依赖 --&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba.external&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;org.slf4j.slf4j-api&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; .... &amp;lt;/exclusions&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;!-- 工程为 parent 时，packing 参数值需为 pom，则子项目可继承 dependencies,developers,contributors,plugin lists,reports lists,plugin execution with matching ids,plugin configuration --&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;my-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0&amp;lt;/version&amp;gt; &amp;lt;relativePath&amp;gt;../my-parent&amp;lt;/relativePath&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;dependencyManagement&amp;gt; 用于帮助管理子项目的依赖，子项目的相关引用 version 将由父项目进行设置 &amp;lt;/dependencyManagement&amp;gt; &amp;lt;modules&amp;gt; 与顺序无关，maven 会自动根据依赖关系拓扑排序 &amp;lt;/modules&amp;gt; &amp;lt;!-- 配置常量，并于 pom 其它地方以 ${file.encoding} 形式调用 --&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;file.encoding&amp;gt;UTF-8&amp;lt;/file_encoding&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;!--构建设置 --&amp;gt; &amp;lt;build&amp;gt;...&amp;lt;/build&amp;gt; &amp;lt;reporting&amp;gt;...&amp;lt;/reporting&amp;gt; &amp;lt;!-- 更多项目信息 --&amp;gt; &amp;lt;description&amp;gt;...&amp;lt;/description&amp;gt; &amp;lt;inceptionYear&amp;gt;...&amp;lt;/inceptionYear&amp;gt; &amp;lt;licenses&amp;gt;...&amp;lt;/licenses&amp;gt; &amp;lt;organization&amp;gt;...&amp;lt;/organization&amp;gt; &amp;lt;developers&amp;gt;...&amp;lt;/developers&amp;gt; &amp;lt;contributors&amp;gt;...&amp;lt;/contributors&amp;gt; &amp;lt;!-- 环境设置--&amp;gt; &amp;lt;issueManagement&amp;gt;...&amp;lt;/issueManagement&amp;gt; &amp;lt;ciManagement&amp;gt;...&amp;lt;/ciManagement&amp;gt; &amp;lt;mailingLists&amp;gt;...&amp;lt;/mailingLists&amp;gt; &amp;lt;scm&amp;gt;...&amp;lt;/scm&amp;gt; &amp;lt;prerequisites&amp;gt;...&amp;lt;/prerequisites&amp;gt; &amp;lt;repositories&amp;gt;...&amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt;...&amp;lt;/pluginRepositories&amp;gt; &amp;lt;distributionManagement&amp;gt;...&amp;lt;/distributionManagement&amp;gt; &amp;lt;profiles&amp;gt;...&amp;lt;/profiles&amp;gt; &amp;lt;/project&amp;gt;  示例 外部 Jar 引入本地项目System  相对引用  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.aliyun&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aliyun-java-sdk-dysmsapi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;system&amp;lt;/scope&amp;gt; &amp;lt;systemPath&amp;gt;${basedir}/src/main/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar&amp;lt;/systemPath&amp;gt; &amp;lt;/dependency&amp;gt;  打包时包括在内  &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-dependency-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.10&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;copy-dependencies&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;compile&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;copy-dependencies&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${project.build.directory}/${project.build.finalName}/WEB-INF/lib&amp;lt;/outputDirectory&amp;gt; &amp;lt;includeScope&amp;gt;system&amp;lt;/includeScope&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;   </content>
+    </entry>
+    
+     <entry>
         <title>Git.Solution</title>
         <url>http://domain.yqjdcyy.com/post/git.solution/</url>
         <categories>
@@ -53,6 +372,31 @@ new StringBuilder( str1 ) .append( str2 ) .append( str3 ).toString() str1.concat
 new String( array.copy( new String( array.copy( str1, str2)), str3)) new StringBuffer(str).append(str2).append(str3).toString()
 new String( array.copy(str1, str2, str3) ) 补充
  StringBuilder&amp;gt; StringBuffer&amp;gt; String StringBuilder 为 JDK 5.0 新添加，非线程安全，单线程场景推荐优先使用   参考  深入理解Java中的final关键字 浅析Java中的final关键字 final关键词在多线程环境中的使用 为什么String类是不可变的？ 如何写一个不可变类？ Java 字符串拼接效率比较 String,StringBuffer与StringBuilder的区别?? 在Java中连接字符串时是使用&#43;号还是使用StringBuilder  主要针对字符串&#43;/ concat/ append 的几种方式的对比  Java中字符串相加和字符串常量相加区别  </content>
+    </entry>
+    
+     <entry>
+        <title>Hello.RPC</title>
+        <url>http://domain.yqjdcyy.com/post/hello.rpc/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>RPC</tag>
+        </tags>
+        <content type="html">  概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
+ 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
+ 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
+ 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
+ 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
+ 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链
+ Upstream  从传输层，经过一系列步骤，如身份认证，解密，日志，流控，最后到达业务层  DownStream
+ 业务层返回后，又经过一系列步骤，如加密等，又回到传输层
+图解     构架 选型 考量  GRPC  支持服务治理 主要的精力放在服务发现、路由、容错处理等方面 主要围绕一个语言开发  DUBBO  框架特性 性能 成熟度 技术支持 社区活跃度   对比     Dubbo Montan rpcx gRPC Thrift     开发语言 Java Java Go 跨语言 跨语言   分布式(服务治理) √ √ √ × ×   多序列化框架支持 √ √ √ × ×   多种注册中心 √ √ √ × ×   管理中心 √ √ √ × ×   跨编程语言 × × × √ √    压测     gRPC Dubbo rpcx thrift go stdrpc     0ms 3rd140,000 last-3st65,00 1st200,000 70,000 1st295,000   10ms 4th140,000 last-3st65,00 2nd200,000download 70,000 1st295,000   30ms 4th140,000 last-3st65,00download 2nd 200,000download 70,000 1st295,000    补充  0ms      10ms      30ms       GRPC 特点  主要面向移动应用开发并基于 HTTP/2协议标准而设计，基于 ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言  为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。 基于同一个IDL（Interface description language），可以生成不同语言的代码，并且语言的支持也非常的多。   thirft 特点  跨语言的 高性能的服务框架 广泛的应用  dubbo 特点  Java 高性能优秀的服务框架 可以和 Spring框架 无缝集成  Motan 特点  新浪微博开源的一个 Java框架 起于2013年，2016年5月开源  性能  100,000,000,000&#43; 次/ 100&#43;服务/ 天  RPCX 特点  Go语言生态圈的 Dubbo 比Dubbo更 轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法  Reference  RPC
+ 谁能用通俗的语言解释一下什么是 RPC 框架？ 远程过程调用协议 你应该知道的RPC原理  GRPC
+ 官网 API 文件就是你的伺服器，REST 的另一個選擇：gRPC Go Quick Start  Netty
+ The Netty Project API Reference (3.2.6.Final)  Apache.AB
+ 官方  Apache AB Apache HTTP 服务器 2.4 文档  其它  超实用压力测试工具－ab工具 开源性能测试工具 - Apache ab 介绍   Other
+ RPC 框架  流行的rpc框架benchmark-2018.1 分布式RPC框架性能大比拼-2016.9 JAVA中几种常用的RPC框架介绍  补充  性能测试应该怎么做？ Why Averages Suck and Percentiles are Great Dubbo-性能测试报告 - 404 dubbo-api性能测试报告 性能测试报告    </content>
     </entry>
     
      <entry>
@@ -1358,7 +1702,7 @@ Spring Cloud Starters  作用
 Spring Cloud Foundry  作用
  开源 PaaS 云平台  功能
  多框架支持 多语言支持  实现
- VMWare 推出   概念 IasS  全称  Infrastructure-as-a-service  描述  基础设施服务  内容  计算 存储 网络  示例  AWS Azure AliYun   PaaS  全称  Platform-as-a-service  描述  平台服务  内容  MySql angodb RabbitMQ Java NodeJs  示例  CloudFoundry OpenShift   Saas  全称  Software-as-a-service  描述  软件服务  内容  Email IM Facebook Twitter  示例  所有应用   BBF  全称  Backend For Frontend  作用  作为逻辑层聚合底层服务，针对多端进行展示   原理 CAP  全称  布鲁尔定理  定义  分布式系统，无法同时满足如下三点  Consistency  一致性 所有节点访问同一份最新数据副本  Availability  可用性 每次请求均能获取非异常响应  不保证获取的为最新的数据   Partition tolerance  分区容错性  始终成立  不同网络分区间通信允许失败     参考 Spring.Cloud  Spring Cloud技术分析（序） Spring Cloud 项目综述 网易乐得-Spring Cloud 大话Spring Cloud Spring Cloud netflix概览和架构设计  包含服务的相关异常  springcloud(九)：配置中心和消息总线  /bus/refresh 引起 Eureka 连接断开  微服务架构集大成者—Spring Cloud  包含各组件的详细介绍  史上最简单的 SpringCloud 教程  Spring.Component  Spring Cloud Gateway 入门 spring cloud task Spring Security  补充 CAP  CAP 定理的含义 CAP定理  其它  IaaS，PaaS，SaaS 的区别 BFF —— Backend For Frontend OAuth2（重点），参考文档 Spring Security OAuth2，参考文档  整理  Spring.Cloud.xmind  </content>
+ VMWare 推出   概念 IasS  全称  Infrastructure-as-a-service  描述  基础设施服务  内容  计算 存储 网络  示例  AWS Azure AliYun   PaaS  全称  Platform-as-a-service  描述  平台服务  内容  MySql angodb RabbitMQ Java NodeJs  示例  CloudFoundry OpenShift   Saas  全称  Software-as-a-service  描述  软件服务  内容  Email IM Facebook Twitter  示例  所有应用   BBF  全称  Backend For Frontend  作用  作为逻辑层聚合底层服务，针对多端进行展示   原理 CAP  全称  布鲁尔定理  定义  分布式系统，无法同时满足如下三点  Consistency  一致性 所有节点访问同一份最新数据副本  Availability  可用性 每次请求均能获取非异常响应  不保证获取的为最新的数据   Partition tolerance  分区容错性  始终成立  不同网络分区间通信允许失败     参考 Spring.Cloud  Spring Cloud技术分析（序） Spring Cloud 项目综述 网易乐得-Spring Cloud 大话Spring Cloud Spring Cloud netflix概览和架构设计  包含服务的相关异常  springcloud(九)：配置中心和消息总线  /bus/refresh 引起 Eureka 连接断开  微服务架构集大成者—Spring Cloud  包含各组件的详细介绍  史上最简单的 SpringCloud 教程  Spring.Component  Spring Cloud Gateway 入门 spring cloud task Spring Security  补充 CAP  CAP 定理的含义 CAP定理 分布式系统中的CAP理论是什么  其它  IaaS，PaaS，SaaS 的区别 BFF —— Backend For Frontend OAuth2（重点），参考文档 Spring Security OAuth2，参考文档  整理  Spring.Cloud.xmind  </content>
     </entry>
     
      <entry>
@@ -2467,31 +2811,6 @@ public void login(String username, String password, HttpServletRequest request) 
     </entry>
     
      <entry>
-        <title>Hello.RPC</title>
-        <url>http://domain.yqjdcyy.com/post/hello.rpc/</url>
-        <categories>
-          <category>整理</category>
-        </categories>
-        <tags>
-          <tag>RPC</tag>
-        </tags>
-        <content type="html">  概念 RPC 定义  远程过程调用  「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，不能直接调用，需要通过网络来表达调用的语义和传达调用的数据   框架前缀 要点  通讯
- 主要是通过在客户端和服务器之间建立TCP连接，传输远程调用所有交换的数据  按需连接，调用结束后就断掉 长连接，多个远程过程调用共享同一个连接   寻址
- 「请求」服务器上的应用告诉底层的RPC框架，连接到「应答」服务器的 IP、端口、方式和相关的方法  基于Web服务协议栈的RPC，就要提供一个endpoint URI，或者是从UDDI服务上查找 RMI调用的话，还需要一个RMI Registry来注册服务的地址   序列化
- 网络协议是基于二进制，内存中的参数的值要序列化成二进制的形式  反序列化
- 对参数进行反序列化，恢复为内存中的表达方式，然后找到对应的方法（寻址的一部分）进行本地调用以得到返回值。  处理
- 将反馈数据根据业务进行处理   图解    协议  CORBA  Common Object Request Broker Architecture 通用对象请求代理架构标准  Java RMI  Remote Method Invocation 远程方法调用  Web Service  服务导向架构  Thrift  接口描述语言和二进制通讯协议，用来定义和创建跨语言的服务 远程过程调用框架  Rest API  Representational State Transfer 表现层状态转化  Representational  表现层即资源  State Transfer  GET| POST| PUT| DELETE   网站即软件   Netty 定义  Netty 是提供一种事件驱动的，责任链式（也可以说是流水线）的网络协议实现方式  组成  网络协议  传输层协议 编码解码 压缩解压 身份认证 加密解密 请求的处理逻辑  责任链
- Upstream  从传输层，经过一系列步骤，如身份认证，解密，日志，流控，最后到达业务层  DownStream
- 业务层返回后，又经过一系列步骤，如加密等，又回到传输层
-图解     构架 选型 考量  GRPC  支持服务治理 主要的精力放在服务发现、路由、容错处理等方面 主要围绕一个语言开发  DUBBO  框架特性 性能 成熟度 技术支持 社区活跃度   对比     Dubbo Montan rpcx gRPC Thrift     开发语言 Java Java Go 跨语言 跨语言   分布式(服务治理) √ √ √ × ×   多序列化框架支持 √ √ √ × ×   多种注册中心 √ √ √ × ×   管理中心 √ √ √ × ×   跨编程语言 × × × √ √    压测     gRPC Dubbo rpcx thrift go stdrpc     0ms 3rd140,000 last-3st65,00 1st200,000 70,000 1st295,000   10ms 4th140,000 last-3st65,00 2nd200,000download 70,000 1st295,000   30ms 4th140,000 last-3st65,00download 2nd 200,000download 70,000 1st295,000    补充  0ms      10ms      30ms       GRPC 特点  主要面向移动应用开发并基于 HTTP/2协议标准而设计，基于 ProtoBuf(Protocol Buffers)序列化协议开发，且支持众多开发语言  为了跨语言，服务端可以用不同的语言实现，客户端也可以用不同的语言实现，不同的语言实现的客户端和服务器端可以互相调用。 基于同一个IDL（Interface description language），可以生成不同语言的代码，并且语言的支持也非常的多。   thirft 特点  跨语言的 高性能的服务框架 广泛的应用  dubbo 特点  Java 高性能优秀的服务框架 可以和 Spring框架 无缝集成  Motan 特点  新浪微博开源的一个 Java框架 起于2013年，2016年5月开源  性能  100,000,000,000&#43; 次/ 100&#43;服务/ 天  RPCX 特点  Go语言生态圈的 Dubbo 比Dubbo更 轻量，实现了Dubbo的许多特性，借助于Go语言优秀的并发特性和简洁语法  Reference  RPC
- 谁能用通俗的语言解释一下什么是 RPC 框架？ 远程过程调用协议 你应该知道的RPC原理  GRPC
- 官网 API 文件就是你的伺服器，REST 的另一個選擇：gRPC Go Quick Start  Netty
- The Netty Project API Reference (3.2.6.Final)  Apache.AB
- 官方  Apache AB Apache HTTP 服务器 2.4 文档  其它  超实用压力测试工具－ab工具 开源性能测试工具 - Apache ab 介绍   Other
- RPC 框架  流行的rpc框架benchmark-2018.1 分布式RPC框架性能大比拼-2016.9 JAVA中几种常用的RPC框架介绍  补充  性能测试应该怎么做？ Why Averages Suck and Percentiles are Great Dubbo-性能测试报告 - 404 dubbo-api性能测试报告 性能测试报告    </content>
-    </entry>
-    
-     <entry>
         <title>Hello.性能测试</title>
         <url>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</url>
         <categories>
@@ -3365,8 +3684,9 @@ GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007 Copyright (C) 2007 Free Softw
         <tags>
           <tag>IDEA</tag><tag>快捷键</tag>
         </tags>
-        <content type="html">  快捷键 包、结构或视图  Alt&#43;回车 导入包,自动修正 Ctrl&#43;Alt&#43;O 优化导入的类和包 Ctrl&#43;E 最近打开的文件 Ctrl&#43;H 显示类结构图，比如查看实现类 Ctrl&#43;Q 显示注释文档 Alt&#43;F1 查找代码所在位置 Alt&#43;1 快速打开或隐藏工程面板 Ctrl&#43;Alt&#43; left/right 返回至上次浏览的位置 Alt&#43; left/right 切换代码视图  文件操作和视图  Ctrl&#43;N 查找类 Ctrl&#43;Shift&#43;N 查找文件 Ctrl&#43;Shift&#43;Alt&#43;N 查找类中的方法或变量 Ctrl&#43;F12 显示当前类结构 ctr&#43;G 定位某一行 Alt&#43; Up/Down 在方法间快速移动定位
- Alt&#43;F1 查找代码所在位置 Ctrl&#43;O，显示可重载方法 Ctrl&#43;Q，查看方法定义；而Ctrl&#43;P 查看参数定义  代码相关  Ctrl&#43;Alt&#43;L 格式化代码 Ctrl&#43;Alt&#43;Space 类名或接口名提示 Alt&#43;Insert 生成代码(如get,set方法,构造函数等) Ctrl&#43;Shift&#43;Space 自动补全代码 Ctrl&#43;空格 代码提示 Ctrl&#43;/ 或 Ctrl&#43;Shift&#43;/ 注释（ 或者/&amp;hellip;/ ） Ctrl&#43; Alt&#43; T，用指定方法体围绕代码行 Ctrl&#43;Shift&#43;Up/Down 代码向上/下移动。 F2 或Shift&#43;F2 高亮错误或警告快速定位 Ctrl&#43;Shift&#43;先上键 将该功能代码上移 Ctrl&#43;X 删除行 Ctrl&#43;D 复制行 Ctrl&#43;J Live Templates列表 选中变量后按 Alt&#43;F7，可以查看该变量的所有应用场景 Ctrl&#43;B，跳转至对应类 Ctrl&#43;Alt&#43;B，显示接口相应的实现类 Ctrl&#43;Shift&#43; Alt&#43; U，显示类关系图 Ctrl-Shift-Backspace，可切换回之前修改的代码处  文字类型相关  Shift&#43;F6 重构-重命名 ctr&#43;shift&#43;U大小写转化 代码标签输入完成后，按Tab，生成代码。 选中文本，按Ctrl&#43;Shift&#43;F7 ，高亮显示所有该文本，按Esc高亮消失。 选中文本，按Alt&#43;F3 ，逐个往下查找相同文本，并高亮显示。 Ctrl&#43;Up/Down 光标跳转到第一行或最后一行下 Ctrl&#43;W 向上层级代码选中 Ctrl&#43;Shift&#43;J，自动缩进合并多行代码  Debug 相关  alt&#43;f8 debug时选中查看值 f8相当于eclipse的f6跳到下一步 shift&#43;f8相当于eclipse的f8跳到下一个断点，也相当于eclipse的f7跳出函数 f7相当于eclipse的f5就是进入到代码 alt&#43;shift&#43;f7这个是强制进入代码 ctrl&#43;shift&#43;f9 debug运行java类 ctrl&#43;shift&#43;f10正常运行java类 command&#43;f2停止运行  参考  Intellij IDEA 快捷键整理（TonyCody） IntelliJ IDEA导航特性Top20  </content>
+        <content type="html">  快捷键 包、结构或视图  CTRL&#43;ALT&#43;O  优化导入的类和包  CTRL&#43;H  显示类结构图，比如查看实现类  CTRL&#43;Q  显示注释文档  ALT&#43;回车  导入包,自动修正  CTRL&#43;E  最近打开的文件  ALT&#43;F1  查找代码所在位置  ALT&#43;1  快速打开或隐藏工程面板  CTRL&#43;ALT&#43;LEFT/RIGHT  返回至上次浏览的位置  ALT&#43; LEFT/RIGHT  切换代码视图   文件操作和视图  CTRL&#43;F12  显示当前类结构  CTRL&#43;G  定位某一行  CTRL&#43;O  显示可重载方法  CTRL&#43;N
+ 查找类  CTRL&#43;SHIFT&#43;N  查找文件  CTRL&#43;SHIFT&#43;ALT&#43;N  查找类中的方法或变量  ALT&#43;UP/DOWN  在方法间快速移动定位  CTRL&#43;P  查看参数定义   代码相关  CTRL&#43;ALT&#43;L  格式化代码  ALT&#43;Insert  生成代码(如get,set方法,构造函数等)  CTRL&#43;ALT&#43;B  显示接口相应的实现类  CTRL&#43;SHIFT&#43;Backspace  切换回之前修改的代码处  ALT&#43;F7  指定变量或方法后，查看其所有的应用场景  CTRL&#43;SHIFT&#43;ALT&#43;U  显示类关系图  CTRL&#43;ALT&#43;Space  类名或接口名提示  CTRL&#43;SHIFT&#43;Space  自动补全代码  CTRL&#43;空格  代码提示  CTRL&#43;/ 或 CTRL&#43;SHIFT&#43;/
+ 注释（ 或者/&amp;hellip;/ ）  CTRL&#43;SHIFT&#43;UP/DOWN  代码向上/下移动  F2 或 SHIFT&#43;F2  高亮错误或警告快速定位  CTRL&#43;X  删除行  CTRL&#43;D  复制行  CTRL&#43;J  Live Templates列表  CTRL&#43;B  跳转至对应类   文字类型相关  SHIFT&#43;F6  重构-重命名  CTRL&#43;SHIFT&#43;U  大小写转化  CTRL&#43;SHIFT&#43;F7  高亮显示所有该文本，按Esc高亮消失  ALT&#43;F3  逐个往下查找相同文本，并高亮显示  CTRL&#43;UP/DOWN  光标跳转到第一行或最后一行下  CTRL&#43;W  向上层级代码选中  CTRL&#43;SHIFT&#43;J  自动缩进合并多行代码   Debug 相关  ALT&#43;F8  当前场景下的计算值  F9  继续执行  F8  下一步  SHIFT&#43;F8  下一步，跳出函数  F7  进入方法  ALT&#43;SHIFT&#43;F7  强制进入方法  CTRL&#43;SHIFT&#43;F9/F10  调试/运行  COMMAND&#43;F2  停止运行   重构相关  CTRL&#43;SHIFT&#43;T  创建测试用例（test）  CTRL&#43;ALT&#43;T  提取代码块至iF、try等结构中（surround with）  SHIFT&#43;F6  重命名文件、方法、属性等（rename）  CTRL&#43;ALT&#43;V  提取当前选择为变量（extract variable）  CTRL&#43;ALT&#43;F  提取当前选择为属性（extract Field）  CTRL&#43;ALT&#43;C  提取当前选择为常量（extract constant）  CTRL&#43;ALT&#43;M  提取当前选择为方法（extract method）  CTRL&#43;ALT&#43;P  提取当前选择为方法参数（extract parameter）  CTRL&#43;F6  重构类、方法（change signarture）  CTRL&#43;ALT&#43;N  创建模块文件等（new）  CTRL&#43;T  重构菜单（reFactor For this）   参考  Intellij IDEA 快捷键整理（TonyCody） IntelliJ IDEA导航特性Top20 IDEA 重构快捷键  </content>
     </entry>
     
      <entry>
@@ -6094,57 +6414,6 @@ JMXServiceURL url = new JMXServiceURL(address); JMXConnector connector = JMXConn
     </entry>
     
      <entry>
-        <title>Maven</title>
-        <url>http://domain.yqjdcyy.com/post/maven/</url>
-        <categories>
-          <category>整理</category>
-        </categories>
-        <tags>
-          <tag>Maven</tag>
-        </tags>
-        <content type="html">  部署安装 下载地址  http://maven.apache.org/download.cgi  安装流程  至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量  [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补充%M2%;  控制台输出 mvn -version，若有相关输出则表示安装成功  生命周期  内置构建：  default：处理项目部署 clean：清理项目 site：创建项目的网站文件
-各生命周期执行内容： Clean Lifecycle pre-clean executes processes needed prior to the actual project cleaning
- clean remove all files generated by the previous build
- post-clean executes processes needed to finalize the project cleaning
-Default Lifecycle validate validate the project is correct and all necessary information is available.
- initialize initialize build state, e.g. set properties or create directories.
- generate-sources generate any source code for inclusion in compilation.
- process-sources process the source code, for example to filter any values.
- generate-resources generate resources for inclusion in the package.
- process-resources copy and process the resources into the destination directory, ready for packaging.
- compile compile the source code of the project.
- process-classes post-process the generated files from compilation, for example to do bytecode enhancement on Java classes.
- generate-test-sources generate any test source code for inclusion in compilation.
- process-test-sources process the test source code, for example to filter any values.
- generate-test-resources create resources for testing.
- process-test-resources copy and process the resources into the test destination directory.
- test-compile compile the test source code into the test destination directory
- process-test-classes post-process the generated files from test compilation, for example to do bytecode enhancement on Java classes. For Maven 2.0.5 and above.
- test run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
- prepare-package perform any operations necessary to prepare a package before the actual packaging. This often results in an unpacked, processed version of the package. (Maven 2.1 and above)
- package take the compiled code and package it in its distributable format, such as a JAR.
- pre-integration-test perform actions required before integration tests are executed. This may involve things such as setting up the required environment.
- integration-test process and deploy the package if necessary into an environment where integration tests can be run.
- post-integration-test perform actions required after integration tests have been executed. This may including cleaning up the environment.
- verify run any checks to verify the package is valid and meets quality criteria.
- install install the package into the local repository, for use as a dependency in other projects locally.
- deploy done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
-Site Lifecycle pre-site executes processes needed prior to the actual project site generation
- site generates the project&amp;rsquo;s site documentation
- post-site executes processes needed to finalize the site generation, and to prepare for site deployment
- site-deploy deploys the generated site documentation to the specified web server
-  调用 如调用deploy(mvn deploy)便会自动调用前面的几个流程步骤 仍可在同一指令中调用多个操作（多模块场景中会自动递归至各子模块），如 mvn clean install 相关指令  Clean Lifecycle Bindings
- clean clean:clean  Default Lifecycle Bindings - Packaging ejb / ejb3 / jar / par / rar / war
- process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package ejb:ejb or ejb3:ejb3 or jar:jar or par:par or rar:rar or war:war install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging ear
- generate-resources ear:generate-application-xml process-resources resources:resources package ear:ear install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging maven-plugin
- generate-resources plugin:descriptor process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package jar:jar and plugin:addPluginArtifactMetadata install install:install deploy deploy:deploy  Default Lifecycle Bindings - Packaging pom
- package site:attach-descriptor install install:install deploy deploy:deploy  Site Lifecycle Bindings
- site site:site site-deploy site:deploy   初始化 POM文件中补充节点，默认值为jar，可选值为jar/war/ear/pom jar方式流程  process-resources resources:resources compile compiler:compile process-test-resources resources:testResources test-compile compiler:testCompile test surefire:test package jar:jar install install:install deploy deploy:deploy
-使用Plugins来实现各环节的操作步骤，其中若同一环节有多个插件支持，则以POM文件顺序下的第一个进行处理 &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-checkstyle-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;${plugin.checkstyle.version}&amp;lt;/version&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;configLocation&amp;gt;${project.basedir}/build/check-style.xml&amp;lt;/configLocation&amp;gt; &amp;lt;includeTestSourceDirectory&amp;gt;false&amp;lt;/includeTestSourceDirectory&amp;gt; &amp;lt;consoleOutput&amp;gt;true&amp;lt;/consoleOutput&amp;gt; &amp;lt;failsOnError&amp;gt;true&amp;lt;/failsOnError&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;phase&amp;gt;verify&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;check&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;  POM.XML详解 作用  描述项目如下内容：包括配置文件；开发者需要遵循的规则，缺陷管理系统，组织和licenses，项目的url，项目的依赖性，以及其他所有的项目相关因素。
-结构 &amp;lt;project&amp;gt; &amp;lt;modelVersion&amp;gt;4.0.0&amp;lt;/modelVersion&amp;gt; &amp;lt;!-- 基础设置 --&amp;gt; &amp;lt;groupId&amp;gt;项目或者组织的唯一标志，也将会是配置生成路径&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;项目名称&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;版本&amp;lt;/version&amp;gt; &amp;lt;packaging&amp;gt;打包机制，支持pom,jar,maven-plugin,ejb,war,ear,rar,par&amp;lt;/packaging&amp;gt; &amp;lt;name&amp;gt;用户描述项目名称，可选&amp;lt;/name&amp;gt; &amp;lt;url&amp;gt;开发团队网站，可选&amp;lt;/url&amp;gt; &amp;lt;dependencies&amp;gt; &amp;lt;!-- 依赖 --&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;junit&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;junit&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;4.0&amp;lt;/version&amp;gt; &amp;lt;type&amp;gt;默认 jar，常用类型有 jar,ejb-client,test-jar&amp;lt;/type&amp;gt; &amp;lt;scope&amp;gt; compile 缺省值，适用于所有阶段，会随着项目一起发布。 provided 类似compile，期望JDK、容器或使用者会提供这个依赖。如servlet.jar。 runtime 只在运行时使用，如JDBC驱动，适用运行和测试阶段。 test 只在测试时使用，用于编译和运行测试代码。不会随项目发布。 system 类似provided，需要显式提供包含依赖的jar，Maven不会在Repository中查找它。 &amp;lt;/scope&amp;gt; &amp;lt;optional&amp;gt; 默认为 false，即子项目默认继承。为 true时则子项目必须显示引入。 &amp;lt;/optional&amp;gt; &amp;lt;/dependency&amp;gt; &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba.china.shared&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;alibaba.apollo.webx&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.5.0&amp;lt;/version&amp;gt; &amp;lt;exclusions&amp;gt; &amp;lt;exclusion&amp;gt; &amp;lt;!-- 移除指定依赖 --&amp;gt; &amp;lt;groupId&amp;gt;com.alibaba.external&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;org.slf4j.slf4j-api&amp;lt;/artifactId&amp;gt; &amp;lt;/exclusion&amp;gt; .... &amp;lt;/exclusions&amp;gt; &amp;lt;/dependencies&amp;gt; &amp;lt;!-- 工程为 parent 时，packing 参数值需为 pom，则子项目可继承 dependencies,developers,contributors,plugin lists,reports lists,plugin execution with matching ids,plugin configuration --&amp;gt; &amp;lt;parent&amp;gt; &amp;lt;groupId&amp;gt;org.codehaus.mojo&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;my-parent&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.0&amp;lt;/version&amp;gt; &amp;lt;relativePath&amp;gt;../my-parent&amp;lt;/relativePath&amp;gt; &amp;lt;/parent&amp;gt; &amp;lt;dependencyManagement&amp;gt; 用于帮助管理子项目的依赖，子项目的相关引用 version 将由父项目进行设置 &amp;lt;/dependencyManagement&amp;gt; &amp;lt;modules&amp;gt; 与顺序无关，maven 会自动根据依赖关系拓扑排序 &amp;lt;/modules&amp;gt; &amp;lt;!-- 配置常量，并于 pom 其它地方以 ${file.encoding} 形式调用 --&amp;gt; &amp;lt;properties&amp;gt; &amp;lt;file.encoding&amp;gt;UTF-8&amp;lt;/file_encoding&amp;gt; &amp;lt;/properties&amp;gt; &amp;lt;!--构建设置 --&amp;gt; &amp;lt;build&amp;gt;...&amp;lt;/build&amp;gt; &amp;lt;reporting&amp;gt;...&amp;lt;/reporting&amp;gt; &amp;lt;!-- 更多项目信息 --&amp;gt; &amp;lt;description&amp;gt;...&amp;lt;/description&amp;gt; &amp;lt;inceptionYear&amp;gt;...&amp;lt;/inceptionYear&amp;gt; &amp;lt;licenses&amp;gt;...&amp;lt;/licenses&amp;gt; &amp;lt;organization&amp;gt;...&amp;lt;/organization&amp;gt; &amp;lt;developers&amp;gt;...&amp;lt;/developers&amp;gt; &amp;lt;contributors&amp;gt;...&amp;lt;/contributors&amp;gt; &amp;lt;!-- 环境设置--&amp;gt; &amp;lt;issueManagement&amp;gt;...&amp;lt;/issueManagement&amp;gt; &amp;lt;ciManagement&amp;gt;...&amp;lt;/ciManagement&amp;gt; &amp;lt;mailingLists&amp;gt;...&amp;lt;/mailingLists&amp;gt; &amp;lt;scm&amp;gt;...&amp;lt;/scm&amp;gt; &amp;lt;prerequisites&amp;gt;...&amp;lt;/prerequisites&amp;gt; &amp;lt;repositories&amp;gt;...&amp;lt;/repositories&amp;gt; &amp;lt;pluginRepositories&amp;gt;...&amp;lt;/pluginRepositories&amp;gt; &amp;lt;distributionManagement&amp;gt;...&amp;lt;/distributionManagement&amp;gt; &amp;lt;profiles&amp;gt;...&amp;lt;/profiles&amp;gt; &amp;lt;/project&amp;gt;  示例 外部 Jar 引入本地项目System  相对引用  &amp;lt;dependency&amp;gt; &amp;lt;groupId&amp;gt;com.aliyun&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;aliyun-java-sdk-dysmsapi&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;1.0.0&amp;lt;/version&amp;gt; &amp;lt;scope&amp;gt;system&amp;lt;/scope&amp;gt; &amp;lt;systemPath&amp;gt;${basedir}/src/main/lib/aliyun-java-sdk-dysmsapi-1.0.0.jar&amp;lt;/systemPath&amp;gt; &amp;lt;/dependency&amp;gt;  打包时包括在内  &amp;lt;plugin&amp;gt; &amp;lt;groupId&amp;gt;org.apache.maven.plugins&amp;lt;/groupId&amp;gt; &amp;lt;artifactId&amp;gt;maven-dependency-plugin&amp;lt;/artifactId&amp;gt; &amp;lt;version&amp;gt;2.10&amp;lt;/version&amp;gt; &amp;lt;executions&amp;gt; &amp;lt;execution&amp;gt; &amp;lt;id&amp;gt;copy-dependencies&amp;lt;/id&amp;gt; &amp;lt;phase&amp;gt;compile&amp;lt;/phase&amp;gt; &amp;lt;goals&amp;gt; &amp;lt;goal&amp;gt;copy-dependencies&amp;lt;/goal&amp;gt; &amp;lt;/goals&amp;gt; &amp;lt;configuration&amp;gt; &amp;lt;outputDirectory&amp;gt;${project.build.directory}/${project.build.finalName}/WEB-INF/lib&amp;lt;/outputDirectory&amp;gt; &amp;lt;includeScope&amp;gt;system&amp;lt;/includeScope&amp;gt; &amp;lt;/configuration&amp;gt; &amp;lt;/execution&amp;gt; &amp;lt;/executions&amp;gt; &amp;lt;/plugin&amp;gt;   </content>
-    </entry>
-    
-     <entry>
         <title>DWR</title>
         <url>http://domain.yqjdcyy.com/post/dwr/</url>
         <categories>
@@ -6217,42 +6486,77 @@ win10   组       &amp;lt;([a-z]*)&amp;gt;&amp;lt;/\1&amp;gt;(?=&amp;lt;) 组即
     
      <entry>
         <title></title>
-        <url>http://domain.yqjdcyy.com/post/hello.flink/</url>
+        <url>http://domain.yqjdcyy.com/post/google.search/</url>
         <categories>
           
         </categories>
         <tags>
           
         </tags>
-        <content type="html">  描述 适用场景  实时流处理  热闹商品统计 消息预警  海量数据处理  传感器/网络等多种复杂来源监测  数据分析  将复杂数据转化为用户可快速访问/理解的数据   支持  流处理  实时数据流  批处理  历史数据集  事件驱动应用  监控事件的服务   技术要点 Checkpoint  Chandy-Lamport 算法 分布式一致性快照 通过流重放和检查点，实现失败容忍机制  最新检查点之后的事件和状态更新，都将于输入流中重放   State  Value|List|Map|Broadcast 数据流转时，有关联事件的操作被称为有状态的操作 状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问  本地操作，在不需要事务开销的情况下保证一致性   Time  Watermark 机制
- 乱序数据处理 迟到数据容忍  类型
-   类型 描述     ProcessingTime 事件被处理的时间
-处理机器的时间戳   EventTime 数据本身携带的时间     Window  作用  用于对一定数据的聚合计算  驱动  时间(30s) 数据量(100)  类型  global  永不停止的窗口，需指定触发器  tumbing  滚动窗口，仅需指定窗口时间跨度 窗口不重叠  sliding  滑动窗口，需指定窗口时间跨度和滑动的时长频率 窗口有重叠  session  会话窗口，开始时间和窗口大小可灵活配置 窗口有空隙    API 支持层次 Analytics API  SQL|Table API
- dynamic tables  示例
-SELECT room, TUMBLE_END(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), AVG(temp) FROM sensors GROUP BY TUMBLE(rowtime, INTERVAL &amp;#39;1&amp;#39; HOUR), room  Stream|Batch Data Processing  DataStream API
- streams, windows  示例
-val stats = stream .keyBy(&amp;#34;sensor&amp;#34;) .timeWindow(Time.seconds(5)) .sum((a,b)-&amp;gt; a.add(b))  Event-Driven Application  ProcessFunction
- events, state, time  示例
-def processElement(event: MyEvent, ctx: Context, out: Collector[Result])= { (event, state.value) match...} out.collect(..) state.update(..) ctx.timeService.registerEventTimeTimer(event.timestamp&#43; 500) }  方法    转换类型 方法名 含义     DataStream*-&amp;gt; DataStream      Map obj{1} map(obj{1})    FlatMap obj* flatMap(obj{1})    Filter 过滤满足条件的元素    Union 可将多个数据流合并成一个数据流    Window Join 合并两个数据流为一个，并通过指定键值生成/ 判断方法过滤，并添加时间窗口进行后续计算    Window CoGroup 数据流合并
-同 window join 操作    Extract Timestamps 提取事件数据的时间戳，供事件时间窗口使用    Iterate DataStream-&amp;gt; IterativeStream-&amp;gt; DataStream   DataStream-&amp;gt; KeyedStream      KeyBy 按 Key 拆分
-keyBy(0) 表示通过第一个元素进行分组
-未重写 hashCode() 方法的 POJO 类和数组均无法作用 key   KeyedStream*-&amp;gt; DataStream      Reduce 合并计算
-仅最终结果值 val&#43;= key    Fold 累计合并计算
-过程值列表 val, val&#43;= key, ...    Aggregations 聚合计算
-结合 sum/ avg/ min/ minBy/ max/ maxBy 使用    Max 返回指定字段的最小数值    MaxBy 返回包含最小数值字段的元素    Interval Join 合并数据流，并指定截取的时间区间，后配合 Process 方法转换数据格式    Process 底层的数据流处理函数
-可视为具有状态和定时器访问权限的 FlatMapFunction   KeyedStream-&amp;gt; WindowedStream      Windows 结合 keyBy 对数据进行分组   DataStream-&amp;gt; AllWindowedStream      WindowAll 对所有数据进行分组   WindowedStream/AllWindowedStream-&amp;gt; DataStream      Apply 支持对所有数据的操作    Reduce 窗口内的合并计算    Fold 窗口内的累计合并计算    Aggregations 窗口内的聚合计算   DataStream*-&amp;gt; ConnectedStreams      Connect 保留数据形式地合并数据流   ConnectedStreams-&amp;gt; DataStream      CoMap 连接流上的 Map 操作    CoFlatMap 连接流上的 FlatMap 操作   DataStream-&amp;gt; SplitStream      Split 将数据打上不同标志，结合 Select 可将数据流分为多路   SplitStream-&amp;gt; DataStream      Select 通过条件过滤出指定类型的数据流    架构 服务分层  Flink.Structure
- 明细 | 模块 | 细节 | |&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;| | 部署 | | | | 本地运行 | | | 独立集群 | | | YARN
-Mesos | | | Cloud | | 运行 | | | | 分布式流式数据引擎 | | API | | | | DataStream | | | DataSet | | | Table | | | SQL API | | 扩展库 | | | | 机器学习 | | | 图形处理 | | | 复杂事件 |
-  抽象级别    抽象 描述     有状态流 Process.Func(Source*)
-Event-&amp;gt; 复杂计算   DataStream
-DataSet 支持对无/有界数据的转换和计算
-内置方法： map/ flatmap/ windows/ keyby/ sum/ max/ min/ avg/ join   Table API 以表（动态变化）为中心的声明式 DSL
-API： select/ project/ join/ group-by/ aggregate
-支持 DataStream 和 Table API 的混合使用   SQL 以 SQL 查询表达式形式来调用 Table API    数据流结构    名称 描述     Source 数据源
-Collection/ File/ Socket/ Custom
-Custom: Kafka/ Klnesls/ RabbitMQ/ Twitter Streaming/ NiFi/ 自定义   Transformation 数据转换操作
-Map/ FlatMap/ Filter/ Windows/ Apply 等等，详见方法   Sink 接口器
-File/ Printer/ Socket/ Custom Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cassandra/ Hadoop FileSystem/ 自定义    参考 理解  《从0到1学习Flink》—— Apache Flink 介绍 一文了解 Apache Flink 核心技术 Flink学习笔记(4):基本概念 Flink在美团的实践与应用 Flink 原理与实现：Window 机制 Apache Flink 容错机制  示例  5分钟从零构建第一个 Flink 应用 如何计算实时热门商品 Flink DataStream API Programming Guide DataStream API Tutorial []()  官方文档  Operators Windows  </content>
+        <content type="html">  搜索 精确匹配  将搜索内容用双引号包起来  &amp;quot;mysql foreign key&amp;quot; 限制分词操作   模糊搜索  使用通配符 * 进行查询  mysql * key   指定站点搜索  搜索内容后接 site: 及相应网站  &amp;quot;mysql * key&amp;quot; stackoverflow.com   指定文件类型  搜索内容后接 filetype:及相应文件类型，多个类型可用 / 分隔  elasticsearch filetype:pdf   排查关键字  搜索内容后接 -及相应的关键字  &amp;quot;mysql foreign key&amp;quot; -外键 -Examples - 与关键字相连，不要有空格   多关键词搜索  各关键词间使用 OR 进行分隔  巧克力 OR 白巧克力   数值范围搜索  两个数值中间，使用两个英文句号和一个英文空格间隔开  欧冠 连胜 2012.. 2017   特定位置搜索  inurl:/ intitle:/ intext: / allinurl|title|text 后接关键字  inurl:shenzhou.com inurl:SEO 搜索引擎  等价于 inurl:SEO inurl:搜索引擎    参考  如何用好谷歌等搜索引擎？ 20 Google Search Tips to Use Google More Efficiently  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/hello.es/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  优势  搜索引擎 高可用  上千台服务器分布式部署 PB 级可靠性存储  可扩展  TODO 基本概念 节点  候选主节点  可能被选举为主节点的节点  主节点  node.master: true  默认  由候选主节点选举出来 管理 ES 集群  负责索引的 DDL 操作 管理其它节点的分片  通过广播维持连接  数据节点  node.data: true  默认  数据存储  CRUD   提取节点  node.ingest: true 索引查询前的文档预处理  时机  intercepts bulk index rquest  动作  transformations  使用指定了 processors 的 pipeline 进行数据处理 可于 processors 中进行字段的删除/ 重命名等     部落节点  用于连接多个集群进行搜索等操作  协调节点  每个节点都是，且不可禁用 将各分片数据汇总聚集后，返回给客户端   索引  基于 Lucene 的倒排索引 示例
+ 数据
+   文档 内容     Doc-1 Life goes   Doc-2 Life is good    索引
+   分词 文档     Life Doc-1,Doc-2   goes Doc-1   is Doc-2   good Doc-2      分片  通过分片来存储索引  Index= Shade*  示例
+ 索引配置有3分片1分片副本
+ P* 指代 primary shard R* 指代 replica shard
+   分片1 分片2 分片3     P1 P2 P3   R2 R3 R1       算法 Quorum  默认的副本策略 写入超过半数时返回成功  Gossip  节点发现所用的算法  算法复杂度为 Lg(N) 其中 Pull-Push 的收敛性最佳  示例
+   方式 过程     A Push B A-&amp;gt; DigestA-&amp;gt; B
+B-&amp;gt; DigestA-B-&amp;gt; A
+A-&amp;gt; A-B-&amp;gt; B   A Pull B A-&amp;gt; DigestA-&amp;gt; B
+B-&amp;gt; B-A-&amp;gt; A   A Pull-Push B A-&amp;gt; DigestA-&amp;gt; B
+B-&amp;gt; B-A&amp;amp; DigestA-B-&amp;gt; A
+A-&amp;gt; A-B-&amp;gt; B     流程 Shade 操作  图示
+   流程
+ 顺序执行  写入 Transaction Log 写入内存  触发执行  同步至 FileSytem Cache / 1s 将 FileSystem Cache（Index&#43; Transaction Long) 写入磁盘 / 30s 将 Transaction Log 写入磁盘/ 5s|write|flushed 重置 Transaction Log / 30m|超过上限    语句 创建 查询 条件 聚合 参数  bootstrap.memory_lock: true  锁定物理内存，避免使用 swag   推荐 kibana 常见问题 脑裂  场景  出现网络分区时，不同节点选中了不同的主节点，导致数据不一致或丢失  优化  主节点不担当数据节点  node.master: true node.data: false  延长 discovery.zen.ping_timeout  默认为 3 秒，延长以增加节点响应的等待时长，减少误判  设置 discovery.zen.minimum_master_nodes 为 （主节点数/2)&#43; 1  该参数控制节点需至少连接多少台主节点，才允许进行操作    取消 Type  避免 type 类比 db.table 的错误理解  ES 不允许同一 Index 下不同 Type 的字段类型不同  减少同一索引下，不同实体因字段不同而导致数据稀疏  各 Type 之间要为之间的字段冗余空间，但又非该 Type 所需要的字段，凭空浪费空间 干扰 Lucenne 高效压缩文件  评分机制是 Index 维度，不同 Type 之间的评分会造成干扰 索引元数据于主节点维护，减少大量变更情况下，对 Index 的堵塞/影响  Boolean 类型存储 String 数据  描述  测试使用的是 5.6.4 版本 线上使用的是 6.3.0 版本 测试字段上，text 字段的类型不小心被设置为 boolean，但可正常插入文本信息 在正式环境上，插入时则会提示 xxxx as only [true] or [false]  处理  需重建索引   参考 官方  []() []()  取消单 Index 下多 Type  ElasticSearch 6.X 不再支持多个doc_type 【拓展篇】Elasticsearch 6.0 一个索引只允许有一个type  其它  ElasticSearch 内部机制浅析（一） []() ElasticSearch 内部机制浅析（三） Elasticsearch集群的脑裂问题 Ingest Node（预处理节点） ElasticSearch的节点类型 Linux中Swap与Memory内存简单介绍 []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink.state/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  Keyed State KeyedStream only be used in functions and operators exactly one state-partition per key Keyed State is further organized into so-called Key Groups. redistribute atomic unit as many Key Groups as the defined maximum parallelism
+Operator State. each operator state is bound to one parallel operator instance support redistributing state among parallel operator instances when the parallelism is changed.
+Managed State Flink internal hash tables(RocksDB/ ValueState) -&amp;gt; encodes the states and writes them into the checkpoints. recommended able to automatically redistribute state when the parallelism is changed do better memory management. only be used on a KeyedStream type value list reducing aggregating folding map
+Raw State keep in their own data structures -&amp;gt; write a sequence of bytes into the checkpoint only be used when implementing operators
+State Keyed keyedStream 的状态 对应每个 Key 有相对应的一个 state Operator 各 Operator 对应的 state 如 Source 读取 kafka 的偏移量等 Broadcast
+存储数据 原始状态 Raw State 用户自行管理状态的数据结构 ，框架于 checkpoint 时使用 byte[] 读写状态内容 托管状态 ValueState ListState MapState
+ReducingState
+FoldingState
+存储方式 |方式|场景| |-|-| |Memory|调试
+无状态
+可容忍数据丢失/重复场景| |FileSystem|普通状态
+窗口
+键值结构| |RocksDB|越大状态
+越长窗口
+大型键值结构|
+优点 ExactlyOnce 增量&#43;异地备份 本地恢复
+参考  学习 Flink（五）：状态
+ Apache Flink状态管理和容错机制介绍
+ Flink流计算编程&amp;ndash;状态与检查点
+ []()
+ []()
+  https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/state/state.html
+{ code: code keys: [col1, co2], time: col, dict: [{ name: type:
+operator:
+} ] }
+</content>
     </entry>
     
      <entry>
@@ -6293,6 +6597,20 @@ File/ Printer/ Socket/ Custom Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cas
     
      <entry>
         <title></title>
+        <url>http://domain.yqjdcyy.com/post/java.thread.code/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html"> Thread
+static{ static native void registerNatives() } long tid volatile char name[] static long threadSeqNumber volatile int threadStatus int priority Runnable target volatile Object parkBlocker volatile Interruptible bocker final Object blockerLock ThreadGroup group ThreadLocal.ThreadLocalMap threadLocals, inheritableThreadLocals boolean single_step boolean daemon boolean stillborn long stackSize long nativeParkEventPointer final static int [MIN| NORM| MAX]_PRIORITY= 1| 5| 10 public Thread(...) init(ThreadGroup, Runnable, ThreadName, stackSize, accessControlContext) static native Thread currentThread() static native void yield() static native void sleep(long mills[, int nanos]) synchronized void start() native void start0() native void run() void interrupt() static boolean interrupted() native boolean isInterrupted(bClearInterrupted) final native boolean isAlive() final void setPriority(priority) static int activeCount() static int enumerate(Thread ar[]) final synchronized void join([mills= 0[, nanos]]) final void setDaemon(on) static native boolean holdsLock(obj) StatckTraceElement[] getStackTrace() native static StackTraceElement[][] dumpThreads(Thread[]) native static Thread[] getThrads() enum State{NEW, RUNNABLE, BLOCKED, WAITING, TIMED_WAITING, TERMINATED;} &amp;hellip;..// TODO
+</content>
+    </entry>
+    
+     <entry>
+        <title></title>
         <url>http://domain.yqjdcyy.com/post/java.thread/</url>
         <categories>
           
@@ -6300,7 +6618,7 @@ File/ Printer/ Socket/ Custom Custom: Kafka/ RabbitMQ/ MySQL/ ElasticSearch/ Cas
         <tags>
           
         </tags>
-        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   工具 进程  调用
+        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   线程状态 描述    线程状态 描述     NEW 新建线程   RUNNABLE 线程置入线程池，等待调度选中，获取 CPU 使用权   BLOCKED 阻塞状态，等待锁资源   WAITING 等待状态，等待其它线程将其唤起   TIMED_WAITING 超时等待，等待休眠结束或其它关联线程结束   TERMINATED 线程完成    流转  图示     串联  thread cpu synchronized monitor volatite  基础 进程  调用
  Runtime
 Process exec(*) ProcessBuilder
 new ProcessBuilder(...).start()  底层
@@ -6317,7 +6635,11 @@ class YaoRunnable implements Runnable { @Override public void run() { System.out
  但屏蔽了相关实现细节
    细项 描述     线程返回值 Java 未提供
 一般用于检测线程是否正常退出   同步 join() 于循环调用时不可控   ID 自定义的计数 ID，与操作系统的线程 ID 无关   运行时间统计 统计值不准确
-因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间       Concurrent Atomic 原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 线程池 参考  进程 线程 协程 管程 纤程 概念对比理解 Java 中的进程与线程 []() []() []()  </content>
+因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间       工具 ThreadLocal Atomic Lock Container  BlockingQueue ConcurrentHashMap  Factory  ThreadPoolExecutorgg
+Atomic
+原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 锁
+线程池
+  参考  进程 线程 协程 管程 纤程 概念对比理解 Java 中的进程与线程 []() []() []() []() []() []()  </content>
     </entry>
     
      <entry>

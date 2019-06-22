@@ -6,10 +6,100 @@
     <description>Recent content in 整理 on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 12 Feb 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Serialize</title>
+      <link>http://domain.yqjdcyy.com/post/java.serialize/</link>
+      <pubDate>Mon, 17 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.serialize/</guid>
+      <description>思考 什么是序列化 如何序列化 为什么实现 Serializable 就能被序列化 自定义序列化 理解 什么是序列化 描述 序列化是转换对象关键信息为字节流 反序列化则是在获取到字节流</description>
+    </item>
+    
+    <item>
+      <title>Java.Thread.Interrupt</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread.interrupt/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread.interrupt/</guid>
+      <description>重点 线程由自己决定是否停止，而不应由其它线程来强制中断或停止 线程可以根据中断检测，来决定终止，等待新任务或继续执行 stop/suspend/ resume 因此被废弃 场景 GUI 的取消</description>
+    </item>
+    
+    <item>
+      <title>IDEA.toString 生成覆盖</title>
+      <link>http://domain.yqjdcyy.com/post/idea.tostring/</link>
+      <pubDate>Wed, 05 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/idea.tostring/</guid>
+      <description>前言 业务中常用 Jackson 等工具，进行对象的 Json 格式展示，友好但可能不够高效 而常用的 toString() 方法覆盖中使用 = 连接，没有标准 Json 通用 故考虑通过添加模板来快速生成类</description>
+    </item>
+    
+    <item>
+      <title>Hello.Flink.Structure</title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink.structure/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink.structure/</guid>
+      <description>架构 整体架构 组件串联 Client 将任务提交至 JobManager，尤其分发至各 TaskManager 执行 组件说明 模块 子模块 说明 Client 进行任务的提交/终止 提交 Jar 包等资源 JobManager 优化执</description>
+    </item>
+    
+    <item>
+      <title>Hello.Maven.Repository</title>
+      <link>http://domain.yqjdcyy.com/post/hello.maven.repository/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.maven.repository/</guid>
+      <description>Repository 组成 Local Repository 本地文件夹 默认为 {m2}\repository Remote Repository 中央仓库 http://repo1.maven.org/maven2/ 私服 http://localhost/maven2/ 公用仓库 https://maven.aliyun.com/repository/central 对比 Mirror 作用 mirror 相关于 repository 请求的拦截器 目的 针对访问和下载速度的考量 图示 注意 镜像会完全屏蔽</description>
+    </item>
+    
+    <item>
+      <title>Java.Object.Named</title>
+      <link>http://domain.yqjdcyy.com/post/object.named/</link>
+      <pubDate>Wed, 22 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/object.named/</guid>
+      <description>各层级对象命名后缀 层级 对象 描述 数据库 PO Persistant Object 表对象 DAO Data Acess Object 持久化对象，包含数据库操作 Entity 参见 PO DO Domain Object 抽象的业务领域集合 业务层 BO Business Object 业务模型对象 DTO</description>
+    </item>
+    
+    <item>
+      <title>Hello.Flink.State.Broadcast</title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink.state.broadcast/</link>
+      <pubDate>Tue, 07 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink.state.broadcast/</guid>
+      <description>描述 作用 将变化的数据，以广播的形式通知到关联环节或集群中的任意节点 场景 如业务处理过程中，处理规则以流的形式传入，动态变化 类型 广播元素 通过流连</description>
+    </item>
+    
+    <item>
+      <title>Hello.Flink.Window</title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink.window/</link>
+      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink.window/</guid>
+      <description>描述 Flink 根据时间，将无穷的数据截取成一个个窗口，并于窗口时间到达时，将此阶段缓存的数据取出以进行下一步的操作 时间 时间类型 类型 描述 ProcessingTime 事件被处理的</description>
+    </item>
+    
+    <item>
+      <title>Hello.Flink</title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink/</guid>
+      <description>描述 适用场景 实时流处理 热闹商品统计 消息预警 海量数据处理 传感器/网络等多种复杂来源监测 数据分析 将复杂数据转化为用户可快速访问/理解的数据 支持 流</description>
+    </item>
+    
+    <item>
+      <title>Hello.Maven</title>
+      <link>http://domain.yqjdcyy.com/post/hello.maven/</link>
+      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.maven/</guid>
+      <description>概述 Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project&amp;rsquo;s build, reporting and documentation from a central piece of information. Maven 作为软件项目的管理和帮助理解的工具。 基于 pom.xml 文件，Maven 支持进</description>
+    </item>
     
     <item>
       <title>Git.Solution</title>
@@ -36,6 +126,15 @@
       
       <guid>http://domain.yqjdcyy.com/post/java.keyword.final/</guid>
       <description>作用 用于声明类、方法、变量名，不允许修改其引用 示例 修饰对象 作用 变量 只读 随类定义存储于方法区(老生代) 基本数据类型将不可再次赋值 引用类型，将不</description>
+    </item>
+    
+    <item>
+      <title>Hello.RPC</title>
+      <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
+      <pubDate>Thu, 17 Jan 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
+      <description>概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，</description>
     </item>
     
     <item>
@@ -723,15 +822,6 @@
     </item>
     
     <item>
-      <title>Hello.RPC</title>
-      <link>http://domain.yqjdcyy.com/post/hello.rpc/</link>
-      <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/hello.rpc/</guid>
-      <description>概念 RPC 定义 远程过程调用 「请求」「应答」服务器，部署在「请求」服务器上的应用，想要调用「应答」服务器上应用提供的函数方法 由于不在一个内存空间，</description>
-    </item>
-    
-    <item>
       <title>Hello.性能测试</title>
       <link>http://domain.yqjdcyy.com/post/hello.%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/</link>
       <pubDate>Thu, 10 May 2018 00:00:00 +0000</pubDate>
@@ -980,7 +1070,7 @@
       <pubDate>Thu, 08 Feb 2018 00:00:00 +0000</pubDate>
       
       <guid>http://domain.yqjdcyy.com/post/idea.%E5%BF%AB%E6%8D%B7%E9%94%AE/</guid>
-      <description>快捷键 包、结构或视图 Alt+回车 导入包,自动修正 Ctrl+Alt+O 优化导入的类和包 Ctrl+E 最近打开的文件 Ctrl+H 显示类结构图，比如查看实现类 Ctrl+Q 显示注释文档 Alt+F1 查找代码所在</description>
+      <description>快捷键 包、结构或视图 CTRL+ALT+O 优化导入的类和包 CTRL+H 显示类结构图，比如查看实现类 CTRL+Q 显示注释文档 ALT+回车 导入包,自动修正 CTRL+E 最近打开的文件 ALT+F1 查找代码所在</description>
     </item>
     
     <item>
@@ -1819,15 +1909,6 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
       
       <guid>http://domain.yqjdcyy.com/post/java.%E5%B8%B8%E7%94%A8%E6%8A%80%E6%9C%AF/</guid>
       <description>参考 http://unmi.cc/jdk-5-concurrent-callable-futuretask-etc/ http://www.cnblogs.com/wn398/archive/2013/06/15/3130967.html http://ifeve.com/locks/ 获取路径 ###分类： - 绝对路径：主页上的文件或目录在硬盘上真正的路径，如URL和物理路径 - 例：C:xyz est.txt 代表了test.txt文</description>
-    </item>
-    
-    <item>
-      <title>Maven</title>
-      <link>http://domain.yqjdcyy.com/post/maven/</link>
-      <pubDate>Fri, 09 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/maven/</guid>
-      <description>部署安装 下载地址 http://maven.apache.org/download.cgi 安装流程 至下载地址下载最新版本Maven压缩包 解压至本地文件路径 补充环境变量 [M2_HOME: C:\Program Files\Apache Software Foundation\apache-maven-3.2.2] [M2: %M2_HOME%\bin] [MAVEN_OPTS: -Xms256m -Xmx512m] 并于最后于path变量里补</description>
     </item>
     
     <item>
