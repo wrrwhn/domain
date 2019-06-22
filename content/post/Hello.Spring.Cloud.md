@@ -451,6 +451,7 @@ toc: true
 ###  CAP
 - [CAP 定理的含义](http://www.ruanyifeng.com/blog/2018/07/cap.html)
 - [CAP定理](https://zh.wikipedia.org/wiki/CAP%E5%AE%9A%E7%90%86)
+- [分布式系统中的CAP理论是什么](https://mp.weixin.qq.com/s/iYEgLGOGoRdn2-3qPcbOQA)
 
 ### 其它
 - [IaaS，PaaS，SaaS 的区别](http://www.ruanyifeng.com/blog/2017/07/iaas-paas-saas.html)
