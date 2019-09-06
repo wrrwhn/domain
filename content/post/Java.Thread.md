@@ -1,4 +1,12 @@
 
+# 层级
+
+Obect(wait/notify/notifyAll)
+对象监视器
+Condition/Lock
+
+.
+
 # 概念
 
 ## 进程
