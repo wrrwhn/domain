@@ -16,6 +16,7 @@ toc: true
 - Java **1.8** 版本中**不支持**
     
 ## 调用
+
 - `jmap [option] <pid>|<executable <core>> | <[server_id@]<remoteServerIP | hostname>>`
 - 参数
     - `<no option>`
@@ -45,17 +46,21 @@ toc: true
 
 ## 示例
 - `jmap 24748`
+
     |      内存地址      | 内存占用 |          进程、核心文件或远程调试服务器           |
     |--------------------|----------|---------------------------------------------------|
     | 0x0000000051560000 | 8740K    | D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll |
     | 0x0000000054130000 | 104K     | D:\server\java\jdk1.8.0_65\jre\bin\net.dll        |
+
 - `jmap -histo 24748`
+
     | 序号  | 实例数     | 所在字节数 | 类名                                                          |
     |-------|------------|------------|---------------------------------------------------------------|
     | num   | #instances | #bytes     | class name                                                    |
     | 14:   | 6778       | 108448     | java.lang.Object                                              |
     | 1565: | 1          | 16         | sun.util.resources.LocaleData$LocaleDataResourceBundleControl |
     | Total | 266178     | 50804480   |                                                               |
+
 - `jmap -finalizerinfo 24748`
     ```
     Attaching to process ID 24748, please wait...
@@ -118,7 +123,6 @@ toc: true
 
     5576 interned Strings occupying 475000 bytes.
     ```
-
 
 # Reference
 - 官方

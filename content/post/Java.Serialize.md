@@ -118,5 +118,4 @@ toc: true
 # 参考
 - [深入分析Java的序列化与反序列化](https://www.hollischuang.com/archives/1140)
 - [Java序列化理解与总结](https://www.jianshu.com/p/ff770511a097)
-- []()
-- []()
+- [Java 序列化之 Externalizable](https://www.jianshu.com/p/411e18ceaa55)
