@@ -6,10 +6,19 @@
     <description>Recent content in Thread on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 01 Jan 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Jun 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/thread/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.Thread.Interrupt</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread.interrupt/</link>
+      <pubDate>Thu, 06 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread.interrupt/</guid>
+      <description>重点 线程由自己决定是否停止，而不应由其它线程来强制中断或停止 线程可以根据中断检测，来决定终止，等待新任务或继续执行 stop/suspend/ resume 因此被废弃 场景 GUI 的取消</description>
+    </item>
     
     <item>
       <title>Java.Keyword.Synchronized</title>

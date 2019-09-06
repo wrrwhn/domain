@@ -31,7 +31,33 @@
 	- 多个队伍走多个通道
 
 
-# 工具
+# 线程状态
+
+## 描述
+
+| 线程状态      | 描述                                        |
+|---------------|-------------------------------------------|
+| NEW           | 新建线程                                    |
+| RUNNABLE      | 线程置入线程池，等待调度选中，获取 CPU 使用权 |
+| BLOCKED       | 阻塞状态，等待锁资源                         |
+| WAITING       | 等待状态，等待其它线程将其唤起               |
+| TIMED_WAITING | 超时等待，等待休眠结束或其它关联线程结束     |
+| TERMINATED    | 线程完成                                    |
+
+## 流转
+
+- 图示
+	- ![Thread.State.png](http://doc.yqjdcyy.com/eac1bf44-78f0-49a7-ac41-0a4904520f3c.png)
+
+
+# 串联
+- thread
+- cpu
+- synchronized
+- monitor
+- volatite
+ 
+# 基础
 
 ## 进程
 
@@ -134,31 +160,22 @@
 			| 运行时间统计 | 统计值不准确<br>因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间 |
 
 
-# 线程状态
+# 工具
 
-## 描述
+## ThreadLocal
 
-| 线程状态      | 描述 |
-|---------------|------|
-| NEW           |      |
-| RUNNABLE      |      |
-| BLOCKED       |      |
-| WAITING       |      |
-| TIMED_WAITING |      |
-| TERMINATED    |      |
+## Atomic
 
-## 流程
+## Lock
 
-- 图示
-
-- 节点描述
-
-https://juejin.im/entry/57339fe82e958a0066bf284f
-https://my.oschina.net/mingdongcheng/blog/139263
-https://blog.csdn.net/pange1991/article/details/53860651
+## Container
+- BlockingQueue
+- ConcurrentHashMap
 
 
-# Concurrent
+## Factory
+- ThreadPoolExecutorgg
+
 
 	Atomic
 
@@ -182,6 +199,9 @@ https://blog.csdn.net/pange1991/article/details/53860651
 # 参考
 - [进程 线程 协程 管程 纤程 概念对比理解](https://zhuanlan.zhihu.com/p/26757689)
 - [Java 中的进程与线程](https://www.ibm.com/developerworks/cn/java/j-lo-processthread/index.html)
+- []()
+- []()
+- []()
 - []()
 - []()
 - []()

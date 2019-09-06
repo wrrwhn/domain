@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
-    <title> - 好久不见</title>
+    <title>Hello.Flink - 好久不见</title>
     <meta name="keywords" content="好久不见,博客,程序,思考,笔记,分享">
     
-    <meta property="og:title" content="">
+    <meta property="og:title" content="Hello.Flink">
     <meta property="og:site_name" content="好久不见">
     <meta property="og:image" content="/img/author.jpg"> 
-    <meta name="title" content=" - 好久不见" />
+    <meta name="title" content="Hello.Flink - 好久不见" />
     <meta name="description" content="好久不见 | 博客 | 程序 | 思考 | 笔记 | 分享"> 
     
     <link rel="shortcut icon" href="http://domain.yqjdcyy.com/img/favicon.ico" />
@@ -117,7 +117,7 @@
     <header class="post-header">
       <h1 class="post-title" itemprop="name headline">
         <a class="post-title-link" href="http://domain.yqjdcyy.com/post/hello.flink/" itemprop="url">
-        
+        Hello.Flink
         </a>
       </h1>
       <div class="post-meta">
@@ -126,18 +126,36 @@
     <i class="fa fa-calendar-o"></i>
 </span>
 <span class="post-meta-item-text">时间：</span>
-<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="0001-01-01">
-    0001-01-01
+<time itemprop="dateCreated" datetime="2016-03-22T13:04:35+08:00" content="2019-03-12">
+    2019-03-12
 </time>
 </span> 
       
+
+  <span class="post-category" >
+  &nbsp; | &nbsp;
+  <span class="post-meta-item-icon">
+    <i class="fa fa-folder-o"></i>
+  </span>
+  <span class="post-meta-item-text">分类：</span>
+  
+    <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+      <a href="http://domain.yqjdcyy.com/categories/%E6%95%B4%E7%90%86" itemprop="url" rel="index">
+        <span itemprop="name">整理</span>
+      </a>
+      &nbsp; 
+    </span>
+  
+</span>
+
+
        <span>
 &nbsp; | &nbsp;
 <span class="post-meta-item-icon">
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">449 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1772 字 ~4分钟</span>
 </span>
       </div>
     </header>
@@ -201,6 +219,8 @@
 </ul></li>
 </ul>
 
+<p>// TODO</p>
+
 <h2 id="state">State</h2>
 
 <ul>
@@ -209,9 +229,17 @@
 <li>状态在 KeyedStreams 中进行，并通过当前事件的 Key 进行访问
 
 <ul>
-<li>本地操作，在不需要事务开销的情况下保证一致性</li>
+<li>本地操作，在不需要事务开销的情况下保证一致性
+<br /></li>
 </ul></li>
 </ul>
+
+<p>// TODO</p>
+
+<p>per-window state
+use keyed state
+[global|window]State    [not] scoped to a window
+This feature is helpful if you anticipate multiple firing for the same window, as can happen when you have late firings for data that arrives late or when you have a custom trigger that does speculative early firings.</p>
 
 <h2 id="time">Time</h2>
 
@@ -223,7 +251,8 @@
 <li>迟到数据容忍</li>
 </ul></li>
 
-<li><p>类型</p>
+<li><p>类型</p></li>
+</ul>
 
 <table>
 <thead>
@@ -236,16 +265,51 @@
 <tbody>
 <tr>
 <td>ProcessingTime</td>
-<td>事件被处理的时间<br>处理机器的时间戳</td>
+<td>事件被处理的时间<br>Operator= Source/ Map/ Sink</td>
 </tr>
 
 <tr>
 <td>EventTime</td>
 <td>数据本身携带的时间</td>
 </tr>
+
+<tr>
+<td>IngestionTime</td>
+<td>事件被 DataSource 读取的时间</td>
+</tr>
 </tbody>
-</table></li>
+</table>
+
+<p><a href="https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/times_clocks.svg">https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/times_clocks.svg</a></p>
+
+<p>App-&gt; MQ-&gt; Flink.DataSource-&gt; Flink.
+EventTime-&gt; MQ-&gt; IngestionTime-&gt; ProcessingTime</p>
+
+<ul>
+<li>重启服务，无 checkpoint 配置下，昨天的数据是怎样触发时间窗口</li>
 </ul>
+
+<p>watermark 的生成时间</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">source</pre></div>
+<p>Time Characteristic
+    Note that in order to run this example in event time,
+        the program needs to either use sources that directly define event time for the data and emit watermarks themselves,
+        or the program must inject a Timestamp Assigner &amp; Watermark Generator after the sources.</p>
+
+<p>Event Time and Watermarks
+    A Watermark(t) declares that event time has reached time t in that stream,
+        meaning that there should be no more elements from the stream with a timestamp t’ &lt;= t</p>
+
+<p><img src="https://ci.apache.org/projects/flink/flink-docs-release-1.7/fig/stream_watermark_out_of_order.svg" alt="" /></p>
+
+<p>Once a watermark reaches an operator, the operator can advance its internal event time clock to the value of the watermark.</p>
+
+<p><img src="http://doc.yqjdcyy.com/b102ece4-582e-4ddd-b8e3-caf2e12bf0c0.webp" alt="flink-window-watermark-example.webp" /></p>
+
+<p>Watermarks are generated at source functions
+    Each parallel subtask of a source function usually generates its watermarks independently.</p>
+
+<p>// TODO</p>
 
 <h2 id="window">Window</h2>
 
@@ -267,7 +331,8 @@
 <li>global
 
 <ul>
-<li>永不停止的窗口，需指定触发器</li>
+<li>永不停止的窗口，需指定触发器
+This windowing scheme is only useful if you also specify a custom trigger</li>
 </ul></li>
 <li>tumbing
 
@@ -285,10 +350,24 @@
 
 <ul>
 <li>会话窗口，开始时间和窗口大小可灵活配置</li>
-<li>窗口有空隙</li>
+<li>窗口有空隙
+Instead a session window closes when it does not receive elements for a certain period of time,</li>
 </ul></li>
 </ul></li>
 </ul>
+
+<p>tumbling windows, sliding windows, session windows and global windows</p>
+
+<p>extending the WindowAssigner</p>
+
+<p>Time-based windows have a start timestamp (inclusive) and an end timestamp (exclusive)
+without offsets hourly tumbling windows are aligned with epoch</p>
+
+<p>adjust windows to timezones Time.hours(-8)
+// TODO</p>
+
+<p>window= 1h， 9:15开始
+(9:15, 10:00], (10:00, 11:00]</p>
 
 <h1 id="api">API</h1>
 
@@ -346,6 +425,9 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 </ul>
 
 <h2 id="方法">方法</h2>
+
+<p>A windowed transformation with a ProcessWindowFunction cannot be executed as efficiently as the other cases because Flink has to buffer all elements for a window internally before invoking the function.
+.aggregate(new AverageAggregate(), new MyProcessWindowFunction());</p>
 
 <table>
 <thead>
@@ -670,6 +752,159 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 </tbody>
 </table>
 
+<h1 id="示例">示例</h1>
+
+<h2 id="watermark">Watermark</h2>
+
+<h3 id="代码">代码</h3>
+
+<h3 id="示例-1">示例</h3>
+
+<p>eventtime
+window(time.second(5))</p>
+
+<table>
+<thead>
+<tr>
+<th>EventTime</th>
+<th>Watermark</th>
+<th>Print</th>
+<th>Operate</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>6</td>
+<td></td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>6</td>
+<td></td>
+<td>discard</td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>6</td>
+<td></td>
+<td>discard</td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>10</td>
+<td>5,6</td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>10</td>
+<td></td>
+<td>discard</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>15</td>
+<td>10</td>
+<td>stash</td>
+</tr>
+</tbody>
+</table>
+
+<p>eventtime
+window(time.second(5))
+lateness(time.second(2))</p>
+
+<table>
+<thead>
+<tr>
+<th>EventTime</th>
+<th>Watermark</th>
+<th>Print</th>
+<th>Operate</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>5</td>
+<td>5</td>
+<td>1</td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>6</td>
+<td>6</td>
+<td></td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>4</td>
+<td>6</td>
+<td>1,4</td>
+<td></td>
+</tr>
+
+<tr>
+<td>2</td>
+<td>6</td>
+<td>1,4,2</td>
+<td></td>
+</tr>
+
+<tr>
+<td>10</td>
+<td>10</td>
+<td>5,6</td>
+<td>stash</td>
+</tr>
+
+<tr>
+<td>3</td>
+<td>10</td>
+<td></td>
+<td>discard<br>w(10) out of [0~5+2)</td>
+</tr>
+
+<tr>
+<td>15</td>
+<td>10</td>
+<td>10</td>
+<td>stash</td>
+</tr>
+</tbody>
+</table>
+
 <h1 id="参考">参考</h1>
 
 <h2 id="理解">理解</h2>
@@ -681,9 +916,16 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 <li><a href="http://wuchong.me/blog/2018/08/25/flink-in-meituan-practice/">Flink在美团的实践与应用</a></li>
 <li><a href="http://wuchong.me/blog/2016/05/25/flink-internals-window-mechanism/">Flink 原理与实现：Window 机制</a></li>
 <li><a href="https://segmentfault.com/a/1190000008129552">Apache Flink 容错机制</a></li>
+<li><a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/event_time.html">Event Time / Processing Time / Ingestion Time</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/20585530">深入理解Flink核心技术</a></li>
+<li>[]()</li>
+<li><a href="http://wuchong.me/blog/2016/06/06/flink-internals-session-window/">Flink 原理与实现：Session Window</a></li>
+<li>[]()</li>
+<li>[]()</li>
+<li>[]()</li>
 </ul>
 
-<h2 id="示例">示例</h2>
+<h2 id="示例-2">示例</h2>
 
 <ul>
 <li><a href="http://wuchong.me/blog/2018/11/07/5-minutes-build-first-flink-application/">5分钟从零构建第一个 Flink 应用</a></li>
@@ -700,23 +942,35 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 <li><a href="https://ci.apache.org/projects/flink/flink-docs-stable/dev/stream/operators/windows.html">Windows</a></li>
 </ul>
 
+<h1 id="补充">补充</h1>
+
+<p>Flink= JobManager+ TaskManager<em>+ Client</em></p>
+
     </div>
     <footer class="post-footer">
      
+ 
+<div class="post-tags">     
+     
+    <a href="http://domain.yqjdcyy.com/tags/flink" rel="tag" title="Flink">#Flink#</a>
+    
+</div>
+
+
 
      <div class="post-nav">
     <div class="post-nav-next post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/hello.zookeeper/" rel="next" title="">
-        <i class="fa fa-chevron-left"></i> 
+        <a href="http://domain.yqjdcyy.com/post/hello.maven/" rel="next" title="Hello.Maven">
+        <i class="fa fa-chevron-left"></i> Hello.Maven
         </a>
     
     </div>
 
     <div class="post-nav-prev post-nav-item">
     
-        <a href="http://domain.yqjdcyy.com/post/ducati/" rel="prev" title="">
-         <i class="fa fa-chevron-right"></i>
+        <a href="http://domain.yqjdcyy.com/post/hello.flink.window/" rel="prev" title="Hello.Flink.Window">
+        Hello.Flink.Window <i class="fa fa-chevron-right"></i>
         </a>
     
     </div>
@@ -726,7 +980,7 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
     <div style="border: 1px dashed #e0e0e0; padding: 10px 10px 10px 10px; background-color: #fffeee; background-repeat: no-repeat; background-attachment: scroll; background-position: 1% 50%; -moz-background-size: auto auto; -moz-background-clip: -moz-initial; -moz-background-origin: -moz-initial; -moz-background-inline-policy: -moz-initial;">
         <div>
             <p style="margin-top:0px;">
-                标题：
+                标题：Hello.Flink
                 <br />作者：
                 <a target="_blank" href="http://domain.yqjdcyy.com/">好久不见</a>
                 <br />关注：好久不见
@@ -759,7 +1013,16 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 <aside id="sidebar" class="sidebar">
   <div class="sidebar-inner">
 
-    <section class="site-overview sidebar-panel  sidebar-panel-active ">
+  <ul class="sidebar-nav motion-element">
+    <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+      文章目录
+    </li>
+    <li class="sidebar-nav-overview" data-target="site-overview">
+      站点概览
+    </li>
+  </ul>
+
+    <section class="site-overview sidebar-panel ">
       <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image"
         src="http://domain.yqjdcyy.com/img/profile-image.png"
@@ -771,7 +1034,7 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">291</span>
+        <span class="site-state-item-count">303</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -788,7 +1051,7 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">128</span>
+        <span class="site-state-item-count">130</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -814,6 +1077,58 @@ GROUP BY TUMBLE(rowtime, INTERVAL &#39;1&#39; HOUR), room</pre></div></li>
 </div>
     </section>
     
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+    <div class="post-toc">
+        <div class="post-toc-content"><nav id="TableOfContents">
+<ul>
+<li><a href="#描述">描述</a>
+<ul>
+<li><a href="#适用场景">适用场景</a></li>
+<li><a href="#支持">支持</a></li>
+</ul></li>
+<li><a href="#技术要点">技术要点</a>
+<ul>
+<li><a href="#checkpoint">Checkpoint</a></li>
+<li><a href="#state">State</a></li>
+<li><a href="#time">Time</a></li>
+<li><a href="#window">Window</a></li>
+</ul></li>
+<li><a href="#api">API</a>
+<ul>
+<li><a href="#支持层次">支持层次</a>
+<ul>
+<li><a href="#analytics-api">Analytics API</a></li>
+<li><a href="#stream-batch-data-processing">Stream|Batch Data Processing</a></li>
+<li><a href="#event-driven-application">Event-Driven Application</a></li>
+</ul></li>
+<li><a href="#方法">方法</a></li>
+</ul></li>
+<li><a href="#架构">架构</a>
+<ul>
+<li><a href="#服务分层">服务分层</a></li>
+<li><a href="#抽象级别">抽象级别</a></li>
+<li><a href="#数据流结构">数据流结构</a></li>
+</ul></li>
+<li><a href="#示例">示例</a>
+<ul>
+<li><a href="#watermark">Watermark</a>
+<ul>
+<li><a href="#代码">代码</a></li>
+<li><a href="#示例-1">示例</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#参考">参考</a>
+<ul>
+<li><a href="#理解">理解</a></li>
+<li><a href="#示例-2">示例</a></li>
+<li><a href="#官方文档">官方文档</a></li>
+</ul></li>
+<li><a href="#补充">补充</a></li>
+</ul>
+</nav></div>
+    </div>
+</section>
+
   </div>
 </aside>
 
