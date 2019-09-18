@@ -11,9 +11,18 @@
 - ReferenceQueue.head 指向队首元素，元素中 next 指向下一入队元素
     - 由守护进程 ReferenceHandler 操作，数据源为 Reference.pending
 - Reference 中启动 ReferenceHandler 守护线程，用于将无引用的元素移动至 pending 列队
+- 其中 WeakReference/SoftReference 对象在进入 Queue 后， referent 为 null；而 FinalReference 因为要调用 finalize 方法，所以存在
+
+## 引用指向值
+
+| 类               | 值   | 描述                             |
+|------------------|------|--------------------------------|
+| PhantomReference | null | 对象本身亦为 null                |
+| WeakReference    | null | 清空入队                         |
+| SoftReference    | null | 仅于内存不足时，清空入队          |
+| FinalReference   | T    | 需保留以用于执行其 finalize 方法 |
 
 ## Reference
-### 作用
 > 引用类型基类，定义引用对象的通用操作  
 > 与 GC 紧密关联，无法直接子类化
 
@@ -36,23 +45,24 @@
     - next
         - 入队后，指向队列中的下一节点
 
-| 状态     | 数值      | 描述                      |
-|----------|-----------|---------------------------|
-| active   | null      | 状态变更后，由 GC 自动赋值 |
-| pending  | this      |                           |
-| enqueued | next/this | `入队后，指向下一节点`     |
-| inactive | this      |                           |
+            | 状态     | 数值      | 描述                      |
+            |----------|-----------|---------------------------|
+            | active   | null      | 状态变更后，由 GC 自动赋值 |
+            | pending  | this      |                           |
+            | enqueued | next/this | `入队后，指向下一节点`     |
+            | inactive | this      |                           |
+
 
     - static pending
         - pending 状态队列首元素
 
     - discovered
 
-| 状态    | 数值                          |
-|---------|-------------------------------|
-| active  | discovered 引用列表的下一元素 |
-| pending | `pending 列表的下一元素`      |
-| other   | NULL                          |
+        | 状态    | 数值                          |
+        |---------|-------------------------------|
+        | active  | discovered 引用列表的下一元素 |
+        | pending | `pending 列表的下一元素`      |
+        | other   | NULL                          |
 
 - T
     - referent
@@ -91,7 +101,9 @@ static{
 
 ### 方法
 
-- 将 pending 中的元素入队
+
+- tryHandlePending
+> 将 pending 中的元素入队
 
 ```java
 // 将 pending 指向的引用弹出并添加至队列中
@@ -121,24 +133,22 @@ static boolean tryHandlePending(boolWaitForNotify){
 ### 初始化
 
 ```java
-    static{
-        // 提前加载类，避免后续懒加载时内存不足
-        ensureClassInitialized(Cleaner.class);
-    }
+static{
+    // 提前加载类，避免后续懒加载时内存不足
+    ensureClassInitialized(Cleaner.class);
+}
 ```
 
 ### 方法
+- run
 ```java
-    void run(){
-        while(true){
-            // 守护进程，检测 pending 对象是否指向有效节点
-            tryHandlePending(true)
-        }
-    }
+while(true){
+    // 守护进程，检测 pending 对象是否指向有效节点
+    tryHandlePending(true)
+}
 ```
 
 ## ReferenceQueue
-
 > 将已被回收的对象引用存入 Queue 中，以通知来进行额外的工作
 >>如果引用列表为 NULL，则出入队为空操作（默认情况）  
 >>元素入队后，将其 queue 更新为 ENQUEUED，以避免重复入队操作
@@ -162,7 +172,8 @@ static boolean tryHandlePending(boolWaitForNotify){
 
 ### 方法
 
-- 入队
+- enqueue
+> 入队
 
 ```java 
 boolean enqueue(Reference r){
@@ -178,7 +189,8 @@ boolean enqueue(Reference r){
 }
 ```
 
-- 出队
+- poll
+> 出队
 
 ```java 
 Reference poll(){
@@ -191,7 +203,8 @@ Reference poll(){
 }
 ```
 
-- 移除队首元素
+- remove
+> 移除队首元素
 
 ```java 
 // timeout= 0 时表示一直等待
@@ -209,13 +222,131 @@ Reference remove(long timeout){
 ## FinalReference
 > 空实现，将作用域缩小至 Package 级别
 
-### Finalizer
+## Finalizer
+> 针对覆写 Object.finalize 方法的类的实例
+>> 第一次 GC 时将实例更新至 unfinalized 队列中  
+>> 等待出队处理完成后，移除出队列，待第二次 GC 再清除
+
+### 属性
+- Finalizer
+    - static unfinalized
+        - 待完成 finalized 方法调用的实例的队列
+
+- T    
+    - referenct
+        - 由 JVM 在 GC 时进行赋值
+
+- ReferenceQueue<? super T>        
+    - queue
 
 
+### 方法
+- add
+> 将节点添加至 unfinalized 队列中
+
+```java
+synchronized (lock) {
+    if (unfinalized != null) {
+        this.next = unfinalized;
+        unfinalized.prev = this;
+    }
+    unfinalized = this;
+}
+```
+
+- runFinalizer
+> 调用当前使用的 finalize 方法
+
+```java
+synchronized (this) {
+    if (hasBeenFinalized()) return;
+    remove();
+}
+try {
+    Object finalizee = this.get();
+    if (finalizee != null && !(finalizee instanceof java.lang.Enum)) {
+        // 运行实例的 finalize 方法
+        jla.invokeFinalize(finalizee);
+        finalizee = null;
+    }
+} catch (Throwable x) { }
+super.clear();
+```
+
+### 内部类
+- FinalizerThread
+> 守护进程形式，静态启动
+>> 获取队列中元素，调用 runFinalizer 方法
+
+```java
+private static class FinalizerThread extends Thread {
+    public void run() {
+        final JavaLangAccess jla = SharedSecrets.getJavaLangAccess();
+        for (;;) {
+            try {
+                Finalizer f = (Finalizer)queue.remove();
+                f.runFinalizer(jla);
+            } catch (InterruptedException x) {}
+        }
+    }
+}
+
+static {
+    ThreadGroup tg = Thread.currentThread().getThreadGroup();
+    for (ThreadGroup tgn = tg;
+            tgn != null;
+            tg = tgn, tgn = tg.getParent());
+    Thread finalizer = new FinalizerThread(tg);
+    finalizer.setPriority(Thread.MAX_PRIORITY - 2);
+    finalizer.setDaemon(true);
+    finalizer.start();
+}
+```
 
 ## SoftReference
+>
+
+## WeakHashMap
+> 自动移除不再使用的键值对
+
+### 属性
+- ReferenceQueue<Object>
+    - queue
+
+### 方法
+
+- expungeStaleEntries
+> 移除除旧事项
+>> 使用场景： getTaable()/ size()/ resize(int)
+
+```java
+for (Object x; (x = queue.poll()) != null; ) {
+    prev= p= table[x.hash]
+    if(p== x){
+        prev.next= p.next;
+        size--;
+        break;
+    }
+}
+```
+
+### 内部类
+- Entry
+    - `class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V>`
+
 
 ## DirectByteBuffer
+>
+
+
+# 使用场景
+
+| 类型   | 场景                                                                                                                 |
+|------|--------------------------------------------------------------------------------------------------------------------|
+| 强引用 | `Object o= new Object();`普遍场景<br>内存不足时，JVM 抛出 OOM 异常<br>`o= null` 或超出生命周期后回收                  |
+| 软引用 | 内存足够蛙保存，内存不足时回收<br>缓存场景                                                                            |
+| 弱引用 | 对象不被使用时，即被回收<br>WeakHashMap 场景                                                                          |
+| 虚引用 | 不影响对象的生命周期<br>get()始终为 null<br>仅用于 GC 后收到系统通知，如堆外内存的管理<br>常结合 Cleaner 进行回收操作 |
 
 
 # 补充
@@ -255,15 +386,6 @@ Reference remove(long timeout){
     - 需执行，则该对象将入队至 `F-Queue`，等待低级别 `Finalizer` 线程进行读取/执行
     - 执行时，可通过建立引用，来避免被回收；否则将被标记并回收
 
-## 引用使用场景
-
-| 类型   | 场景                                                                                                |
-|------|---------------------------------------------------------------------------------------------------|
-| 强引用 | `Object o= new Object();`普遍场景<br>内存不足时，JVM 抛出 OOM 异常<br>`o= null` 或超出生命周期后回收 |
-| 软引用 | 内存足够蛙保存，内存不足时回收<br>缓存场景                                                           |
-| 弱引用 | 对象不被使用时，即被回收<br>WeakHashMap 场景                                                         |
-| 虚引用 | 不影响对象的生命周期<br>null== get()<br>仅用于 GC 后收到系统通知<br>常结合 Cleaner 进行回收操作     |
-
 
 # 参考
 ## SharedSecrets
@@ -272,16 +394,15 @@ Reference remove(long timeout){
 - []()
 - []()
 
-## 
+## Reference
 - [JDK源码分析（7）之 Reference 框架概览](http://www.lumajia.com/htmls/1200985533134668802.html)
-- [](https://my.oschina.net/robinyao/blog/829983)
+- [Java Reference详解](https://my.oschina.net/robinyao/blog/829983)
+    - 针对 Finalizer 机制等有相关补充
 - [深入理解JDK中的Reference原理和源码实现](https://www.throwable.club/2019/02/16/java-reference/#Reference%E7%9A%84%E7%8A%B6%E6%80%81%E9%9B%86%E5%90%88)
     - 状态环节描述详尽，配有流程转换图
     - 二次标记(finalize)
 - [深入理解 java 中的 *Reference](https://blog.csdn.net/xlinsist/article/details/57089288)
     - 较为丰富的使用场景/示例
         - 如内存泄漏写法/WeakHashMap 等
-- []()
-- []()
-- []()
-- []()
+- [Reference 、ReferenceQueue 详解](https://www.jianshu.com/p/f86d3a43eec5)
+    - 针对 JVM 操作进行了相关补充
