@@ -1,0 +1,37 @@
+baseurl = "https://wrrwhn.github.io/domain/"
+title = "姚清居到此一游"
+author = "姚清居"
+languageCode = "zh-CN"
+
+theme = "hugo-minimalist-theme"
+
+paginate = 10
+disqusShortname = "yqjdcyy"
+googleAnalytics = ""
+
+[params]
+    site_author = "姚清居"
+    site_description = "姚清居到此一游"
+    location = "Earth"
+    avatar = "img/profile-image.png"
+    header_background = "img/desk.jpg"
+    header_title = ""
+    copyright = "Powered by [姚清居](http://www.yqjdcyy.com)."
+    custom_css = []
+    custom_js  = []
+
+    # Enable gogle analytics by entering your tracking code
+    google_analytics = ""
+
+[social]
+    # Add your social network accounts to the profile section on the left
+    # by entering your username. The links to your account will be
+    # create automatically.
+    twitter   = ""
+    facebook  = ""
+    linkedin  = ""
+    behance   = ""
+    dribbble  = ""
+    instagram = ""
+    github    = "wrrwhn"
+    gplus     = ""
