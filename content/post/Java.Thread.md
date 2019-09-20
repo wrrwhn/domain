@@ -1,11 +1,19 @@
+---
+title: "Java.Thread - TODO"
+date: "2019-09-12"
+categories:
+    - "阅读"
+tags:
+    - "Java"
+toc: true
+---
 
 # 层级
 
-Obect(wait/notify/notifyAll)
-对象监视器
-Condition/Lock
+- Obect(wait/notify/notifyAll)
+- 对象监视器
+- Condition/Lock
 
-.
 
 # 概念
 
