@@ -14,7 +14,6 @@ toc: true
 ## 结构
 - ![DelayQueue.png](http://doc.yqjdcyy.com/6258c4c5-d558-494e-b6ef-714b08b4ea96.png)
 
-
 ## 特点
 - Leader-Follwer 模式
     - 无新的队首数据情况下，则不进行唤醒操作
@@ -95,7 +94,7 @@ public boolean offer(E e) {
 ```
 
 
-# 基础
+# 依赖
 ## Queue
 
 ### 特点
