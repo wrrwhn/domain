@@ -1,6 +1,12 @@
-
-> 引用的作用概述
-
+---
+title: "Java.Reference"
+date: "2019-09-12"
+categories:
+    - "整理"
+tags:
+    - "Java"
+toc: true
+---
 # 代码解析
 
 ## 类拓扑
@@ -114,7 +120,8 @@ static boolean tryHandlePending(boolWaitForNotify){
             pending = r.discovered;     // 元素后移
             r.discovered = null;
         }else{
-            lock.wait();    // OutOfMemoryError
+            // 捕获 OutOfMemoryError，避免静默退出
+            lock.wait();                // 元素入队时，自动调用 lock.notify
         }
     }
     ((Cleaner)r).clean();              // 执行相应动作，如 Bits 中绑定的内存释放
@@ -303,8 +310,18 @@ static {
 }
 ```
 
+## WeakReference
+> 仅实现，用于类型判断
+
 ## SoftReference
->
+> 简单实现，主要用于类型判断 
+### 字段
+- long
+    - clock
+        - 由 GC 更新的时钟
+    - timestamp
+        - VM 用以选择/清除的其中一个条件
+        - 每次调用 get() 方法时更新
 
 ## WeakHashMap
 > 自动移除不再使用的键值对
@@ -335,17 +352,14 @@ for (Object x; (x = queue.poll()) != null; ) {
     - `class Entry<K,V> extends WeakReference<Object> implements Map.Entry<K,V>`
 
 
-## DirectByteBuffer
->
-
 
 # 使用场景
 
 | 类型   | 场景                                                                                                                 |
 |------|--------------------------------------------------------------------------------------------------------------------|
-| 强引用 | `Object o= new Object();`普遍场景<br>内存不足时，JVM 抛出 OOM 异常<br>`o= null` 或超出生命周期后回收                  |
-| 软引用 | 内存足够蛙保存，内存不足时回收<br>缓存场景                                                                            |
-| 弱引用 | 对象不被使用时，即被回收<br>WeakHashMap 场景                                                                          |
+| 强引用 | `Object o= new Object();`普遍场景<br>内存不足时，JVM 抛出 OOM 异常<br>`o= null` 或超出生命周期后回收<br>主要用于执行 `finalize` 方法                  |
+| 软引用 |仅内存不足时回收<br>缓存场景                                                                            |
+| 弱引用 | 对象不被使用时，扫描到即被回收<br>WeakHashMap 场景                                                                          |
 | 虚引用 | 不影响对象的生命周期<br>get()始终为 null<br>仅用于 GC 后收到系统通知，如堆外内存的管理<br>常结合 Cleaner 进行回收操作 |
 
 
