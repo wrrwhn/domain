@@ -277,6 +277,43 @@ toc: true
         - 设计于支持多次执行的场景
 
 
+## ExecutorCompletionService
+> 解耦新异步任务的生产，和完成任务的结果消费（按完成顺序）  
+
+### 属性
+- ``
+    - 
+
+### 构造
+- ``
+    - 
+
+### 方法
+- ``
+    - 描述
+        - 
+    - 代码
+        ```java
+        ```
+        
+## 
+
+### 属性
+- ``
+    - 
+
+### 构造
+- ``
+    - 
+
+### 方法
+- ``
+    - 描述
+        - 
+    - 代码
+        ```java
+        ```
+
 ## AbstractExecutorService
 > ExecutorService 的默认实现，主要实现了 submit/ invokeAny/ invokeAll  
 
