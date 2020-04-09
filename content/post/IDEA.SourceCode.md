@@ -16,6 +16,8 @@ toc: true
 
 # 源码下载
 - 可至 [unofficial-openjdk/openjdk](https://github.com/unofficial-openjdk/openjdk) 下载
+> 如果仅替换 sun.* 代码，推荐直接切换至 jdk8u/jdk8u 分支进行下载  
+
     - 源码下载
         - `git clone https://github.com/unofficial-openjdk/openjdk.git`
     - 切换分支
