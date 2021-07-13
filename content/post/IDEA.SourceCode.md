@@ -1,5 +1,5 @@
 ---
-title = "IDEA 查看 sun.* 源码"
+title: "IDEA 查看 sun.* 源码"
 date: "2020-04-06"
 categories:
  - "整理"
