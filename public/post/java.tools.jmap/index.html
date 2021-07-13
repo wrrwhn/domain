@@ -155,7 +155,7 @@
     <i class="fa fa-eye"></i>
 </span>
 <span class="post-meta-item-text">阅读：</span>
-<span class="leancloud-visitors-count">1212 字 ~3分钟</span>
+<span class="leancloud-visitors-count">1173 字 ~3分钟</span>
 </span>
       </div>
     </header>
@@ -239,31 +239,85 @@
 <h2 id="示例">示例</h2>
 
 <ul>
-<li><code>jmap 24748</code>
-|      内存地址      | 内存占用 |          进程、核心文件或远程调试服务器           |
-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;|&mdash;&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
-| 0x0000000051560000 | 8740K    | D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll |
-| 0x0000000054130000 | 104K     | D:\server\java\jdk1.8.0_65\jre\bin\net.dll        |</li>
-<li><code>jmap -histo 24748</code>
-| 序号  | 实例数     | 所在字节数 | 类名                                                          |
-|&mdash;&mdash;-|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;|&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;|
-| num   | #instances | #bytes     | class name                                                    |
-| 14:   | 6778       | 108448     | java.lang.Object                                              |
-| 1565: | 1          | 16         | sun.util.resources.LocaleData$LocaleDataResourceBundleControl |
-| Total | 266178     | 50804480   |                                                               |</li>
-<li><code>jmap -finalizerinfo 24748</code>
-<code>
-Attaching to process ID 24748, please wait...
+<li><p><code>jmap 24748</code></p>
+
+<table>
+<thead>
+<tr>
+<th>内存地址</th>
+<th>内存占用</th>
+<th>进程、核心文件或远程调试服务器</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>0x0000000051560000</td>
+<td>8740K</td>
+<td>D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll</td>
+</tr>
+
+<tr>
+<td>0x0000000054130000</td>
+<td>104K</td>
+<td>D:\server\java\jdk1.8.0_65\jre\bin\net.dll</td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p><code>jmap -histo 24748</code></p>
+
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>实例数</th>
+<th>所在字节数</th>
+<th>类名</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>num</td>
+<td>#instances</td>
+<td>#bytes</td>
+<td>class name</td>
+</tr>
+
+<tr>
+<td>14:</td>
+<td>6778</td>
+<td>108448</td>
+<td>java.lang.Object</td>
+</tr>
+
+<tr>
+<td>1565:</td>
+<td>1</td>
+<td>16</td>
+<td>sun.util.resources.LocaleData$LocaleDataResourceBundleControl</td>
+</tr>
+
+<tr>
+<td>Total</td>
+<td>266178</td>
+<td>50804480</td>
+<td></td>
+</tr>
+</tbody>
+</table></li>
+
+<li><p><code>jmap -finalizerinfo 24748</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Attaching to process ID 24748, please wait...
 Debugger attached successfully.
 Server compiler detected.
 JVM version is 25.65-b01
-Number of objects pending for finalization: 0
-</code></li>
-<li><code>jmap -dump:format=b,file=d:/24748-jmap.dump 24748</code>
-<code>
-Dumping heap to D:\24748-jmap.dump ...
-Heap dump file created
-</code></li>
+Number of objects pending for finalization: 0</pre></div></li>
+
+<li><p><code>jmap -dump:format=b,file=d:/24748-jmap.dump 24748</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Dumping heap to D:\24748-jmap.dump ...
+Heap dump file created</pre></div></li>
 
 <li><p><code>jmap -heap 24748</code></p>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">Attaching to process ID 24748, please wait...
@@ -429,7 +483,7 @@ free     = 179290112 (170.984375MB)
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">303</span>
+        <span class="site-state-item-count">313</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -446,7 +500,7 @@ free     = 179290112 (170.984375MB)
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">130</span>
+        <span class="site-state-item-count">133</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -498,7 +552,7 @@ free     = 179290112 (170.984375MB)
       <div class="footer-inner">
         <div class="copyright" >
   <span itemprop="copyrightYear">  &copy; 
-  2009 - 2019</span>
+  2009 - 2021</span>
   <span class="with-love"><i class="fa fa-heart"></i></span>
   <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>

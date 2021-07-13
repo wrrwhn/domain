@@ -6,10 +6,19 @@
     <description>Recent content in Maven on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 09 Aug 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/tags/maven/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Maven.Lombok 找不到符号</title>
+      <link>http://domain.yqjdcyy.com/post/error.maven.lombok/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/error.maven.lombok/</guid>
+      <description>Lombok 未生效，提示找不到符号 异常信息 [ERROR] 位置: 类型为...IndicatorConfig的变量 cfg [ERROR] .../IndicatorConfigGeneratorImpl.java:[69,53] 找不到符号 [ERROR] 符号: 方法 getEsDaySum() [ERROR] 位置: 类型为com.</description>
+    </item>
     
     <item>
       <title>Hello.Maven.Repository</title>

@@ -6,10 +6,91 @@
     <description>Recent content on 好久不见</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 17 Jun 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 12 Oct 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="http://domain.yqjdcyy.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Java.ScheduledThreadPoolExecutor</title>
+      <link>http://domain.yqjdcyy.com/post/java.scheduledexecutorservice/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.scheduledexecutorservice/</guid>
+      <description>支持指令于一定时延或周期性调用的 ExecutorService，创建后返回任务对象以便于校验或取消 不建议配置 corePoolSize 为0 或使用 allowCoreT</description>
+    </item>
+    
+    <item>
+      <title>Java.Timer</title>
+      <link>http://domain.yqjdcyy.com/post/java.timer/</link>
+      <pubDate>Sat, 12 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.timer/</guid>
+      <description>定时任务工具类，支持任务的单次或多次重复执行 由 Timer 根据配置调用 TimerTask 的线程启动并执行 支持按固定速率或延迟来执行任务 间隔执行情况下，受上一任务执行情</description>
+    </item>
+    
+    <item>
+      <title>健身教练证书</title>
+      <link>http://domain.yqjdcyy.com/post/%E5%81%A5%E8%BA%AB%E6%95%99%E7%BB%83%E8%AF%81%E4%B9%A6/</link>
+      <pubDate>Tue, 08 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%81%A5%E8%BA%AB%E6%95%99%E7%BB%83%E8%AF%81%E4%B9%A6/</guid>
+      <description>健身教练国家职业资格证书 职级（不可越级考取） 等级 条件（满足任一条件） 初级 体育专业专科学历 从事健身教练一年并授课400小时以上 经培训并通过考试</description>
+    </item>
+    
+    <item>
+      <title>Java.DelayQueue</title>
+      <link>http://domain.yqjdcyy.com/post/java.delayqueue/</link>
+      <pubDate>Thu, 26 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.delayqueue/</guid>
+      <description>DelayQueue 无界队列，仅弹出过期的数据 结构 特点 Leader-Follwer 模式 无新的队首数据情况下，则不进行唤醒操作 新插入数据为最小优先级数据情况，或 take 操作完成时，唤醒其它线程</description>
+    </item>
+    
+    <item>
+      <title>Java.DirectByteBuffer 10%</title>
+      <link>http://domain.yqjdcyy.com/post/java.directbytebuffer/</link>
+      <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.directbytebuffer/</guid>
+      <description>思考 什么是堆外内存 与堆内内存的差别 具体的使用场景 是否会引起 GC 和 OOM 不进行GC 标记移动时，JNI 进行操作，导致数据错乱 堆内外拷贝时，JVM保证不</description>
+    </item>
+    
+    <item>
+      <title>服务端高并发分布式架构演进</title>
+      <link>http://domain.yqjdcyy.com/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%AB%98%E5%B9%B6%E5%8F%91%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/</link>
+      <pubDate>Thu, 19 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%AB%98%E5%B9%B6%E5%8F%91%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/</guid>
+      <description>高并发分布式演进 瓶颈 方案 相关技术 坑 单机模式 Tomcat 与数据库部署于同一服务器 单机性能不足 Tomcat 与数据库拆分 并发读写数据库 引入缓存 Redis/ Memcached 缓存一致性/缓存穿透</description>
+    </item>
+    
+    <item>
+      <title>Java.Reference</title>
+      <link>http://domain.yqjdcyy.com/post/java.reference/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.reference/</guid>
+      <description>代码解析 类拓扑 Reference.pending 指向 GC 回收对象的队列队首，而 disdiscovered 指向 pending 状态元素的下一元素 pengding 的入队和 discovered 字段的指向操作均由 GC 操作 ReferenceQueue.head 指向队首元素，元素中 next 指向下一入</description>
+    </item>
+    
+    <item>
+      <title>Java.Thread - TODO</title>
+      <link>http://domain.yqjdcyy.com/post/java.thread/</link>
+      <pubDate>Thu, 12 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/java.thread/</guid>
+      <description>层级 Obect(wait/notify/notifyAll) 对象监视器 Condition/Lock 概念 进程 操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈 线程 独立运行、调度的基本单位 减少调度成本，提高</description>
+    </item>
+    
+    <item>
+      <title>Maven.Lombok 找不到符号</title>
+      <link>http://domain.yqjdcyy.com/post/error.maven.lombok/</link>
+      <pubDate>Fri, 09 Aug 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/error.maven.lombok/</guid>
+      <description>Lombok 未生效，提示找不到符号 异常信息 [ERROR] 位置: 类型为...IndicatorConfig的变量 cfg [ERROR] .../IndicatorConfigGeneratorImpl.java:[69,53] 找不到符号 [ERROR] 符号: 方法 getEsDaySum() [ERROR] 位置: 类型为com.</description>
+    </item>
     
     <item>
       <title>Java.Serialize</title>
@@ -2656,6 +2737,18 @@ CSS4.Colors Tutorial Color Format  RGB(255, 0, 0) #FF0000 HSL(0, 100%, 50%) RED 
     
     <item>
       <title></title>
+      <link>http://domain.yqjdcyy.com/post/hello.flink.all/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/hello.flink.all/</guid>
+      <description>构建 代码 StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(); StreamExecutionEnvironment // 程序执行上下文，提供并行度等配置，和运行/添加流的方法 source.flatMap // 获取返回类型 TypeInformation&amp;lt;R&amp;gt; outType = TypeExtractor.getFlatMapReturnTypes(...) transform(...) // 将操作节点添加至流转换列表中 getExecutionEnvironment().addOperator(resultTransform) // 返回单输入流运算节点 return new SingleOutputStreamOperator(environment, resultTransform) 串联方式 `source-&amp;gt; transform*-&amp;gt; sink` 的 chain 式结构 执行 代码 // 查看运行拓扑图，数据如何流转，各算子并发度配置等 System.out.println(&amp;ldquo;ExecutionPlan: &amp;ldquo; + env.getExecutionPlan()); env.execute();
+通用  StreamGraph // 根据代码生成数据流图，由StreamNode（数据节点，Source/Function/Sink）+ StreamEdge（传输策略，直连/Hash/轮询等） getStreamGraph() StreamGraphGenerator.generate(this, transformations)
+StreamNode[Source/1]-&amp;gt; StreamEdge[Rebalance]-&amp;gt; StreamNode[FlatMap/2]-&amp;gt; StreamEdge[Hash]-&amp;gt; StreamNode[KeyedAggregation/2]-&amp;gt; StreamEdge[Forward]-&amp;gt; StreamNode[Sink/2] JobGraph // 优化流图为任务拓扑图，由 JobVertex（等价于StreamNode）+ IntermediateDataSet（节点计算结果）+ JobEdge（等价于StreamEdge） streamGraph.getJobGraph() StreamingJobGraphGenerator.createJobGraph(this)
+JobVertex[Source/1]-&amp;gt; IntermediateDataSet-&amp;gt; JobEdge[Rebalance]-&amp;gt; JobVertex[FlatMap/2]-&amp;gt; IntermediateDataSet-&amp;gt; JobEdge[Hash]-&amp;gt; JobVertex[KeyedAggregation-&amp;gt;Sink/2] Configuration/MiniClusterConfiguration // 配置更新 configuration.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://domain.yqjdcyy.com/post/hello.flink.state/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2704,15 +2797,6 @@ static{ static native void registerNatives() } long tid volatile char name[] sta
     
     <item>
       <title></title>
-      <link>http://domain.yqjdcyy.com/post/java.thread/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://domain.yqjdcyy.com/post/java.thread/</guid>
-      <description>概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令+ 数据+ 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   线程状态 描述    线程状态 描述     NEW 新建线程   RUNNABLE 线程置入线程池，等待调度选中，获取 CPU 使用权   BLOCKED 阻塞状态，等待锁资源   WAITING 等待状态，等待其它线程将其唤起   TIMED_WAITING 超时等待，等待休眠结束或其它关联线程结束   TERMINATED 线程完成    流转  图示     串联  thread cpu synchronized monitor volatite  基础 进程  调用</description>
-    </item>
-    
-    <item>
-      <title></title>
       <link>http://domain.yqjdcyy.com/post/pyqt/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -2747,6 +2831,15 @@ static{ static native void registerNatives() } long tid volatile char name[] sta
       
       <guid>http://domain.yqjdcyy.com/post/spring.boot.context/</guid>
       <description>ApplicationContextAware</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://domain.yqjdcyy.com/post/%E5%BB%B6%E6%97%B6%E9%98%9F%E5%88%97/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://domain.yqjdcyy.com/post/%E5%BB%B6%E6%97%B6%E9%98%9F%E5%88%97/</guid>
+      <description>使用场景  超过半小时未支付的订单，自动取消 指定过期失效的优惠券 顺风车发车前一小时，短信提醒乘车人做好准备  技术方案 定期轮询  方案  定期轮询数据库  优点  实现简单  缺点  效率低 数据量大时，IO 占用率高   DelayQueue  方案  由 Delayed 提供过期时间 由 PriorityQueue 实现排序 由 BlockingQueue 支持无办队列 检测队首元素，若超时处理，否则休眠至队首的预计过期时间  除非插入新元素，直接插入至队首  Leader/Follower 模式减少资源的抢占（锁竞争/线程切换）  优点  阻塞队列，使用简单   Timer  方案  TimerTask 提供执行时间/间隔/执行内容等信息 TimerQueue 提供优先级队列功能 TimerThread 单进程执行任务 Timer 以添加任务至队列  缺点  单一线程，运行异常即中断 依赖系统时间 易受 GC 和线程执行时间影响   ScheduledExecutorService  方案    优点    缺点</description>
     </item>
     
     <item>

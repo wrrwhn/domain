@@ -252,7 +252,7 @@ public class TimeFilter implements Filter {</p>
 public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
         throws IOException, ServletException {
     long start = new Date().getTime();
-        chain.doFilter(request, response);
+    	chain.doFilter(request, response);
     System.out.println(&ldquo;time filter 耗时:&ldquo;+ (new Date().getTime() - start));
 }</p></li>
 </ul>
@@ -261,10 +261,10 @@ public void doFilter(ServletRequest request, ServletResponse response, FilterCha
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">- config</pre></div>
 <p>@Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">@Bean
-public FilterRegistrationBean timeFilter() {
 
-    FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+<p>	@Bean
+    public FilterRegistrationBean timeFilter() {</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4">    FilterRegistrationBean registrationBean = new FilterRegistrationBean();
 
     registrationBean.setFilter(new TimeFilter());
     List&lt;String&gt; urls = new ArrayList&lt;&gt;();
@@ -435,7 +435,7 @@ public Object handleControllerMethod(ProceedingJoinPoint pjp) throws Throwable {
       <nav class="site-state motion-element">
     <div class="site-state-item site-state-posts">
       <a href="http://domain.yqjdcyy.com/post/">
-        <span class="site-state-item-count">303</span>
+        <span class="site-state-item-count">313</span>
         <span class="site-state-item-name">日志</span>
       </a>
     </div>
@@ -452,7 +452,7 @@ public Object handleControllerMethod(ProceedingJoinPoint pjp) throws Throwable {
     <div class="site-state-item site-state-tags">
         <a href="http://domain.yqjdcyy.com/tags/">
          
-        <span class="site-state-item-count">130</span>
+        <span class="site-state-item-count">133</span>
         
         <span class="site-state-item-name">标签</span>
         </a>
@@ -507,7 +507,7 @@ public Object handleControllerMethod(ProceedingJoinPoint pjp) throws Throwable {
       <div class="footer-inner">
         <div class="copyright" >
   <span itemprop="copyrightYear">  &copy; 
-  2009 - 2019</span>
+  2009 - 2021</span>
   <span class="with-love"><i class="fa fa-heart"></i></span>
   <span class="author" itemprop="copyrightHolder">好久不见</span>
 </div>

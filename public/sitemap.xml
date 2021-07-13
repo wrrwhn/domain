@@ -2,6 +2,283 @@
 <search>
     
      <entry>
+        <title>Java.ScheduledThreadPoolExecutor</title>
+        <url>http://domain.yqjdcyy.com/post/java.scheduledexecutorservice/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">   支持指令于一定时延或周期性调用的 ExecutorService，创建后返回任务对象以便于校验或取消
+不建议配置 corePoolSize 为0 或使用 allowCoreThreadTimeOut,因为可能导致没有线程来执行任务
+ 原理 架构图    源码 Executor  Runnable 任务的提交，支持任务的解耦
+ 方法  execute(Runnable command)  描述  于未来某时执行指定的任务，可于新任务中，线程池或当前调用线程中    ExecutorService  提供中止和封装 Future（用于跟踪多个异常任务的进度） 的工厂方法
+ 方法  shutdown()  描述  有序地关闭之前执行的任务，并且不再接收新的任务 不等待执行中的任务完成执行   List&amp;lt;Runnable&amp;gt; shutdownNow()  描述  停止执行中的任务，中断等待执行的任务并返回 不能保障为最佳实践，因为实现中一般使用 Thread.interrupt 来中断，但需要任务中有进行相应的处理   boolean awaitTermination(long timeout, TimeUnit unit)  描述  等待任务中断完成/线程中断/等待达到 timeout.unit 时长中任一条件达成   Future&amp;lt;T&amp;gt; submit(Callable&amp;lt;T&amp;gt;|Runnable test[, T result])  描述  提交带返回值（可选，默认为0）的任务 返回 Future 来跟进任务的执行   List&amp;lt;Future&amp;lt;T&amp;gt;&amp;gt; invokeAll(Collection&amp;lt;? extends Callable&amp;lt;T&amp;gt;&amp;gt; tasks[,long timeout, TimeUnit unit])  描述  批量执行所有任务，并等待其完成【或超时任一条件】触发 Future 与列表中的任务按顺序对应   List&amp;lt;Future&amp;lt;T&amp;gt;&amp;gt; invokeAny(Collection&amp;lt;? extends Callable&amp;lt;T&amp;gt;&amp;gt; tasks[,long timeout, TimeUnit unit])  描述  执行所有任务，直到任一任务完成【或超时任一条件】触发  任务完成指代执行完毕，非抛出异常情况 取消所有未完成或抛出异常的任务     FutureTask  可取消的异步计算任务 支持单个计算线程，和多个数据获取的线程（通过 get 将当前请求线程阻塞，并存入 waiters 栈中）
+ 属性  volatile int state
+ 任务执行阶段 含义
+   名称 数值     NEW 0   COMPLETING 1   NORMAL 2   EXCEPTIONAL 3   CANCELLED 4   INTERRUPTING 5   INTERRUPTED 6     Callable&amp;lt;V&amp;gt; callable
+ 计算函数  Object outcome
+ 返回的计算结果或异常对象  volatile Thread runner
+ 当前执行计算函数的线程  volatile WaitNode waiters
+ 栈，存储了等待计算结果的线程   构造  FutureTask(Runnable runnable, V result)  通过 Executors.callable(runnable, result) 将 Runnable 封装为 Callable   方法  boolean cancel(boolean mayInterruptIfRunning)
+ 描述  取消当前任务 单个执行线程中断，多个监听线程唤醒  代码 java // 初始状态而立马更新状态并返回 if (!(state == NEW &amp;amp;&amp;amp; UNSAFE.compareAndSwapInt(this, stateOffset, NEW, mayInterruptIfRunning ? INTERRUPTING : CANCELLED))) return false; try { // 通过中断方式快速结束任务 if (mayInterruptIfRunning) { try { Thread t = runner; if (t != null) t.interrupt(); } finally { // 将最终状态更新为【INTERRUPTED】 UNSAFE.putOrderedInt(this, stateOffset, INTERRUPTED); } } } finally { // 唤醒等待线程，让其读取计算结果 finishCompletion(); } return true;   finishCompletion()
+ 描述  遍历并唤醒等待结果的线程  代码 java for (WaitNode q; (q = waiters) != null;) { if (UNSAFE.compareAndSwapObject(this, waitersOffset, q, null)) { for (;;) { Thread t = q.thread; if (t != null) { q.thread = null; // 唤醒等待结果的进程 LockSupport.unpark(t); } WaitNode next = q.next; if (next == null) break; // 清空当前节点，帮助其迟早被 GC 回收 q.next = null; q = next; } break; } } // 内部实现版本中，针对完成操作后的相关动作 done(); callable = null;   V get()
+ 描述  阻塞式等待计算的结果  代码 java int s = state; if (s &amp;lt;= COMPLETING) // 等待计算任务完成【或等待时间任一条件完成】 // 数值为0时，表示一直等待 s = awaitDone(false, 0L); return report(s);   int awaitDone(boolean timed, long nanos)
+ 描述  等待计算完成，或出现中断/超时  代码
+final long deadline = timed ? System.nanoTime() &#43; nanos : 0L; WaitNode q = null; boolean queued = false; for (;;) { if (Thread.interrupted()) { removeWaiter(q); throw new InterruptedException(); } int s = state; // 计算完成，则跳出  if (s &amp;gt; COMPLETING) { if (q != null) q.thread = null; return s; } // 已在计算，则让出时间片，优先计算  else if (s == COMPLETING) Thread.yield(); // 仍处理【新建】状态时，创建等待标志  else if (q == null) q = new WaitNode(); // 将等待凭证入队  else if (!queued) queued = UNSAFE.compareAndSwapObject(this, waitersOffset, q.next = waiters, q); // 线程挂起（若指定等待时间，则挂起相应时长）  else if (timed) { nanos = deadline - System.nanoTime(); if (nanos &amp;lt;= 0L) { removeWaiter(q); return state; } LockSupport.parkNanos(this, nanos); } else LockSupport.park(this);  removeWaiter(WaitNode node)
+ 描述  移除超时或中断的等待节点，以避免内存的占用  代码 java if (node != null) { node.thread = null; // 定义锚点，重复遍历 retry: for (;;) { for (WaitNode pred = null, q = waiters, s; q != null; q = s) { s = q.next; // 当前线程已中断 if (q.thread != null) pred = q; // 跳过当前节点 else if (pred != null) { pred.next = s; if (pred.thread == null) // check for race continue retry; } // 一路过来尚未碰到非空节点，则将等待节点指向下一节点 else if (!UNSAFE.compareAndSwapObject(this, waitersOffset, q, s)) continue retry; } break; } }   run()
+ 描述  调用计算方法，并输出结果  代码 java // 已有线程处理，则跳过 if (state != NEW || !UNSAFE.compareAndSwapObject(this, runnerOffset, null, Thread.currentThread())) return; try { // 执行并返回结果|异常 Callable&amp;lt;V&amp;gt; c = callable; if (c != null &amp;amp;&amp;amp; state == NEW) { V result; boolean ran; try { result = c.call(); ran = true; } catch (Throwable ex) { result = null; ran = false; setException(ex); } if (ran) set(result); } } finally { runner = null; int s = state; if (s &amp;gt;= INTERRUPTING) // 针对取消时的状态更新 handlePossibleCancellationInterrupt(s); }   boolean runAndReset()
+ 描述  执行计算，但不设置返回值 设计于支持多次执行的场景    AbstractExecutorService  ExecutorService 的默认实现，主要实现了 submit/ invokeAny/ invokeAll
+ 属性  ``     构造  ``     方法  ``
+ 描述    代码
+   属性  ``     构造  ``     方法  ``  描述    代码 java    参考  []() 从FutureTask内部类WaitNode深入浅出分析FutureTask实现原理 LockSupport原理剖析 []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Timer</title>
+        <url>http://domain.yqjdcyy.com/post/java.timer/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">   定时任务工具类，支持任务的单次或多次重复执行
+由 Timer 根据配置调用 TimerTask 的线程启动并执行
+支持按固定速率或延迟来执行任务
+间隔执行情况下，受上一任务执行情况影响（适用于短频重复) &amp;gt; 如任务于 10：00 执行，间隔分钟调用，但由于 GC 10:05 分时执行推迟至 10:06，则下一次执行的时间为 10:11 而非预计的 10：10
+ 原理  定时机制  使用 Object.wait 实现，无法保证实时性  影响情况  大量线程等待执行 GC 时的 STW   针对重复执行的任务场景，推荐使用 ScheduledThreadPoolExecutor  回收时机  自动回收（时间无法保证）  Timer 无强引用 且任务均已执行完成时  手动回收（线程安全）  使用 Timer.cancel 如若使用 stop，会导致定时任务报 IllegalStateException 异常    缺点  执行线程仅一个  任务执行时间过长，会影响其它任务执行的精确性  异常即路上  执行的任务出现异常，执行线程就会中止，影响了其它任务的执行  依赖系统时间  系统时间的修改，影响任务的正常执行   构架图    源码 TimerTAsk 特点  可供 Timer 调用的 Runnable 封装  状态    状态 数值 含义     VIRGIN 0 尚未被执行   SCHEDULED 1 重复任务   EXECUTED 2 非重复任务执行完成，且未被取消   CANCELLED 3 取消状态
+调用 TimerTask.cancel 触发    属性  final Object lock
+ 内部访问锁  int state
+ 任务状态  long nextExecutionTime
+ 任务下次执行的时间 重复任务，会重复更新该字段  long period
+ 重复任务的执行间隔时间 数值含义
+   数值 含义     &amp;gt;0 时间敏感，固定时间点执行   =0 非重复任务   &amp;lt;0 固定时间间隔执行
+调用次数小于预期      方法  boolean cancel()
+ 将任务的状态更新为取消状态 幂等操作  long scheduledExecutionTime()
+ 特点  任务执行时调用，返回的为当前执行任务的时间 针对 fixed-rate 类型任务  因为 fixed-delay 允许时间偏移   代码 java synchronized(lock) { return (period &amp;lt; 0 ? nextExecutionTime &#43; period : nextExecutionTime - period); }    TaskQueue  TimeTask 的优先队列，使用数据实现小堆排序，允许重复元素
+删除/添加/查找可达 log(n)
+ 属性  TimerTask[] queue  任务队列，小堆排序  queue[n]的左右子节点分别为 queue[2n] 和 queue[2n&#43;1] 子节点大于等于父节点  初始 128，每次拓展翻倍  int size  方法  removeMin()  描述  将末尾元素（最大)覆盖顶点后，并将末尾元素清空 由顶向下比较，并与较小值更换位置  代码 java queue[1] = queue[size]; queue[size--] = null; fixDown(1);   rescheduleMin(long newTime)  描述  针对重复任务使用 执行完成后，更新至下次执行时间，并进行重新排序  代码 java queue[1].nextExecutionTime = newTime; fixDown(1);   fixDown(int k)  描述  将 k 节点下移至，大于任意节点  代码 java int j; while ((j = k &amp;lt;&amp;lt; 1) &amp;lt;= size &amp;amp;&amp;amp; j &amp;gt; 0) { // 左右节点取小者 if (j &amp;lt; size &amp;amp;&amp;amp; queue[j].nextExecutionTime &amp;gt; queue[j&#43;1].nextExecutionTime) j&#43;&#43;; // 当前节点数值 if (queue[k].nextExecutionTime &amp;lt;= queue[j].nextExecutionTime) break; TimerTask tmp = queue[j]; queue[j] = queue[k]; queue[k] = tmp; k = j; }   heapify()  描述  整树重排  代码 java for (int i = size/2; i &amp;gt;= 1; i--) fixDown(i);    TimerThread  Timer 任务执行辅助线程
+共享 Timer 的 TaskQueue，来控制任务的执行/重复调用/完成任务移除
+ 属性  boolean newTasksMayBeScheduled  是否还有任务的标记，默认为 true 当标记为 true 且 taskQueue 中无任务时，Timer 将被优雅中断  TaskQueue queue  共享至 Timer 的任务队列   方法  mainLoop()
+ 代码
+while (true) { try { TimerTask task; boolean taskFired; synchronized(queue) { // 无数据时休眠，等待任务插入以唤醒  while (queue.isEmpty() &amp;amp;&amp;amp; newTasksMayBeScheduled) queue.wait(); // 唤醒仍无数据，异常情况  if (queue.isEmpty()) break; // 获取最小元素  long currentTime, executionTime; task = queue.getMin(); synchronized(task.lock) { // 已取消任务，直接移除并重试  if (task.state == TimerTask.CANCELLED) { queue.removeMin(); continue; } currentTime = System.currentTimeMillis(); executionTime = task.nextExecutionTime; if (taskFired = (executionTime&amp;lt;=currentTime)) { // 一次性任务  if (task.period == 0) { queue.removeMin(); task.state = TimerTask.EXECUTED; } else { // 重置周期任务的下一执行时间  // 其中 fixed-delay 直接使用当前时间，而 fixed-rate 情况则使用上一次的执行时间  queue.rescheduleMin( task.period&amp;lt;0 ? currentTime - task.period : executionTime &#43; task.period); } } } // 未到时间，直接休眠相应时长  if (!taskFired) queue.wait(executionTime - currentTime); } // 未执行则直接执行  if (taskFired) task.run(); } catch(InterruptedException e) { } }   Timer 属性  final TaskQueue queue  任务队列  final TimerThread thread  任务调用类  final Object threadReaper  Timer 销毁时，GC 调用其 finalizer 来中断 TimerThread 进程  static AtomicInteger nextSerialNumber  用于生成唯一名称   构造  Timer()  默认使用 nextSerialNumber 生成唯一名称  Timer(boolean isDaemon)  是否设置为守护进程 与应用执行周期一致，不会延长应用的生命周期  Timer(String name)  指定进行名称  Timer(String name, boolean isDaemon)  方法  schedule(TimerTask task, long delay| Date time [long period])
+ 描述  指定任务的执行时间和是否按某一间隔周期调用  代码 java sched(task, System.currentTimeMillis()&#43;delay, -period)   scheduleAtFixedRate(TimerTask task, long delay| Date time, long period)
+ 描述  以固定时间进行任务调用 区别于 schedule， period 是指两个周期任务之间的间隔  代码 java sched(task, System.currentTimeMillis()&#43;delay, period)   sched(TimerTask task, long time, long period)
+ 描述  统一的调用实现  代码
+if (time &amp;lt; 0) throw new IllegalArgumentException(&amp;#34;Illegal execution time.&amp;#34;); // 防止周期溢出，且能支持无穷大 if (Math.abs(period) &amp;gt; (Long.MAX_VALUE &amp;gt;&amp;gt; 1)) period &amp;gt;&amp;gt;= 1; synchronized(queue) { if (!thread.newTasksMayBeScheduled) throw new IllegalStateException(&amp;#34;Timer already cancelled.&amp;#34;); synchronized(task.lock) { if (task.state != TimerTask.VIRGIN) throw new IllegalStateException( &amp;#34;Task already scheduled or cancelled&amp;#34;); task.nextExecutionTime = time; task.period = period; task.state = TimerTask.SCHEDULED; } // 如若当前数据插入至队首，则唤醒进程进行处理或重新等待相应时差  queue.add(task); if (queue.getMin() == task) queue.notify(); }  cancel()
+ 描述  重置活动标志，并唤醒进程检测跳出  代码 java synchronized(queue) { thread.newTasksMayBeScheduled = false; queue.clear(); queue.notify(); }   purge()
+ 描述  快速清除所有 CANCELLED 状态节点，并全排序  代码
+int result = 0; synchronized(queue) { for (int i = queue.size(); i &amp;gt; 0; i--) { if (queue.get(i).state == TimerTask.CANCELLED) { // 快速清除，不排序  queue.quickRemove(i); result&#43;&#43;; } } // 有移除则进行全排序  if (result != 0) queue.heapify(); } return result;   参考  Timer和TimeTask简介 细说java.util.Timer 深入 Java Timer 定时调度器实现原理 Timer和TimeTask简介  补充了中止的有一种情况  timer.cancel daemon 运行，任务完成即停止 System.exit 退出    </content>
+    </entry>
+    
+     <entry>
+        <title>健身教练证书</title>
+        <url>http://domain.yqjdcyy.com/post/%E5%81%A5%E8%BA%AB%E6%95%99%E7%BB%83%E8%AF%81%E4%B9%A6/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>健身</tag><tag>证书</tag>
+        </tags>
+        <content type="html">  健身教练国家职业资格证书 职级（不可越级考取）    等级 条件（满足任一条件）     初级 体育专业专科学历
+从事健身教练一年并授课400小时以上
+经培训并通过考试   中级 体育专业本科学历 ，并有一年工作经验
+连续从事健身教练3年以上，并授课1500小时以上
+初级教练连续从业2年以上或一级运动员，经培训并通过考试   高级 中级教练连续从业5年以上，或3年以上且经培训并通过考试   指导师 高级教练连续从业5年以上，或3年以上且经培训并通过考试    申报条件  年满 18 岁  申报流程  材料  身份证及复印件 两寸蓝底照（4张纸质&#43;电子档）  报名  国家体育总局 相关健身学院  培训  参与7天全日制培训  考试（60&#43;）  体能 理论 实操  成绩  考试后一个月左右，登陆国家体育总局职业技能鉴定网络管理平台查询  证书  成绩公布30天内领取或邮寄证书   考试费用  2780/2880/2980/?  考试内容 初级  体能（5分钟内未通过即结束）
+ 坐姿体前屈  坐于垫上，双腿并拢，踝关节90度，屈体向前用双手触碰脚尖，要求背部挺直  双手中指触碰到脚尖 静力性伸展 5秒   俯卧撑
+ 双脚着地，身体保持一条直线 屈肘向下运动时，肩关节外展不得超过90度，肘关节应与肩关节同高 撑起向上运动时，肘关节伸直但不过伸  停顿不超过3秒 40次   徒手下蹲
+ 双脚左右分开，距离稍宽于肩，脚尖稍外展。 屈膝向下运动时，大腿应与地面平行 向上站起时膝关节伸直但不过伸  停顿不超过3秒 60次    理论
+ 运动解剖学 运动生理学 运动营养学 健康体适能 运动计划原理 职业道德 法律法规 体育理论基础知识  实操（讲解&#43;示范&#43;组织）
+ 抗阻练习  股四头肌、臀大肌、股二头肌、腓肠肌、斜方肌（上、中、下束）、竖脊肌、背阔肌、腹直肌、胸大肌、三角肌（前、中、后束）、肱二头肌、肱三头肌（长头、内外侧头） 重量器械/自由重量/自重  肌肉主被动拉伸  股四头肌、臀大肌、股二头肌、腓肠肌、髂腰肌、斜方肌（上、中、下束）、竖脊肌、背阔肌、腹直肌（没有被动伸展）、胸大肌（上、中、下束）、三角肌（前、中、后束）、肱二头肌、肱三头肌  有氧器械  跑步机/椭圆机/台阶练习器/固定自行车    参考资料  《健身教练》 《运动解剖学》 《运动生理学》 《运动营养学》 《健身教练》 《运动训练学》 《体适能基础理论》 《运动医学》 《肌肉健美训练图解》 《运动生物力学》  ACSM  名称  美国运动医学会  优势  成立久，学术背景强 重视心血管疾病/儿童/老年人  代理  武汉体育学院 3hfit  适用  有基础的教练  费用  7000元  备注  3hfit 要求必须先通过 ACE 推荐上官网买教材（无中文），自行报名考试 进阶执照需医疗背景   NASM  名称  美国国家运动医学会  优势  OPT 训练模型，适用于为久坐少动会员制定相应运动计划  代理  运动表现家  注：不被 NCCA 认可   费用  8300元/4天  备注  仅推荐 CPT 执照 评价性价比不高   NSCA  名称  美国国家体能协会  优势  强调肌力与体能   代理  FTN 亚洲康复体适能  费用  7000元/6天 2000元报名费  自行购买教材 上海参加考试   备注  专家认证 CSCS  考试通过率 10% 报考需教育部认可的学士学位  CPT  官方通过率 80%    ACE  名称  美国运动委员会  优势  基础而全面的私人教练 重视教练与客户间默契关系的建立，帮助其建立长期而健康的运动习惯  代理  3hFit FIT大中华  适用  刚/准备入选的同学  费用  13800元/15天  备注  非盈利机构   国外证书补充  CPT  Certified Personal Trainer/ 认可的私人教练 针对普遍人群的健身教练  ACSM-EP  Certified Exercise Physiologist/ 认可的运动生理学家   NSCA-CSCS  Certified Strength and Conditioning Specialist/ 认证的力量和调节专家 专注于训练运动员及提高运动表现的人群   参考  健身教练国家职业资格证（国职）的含金量？怎么考？多少钱？ 体育总局职鉴中心举办健身教练考评员培训班的通知 健身教练初级国家职业资格证需要考什么  比较完善的考试内容  体育专业《健身教练》职业技能鉴定考试通知 卫生健康报名系统  健身教练资格证考试内容 健身教练国家职业资格考试体能测试  体能测试动作详解  国家职业健身教练资格证在哪报名考试？ 健身教练资格证怎么考取？ 健身教练界国际四大认证(ACSM/NASM/NSCA/ACE)的简介与对比  四大的详细介绍  北美健身教练证书介绍  针对四大的各证书的介绍   </content>
+    </entry>
+    
+     <entry>
+        <title>Java.DelayQueue</title>
+        <url>http://domain.yqjdcyy.com/post/java.delayqueue/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">  DelayQueue  无界队列，仅弹出过期的数据
+ 结构    特点  Leader-Follwer 模式  无新的队首数据情况下，则不进行唤醒操作 新插入数据为最小优先级数据情况，或 take 操作完成时，唤醒其它线程   核心代码  poll
+public E poll() { final ReentrantLock lock = this.lock; lock.lock(); try { E first = q.peek(); // 队首数据未到期，则直接返回 Null  if (first == null || first.getDelay(NANOSECONDS) &amp;gt; 0) return null; else return q.poll(); } finally { lock.unlock(); } } take
+public E take() throws InterruptedException { final ReentrantLock lock = this.lock; // 可重入锁，代替线程池 lock.lockInterruptibly(); try { for (;;) { E first = q.peek(); if (first == null) available.await(); // 无数据情况下，休眠等待  else { long delay = first.getDelay(NANOSECONDS); if (delay &amp;lt;= 0) // 队首数据已超时，立即返回  return q.poll(); first = null; if (leader != null) // 已有 Leader 情况下，则等待唤醒  available.await(); else { Thread thisThread = Thread.currentThread(); leader = thisThread; try { // **等待队首元素所需要处理的时间**  available.awaitNanos(delay); } finally { if (leader == thisThread) leader = null; } } } } } finally { if (leader == null &amp;amp;&amp;amp; q.peek() != null) available.signal(); lock.unlock(); } } offer
+public boolean offer(E e) { final ReentrantLock lock = this.lock; lock.lock(); try { q.offer(e); if (q.peek() == e) { // 插入元素位于队首，则直接唤醒线程处理  leader = null; available.signal(); } return true; } finally { lock.unlock(); } }  依赖 Queue 特点  FIFO
+ 不允许插入 Null，因为将作为是否失败的标准  支持方法     抛出异常 返回特定值     Insert add(e) offer(e) true/false   Remove remove() poll()
+value/null   Examine element() peak()
+value    BlockingQueue 特点  线程安全  内部锁控制  有限容量  适用于多生产多消费场景  内存一致性  插入元素 happen-before 访问|移除元素   支持方法     抛出异常 返回特定值 阻塞 超时     Insert add(e) offer(e) put(e) offset(e, time, unit)   Remove remove() poll() take() poll(time, unit)   Examine element() peek() - -    PriorityQueue 特点  基于 PriorityMap 实现  外在表现无界，但内存维护容量  可于初始化指定Comparator，否则依赖于其默认排序 不允许插入 Null 或无法比较的对象 非线程安全，线程安全的示例可见 PriorityBlockingQueue  Leader-Follwer  模式  事件来临时，线程池通知一个 Follwer 线程以成为新的 Leader 去处理该事件，并于完成后返回线程池中  优点  消费动态的内存分配（线程的创建与销毁） 减少线程间的数据交换  转换     参考  精巧好用的DelayQueue 服务器两种高效的并发模式  半同步半异步 领导者追随者模式   </content>
+    </entry>
+    
+     <entry>
+        <title>Java.DirectByteBuffer 10%</title>
+        <url>http://domain.yqjdcyy.com/post/java.directbytebuffer/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">  思考  什么是堆外内存  与堆内内存的差别  具体的使用场景 是否会引起 GC 和 OOM  不进行GC 标记移动时，JNI 进行操作，导致数据错乱 堆内外拷贝时，JVM保证不进行 GC   相关知识 虚引用  无法返回引用对象，仅用于跟踪对象被 GC 回收的状态  查看是否加入了 ReferenceQueue 来触发相应的回收操作  更多引用知识，详见 Java.Reference  状态    状态 权限/操作     内核态 硬件资源操作，如 Socket/ IO等   系统调用 内核封装的请求接口   用户态 应用程序活动的空间    CPU 的模式配置  intel cpu 提供 Ring0-3 四种级别的运行模式，且 0 为最高级别  其中 Ring0 为内核态，而 Ring3 为用户态  Ring3权限低于 Ring0，无法访问 Ring0 的地址空间（代码/数据）  需要将状态切换为内核态，操作完成后再切换回用户太（类似 linux.su ）   JNI 读写数据 堆内-堆外-文件  FileChannelImpl.read  File-&amp;gt; 堆外-&amp;gt; 堆内 过程中，JVM 保证不会进行 GC 操作   堆外-文件  DirectByteBuffer  堆外-&amp;gt; File 程序通过 JNI 直接操作堆外分配的内存地址   代码 FileChannelImpl  架构     DirectByteBuffer  架构     参考  []() []() []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>服务端高并发分布式架构演进</title>
+        <url>http://domain.yqjdcyy.com/post/%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%AB%98%E5%B9%B6%E5%8F%91%E5%88%86%E5%B8%83%E5%BC%8F%E6%9E%B6%E6%9E%84%E6%BC%94%E8%BF%9B/</url>
+        <categories>
+          <category>阅读</category>
+        </categories>
+        <tags>
+          <tag>编程思想</tag>
+        </tags>
+        <content type="html">  高并发分布式演进    瓶颈 方案 相关技术 坑      单机模式 Tomcat 与数据库部署于同一服务器    单机性能不足 Tomcat 与数据库拆分     并发读写数据库 引入缓存 Redis/ Memcached 缓存一致性/缓存穿透/缓存雪崩/热点数据集中失效   单 Tomcat 响应慢 反向代理 Nginx Session 共享/ 文件上传下载   单机数据库支撑不了高并发 读写分享 Mycat 数据同步/数据一致性   不同业务竞争数据库 数据库按业务拆分  跨业务表无法直接关联分析   单机写库瓶颈 大表拆分，如按 ID Hash 或按时间创建 Mycat/ TiDB/ Greenplum/ GBase 数据库运维   并发量远超 Nginx 50,000 上限 多 Nginx 负载 LVS（软件）&#43; Keepalived/ F5（硬件） LVS 主备   并发量超单机 LVS 负载 DNS 轮询机房进行负载 DNS    数据检索/分析的需求 引入NoSQL和搜索引擎 KV数据：HBase
+海量文件：HDFS
+全文检索：ES
+多维分析：Kylin/ Druid    单应用多业务，升级困难 应用拆分     复用功能升级影响大 微服务化 Dubbo/ SpringCloud    各服务访问方式不同，调用链复杂 接入企业服务总线，屏蔽接口差异 SOA架构（统一服务接口的访问方式）    动态扩容和新服务发布等运维困难 Docker/ K8S     机器使用率低 公有云 IaaS/ PaaS/ SaaS     架构设计原则  N&#43;1  各组件无单点故障  禁用设计  开关配置，支持故障时快速下线  监控设计  设计时留有监控手段   专有名词 OLAP  Online Analytical Processing
+联机分析处理
+ HA  High Available
+高可用集群
+ 扩展技术 Hadoop  开源分布式计算框架（源自一大象玩具的名称）
+由 HDFS 和 MapReduce 组成的，分别用于支持海量数据存储和计算
+ 应用场景    场景 示例     大数据存储 分布式存储
+主要使用 HDFS 模块   日志处理 日志分析   ETL 数据解析后转存至数据库   机器学习 Apache Mahout   搜索引擎 Hadoop&#43; Lucene   数据挖掘 广告推荐/ 个性化推荐    MapReduce  分治模型
+将作业拆分为多个 Map 至不同节点上执行，并将结果（中间文件）作为 Reduce 任务的输入源，进行汇总/计算
+ HDFS  Hadoop Distributed File System
+分布式，可动态扩展的，有冗余备份的分布式文件系统
+将大文件切分为文件块存储，并备份于其它机器
+ 优点  支持超大文件，PB级别 数据备份，快速响应硬件故障 易扩展  廉价机上横向扩展  生态成熟  缺点  高延迟 不适用于小文件 不适用于文件修改场景  适用于一次写入，多次读取的场景   Hive  将结构化数据映射为库表，并提供 HQL 进行查询
+本质上通过封装 MapReduce 任务来查询 HDFS 上的底层数据
+ 适用场景  少量离线数据的统计分析  不支持记录级别的增删改操作 查询延时严重 OLAP，不支持事务   HBASE  类似于 Hive 也使用 HDFS 进行数据存储，区别于 Hive 支持大数据的实时查询
+ 特性    方面 描述     依赖 Zookeeper   接口支持 仅支持 Java API   SQL 支持 不支持，但可通过 Phonenix 扩展支持   事务支持 支持行级别的事务    存储方式  逻辑分布
+   Row-Key Value     1 info{&amp;lsquo;fn&amp;rsquo;: &amp;lsquo;yao&amp;rsquo;, &amp;lsquo;ln&amp;rsquo;: &amp;lsquo;1&amp;rsquo;}   2 info{&amp;lsquo;fn&amp;rsquo;: &amp;lsquo;lu&amp;rsquo;, &amp;lsquo;ln&amp;rsquo;: &amp;lsquo;2&amp;rsquo;}    物理存储
+   Row-key CF:Column-Key 时间戳 Cell-Value     1 info:fn 111111111 yao   1 info:ln 111111111 1   2 info.fn 111111111 lu   2 info.ln 111111111 2    转换图
+    数据迭代  无法直接地去查询之前的记录，因此只能使用更新数据版本的方式，在查询时替换  字段格式中主要由 row-key/ timestamp/ key-type/ column-* 组成  更新时，插入同一 row-key，然后更新 timestamp 和各字段值 删除时，主要更新 timestamp 和 key-type  后续将使用 compact 进行文件的合并/数据的清理   Kylin  OLAP 的大型数据分析引擎
+预计算，使用空间换时间（将用户定义的查询纬度，计算并转存至 HBase 中），达到亚秒级查询响应
+底层使用 HBase 存储结果，封装并提供 SQL 形式的查询
+ 架构   流程
+ 通过 MapReduce/ Spart 进行数据的聚合计算 将结果以 KV 形式的 OLAP Cube 的结构，存储至 HBase 中  其中 Cube 可按时间划分为多个 Segment 每个 segement 是一张 HBase 表    Phoenix  OLTP 和业务数据分析引擎
+具备完整的 SQL 和 JDBC API，支持 ACID， 为用户提供 HBase/NoSQL 的 SQL 接入
+ K8s  全名为 kubernetes
+跨集群的容器调度平台，自动化地进行容器的部署/扩展和操作
+ 组件    节点 模块 作用     Master  集群控制，进行调度/检测和事件响应    API 对外接口，供客户端与其它组件调用    Scheduler 集群内资源的调度，主要监测未分配任务的新 Pod    Controller 任务控制单元（进程）
+kube：用于处理常规任务，如支持节点/副本/端和账号的处理与响应
+cloud：用于与云提供商交换，如支持云节点/路由/平衡器和数据卷的检测与操作    etcd 存储后端   &amp;hellip;Node      Pod 最基本操作单元= 进程
+内部封装一至多个相关业务的容器    Docker 容器运行    Kublet 对已分配给其节点的 Pod 的控制，包括创建/修改/监控/删除
+与 Master 节点进行通信    Kube-proxy 为所有 Pod 对象提供网络代理    Fluentd 守护进程
+日志的收集/存储与查询    Docker  轻量级虚拟化的容器引擎 &amp;gt; Build, Ship and Run
+&amp;gt; Build once, Run anywhere
+ 策略    类型 技术 描述     虚拟机 Hypervisor 平台虚拟化工具，用于隐藏底层物理硬件，以支持多操作系统透明地共享   容器 CGroups     Druid  最好的数据库连接池
+  最好的数据库连接池  高效 可扩展性好  内置性能监控  StatFilter 插件，详细统计 SQL 执行性能 WallFilter 插件，基于语义防御 SQL 注入 RemoveAbandanded 配置，定位连接泄漏 支持监控记录导出  数据库密码加密  PasswordCallback  支持不同 LogFilter 输出 SQL 执行日志  Common-Logging/ Log4j/ JdkLog  JDBC 层扩展  Filter 扩展   参考 演化  服务端高并发分布式架构演进之路  扩展  10分钟看懂Docker和K8S 认识 Kubernetes Kubernetes 组件 剖析 Linux hypervisor  详细了介绍了 hypervisor 的原理，和对虚拟机的相关技术的支持  Druid-常见问题 Hadoop是什么 Hive学习之路 （一）Hive初识 HBase 深入浅出 一文读懂Apache Kylin Kylin 和 Phoenix 有什么不同 HBase compact 总结及调优配置 HBase数据的删除和更新 []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Reference</title>
+        <url>http://domain.yqjdcyy.com/post/java.reference/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">  代码解析 类拓扑   Reference.pending 指向 GC 回收对象的队列队首，而 disdiscovered 指向 pending 状态元素的下一元素
+ pengding 的入队和 discovered 字段的指向操作均由 GC 操作  ReferenceQueue.head 指向队首元素，元素中 next 指向下一入队元素
+ 由守护进程 ReferenceHandler 操作，数据源为 Reference.pending  Reference 中启动 ReferenceHandler 守护线程，用于将无引用的元素移动至 pending 列队
+ 其中 WeakReference/SoftReference 对象在进入 Queue 后， referent 为 null；而 FinalReference 因为要调用 finalize 方法，所以存在
+  引用指向值    类 值 描述     PhantomReference null 对象本身亦为 null   WeakReference null 清空入队   SoftReference null 仅于内存不足时，清空入队   FinalReference T 需保留以用于执行其 finalize 方法    Reference  引用类型基类，定义引用对象的通用操作
+与 GC 紧密关联，无法直接子类化
+ 状态  状态列表     状态 描述     Active 新创建实例的状态
+后续状态与是否指定有队列有关，有则 Pending 无则 Inactive   Pending 由 JVM 维护，引用对象被 GC 回收时触发，更新于 Reference.Discovered 字段
+等待 Reference-handler 线程的入队操作   Enqueued Reference-handler 线程将元素入队
+重置元素的队列为 ENQUEUED   Inactive 不活跃状态，进入后将不再变化     Reference 状态转换     字段  Reference
+ next
+ 入队后，指向队列中的下一节点
+   状态 数值 描述     active null 状态变更后，由 GC 自动赋值   pending this    enqueued next/this 入队后，指向下一节点   inactive this      static pending
+ pending 状态队列首元素  discovered
+   状态 数值     active discovered 引用列表的下一元素   pending pending 列表的下一元素   other NULL     T
+ referent  引用所指向的对象   ReferenceQueue
+ queue  引用队列  仅持有首元素指针，队列封装于元素内部（指向下一节点） 封装出入队的方法，操作元素指针等  主要由 Reference-handler 线程调用 通过元素的 discovered 字段来链接至下一元素   Lock
+ lock  引用操作的全局唯一锁    初始化 static{ // 获取最上层线程组  ThreadGroup tg= Thread.currentThread().getThreadGroup().getParent()... new ReferenceHandler(tg, &amp;#34;Reference Handler&amp;#34;) .setPriority(Thread.MAX_PRIORITY) // 最高优先级  .setDaemon(true) // 守护进程  .start() // 全局共享类，设置  // Bits.reserveMemory 中用于回收内存资源  SharedSecrets.setJavaLangRefAccess({ tryHandlePending(false) }) } 方法  tryHandlePending &amp;gt; 将 pending 中的元素入队  // 将 pending 指向的引用弹出并添加至队列中 static boolean tryHandlePending(boolWaitForNotify){ synchronized (lock) { if(null!= pending){ // reference.referent 被 GC 回收后同步至 pending 队列  r = pending; pending = r.discovered; // 元素后移  r.discovered = null; }else{ // 捕获 OutOfMemoryError，避免静默退出  lock.wait(); // 元素入队时，自动调用 lock.notify  } } ((Cleaner)r).clean(); // 执行相应动作，如 Bits 中绑定的内存释放  r.queue.enqueue(r); } Lock  普通对象，用于 GC 同步锁之用
+ ReferenceHandler  处理被回收对象的引用
+将 pending 节点入队，并切换至 Reference.discovered 指向的下一节点
+ 初始化 static{ // 提前加载类，避免后续懒加载时内存不足  ensureClassInitialized(Cleaner.class); } 方法  run java while(true){ // 守护进程，检测 pending 对象是否指向有效节点 tryHandlePending(true) }   ReferenceQueue  将已被回收的对象引用存入 Queue 中，以通知来进行额外的工作 &amp;gt;如果引用列表为 NULL，则出入队为空操作（默认情况）
+&amp;gt;元素入队后，将其 queue 更新为 ENQUEUED，以避免重复入队操作
+ 属性  ReferenceQueue
+ NULL
+ 队列未指定情况，或已被移除元素  ENQUEUED
+ 避免重复入队的判断，入队后便调整 queue 值为 ENQUEUED    Lock lock
+ 队列内操作的唯一锁  Reference volatile head
+ 指向队首元素  Long queueLength
+ 队列中元素的数量   方法  enqueue &amp;gt; 入队  boolean enqueue(Reference r){ synchronized (lock) { if(r.queue== NULL|ENQUEUED){ return false; } r.queue= ENQUEUED; r.next= (null== head)? r: head; head= r; queueLength&#43;&#43;; } }  poll &amp;gt; 出队  Reference poll(){ synchronized (lock) { head= r.next; r.queue= NULL; r.next= r; queueLength--; } }  remove &amp;gt; 移除队首元素  // timeout= 0 时表示一直等待 Reference remove(long timeout){ if(poll()!= null) return; for(;;){ lock.wait(timeout); if(poll()!= null) return; timeout= System.nanoTime()- start; // 统计计算时间，超过则返回 null  } } FinalReference  空实现，将作用域缩小至 Package 级别
+ Finalizer  针对覆写 Object.finalize 方法的类的实例 &amp;gt; 第一次 GC 时将实例更新至 unfinalized 队列中
+&amp;gt; 等待出队处理完成后，移除出队列，待第二次 GC 再清除
+ 属性  Finalizer
+ static unfinalized  待完成 finalized 方法调用的实例的队列   T
+ referenct  由 JVM 在 GC 时进行赋值   ReferenceQueue&amp;lt;? super T&amp;gt;
+ queue   方法  add &amp;gt; 将节点添加至 unfinalized 队列中  synchronized (lock) { if (unfinalized != null) { this.next = unfinalized; unfinalized.prev = this; } unfinalized = this; }  runFinalizer &amp;gt; 调用当前使用的 finalize 方法  synchronized (this) { if (hasBeenFinalized()) return; remove(); } try { Object finalizee = this.get(); if (finalizee != null &amp;amp;&amp;amp; !(finalizee instanceof java.lang.Enum)) { // 运行实例的 finalize 方法  jla.invokeFinalize(finalizee); finalizee = null; } } catch (Throwable x) { } super.clear(); 内部类  FinalizerThread &amp;gt; 守护进程形式，静态启动 &amp;gt;&amp;gt; 获取队列中元素，调用 runFinalizer 方法  private static class FinalizerThread extends Thread { public void run() { final JavaLangAccess jla = SharedSecrets.getJavaLangAccess(); for (;;) { try { Finalizer f = (Finalizer)queue.remove(); f.runFinalizer(jla); } catch (InterruptedException x) {} } } } static { ThreadGroup tg = Thread.currentThread().getThreadGroup(); for (ThreadGroup tgn = tg; tgn != null; tg = tgn, tgn = tg.getParent()); Thread finalizer = new FinalizerThread(tg); finalizer.setPriority(Thread.MAX_PRIORITY - 2); finalizer.setDaemon(true); finalizer.start(); } WeakReference  仅实现，用于类型判断
+ SoftReference  简单实现，主要用于类型判断
+字段  long  clock  由 GC 更新的时钟  timestamp  VM 用以选择/清除的其中一个条件 每次调用 get() 方法时更新     WeakHashMap  自动移除不再使用的键值对
+ 属性  ReferenceQueue  queue   方法  expungeStaleEntries &amp;gt; 移除除旧事项 &amp;gt;&amp;gt; 使用场景： getTaable()/ size()/ resize(int)  for (Object x; (x = queue.poll()) != null; ) { prev= p= table[x.hash] if(p== x){ prev.next= p.next; size--; break; } } 内部类  Entry  class Entry&amp;lt;K,V&amp;gt; extends WeakReference&amp;lt;Object&amp;gt; implements Map.Entry&amp;lt;K,V&amp;gt;   使用场景    类型 场景     强引用 Object o= new Object();普遍场景
+内存不足时，JVM 抛出 OOM 异常
+o= null 或超出生命周期后回收
+主要用于执行 finalize 方法   软引用 仅内存不足时回收
+缓存场景   弱引用 对象不被使用时，扫描到即被回收
+WeakHashMap 场景   虚引用 不影响对象的生命周期
+get()始终为 null
+仅用于 GC 后收到系统通知，如堆外内存的管理
+常结合 Cleaner 进行回收操作    补充 对象可达性 起点  GC-Roots  对象  虚拟机栈所引用的对象 方法区中静态属性和常量所引用的对象 本地方法栈中 JNI 引用的对象  图示      原则  单一路径，以最弱引用为准 多路径，以最强引用为准  示例  关联     对象 关联 对象 关联 对象     Root StrongReference Obj-1 SoftReference Obj   - StrongReference Obj-2 StrongReference -   - StrongReference Obj-3 WeakReference -     结论  三层关系中， Obj 对应的引用分别为 Soft/Strong/Weak（以最弱为准） 而对比三者，则引用类型为 Soft（以最强为准）   对象存活判断 判断条件（两次标记）  可达性标记  对象不可达时，一次标记  finalize() 方法标记  已由 JVM 调用或未覆盖情况下，不执行 需执行，则该对象将入队至 F-Queue，等待低级别 Finalizer 线程进行读取/执行 执行时，可通过建立引用，来避免被回收；否则将被标记并回收   参考 SharedSecrets  使用 SharedSecrets 获取 JVM 实例  java.util.logging.LogRecord#inferCaller()  []() []()  Reference  JDK源码分析（7）之 Reference 框架概览 Java Reference详解  针对 Finalizer 机制等有相关补充  深入理解JDK中的Reference原理和源码实现  状态环节描述详尽，配有流程转换图 二次标记(finalize)  深入理解 java 中的 *Reference  较为丰富的使用场景/示例  如内存泄漏写法/WeakHashMap 等   Reference 、ReferenceQueue 详解  针对 JVM 操作进行了相关补充   </content>
+    </entry>
+    
+     <entry>
+        <title>Java.Thread - TODO</title>
+        <url>http://domain.yqjdcyy.com/post/java.thread/</url>
+        <categories>
+          <category>阅读</category>
+        </categories>
+        <tags>
+          <tag>Java</tag>
+        </tags>
+        <content type="html">  层级  Obect(wait/notify/notifyAll) 对象监视器 Condition/Lock  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   线程状态 描述    线程状态 描述     NEW 新建线程   RUNNABLE 线程置入线程池，等待调度选中，获取 CPU 使用权   BLOCKED 阻塞状态，等待锁资源   WAITING 等待状态，等待其它线程将其唤起   TIMED_WAITING 超时等待，等待休眠结束或其它关联线程结束   TERMINATED 线程完成    流转  图示     串联  thread cpu synchronized monitor volatite  基础 进程  调用
+ Runtime
+Process exec(*) ProcessBuilder
+new ProcessBuilder(...).start()  底层
+ ProcessImpl
+ JVM.native method      方法名 Windows API     create CreateProcess
+CreatePipe   close CloseHandle   waitfor WaitForMultipleObject   destroy TerminateProcess   exitValue GetExitCodeProcess     注意事项
+ 管道容量有限，需及时读取  否则会导致进程挂起、死锁  windows 环境下调用，需要运行 windows 的命令解释器  cmd /c start cmd.exe  Linux 的管道操作 | 和 Windows 环境下的重定向 &amp;gt; 等均无法通过命令参数实现   线程  调用
+ Thread
+class YaoThread extends Thread { @Override public void run() { System.out.println(&amp;#34;Yao.Thread running&amp;#34;); } } Runnable
+class YaoRunnable implements Runnable { @Override public void run() { System.out.println(&amp;#34;Yao.Runnable running&amp;#34;); } }  底层
+ static {registerNatives();} 以注册本地方法供 Thread 方法调用
+   Native 调用方法     start0 &amp;amp;JVM_StartThread   stop0 &amp;amp;JVM_StopThread   isAlive &amp;amp;JVM_IsThreadAlive   suspend0 &amp;amp;JVM_SuspendThread   resume0 &amp;amp;JVM_ResumeThread   setPriority0 &amp;amp;JVM_SetThreadPriority   yield &amp;amp;JVM_Yield   sleep &amp;amp;JVM_Sleep   currentThread &amp;amp;JVM_CurrentThread   countStackFrames &amp;amp;JVM_CountStackFrames   interrupt0 &amp;amp;JVM_Interrupt   isInterrupted &amp;amp;JVM_IsInterrupted   holdsLock &amp;amp;JVM_HoldsLock   getThreads &amp;amp;JVM_GetAllThreads   dumpThreads &amp;amp;JVM_DumpThreads    调用流程
+ Thread.start  JVM_StartThread =&amp;gt; 创建本地线程 thread_entry  new JavaThread(&amp;amp;thread_entry, sz)  vmSymbolHandles::run_method_name()  template(run_method_name,&amp;quot;run&amp;quot;) =&amp;gt; 调用Thread.run() 方法      java.lang.Thread 在系统本地线程的基础上，进行了封装
+ 但屏蔽了相关实现细节
+   细项 描述     线程返回值 Java 未提供
+一般用于检测线程是否正常退出   同步 join() 于循环调用时不可控   ID 自定义的计数 ID，与操作系统的线程 ID 无关   运行时间统计 统计值不准确
+因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间       工具 ThreadLocal Atomic Lock Container  BlockingQueue ConcurrentHashMap  Factory  ThreadPoolExecutorgg
+Atomic
+原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 锁
+线程池
+  参考  进程 线程 协程 管程 纤程 概念对比理解 Java 中的进程与线程 []() []() []() []() []() []()  </content>
+    </entry>
+    
+     <entry>
+        <title>Maven.Lombok 找不到符号</title>
+        <url>http://domain.yqjdcyy.com/post/error.maven.lombok/</url>
+        <categories>
+          <category>整理</category>
+        </categories>
+        <tags>
+          <tag>Maven</tag><tag>Lombok</tag>
+        </tags>
+        <content type="html">  Lombok 未生效，提示找不到符号 异常信息 [ERROR] 位置: 类型为...IndicatorConfig的变量 cfg [ERROR] .../IndicatorConfigGeneratorImpl.java:[69,53] 找不到符号 [ERROR] 符号: 方法 getEsDaySum() [ERROR] 位置: 类型为com.ucarinc.wukong.monitor.indicator.config.bo.IndicatorConfig的变量 cfg [ERROR] .../IndicatorRpcHandler.java:[59,9] 找不到符号 [ERROR] 符号: 变量 log 异常日志  务必关注日志  个人没关注，觉得没问题，导致钻了好一阵的牛角尖   [WARNING] .../Tuple2BroadcastProcessFunction.java:[25,8] lombok.javac.apt.LombokProcessor could not be initialized. Lombok will not run during this compilation: java.lang.ClassCastException: com.sun.tools.javac.processing.JavacProcessingEnvironment cannot be cast to com.sun.tools.javac.processing.JavacProcessingEnvironment 原因分析 观看异常日志，发现比较特别的异常是 ClassCastException，怀疑有同路径同类名文件 经类名搜索发现，在公司的 base-framework 中 jdk-tools 有重名类！
+！类加载顺序
+解决办法  在 pom.xml 将 jdk-tools 排除出去  补充  最常出现的情况，是由于项目未允许注解执行  解决办法即将项目配置允许执行注解  配置路径为 /Settings/Build, Execution, Deployment/ Compiler/ Annotation Processors 选择项目，开启右侧的 Enable annotation processing 配置    </content>
+    </entry>
+    
+     <entry>
         <title>Java.Serialize</title>
         <url>http://domain.yqjdcyy.com/post/java.serialize/</url>
         <categories>
@@ -20,7 +297,7 @@ private void readObject(java.io.ObjectInputStream s){...} private void writeObje
  ObjectInput]Stream 和 ObjectOutput]Stream 内部通过反射进行该方法的调用  事例
  参见 java.util.ArrayLis   实现 Externalizable  实现
 public class User implements Externalizable { @Override public void writeExternal(ObjectOutput out){...} @Override public void readExternal(ObjectInput in) {...} } 补充
- 实现时，需要保障有无参构造函数 优先级较 Serializable 高  同时实现 Serializable 和 Externalizable，会优先调用 writeExternal|readExternal 方法    注意 不序列化项  static 修饰的属性  反序列化时，以该类型的初始值填充（如int=0，Object=null）  transient 标明不进行序列化的属性  序列化优先级  虚拟机优先尝试调用类所定义的 readObject 和 writeObject 方法 未实现上述方法时，则默认调用 ObjectOutputStream.defaultWriteObject 和 ObjectInputStream.defaultReadObject  父子序列化情况  父类实现序列化接口后，而子类未实现  子类自动实现序列化  子类实现序列化接口，而父类未实现  父类将不被序列化 必须有无参构造函数，否则会抛 InvalidClassException 异常   参考  深入分析Java的序列化与反序列化 Java序列化理解与总结 []() []()  </content>
+ 实现时，需要保障有无参构造函数 优先级较 Serializable 高  同时实现 Serializable 和 Externalizable，会优先调用 writeExternal|readExternal 方法    注意 不序列化项  static 修饰的属性  反序列化时，以该类型的初始值填充（如int=0，Object=null）  transient 标明不进行序列化的属性  序列化优先级  虚拟机优先尝试调用类所定义的 readObject 和 writeObject 方法 未实现上述方法时，则默认调用 ObjectOutputStream.defaultWriteObject 和 ObjectInputStream.defaultReadObject  父子序列化情况  父类实现序列化接口后，而子类未实现  子类自动实现序列化  子类实现序列化接口，而父类未实现  父类将不被序列化 必须有无参构造函数，否则会抛 InvalidClassException 异常   参考  深入分析Java的序列化与反序列化 Java序列化理解与总结 Java 序列化之 Externalizable  </content>
     </entry>
     
      <entry>
@@ -514,7 +791,7 @@ ReferenceQueue记录自动消失的对象    虚引用 有跟没有一样
  由加载、验证、准备、解析和初始化组成 除解析各阶段顺序开始  解析可发生于初始化阶段之后 运行时绑定   步骤
  加载、连接该类 若父类未初始化，则先初始化父类 依次执行初始化语句（静态代码块）
   时机
- 类实例创建 类或接口的静态变量的请求、赋值 类的静态方法调用 反射  Class.forName(&amp;quot;全限定名“)  初始化类的父类 java 启动时指定的主类  注意
+ 立即  类实例创建 类或接口的静态变量的请求、赋值 类的静态方法调用 反射  Class.forName(&amp;quot;全限定名“)  初始化类的父类 java 启动时指定的主类  其它均为懒加载情况  需要时再加载进来   注意
  &amp;lt;clinit&amp;gt; 是线程安全的懒汉单例模式   加载.加载  查找&amp;amp; 加载类的二进制数据  通过全限定名获取二进制流 在方法区，转化静态结构为运行时数据结构 于堆区，生成该类的 java.lang.Class 对象  指向方法区的结构    加载.连接.验证  确保被加载类的正确性
  验证文件格式  是否符合 Class 文件格式规范  开头是否为 0xCAFEBABE 版本号是否在当前 VM 支持范围内 常量池中类型是否支持   验证元数据  语义分析，是否符合 Java 语言规范  是否具有父类   验证字节码  数据流&amp;amp;控制流分析，判断语义是否合法  验证符号引用  为之后解析作准备   重要非必须
  可通过 -Xverifynone 参数关闭   加载.连接.准备  为类的静态变量分配内存，并初始为默认值
@@ -779,7 +1056,7 @@ type: Object,Int,Long    compareAndSwap**Type**(obj, offset, objExpect, objNew) 
 type: Object,Int,Long    park(isAbsolute, time) 阻塞当前进程
 继续执行： unpark() 调用，或当前线程被中断，或超过指定时间    unpark(thread) 唤醒指定进程
 需先保障线程存活    getLoadAverage(loadavg[], nelems) 获取系统运行队列中，一定时间内的负载均衡状况
-nelems 用于检索的样本数，可选[1,2,3]，分别代表1/5/15分钟的采样    实现 源码 // final 限定仅可通过 static 方式构造 private static final Unsafe theUnsafe; // 私有构造函数 private Unsafe() {} static { // 添加需监测调用者的类、方法  Reflection.registerMethodsToFilter(Unsafe.class, new String[]{&amp;#34;getUnsafe&amp;#34;}); theUnsafe = new Unsafe(); } // 标注要使用 `Reflection.getCallerClass()`，可靠地发现调用者 // 仅 Java 信任的安全代码可以调用 @CallerSensitive public static Unsafe getUnsafe() { Class var0 = Reflection.getCallerClass(); if (!VM.isSystemDomainLoader(var0.getClassLoader())) { throw new SecurityException(&amp;#34;Unsafe&amp;#34;); } else { return theUnsafe; } } 获取实例 // 使用反射方式获取 // 默认仅供 java 信任的代码获取使用 Field theUnsafe = Unsafe.class.getDeclaredField(&amp;#34;theUnsafe&amp;#34;); theUnsafe.setAccessible(true); return (Unsafe) theUnsafe.get(null); 内存值修改 // 不受 final/ String 等限制 Field field = str.getClass().getDeclaredField(&amp;#34;value&amp;#34;); unsafe.putObject(str, unsafe.objectFieldOffset(field), new char[]{&amp;#39;H&amp;#39;, &amp;#39;i&amp;#39;}); 构建对象 // 不受 JVM 安全检查、类的构建函数、初始值限制 PrivateConstructorVo vo = (PrivateConstructorVo) unsafe.allocateInstance(PrivateConstructorVo.class); 获取对象内存地址 Car car = new Car(100d); Object[] arr = new Object[]{car}; // 固定的数组头部长度 long offset = unsafe.ARRAY_OBJECT_BASE_OFFSET; System.out.printf(&amp;#34;\tArray[0].address=\t%d\n&amp;#34;, unsafe.getLong(arr, offset)); 补充 类的内存形式  组成
+nelems 用于检索的样本数，可选[1,2,3]，分别代表1/5/15分钟的采样    实现 源码 // final 限定仅可通过 static 方式构造 private static final Unsafe theUnsafe; // 私有构造函数 private Unsafe() {} static { // 添加需监测调用者的类、方法 	Reflection.registerMethodsToFilter(Unsafe.class, new String[]{&amp;#34;getUnsafe&amp;#34;}); theUnsafe = new Unsafe(); } // 标注要使用 `Reflection.getCallerClass()`，可靠地发现调用者 // 仅 Java 信任的安全代码可以调用 @CallerSensitive public static Unsafe getUnsafe() { Class var0 = Reflection.getCallerClass(); if (!VM.isSystemDomainLoader(var0.getClassLoader())) { throw new SecurityException(&amp;#34;Unsafe&amp;#34;); } else { return theUnsafe; } } 获取实例 // 使用反射方式获取 // 默认仅供 java 信任的代码获取使用 Field theUnsafe = Unsafe.class.getDeclaredField(&amp;#34;theUnsafe&amp;#34;); theUnsafe.setAccessible(true); return (Unsafe) theUnsafe.get(null); 内存值修改 // 不受 final/ String 等限制 Field field = str.getClass().getDeclaredField(&amp;#34;value&amp;#34;); unsafe.putObject(str, unsafe.objectFieldOffset(field), new char[]{&amp;#39;H&amp;#39;, &amp;#39;i&amp;#39;}); 构建对象 // 不受 JVM 安全检查、类的构建函数、初始值限制 PrivateConstructorVo vo = (PrivateConstructorVo) unsafe.allocateInstance(PrivateConstructorVo.class); 获取对象内存地址 Car car = new Car(100d); Object[] arr = new Object[]{car}; // 固定的数组头部长度 long offset = unsafe.ARRAY_OBJECT_BASE_OFFSET; System.out.printf(&amp;#34;\tArray[0].address=\t%d\n&amp;#34;, unsafe.getLong(arr, offset)); 补充 类的内存形式  组成
    组件 大小
 32b/64b 补充     header 4B/8B 常量
 0×00000001   klass pointer 4B/8B 指针
@@ -2834,7 +3111,11 @@ public void login(String username, String password, HttpServletRequest request) 
         <tags>
           <tag>Java</tag><tag>tools</tag>
         </tags>
-        <content type="html">  JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &amp;lt;pid&amp;gt;|&amp;lt;executable &amp;lt;core&amp;gt;&amp;gt; | &amp;lt;[server_id@]&amp;lt;remoteServerIP | hostname&amp;gt;&amp;gt; 参数  &amp;lt;no option&amp;gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&amp;lt;filename&amp;gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&amp;lt;flag&amp;gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748 | 内存地址 | 内存占用 | 进程、核心文件或远程调试服务器 | |&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;ndash;|&amp;mdash;&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| | 0x0000000051560000 | 8740K | D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll | | 0x0000000054130000 | 104K | D:\server\java\jdk1.8.0_65\jre\bin\net.dll | jmap -histo 24748 | 序号 | 实例数 | 所在字节数 | 类名 | |&amp;mdash;&amp;mdash;-|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;|&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;&amp;mdash;| | num | #instances | #bytes | class name | | 14: | 6778 | 108448 | java.lang.Object | | 1565: | 1 | 16 | sun.util.resources.LocaleData$LocaleDataResourceBundleControl | | Total | 266178 | 50804480 | | jmap -finalizerinfo 24748  Attaching to process ID 24748, please wait... Debugger attached successfully. Server compiler detected. JVM version is 25.65-b01 Number of objects pending for finalization: 0  jmap -dump:format=b,file=d:/24748-jmap.dump 24748  Dumping heap to D:\24748-jmap.dump ... Heap dump file created  jmap -heap 24748
+        <content type="html">  JMAP 作用  为进程、核心文件或远程调试服务器打印共享对象内存映射或堆内存细节 Java 1.8 版本中不支持   调用  jmap [option] &amp;lt;pid&amp;gt;|&amp;lt;executable &amp;lt;core&amp;gt;&amp;gt; | &amp;lt;[server_id@]&amp;lt;remoteServerIP | hostname&amp;gt;&amp;gt; 参数  &amp;lt;no option&amp;gt;  如果使用不带选项参数的jmap打印共享对象映射，将会打印目标虚拟机中加载的每个共享对象的起始地址、映射大小以及共享对象文件的路径全称  -dump:[live,]format=b,file=&amp;lt;filename&amp;gt;  以 hprof 二进制格式转储 Java 堆到指定文件中。live子选项是可选的 live子选项决定堆中只有活动的对象会被转储 可用 jhat 浏览 heap dump  -finalizerinfo  打印等待终结的对象信息  -heap  打印一个堆的摘要信息，包括使用的GC算法、堆配置信息和generation wise heap usage  -histo[:live]  打印堆的柱状图。其中包括每个Java类、对象数量、内存大小(单位：字节)- 、完全限定的类名 打印的虚拟机内部的类名称将会带有一个’*’前缀。如果指定了live子选项，则只计算活动的对象  -permstat  Java 1.8 版本中不支持 打印Java堆内存的永久保存区域的类加载器的智能统计信息 对于每个类加载器而言，它的名称、活跃度、地址、父类加载器、它所加载的类的数量和大小都会被打印  包含的字符串数量和大小   -F  强制模式。如果指定的pid没有响应，请使用jmap -dump或jmap -histo选项。此模式下，不支持live子选项  -h|help  打印帮助信息  -J&amp;lt;flag&amp;gt;  指定传递给运行jmap的JVM的参数    示例  jmap 24748
+   内存地址 内存占用 进程、核心文件或远程调试服务器     0x0000000051560000 8740K D:\server\Java\jdk1.8.0_65\jre\bin\server\jvm.dll   0x0000000054130000 104K D:\server\java\jdk1.8.0_65\jre\bin\net.dll    jmap -histo 24748
+   序号 实例数 所在字节数 类名     num #instances #bytes class name   14: 6778 108448 java.lang.Object   1565: 1 16 sun.util.resources.LocaleData$LocaleDataResourceBundleControl   Total 266178 50804480     jmap -finalizerinfo 24748
+Attaching to process ID 24748, please wait... Debugger attached successfully. Server compiler detected. JVM version is 25.65-b01 Number of objects pending for finalization: 0 jmap -dump:format=b,file=d:/24748-jmap.dump 24748
+Dumping heap to D:\24748-jmap.dump ... Heap dump file created jmap -heap 24748
 Attaching to process ID 24748, please wait... Debugger attached successfully. Server compiler detected. JVM version is 25.65-b01 using thread-local object allocation. Parallel GC with 8 thread(s) // GC 方式 Heap Configuration: MinHeapFreeRatio = 0 // JVM堆最小空闲比例，默认`40`，可通过 `-XX:MinHeapFreeRatio` 设置 MaxHeapFreeRatio = 100 // JVM堆最大空闲比例，默认`70`，可通过 `-XX:MaxHeapFreeRatio` 设置 MaxHeapSize = 734003200 (700.0MB) // JVM堆的最大大小，可通过 `-XX:MaxHeapSize` 设置 NewSize = 89128960 (85.0MB) // JVM堆的 `新生代` 的默认大小，可通过 `-XX:NewSize` 设置 MaxNewSize = 244318208 (233.0MB) // JVM堆的 `新生代` 的最大大小，可通过 `-XX:MaxNewSize=` 设置 OldSize = 179306496 (171.0MB) // JVM堆的 `老生代` 的大小，可通过 `-XX:OldSize` 设置 NewRatio = 2 // `新生代` 和 `老生代` 的大小比例，可通过 `-XX:NewRatio` 设置 SurvivorRatio = 8 // 年轻代中 `Eden` 与 `Survivor` 的大小比例，可通过 `-XX:SurvivorRatio` 设置 MetaspaceSize = 21807104 (20.796875MB) // JVM堆的 `元数据` 的大小，默认为`20.8M`，可通过 `-XX:MetaspaceSize` 设置 CompressedClassSpaceSize = 1073741824 (1024.0MB) // JVM堆的 `Klass Metaspace` 的大小，默认为`1G`，可通过 `-XX:CompressedClassSpaceSize` 设置 MaxMetaspaceSize = 17592186044415 MB // JVM堆的 `元数据` 的最大大小，默认为`无穷大`，可通过 `-XX:MaxMetaspaceSize` 设置 G1HeapRegionSize = 0 (0.0MB) // 设置 `Garbage First` 平分java堆产生的区域的大小，默认为`2的幂`，范围为 `1M至 32M`，可通过 `-XX:G1HeapRegionSize` 设置 Heap Usage: // 堆内存使用情况 PS Young Generation Eden Space: // Eden 区内存分布 capacity = 67108864 (64.0MB) used = 44377568 (42.321746826171875MB) free = 22731296 (21.678253173828125MB) 66.12772941589355% used From Space: // Survivor 0 区内存分布 capacity = 11010048 (10.5MB) used = 6410528 (6.113555908203125MB) free = 4599520 (4.386444091796875MB) 58.224341982886905% used To Space: // Survivor 1 区内存分布 capacity = 11010048 (10.5MB) used = 0 (0.0MB) free = 11010048 (10.5MB) 0.0% used PS Old Generation // 老生代内存分布 capacity = 179306496 (171.0MB) used = 16384 (0.015625MB) free = 179290112 (170.984375MB) 0.009137426900584795% used 5576 interned Strings occupying 475000 bytes.  Reference  官方  jmap
  2.14 The jmap Utility  整理  Java命令学习系列（三）——Jmap  补充  MetaspaceSize的坑 JVM源码分析之Metaspace解密 G1(Garbage First)的使用 垃圾优先型垃圾回收器调优 垃圾优先垃圾回收器(G1 GC)使用笔记   </content>
     </entry>
@@ -5593,7 +5874,8 @@ html setting.html // 弹出界面 images icon.png // banner 上小图标，推�
 @Override public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException { long start = new Date().getTime(); chain.doFilter(request, response); System.out.println(&amp;ldquo;time filter 耗时:&amp;ldquo;&#43; (new Date().getTime() - start)); }
   }
 - config @Configuration public class WebConfig extends WebMvcConfigurerAdapter {
-@Bean public FilterRegistrationBean timeFilter() { FilterRegistrationBean registrationBean = new FilterRegistrationBean(); registrationBean.setFilter(new TimeFilter()); List&amp;lt;String&amp;gt; urls = new ArrayList&amp;lt;&amp;gt;(); urls.add(&amp;#34;/*&amp;#34;); registrationBean.setUrlPatterns(urls); return registrationBean; } }
+	@Bean public FilterRegistrationBean timeFilter() {
+FilterRegistrationBean registrationBean = new FilterRegistrationBean(); registrationBean.setFilter(new TimeFilter()); List&amp;lt;String&amp;gt; urls = new ArrayList&amp;lt;&amp;gt;(); urls.add(&amp;#34;/*&amp;#34;); registrationBean.setUrlPatterns(urls); return registrationBean; } }
 ## Listener - init @WebListener public class MyServetContextListener implements ServletContextListener{
 @Override public void contextInitialized(ServletContextEvent event) { ServletContext application = event.getServletContext(); String userName = application.getInitParameter(&amp;#34;userName&amp;#34;); System.out.println(&amp;#34;启动web应用的用户名字为：&amp;#34;&#43;userName); } }
 ## Inteceptor - init @Component public class TimeInterceptor implements HandlerInterceptor {
@@ -6524,6 +6806,45 @@ A-&amp;gt; A-B-&amp;gt; B     流程 Shade 操作  图示
     
      <entry>
         <title></title>
+        <url>http://domain.yqjdcyy.com/post/hello.flink.all/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  构建 代码 StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment(); StreamExecutionEnvironment // 程序执行上下文，提供并行度等配置，和运行/添加流的方法 source.flatMap // 获取返回类型 TypeInformation&amp;lt;R&amp;gt; outType = TypeExtractor.getFlatMapReturnTypes(...) transform(...) // 将操作节点添加至流转换列表中 getExecutionEnvironment().addOperator(resultTransform) // 返回单输入流运算节点 return new SingleOutputStreamOperator(environment, resultTransform) 串联方式 `source-&amp;gt; transform*-&amp;gt; sink` 的 chain 式结构 执行 代码 // 查看运行拓扑图，数据如何流转，各算子并发度配置等 System.out.println(&amp;ldquo;ExecutionPlan: &amp;ldquo; &#43; env.getExecutionPlan()); env.execute();
+通用  StreamGraph // 根据代码生成数据流图，由StreamNode（数据节点，Source/Function/Sink）&#43; StreamEdge（传输策略，直连/Hash/轮询等） getStreamGraph() StreamGraphGenerator.generate(this, transformations)
+StreamNode[Source/1]-&amp;gt; StreamEdge[Rebalance]-&amp;gt; StreamNode[FlatMap/2]-&amp;gt; StreamEdge[Hash]-&amp;gt; StreamNode[KeyedAggregation/2]-&amp;gt; StreamEdge[Forward]-&amp;gt; StreamNode[Sink/2] JobGraph // 优化流图为任务拓扑图，由 JobVertex（等价于StreamNode）&#43; IntermediateDataSet（节点计算结果）&#43; JobEdge（等价于StreamEdge） streamGraph.getJobGraph() StreamingJobGraphGenerator.createJobGraph(this)
+JobVertex[Source/1]-&amp;gt; IntermediateDataSet-&amp;gt; JobEdge[Rebalance]-&amp;gt; JobVertex[FlatMap/2]-&amp;gt; IntermediateDataSet-&amp;gt; JobEdge[Hash]-&amp;gt; JobVertex[KeyedAggregation-&amp;gt;Sink/2] Configuration/MiniClusterConfiguration // 配置更新 configuration.addAll(jobGraph.getJobConfiguration()); configuration.addAll(&amp;hellip;) // 用户配置覆盖 MiniClusterConfiguration.Builder()&amp;hellip;
+ start
+ abstract   本地场景  LocalStreamEnvironment.execute()
+MiniCluster miniCluster = new MiniCluster(cfg); MiniCluster.start() commonRpcService= createRpcService(configuration, rpcTimeout, false, null) // 通用 RPC 服务 metricRegistry.startQueryService(commonRpcService.getActorSystem(), null); // 初始化查询服务 if (useSingleRpcService)&amp;hellip; // 根据 getRpcServiceSharing 配置来创建或共用同一 RPC 服务
+  远程场景 代码示例 streaming.api.datastream DataStream StreamExecutionEnvironment environment StreamTransformation transformation flatMap
+SingleOutputStreamOperator // 单输入流运算节点的接口 streaming.api.operators
+streaming.api.graph StreamGraph MapstreamNodes StreamNode final int id Integer parallelism List inEdges List outEdges add[InEdge/OutEdge] StreamEdge StreamNode sourceVertex StreamNode targetVertex
+flink.runtime.jobgraph JobVertex ArrayList results createAndAddResultDataSet IntermediateDataSet JobVertex producer List consumers addConsumer(JobEdge) JobEdge IntermediateDataSet source DistributionPattern distributionPattern JobVertex target
+streaming.api.transformations StreamTransformation // 代表一个流的操作，是 DataStream 的基础元件 DataStream.map-&amp;gt; StreamTransformation 的树结构 StreamGraphGenerator 将图转化为 StreamGraph
+flink.runtime.minicluster
+MiniCluster // 本地执行 Flink 任务的类 RpcService commonRpc/ jobManagerRpc/ taskManagerRpc/ resourceManagerRpc HeartbeatServices heartbeatServices volatile TaskExecutor[] taskManagers JobExecutionResult executeJobBlocking(JobGraph job) start() flink.runtime.rpc RpcService RpcServer startServer(C rpcEndpoint) void/CompletableFuture execute(Runnable/Callable) RpcGateway getAddress() getHostname() RpcEndpoint abstract
+// final RpcServer rpcServer AtomicReference currentMainThread
+补充 Akka 优势  异步/非阻塞/高性能的事件驱动编程模型  Actor 持有 Mailbox，消息同步投递至 Mailbox，Actor 异步消费 Mailbox 中的消息 处理线程由所有 actor 共享，因此不推荐同步消息  轻量级事件处理  1GB 可容纳百万级别个数的 Actor   类  ActorSystem  负责 Actor 的调度（分治） 配置化启动  使用 Typesafe 配置库 日志级别/拦截器/邮箱  日志存储  Actor
+ 由 ActorSystem 创建，不允许直接新建 路径定义
+ 树形结构进行组织     类型 示例 解析     本地 akka://sys/user/helloActor sys: 创建 actor 的 ActorSystem 实现的名称
+user: 由 actorOf 创建的均属于此类，系统创建的为 system
+helloActor：自定义实现类   远程 akka.tcp://sys@l27.0.0.1:2020/user/remoteActor akka.tcp： 通信方式
+sys@l27.0.0.1:2020： 远程服务的 ActorSystem 名称及其所在主机的 IP 和端口     ActorREf
+ Actor 的引用，实现与 Actor 通信的封装  获取方式  ActorSystem.actorOf ActorContext.actorOf     代码 ActorSystem system = ActorSystem.create(&amp;#34;sys&amp;#34;); ActorRef helloActor = system.actorOf(Props.create(HelloActor.class), &amp;#34;helloActor&amp;#34;); // 异步调用，ask 为同步调用 helloActor.tell(&amp;#34;hello helloActor&amp;#34;, ActorRef.noSender()); system.terminate(); Mesos 和 YARN 对比 对比    角度 Mesos YARN     资源调度 framework 判断 mesos 提供的资源是否合适来确认是否执行
+长期拒绝将被跳过 Yarn 决定是否通过你的资源申请   框架角色 计算框架与 Mesos 一体
+添加新计算框架，则需先在 Mesos 中部署 框架仅作为 client 的 Library 使用   隔离性 使用 Linux Container 对内存和 CPU 进行隔离 OS 进程级别隔离   扩展性 50,000&#43;节点 6,000~100,000节点   容错性 ZK 对 master 容错
+Slave 任务失败后转移
+依赖各框架自身的容错机制 ZK 对 ResourceManager(RM) 容错
+ApplicationMaster(AM) 采集任务执行信息至磁盘
+RM 监控 AM 进行重启恢复    架构图  Mesos    Yarn     参考 Flink  []() []() []()  Akka  Akka简介与Actor模型 Akka 中的 Actor 系统 []()  Other  Yarn与Mesos的对比 Flink 底层RPC框架分析 []()  </content>
+    </entry>
+    
+     <entry>
+        <title></title>
         <url>http://domain.yqjdcyy.com/post/hello.flink.state/</url>
         <categories>
           
@@ -6611,39 +6932,6 @@ static{ static native void registerNatives() } long tid volatile char name[] sta
     
      <entry>
         <title></title>
-        <url>http://domain.yqjdcyy.com/post/java.thread/</url>
-        <categories>
-          
-        </categories>
-        <tags>
-          
-        </tags>
-        <content type="html">  概念 进程  操作系统中能独立运行、分配资源的基本单位 = 程序= 机器指令&#43; 数据&#43; 堆栈  线程  独立运行、调度的基本单位 减少调度成本，提高并发性 同一进程的多个线程可共享进程的资源  协程  用户模式下，完全由应用程序控制的，轻量级线程  拥有自己的寄存器、栈等结构  一个线程包含一或多个协程  纤程  Windows 环境下，协程的叫法 线程一次只能执行一个纤程的代码  管程  用于管理临界资源，一次只且仅允许一个进程访问，互斥地控制多个进程的访问  并*  并行  多个程序，同一时间只有一个运行 多个队伍走同一个通道  并发  多个程序同时运行 多个队伍走多个通道   线程状态 描述    线程状态 描述     NEW 新建线程   RUNNABLE 线程置入线程池，等待调度选中，获取 CPU 使用权   BLOCKED 阻塞状态，等待锁资源   WAITING 等待状态，等待其它线程将其唤起   TIMED_WAITING 超时等待，等待休眠结束或其它关联线程结束   TERMINATED 线程完成    流转  图示     串联  thread cpu synchronized monitor volatite  基础 进程  调用
- Runtime
-Process exec(*) ProcessBuilder
-new ProcessBuilder(...).start()  底层
- ProcessImpl
- JVM.native method      方法名 Windows API     create CreateProcess
-CreatePipe   close CloseHandle   waitfor WaitForMultipleObject   destroy TerminateProcess   exitValue GetExitCodeProcess     注意事项
- 管道容量有限，需及时读取  否则会导致进程挂起、死锁  windows 环境下调用，需要运行 windows 的命令解释器  cmd /c start cmd.exe  Linux 的管道操作 | 和 Windows 环境下的重定向 &amp;gt; 等均无法通过命令参数实现   线程  调用
- Thread
-class YaoThread extends Thread { @Override public void run() { System.out.println(&amp;#34;Yao.Thread running&amp;#34;); } } Runnable
-class YaoRunnable implements Runnable { @Override public void run() { System.out.println(&amp;#34;Yao.Runnable running&amp;#34;); } }  底层
- static {registerNatives();} 以注册本地方法供 Thread 方法调用
-   Native 调用方法     start0 &amp;amp;JVM_StartThread   stop0 &amp;amp;JVM_StopThread   isAlive &amp;amp;JVM_IsThreadAlive   suspend0 &amp;amp;JVM_SuspendThread   resume0 &amp;amp;JVM_ResumeThread   setPriority0 &amp;amp;JVM_SetThreadPriority   yield &amp;amp;JVM_Yield   sleep &amp;amp;JVM_Sleep   currentThread &amp;amp;JVM_CurrentThread   countStackFrames &amp;amp;JVM_CountStackFrames   interrupt0 &amp;amp;JVM_Interrupt   isInterrupted &amp;amp;JVM_IsInterrupted   holdsLock &amp;amp;JVM_HoldsLock   getThreads &amp;amp;JVM_GetAllThreads   dumpThreads &amp;amp;JVM_DumpThreads    调用流程
- Thread.start  JVM_StartThread =&amp;gt; 创建本地线程 thread_entry  new JavaThread(&amp;amp;thread_entry, sz)  vmSymbolHandles::run_method_name()  template(run_method_name,&amp;quot;run&amp;quot;) =&amp;gt; 调用Thread.run() 方法      java.lang.Thread 在系统本地线程的基础上，进行了封装
- 但屏蔽了相关实现细节
-   细项 描述     线程返回值 Java 未提供
-一般用于检测线程是否正常退出   同步 join() 于循环调用时不可控   ID 自定义的计数 ID，与操作系统的线程 ID 无关   运行时间统计 统计值不准确
-因多线程调度，无法准确获取线程的实际使用的 CPU 运算时间       工具 ThreadLocal Atomic Lock Container  BlockingQueue ConcurrentHashMap  Factory  ThreadPoolExecutorgg
-Atomic
-原子更新 基本类型 数组 引用 字段. 使用 Unsage 实现的包装类 锁
-线程池
-  参考  进程 线程 协程 管程 纤程 概念对比理解 Java 中的进程与线程 []() []() []() []() []() []()  </content>
-    </entry>
-    
-     <entry>
-        <title></title>
         <url>http://domain.yqjdcyy.com/post/pyqt/</url>
         <categories>
           
@@ -6721,6 +7009,44 @@ Atomic
         </tags>
         <content type="html"> ApplicationContextAware
 </content>
+    </entry>
+    
+     <entry>
+        <title></title>
+        <url>http://domain.yqjdcyy.com/post/%E5%BB%B6%E6%97%B6%E9%98%9F%E5%88%97/</url>
+        <categories>
+          
+        </categories>
+        <tags>
+          
+        </tags>
+        <content type="html">  使用场景  超过半小时未支付的订单，自动取消 指定过期失效的优惠券 顺风车发车前一小时，短信提醒乘车人做好准备  技术方案 定期轮询  方案  定期轮询数据库  优点  实现简单  缺点  效率低 数据量大时，IO 占用率高   DelayQueue  方案  由 Delayed 提供过期时间 由 PriorityQueue 实现排序 由 BlockingQueue 支持无办队列 检测队首元素，若超时处理，否则休眠至队首的预计过期时间  除非插入新元素，直接插入至队首  Leader/Follower 模式减少资源的抢占（锁竞争/线程切换）  优点  阻塞队列，使用简单   Timer  方案  TimerTask 提供执行时间/间隔/执行内容等信息 TimerQueue 提供优先级队列功能 TimerThread 单进程执行任务 Timer 以添加任务至队列  缺点  单一线程，运行异常即中断 依赖系统时间 易受 GC 和线程执行时间影响   ScheduledExecutorService  方案    优点    缺点
+ Kafka.时间轮  方案
+   优点
+   缺点
+ RabbitMQ  方案
+   优点
+   缺点
+ Quartz  方案
+   优点
+   缺点
+ Redis Zset  方案
+   优点
+   缺点
+ JCronTab  方案
+   优点
+   缺点
+    产品 网易.Koala  方案    优点    缺点
+ 阿里.SchedulerX  方案
+   优点
+   缺点
+ 有赞.  方案
+   优点
+   缺点
+   方案
+   优点
+   缺点
+    参考  你真的了解延时队列吗 延时任务队列的原理与实现总结 []() []() []()  </content>
     </entry>
     
      <entry>
