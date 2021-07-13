@@ -16,7 +16,7 @@ googleAnalytics = ""
     avatar = "img/profile-image.png"
     header_background = "img/desk.jpg"
     header_title = ""
-    copyright = "Powered by [姚清居](http://www.yqjdcyy.com)."
+    copyright = "<a href="https://beian.miit.gov.cn/" target="_blank">闽ICP备18000167号-1</a>"
     custom_css = []
     custom_js  = []
 
